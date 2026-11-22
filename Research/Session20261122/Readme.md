@@ -40,7 +40,9 @@ g++ -std=c++17 -O2 -fopenmp Research/Session20261122/Cpp/ProofCoreTestsV24.cpp -
 - [直接证明覆盖优化 DP](Python/RootOrderDirectClosureDP.py)：全枚举 40,320 种根排列，固定原顺序 1,396 项直接闭合，最优根顺序 1,397 项。
 - [精确 G2 因子和整除测试](../../Sources/Cpp/SigmaPrecheckTests.cpp)：恢复 [SigmaPrecheck.hpp](../../Sources/Cpp/SigmaPrecheck.hpp) 和 Frontier 头文件路径；本地同等源码实现通过 36,100 次 GMP 对照，新仓库 CI 待执行。
 
-原 V21 正式根分割没有变更。独立验收 1,676 个其余分片与 72 小时完整运行仍未完成。
+- [分圆有限乘子闭合新增 3 项](Reports/FiniteQuotientCyclotomic2400.md)：[(19,936)、(11,1150)、(11,1152) 的精确剩余乘子枚举](Python/FiniteQuotientClosure2400.py)，`FINITE_QUOTIENT_CYCLOTOMIC` 已接入 V2 独立验证器。候选累计 `1,399/3,072`，仍待新 GitHub CI 审计。
+
+原 V21 正式根分割没有变更。独立验收 1,673 个其余分片与 72 小时完整运行仍未完成。
 
 ## Roadblock 对偶研究
 
