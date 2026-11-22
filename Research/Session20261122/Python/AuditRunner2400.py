@@ -29,6 +29,7 @@ from IndependentVerifierV2 import (
     verify_terminal_and_manifest,
 )
 import VerifyRootExponentCoverage
+from DirectRootClosures2400 import direct_root_bundle
 
 
 REPLACEMENT_CIRC_ORDER: Tuple[int, ...] = (23, 7, 11, 31, 13, 3, 5, 17)
@@ -112,6 +113,30 @@ def audit_single_shard(
     tid = task["id"]
     db_path = ledger_dir / f"{tid}.sqlite"
     t0 = time.monotonic()
+
+    # Close mathematically immediate root/forbidden-factor contradictions without
+    # consulting solver labels, SQLite state or a complete factorization.
+    # The verifier rebuilds the root state from the externally fixed pin.
+    if task["root"] != pin.root_prime or task["exponent"] != pin.root_exp or task["exact"] != pin.root_exact:
+        raise VerificationError(f"task/pin mismatch for {tid}")
+    direct_bundle = direct_root_bundle(pin)
+    if direct_bundle is not None:
+        verdict = verify_root_task_bundle(pin, direct_bundle)
+        if verdict["status"] != "TREE_ACCEPTED":
+            raise VerificationError(f"independent direct-root check did not accept {tid}")
+        return {
+            "id": tid,
+            "root": task["root"],
+            "index": task["index"],
+            "status": "VERIFIED_CLOSED",
+            "open_tasks": 0,
+            "splits_verified": 0,
+            "leaves_verified": verdict["leaves_verified"],
+            "verified_primes_count": verdict["verified_primes_count"],
+            "root_hash": verdict["root_hash"],
+            "certificate_source": "DIRECT_ROOT_FORBIDDEN_FACTOR",
+            "verify_seconds": time.monotonic() - t0,
+        }
 
     if not db_path.is_file():
         if legacy_states_dir is not None:
