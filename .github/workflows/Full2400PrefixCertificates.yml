@@ -1,0 +1,44 @@
+name: Enhanced 2400 LP — all 256 prefix certificates
+on:
+  push:
+    paths:
+      - '.github/workflows/Full2400PrefixCertificates.yml'
+permissions:
+  contents: read
+jobs:
+  certify-prefixes:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: Requirements.txt
+      - name: Install dependencies
+        run: python -m pip install -r Requirements.txt
+      - name: Produce 256 genuine enhanced LP duals and their reduced-cost gain tables
+        run: |
+          mkdir -p Build
+          set -o pipefail
+          python -u Sources/Python/PrefixDualCertificates.py Build/PrefixDualBounds.csv | tee Build/FullPrefixLog.txt
+          test "$(($(wc -l < Build/PrefixDualBounds.csv) - 1))" -eq 256
+          test -s Build/PrefixDualVariableGains.csv
+          test -s Build/PrefixDualForcedGains.csv
+      - name: Retain complete per-prefix interval output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Full2400PrefixDualTables
+          path: |
+            Build/PrefixDualBounds.csv
+            Build/PrefixDualVariableGains.csv
+            Build/PrefixDualForcedGains.csv
+            Build/FullPrefixLog.txt
+          retention-days: 30
+          if-no-files-found: ignore
