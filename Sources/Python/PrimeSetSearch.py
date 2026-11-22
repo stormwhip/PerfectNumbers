@@ -12,7 +12,7 @@ from IntervalCertificate import S_2012, solve_and_certify
 
 TARGET = 2300.0
 PRIME_SET = frozenset(S_2012)
-MAX_SOLVES = 55
+MAX_SOLVES = 180
 calls = 0
 
 @lru_cache(maxsize=None)
@@ -30,7 +30,7 @@ def model_bound(primes):
     return approx
 
 def greedy(initially_removed, label):
-    selected = PRIME_SET.difference(initially_removed)
+    selected = set(PRIME_SET.difference(initially_removed))
     start = model_bound(frozenset(selected))
     print("\nRUN", label, "INITIAL", sorted(selected), "bound", f"{start:.6f}", flush=True)
     if start <= TARGET:
