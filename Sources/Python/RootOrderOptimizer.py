@@ -45,7 +45,7 @@ def load_edges(path):
     edges = {}
     with open(path, newline="", encoding="utf-8") as f:
         for row in csv.reader(f):
-            if not row or row[0] != "EDGE":
+            if not row or row[0] != "EDGE" or len(row) < 6 or row[1] == "mask":
                 continue
             _, mask, root, branches, seconds, status = row
             key = (int(mask), int(root))

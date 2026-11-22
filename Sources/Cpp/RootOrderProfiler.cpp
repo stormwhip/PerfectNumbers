@@ -69,7 +69,7 @@ int main(int argc, char** argv) {
             }
         }
     }
-    std::cout << "PROFILE_COMPLETE," << (state_count * n - (n * (n + 1) / 2))
+    std::cout << "PROFILE_COMPLETE," << (n * (state_count / 2))
               << ",edges_expected\n";
     return 0;
 }
