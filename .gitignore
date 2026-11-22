@@ -1,6 +1,11 @@
 __pycache__/
 *.py[cod]
 .venv/
+Build/
+build/
 checkfacts.txt.gz
+CheckFacts.txt.gz
 facts.dat
 facts.idx
+Facts.dat
+Facts.idx
