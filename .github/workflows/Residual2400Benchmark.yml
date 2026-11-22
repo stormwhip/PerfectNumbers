@@ -34,7 +34,7 @@ jobs:
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV18.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV18
           ./Build/ProofCoreTestsV18
           for v in 16 18; do
-            g++ -std=c++17 -O2 -fopenmp "Sources/Cpp/ProofTree${v}.cpp" -lgmpxx -lgmp -o "Build/ProofTree${v}"
+            g++ -std=c++17 -O2 -fopenmp "Sources/Cpp/ProofTreeV${v}.cpp" -lgmpxx -lgmp -o "Build/ProofTreeV${v}"
           done
           g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
       - name: Generate 9 actual enhanced prefix certificates
