@@ -37,6 +37,13 @@ jobs:
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV19.cpp -lgmpxx -lgmp -o Build/ProofTreeV19
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV19.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV19
           ./Build/ProofCoreTestsV19
+      - name: Verify V20 shard manifest and V21 lazy residual core logic
+        run: |
+          for version in 20 21; do
+            g++ -std=c++17 -O2 -fopenmp "Sources/Cpp/ProofTreeV${version}.cpp" -lgmpxx -lgmp -o "Build/ProofTreeV${version}"
+            g++ -std=c++17 -O2 -fopenmp "Sources/Cpp/ProofCoreTestsV${version}.cpp" -lgmpxx -lgmp -o "Build/ProofCoreTestsV${version}"
+            "./Build/ProofCoreTestsV${version}"
+          done
       - name: Run pure Python tests and syntax validation
         run: |
           python3 Sources/Python/CertificateTests.py
