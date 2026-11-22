@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '.github/workflows/PrimeSetTheory.yml'
+      - 'Sources/Python/PrimeSetSearch.py'
 permissions:
   contents: read
 jobs:
