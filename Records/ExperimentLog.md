@@ -194,3 +194,14 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - At each state, remove LP variables for primes already forbidden or already represented in the branched set. The original dual remains feasible for the reduced variable set; the gain is added only when the entire reduced-cost interval is negative.
 - V13 benchmark compares against V12 on identical root order and targets.
 - Status: proof-core tests, certificate generation, and full-root performance pending.
+
+## Experiment 014 result — Affine state-level LP pruning (V12)
+
+- Date: 2026-11-22.
+- Certificate generation: [Run 44996209525](https://github.com/stormwhip/PerfectNumbers/actions/runs/44996209525), all 256 prefix certificates generated; direct primal checks at five abundance targets completed.
+- Matched-root benchmark: same optimized root order, two threads; [run 44996209525](https://github.com/stormwhip/PerfectNumbers/actions/runs/44996209525).
+- Exponent 1000 root 17: V11 7,709 branches / 4.01683 s; V12 7,709 / 3.93147 s; 0 LP cuts.
+- Exponent 1000 root 31: V11 21,408 / 9.97656 s; V12 21,408 / 9.95329 s; 0 LP cuts.
+- Exponent 1500 root 17: V11 187,909 / 33.9337 s; V12 187,909 / 33.7992 s; V12 added 4 state-level LP cuts.
+- Exponent 2201 root 17: both versions timed out at 30 seconds; no completion claim.
+- Conclusion: affine LP cut is valid as a relaxation and executes correctly, but its first form provides only marginal gains. V13 adds certified dual gains from removing variables belonging to state-forbidden or already-branched primes.

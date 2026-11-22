@@ -25,3 +25,5 @@ The numerical LP bound applies to the complementary forbidden-prime-free case. I
 | V11 root-order subset DP | Profiler and exact optimizer implemented; full 1024-edge run pending | [RootOrderProfiler](../Sources/Cpp/RootOrderProfiler.cpp) | Compare optimal order against canonical order at 300 and 500 |
 
 | V11 root-order subset DP | 1024/1024 edges proven; complete-tree gains modest and target-dependent | [Run 44995684900](https://github.com/stormwhip/PerfectNumbers/actions/runs/44995684900) | Profile at exponent 500 before selecting production order |
+
+| V12 affine state-level LP | 256 interval-derived prefix certificates generated; 4 extra cuts in one completed test | [Run 44996209525](https://github.com/stormwhip/PerfectNumbers/actions/runs/44996209525) | Add state-forbidden variable-removal gains (V13) |

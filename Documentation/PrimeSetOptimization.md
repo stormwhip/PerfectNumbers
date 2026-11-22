@@ -211,3 +211,7 @@ Summing these gains over all variables belonging to a prime p gives a certified 
 The dual multipliers on implication rows are retained. If a deleted q-variable had been the only possible witness for an implication, the corresponding row simply becomes more restrictive; the same dual remains feasible. Gains are added only for strictly negative reduced-cost intervals, so no sign ambiguity is used.
 
 The prototype exports gains only for primes at most 300000, matching the small-prime state representation used by the current search. Larger explicit factors remain in the LP relaxation. Composite residuals remain in the LP remainder.
+
+### V12 measured result
+
+The affine certificate workflow generated all 256 prefix duals and checked each affine formula against primal LP objectives at five residual-abundancy targets. The matched-root run [44996209525](https://github.com/stormwhip/PerfectNumbers/actions/runs/44996209525) showed identical branch counts on completed cases; V12 added four LP cuts at exponent 1500, root 17, and reduced that run from 33.9337 s to 33.7992 s. The 2201 test was time-capped at 30 s for both versions.
