@@ -52,3 +52,12 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Reported interval-dual lower endpoint: \(\log_{10}N =3129.458561\) after rounding to six decimals; floating minus certified value \(7.77\times10^{-8}\).
 - Historical Roadblock 2 numerical scan: transition at prime `859`; this threshold scan itself used floating optimization.
 - Result: **the programs ran and produced these values**. Independent verification of every LP relaxation constraint, infinite-tail argument and certificate rounding is still pending.
+
+## Experiment 004 — V7 block-parallel circular cases (code candidate)
+
+- Date: 2026-11-22.
+- Base: V6 preserved unchanged; V7 is a separate code version.
+- Change: partition large roadblock prime cases into disjoint ordered blocks. Each task starts from the forbidden-prefix state of all earlier prime cases; within a block the original sequential exclusion order is retained. Task submissions are throttled to limit memory overhead.
+- Activation: circular roadblock bound `b > 2000`, at least 256 eligible primes, and more than one OpenMP thread.
+- Validation: compilation and `ProofCoreTestsV7` requested through source quality checks. Comparison against V6 and independent review of the prefix-partition argument remain pending.
+- Performance rationale: improve utilization of multi-core hosts for heavy nested circular searches.

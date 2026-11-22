@@ -12,7 +12,7 @@ Computational research on lower bounds for odd perfect numbers (OPNs), combining
 
 | Location | Contents |
 | --- | --- |
-| [Sources/Cpp](Sources/Cpp) | GMP factorization index builder and proof-tree versions V1–V6 |
+| [Sources/Cpp](Sources/Cpp) | GMP factorization index builder and proof-tree versions V1–V7 |
 | [Sources/Python](Sources/Python) | LP baseline, ablation study, interval dual certificate |
 | [Documentation](Documentation) | Technical LaTeX report and preserved historical research handoff |
 | [References](References) | Original Ochem–Rao reference paper |
@@ -73,3 +73,7 @@ V6 is under validation. The ALPHA assumption, probabilistic primality decisions 
 - The next performance gate is a dataset-backed, root-matched comparison of V5 and V6 at a higher exponent.
 
 The historical Python workflow output can be inspected in [Run 44990184125](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990184125). It reports a 3129.458561 complement-case LP value and an interval dual output agreeing to six decimals. The full independent mathematical audit remains open.
+
+## V7 parallel roadblock prototype
+
+`Sources/Cpp/ProofTreeV7.cpp` introduces block-parallel circular prime case checking on large roadblocks. The partition preserves the prior-prime exclusion prefix for each block. Historical V1–V6 implementations remain unchanged, and `ProofCoreTestsV7.cpp` provides a separate smoke-test entry. V7 requires dataset-backed parallel equivalence testing before any proof claims.

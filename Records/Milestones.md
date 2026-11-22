@@ -7,6 +7,7 @@
 | Complement-case LP endgame around exponent 3129 | GitHub computation observed; mathematical audit open | [Python workflow run 44990184125](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990184125) | Independently audit the model and interval dual certificate |
 | GitHub directory and filename normalization | Completed 2026-11-22 | Reorganization commit | Compile and test renamed entry points |
 | V6 conservative roadblock and composite accounting | Core regression passed (2026-11-22) | [ProofTreeV6](../Sources/Cpp/ProofTreeV6.cpp) and [ProofCoreTests](../Sources/Cpp/ProofCoreTests.cpp) | Compilation and core checks passed; dataset-backed V5/V6 benchmark pending |
+| V7 block-parallel heavy roadblocks | Candidate; performance pending | [ProofTreeV7](../Sources/Cpp/ProofTreeV7.cpp) | Multi-thread equivalence, regression and benchmark |
 | Complete unconditional exponent 2200 | Not yet verified in this project | No complete proof artifact on record | Pass all 15 roots plus independently audited endgame |
 | Exceed unconditional exponent 2200 | Research target | Pending | Reproducible, rigorously checked proof tree and certificate |
 
