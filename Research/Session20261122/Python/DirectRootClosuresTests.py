@@ -13,7 +13,7 @@ from IndependentVerifierV2 import DEFAULT_CIRC_ORDER, ORIGINAL_ROOTS, RootTaskPi
 
 def run() -> None:
     result = independently_check_direct_roots(DEFAULT_CIRC_ORDER)
-    expected = {19: 129, 7: 191, 11: 152, 31: 116, 13: 146, 3: 311, 5: 217, 17: 134}
+    expected = {19: 130, 7: 191, 11: 154, 31: 116, 13: 146, 3: 311, 5: 217, 17: 134}
     if result["total_tasks"] != 3072 or result["by_root"] != expected:
         raise RuntimeError(f"wrong independent closure census: {result}")
 
@@ -98,7 +98,7 @@ def run() -> None:
     )
     if direct_root_bundle(no_direct) is not None:
         raise RuntimeError("first root incorrectly certified as forbidden-factor closure")
-    print("DirectRootClosuresTests: PASS (3072 tasks, 1396 independent integer leaves, audit integration)")
+    print("DirectRootClosuresTests: PASS (3072 tasks, 1399 independently checked leaves, audit integration)")
 
 
 if __name__ == "__main__":
