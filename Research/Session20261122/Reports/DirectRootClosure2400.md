@@ -96,6 +96,10 @@ g++ -std=c++17 -O2 Sources/Cpp/SigmaPrecheckTests.cpp -lgmpxx -lgmp -o /tmp/OpnS
 
 Local C++ rebuild of the same `SigmaPrecheck.hpp` implementation passed **36,100 GMP exact-integer comparisons**. A new repository CI run is still needed to verify the pushed source artifact and its Python integration end to end.
 
+### 2026-11-23 additional integer closure family
+
+The 1,396 count in this report covers the original **immediate** integer leaves. A separate cyclotomic finite-quotient certificate family now exhausts three more canonical tasks (`19,d=936`, `11,d=1150`, `11,d=1152`). See [FiniteQuotientCyclotomic2400.md](FiniteQuotientCyclotomic2400.md). Candidate total becomes 1,399/3,072, with 1,673 open, pending a fresh full verifier run. The root-order DP in this report still optimizes only the original one-node rules.
+
 ## 5. Remaining proof gap
 
 The original eight-root complement retains its archived certificate. For the **1,676 non-direct shards**, finish the V21-to-verifier DAG emission, deterministic primality certificates, exact roadblock/state-LP proof rules, residual accounting and full independent audit. Then measure a complete fixed-hardware `T_prep+T_search+T_verify<=72h` run. Until all shards are independently closed, status remains `INCOMPLETE_FRONTIER`.
