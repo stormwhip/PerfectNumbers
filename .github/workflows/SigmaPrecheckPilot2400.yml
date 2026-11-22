@@ -1,0 +1,85 @@
+name: Four-way sigma precheck pilot (2400)
+on:
+  push:
+    branches:
+      - research/sigma-precheck-pilot
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  census:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 14
+    defaults:
+      run:
+        shell: bash
+    env:
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: Requirements.txt
+      - name: Install GMP, zlib and LP requirements
+        run: |
+          python -m pip install -r Requirements.txt
+          sudo apt-get update && sudo apt-get install -y libgmp-dev zlib1g-dev
+      - name: Build sharded V21 and data helpers
+        run: |
+          mkdir -p Build
+          g++ -std=c++17 -O2 Sources/Cpp/SigmaPrecheckTests.cpp -o Build/SigmaPrecheckTests
+          ./Build/SigmaPrecheckTests
+          g++ -std=c++17 -O2 -DOPN_SIGMA_PRECHECK_EXPERIMENT -fopenmp Sources/Cpp/ProofTreeV21.cpp -lgmpxx -lgmp -o Build/ProofTreeV21
+          g++ -std=c++17 -O2 Sources/Cpp/PrimeCutoffCert.cpp -lgmpxx -lgmp -o Build/PrimeCutoffCert
+          g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
+      - name: Create nine enhanced LP prefix tables
+        run: |
+          set -o pipefail
+          python -u Sources/Python/Targeted2400Certificates.py Build/PrefixDualBounds.csv | tee Build/PrefixLog.txt
+      - name: Generate exact 1e8 cutoff and factor index
+        working-directory: Build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ./PrimeCutoffCert 100000000 > PrimeCutoffBuild.log
+          echo '70ba114b47e7539480c418094606b0f39b2bc230337212426872d7f7adb400ec  PrimeCutoffProduct.bin' | sha256sum --check
+          if ! gh release download data-v1 --repo "$GITHUB_REPOSITORY" --pattern checkfacts.txt.gz; then
+            curl --fail --location --retry 2 --max-time 300 \
+              --output checkfacts.txt.gz 'https://www.lirmm.fr/~ochem/opn/checkfacts.txt.gz'
+          fi
+          echo 'ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119  checkfacts.txt.gz' | sha256sum --check
+          ./BuildIndex checkfacts.txt.gz
+          test "$(stat -c %s facts.dat)" = 745826778
+          test "$(stat -c %s facts.idx)" = 1322332128
+      - name: Compare four search modes for the same pinned shards
+        working-directory: Build
+        run: |
+          mkdir -p SigmaPilotLogs
+          for index in 35 130 0 100; do
+            seconds=8
+            if [[ "$index" == 0 || "$index" == 100 ]]; then seconds=20; fi
+            for mode in G0 G1 G2 G3; do
+              log="SigmaPilotLogs/$mode-$index.log"
+              start="$(date +%s%N)"
+              rc=0
+              OPN_SIGMA_PILOT="$mode" timeout --signal=TERM --kill-after=2s "${seconds}s" ./ProofTreeV21 2400 19 "$index" > "$log" 2>&1 || rc=$?
+              end="$(date +%s%N)"
+              if (( rc == 124 || rc == 137 )); then status=TIMEOUT
+              elif (( rc == 0 )) && grep -Eq "^Forbid p=19 branch=$index/[0-9]+ -> PROVEN .*failed_rb=0" "$log"; then status=PROVEN
+              else status=CHECK_LOG
+              fi
+              echo "SIGMA_RESULT mode=$mode index=$index status=$status rc=$rc elapsed_ms=$(( (end-start)/1000000 ))" | tee -a SigmaPilotLogs/Results.txt
+              grep -E '^\[PROGRESS\]|^Forbid p=19 branch=|^SIGMA_PILOT_COUNTS' "$log" | tail -4 || true
+            done
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: SigmaPrecheckPilot
+          path: Build/SigmaPilotLogs/
+          if-no-files-found: ignore

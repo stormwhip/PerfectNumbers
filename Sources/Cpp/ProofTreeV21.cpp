@@ -25,6 +25,9 @@
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
+#ifdef OPN_SIGMA_PRECHECK_EXPERIMENT
+#include "SigmaPrecheck.hpp"
+#endif
 
 struct IdxEntry {
     uint64_t h1;
@@ -270,11 +273,31 @@ double certify_sigma_residual_abundance_upper(const mpz_class& composite) {
 
 FactDB db;
 thread_local std::unordered_map<std::string, SigmaFact> fact_cache;
+#ifdef OPN_SIGMA_PRECHECK_EXPERIMENT
+bool reuse_sigma_prp = false, use_sigma_precheck = false;
+std::atomic<uint64_t> pilot_prp_calls{0}, pilot_fact_hits{0}, pilot_fact_misses{0},
+                      pilot_v2_prunes{0}, pilot_quota_prunes{0};
+#endif
+
+int sigma_probable_prime(const mpz_class& value) {
+#ifdef OPN_SIGMA_PRECHECK_EXPERIMENT
+    pilot_prp_calls.fetch_add(1, std::memory_order_relaxed);
+#endif
+    return mpz_probab_prime_p(value.get_mpz_t(), 5);
+}
 
 const SigmaFact& get_sigma_fact(const mpz_class& p, uint64_t a) {
     std::string key = p.get_str() + " " + std::to_string(a + 1);
     auto it = fact_cache.find(key);
-    if (it != fact_cache.end()) return it->second;
+    if (it != fact_cache.end()) {
+#ifdef OPN_SIGMA_PRECHECK_EXPERIMENT
+        pilot_fact_hits.fetch_add(1, std::memory_order_relaxed);
+#endif
+        return it->second;
+    }
+#ifdef OPN_SIGMA_PRECHECK_EXPERIMENT
+    pilot_fact_misses.fetch_add(1, std::memory_order_relaxed);
+#endif
 
     if (fact_cache.size() > 150000) fact_cache.clear();
 
@@ -302,13 +325,16 @@ const SigmaFact& get_sigma_fact(const mpz_class& p, uint64_t a) {
         if (cnt > 0) res.primes.push_back({f, cnt});
     }
 
-    if (rem > 1 && mpz_probab_prime_p(rem.get_mpz_t(), 5) == 0) {
+    int primality = rem > 1 ? sigma_probable_prime(rem) : 0;
+    bool changed = false;
+    if (rem > 1 && primality == 0) {
         size_t digits = mpz_sizeinbase(rem.get_mpz_t(), 10);
         uint32_t trial_lim = (digits <= 10) ? 10000 : 1000;
         for (uint32_t sp : small_primes) {
             if (sp > trial_lim || rem == 1) break;
             if (digits <= 10 && mpz_cmp_ui(rem.get_mpz_t(), static_cast<uint64_t>(sp) * sp) < 0) break;
             if (mpz_divisible_ui_p(rem.get_mpz_t(), sp)) {
+                changed = true;
                 uint64_t cnt = 0;
                 while (mpz_divisible_ui_p(rem.get_mpz_t(), sp)) {
                     rem /= sp;
@@ -320,7 +346,13 @@ const SigmaFact& get_sigma_fact(const mpz_class& p, uint64_t a) {
     }
 
     if (rem > 1) {
-        if (mpz_probab_prime_p(rem.get_mpz_t(), 5) > 0) {
+#ifdef OPN_SIGMA_PRECHECK_EXPERIMENT
+        if (!reuse_sigma_prp || changed) primality = sigma_probable_prime(rem);
+#else
+        (void)changed;
+        primality = sigma_probable_prime(rem);
+#endif
+        if (primality > 0) {
             res.primes.push_back({rem, 1});
             rem = 1;
         } else {
@@ -589,6 +621,29 @@ bool branch_component(const State& base, const mpz_class& p, uint64_t a, bool is
         if (small_prime_divides_sigma(p, a, s)) return true;
     }
 
+#ifdef OPN_SIGMA_PRECHECK_EXPERIMENT
+    if (use_sigma_precheck) {
+        if (sigma_precheck::divisible_by_four(mpz_fdiv_ui(p.get_mpz_t(), 4), a)) {
+            pilot_v2_prunes.fetch_add(1, std::memory_order_relaxed);
+            return true;
+        }
+        for (const auto& [q, info] : base.branched) {
+            if (!info.exact || !q.fits_ulong_p()) continue;
+            if (info.seen_in_sigma > info.exp) {
+                pilot_quota_prunes.fetch_add(1, std::memory_order_relaxed);
+                return true;
+            }
+            const uint64_t qu = q.get_ui();
+            const auto m = sigma_precheck::modulus(
+                qu, info.exp - info.seen_in_sigma + 1, std::numeric_limits<unsigned long>::max());
+            if (m && sigma_precheck::valuation_at_least(
+                    mpz_fdiv_ui(p.get_mpz_t(), static_cast<unsigned long>(m)), a + 1, qu, m)) {
+                pilot_quota_prunes.fetch_add(1, std::memory_order_relaxed);
+                return true;
+            }
+        }
+    }
+#endif
     const SigmaFact& sf = get_sigma_fact(p, a);
     if (sf.div_by_4) return true;
 
@@ -1029,6 +1084,13 @@ bool solve(State& st, bool in_circ, int depth, std::atomic<bool>& ok_flag) {
 }
 
 int main(int argc, char** argv) {
+#ifdef OPN_SIGMA_PRECHECK_EXPERIMENT
+    if (const char* mode = std::getenv("OPN_SIGMA_PILOT")) {
+        const std::string value(mode);
+        reuse_sigma_prp = value == "G1" || value == "G3";
+        use_sigma_precheck = value == "G2" || value == "G3";
+    }
+#endif
     int bound_exp = (argc >= 2) ? std::atoi(argv[1]) : 1500;
     uint32_t only_p = (argc >= 3) ? static_cast<uint32_t>(std::atoi(argv[2])) : 0;
     const bool shard_listing = argc >= 4 && std::string(argv[3]) == "list";
@@ -1161,6 +1223,13 @@ int main(int argc, char** argv) {
                           << " | lazy_states=" << lazy_triggered_states.load(std::memory_order_relaxed)
                           << " | gcd_seconds=" << (cutoff_gcd_nanoseconds.load(std::memory_order_relaxed) * 1e-9)
                           << " | lp_early=" << state_lp_early_prunes.load(std::memory_order_relaxed)
+#ifdef OPN_SIGMA_PRECHECK_EXPERIMENT
+                          << " | sigma_prp=" << pilot_prp_calls.load()
+                          << " | fact_miss=" << pilot_fact_misses.load()
+                          << " | fact_hit=" << pilot_fact_hits.load()
+                          << " | early_v2=" << pilot_v2_prunes.load()
+                          << " | early_quota=" << pilot_quota_prunes.load()
+#endif
                           << " | elapsed=" << elapsed << "s" << std::endl;
             }
         });
@@ -1221,5 +1290,11 @@ int main(int argc, char** argv) {
               << " (circ: " << circ_branches.load() << "), failed_rb: " << failed_roadblocks.load()
               << ", lp_prunes: " << state_lp_prunes.load() << ", elapsed: " << total_dt << "s\n";
     if ((only_p != 0 && !matched_root) || (shard_single && !matched_root)) return 2;
+#ifdef OPN_SIGMA_PRECHECK_EXPERIMENT
+    std::cout << "SIGMA_PILOT_COUNTS sigma_prp=" << pilot_prp_calls.load()
+              << " fact_miss=" << pilot_fact_misses.load() << " fact_hit=" << pilot_fact_hits.load()
+              << " early_v2=" << pilot_v2_prunes.load() << " early_quota=" << pilot_quota_prunes.load()
+              << std::endl;
+#endif
     return any_failure ? 3 : 0;
 }
