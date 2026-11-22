@@ -84,4 +84,15 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Modification: independent timer reporter emits flushed `[PROGRESS]` events every 10 seconds with total and circular branch counts, failed roadblock count, maximum roadblock prime bound, and elapsed wall time.
 - Purpose: characterize the bottleneck on exponent-2201 roots 17 and 307 even when a bounded experiment times out.
 - Planned probe: 60-second cap per root, fixed factorization snapshot, 2 OpenMP threads, uploaded logs.
-- Validation and results: pending workflow execution.
+- Validation: **PASS**, [GitHub Actions 44991559025](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991559025), index builder and V1–V8 compiled, core tests and Python syntax passed.
+- Results: [Run 44991559032](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991559032), fixed checksum database of 106,206,170 entries and 41,322,879 groups; V8 at exponent 2201, root 17: **TIMEOUT** after 60 seconds; at elapsed 50 s, 403,628 total branches, 0 circular, 0 failed roadblocks, maximum roadblock bound 3. Root 307: **TIMEOUT** after 60 seconds; at elapsed 50 s, 412,952 total branches, 7,974 circular, 0 failed roadblocks, maximum roadblock bound 29. The `TargetedProbeLogs` artifact in the workflow contains 10-second progress logs.
+- Bottleneck: the first 50 seconds are dominated by ordinary factor-chain DFS, not by the heavy roadblock path (`b > 2000`) targeted in V7. Future work should optimize ordinary DFS task scheduling.
+
+## Experiment 007 — V9 bounded deep task scheduling (candidate)
+
+- Date: 2026-11-22.
+- Base: `ProofTreeV8.cpp`; original V8 remains available unchanged for comparison.
+- Mechanism: allow independent exponent branches to become OpenMP tasks through depth 11; cap outstanding task reservations at eight per available thread. When the queue is at capacity, execute locally; task completion always releases reservations. Preserve the same exponent enumeration and contradiction checks.
+- Motivation: root-17 and root-307 searches at exponent 2201 show hundreds of thousands of ordinary DFS branches during short probes.
+- Validation: compile and core regression are triggered by the quality workflow; benchmark at matched root/exponent must be run independently.
+- Status: candidate; no performance result or proof certificate claimed yet.

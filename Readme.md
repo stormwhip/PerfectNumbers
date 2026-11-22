@@ -12,7 +12,7 @@ Computational research on lower bounds for odd perfect numbers (OPNs), combining
 
 | Location | Contents |
 | --- | --- |
-| [Sources/Cpp](Sources/Cpp) | GMP factorization index builder and proof-tree versions V1–V8 |
+| [Sources/Cpp](Sources/Cpp) | GMP factorization index builder and proof-tree versions V1–V9 |
 | [Sources/Python](Sources/Python) | LP baseline, ablation study, interval dual certificate |
 | [Documentation](Documentation) | Technical LaTeX report and preserved historical research handoff |
 | [References](References) | Original Ochem–Rao reference paper |
@@ -85,3 +85,5 @@ The first bounded probe at exponent 2201 timed out after 120 seconds on each of 
 ## V8 diagnostic build
 
 `Sources/Cpp/ProofTreeV8.cpp` adds 10-second progress reports, allowing bounded high-exponent experiments to expose where time is spent. Each report includes branch and circular-branch counts and the largest roadblock bound encountered. A short follow-up probe at exponent 2201 is tracked in `.github/workflows/TargetedProbe.yml`.
+
+V8 diagnostics in [run 44991559032](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991559032) found 403,628 branches for root 17 and 412,952 for root 307 by 50 seconds of exponent-2201 search; neither root finished in 60 seconds. Their maximum observed roadblock bounds were only 3 and 29 respectively. V9 is an experimental bounded-deep-task prototype designed to address ordinary DFS load imbalance, subject to benchmark and proof audit.
