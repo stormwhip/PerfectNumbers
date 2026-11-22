@@ -5,7 +5,7 @@
 // - Fixes B-4: cleans up hash128() typo
 
 #include "V21FrontierCodec.hpp"
-#include "../../Experimental/SigmaPrecheck.hpp"
+#include "SigmaPrecheck.hpp"
 
 #include <gmpxx.h>
 #include <omp.h>
