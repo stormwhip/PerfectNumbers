@@ -1,0 +1,103 @@
+name: Bounded 2400 root-19 exponent shard census
+on:
+  push:
+    paths:
+      - '.github/workflows/Shard2400Census.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  census:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 14
+    defaults:
+      run:
+        shell: bash
+    env:
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: Requirements.txt
+      - name: Install GMP, zlib and LP requirements
+        run: |
+          python -m pip install -r Requirements.txt
+          sudo apt-get update && sudo apt-get install -y libgmp-dev zlib1g-dev
+      - name: Build sharded V21 and data helpers
+        run: |
+          mkdir -p Build
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV21.cpp -lgmpxx -lgmp -o Build/ProofTreeV21
+          g++ -std=c++17 -O2 Sources/Cpp/PrimeCutoffCert.cpp -lgmpxx -lgmp -o Build/PrimeCutoffCert
+          g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
+      - name: Create nine enhanced LP prefix tables
+        run: |
+          set -o pipefail
+          python -u Sources/Python/Targeted2400Certificates.py Build/PrefixDualBounds.csv | tee Build/PrefixLog.txt
+      - name: Generate exact 1e8 cutoff and factor index
+        working-directory: Build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ./PrimeCutoffCert 100000000 > PrimeCutoffBuild.log
+          echo '70ba114b47e7539480c418094606b0f39b2bc230337212426872d7f7adb400ec  PrimeCutoffProduct.bin' | sha256sum --check
+          if ! gh release download data-v1 --repo "$GITHUB_REPOSITORY" --pattern checkfacts.txt.gz; then
+            curl --fail --location --retry 2 --max-time 300 \
+              --output checkfacts.txt.gz 'https://www.lirmm.fr/~ochem/opn/checkfacts.txt.gz'
+          fi
+          echo 'ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119  checkfacts.txt.gz' | sha256sum --check
+          ./BuildIndex checkfacts.txt.gz
+          test "$(stat -c %s facts.dat)" = 745826778
+          test "$(stat -c %s facts.idx)" = 1322332128
+      - name: Enumerate all prime-19 root exponent shards, cap each at one second
+        working-directory: Build
+        run: |
+          set -u
+          set -o pipefail
+          mkdir -p ShardLogs
+          ./ProofTreeV21 2400 19 list > Root19Shards.txt
+          grep '^SHARD root=19 ' Root19Shards.txt > ShardEntries.txt
+          n="$(wc -l < ShardEntries.txt)"
+          echo "SHARD_CENSUS total=$n root=19 target=2400"
+          proven=0
+          timed=0
+          unresolved=0
+          while IFS= read -r line; do
+            index="$(sed -n 's/.* index=\([0-9]*\).*/\1/p' <<< "$line")"
+            exponent="$(sed -n 's/.* exponent=\([0-9]*\).*/\1/p' <<< "$line")"
+            exact="$(sed -n 's/.* exact=\([01]\).*/\1/p' <<< "$line")"
+            log="ShardLogs/Shard_$index.log"
+            set +e
+            timeout --signal=TERM --kill-after=1s 1s ./ProofTreeV21 2400 19 "$index" 2>&1 | tee "$log" >/dev/null
+            rc=$?
+            set -e
+            if [[ "$rc" -eq 0 ]] && grep -Eq "^Forbid p=19 branch=$index/$n -> PROVEN .*failed_rb=0" "$log"; then
+              status=PROVEN
+              proven=$((proven + 1))
+            elif [[ "$rc" -eq 124 ]]; then
+              status=TIMEOUT
+              timed=$((timed + 1))
+            else
+              status=UNRESOLVED
+              unresolved=$((unresolved + 1))
+            fi
+            echo "SHARD_CENSUS_RESULT root=19 index=$index exponent=$exponent exact=$exact status=$status rc=$rc" | tee -a Root19Summary.txt
+          done < ShardEntries.txt
+          echo "SHARD_CENSUS_COMPLETE root=19 total=$n proven=$proven timeout=$timed unresolved=$unresolved" | tee -a Root19Summary.txt
+      - name: Preserve exact shard census and failed branch logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Root19ShardCensus2400
+          path: |
+            Build/Root19Shards.txt
+            Build/Root19Summary.txt
+            Build/ShardLogs/
+            Build/PrefixLog.txt
+          retention-days: 30
+          if-no-files-found: ignore
