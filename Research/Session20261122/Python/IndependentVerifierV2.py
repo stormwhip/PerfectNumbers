@@ -951,6 +951,28 @@ def verify_leaf_node(
     for lemma in witness.get("deductions", []):
         working = apply_sigma_deduction(working, lemma, verified_primes)
 
+    if reason == "SIGMA_DIVISOR_SIZE":
+        # For any branch d representing the true exponent e, either e=d
+        # or d+1 divides e+1. Thus sigma(p^d) | sigma(p^e) | 2N.
+        # Its odd part divides N, and gcd(p, sigma(p^d)) = 1.
+        # Therefore p^d * odd(sigma(p^d)) divides every possible N.
+        src_p = require_strict_int(witness.get("source_p"), "sigma_size.source_p", 3)
+        d = require_strict_int(witness.get("d"), "sigma_size.d", 1)
+        if src_p not in working.branched or working.branched[src_p].exp != d:
+            raise VerificationError("SIGMA_DIVISOR_SIZE source_p/d mismatch")
+        # A cheap exact bit-length witness avoids allocating enormous
+        # powers for maliciously oversized exponents.
+        if (src_p.bit_length() - 1) * d > upper_bound_N.bit_length():
+            return "LEAF_ACCEPTED"
+        sigma = sigma_prime_power(src_p, d)
+        odd_sigma = sigma // (sigma & -sigma)
+        forced_divisor = pow(src_p, d) * odd_sigma
+        if forced_divisor <= upper_bound_N:
+            raise VerificationError(
+                f"SIGMA_DIVISOR_SIZE failed for p={src_p}, d={d}"
+            )
+        return "LEAF_ACCEPTED"
+
     if reason == "SIZE_EXCEEDS_BOUND":
         min_size = working.min_size_lower_bound()
         if "claimed_min_size" in witness:
