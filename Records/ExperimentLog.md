@@ -168,3 +168,13 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - The generator checks 256 prefix masks and compares the affine dual against primal LP objectives at five abundance targets \(R\in\{1.1,1.25,1.5,2,3\}\).
 - Runtime DFS can evaluate this bound in constant time using a safe upper bound on the abundancy of already fixed prime powers. The LP deliberately retains all primes outside prefix F, including state-forbidden and already-fixed primes, making it a relaxation.
 - Status: Python certificate generation and C++ integration pending.
+
+## Experiment 012 result — Exact subset DP and full-tree validation
+
+- Date: 2026-11-22.
+- Exhaustive profile: [Run 44995685025](https://github.com/stormwhip/PerfectNumbers/actions/runs/44995685025), all 1024 transitions PROVEN at exponent 300.
+- Exact DP result for exponent 300: both branch-count and measured-time objectives selected \(19,11,7,31,13,3,5,17\), with predicted 14,168 branches and 0.540929 seconds from cold-cache edge sums.
+- Complete-tree comparison: [Run 44995684900](https://github.com/stormwhip/PerfectNumbers/actions/runs/44995684900).
+- Exponent 300: canonical order 14,238 branches / 0.687752 s; DP order 14,168 branches / 0.644600 s.
+- Exponent 500: canonical order 40,733 branches / 7.99203 s; exponent-300 DP order 41,271 branches / 7.80897 s.
+- Interpretation: the DP order gives a modest improvement at exponent 300; the exponent-300 optimum does not minimize branch count at exponent 500. A target-specific profile is required. Wall time improved slightly at 500 despite 1.32% more branches, consistent with ordering/cache effects.

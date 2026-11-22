@@ -23,3 +23,5 @@ The numerical LP bound applies to the complementary forbidden-prime-free case. I
 | Reduced eight-root tree benchmark | Completed; slower at exponent 300 and 500 | [Run 44993825296](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993825296) | Optimize root order and deep-pruning policies |
 
 | V11 root-order subset DP | Profiler and exact optimizer implemented; full 1024-edge run pending | [RootOrderProfiler](../Sources/Cpp/RootOrderProfiler.cpp) | Compare optimal order against canonical order at 300 and 500 |
+
+| V11 root-order subset DP | 1024/1024 edges proven; complete-tree gains modest and target-dependent | [Run 44995684900](https://github.com/stormwhip/PerfectNumbers/actions/runs/44995684900) | Profile at exponent 500 before selecting production order |
