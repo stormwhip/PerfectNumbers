@@ -1176,6 +1176,8 @@ int main(int argc, char** argv) {
                           << " | lazy_states=" << lazy_triggered_states.load(std::memory_order_relaxed)
                           << " | gcd_seconds=" << (cutoff_gcd_nanoseconds.load(std::memory_order_relaxed) * 1e-9)
                           << " | lp_early=" << state_lp_early_prunes.load(std::memory_order_relaxed)
+                          << " | exact_even=" << exact_even_power_cuts.load(std::memory_order_relaxed)
+                          << " | exact_lcm=" << exact_lcm_cuts.load(std::memory_order_relaxed)
                           << " | elapsed=" << elapsed << "s" << std::endl;
             }
         });
