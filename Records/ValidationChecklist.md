@@ -2,6 +2,17 @@
 
 **截至 2026-11-22。** 本清单区分**运行成功**与**数学证明成立**。关联数学定义见 [形式化研究难题](../Documentation/ResearchProblems2400.md)，具体证据见 [进展报告](../Documentation/ProgressReport2400.md)。
 
+> 当前已新增独立验证器 V2、SQLite 账本与只读 3072 项验收框架。数学验收仍未完成。权威进度见 [CurrentStatus2400.md](../Documentation/CurrentStatus2400.md)。
+
+## 最新验证器及全量验收（2026-11-22）
+
+- [x] 集成外部固定根的 `IndependentVerifierV2.py`、可恢复 `FrontierLedgerV2.py` 及只读 `AuditRunner2400.py`，附合成/篡改测试源码。
+- [x] 原根集及替换根集互素类证书已有独立整数核验记录；两者分区隔离。
+- [ ] 冻结 V21 搜索和实验 Frontier 输出完整可重验的证明 DAG，兼容持续分裂、路障和 LP。
+- [ ] 全部 3,072 原根集顶层任务由独立验证器报告 `VERIFIED_CLOSED`，开放和未解决任务均为零。
+- [ ] 证明生成、原子提交、独立验收在固定硬件和数据下完成 72 小时端到端实测。
+- [ ] 目录调整后的自动化回归（Python/C++、链接及大小写）全部通过。
+
 ## A. 输入与程序可重复性
 
 - [x] 固定 Ochem 因子表输入哈希 `ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119`。

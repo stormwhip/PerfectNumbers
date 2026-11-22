@@ -1,5 +1,7 @@
 # PerfectNumbers — Independent verification integration for 10^2400
 
+> **2026-11-22 最新入口：** [CurrentStatus2400.md](../../../Documentation/CurrentStatus2400.md)。本文保存独立验证框架的工程状态；全量 `TREE_ACCEPTED` 与 72 小时完整验收尚未完成。
+
 Date: 2026-11-22. Base commit: b6b2f4c. Target bound B = 10^2400.
 Search reference V21 is frozen. The files in this integration are experimental proof/runner components and do not certify all of B.
 
@@ -32,7 +34,7 @@ Python 3.11 -S -O passed: VerifierV2Tests, VerifierV2AuditTests, FrontierV2Fault
 
 Reproduction:
 
-    for n in VerifierV2Tests VerifierV2AuditTests FrontierV2FaultTests AuditRunnerTests AuditRunnerAuditTests FrontierV2MixedEdgeTests; do python3 -S -O Research/2026-11-22/Python/$n.py || exit 1; done
+    for n in VerifierV2Tests VerifierV2AuditTests FrontierV2FaultTests AuditRunnerTests AuditRunnerAuditTests FrontierV2MixedEdgeTests; do python3 -S -O Research/Session20261122/Python/$n.py || exit 1; done
     g++ -std=c++17 -O2 Sources/Cpp/V21FrontierCodecTests.cpp -lgmpxx -lgmp -o /tmp/opn_codec && /tmp/opn_codec
     g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV21Frontier.cpp -lgmpxx -lgmp -o /tmp/opn_frontier
     OMP_NUM_THREADS=2 /tmp/opn_frontier bench-nodb 14 7 0 --no-db

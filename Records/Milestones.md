@@ -1,11 +1,11 @@
 # PerfectNumbers 当前里程碑
 
-**状态快照：2026-11-22**。主要目标：证明每个奇完全数 \(N>10^{2400}\)，以独立可核验证书作为完成判据。
+**状态快照：2026-11-22（更新至独立验证器 V2/实验 G1）**。目标与当前完整状态见 [CurrentStatus2400.md](../Documentation/CurrentStatus2400.md)。全局状态仍为 `INCOMPLETE_FRONTIER`。
 
 | 里程碑 | 当前状态 | 直接证据 | 下一项验收 |
 | --- | --- | --- | --- |
 | 前人 \(10^{1500}\) 下界 | 已发表的参考结果 | [Ochem–Rao 2012](../References/OchemRao2012.pdf) | 用作独立回归比较 |
-| \(S_8\)-互素终局 LP | **输出 2400.822998，未完成独立数学审计** | [45001172416](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416) | LP 模型涵盖性证明 + 独立导出对偶 |
+| \(S_8\)-互素终局 LP | 旧阶段 LP 数值输出 2400.822998；最新互素类证书见上方 | [45001172416](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416) | LP 模型涵盖性证明 + 独立导出对偶 |
 | 256 个前缀区间表 | 生成成功 | [45004245214](https://github.com/stormwhip/PerfectNumbers/actions/runs/45004245214) | 独立核查系数、增益与调用条件 |
 | 正式证明树版本 | V21 | [源代码](../Sources/Cpp/ProofTreeV21.cpp) · [质量检查](https://github.com/stormwhip/PerfectNumbers/actions/runs/45007403402) | 完整覆盖性与证明规则审计 |
 | 根 19 指数分片 | 287 任务；164 个在 1 秒内完成，123 个超时 | [45005912683](https://github.com/stormwhip/PerfectNumbers/actions/runs/45005912683) | 长尾任务继续分片，穷尽证明 |

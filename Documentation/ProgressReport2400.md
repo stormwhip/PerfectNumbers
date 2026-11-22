@@ -1,8 +1,20 @@
 # PerfectNumbers：\(10^{2400}\) 当前进展报告
 
-**更新日期：2026-11-22** · **主分支基线：V21** · **研究分支：V22–V24** · **研究目标：给出可独立验证的无条件 \(N>10^{2400}\) 证明**。
+**更新日期：2026-11-22（独立证明系统已集成）** · **基线：V21** · **实验性前沿：V2 验证器/G1 C++** · **全局状态：`INCOMPLETE_FRONTIER`**。
 
 > **当前结论：** 原八根互素类已独立验证 \(\log_{10}N\ge4183.209493\)，替换根 \(19\to23\) 的互素类已独立验证 \(\log_{10}N\ge3954.197016\)。两套集合的八个含根分支类仍需完成全量计算与独立核验。
+
+## 最新：独立验证框架的集成与剩余工作
+
+以 [CurrentStatus2400.md](CurrentStatus2400.md) 为权威进度入口。原根集互素类证书已经独立核验，指数清单有 3,072 项；含根类仍未形成全部 `TREE_ACCEPTED` 的证明 DAG。原根与替换根集不能混用。
+
+- 新增 [IndependentVerifierV2.py](../Research/Session20261122/Python/IndependentVerifierV2.py)，严格要求外部固定根、逐边重建、完整素性见证及可验证剪枝；配套合成、篡改、路障、LP 规则回归。
+- 新增 [FrontierLedgerV2.py](../Research/Session20261122/Python/FrontierLedgerV2.py)、[AuditRunner2400.py](../Research/Session20261122/Python/AuditRunner2400.py) 和 [FrontierWorkerDriver.py](../Research/Session20261122/Python/FrontierWorkerDriver.py)，具备可恢复前沿、只读审计与部分 Worker 桥接。
+- 新增 [ProofTreeV21Frontier.cpp](../Sources/Cpp/ProofTreeV21Frontier.cpp)、[V21FrontierCodec.hpp](../Sources/Cpp/V21FrontierCodec.hpp)、[SingleFlightFactCache.hpp](../Sources/Cpp/SingleFlightFactCache.hpp)。仍缺真实 C++ → Python 证明 DAG 桥接、全部 V21 路障/LP 语义、大素数证书、单飞缓存接入。
+- 新的模块已有先前小规模测试记录，目录变更后的自动化回归仍需重新执行；完整 3,072 项和 72 小时目标均未验收。
+- 完整说明：[IndependentProofIntegration2400.md](../Research/Session20261122/Reports/IndependentProofIntegration2400.md)。
+
+以下 V21 / V22–V24 章节保留阶段实验事实，历史状态描述以本节为准。
 
 **数学问题与验收条件详见 [ResearchProblems2400.md](ResearchProblems2400.md)。** 本文汇总对应的实际代码与实验事实。先前 V16 阶段的长篇原始报告可在 [2026-11-22 整理前快照](https://github.com/stormwhip/PerfectNumbers/blob/90100f4447f9196835951fdb7e9dcdd3ab23723f/Documentation/ProgressReport2400.md) 阅读。
 
@@ -45,7 +57,7 @@ $$
 \qquad\text{（条件 LP 的区间对偶程序输出）}.
 $$
 
-这是早期程序输出。后续终局模型将诱导素数显式化，并以整数和递归素性见证独立重验对偶。原集合和替换集合的互素类均已排除目标区间中的候选。[证书、推导及复现命令](../Research/2026-11-22/Reports/CertifiedTerminalAndBoundaryProfile.md)
+这是早期程序输出。后续终局模型将诱导素数显式化，并以整数和递归素性见证独立重验对偶。原集合和替换集合的互素类均已排除目标区间中的候选。[证书、推导及复现命令](../Research/Session20261122/Reports/CertifiedTerminalAndBoundaryProfile.md)
 
 ## 4. V21：困难根的实证
 
@@ -59,17 +71,17 @@ $$
 
 [八根顺序动态规划 45007403299](https://github.com/stormwhip/PerfectNumbers/actions/runs/45007403299) 对代理指标进行了全子集优化：其代理成本降幅约 0.03%–2.64%，尚无完整八根墙钟耗时的证明。短时测试中，根 19、17、31 仍不能在 30 秒内穷尽。
 
-**72 小时目标未经过完整实测验证。** 路障乘子参考实现已在固定精度下精确找出最小可认证分界，完成 224,456 个小规模格点对照。它仍需接入真实节点的回放，以校准低成本候选乘子和复核 C++ 路障路径。[推导与复现](../Research/2026-11-22/Reports/RoadblockMultiplierSearch.md)
+**72 小时目标未经过完整实测验证。** 路障乘子参考实现已在固定精度下精确找出最小可认证分界，完成 224,456 个小规模格点对照。它仍需接入真实节点的回放，以校准低成本候选乘子和复核 C++ 路障路径。[推导与复现](../Research/Session20261122/Reports/RoadblockMultiplierSearch.md)
 
 ## 4.1 原生路障对照与分支覆盖审计
 
 - C++ 整数判界已在 Linux 实验分支跑过真实节点。会触发路障的根 19 分片 66、132、138、149 均完成三方对照，证书模式四项耗时均增加。困难分片 0、100 在 45 秒内两种模式都超时，且尚未进入路障。
 - 主线已修复循环分支预算对已计入合数残余的素因子重复计价的问题。独立验证确认了实际根 19 清单的 287 项，原根集和替换根集的参考清单分别为 3,072 和 3,058 项。
-- [实验数据、修复依据和覆盖核验](../Research/2026-11-22/Reports/NativeRoadblockPilot.md)
+- [实验数据、修复依据和覆盖核验](../Research/Session20261122/Reports/NativeRoadblockPilot.md)
 
 ## 5. 2026-11-22 性能研究 V22–V24
 
-所有新原型均保存在 [Research/2026-11-22/](../Research/2026-11-22/README.md)，不改变正式 V21 调度脚本。
+所有新原型均保存在 [Research/Session20261122/](../Research/Session20261122/Readme.md)，不改变正式 V21 调度脚本。
 
 | 版本 | 数学/工程改动 | 实验结论 |
 | --- | --- | --- |
@@ -93,7 +105,7 @@ V21 剖析表明素性测试是困难分片 0、100 的主要计时热点。V23 
 
 - [形式化数学研究难题](ResearchProblems2400.md)
 - [当前验收清单](../Records/ValidationChecklist.md)
-- [研究实验归档](../Research/2026-11-22/README.md)
+- [研究实验归档](../Research/Session20261122/Readme.md)
 - [历史实验日志](../Records/ExperimentLog.md)
 - [Ochem–Rao (2012) 原始论文](../References/OchemRao2012.pdf)
 

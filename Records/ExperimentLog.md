@@ -1,4 +1,4 @@
-> **仓库精简记录（2026-11-22）**：主目标统一为 \(N>10^{2400}\)，过时的 V1–V15/V17 源代码、旧 CI 工作流与实验性脚本已从当前主分支删除。历史运行日志仍在本文及 Actions 中，全部旧文件可从 [精简前原始快照](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70) 恢复。当前入口为 [ProgressReport2400](../Documentation/ProgressReport2400.md)、ProofTreeV16.cpp 与 IntervalCertificate61.py。
+> **仓库精简记录（2026-11-22）**：主目标统一为 \(N>10^{2400}\)，过时的 V1–V15/V17 源代码、旧 CI 工作流与实验性脚本已从当前主分支删除。历史运行日志仍在本文及 Actions 中，全部旧文件可从 [精简前原始快照](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70) 恢复。当前入口为 [CurrentStatus2400](../Documentation/CurrentStatus2400.md)、冻结 V21 的 ProofTreeV21.cpp 与实验性独立验证器 V2。
 
 # Experiment Log
 
@@ -13,12 +13,21 @@ This log separates **imported historical claims**, **directly observed experimen
 - Verification: Git tree blob-SHA preservation for relocated source files. Compilation and large-data experiments are pending.
 - Proof impact: **none**. No new bound is claimed.
 
+## 2026-11-22 — Independent proof framework and PascalCase structure
+
+- Baseline before renaming: commit `7d7c1c6`. Target: eliminate odd perfect numbers up to `10^2400`.
+- Status: original coprime-class certificate independently verified with `log10 N >= 4183.209493`. Original manifest: 3072 top-level exponent shards, no complete independently verified closure.
+- Integrated external-pinned Python verifier, SQLite frontier ledger, read-only audit runner, experimental G1 search with V2 frontier codec, and preliminary Worker bridge. Historical proof-tree V21 remains the reference executable.
+- Rename `Research/2026-11-22/` to `Research/Session20261122/`; rename the local research `README.md` to `Readme.md` while preserving certificate and unmodified prototype blob hashes. Add canonical [current status](../Documentation/CurrentStatus2400.md) and update inbound relative links.
+- The directory rewrite and regression workflow do not imply new mathematical results or a 72-hour benchmark.
+- Pending: complete SPLIT/LEAF DAG export, original V21 roadblock/conditional LP parity, certified large primes, full original-root acceptance and timing.
+
 ## Imported historical observations (unverified in this session)
 
 - 2012 published reference bound: `10^1500`.
 - Historical project handoff reports a V4 15-root proof-tree experiment at exponent 1500 (about 1054 seconds, approximately 33 million branches, zero failed roadblocks).
 - Historical handoff reports an LP endgame exponent of about 3129.458561 for the complement of the 15-prime set.
-- These entries are not newly reproduced runs. Original claims and parameters are preserved in [LegacyResearchHandoff](../Documentation/LegacyResearchHandoff.md).
+- These entries are not newly reproduced runs. Original claims and parameters are preserved in [historical project snapshot](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70).
 
 ## Future experiment template
 

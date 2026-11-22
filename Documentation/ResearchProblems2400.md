@@ -1,5 +1,7 @@
 # 奇完全数下界 \(10^{2400}\) 的形式化研究问题
 
+> **2026-11-22 状态更新：** 原根集互素类已具备独立证书（`log10 N >= 4183.209493`）；V21 含根 3,072 项尚无全量独立证明。本文正文部分 `2400.822998027028` 属于此前的区间 LP 原型数据，原始理论问题与历史分析保留。最新模块与未完成义务请见 [CurrentStatus2400.md](CurrentStatus2400.md)。
+
 > **文档性质：** 数学问题定义与尚待证明的条件，2026-11-22。正式求解器为 V21，研究原型为 V22–V24。所有“已完成”状态只对应指定实验；当前尚未形成无条件下界定理的独立可核验证书。
 
 ## 0. 目标命题与必要记号
@@ -286,7 +288,7 @@ $$
 | V23 素性测试去重 | 完成的两个分片耗时较 V21 降低约 25%–30% | 因子和残余的素性检测为可测量的性能瓶颈 |
 | V24 乘积 GCD | 4000 组差分测试通过，完成分片性能表现不一致 | 继续通过完整分片比较，避免凭操作次数判定收益 |
 
-实验报告在 [Research/2026-11-22/](../Research/2026-11-22/README.md)，正式求解器和数学资料入口见 [RepositoryMap](RepositoryMap.md)。
+实验报告在 [Research/Session20261122/](../Research/Session20261122/Readme.md)，正式求解器和数学资料入口见 [RepositoryMap](RepositoryMap.md)。
 
 ## 9. 最小研究闭环与严格验收标准
 
@@ -309,4 +311,4 @@ $$
 
 ---
 
-**证据入口：** [V21 主代码](../Sources/Cpp/ProofTreeV21.cpp) · [256 前缀 LP 生成器](../Sources/Python/PrefixDualCertificates.py) · [验收清单](../Records/ValidationChecklist.md) · [原始实验记录](../Records/ExperimentLog.md) · [研究实验归档](../Research/2026-11-22/README.md)。
+**证据入口：** [V21 主代码](../Sources/Cpp/ProofTreeV21.cpp) · [256 前缀 LP 生成器](../Sources/Python/PrefixDualCertificates.py) · [验收清单](../Records/ValidationChecklist.md) · [原始实验记录](../Records/ExperimentLog.md) · [研究实验归档](../Research/Session20261122/Readme.md)。

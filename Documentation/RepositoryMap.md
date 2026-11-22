@@ -1,81 +1,74 @@
-# PerfectNumbers 仓库导览与文件归属
+# PerfectNumbers 仓库目录与文件职责
 
-**整理日期：2026-11-22。** 当前主线为 V21；研究 V22–V24 归档存放于 `Research/2026-11-22/`。本次整理保持正式求解器及现有 GitHub Actions 工作流的原始路径，避免破坏可复现调用。
+**更新：2026-11-22；当前数学状态见 [CurrentStatus2400.md](CurrentStatus2400.md)。** 主线为冻结 V21，新的独立验证器与 Frontier 搜索器仍是候选系统。全量证明未完成。
 
-## 1. 项目入口
+## 目录结构
 
-| 文件 | 用途 | 维护状态 |
+```text
+PerfectNumbers/
+├── .github/workflows/                  # GitHub 强制约定路径
+├── Documentation/                      # 当前状态、数学理论、仓库维护规范
+├── Records/                            # 里程碑、历史实验、验收清单
+├── References/                         # 原始论文及参考资料
+├── Research/
+│   └── Session20261122/
+│       ├── Certificates/               # 原根与替换根互素类证书（不可改变字节）
+│       ├── Cpp/                        # V21 profile 和 V22–V24 历史原型
+│       ├── Python/                     # 独立验证器、账本、审计器与测试
+│       ├── Reports/                    # 本阶段数学/性能/集成报告
+│       └── Readme.md
+├── Scripts/                             # 手工运行的 WSL 脚本
+├── Sources/
+│   ├── Cpp/                            # V21 主线、Frontier C++、编解码与缓存
+│   └── Python/                         # 正式 LP、指数清单与旧任务调度
+├── Readme.md
+└── Requirements.txt
+```
+
+**命名规范：** 路径名和文件主名统一采用 PascalCase（大驼峰），扩展名保持 `.cpp`、`.hpp`、`.py`、`.md`、`.yml`、`.json.gz` 等惯用小写；日期以 `SessionYYYYMMDD` 表示。GitHub 固定名称 `.github`、`workflows`、`.gitignore` 保留。历史分支不强制迁移。
+
+## 核心文档
+
+| 文档 | 作用 |
+| --- | --- |
+| [CurrentStatus2400.md](CurrentStatus2400.md) | **唯一当前状态摘要**与完整剩余任务 |
+| [ProgressReport2400.md](ProgressReport2400.md) | 历史过程、对照实验和新模块进展 |
+| [ResearchProblems2400.md](ResearchProblems2400.md) | 数学定义、所有待证条件及不可省略的证明义务 |
+| [ValidationChecklist.md](../Records/ValidationChecklist.md) | 发布前逐项验收要求 |
+| [Milestones.md](../Records/Milestones.md) | 每一阶段的证据等级及下一道门槛 |
+| [ExperimentLog.md](../Records/ExperimentLog.md) | 不可篡改的历史实验记录 |
+| [独立验证集成报告](../Research/Session20261122/Reports/IndependentProofIntegration2400.md) | V2 工程规格、复现命令、缺口 |
+
+## 正式与实验程序
+
+| 文件 | 用途 | 当前地位 |
 | --- | --- | --- |
-| [Readme.md](../Readme.md) | 目标、当前结论、复现入口 | 当前 |
-| [ResearchProblems2400.md](ResearchProblems2400.md) | **数学上严格定义待解决问题与证明条件** | 当前研究纲领 |
-| [ProgressReport2400.md](ProgressReport2400.md) | 当前已实现和实测结果 | 当前 |
-| [ValidationChecklist.md](../Records/ValidationChecklist.md) | 证明发布前验收条件 | 当前 |
-| [Milestones.md](../Records/Milestones.md) | 阶段里程碑与证据链接 | 当前 |
-| [ExperimentLog.md](../Records/ExperimentLog.md) | 全部历史实验，保留未经精简的原始记录 | 历史日志 |
+| [ProofTreeV21.cpp](../Sources/Cpp/ProofTreeV21.cpp) | V21 因子链、路障/LP 搜索 | 冻结搜索基线 |
+| [ProofCoreTestsV21.cpp](../Sources/Cpp/ProofCoreTestsV21.cpp) | V21 数值回归 | 历史质量检查 |
+| [BuildIndex.cpp](../Sources/Cpp/BuildIndex.cpp) | 因子表索引构造 | 生产辅助工具 |
+| [PrimeCutoffCert.cpp](../Sources/Cpp/PrimeCutoffCert.cpp) | 有限素数乘积 | 生产辅助工具 |
+| [ProofTreeV21Frontier.cpp](../Sources/Cpp/ProofTreeV21Frontier.cpp) | G1 复用、可切分试验搜索 | 实验性、未形成全证书 |
+| [V21FrontierCodec.hpp](../Sources/Cpp/V21FrontierCodec.hpp) | 可恢复的状态编解码 V2 | 实验性 |
+| [SingleFlightFactCache.hpp](../Sources/Cpp/SingleFlightFactCache.hpp) | 同键单飞共享缓存 | 独立测试，未接入搜索 |
+| [IndependentVerifierV2.py](../Research/Session20261122/Python/IndependentVerifierV2.py) | 固定根独立证书检查 | 合成/篡改测试、未验完全部根 |
+| [FrontierLedgerV2.py](../Research/Session20261122/Python/FrontierLedgerV2.py) | SQLite 任务、租约与分裂证据 | 故障注入测试 |
+| [FrontierWorkerDriver.py](../Research/Session20261122/Python/FrontierWorkerDriver.py) | C++ 与 SQLite 调度接口 | 部分桥接 |
+| [AuditRunner2400.py](../Research/Session20261122/Python/AuditRunner2400.py) | 原根 3072 项只读验收 | 真实证书尚未填满 |
+| [Run2400Scheduler.py](../Sources/Python/Run2400Scheduler.py) | 旧 V21 顶层任务调度 | 保留用于复现 |
+| [Run72hWSL.sh](../Scripts/Run72hWSL.sh) | 手工启停与数据准备 | 只有显式 `run` 才启动长任务 |
 
-旧版 V16 阶段进展和里程碑可通过 [原主分支快照](https://github.com/stormwhip/PerfectNumbers/tree/90100f4447f9196835951fdb7e9dcdd3ab23723f) 核对。
+## 其他归档
 
-## 2. 生产主线：Sources/Cpp
+- [研究索引](../Research/Session20261122/Readme.md)：V22–V24、路障、数值 LP、互素证书及新模块。
+- `Research/Session20261122/Certificates/` 两个 `.json.gz` 为证书工件，迁移保持 Git blob SHA 原值。
+- `Sources/Cpp/ProofTreeV16.cpp`、`V18`、`V19`、`V20` 以及 `Research/Session20261122/Cpp/` 下 V22–V24 是历史实现，用于精确复核不同实验。
+- `.github/workflows/` 已按现有约定命名，手工大型任务不因整理而自动触发。
+- `Build/`、`Run2400Results/` 与大型分解数据库不纳入源码版本库。
+- 旧 `Research/2026-11-22/` 已迁移为 `Research/Session20261122/`。外部 Gemini 分支合并前须按本文件重定向路径。
 
-| 文件 | 说明 |
-| --- | --- |
-| [ProofTreeV21.cpp](../Sources/Cpp/ProofTreeV21.cpp) | 当前正式的八根搜索树与状态剪枝 |
-| [ProofCoreTestsV21.cpp](../Sources/Cpp/ProofCoreTestsV21.cpp) | 主要的数值/指数覆盖回归测试 |
-| [BuildIndex.cpp](../Sources/Cpp/BuildIndex.cpp) | 压缩因子表转固定内存映射索引 |
-| [PrimeCutoffCert.cpp](../Sources/Cpp/PrimeCutoffCert.cpp) | 构造经校验的有限素数乘积 |
+## 维护规则
 
-V16、V18、V19、V20 的 `ProofTree*.cpp` 和 `ProofCoreTests*.cpp` 保留以复现历次算法差异，不再作为最新计算入口。
-
-## 3. LP、证明脚本与调度：Sources/Python / Scripts
-
-| 文件 | 说明 |
-| --- | --- |
-| [IntervalCertificate61.py](../Sources/Python/IntervalCertificate61.py) | 含特殊素数、无限尾和 sigma(61) 约束的增强 LP |
-| [PrefixDualCertificates.py](../Sources/Python/PrefixDualCertificates.py) | 256 个前缀对偶/增益表 |
-| [Targeted2400Certificates.py](../Sources/Python/Targeted2400Certificates.py) | 精简前缀证书生成与对照 |
-| [ConditionalPrime61.py](../Sources/Python/ConditionalPrime61.py) | 61 指数条件化实验 |
-| [Prime61FactorChecks.py](../Sources/Python/Prime61FactorChecks.py) | sigma(61) 等式与素性核验 |
-| [DualGainBounds.py](../Sources/Python/DualGainBounds.py) | 区间安全的强制素数增益 |
-| [RootExclusionDP2400.py](../Sources/Python/RootExclusionDP2400.py) | 八根顺序的组合代理成本分析 |
-| [Run2400Scheduler.py](../Sources/Python/Run2400Scheduler.py) | 顶层指数任务清单、运行状态与输入哈希 |
-| [Run2400SchedulerTests.py](../Sources/Python/Run2400SchedulerTests.py) | 调度器回归测试 |
-| [CertificateTests.py](../Sources/Python/CertificateTests.py) | 证书相关单元测试 |
-| [Run72hWSL.sh](../Scripts/Run72hWSL.sh) | 手动准备、运行及校验入口 |
-
-`Legacy15PrefixProbe.py` 是历史 15 根比较脚本，保留供复现实验。
-
-## 4. 实验原型：Research/2026-11-22
-
-研究目录中包含 V21 函数级剖析器、V22 精确整除剪枝、V23 缓存残余素性结果、V24 乘积 GCD，以及它们的测试代码和实验报告。
-
-- [研究目录索引](../Research/2026-11-22/README.md)。
-- [V22 数学与负向耗时实验](../Research/2026-11-22/Reports/ExactSigmaDivisibilityV22.md)。
-- [V23 正向性能实验](../Research/2026-11-22/Reports/V23PrimalityPerformance.md)。
-- [V24 等价性/混合收益实验](../Research/2026-11-22/Reports/V24CompositePerformance.md)。
-
-保留原始 [research/exact-sigma-size-v22](https://github.com/stormwhip/PerfectNumbers/tree/research/exact-sigma-size-v22) 分支及该分支上的 GitHub Actions 工作流，便于重现当时的运行环境。主线尚未合并 V23 的运行时优化；V23 对数学证明的完整审计仍待完成。
-
-## 5. .github/workflows 分类
-
-**质量与数学证书：** `QualityChecks.yml`、`Full2400PrefixCertificates.yml`、`Conditional61Lp.yml`。
-
-**当前证明树与剩余算术测试：** `FactorChain2400.yml`、`CertifiedCutoff2400Benchmark.yml`、`Residual2400Benchmark.yml`、`PrimeCutoffPilot.yml`。
-
-**诊断及历史方案比较：** `Shard2400Census.yml`、`Root19HardShardOrdering.yml`、`RootOrder2400Pilot.yml`、`RootExclusionDP2400.yml`、`Legacy15PrefixPilot.yml`。
-
-V22–V24 和 V21 profiler 的短时实验工作流仍位于上述研究分支。这些历史任务与当前正式的 72 小时程序相互独立。
-
-## 6. 数学资料、历史证据与生成物
-
-- [OchemRao2012.pdf](../References/OchemRao2012.pdf)：前人原始论文。
-- [ForcedPrimeDualCuts.md](ForcedPrimeDualCuts.md)：V14–V17 状态 LP 推导与旧实验。
-- [ConditionalPrime61.md](ConditionalPrime61.md)：61 的条件化 LP 问题。
-- `Records/ExperimentLog.md`：带工作流编号的正反实验。
-- `Build/`、`Run2400Results/`、原始大型数据及编译输出：本地或 GitHub Actions 工件，不纳入小型源代码目录；按 `Scripts/Run72hWSL.sh` 中的 SHA-256 和固定输入生成。
-
-## 7. 维护原则
-
-1. **一个生产入口：** 证明树以 V21 为准。新的优化先进入研究分支，完成独立回归与完整分片耗时对照后再集成。
-2. **完整证据链：** 数学论证、代码版本、数据 SHA-256、运行参数、终结证书及独立校验结果逐项关联。
-3. **历史可追溯：** 保留已有实验和原始 Git 快照；更新当前状态时不把未经证明的数值标记为无条件定理。
-4. **无需付费 API：** 本项目使用本地 C++、GMP、Python 与 GitHub Actions，长期计算应由明确的 `run` 动作启动。
+1. 更新当前理论状态时修改 `CurrentStatus2400.md` 和 `ProgressReport2400.md`；实验事实仅写入 `ExperimentLog.md` 并附 commit、参数和日志。
+2. 成功编译、搜索器输出 `PROVEN`、独立验证器返回 `TREE_ACCEPTED` 和最终 `UNCONDITIONALLY_VERIFIED` 必须分开记录。
+3. 历史报告保留当时数据和结论，上方统一增加当前状态入口。
+4. 没有显式许可不运行付费 API 或启动长时间付费云资源。
