@@ -1013,6 +1013,21 @@ bool solve(State& st, bool in_circ, int depth, std::atomic<bool>& ok_flag) {
 int main(int argc, char** argv) {
     int bound_exp = (argc >= 2) ? std::atoi(argv[1]) : 1500;
     uint32_t only_p = (argc >= 3) ? static_cast<uint32_t>(std::atoi(argv[2])) : 0;
+    const bool shard_listing = argc >= 4 && std::string(argv[3]) == "list";
+    const bool shard_single = argc >= 4 && !shard_listing;
+    long long chosen_shard = -1;
+    if (shard_single) {
+        char* end = nullptr;
+        chosen_shard = std::strtoll(argv[3], &end, 10);
+        if (end == argv[3] || *end || chosen_shard < 0 || only_p == 0) {
+            std::cerr << "Usage: ProofTreeV20 2400 root [list|nonnegative-shard-index]\\n";
+            return 2;
+        }
+    }
+    if (shard_listing && only_p == 0) {
+        std::cerr << "A root prime is required to list its shards\\n";
+        return 2;
+    }
     LOG_BOUND = bound_exp * std::log(10.0);
 
     init_primes(300000);
@@ -1029,7 +1044,7 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    std::cout << "=== OPN Proof Tree v21 (Lazy Exact Cutoff Residual Bound, Target: 10^"
+    std::cout << "=== OPN Proof Tree v21 (Lazy Residual Bounds and Restartable Shards, Target: 10^"
               << bound_exp << ", threads=" << omp_get_max_threads() << ") ===\n";
     auto t0 = std::chrono::steady_clock::now();
 
@@ -1037,6 +1052,8 @@ int main(int argc, char** argv) {
     std::vector<uint32_t> global_forbidden_small;
 
     uint32_t prefix_mask = 0;
+    bool any_failure = false;
+    bool matched_root = false;
     for (uint32_t p_ui : ROOT_ORDER) {
         ACTIVE_PREFIX_MASK = prefix_mask;
         if (only_p != 0 && p_ui != only_p) {
@@ -1055,11 +1072,27 @@ int main(int argc, char** argv) {
         max_rb_b.store(0);
         heavy_rb_printed.store(0);
 
+        matched_root = true;
         State init_st;
         init_st.forbidden = global_forbidden;
         init_st.forbidden_small = global_forbidden_small;
         mpz_class p(p_ui);
         init_st.unbranched.insert(p);
+        const auto root_exponents = get_exponents(init_st, p);
+        if (shard_listing) {
+            std::cout << "SHARD_COUNT root=" << p_ui
+                      << " count=" << root_exponents.size() << "\n";
+            for (size_t i = 0; i < root_exponents.size(); ++i) {
+                const auto& [a, exact] = root_exponents[i];
+                std::cout << "SHARD root=" << p_ui << " index=" << i
+                          << " exponent=" << a << " exact=" << (exact ? 1 : 0) << "\n";
+            }
+            return 0;
+        }
+        if (shard_single && static_cast<size_t>(chosen_shard) >= root_exponents.size()) {
+            std::cerr << "Invalid shard index: " << chosen_shard << "\n";
+            return 2;
+        }
 
         std::atomic<bool> all_ok{true};
         auto tp0 = std::chrono::steady_clock::now();
@@ -1092,7 +1125,14 @@ int main(int argc, char** argv) {
         {
             #pragma omp single
             {
-                solved = solve(init_st, false, 0, all_ok);
+                if (shard_single) {
+                    const auto& [a, exact] = root_exponents[static_cast<size_t>(chosen_shard)];
+                    // The unsharded solve first branches on the root p and
+                    // invokes branch_component at depth=1 for each option.
+                    solved = branch_component(init_st, p, a, exact, false, 1, all_ok);
+                } else {
+                    solved = solve(init_st, false, 0, all_ok);
+                }
             }
         }
         {
@@ -1105,8 +1145,12 @@ int main(int argc, char** argv) {
         double dt = std::chrono::duration<double>(tp1 - tp0).count();
 
         bool ok = solved && all_ok.load();
-        std::cout << "Forbid p=" << p_ui
-                  << " -> " << (ok ? "PROVEN" : "FAILED")
+        if (!ok) any_failure = true;
+        std::cout << "Forbid p=" << p_ui;
+        if (shard_single) {
+            std::cout << " branch=" << chosen_shard << "/" << root_exponents.size();
+        }
+        std::cout << " -> " << (ok ? "PROVEN" : "FAILED")
                   << " | branches=" << (total_branches.load() - b_before)
                   << " (circ=" << (circ_branches.load() - c_before) << ", max_b=" << max_rb_b.load() << ")"
                   << " | failed_rb=" << (failed_roadblocks.load() - f_before)
@@ -1132,5 +1176,6 @@ int main(int argc, char** argv) {
     std::cout << "Total branches: " << total_branches.load()
               << " (circ: " << circ_branches.load() << "), failed_rb: " << failed_roadblocks.load()
               << ", lp_prunes: " << state_lp_prunes.load() << ", elapsed: " << total_dt << "s\n";
-    return 0;
+    if ((only_p != 0 && !matched_root) || (shard_single && !matched_root)) return 2;
+    return any_failure ? 3 : 0;
 }
