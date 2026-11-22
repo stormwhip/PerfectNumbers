@@ -96,3 +96,15 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Motivation: root-17 and root-307 searches at exponent 2201 show hundreds of thousands of ordinary DFS branches during short probes.
 - Validation: source quality checks **PASS** in [run 44991821429](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991821429) (V1–V9 compilation, core tests, Python syntax). Matched root/exponent *time-capped* benchmark [44991855026](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991855026): all four trials TIMEOUT after 35 seconds at exponent 2201. At 30 seconds p=17 V8 222,022 branches, V9 245,875 (+10.7%); p=307 V8 233,773 branches with 6,443 circular and V9 299,786 with 0 circular (+28.2%). Parallel visit order differs, so branch-count growth is **not proof of an end-to-end performance improvement**. Full terminating-case comparison is pending.
 - Status: compiled and bounded diagnostics complete; no full-search acceleration or new proof certificate established.
+
+## Experiment 008 — Completed-case V8/V9 timing comparison
+
+- Date: 2026-11-22.
+- Source: [GitHub Actions run 44992192309](https://github.com/stormwhip/PerfectNumbers/actions/runs/44992192309), commit `11d07509166cf1fe24f900a7a2a7b084f6f534`.
+- Environment: Ubuntu GitHub Actions 2 threads, OMP_NUM_THREADS=2, GMP + zlib, checksum-pinned factor database.
+- Target: exponent 1000; two separately selected roots (each root tested in the same historical forbidden order).
+- Root 17: V8 `PROVEN`, 2,770 branches, 0 circular, 0 failed roadblocks, **2.29845 s**; V9 `PROVEN`, 2,770 branches, 0 circular, 0 failed roadblocks, **2.25049 s** (single-run time reduction **2.09%**).
+- Root 307: V8 `PROVEN`, 1,531 branches, 0 circular, 0 failed roadblocks, **1.15197 s**; V9 `PROVEN`, 1,531 branches, 0 circular, 0 failed roadblocks, **1.13924 s** (single-run time reduction **1.11%**).
+- Full logs archived as `CompletedCaseBenchmarkLogs` in the run.
+- Interpretation: correct matching counters for the two completed roots, limited performance improvement at exponent 1000; single trials are susceptible to timing variation. Full unconditional proof at exponent 2201 remains incomplete.
+- Future priorities: independent proof audit of arithmetic bounds and exponent coverage; new mathematically stronger pruning; longer tests of V9 on high-exponent bottlenecks.
