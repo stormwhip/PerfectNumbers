@@ -3,7 +3,7 @@
 
 Rechecks the certified original coprime class, constructs the canonical 3072
 manifest, then runs the ordinary AuditRunner2400 with absent ledger/proof files.
-Only true one-node integer contradictions may become VERIFIED_CLOSED.
+Only integer-certified contradictions, including fully enumerated finite quotients, may become VERIFIED_CLOSED.
 """
 from __future__ import annotations
 
@@ -39,13 +39,13 @@ def main() -> None:
             root_set_name="original",
         )
         expected = {
-            "VERIFIED_CLOSED": 1396,
-            "UNSTARTED": 1676,
+            "VERIFIED_CLOSED": 1399,
+            "UNSTARTED": 1673,
         }
         if (summary["total_tasks"] != 3072
                 or summary["counts_by_status"] != expected
-                or summary["verified_closed_tasks"] != 1396
-                or summary["total_open_frontier_tasks"] != 1676
+                or summary["verified_closed_tasks"] != 1399
+                or summary["total_open_frontier_tasks"] != 1673
                 or summary["final_theorem_status"] != "INCOMPLETE_FRONTIER"):
             raise RuntimeError(f"unexpected rigorous audit summary: {summary}")
         print(json.dumps({
