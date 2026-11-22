@@ -1,0 +1,36 @@
+name: Conditional 61 exponent LP certificate pilot
+on:
+  push:
+    paths:
+      - '.github/workflows/Conditional61Lp.yml'
+permissions:
+  contents: read
+jobs:
+  certify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: Requirements.txt
+      - name: Install LP dependencies
+        run: python -m pip install -r Requirements.txt
+      - name: Execute both 61 exponent cases and interval dual verification
+        run: |
+          mkdir -p Build
+          set -o pipefail
+          python -u Sources/Python/ConditionalPrime61.py | tee Build/Conditional61.log
+      - name: Archive complete numeric log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Conditional61Results
+          path: Build/Conditional61.log
+          retention-days: 30
