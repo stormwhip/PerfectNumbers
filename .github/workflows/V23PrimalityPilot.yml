@@ -1,0 +1,105 @@
+name: V23 cached-primality 2400 matched benchmark
+on:
+  push:
+    branches:
+      - research/exact-sigma-size-v22
+    paths:
+      - '.github/workflows/V23PrimalityPilot.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  compare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 9
+    defaults:
+      run:
+        shell: bash
+    env:
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install GMP and zlib
+        run: sudo apt-get update && sudo apt-get install -y libgmp-dev zlib1g-dev
+      - name: Compile V21 and V23 plus V23 regression
+        run: |
+          mkdir -p Build
+          for ver in V21 V23; do
+            g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTree$ver.cpp -lgmpxx -lgmp -o Build/ProofTree$ver
+          done
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV23.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV23
+          ./Build/ProofCoreTestsV23
+          g++ -std=c++17 -O2 Sources/Cpp/PrimeCutoffCert.cpp -lgmpxx -lgmp -o Build/PrimeCutoffCert
+          g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
+      - name: Download pinned certificates
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 45004245214 --repo "$GITHUB_REPOSITORY" --name Full2400PrefixDualTables --dir Build
+          echo '50fb6f90dfe76c5e40c73eb0d4c4136b10fd487eb68f4207e7399892728700b3  Build/PrefixDualBounds.csv' | sha256sum --check
+          echo '6504908211c6a54520a8091f54c1abe8eb2c52f753a10a784f47b446ed4a5fcb  Build/PrefixDualVariableGains.csv' | sha256sum --check
+          echo '0e119ce7f7aa8bcf4e6890b828bd674d7462fb166e4adf2e3d9adf5d1040d6f2  Build/PrefixDualForcedGains.csv' | sha256sum --check
+      - name: Build verified exact cutoff and factor index
+        working-directory: Build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ./PrimeCutoffCert 100000000 > PrimeCutoffBuild.log
+          echo '70ba114b47e7539480c418094606b0f39b2bc230337212426872d7f7adb400ec  PrimeCutoffProduct.bin' | sha256sum --check
+          if ! gh release download data-v1 --repo "$GITHUB_REPOSITORY" --pattern checkfacts.txt.gz; then
+            curl --fail --location --retry 2 --max-time 300 --output checkfacts.txt.gz 'https://www.lirmm.fr/~ochem/opn/checkfacts.txt.gz'
+          fi
+          echo 'ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119  checkfacts.txt.gz' | sha256sum --check
+          ./BuildIndex checkfacts.txt.gz
+          test "$(stat -c %s facts.dat)" = 745826778
+          test "$(stat -c %s facts.idx)" = 1322332128
+      - name: Compare matching root 19 shards and primality repetitions
+        working-directory: Build
+        run: |
+          set -euo pipefail
+          mkdir -p PrimePilotLogs
+          ./ProofTreeV21 2400 19 list > Root19Shards.txt
+          grep -q 'SHARD_COUNT root=19 count=287' Root19Shards.txt
+          for index in 0 35 100 130; do
+            for label in baseline reps5 reps10; do
+              if [[ "$label" == baseline ]]; then
+                program=ProofTreeV21
+                reps=5
+              elif [[ "$label" == reps5 ]]; then
+                program=ProofTreeV23
+                reps=5
+              else
+                program=ProofTreeV23
+                reps=10
+              fi
+              log="PrimePilotLogs/Root19_$index-$label.log"
+              set +e
+              OPN_PRIME_REPS="$reps" timeout --signal=TERM --kill-after=1s 12s "./$program" 2400 19 "$index" > "$log" 2>&1
+              rc=$?
+              set -e
+              if [[ "$rc" == 0 ]] && grep -Eq "^Forbid p=19 branch=$index/287 -> PROVEN .*failed_rb=0" "$log"; then
+                state=PROVEN
+              elif [[ "$rc" == 124 ]]; then
+                state=TIMEOUT
+              else
+                state=UNRESOLVED
+              fi
+              echo "PRIMALITY_PILOT root=19 index=$index label=$label status=$state rc=$rc" | tee -a PrimePilotSummary.txt
+              grep -E '\[PROGRESS\]|PRIME_TEST_STATS|Forbid p=19 branch=' "$log" | tail -n 2 | tee -a PrimePilotSummary.txt || true
+            done
+          done
+      - name: Upload bounded matched profiles
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V23PrimalityPilotResults
+          path: |
+            Build/PrimePilotLogs/
+            Build/PrimePilotSummary.txt
+            Build/Root19Shards.txt
+          retention-days: 30
+          if-no-files-found: ignore
