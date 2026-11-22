@@ -24,6 +24,7 @@
 #include <array>
 #include <fstream>
 #include <sstream>
+#include <stdexcept>
 
 struct IdxEntry {
     uint64_t h1;
@@ -1032,6 +1033,9 @@ int main(int argc, char** argv) {
                           << " | failed_rb=" << (failed_roadblocks.load(std::memory_order_relaxed) - f_before)
                           << " | max_b=" << max_rb_b.load(std::memory_order_relaxed)
                           << " | lp_prunes=" << state_lp_prunes.load(std::memory_order_relaxed)
+                          << " | cutoff_screened=" << screened_composites.load(std::memory_order_relaxed)
+                          << " | cutoff_small=" << with_low_primes.load(std::memory_order_relaxed)
+                          << " | gcd_seconds=" << (cutoff_gcd_nanoseconds.load(std::memory_order_relaxed) * 1e-9)
                           << " | lp_early=" << state_lp_early_prunes.load(std::memory_order_relaxed)
                           << " | elapsed=" << elapsed << "s" << std::endl;
             }

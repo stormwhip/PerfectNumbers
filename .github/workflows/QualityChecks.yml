@@ -32,6 +32,11 @@ jobs:
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV18.cpp -lgmpxx -lgmp -o Build/ProofTreeV18
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV18.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV18
           ./Build/ProofCoreTestsV18
+      - name: Verify V19 exact prime-cutoff classification on a synthetic case
+        run: |
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV19.cpp -lgmpxx -lgmp -o Build/ProofTreeV19
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV19.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV19
+          ./Build/ProofCoreTestsV19
       - name: Run pure Python tests and syntax validation
         run: |
           python3 Sources/Python/CertificateTests.py
