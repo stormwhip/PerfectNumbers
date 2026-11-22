@@ -159,3 +159,12 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Dataset: pinned `checkfacts.txt.gz` SHA-256 `ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119`.
 - Workflow: [RootOrderOptimization.yml](../.github/workflows/RootOrderOptimization.yml).
 - Status: source validation and exhaustive profile pending.
+
+## Experiment 013 — Affine state-level LP dual certificates (prototype)
+
+- Date: 2026-11-22.
+- For each root-prefix subset \(F\subseteq S_*\), generate one interval-checked dual certificate for the LP with abundance target \(R=2\).
+- The same dual multipliers remain feasible when only the abundance RHS changes, yielding a reusable affine lower bound \(L_F(R)=c_F+\lambda_F\ln R\).
+- The generator checks 256 prefix masks and compares the affine dual against primal LP objectives at five abundance targets \(R\in\{1.1,1.25,1.5,2,3\}\).
+- Runtime DFS can evaluate this bound in constant time using a safe upper bound on the abundancy of already fixed prime powers. The LP deliberately retains all primes outside prefix F, including state-forbidden and already-fixed primes, making it a relaxation.
+- Status: Python certificate generation and C++ integration pending.

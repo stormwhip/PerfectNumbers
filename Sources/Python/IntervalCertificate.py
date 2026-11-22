@@ -36,7 +36,8 @@ def solve_and_certify(
     a_cut=16,
     factor_limit=10**14,
     certify=False,
-):
+    return_affine=False,
+)
     eff_forbidden = set(forbidden_S)
     if min_p > 3:
         for q in primerange(3, min_p):
@@ -152,6 +153,8 @@ def solve_and_certify(
     float_bound = res.fun / math.log(10)
 
     if not certify:
+        if return_affine:
+            raise ValueError("return_affine requires certify=True")
         return float_bound, None
 
     # --- 严格区间算术对偶校验 ---
@@ -205,6 +208,13 @@ def solve_and_certify(
             dual_obj += iv.mpf(rc_spec_low)
 
     rigorous_log10 = float((dual_obj / iv.log(iv.mpf(10))).a)
+    if return_affine:
+        # The constraint matrix is independent of the abundance RHS.
+        # This same dual remains feasible for every target ratio R > 1.
+        intercept_iv = dual_obj - lam[0] * iv.log(iv.mpf(target_abund_ratio))
+        lambda0_lower = max(0.0, math.nextafter(float(lam[0].a), -math.inf))
+        intercept_lower = math.nextafter(float(intercept_iv.a), -math.inf)
+        return float_bound, rigorous_log10, lambda0_lower, intercept_lower
     return float_bound, rigorous_log10
 
 if __name__ == "__main__":
