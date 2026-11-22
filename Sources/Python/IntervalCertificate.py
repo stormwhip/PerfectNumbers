@@ -4,6 +4,7 @@ from sympy import primerange, factorint, nextprime
 from scipy.optimize import linprog
 from scipy.sparse import lil_matrix
 from mpmath import iv
+from DualGainBounds import forced_prime_gain_lower
 
 iv.dps = 30  # 30位十进制精度区间算术
 
@@ -25,25 +26,6 @@ def ln_sigma_m1_float(p, a):
 def ln_sigma_m1_iv(p, a):
     p_iv = iv.mpf(p)
     return iv.log(p_iv / (p_iv - 1)) + iv.log(1 - p_iv ** (-(a + 1)))
-
-def forced_prime_gain_lower(reduced_cost_intervals):
-    """Rigorous lower bound for the gain from requiring one option of a prime.
-
-    Each pair contains outward-rounded interval endpoints (lower, upper) for
-    a reduced cost r_i. The forced minimum is bounded below by min(lower_i).
-    The old box-relaxation penalty sum(min(0, r_i)) is bounded above by
-    sum(min(0, upper_i)). Their difference is therefore a valid lower bound.
-    """
-    if not reduced_cost_intervals:
-        return 0.0
-    min_lower = min(lower for lower, _ in reduced_cost_intervals)
-    baseline_upper = iv.mpf(0)
-    for _, upper in reduced_cost_intervals:
-        if upper < 0:
-            baseline_upper += iv.mpf(upper)
-    gain_interval = iv.mpf(min_lower) - baseline_upper
-    return math.nextafter(float(gain_interval.a), -math.inf)
-
 
 def solve_and_certify(
     forbidden_S,

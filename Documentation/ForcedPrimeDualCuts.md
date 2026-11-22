@@ -123,4 +123,4 @@ G_q\;\ge\;\min_i\ell_i-\sum_i\min(0,u_i).
 \]
 The minimum forced option cost is bounded below by the smallest interval lower endpoint. The old box-relaxation penalty is bounded above by the sum of the negative interval upper endpoints. Their difference is therefore a certified lower bound for the improvement from imposing \(\sum_i x_{q,i}=1\).
 
-The generator implements this with interval arithmetic in `forced_prime_gain_lower`; `CertificateTests.py` checks interval endpoint combinations. V16 also rounds each accumulated gain downward in C++.
+The generator implements this with outward-rounded endpoint arithmetic in `Sources/Python/DualGainBounds.py`; `CertificateTests.py` checks endpoint combinations. V16 also rounds each accumulated gain downward in C++.

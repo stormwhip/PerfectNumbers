@@ -246,7 +246,7 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
   \[
   G_q\ge \min_i\ell_i-\sum_i\min(0,u_i).
   \]
-- Added `forced_prime_gain_lower` using interval arithmetic, exhaustive endpoint regression tests, and V16 C++ accumulation with downward rounding.
+- Added `forced_prime_gain_lower` using outward-rounded endpoint conversion and accumulation in `DualGainBounds.py`, exhaustive endpoint regression tests, and V16 C++ accumulation with downward rounding.
 - V16 benchmark regenerates the two targeted prefix certificates from the corrected function and compares V13/V14/V15/V16 at exponents 1000, 1500, 2201, and 2300.
 - Workflow: [ForcedPrimeLpBenchmark.yml](../.github/workflows/ForcedPrimeLpBenchmark.yml).
 - Status: implementation committed; source tests and corrected dataset-backed benchmark pending.
