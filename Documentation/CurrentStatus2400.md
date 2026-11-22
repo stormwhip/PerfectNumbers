@@ -49,3 +49,11 @@
 ## 5. 仓库维护与质量回归
 
 整理后代码仍使用原 V21 正式生产入口。目录一致性可通过 [RepositoryStructureChecks.py](../Sources/Python/RepositoryStructureChecks.py) 检查；[手工 CI 工作流](../.github/workflows/RepositoryIntegrity.yml) 可以重新跑 Python 证明/账本的合成回归、C++ 编解码和缓存测试。该 CI 只验证实现一致性，不将任何程序标签自动升级为数学证明。
+
+### 目录整理核验（2026-11-22）
+
+- GitHub 文件树复核：97 个已追踪文件，20 份 Markdown 文档；所有实际路径均符合 PascalCase 约定，平台保留名称 `.github/workflows` 与 `.gitignore` 不变。
+- 原 `Research/2026-11-22/` 下 41 个文件已完整迁移至 `Research/Session20261122/`；31 个文件 SHA-1 未变，其余 10 个为更新 README 与历史报告状态/路径的文档。两份 `Terminal*.json.gz` 证书 blob 保持完全一致。
+- 已直接读取并扫描全部 20 份当前 Markdown 的本地相对链接：**0 条失效链接**；历史已移除工作流的链接已改指历史 Git 快照。
+- 加入 [RepositoryStructureChecks.py](../Sources/Python/RepositoryStructureChecks.py) 和可手工运行的 [RepositoryIntegrity.yml](../.github/workflows/RepositoryIntegrity.yml)，用于今后重复验证。工作流尚未手动触发，本记录不宣称最新代码回归已在 CI 中运行。
+- 以上为文档和路径完整性验收，没有运行新的奇完全数全树搜索或增加数学下界。

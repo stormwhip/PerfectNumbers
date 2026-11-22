@@ -22,6 +22,15 @@ This log separates **imported historical claims**, **directly observed experimen
 - The directory rewrite and regression workflow do not imply new mathematical results or a 72-hour benchmark.
 - Pending: complete SPLIT/LEAF DAG export, original V21 roadblock/conditional LP parity, certified large primes, full original-root acceptance and timing.
 
+## 2026-11-22 — Repository naming and local-link audit
+
+- Base: `7d7c1c6`; repository restructuring commits: `0f9f0c4`, `b19aed8`, `784c07e`.
+- Compared old/new remote Git trees: 41 research files relocated, 31 blobs byte-identical and 10 Markdown files updated with status/path references; original/replacement terminal certificate blobs unchanged.
+- Current remote tree: 97 tracked files, 20 Markdown documents; all file/folder components meet PascalCase except required GitHub special paths.
+- Fetched all 20 Markdown documents and checked relative link targets against the actual remote tree: 0 missing local links.
+- Added manual integrity/smoke CI and repository path/link validation script; manual CI remains to be run, so no new Python/C++ test pass is claimed from this restructuring action.
+- The mathematical theorem remains `INCOMPLETE_FRONTIER`.
+
 ## Imported historical observations (unverified in this session)
 
 - 2012 published reference bound: `10^1500`.
