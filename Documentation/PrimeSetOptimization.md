@@ -116,3 +116,25 @@ D(F)=\min_{p\in S\setminus F}\left(C(F,p)+D(F\cup\{p\})\right),\qquad D(S)=0.
 For eight roots this requires evaluating at most \(8\cdot2^7=1024\) distinct directed subset transitions. Costs must be measured for the intended target exponent and full dataset; they depend on the actual forbidden prefix and cannot be inferred by subtracting the original root times.
 
 [Run 44993733799](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993733799) separately tested prime-adic valuation V10 against V9: all completed tested root branch counts were identical. The valuation cut remains a candidate for harder states but has not demonstrated a branch-count improvement in those cases.
+
+## Root-order optimization prototype (V11)
+
+The root sequence and the circular-prime partition sequence are now separate:
+- `ROOT_ORDER` determines which top-level prime-containing case is proved next and therefore which earlier roots are forbidden.
+- `CIRC_ORDER` is fixed during cost profiling, so the cost of an edge depends only on the forbidden-prefix subset and the next root, not on the unchosen suffix of a permutation.
+
+For the eight-prime candidate set, every directed subset transition \((F,p)\), with \(p\notin F\), is measured once. There are exactly
+
+\[
+8\cdot2^{7}=1024
+\]
+
+transitions. The subset recurrence is then evaluated exactly on those measured costs:
+
+\[
+D(F)=\min_{p\notin F}\{C(F,p)+D(F\cup\{p\})\},\qquad D(S_*)=0.
+\]
+
+The profiler records both complete branch counts and single-thread wall time. Branch count is the primary stable objective; time is a secondary tie-breaker and a separate optimization objective. The resulting order must be benchmarked as a complete proof tree.
+
+V11 also corrects the top-level result aggregation by using the return value of `solve` together with the shared task status. A root is reported PROVEN only when both indicate success.

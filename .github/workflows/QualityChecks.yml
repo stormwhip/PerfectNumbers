@@ -24,6 +24,9 @@ jobs:
           for source in Sources/Cpp/ProofTreeV*.cpp; do
             g++ -std=c++17 -O2 -fopenmp "$source" -lgmpxx -lgmp -o "Build/$(basename "$source" .cpp)"
           done
+      - name: Compile root-order profiler
+        run: |
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/RootOrderProfiler.cpp -lgmpxx -lgmp -o Build/RootOrderProfiler
       - name: Compile reduced root prototype
         run: |
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeReduced.cpp -lgmpxx -lgmp -o Build/ProofTreeReduced

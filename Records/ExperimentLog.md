@@ -149,3 +149,13 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Exponent 300: original V9 15 roots, 13,250 branches, **0.412029 s**; reduced eight-root tree, 14,238 branches, **0.454519 s**. All tested roots PROVEN and no unresolved roadblocks.
 - Exponent 500: original V9 15 roots, 37,208 branches, **5.09176 s**; reduced eight-root tree, 40,733 branches, **5.5008 s**. All tested roots PROVEN and no unresolved roadblocks.
 - Outcome: removing seven roots made the other root trees larger, resulting in a **slight slowdown** in these two low-exponent trials. An LP-certified smaller prime set alone does not guarantee faster factor-chain searches. Optimize branch ordering and introduce stronger branch cuts before expecting an end-to-end gain.
+
+## Experiment 012 — Exhaustive root-order subset DP (queued)
+
+- Date: 2026-11-22.
+- V11 separates `ROOT_ORDER` from fixed `CIRC_ORDER`, making transition cost \(C(F,p)\) depend only on subset F and next root p.
+- `RootOrderProfiler.cpp` evaluates all 1024 complete transitions at exponent 300 with one thread and a cold per-edge factorization cache.
+- `RootOrderOptimizer.py` runs exact subset DP twice: minimizing branch count (time tie-break) and minimizing measured seconds (branch-count tie-break).
+- Dataset: pinned `checkfacts.txt.gz` SHA-256 `ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119`.
+- Workflow: [RootOrderOptimization.yml](../.github/workflows/RootOrderOptimization.yml).
+- Status: source validation and exhaustive profile pending.

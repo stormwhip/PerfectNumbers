@@ -97,3 +97,5 @@ An LP-guided candidate reduction for exponent 2300 selected \(S_*=\{3,5,7,11,13,
 V10 adds prime-adic obligation propagation and quotient-congruence sharpening to ordinary factor-chain DFS, without changing the root set. It is a separately versioned candidate intended for a clean V9/V10 performance and correctness comparison.
 
 Measured reduced-root prototype: [Run 44993825296](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993825296) confirmed that at exponents 300 and 500 the eight-root tree was slightly slower than the original 15-root tree, because previously forbidden primes re-enter other branches. V10 valuation tests passed but did not reduce the number of branches on the completed regression roots ([Run 44993733799](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993733799)). These experiments motivate optimizing the root permutation and tighter state-level LP cuts.
+
+V11 separates top-level root order from the fixed circular-prime partition order. An exhaustive profiler measures all 1024 subset transitions for the eight-prime set, and exact subset DP selects branch-count- and time-optimal root sequences.
