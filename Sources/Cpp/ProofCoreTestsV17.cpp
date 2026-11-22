@@ -30,7 +30,8 @@ int main() {
     PREFIX_DUALS[0] = {1.0, 0.0, true, {}, {}};
     LOG_BOUND = 0.70;
     assert(!check_state_lp_contradiction(st));
-    PREFIX_DUALS[0].forced_gain[7] = 0.50;
+    // V17 deliberately replaces V16's independent forced_gain with option costs.
+    PREFIX_DUALS[0].euler_costs[7] = {0.50, 0.0, 0.0, false};
     assert(check_state_lp_contradiction(st));
     State coupled;
     coupled.unbranched.insert(mpz_class(5));
