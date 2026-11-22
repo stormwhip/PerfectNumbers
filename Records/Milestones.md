@@ -18,3 +18,6 @@ The numerical LP bound applies to the complementary forbidden-prime-free case. I
 | Reduced prime set for exponent 2300 | Eight-prime candidate with interval-dual output | [Run 44993433027](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993433027) | Independent LP audit and reduced-set proof-tree benchmarking |
 
 | V10 prime-adic obligation cuts | Candidate, quality checks pending | [ProofTreeV10](../Sources/Cpp/ProofTreeV10.cpp) | Compile, regress, and compare complete roots |
+
+| V10 valuation-cut benchmark | Completed; no material branch reduction at measured targets | [Run 44993733799](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993733799) | Target cuts on states with substantial repeated factor valuations |
+| Reduced eight-root tree benchmark | Completed; slower at exponent 300 and 500 | [Run 44993825296](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993825296) | Optimize root order and deep-pruning policies |

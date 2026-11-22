@@ -95,3 +95,24 @@ Suppose a factor-chain branch records \(p^a\mid N\) by choosing \(d=a+1\) odd, a
 Charge all forced prime exponents using their ordinary minimums and subtract the largest *positive* saving from making at most one eligible prime Euler-special. This yields an unconditional lower-bound inequality on the size of a hypothetical odd perfect number, conditional on the already established factorization constraints.
 
 This congruence sharpening can be checked with direct enumeration of every possible exponent at small bounds before being added to the proof search.
+
+## Runtime validation: important negative result
+
+In [run 44993825296](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993825296), the reduced eight-root tree produced more ordinary DFS branches than the original 15-root tree.
+
+| Exponent | 15-root branches | 8-root branches | 15-root elapsed | 8-root elapsed |
+| --- | ---: | ---: | ---: | ---: |
+| 300 | 13,250 | 14,238 | 0.412029 s | 0.454519 s |
+| 500 | 37,208 | 40,733 | 5.09176 s | 5.5008 s |
+
+Both tested trees finished with every selected root reporting PROVEN. This establishes that deleting roots from the LP endgame set creates more work inside the remaining branches. It motivates an **order-sensitive optimization** rather than minimizing root count alone.
+
+A mathematically natural order optimizer uses \(C(F,p)\), the measured cost to prove root \(p\) with exactly the earlier roots \(F\) forbidden, and the subset recurrence
+
+\[
+D(F)=\min_{p\in S\setminus F}\left(C(F,p)+D(F\cup\{p\})\right),\qquad D(S)=0.
+\]
+
+For eight roots this requires evaluating at most \(8\cdot2^7=1024\) distinct directed subset transitions. Costs must be measured for the intended target exponent and full dataset; they depend on the actual forbidden prefix and cannot be inferred by subtracting the original root times.
+
+[Run 44993733799](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993733799) separately tested prime-adic valuation V10 against V9: all completed tested root branch counts were identical. The valuation cut remains a candidate for harder states but has not demonstrated a branch-count improvement in those cases.

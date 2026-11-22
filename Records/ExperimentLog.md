@@ -133,7 +133,9 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Mathematical rule: for each known prime q, maintain the sum of known q-adic valuations from already established divisor-sum components; use Euler exponent parity and inexact-branch divisibility to calculate the smallest compatible exponent.
 - Conservative special-prime adjustment: charge ordinary minimum exponents for all factors, then subtract the single largest possible positive saving for one Euler-special prime.
 - Exact branch contradictions: reject a fixed exponent smaller than its cumulative forced valuation.
-- Tests: `ProofCoreTestsV10.cpp` checks exponent congruence and valuation-based size contradictions. Compilation and dataset performance pending.
+- Tests: `ProofCoreTestsV10.cpp` passed in [source quality run 44993665806](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993665806).
+- Dataset benchmark: [Run 44993733799](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993733799), same pinned index and two threads. Exponent 1000, root 17: both PROVEN, 2770 branches, V9 2.32457 s, V10 2.23843 s. Exponent 1000, root 307: both PROVEN, 1531 branches, V9 1.14050 s, V10 1.15975 s. Exponent 1500, root 307: both PROVEN, 16490 branches, V9 8.27487 s, V10 8.31438 s. Exponent 2201, root 17: both timed out at 30 s; at the 20-second progress point, V9 had visited 228782 branches and V10 197448. Partial traversal rates are affected by parallel scheduling.
+- Conclusion: no meaningful valuation-induced reduction in branches on completed test roots; the theoretical cut is sound under factorization assumptions, but its cost is not yet justified by these workloads.
 - Dependency: source factor primality and arithmetic decision bounds still require independent verification before promoting V10 to a mathematical proof.
 
 ## Experiment 011 — Reduced-root proof-tree prototype (pending run)
@@ -143,4 +145,7 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Research question: do seven removed top-level roots reduce or increase *total* tree runtime after removing their forbidden-prime constraints from the other roots?
 - Benchmark: `ReducedRootBenchmark.yml` compares the complete 15-root and reduced eight-root trees at exponents 300 and 500, each with a fixed time cap and checksum-pinned database.
 - Important distinction: total proof-tree branch counts and run times depend on the forbidden set; the number of roots alone is not a performance metric.
-- Status: quality checks and dataset-backed benchmark pending.
+- Status: compiled and tested in [quality run 44993825335](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993825335); dataset-backed full-root comparisons [run 44993825296](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993825296) completed for both target exponents.
+- Exponent 300: original V9 15 roots, 13,250 branches, **0.412029 s**; reduced eight-root tree, 14,238 branches, **0.454519 s**. All tested roots PROVEN and no unresolved roadblocks.
+- Exponent 500: original V9 15 roots, 37,208 branches, **5.09176 s**; reduced eight-root tree, 40,733 branches, **5.5008 s**. All tested roots PROVEN and no unresolved roadblocks.
+- Outcome: removing seven roots made the other root trees larger, resulting in a **slight slowdown** in these two low-exponent trials. An LP-certified smaller prime set alone does not guarantee faster factor-chain searches. Optimize branch ordering and introduce stronger branch cuts before expecting an end-to-end gain.
