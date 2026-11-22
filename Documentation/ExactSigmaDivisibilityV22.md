@@ -86,3 +86,18 @@ Run: https://github.com/stormwhip/PerfectNumbers/actions/runs/45011182741. Four 
 At shard 100's 10-second progress mark, V21 had visited 376,475 branches while eager mode 2 had visited 245,666, with 138,987 cumulative LCM cuts. Shard 35 had 25,722 eager LCM cuts and removed only 274 visited branches overall. Thus **eager mode 2 does not show an end-to-end performance gain**; it is about 42% slower in the first completed shard. Partial visited-node counts are not speed measurements.
 
 The exact arithmetic lemma remains valid. Mode 3 tests whether postponing GMP product/LCM work until a branch survives cheap contradictions and passes an optional `log(A*B)` screening gate is a better implementation. Screening may miss a valid optional cut but cannot make a false cut, since final pruning uses GMP exact comparison.
+
+## Deferred mode-3 matched result (completed)
+
+Run: https://github.com/stormwhip/PerfectNumbers/actions/runs/45011614919. Same four root-19 shards, 2 threads, pinned database and LP tables, 12-second cap per test.
+
+| Shard | V21 baseline | V22 eager mode 2 | V22 deferred mode 3 |
+| --- | --- | --- | --- |
+| 35 | PROVEN 45,987 branches / 2.01519s | PROVEN 45,713 / 2.72243s | PROVEN 45,713 / 2.92290s |
+| 130 | PROVEN 2,230 / 0.08636s | PROVEN 2,230 / 0.11653s | PROVEN 2,230 / 0.11917s |
+| 0 | TIMEOUT 12s | TIMEOUT 12s | TIMEOUT 12s |
+| 100 | TIMEOUT 12s | TIMEOUT 12s | TIMEOUT 12s |
+
+Deferred mode 3 rebuilt exact products 7,171 times for shard 35 and 18,096 times by the 10-second progress mark for shard 100. For shard 35 the total number of nodes only decreased by 274, while runtime grew by ~45%. Rebuilding exact products late in the tree remains more expensive than the work it saves.
+
+**Decision:** the exact divisor theorem and regression coverage are retained; both product-LCM runtime variants are experimental and must not be merged into the production V21 72-hour runner. Further priority is diagnostic profiling of V21 hard-root DFS, followed by earlier structural/conditional LP cuts rather than additional late arithmetic cuts.
