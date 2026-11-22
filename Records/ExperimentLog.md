@@ -178,3 +178,10 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Exponent 300: canonical order 14,238 branches / 0.687752 s; DP order 14,168 branches / 0.644600 s.
 - Exponent 500: canonical order 40,733 branches / 7.99203 s; exponent-300 DP order 41,271 branches / 7.80897 s.
 - Interpretation: the DP order gives a modest improvement at exponent 300; the exponent-300 optimum does not minimize branch count at exponent 500. A target-specific profile is required. Wall time improved slightly at 500 despite 1.32% more branches, consistent with ordering/cache effects.
+
+## Experiment 015 — Target-specific root-order profile at exponent 500 (queued)
+
+- Date: 2026-11-22.
+- Rationale: the exponent-300 optimum increased the branch count at exponent 500, so optimize the exact target used in the next test.
+- Method: measure all 1024 subset transitions at exponent 500 with one thread and cold factorization cache per edge; run exact branch-count and elapsed-time subset DP.
+- Workflow: [RootOrderOptimization500.yml](../.github/workflows/RootOrderOptimization500.yml).
