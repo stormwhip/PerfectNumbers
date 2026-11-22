@@ -14,11 +14,13 @@ Let `N` be an odd perfect number, and consider a factor-chain branch specifying 
 Since `N` is odd, the odd part `s(p,a)=sigma(p^a)/2^{nu_2(sigma(p^a))}` divides `N`, and `p^a | N`. Accordingly
 
 \[
-D_{k+1}=\operatorname{lcm}(D_k,p^a,s(p,a)),\qquad D_0=1
+A_k=\prod_{i=1}^{k}p_i^{a_i},\qquad
+B_k=\prod_{i=1}^{k}s(p_i,a_i),\qquad
+D_k=\operatorname{lcm}(A_k,B_k).
 \]
-is a *mandatory exact divisor of N* at every state. The branch closes if `D_k > 10^B` for a target `N<=10^B`.
+The products range over *distinct* branched primes. Because \(\sigma(N)=\prod_i\sigma(p_i^{e_i})=2N\), we have both \(A_k\mid N\) and \(B_k\mid N\), including repeated prime factors across different sigma terms. Consequently \(D_k\mid N\). The branch closes if `D_k > 10^B` for a target `N<=10^B`.
 
-This cut needs no factorization, primality inference, approximate logarithm, or Ochem database entry. In V22, only the decision `D_k > 10^B` closes a branch; this is exact GMP integer comparison.
+This cut needs no factorization, primality inference, approximate logarithm, or Ochem database entry. In V22, only the decision `D_k > 10^B` closes a branch; this is exact GMP integer comparison. Summing multiplicities in the product `B_k` is stronger than taking the LCM over individual sigma terms.
 
 ## Cheap even-power screen
 
@@ -61,7 +63,7 @@ V22 keeps the original `get_exponents` branch list and rejects impossible branch
 - `OPN_EXACT_DIVISOR_MODE=1`: add exact even-power check.
 - `OPN_EXACT_DIVISOR_MODE=2`: add cumulative sigma-divisor LCM cut (default in V22).
 
-Local primitive test passed (GMP/C++17; `3^2` forces `117`, adding `7^2` forces `108927`). Full V22 regression runs through `QualityChecks.yml` on this research branch.
+Local primitive test passed (GMP/C++17; `3^2` forces `117`, adding `7^2` forces `108927`). A new regression uses `3^2` and `61^2`: their sigma values share factor 13, and multiplying sigma contributions yields a mandatory divisor `548985177`, exactly 13 times the naive individual-LCM result `42229629`. Full V22 regression runs through `QualityChecks.yml` on this research branch.
 
 ## Remaining performance experiment
 
