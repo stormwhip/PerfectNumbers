@@ -46,6 +46,15 @@ with tempfile.TemporaryDirectory(prefix="opn-scheduler-test-") as tmp:
     assert "TREE_SEARCH_COMPLETE_UNAUDITED" in txt, txt
     assert "proven=8 total=8" in run(["status"] + common)
     assert "proven=8 total=8" in run(["verify"] + common)
+    # A corrupted result log must invalidate the saved PROVEN flag.
+    bad_log = out / "Logs" / "P19_I00000.log"
+    bad_log.write_text("FORGED COMPLETION", encoding="utf-8")
+    run(["verify"] + common, expected=1)
+    assert "TREE_SEARCH_COMPLETE_UNAUDITED" in run(
+        ["run", "--jobs", "2", "--threads-per-job", "1",
+         "--max-hours", "0.05"] + common
+    )
+    assert "proven=8 total=8" in run(["verify"] + common)
     manifest = json.loads((out / "Manifest.json").read_text())
     assert len(manifest["tasks"]) == 8
     assert manifest["root_order"] == [19, 7, 11, 31, 13, 3, 5, 17]

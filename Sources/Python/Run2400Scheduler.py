@@ -115,7 +115,21 @@ def accepted(out, task):
         data = json.loads(p.read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return False
-    return data.get("status") == "PROVEN" and data.get("task") == task
+    if (data.get("status") != "PROVEN" or data.get("task") != task
+            or data.get("exit_code") != 0):
+        return False
+    log = out / "Logs" / (task["id"] + ".log")
+    if not log.is_file() or data.get("log_sha256") != digest(log):
+        return False
+    content = log.read_text(encoding="utf-8", errors="replace")
+    expected = (
+        f"Forbid p={task['root']} branch={task['index']}/{task['count']} "
+        "-> PROVEN"
+    )
+    at = content.find(expected)
+    if at < 0:
+        return False
+    return re.search(r"failed_rb=0", content[at:at + 300]) is not None
 
 
 def run_task(base, out, task, deadline, threads, root_order):
