@@ -30,3 +30,6 @@ The numerical LP bound applies to the complementary forbidden-prime-free case. I
 
 | Exponent-500 exact subset DP | All 1024 edges completed; branch-optimal canonical order, distinct time optimum | [Run 44996427816](https://github.com/stormwhip/PerfectNumbers/actions/runs/44996427816) | Assess higher-exponent transferability |
 | Early-state V14 and forced-prime V15 | Both compile and core tests pass; matched benchmark running | [Run 44998627399](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998627399) | Quantify early LP cuts and compare complete roots |
+
+| V14 intermediate-state LP branch elimination | Verified root 17 eliminated at exponents 1000 and 1500; exponent 2201 still times out | [Run 44998508242](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998508242) | Generalize the cut to bound 2300 or seek stronger prime-power constraints |
+| V15 forced-prime dual gain | Computationally verified, no added pruning on matched complete roots | [Run 44998508242](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998508242) | Test dual reoptimization with required prime-power options |

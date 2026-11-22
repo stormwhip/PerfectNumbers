@@ -87,3 +87,24 @@ For the benchmark, stored prefix certificates are computed by the interval arith
 - Matched benchmark: [ForcedPrimeLpBenchmark.yml](../.github/workflows/ForcedPrimeLpBenchmark.yml).
 
 Full result details belong in [ExperimentLog](../Records/ExperimentLog.md).
+
+## Matched benchmark results (2026-11-22)
+
+The bounded workflow [44998508242](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998508242) finished successfully. Mask 127 has a precomputed interval-dual lower exponent **1644.682315669432**.
+
+| Exponent/root | V13 branches/time | V14 branches/time | V15 branches/time |
+| --- | --- | --- | --- |
+| 1000 / 17 | 7,709 / 6.030 s | 0 / 0.0064 s | 0 / 0.00033 s |
+| 1000 / 31 | 21,408 / 15.192 s | 21,408 / 15.204 s | 21,408 / 15.236 s |
+| 1500 / 17 | 187,909 / 52.102 s | 0 / 0.0052 s | 0 / 0.0059 s |
+| 2201 / 17 | TIMEOUT 30 s | TIMEOUT 30 s | TIMEOUT 30 s |
+
+All completed roots reported PROVEN and zero unresolved roadblocks, subject to the outstanding proof-grade arithmetic audit.
+
+The p=17 early-state cut at exponents 1000 and 1500 is explained by excluding the first seven roots and then applying their LP complement bound directly. At exponent 2201, that seven-prime bound is insufficient. V15's additional forced-prime dual gains did not reduce these completed root branch counts beyond the V14 cuts.
+
+### Research direction: prime-power-conditioned reoptimization
+
+For a forced prime \(q\), the V15 gain uses the existing Lagrange multipliers and requires only \(\sum_{a}x_{q,a}=1\). A stronger candidate is to solve a **separate primal-dual LP under \(x_{q,a}=1\)** for selected exponent options. Its new dual can exploit required divisor-sum factors and special-prime slot restrictions before the full recursive factor chain explores that option.
+
+Candidates should be screened numerically before generating interval-dual certificates. The experimental obligation is to show a branch-count reduction **at exponent 2300**, with the prime-power options partitioning all admissible exponents.
