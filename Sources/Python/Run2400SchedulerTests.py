@@ -48,6 +48,9 @@ with tempfile.TemporaryDirectory(prefix="opn-scheduler-test-") as tmp:
     assert "proven=8 total=8" in run(["verify"] + common)
     manifest = json.loads((out / "Manifest.json").read_text())
     assert len(manifest["tasks"]) == 8
+    assert manifest["root_order"] == [19, 7, 11, 31, 13, 3, 5, 17]
+    run(["prepare", "--root-order", "3,5,7,11,13,17,31,19"] + common, expected=2)
+    run(["verify", "--root-order", "3,5,7,11,13,17,31,19"] + common, expected=2)
     # A modified input invalidates completion and requires a fresh manifest.
     (base / "facts.dat").write_bytes(b"corrupted-test-data")
     run(["verify"] + common, expected=2)

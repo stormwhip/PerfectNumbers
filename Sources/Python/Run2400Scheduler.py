@@ -59,17 +59,20 @@ def load_manifest(base, out):
     return manifest
 
 
-def prepare(base, out):
+def prepare(base, out, root_order):
     inputs = {f: digest(base / f) for f in INPUTS}
     manifest_path = out / "Manifest.json"
     if manifest_path.exists():
         current = load_manifest(base, out)
+        if tuple(current["root_order"]) != tuple(root_order):
+            raise RuntimeError("Existing manifest uses a different root order")
         print(f"ALREADY_PREPARED tasks={len(current['tasks'])} manifest={manifest_path}")
         return
     tasks = []
     env = dict(os.environ)
     env["OMP_NUM_THREADS"] = "1"
-    for root in ROOTS:
+    env["OPN_ROOT_ORDER"] = ",".join(map(str, root_order))
+    for root in root_order:
         result = subprocess.run(
             ["./ProofTreeV21", "2400", str(root), "list"],
             cwd=base, env=env, text=True, capture_output=True, timeout=120,
@@ -91,7 +94,7 @@ def prepare(base, out):
         print(f"MANIFEST_ROOT p={root} options={len(entries)}", flush=True)
     atomic_json(manifest_path, {
         "target_exponent": 2400,
-        "root_order": list(ROOTS),
+        "root_order": list(root_order),
         "created_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "sha256": inputs,
         "tasks": tasks,
@@ -115,7 +118,7 @@ def accepted(out, task):
     return data.get("status") == "PROVEN" and data.get("task") == task
 
 
-def run_task(base, out, task, deadline, threads):
+def run_task(base, out, task, deadline, threads, root_order):
     if accepted(out, task):
         return "PROVEN"
     remaining = deadline - time.monotonic()
@@ -125,6 +128,7 @@ def run_task(base, out, task, deadline, threads):
     log.parent.mkdir(parents=True, exist_ok=True)
     env = dict(os.environ)
     env["OMP_NUM_THREADS"] = str(threads)
+    env["OPN_ROOT_ORDER"] = ",".join(map(str, root_order))
     command = ["./ProofTreeV21", "2400", str(task["root"]), str(task["index"])]
     start = time.monotonic()
     return_code = None
@@ -182,13 +186,23 @@ def main():
     parser.add_argument("--jobs", type=int, default=4)
     parser.add_argument("--threads-per-job", type=int, default=2)
     parser.add_argument("--max-hours", type=float, default=72.0)
+    parser.add_argument("--root-order", type=str, default=None,
+                        help="Comma-separated eight-prime permutation; frozen into manifest")
     args = parser.parse_args()
     base = args.base.resolve()
     out = args.out.resolve()
+    desired_order = tuple(int(q) for q in args.root_order.split(",")) if args.root_order else None
+    if desired_order is not None and sorted(desired_order) != sorted(ROOTS):
+        parser.error("--root-order must permute exactly the eight canonical root primes")
     if args.mode == "prepare":
-        prepare(base, out)
+        prepare(base, out, desired_order or ROOTS)
         return 0
     manifest = load_manifest(base, out)
+    if desired_order is not None and tuple(manifest["root_order"]) != desired_order:
+        raise RuntimeError("Requested root order differs from saved manifest")
+    root_order = tuple(manifest["root_order"])
+    if sorted(root_order) != sorted(ROOTS):
+        raise RuntimeError("Saved root order is not an eight-prime permutation")
     if args.mode in ("status", "verify"):
         done = status(out, manifest)
         return 0 if args.mode == "status" or done else 1
@@ -201,7 +215,8 @@ def main():
           f"remaining_tasks={len(pending)} max_hours={args.max_hours}", flush=True)
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.jobs) as pool:
         futures = [
-            pool.submit(run_task, base, out, task, deadline, args.threads_per_job)
+            pool.submit(run_task, base, out, task, deadline,
+                        args.threads_per_job, root_order)
             for task in pending
         ]
         for f in concurrent.futures.as_completed(futures):
