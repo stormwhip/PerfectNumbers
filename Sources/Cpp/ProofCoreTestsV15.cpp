@@ -23,6 +23,7 @@ int main() {
     assert(check_state_lp_contradiction(st));
     st.lp_known_abund_upper = 0.0;
     st.branched.clear();
+    st.log_size_branched = 0.0;
     st.forbidden.clear();
     st.unbranched.clear();
     st.unbranched.insert(mpz_class(7));
