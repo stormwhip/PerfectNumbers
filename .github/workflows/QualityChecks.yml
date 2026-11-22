@@ -27,6 +27,11 @@ jobs:
         run: |
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV16.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV16
           ./Build/ProofCoreTestsV16
+      - name: Verify V18 safe residual counts
+        run: |
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV18.cpp -lgmpxx -lgmp -o Build/ProofTreeV18
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV18.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV18
+          ./Build/ProofCoreTestsV18
       - name: Run pure Python tests and syntax validation
         run: |
           python3 Sources/Python/CertificateTests.py
