@@ -308,6 +308,7 @@ struct PrefixDualBound {
 std::array<PrefixDualBound, 256> PREFIX_DUALS;
 uint32_t ACTIVE_PREFIX_MASK = 0;
 std::atomic<uint64_t> state_lp_prunes{0};
+std::atomic<uint64_t> state_lp_early_prunes{0};
 
 bool load_prefix_duals(const char* path, const char* gain_path) {
     std::ifstream in(path);
@@ -424,6 +425,7 @@ bool check_state_lp_contradiction(const State& st) {
     const double total_lower = known_size_lower + residual_size_lower - 1e-7 * count;
     if (total_lower > LOG_BOUND + 1e-7) {
         state_lp_prunes.fetch_add(1, std::memory_order_relaxed);
+        if (!st.unbranched.empty()) state_lp_early_prunes.fetch_add(1, std::memory_order_relaxed);
         return true;
     }
     return false;
@@ -725,13 +727,12 @@ uint32_t compute_roadblock_bound(const State& st, double rem_size, double abund_
 bool solve(State& st, bool in_circ, int depth, std::atomic<bool>& ok_flag) {
     if (!ok_flag.load(std::memory_order_relaxed)) return false;
     if (check_contradiction(st)) return true;
+    if (check_state_lp_contradiction(st)) return true;
 
     if (!st.unbranched.empty()) {
         mpz_class p = *st.unbranched.rbegin();
         return branch_prime(st, p, in_circ, depth, ok_flag);
     }
-
-    if (check_state_lp_contradiction(st)) return true;
 
     if (st.log_abund_hi >= LN2 - 1e-12) {
         failed_roadblocks.fetch_add(1, std::memory_order_relaxed);
@@ -883,6 +884,7 @@ int main(int argc, char** argv) {
         uint64_t c_before = circ_branches.load();
         uint64_t f_before = failed_roadblocks.load();
         uint64_t lp_before = state_lp_prunes.load();
+        uint64_t early_before = state_lp_early_prunes.load();
         max_rb_b.store(0);
         heavy_rb_printed.store(0);
 
@@ -936,6 +938,7 @@ int main(int argc, char** argv) {
                   << " (circ=" << (circ_branches.load() - c_before) << ", max_b=" << max_rb_b.load() << ")"
                   << " | failed_rb=" << (failed_roadblocks.load() - f_before)
                   << " | lp_prunes=" << (state_lp_prunes.load() - lp_before)
+                  << " | lp_early=" << (state_lp_early_prunes.load() - early_before)
                   << " | " << dt << "s\n" << std::flush;
 
         if (!ok || only_p != 0) break;
