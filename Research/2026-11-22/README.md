@@ -44,6 +44,11 @@ g++ -std=c++17 -O2 -fopenmp Research/2026-11-22/Cpp/ProofCoreTestsV24.cpp -lgmpx
 - [证书验证器](Python/TerminalCertificate.py)、[原根集证书](Certificates/TerminalOriginal.json.gz)、[替换根集证书](Certificates/TerminalReplacement.json.gz)。
 - [分界扫描原型](Python/RoadblockBoundaryProfile.py)及[随机差分测试](Python/RoadblockBoundaryProfileTests.py)。
 
+## 路障乘子精确搜索
+
+- [整数格点二分推导与实测](Reports/RoadblockMultiplierSearch.md)。
+- [参考实现](Python/RoadblockMultiplierSearch.py)和[穷举对照](Python/RoadblockMultiplierSearchTests.py)。
+
 ## 下一步数学研究
 
 优先推进 [形式化难题 IV：状态条件化 LP 早期剪枝](../../Documentation/ResearchProblems2400.md#5-核心难题-iv可早期证明的状态条件化-lp-剪枝)。需要同时保持证明完备性、可校验证书，以及在完整困难分片上的总运行时收益。
