@@ -12,7 +12,7 @@ Computational research on lower bounds for odd perfect numbers (OPNs), combining
 
 | Location | Contents |
 | --- | --- |
-| [Sources/Cpp](Sources/Cpp) | GMP factorization index builder and proof-tree versions V1–V7 |
+| [Sources/Cpp](Sources/Cpp) | GMP factorization index builder and proof-tree versions V1–V8 |
 | [Sources/Python](Sources/Python) | LP baseline, ablation study, interval dual certificate |
 | [Documentation](Documentation) | Technical LaTeX report and preserved historical research handoff |
 | [References](References) | Original Ochem–Rao reference paper |
@@ -81,3 +81,7 @@ The historical Python workflow output can be inspected in [Run 44990184125](http
 V7 also compiled and passed its core tests in [Run 44991317752](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991317752). The bounded 2201 candidate experiment is separately tracked in [Run 44991101998](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991101998).
 
 The first bounded probe at exponent 2201 timed out after 120 seconds on each of roots 17 and 307. Its V5/V6 control experiment at exponent 1000, root 17, matched exactly at 2,770 branches, with elapsed times 2.28969 s / 2.25512 s respectively. These two target timeouts are inconclusive and no new lower bound follows.
+
+## V8 diagnostic build
+
+`Sources/Cpp/ProofTreeV8.cpp` adds 10-second progress reports, allowing bounded high-exponent experiments to expose where time is spent. Each report includes branch and circular-branch counts and the largest roadblock bound encountered. A short follow-up probe at exponent 2201 is tracked in `.github/workflows/TargetedProbe.yml`.

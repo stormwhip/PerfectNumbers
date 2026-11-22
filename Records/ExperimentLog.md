@@ -76,3 +76,12 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
   - V6, exponent 2201, root 307: `TIMEOUT` after 120 s; no completed root result.
 - The database checksum passed and the index builder reported 106,206,170 lines / 41,322,879 groups.
 - Logs: [Run 44991101998](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991101998) (artifact `TargetedProbeLogs`). The timeout cases had no periodic progress counters, motivating progress instrumentation in a subsequent version.
+
+## Experiment 006 — V8 periodic progress diagnostics (planned)
+
+- Date: 2026-11-22.
+- Source: `Sources/Cpp/ProofTreeV8.cpp`, based on V7 and preserving prior versions.
+- Modification: independent timer reporter emits flushed `[PROGRESS]` events every 10 seconds with total and circular branch counts, failed roadblock count, maximum roadblock prime bound, and elapsed wall time.
+- Purpose: characterize the bottleneck on exponent-2201 roots 17 and 307 even when a bounded experiment times out.
+- Planned probe: 60-second cap per root, fixed factorization snapshot, 2 OpenMP threads, uploaded logs.
+- Validation and results: pending workflow execution.

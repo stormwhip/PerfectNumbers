@@ -1,4 +1,4 @@
-name: Targeted exponent 2201 probe
+name: Instrumented exponent 2201 probe
 on:
   push:
     paths:
@@ -20,12 +20,11 @@ jobs:
           persist-credentials: false
       - name: Install GMP and zlib
         run: sudo apt-get update && sudo apt-get install -y libgmp-dev zlib1g-dev
-      - name: Compile V5, V6 and indexer
+      - name: Compile V8 and indexer
         run: |
           mkdir -p Build
           g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV5.cpp -lgmpxx -lgmp -o Build/ProofTreeV5
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV6.cpp -lgmpxx -lgmp -o Build/ProofTreeV6
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV8.cpp -lgmpxx -lgmp -o Build/ProofTreeV8
       - name: Retrieve pinned database and construct index
         working-directory: Build
         env:
@@ -39,7 +38,7 @@ jobs:
           ./BuildIndex checkfacts.txt.gz
           test "$(stat -c %s facts.dat)" = 745826778
           test "$(stat -c %s facts.idx)" = 1322332128
-      - name: Run short baseline and exponent probes
+      - name: Run short instrumented exponent probes
         working-directory: Build
         run: |
           set +e
@@ -57,10 +56,8 @@ jobs:
               echo "RESULT version=$version exponent=$exponent root=$root status=UNRESOLVED code=$rc"
             fi
           }
-          run_case V5 1000 17 35
-          run_case V6 1000 17 35
-          run_case V6 2201 17 120
-          run_case V6 2201 307 120
+          run_case V8 2201 17 60
+          run_case V8 2201 307 60
       - name: Save small probe logs
         if: always()
         uses: actions/upload-artifact@v4
