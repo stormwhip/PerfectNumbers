@@ -77,3 +77,5 @@ The historical Python workflow output can be inspected in [Run 44990184125](http
 ## V7 parallel roadblock prototype
 
 `Sources/Cpp/ProofTreeV7.cpp` introduces block-parallel circular prime case checking on large roadblocks. The partition preserves the prior-prime exclusion prefix for each block. Historical V1–V6 implementations remain unchanged, and `ProofCoreTestsV7.cpp` provides a separate smoke-test entry. V7 requires dataset-backed parallel equivalence testing before any proof claims.
+
+V7 also compiled and passed its core tests in [Run 44991317752](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991317752). The bounded 2201 candidate experiment is separately tracked in [Run 44991101998](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991101998).

@@ -59,5 +59,14 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Base: V6 preserved unchanged; V7 is a separate code version.
 - Change: partition large roadblock prime cases into disjoint ordered blocks. Each task starts from the forbidden-prefix state of all earlier prime cases; within a block the original sequential exclusion order is retained. Task submissions are throttled to limit memory overhead.
 - Activation: circular roadblock bound `b > 2000`, at least 256 eligible primes, and more than one OpenMP thread.
-- Validation: compilation and `ProofCoreTestsV7` requested through source quality checks. Comparison against V6 and independent review of the prefix-partition argument remain pending.
+- Validation: PASS in [source quality run 44991317752](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991317752), commit `9002859367742813d9fb15f91a946d8ef2a45a9e`: indexer and V1–V7 compiled, `ProofCoreTests: OK`, `ProofCoreTestsV7: OK`, and Python syntax check passed. Dataset-backed comparison and independent prefix-partition review remain pending.
 - Performance rationale: improve utilization of multi-core hosts for heavy nested circular searches.
+
+## Experiment 005 — Bounded exponent 2201 targeted probe
+
+- Launched 2026-11-22 from commit `f04f35e99081d5c0a3ceb1440788ca15598c516f`.
+- Workflow: [Run 44991101998](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991101998).
+- Uses the checksum-pinned factor database and both V5 and V6.
+- Intended runs: V5/V6 at exponent 1000, root 17 (35s cap each); V6 at exponent 2201 for roots 17 and 307 (120s cap each).
+- Each root result is classified as `TREE_SUCCESS`, `UNRESOLVED`, or `TIMEOUT`. A timeout is inconclusive; individual successes do not constitute the complete all-root proof.
+- Final result: pending workflow completion.
