@@ -33,6 +33,11 @@ g++ -std=c++17 -O2 -fopenmp Research/2026-11-22/Cpp/ProofCoreTestsV24.cpp -lgmpx
 
 原研究分支保留 [ExactSigmaV22Pilot.yml](https://github.com/stormwhip/PerfectNumbers/blob/research/exact-sigma-size-v22/.github/workflows/ExactSigmaV22Pilot.yml)、[V23PrimalityPilot.yml](https://github.com/stormwhip/PerfectNumbers/blob/research/exact-sigma-size-v22/.github/workflows/V23PrimalityPilot.yml)、[V24CompositePilot.yml](https://github.com/stormwhip/PerfectNumbers/blob/research/exact-sigma-size-v22/.github/workflows/V24CompositePilot.yml) 和 [ProofTreeV21Profiler.yml](https://github.com/stormwhip/PerfectNumbers/blob/research/exact-sigma-size-v22/.github/workflows/ProofTreeV21Profiler.yml)；归档代码与研究分支对应版本一致。
 
+## Roadblock 对偶研究
+
+- [固定点对偶原型](Python/RoadblockDual.py)与[复现实验](Python/RoadblockDualTests.py)。
+- [理论推导、实验结果与接入难点](Reports/CertifiedRoadblockDual.md)。
+
 ## 下一步数学研究
 
 优先推进 [形式化难题 IV：状态条件化 LP 早期剪枝](../../Documentation/ResearchProblems2400.md#5-核心难题-iv可早期证明的状态条件化-lp-剪枝)。需要同时保持证明完备性、可校验证书，以及在完整困难分片上的总运行时收益。
