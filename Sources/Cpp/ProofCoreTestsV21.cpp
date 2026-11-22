@@ -78,7 +78,25 @@ int main() {
     // every admissible Euler/ordinary exponent within the 10^2400 size bound.
     // A nonexact branch a covers e whenever (a+1)|(e+1) and a<=e,
     // since sigma(p^a) then divides sigma(p^e).
+    // Selecting an unknown factor exposed inside a counted residual must
+    // not charge the same prime to both the residual and p^e.
+    State circular;
+    circular.composites.push_back(comp);
+    refresh_composite_size_bound(circular);
+    State adjusted;
+    assert(prepare_circular_prime(circular, mpz_class(1009), adjusted));
+    assert(adjusted.unbranched.count(mpz_class(1009)) == 1);
+    assert(adjusted.log_size_comp == 0.0);
+    assert(!prepare_circular_prime(adjusted, mpz_class(1009), circular));
+    assert(!prepare_circular_prime(circular, mpz_class(1019), adjusted));
     init_primes(300000);
+    LOG_BOUND = 3.5 * std::log(1009.0);
+    const auto unadjusted_choices = get_exponents(circular, mpz_class(1009));
+    const auto adjusted_choices = get_exponents(adjusted, mpz_class(1009));
+    assert((std::find(unadjusted_choices.begin(), unadjusted_choices.end(),
+                      std::make_pair<uint64_t, bool>(2, false)) == unadjusted_choices.end()));
+    assert((std::find(adjusted_choices.begin(), adjusted_choices.end(),
+                      std::make_pair<uint64_t, bool>(2, false)) != adjusted_choices.end()));
     LOG_BOUND = 2400.0 * std::log(10.0);
     State empty;
     uint64_t covered_cases = 0;
