@@ -110,15 +110,35 @@ int main() {
     assert(opn::even_exponent_power_exceeds_half_bound(mpz_class(19), 4, small_half));
     assert(!opn::even_exponent_power_exceeds_half_bound(mpz_class(19), 1, small_half));
 
-    // Verify sigma divisibility without relying on primality or a factor database.
-    mpz_class required = opn::extend_forced_divisor(mpz_class(1), mpz_class(3), 2);
-    assert(required == 117); // 3^2 * sigma(3^2) = 9 * 13
-    required = opn::extend_forced_divisor(required, mpz_class(7), 2);
-    assert(required == 108927); // lcm(9*13, 7^2, sigma(7^2)=57)
-    assert(mpz_divisible_p(required.get_mpz_t(), mpz_class(117).get_mpz_t()));
-    assert(opn::extend_forced_divisor(mpz_class(1), mpz_class(5), 1) == 15);
+    // Exact divisor product: sigma factors of DIFFERENT selected primes
+    // multiply, including common prime factors.
+    opn::ExactDivisorProducts products;
+    products = opn::extend_forced_products(products, mpz_class(3), 2);
+    assert(opn::mandatory_divisor(products) == 117);
+    products = opn::extend_forced_products(products, mpz_class(7), 2);
+    assert(opn::mandatory_divisor(products) == 108927);
+    assert(mpz_divisible_ui_p(opn::mandatory_divisor(products).get_mpz_t(), 117));
+    opn::ExactDivisorProducts special;
+    special = opn::extend_forced_products(special, mpz_class(5), 1);
+    assert(opn::mandatory_divisor(special) == 15);
     assert(mpz_divisible_ui_p(mpz_class(3906).get_mpz_t(), 31));
-    assert(opn::extend_forced_divisor(mpz_class(1), mpz_class(5), 2) == 775);
+    opn::ExactDivisorProducts inexact;
+    inexact = opn::extend_forced_products(inexact, mpz_class(5), 2);
+    assert(opn::mandatory_divisor(inexact) == 775);
+    // sigma(3^2)=13, sigma(61^2)=3783=3*13*97.
+    // Taking LCM over individual sigmas loses a required factor of 13.
+    opn::ExactDivisorProducts overlapping;
+    overlapping = opn::extend_forced_products(overlapping, mpz_class(3), 2);
+    overlapping = opn::extend_forced_products(overlapping, mpz_class(61), 2);
+    const mpz_class full_required = opn::mandatory_divisor(overlapping);
+    assert(full_required == 548985177);
+    mpz_class naive = 1, s3 = 13, s61 = 3783, p3 = 9, p61 = 3721;
+    mpz_lcm(naive.get_mpz_t(), naive.get_mpz_t(), p3.get_mpz_t());
+    mpz_lcm(naive.get_mpz_t(), naive.get_mpz_t(), s3.get_mpz_t());
+    mpz_lcm(naive.get_mpz_t(), naive.get_mpz_t(), p61.get_mpz_t());
+    mpz_lcm(naive.get_mpz_t(), naive.get_mpz_t(), s61.get_mpz_t());
+    assert(naive == 42229629);
+    assert(full_required == naive * 13);
 
     // An exact, arithmetic-only test of how many top-level exponent options
     // can be discarded before sigma factorization: 1382 of 3072 at 2400.
