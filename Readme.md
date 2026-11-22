@@ -71,3 +71,5 @@ V6 is under validation. The ALPHA assumption, probabilistic primality decisions 
 - V5, exponent 300, all 15 roots: 13,250 branches, no failed roadblocks, 0.390215 seconds for the proof tree on a two-thread GitHub runner ([original run](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990168041)).
 - V6 and earlier C++ versions compile, core regression tests print `ProofCoreTests: OK`, and Python syntax checks pass ([quality run](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990984163)).
 - The next performance gate is a dataset-backed, root-matched comparison of V5 and V6 at a higher exponent.
+
+The historical Python workflow output can be inspected in [Run 44990184125](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990184125). It reports a 3129.458561 complement-case LP value and an interval dual output agreeing to six decimals. The full independent mathematical audit remains open.

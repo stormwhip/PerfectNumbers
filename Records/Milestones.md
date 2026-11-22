@@ -4,7 +4,7 @@
 | --- | --- | --- | --- |
 | 2012 published bound \(N>10^{1500}\) | Published external reference | [OchemRao2012](../References/OchemRao2012.pdf) | Reproduce locally for regression |
 | Local V4 search at exponent 1500 | Reported in historical handoff | [LegacyResearchHandoff](../Documentation/LegacyResearchHandoff.md) | Recover full run log and repeat independently |
-| Complement-case LP endgame around exponent 3129 | Reported in historical handoff | [EndgameResearchReport](../Documentation/EndgameResearchReport.tex) | Audit relaxation and independent interval dual certificate |
+| Complement-case LP endgame around exponent 3129 | GitHub computation observed; mathematical audit open | [Python workflow run 44990184125](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990184125) | Independently audit the model and interval dual certificate |
 | GitHub directory and filename normalization | Completed 2026-11-22 | Reorganization commit | Compile and test renamed entry points |
 | V6 conservative roadblock and composite accounting | Core regression passed (2026-11-22) | [ProofTreeV6](../Sources/Cpp/ProofTreeV6.cpp) and [ProofCoreTests](../Sources/Cpp/ProofCoreTests.cpp) | Compilation and core checks passed; dataset-backed V5/V6 benchmark pending |
 | Complete unconditional exponent 2200 | Not yet verified in this project | No complete proof artifact on record | Pass all 15 roots plus independently audited endgame |

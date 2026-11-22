@@ -41,3 +41,14 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Result: all 15 roots printed `PROVEN` with `failed_rb=0`.
 - Total reported branches: **13,250**, circular branches: **0**, tree elapsed: **0.390215 s** (excluding database download and indexing).
 - Status: real retrieved execution log, **not** a proof-grade independent verification of all mathematical assumptions.
+
+## Experiment 003 — Retrieved Python LP and interval-dual execution
+
+- Date (original run): 2026-11-22; date retrieved: 2026-11-22.
+- Source commit: `1c7d0661ff1356105e5395b3bb02c49394491ee6`.
+- Workflow: [Run 44990184125](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990184125).
+- Code: historical Python baseline, ablation and interval-certificate scripts (now under `Sources/Python`).
+- Reported floating LP objective: \(\log_{10}N =3129.458561\) for the forbidden-prime-free complementary case.
+- Reported interval-dual lower endpoint: \(\log_{10}N =3129.458561\) after rounding to six decimals; floating minus certified value \(7.77\times10^{-8}\).
+- Historical Roadblock 2 numerical scan: transition at prime `859`; this threshold scan itself used floating optimization.
+- Result: **the programs ran and produced these values**. Independent verification of every LP relaxation constraint, infinite-tail argument and certificate rounding is still pending.
