@@ -10,19 +10,25 @@ ROOT_ORDER="${OPN_ROOT_ORDER:-19,7,11,31,13,3,5,17}"
 TASK="${1:-help}"
 mkdir -p "$BUILD"
 cd "$ROOT"
+PYTHON="$ROOT/.venv/bin/python"
+if [[ ! -x "$PYTHON" ]]; then PYTHON=python3; fi
 
 case "$TASK" in
   selftest)
-    python3 Sources/Python/CertificateTests.py
-    python3 Sources/Python/Prime61FactorChecks.py
-    python3 Sources/Python/Run2400SchedulerTests.py
+    "$PYTHON" Sources/Python/CertificateTests.py
+    "$PYTHON" Sources/Python/Prime61FactorChecks.py
+    "$PYTHON" Sources/Python/Run2400SchedulerTests.py
     ;;
   prepare)
     command -v g++ >/dev/null
     command -v gh >/dev/null
     command -v sha256sum >/dev/null
     command -v python3 >/dev/null
-    python3 -m pip install -r Requirements.txt
+    if [[ ! -x "$ROOT/.venv/bin/python" ]]; then
+      python3 -m venv "$ROOT/.venv"
+    fi
+    PYTHON="$ROOT/.venv/bin/python"
+    "$PYTHON" -m pip install -r Requirements.txt
     g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV21.cpp -lgmpxx -lgmp -o "$BUILD/ProofTreeV21"
     g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV21.cpp -lgmpxx -lgmp -o "$BUILD/ProofCoreTestsV21"
     "$BUILD/ProofCoreTestsV21"
@@ -50,21 +56,21 @@ case "$TASK" in
        [[ "$(($(wc -l < "$BUILD/PrefixDualBounds.csv") - 1))" != 256 ]] ||
        [[ ! -s "$BUILD/PrefixDualVariableGains.csv" ]] ||
        [[ ! -s "$BUILD/PrefixDualForcedGains.csv" ]]; then
-      OPENBLAS_NUM_THREADS=1 python3 -u Sources/Python/PrefixDualCertificates.py "$BUILD/PrefixDualBounds.csv" |
+      OPENBLAS_NUM_THREADS=1 "$PYTHON" -u Sources/Python/PrefixDualCertificates.py "$BUILD/PrefixDualBounds.csv" |
         tee "$BUILD/PrefixCertificateLog.txt"
     fi
     test "$(($(wc -l < "$BUILD/PrefixDualBounds.csv") - 1))" = 256
-    python3 Sources/Python/Run2400Scheduler.py prepare --base "$BUILD" --out "$OUT" --root-order "$ROOT_ORDER"
+    "$PYTHON" Sources/Python/Run2400Scheduler.py prepare --base "$BUILD" --out "$OUT" --root-order "$ROOT_ORDER"
     echo "PREPARED: $OUT"
     ;;
   run)
-    python3 Sources/Python/Run2400Scheduler.py run --base "$BUILD" --out "$OUT"       --root-order "$ROOT_ORDER"       --jobs "${OPN_JOBS:-16}" --threads-per-job "${OPN_THREADS_PER_JOB:-2}"       --max-hours "${OPN_MAX_HOURS:-72}"
+    "$PYTHON" Sources/Python/Run2400Scheduler.py run --base "$BUILD" --out "$OUT"       --root-order "$ROOT_ORDER"       --jobs "${OPN_JOBS:-16}" --threads-per-job "${OPN_THREADS_PER_JOB:-2}"       --max-hours "${OPN_MAX_HOURS:-72}"
     ;;
   status)
-    python3 Sources/Python/Run2400Scheduler.py status --base "$BUILD" --out "$OUT" --root-order "$ROOT_ORDER"
+    "$PYTHON" Sources/Python/Run2400Scheduler.py status --base "$BUILD" --out "$OUT" --root-order "$ROOT_ORDER"
     ;;
   verify)
-    python3 Sources/Python/Run2400Scheduler.py verify --base "$BUILD" --out "$OUT" --root-order "$ROOT_ORDER"
+    "$PYTHON" Sources/Python/Run2400Scheduler.py verify --base "$BUILD" --out "$OUT" --root-order "$ROOT_ORDER"
     ;;
   *)
     echo "Usage: bash Scripts/Run72hWSL.sh {selftest|prepare|run|status|verify}"
