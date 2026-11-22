@@ -38,6 +38,12 @@ g++ -std=c++17 -O2 -fopenmp Research/2026-11-22/Cpp/ProofCoreTestsV24.cpp -lgmpx
 - [固定点对偶原型](Python/RoadblockDual.py)与[复现实验](Python/RoadblockDualTests.py)。
 - [理论推导、实验结果与接入难点](Reports/CertifiedRoadblockDual.md)。
 
+## 终局 LP 证书与分界扫描
+
+- [终局证书、路障事件扫描与复现](Reports/CertifiedTerminalAndBoundaryProfile.md)。
+- [证书验证器](Python/TerminalCertificate.py)、[原根集证书](Certificates/TerminalOriginal.json.gz)、[替换根集证书](Certificates/TerminalReplacement.json.gz)。
+- [分界扫描原型](Python/RoadblockBoundaryProfile.py)及[随机差分测试](Python/RoadblockBoundaryProfileTests.py)。
+
 ## 下一步数学研究
 
 优先推进 [形式化难题 IV：状态条件化 LP 早期剪枝](../../Documentation/ResearchProblems2400.md#5-核心难题-iv可早期证明的状态条件化-lp-剪枝)。需要同时保持证明完备性、可校验证书，以及在完整困难分片上的总运行时收益。
