@@ -69,4 +69,10 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Uses the checksum-pinned factor database and both V5 and V6.
 - Intended runs: V5/V6 at exponent 1000, root 17 (35s cap each); V6 at exponent 2201 for roots 17 and 307 (120s cap each).
 - Each root result is classified as `TREE_SUCCESS`, `UNRESOLVED`, or `TIMEOUT`. A timeout is inconclusive; individual successes do not constitute the complete all-root proof.
-- Final result: pending workflow completion.
+- Final result: workflow completed successfully as a bounded diagnostic, with the following per-case results:
+  - V5, exponent 1000, root 17: `TREE_SUCCESS`; 2,770 branches; circular 0; 0 failed roadblocks; 2.28969 s.
+  - V6, exponent 1000, root 17: `TREE_SUCCESS`; 2,770 branches; circular 0; 0 failed roadblocks; 2.25512 s.
+  - V6, exponent 2201, root 17: `TIMEOUT` after 120 s; no completed root result.
+  - V6, exponent 2201, root 307: `TIMEOUT` after 120 s; no completed root result.
+- The database checksum passed and the index builder reported 106,206,170 lines / 41,322,879 groups.
+- Logs: [Run 44991101998](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991101998) (artifact `TargetedProbeLogs`). The timeout cases had no periodic progress counters, motivating progress instrumentation in a subsequent version.

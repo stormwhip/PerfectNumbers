@@ -79,3 +79,5 @@ The historical Python workflow output can be inspected in [Run 44990184125](http
 `Sources/Cpp/ProofTreeV7.cpp` introduces block-parallel circular prime case checking on large roadblocks. The partition preserves the prior-prime exclusion prefix for each block. Historical V1–V6 implementations remain unchanged, and `ProofCoreTestsV7.cpp` provides a separate smoke-test entry. V7 requires dataset-backed parallel equivalence testing before any proof claims.
 
 V7 also compiled and passed its core tests in [Run 44991317752](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991317752). The bounded 2201 candidate experiment is separately tracked in [Run 44991101998](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991101998).
+
+The first bounded probe at exponent 2201 timed out after 120 seconds on each of roots 17 and 307. Its V5/V6 control experiment at exponent 1000, root 17, matched exactly at 2,770 branches, with elapsed times 2.28969 s / 2.25512 s respectively. These two target timeouts are inconclusive and no new lower bound follows.

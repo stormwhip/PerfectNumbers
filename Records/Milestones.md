@@ -8,7 +8,7 @@
 | GitHub directory and filename normalization | Completed 2026-11-22 | Reorganization commit | Compile and test renamed entry points |
 | V6 conservative roadblock and composite accounting | Core regression passed (2026-11-22) | [ProofTreeV6](../Sources/Cpp/ProofTreeV6.cpp) and [ProofCoreTests](../Sources/Cpp/ProofCoreTests.cpp) | Compilation and core checks passed; dataset-backed V5/V6 benchmark pending |
 | V7 block-parallel heavy roadblocks | Compilation and core checks passed; performance pending | [ProofTreeV7](../Sources/Cpp/ProofTreeV7.cpp) | Multi-thread equivalence, regression and benchmark |
-| Complete unconditional exponent 2200 | Not yet verified in this project | No complete proof artifact on record | Pass all 15 roots plus independently audited endgame |
+| Complete unconditional exponent 2200 | Not yet verified in this project | [Bounded exponent-2201 probe](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991101998) timed out on roots 17 and 307 | Instrument high-exponent searches, optimize, then prove all 15 roots plus audited endgame |
 | Exceed unconditional exponent 2200 | Research target | Pending | Reproducible, rigorously checked proof tree and certificate |
 
 The numerical LP bound applies to the complementary forbidden-prime-free case. It must be combined with independently certified factor-chain branches to establish an unconditional lower bound.
