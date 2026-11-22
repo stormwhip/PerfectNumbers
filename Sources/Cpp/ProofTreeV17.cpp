@@ -27,6 +27,7 @@
 #include <limits>
 #include <cstdlib>
 #include <stdexcept>
+#include <cctype>
 
 struct IdxEntry {
     uint64_t h1;
@@ -391,8 +392,12 @@ bool load_prefix_duals(const char* path, const char* gain_path, const char* forc
         auto outward_csv = [](const std::string& raw, bool is_lower) -> double {
             char* end = nullptr;
             double value = std::strtod(raw.c_str(), &end);
-            if (end == raw.c_str() || *end != '\0' || !std::isfinite(value))
-                throw std::invalid_argument("invalid interval endpoint");
+            // Python's csv.writer emits CRLF. getline removes LF but leaves
+            // the trailing CR of the final field; accept ASCII whitespace.
+            if (end == raw.c_str()) throw std::invalid_argument("empty interval endpoint");
+            while (*end && std::isspace(static_cast<unsigned char>(*end))) ++end;
+            if (*end != '\0' || !std::isfinite(value))
+                throw std::invalid_argument("invalid interval endpoint: " + raw);
             return std::nextafter(
                 value, is_lower ? -std::numeric_limits<double>::infinity()
                                 : std::numeric_limits<double>::infinity());

@@ -4,6 +4,7 @@ on:
     paths:
       - '.github/workflows/EulerCoupledBenchmark.yml'
       - 'Sources/Cpp/ProofCoreTestsV17.cpp'
+      - 'Sources/Cpp/ProofTreeV17.cpp'
       - 'Sources/Python/EulerDualTests.py'
 permissions:
   contents: read
