@@ -34,5 +34,7 @@ jobs:
           ./Build/ProofCoreTestsV8
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV9.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV9
           ./Build/ProofCoreTestsV9
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV10.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV10
+          ./Build/ProofCoreTestsV10
       - name: Validate Python syntax
         run: python3 -m compileall -q Sources/Python

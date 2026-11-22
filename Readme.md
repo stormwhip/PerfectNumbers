@@ -12,7 +12,7 @@ Computational research on lower bounds for odd perfect numbers (OPNs), combining
 
 | Location | Contents |
 | --- | --- |
-| [Sources/Cpp](Sources/Cpp) | GMP factorization index builder and proof-tree versions V1–V9 |
+| [Sources/Cpp](Sources/Cpp) | GMP factorization index builder and proof-tree versions V1–V10 |
 | [Sources/Python](Sources/Python) | LP baseline, ablation study, interval dual certificate |
 | [Documentation](Documentation) | Technical LaTeX report and preserved historical research handoff |
 | [References](References) | Original Ochem–Rao reference paper |
@@ -93,3 +93,5 @@ The [V8/V9 bounded benchmark](https://github.com/stormwhip/PerfectNumbers/action
 Completed-case V8/V9 comparison in [Run 44992192309](https://github.com/stormwhip/PerfectNumbers/actions/runs/44992192309): exponent 1000 root 17 completed in 2.29845s / 2.25049s (2770 branches each); root 307 in 1.15197s / 1.13924s (1531 branches each). Both versions reported zero unresolved roadblocks. These small single-run time differences do not establish a robust high-exponent speedup.
 
 An LP-guided candidate reduction for exponent 2300 selected \(S_*=\{3,5,7,11,13,17,19,31\}\) and obtained an interval-dual output of \(2390.1110142932844\) for the complementary case. See [prime-set optimization theory](Documentation/PrimeSetOptimization.md) and [Run 44993433027](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993433027). Independent model verification and the full eight-root factor-chain proof are still outstanding.
+
+V10 adds prime-adic obligation propagation and quotient-congruence sharpening to ordinary factor-chain DFS, without changing the root set. It is a separately versioned candidate intended for a clean V9/V10 performance and correctness comparison.

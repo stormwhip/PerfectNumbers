@@ -125,3 +125,13 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - The 7-prime core \(\{3,5,7,11,13,17,19\}\) gave float LP exponent **1936.450754**; whether a different seven-prime set can certify the target requires separate proof or exhaustive check.
 - Status: **computational interval-dual result**; independently verify LP modeling, interval rounding and every forced-factor implication. No new unconditional odd-perfect-number bound has yet been proved.
 - Next: use reduced-set tree branches with recorded order; benchmark root costs and validate the mathematical proof before claiming a speedup.
+
+## Experiment 010 — V10 prime-adic obligation pruning prototype
+
+- Date: 2026-11-22.
+- Source candidate: `Sources/Cpp/ProofTreeV10.cpp`, preserves the full original 15-root ordering for isolated V9/V10 comparisons.
+- Mathematical rule: for each known prime q, maintain the sum of known q-adic valuations from already established divisor-sum components; use Euler exponent parity and inexact-branch divisibility to calculate the smallest compatible exponent.
+- Conservative special-prime adjustment: charge ordinary minimum exponents for all factors, then subtract the single largest possible positive saving for one Euler-special prime.
+- Exact branch contradictions: reject a fixed exponent smaller than its cumulative forced valuation.
+- Tests: `ProofCoreTestsV10.cpp` checks exponent congruence and valuation-based size contradictions. Compilation and dataset performance pending.
+- Dependency: source factor primality and arithmetic decision bounds still require independent verification before promoting V10 to a mathematical proof.
