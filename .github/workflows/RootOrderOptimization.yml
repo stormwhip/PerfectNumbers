@@ -39,10 +39,11 @@ jobs:
           test "$(stat -c %s facts.dat)" = 745826778
           test "$(stat -c %s facts.idx)" = 1322332128
       - name: Measure every subset transition and run exact DP
+        working-directory: Build
         run: |
           set -o pipefail
-          Build/RootOrderProfiler 300 | tee Build/RootOrderProfile.csv
-          python3 Sources/Python/RootOrderOptimizer.py Build/RootOrderProfile.csv | tee Build/RootOrderOptimalOrders.txt
+          ./RootOrderProfiler 300 | tee RootOrderProfile.csv
+          python3 ../Sources/Python/RootOrderOptimizer.py RootOrderProfile.csv | tee RootOrderOptimalOrders.txt
       - name: Archive complete edge costs and optimal orders
         if: always()
         uses: actions/upload-artifact@v4
