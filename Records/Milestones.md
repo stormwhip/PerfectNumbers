@@ -38,3 +38,5 @@ The numerical LP bound applies to the complementary forbidden-prime-free case. I
 
 | Strengthened S8 complement LP for exponent 2400 | **2400.822998027028** interval-dual exponent; conditional case only; proof-grade model audit open | [Run 45001172416](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416) | Independent dual witness verification and eight-root exhaustive trees at 2400 |
 | V17 Euler-special-slot coupled dual gains | Source and standalone algebra tests completed; high-exponent dataset benchmark pending | [V17 workflow](https://github.com/stormwhip/PerfectNumbers/actions/workflows/EulerCoupledBenchmark.yml) | Compare complete branch counts and runtime against V16 |
+
+| V17 coupled-dual matched benchmark | All synthetic tests and completed roots passed; no demonstrated end-to-end gain; 2201/2300 timed out | [Run 45001125412](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001125412) | Prioritize conditional LP strengthening and high-exponent tree profiling |

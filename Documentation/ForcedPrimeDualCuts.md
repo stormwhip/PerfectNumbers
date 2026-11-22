@@ -152,3 +152,16 @@ Therefore the certified additional cut over the original box-relaxation dual pen
 with **every intermediate sum and difference directed outwards**. The formula uses the special slot jointly; it replaces the independent V16 forced gains for those same groups, avoiding double counting. The code skips forced primes without explicit LP option groups (a safe relaxation).
 
 The main remaining audit obligations concern the LP model's completeness, interval coefficient recomputation and full-tree correctness; source-level unit tests alone are insufficient to establish a new unconditional bound.
+
+## V17 matched benchmark outcome
+
+[GitHub Actions 45001125412](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001125412) passed all compile and regression tests and finished the diagnostic workflow.
+
+| Target/root | V16 branches/status | V17 branches/status |
+| --- | --- | --- |
+| 1000 / 31 | PROVEN, 21,408 branches | PROVEN, 21,408 branches |
+| 1500 / 17 | PROVEN, 0 branches | PROVEN, 0 branches |
+| 2201 / 17 | TIMEOUT after 30 s | TIMEOUT after 30 s |
+| 2300 / 17 | TIMEOUT after 30 s | TIMEOUT after 30 s |
+
+At exponent 2300, 20-second progress was 294,456 visited branches / 566 LP cuts for V16, versus 268,547 visited branches / 315 cuts for V17. These partial traces do not demonstrate a wall-time improvement. Future testing should compare completed root cases with larger forced-prime groups, use exact per-subtree visit counters and consider LP reoptimization after fixing a prime-power option, rather than relying only on coupling existing dual reduced costs.
