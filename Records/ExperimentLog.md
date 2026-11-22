@@ -28,5 +28,16 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Base: V5 preserved unchanged. New candidate: `Sources/Cpp/ProofTreeV6.cpp`.
 - Changes: replace finite-sieve exhaustion with an analytic infinite-tail fractional relaxation; avoid skipping abundance when composite residuals overlap; recompute composite lower size bounds after new factor information; reduce diagnostic atomic contention.
 - Tests: `Sources/Cpp/ProofCoreTests.cpp` checks exponent coverage for p=3,7,11,13,17 through a=2048; tests overlapping composite lower-size accounting and a roadblock with ample remaining size.
-- Execution: pending GitHub Actions compile and smoke-test result; dataset-backed performance comparison not yet run.
+- Execution: **PASS** — GitHub Actions run 44990984163, commit 9dc5cd68883f7e8d831c1afdc2c819598d4ed288. All six tree versions and the index builder compiled, `ProofCoreTests: OK`, and Python syntax checks passed. Dataset-backed performance comparison has not yet run.
 - Proof impact: no new certified unconditional lower bound at this stage.
+
+## Experiment 002 — Retrieved V5 all-root benchmark at exponent 300
+
+- Date (original run): 2026-11-22; date retrieved: 2026-11-22.
+- Source commit: `1c7d0661ff1356105e5395b3bb02c49394491ee6`.
+- Workflow: [Run 44990168041](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990168041), `workflow_dispatch`.
+- Inputs: `exponent=300`, `prime=all`, 2 GitHub Actions CPU threads.
+- Data: 106,206,170 lines, 41,322,879 factor groups; snapshot SHA-256 pinned in `Readme.md`.
+- Result: all 15 roots printed `PROVEN` with `failed_rb=0`.
+- Total reported branches: **13,250**, circular branches: **0**, tree elapsed: **0.390215 s** (excluding database download and indexing).
+- Status: real retrieved execution log, **not** a proof-grade independent verification of all mathematical assumptions.

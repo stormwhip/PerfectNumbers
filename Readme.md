@@ -49,7 +49,7 @@ The historical builder writes `facts.dat` and `facts.idx` in the current directo
 ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119
 ```
 
-The full dataset is large. Workflows default to explicit manual dispatch to avoid silently using GitHub Actions compute quota. Use **Actions → Factor-chain proof experiments** for a compile check or proof run and **Actions → Python LP experiments** for a selected Python experiment.
+The full dataset is large. Heavy-data workflows require explicit manual dispatch; lightweight source compilation and core tests run automatically on source pushes. Use **Actions → Factor-chain proof experiments** for a compile check or proof run and **Actions → Python LP experiments** for a selected Python experiment.
 
 ## Proof standard
 
@@ -65,3 +65,9 @@ g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTests.cpp -lgmpxx -lgmp -o Buil
 ```
 
 V6 is under validation. The ALPHA assumption, probabilistic primality decisions and floating-point comparison margins still require full mathematical audits.
+
+## Validated regression snapshot
+
+- V5, exponent 300, all 15 roots: 13,250 branches, no failed roadblocks, 0.390215 seconds for the proof tree on a two-thread GitHub runner ([original run](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990168041)).
+- V6 and earlier C++ versions compile, core regression tests print `ProofCoreTests: OK`, and Python syntax checks pass ([quality run](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990984163)).
+- The next performance gate is a dataset-backed, root-matched comparison of V5 and V6 at a higher exponent.

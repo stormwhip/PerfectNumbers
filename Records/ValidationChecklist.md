@@ -29,3 +29,8 @@ These are open audit items, not claims that a mathematical theorem is false.
 - V6 recomputes composite size contributions from pairwise coprime residuals that are also coprime to known prime divisors; every residual gets an optimistic abundance allowance even when it shares factors with another residual.
 - A limited combinatorial check finds no missing exponent classes for the V6 branches on selected primes through exponent 2048. Coverage follows from divisibility \(d+1\mid a+1\) for inexact branches; a complete, independently reviewed proof remains a separate task.
 - The ALPHA=10^8 residual factor assumption is inherited and must be checked against the database. No new unconditional lower bound is claimed from V6.
+
+## Source validation record
+
+- 2026-11-22: [GitHub Actions quality run 44990984163](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990984163) succeeded for commit `9dc5cd6`. C++ compilation of the index builder and V1–V6, C++ core tests, and Python syntax checks all passed.
+- Dataset-backed proof-tree regression and independent mathematical certification remain separate verification gates.
