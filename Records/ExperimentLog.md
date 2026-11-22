@@ -21,3 +21,12 @@ This log separates **imported historical claims**, **directly observed experimen
 ## Future experiment template
 
 Record the date, Git commit SHA, command, compiler and libraries, CPU and memory, dataset SHA-256, root(s), target exponent, wall-clock time, counts of branches and unresolved roadblocks, full terminal output or artifact URI, and a one-line conclusion distinguishing experiment success from a proof claim.
+
+## Experiment 001 — V6 conservative roadblock and residual accounting
+
+- Date: 2026-11-22
+- Base: V5 preserved unchanged. New candidate: `Sources/Cpp/ProofTreeV6.cpp`.
+- Changes: replace finite-sieve exhaustion with an analytic infinite-tail fractional relaxation; avoid skipping abundance when composite residuals overlap; recompute composite lower size bounds after new factor information; reduce diagnostic atomic contention.
+- Tests: `Sources/Cpp/ProofCoreTests.cpp` checks exponent coverage for p=3,7,11,13,17 through a=2048; tests overlapping composite lower-size accounting and a roadblock with ample remaining size.
+- Execution: pending GitHub Actions compile and smoke-test result; dataset-backed performance comparison not yet run.
+- Proof impact: no new certified unconditional lower bound at this stage.

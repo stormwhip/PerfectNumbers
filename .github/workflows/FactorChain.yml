@@ -15,6 +15,14 @@ on:
         required: true
         default: '300'
         type: string
+      version:
+        description: 'Tree version to execute'
+        required: true
+        default: 'V6'
+        type: choice
+        options:
+          - V5
+          - V6
       prime:
         description: 'A root prime or all 15 roots'
         required: true
@@ -59,6 +67,10 @@ jobs:
           for source in Sources/Cpp/ProofTreeV*.cpp; do
             g++ -std=c++17 -O2 -fopenmp "$source" -lgmpxx -lgmp -o "Build/$(basename "$source" .cpp)"
           done
+      - name: Compile and run core regression checks
+        run: |
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTests.cpp -lgmpxx -lgmp -o Build/ProofCoreTests
+          ./Build/ProofCoreTests
       - name: Validate proof experiment parameters
         if: inputs.mode == 'Prove'
         env:
@@ -98,15 +110,16 @@ jobs:
         env:
           EXPONENT: ${{ inputs.exponent }}
           ROOT_PRIME: ${{ inputs.prime }}
+          PROOF_VERSION: ${{ inputs.version }}
         run: |
           export OMP_NUM_THREADS="$(nproc)"
           if [[ "$ROOT_PRIME" == all ]]; then
             set -o pipefail
-            ./ProofTreeV5 "$EXPONENT" | tee Proof.log
+            ./ProofTree"$PROOF_VERSION" "$EXPONENT" | tee Proof.log
             expected_primes=(127 19 7 11 331 31 97 61 13 398581 1093 3 5 307 17)
           else
             set -o pipefail
-            ./ProofTreeV5 "$EXPONENT" "$ROOT_PRIME" | tee Proof.log
+            ./ProofTree"$PROOF_VERSION" "$EXPONENT" "$ROOT_PRIME" | tee Proof.log
             expected_primes=("$ROOT_PRIME")
           fi
           for prime in "${expected_primes[@]}"; do

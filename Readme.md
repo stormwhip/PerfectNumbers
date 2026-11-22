@@ -12,7 +12,7 @@ Computational research on lower bounds for odd perfect numbers (OPNs), combining
 
 | Location | Contents |
 | --- | --- |
-| [Sources/Cpp](Sources/Cpp) | GMP factorization index builder and proof-tree versions V1–V5 |
+| [Sources/Cpp](Sources/Cpp) | GMP factorization index builder and proof-tree versions V1–V6 |
 | [Sources/Python](Sources/Python) | LP baseline, ablation study, interval dual certificate |
 | [Documentation](Documentation) | Technical LaTeX report and preserved historical research handoff |
 | [References](References) | Original Ochem–Rao reference paper |
@@ -54,3 +54,14 @@ The full dataset is large. Workflows default to explicit manual dispatch to avoi
 ## Proof standard
 
 A claimed unconditional bound requires all forbidden-prime branches to finish with no unresolved roadblocks, a sound endgame certificate covering the complementary case, and a review of branch completeness, factorization correctness, floating-point bounds and data provenance. See [Records/ValidationChecklist.md](Records/ValidationChecklist.md). See [Records/ExperimentLog.md](Records/ExperimentLog.md) for test status and reproduction instructions.
+
+## V6 prototype
+
+`Sources/Cpp/ProofTreeV6.cpp` preserves the V5 interface and adds an analytic infinite-prime-tail relaxation and overlap-safe composite accounting. Run `ProofCoreTests.cpp` before dataset-backed comparisons:
+
+```bash
+g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTests.cpp -lgmpxx -lgmp -o Build/ProofCoreTests
+./Build/ProofCoreTests
+```
+
+V6 is under validation. The ALPHA assumption, probabilistic primality decisions and floating-point comparison margins still require full mathematical audits.

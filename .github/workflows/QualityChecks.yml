@@ -1,0 +1,32 @@
+name: Source quality checks
+on:
+  push:
+    paths:
+      - 'Sources/**'
+      - '.github/workflows/QualityChecks.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compile-and-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install native build dependencies
+        run: sudo apt-get update && sudo apt-get install -y libgmp-dev zlib1g-dev
+      - name: Compile all C++ entries
+        run: |
+          mkdir -p Build
+          g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
+          for source in Sources/Cpp/ProofTreeV*.cpp; do
+            g++ -std=c++17 -O2 -fopenmp "$source" -lgmpxx -lgmp -o "Build/$(basename "$source" .cpp)"
+          done
+      - name: Run independent lightweight regression tests
+        run: |
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTests.cpp -lgmpxx -lgmp -o Build/ProofCoreTests
+          ./Build/ProofCoreTests
+      - name: Validate Python syntax
+        run: python3 -m compileall -q Sources/Python

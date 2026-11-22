@@ -2,7 +2,7 @@
 
 A run printing `PROVEN` is experimental evidence until its mathematical and computational assumptions have been checked.
 
-- [ ] Prove that the exponent branching covers every Euler-allowed prime-power exponent, including possible special-prime exponents congruent to 1 modulo 4.
+- [x] Verify the exponent-covering combinatorial lemma on the V6 branch list for selected root primes and exponents through 2048 (automated test); independent formal proof review remains open.
 - [ ] Check that every roadblock bound covers the infinite prime tail beyond the finite sieve, and confirm binary-search monotonicity.
 - [ ] Replace all decision-critical floating-point inequalities with certified lower/upper enclosures or conservative directed rounding.
 - [ ] Check primality and factorization certificates for all database entries used as primes; `mpz_probab_prime_p` is probabilistic.
@@ -21,3 +21,11 @@ Review `Sources/Cpp/ProofTreeV5.cpp` before treating its output as a mathematica
 3. Floating-point cutoffs and probabilistic primality tests require proof-grade auditing.
 
 These are open audit items, not claims that a mathematical theorem is false.
+
+
+## V6 audit changes (2026-11-22)
+
+- V6 replaces finite-table exhaustion in the roadblock fractional knapsack with an explicit infinite even-prime tail, using an upper bound on abundance per unit log-size for all primes beyond the table. It optimistically grants a possible tail special prime's full maximum abundance for free. This produces a conservative relaxation.
+- V6 recomputes composite size contributions from pairwise coprime residuals that are also coprime to known prime divisors; every residual gets an optimistic abundance allowance even when it shares factors with another residual.
+- A limited combinatorial check finds no missing exponent classes for the V6 branches on selected primes through exponent 2048. Coverage follows from divisibility \(d+1\mid a+1\) for inexact branches; a complete, independently reviewed proof remains a separate task.
+- The ALPHA=10^8 residual factor assumption is inherited and must be checked against the database. No new unconditional lower bound is claimed from V6.

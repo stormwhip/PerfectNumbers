@@ -6,6 +6,7 @@
 | Local V4 search at exponent 1500 | Reported in historical handoff | [LegacyResearchHandoff](../Documentation/LegacyResearchHandoff.md) | Recover full run log and repeat independently |
 | Complement-case LP endgame around exponent 3129 | Reported in historical handoff | [EndgameResearchReport](../Documentation/EndgameResearchReport.tex) | Audit relaxation and independent interval dual certificate |
 | GitHub directory and filename normalization | Completed 2026-11-22 | Reorganization commit | Compile and test renamed entry points |
+| V6 conservative roadblock and composite accounting | Implementation pending verification | [ProofTreeV6](../Sources/Cpp/ProofTreeV6.cpp) and [ProofCoreTests](../Sources/Cpp/ProofCoreTests.cpp) | Compile, regression and benchmark against V5 |
 | Complete unconditional exponent 2200 | Not yet verified in this project | No complete proof artifact on record | Pass all 15 roots plus independently audited endgame |
 | Exceed unconditional exponent 2200 | Research target | Pending | Reproducible, rigorously checked proof tree and certificate |
 
