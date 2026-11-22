@@ -24,7 +24,9 @@ jobs:
           cache-dependency-path: Requirements.txt
       - name: Install LP dependencies
         run: python -m pip install -r Requirements.txt
-      - name: Execute both 61 exponent cases and interval dual verification
+      - name: Independently validate exact 61 divisor sums and prime factors
+        run: python Sources/Python/Prime61FactorChecks.py
+      - name: Execute all 61 exponent cases and interval dual verification
         run: |
           mkdir -p Build
           set -o pipefail
