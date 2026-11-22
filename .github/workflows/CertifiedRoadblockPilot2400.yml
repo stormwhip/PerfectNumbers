@@ -1,0 +1,90 @@
+name: Certified roadblock pilot (2400)
+on:
+  push:
+    branches:
+      - 'research/certified-roadblock-pilot'
+    paths:
+      - '.github/workflows/CertifiedRoadblockPilot2400.yml'
+      - 'Sources/Cpp/RoadblockPilot*.hpp'
+      - 'Sources/Cpp/ProofTreeV21.cpp'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  census:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    defaults:
+      run:
+        shell: bash
+    env:
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: Requirements.txt
+      - name: Install GMP, zlib and LP requirements
+        run: |
+          python -m pip install -r Requirements.txt
+          sudo apt-get update && sudo apt-get install -y libgmp-dev zlib1g-dev
+      - name: Build sharded V21 and data helpers
+        run: |
+          mkdir -p Build
+          g++ -std=c++17 -O2 Sources/Cpp/RoadblockPilotArithmeticTests.cpp -o Build/RoadblockPilotArithmeticTests
+          ./Build/RoadblockPilotArithmeticTests
+          g++ -std=c++17 -O2 -DOPN_CERTIFIED_ROADBLOCK_PILOT -fopenmp Sources/Cpp/ProofTreeV21.cpp -lgmpxx -lgmp -o Build/ProofTreeV21
+          g++ -std=c++17 -O2 Sources/Cpp/PrimeCutoffCert.cpp -lgmpxx -lgmp -o Build/PrimeCutoffCert
+          g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
+      - name: Create nine enhanced LP prefix tables
+        run: |
+          set -o pipefail
+          python -u Sources/Python/Targeted2400Certificates.py Build/PrefixDualBounds.csv | tee Build/PrefixLog.txt
+      - name: Generate exact 1e8 cutoff and factor index
+        working-directory: Build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ./PrimeCutoffCert 100000000 > PrimeCutoffBuild.log
+          echo '70ba114b47e7539480c418094606b0f39b2bc230337212426872d7f7adb400ec  PrimeCutoffProduct.bin' | sha256sum --check
+          if ! gh release download data-v1 --repo "$GITHUB_REPOSITORY" --pattern checkfacts.txt.gz; then
+            curl --fail --location --retry 2 --max-time 300 \
+              --output checkfacts.txt.gz 'https://www.lirmm.fr/~ochem/opn/checkfacts.txt.gz'
+          fi
+          echo 'ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119  checkfacts.txt.gz' | sha256sum --check
+          ./BuildIndex checkfacts.txt.gz
+          test "$(stat -c %s facts.dat)" = 745826778
+          test "$(stat -c %s facts.idx)" = 1322332128
+      - name: Matched root-19 shards on the same runner
+        working-directory: Build
+        run: |
+          mkdir -p PilotLogs
+          ./ProofTreeV21 2400 19 list > PilotLogs/Root19Shards.txt
+          ./ProofTreeV21 2400 19 list | grep -E '^SHARD root=19 .*index=(0|35|100|130) '
+          for index in 35 130 0 100; do
+            for mode in legacy certified; do
+              log="PilotLogs/$mode-$index.log"
+              start="$(date +%s%N)"
+              rc=0
+              OPN_ROADBLOCK_MODE="$mode" timeout --signal=TERM --kill-after=2s 45s ./ProofTreeV21 2400 19 "$index" > "$log" 2>&1 || rc=$?
+              end="$(date +%s%N)"
+              if (( rc == 124 || rc == 137 )); then status=TIMEOUT
+              elif (( rc == 0 )) && grep -Eq "^Forbid p=19 branch=$index/[0-9]+ -> PROVEN .*failed_rb=0" "$log"; then status=PROVEN
+              elif grep -Eq "^Forbid p=19 branch=$index/[0-9]+ -> (FAILED|UNRESOLVED)" "$log"; then status=UNRESOLVED
+              else status=CHECK_LOG
+              fi
+              echo "PILOT_RESULT mode=$mode index=$index status=$status rc=$rc elapsed_ms=$(( (end-start)/1000000 ))" | tee -a PilotLogs/Results.txt
+              grep -E '^RB_PILOT|^Forbid p=19 branch=|failed_rb:' "$log" | tail -26 || true
+            done
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: CertifiedRoadblockPilot
+          path: Build/PilotLogs/
+          if-no-files-found: ignore

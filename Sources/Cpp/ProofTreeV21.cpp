@@ -877,6 +877,10 @@ void strengthen_composite_residuals(State& st) {
     }
 }
 
+#ifdef OPN_CERTIFIED_ROADBLOCK_PILOT
+#include "RoadblockPilotAdapter.hpp"
+#endif
+
 bool solve(State& st, bool in_circ, int depth, std::atomic<bool>& ok_flag) {
     if (!ok_flag.load(std::memory_order_relaxed)) return false;
     if (check_contradiction(st)) return true;
@@ -906,6 +910,17 @@ bool solve(State& st, bool in_circ, int depth, std::atomic<bool>& ok_flag) {
             b = compute_roadblock_bound(st, rem_size, abund_gap);
         }
     }
+#ifdef OPN_CERTIFIED_ROADBLOCK_PILOT
+    if (opn_roadblock::pilot_mode == 2 ||
+        (opn_roadblock::pilot_mode == 1 &&
+         opn_roadblock::trace_count.load(std::memory_order_relaxed) < 20)) {
+        const auto witness = opn_roadblock::run(st, b, depth);
+        if (opn_roadblock::pilot_mode == 2) {
+            if (witness.boundary < 0) return true;
+            b = static_cast<uint32_t>(witness.boundary);
+        }
+    }
+#endif
     if (b == 0) { failed_roadblocks.fetch_add(1, std::memory_order_relaxed); return false; }
 
     uint32_t prev_max = max_rb_b.load(std::memory_order_relaxed);
@@ -1070,6 +1085,9 @@ int main(int argc, char** argv) {
         return 1;
     }
 
+#ifdef OPN_CERTIFIED_ROADBLOCK_PILOT
+    opn_roadblock::init(bound_exp);
+#endif
     std::cout << "=== OPN Proof Tree v21 (Lazy Residual Bounds and Restartable Shards, Target: 10^"
               << bound_exp << ", threads=" << omp_get_max_threads() << ") ===\n";
     auto t0 = std::chrono::steady_clock::now();
