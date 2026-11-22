@@ -42,6 +42,8 @@ jobs:
           ./Build/ProofCoreTestsV9
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV10.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV10
           ./Build/ProofCoreTestsV10
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV12.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV12
+          ./Build/ProofCoreTestsV12
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ReducedRootTests.cpp -lgmpxx -lgmp -o Build/ReducedRootTests
           ./Build/ReducedRootTests
       - name: Validate Python syntax
