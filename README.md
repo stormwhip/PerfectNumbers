@@ -14,9 +14,9 @@
 
 ## 因子链证明树
 
-C++/GMP 证明树、索引生成器和已有日志的原始位置记录在 [交接文档](复现程序/gemini.md)。迁移这部分后，长跑实验可使用手动触发的独立工作流。
+源码位于 [cpp/](cpp/)，包含分解索引生成器以及 C++/GMP 证明树 v1 至 v5。源码变更会在 Actions 中触发编译检查。要运行证明树，打开 **Actions → C++ factor-chain experiments → Run workflow**，填写目标指数并选择一个根素数或 `all`。单根实验沿用原证明树的禁用顺序，结果对应选中的根分支。过往实验记录见 [交接文档](复现程序/gemini.md)。
 
-原始分解库 `checkfacts.txt.gz` 大小为 698719834 字节。可作为私有 Release 的附件保存，由因子链工作流按版本下载并核对 SHA-256。
+工作流从私有 Release `data-v1` 下载 698719834 字节的 `checkfacts.txt.gz`，核对 SHA-256 后构建索引，再运行 v5。只有选中的每个根分支都输出 `PROVEN` 且失败路障数为零时，工作流才通过。
 
 ```text
 ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119

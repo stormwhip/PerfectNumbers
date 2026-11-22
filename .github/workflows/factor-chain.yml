@@ -1,0 +1,110 @@
+name: C++ factor-chain experiments
+
+on:
+  push:
+    paths:
+      - 'cpp/**'
+      - '.github/workflows/factor-chain.yml'
+  workflow_dispatch:
+    inputs:
+      exponent:
+        description: 'Target exponent k for 10^k'
+        required: true
+        default: '300'
+        type: string
+      prime:
+        description: 'A root prime, or all for all 15 roots'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - '127'
+          - '19'
+          - '7'
+          - '11'
+          - '331'
+          - '31'
+          - '97'
+          - '61'
+          - '13'
+          - '398581'
+          - '1093'
+          - '3'
+          - '5'
+          - '307'
+          - '17'
+
+permissions:
+  contents: read
+
+jobs:
+  factor-chain:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install GMP and zlib
+        run: sudo apt-get update && sudo apt-get install -y libgmp-dev zlib1g-dev
+      - name: Compile the index builder and all proof tree versions
+        run: |
+          mkdir build
+          g++ -std=c++17 -O2 cpp/build_index.cpp -lz -o build/build_index
+          for source in cpp/opn_tree*.cpp; do
+            g++ -std=c++17 -O2 -fopenmp "$source" -lgmpxx -lgmp -o "build/$(basename "$source" .cpp)"
+          done
+      - name: Validate experiment parameters
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          EXPONENT: ${{ inputs.exponent }}
+          ROOT_PRIME: ${{ inputs.prime }}
+        run: |
+          [[ "$EXPONENT" =~ ^[1-9][0-9]{0,9}$ ]] && (( EXPONENT <= 2147483647 )) || {
+            echo "::error::The target exponent must be a positive C++ int."
+            exit 1
+          }
+          case "$ROOT_PRIME" in
+            all|127|19|7|11|331|31|97|61|13|398581|1093|3|5|307|17) ;;
+            *) echo "::error::Unknown root prime."; exit 1 ;;
+          esac
+      - name: Download and verify the factorization snapshot
+        if: github.event_name == 'workflow_dispatch'
+        working-directory: build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download data-v1 --repo "$GITHUB_REPOSITORY" --pattern checkfacts.txt.gz
+          echo 'ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119  checkfacts.txt.gz' | sha256sum --check
+      - name: Build the factorization index
+        if: github.event_name == 'workflow_dispatch'
+        working-directory: build
+        run: |
+          ./build_index checkfacts.txt.gz
+          test "$(stat -c %s facts.dat)" = 745826778
+          test "$(stat -c %s facts.idx)" = 1322332128
+      - name: Run the v5 proof tree and check its result
+        if: github.event_name == 'workflow_dispatch'
+        working-directory: build
+        env:
+          EXPONENT: ${{ inputs.exponent }}
+          ROOT_PRIME: ${{ inputs.prime }}
+        run: |
+          export OMP_NUM_THREADS="$(nproc)"
+          if [[ "$ROOT_PRIME" == all ]]; then
+            ./opn_tree_v5 "$EXPONENT" | tee proof.log
+            expected_primes=(127 19 7 11 331 31 97 61 13 398581 1093 3 5 307 17)
+          else
+            ./opn_tree_v5 "$EXPONENT" "$ROOT_PRIME" | tee proof.log
+            expected_primes=("$ROOT_PRIME")
+          fi
+          for prime in "${expected_primes[@]}"; do
+            grep -Eq "^Forbid p=$prime -> PROVEN .* failed_rb=0 \\|" proof.log || {
+              echo "::error::Root $prime did not complete with PROVEN and zero failed roadblocks."
+              exit 1
+            }
+          done
