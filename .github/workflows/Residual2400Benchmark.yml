@@ -62,9 +62,9 @@ jobs:
           for prime in 19 7 11 31 13 3 5 17; do
             for version in V16 V18; do
               echo "=== SAFE2400 version=$version root=$prime cap=20 ==="
-              timeout --signal=TERM --kill-after=5s 20s "./ProofTree$version" 2400 "$prime" 2>&1 | tee "P2400_$version_$prime.log"
+              timeout --signal=TERM --kill-after=5s 20s "./ProofTree$version" 2400 "$prime" 2>&1 | tee "P2400_${version}_${prime}.log"
               rc="${PIPESTATUS[0]}"
-              if [[ "$rc" == 0 ]] && grep -Eq "^Forbid p=$prime -> PROVEN .*failed_rb=0" "P2400_$version_$prime.log"; then
+              if [[ "$rc" == 0 ]] && grep -Eq "^Forbid p=$prime -> PROVEN .*failed_rb=0" "P2400_${version}_${prime}.log"; then
                 status=PROVEN
               elif [[ "$rc" == 124 ]]; then
                 status=TIMEOUT
