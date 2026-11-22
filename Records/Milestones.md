@@ -9,7 +9,7 @@
 | V6 conservative roadblock and composite accounting | Core regression passed (2026-11-22) | [ProofTreeV6](../Sources/Cpp/ProofTreeV6.cpp) and [ProofCoreTests](../Sources/Cpp/ProofCoreTests.cpp) | Compilation and core checks passed; dataset-backed V5/V6 benchmark pending |
 | V7 block-parallel heavy roadblocks | Compilation and core checks passed; performance pending | [ProofTreeV7](../Sources/Cpp/ProofTreeV7.cpp) | Multi-thread equivalence, regression and benchmark |
 | V8 periodic diagnostics | Completed; 50s progress measured | [Probe 44991559032](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991559032) | Optimize ordinary DFS; large roadblocks were not encountered |
-| V9 deep task scheduling | Candidate; build and benchmarks pending | [ProofTreeV9](../Sources/Cpp/ProofTreeV9.cpp) | Compare matched V8/V9 branch throughput |
+| V9 deep task scheduling | Build and bounded probe complete; full-case comparison pending | [Benchmark 44991855026](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991855026) | Compare terminating cases at equal target/root |
 | Complete unconditional exponent 2200 | Not yet verified in this project | [Bounded exponent-2201 probe](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991101998) timed out on roots 17 and 307 | Instrument high-exponent searches, optimize, then prove all 15 roots plus audited endgame |
 | Exceed unconditional exponent 2200 | Research target | Pending | Reproducible, rigorously checked proof tree and certificate |
 
