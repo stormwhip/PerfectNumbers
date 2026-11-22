@@ -10,6 +10,9 @@
 | 正式证明树版本 | V21 | [源代码](../Sources/Cpp/ProofTreeV21.cpp) · [质量检查](https://github.com/stormwhip/PerfectNumbers/actions/runs/45007403402) | 完整覆盖性与证明规则审计 |
 | 根 19 指数分片 | 287 任务；164 个在 1 秒内完成，123 个超时 | [45005912683](https://github.com/stormwhip/PerfectNumbers/actions/runs/45005912683) | 长尾任务继续分片，穷尽证明 |
 | 八根顺序优化 | 代理成本已分析 | [45007403299](https://github.com/stormwhip/PerfectNumbers/actions/runs/45007403299) | 比较全部八根的真实总成本 |
+| 顶层整数证明叶 | 数学排除规则覆盖 1,396/3,072，仍有 1,676 项 | [整数证明与实验](../Research/Session20261122/Reports/DirectRootClosure2400.md) | 执行 GitHub 新代码的独立 3,072 项审计并输出保存记录 |
+| 直接闭合的根顺序优化 | 精确 256 状态 DP；全枚举 40,320 顺序对照，原根集可达到 1,397 | [RootOrderDirectClosureDP.py](../Research/Session20261122/Python/RootOrderDirectClosureDP.py) | 测量对完整证明树的真实影响；正式根顺序不变 |
+| Frontier C++ sigma 预筛 | 修复缺失头文件，精确模运算本地 36,100 次 GMP 对照通过 | [SigmaPrecheckTests.cpp](../Sources/Cpp/SigmaPrecheckTests.cpp) | 运行最新 GitHub CI、检查实验性 Frontier 可编译性 |
 | V21 瓶颈剖析 | 素性测试是重要瓶颈 | [45012070442](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012070442) | 优先在浅层规避昂贵运算 |
 | V22 精确整除剪枝 | 数学规则可靠；性能实验负向 | [45011182741](https://github.com/stormwhip/PerfectNumbers/actions/runs/45011182741) | 仅作为理论与测试保留 |
 | V23 素性测试去重 | 两个完成分片加速约 25%–30% | [45012354324](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012354324) | 独立审计后考虑主线集成 |
