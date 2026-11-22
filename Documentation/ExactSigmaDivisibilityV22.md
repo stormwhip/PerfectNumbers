@@ -1,0 +1,70 @@
+# V22 research — exact sigma-divisibility size cuts
+
+Date: 2026-11-22. Base commit: `90100f4447f9196835951fdb7e9dcdd3ab23723f`.
+Research branch: `research/exact-sigma-size-v22`. Production V21, the WSL 72-hour runner, and all input files remain unchanged.
+
+## Proven invariant
+
+Let `N` be an odd perfect number, and consider a factor-chain branch specifying the minimal exponent `a` of an odd prime `p`. An exact branch means `p^a || N`. An inexact branch represents an exponent `e>=a` with `a+1 | e+1`. The latter implies
+
+\[
+\sigma(p^a)=\frac{p^{a+1}-1}{p-1}\ \Bigm|\ \sigma(p^e)\ \Bigm|\ 2N.
+\]
+
+Since `N` is odd, the odd part `s(p,a)=sigma(p^a)/2^{nu_2(sigma(p^a))}` divides `N`, and `p^a | N`. Accordingly
+
+\[
+D_{k+1}=\operatorname{lcm}(D_k,p^a,s(p,a)),\qquad D_0=1
+\]
+is a *mandatory exact divisor of N* at every state. The branch closes if `D_k > 10^B` for a target `N<=10^B`.
+
+This cut needs no factorization, primality inference, approximate logarithm, or Ochem database entry. In V22, only the decision `D_k > 10^B` closes a branch; this is exact GMP integer comparison.
+
+## Cheap even-power screen
+
+For even `a`, `sigma(p^a)` is odd and coprime with `p`. Therefore
+
+\[
+N \ge p^a\sigma(p^a)>p^{2a}.
+\]
+
+For `B=2400`, the exact condition `p^a > 10^{1200}` closes that branch *before* sigma factorization. For a general integer target `B`, the experimental code conservatively compares against `10^{ceil(B/2)}`.
+
+A floating-log condition decides whether the exact computation is worth trying; only the exact GMP comparison determines whether a branch closes. No floating-point error can cause an unsafe cut.
+
+## Enumerated root-option screening
+
+For the eight root primes in V21 order, Python exact-integer enumeration of their 2400 exponent lists gives:
+
+| prime | V21 top-level options | options not rejected by even-power test | directly rejected |
+| --- | ---: | ---: | ---: |
+| 19 | 287 | 158 | 129 |
+| 7 | 412 | 223 | 189 |
+| 11 | 341 | 190 | 151 |
+| 31 | 253 | 138 | 115 |
+| 13 | 325 | 180 | 145 |
+| 3 | 676 | 370 | 306 |
+| 5 | 481 | 267 | 214 |
+| 17 | 297 | 164 | 133 |
+| **total** | **3072** | **1690** | **1382 (44.99%)** |
+
+V22 keeps the original `get_exponents` branch list and rejects impossible branches during processing. This avoids changing the existing exponent-covering lemma and allows direct ablation against V21.
+
+**Performance scope:** most of the 123 one-second-timeout root-19 shards from census `45005912683` are low exponents, below this particular threshold. The 44.99% is an option-count reduction, *not* a measured 44.99% runtime reduction. The cumulative LCM cut is intended to test deeper states.
+
+## Experimental integration
+
+- `Sources/Cpp/ExactSigmaDivisor.hpp`: isolated two exact-integer rules.
+- `Sources/Cpp/ProofTreeV22.cpp`: opt-in ablation with the same LP, root-order and factor-chain logic as V21.
+- `Sources/Cpp/ProofCoreTestsV22.cpp`: inherited regressions and exact-integer cut tests.
+- `OPN_EXACT_DIVISOR_MODE=0`: V21-equivalent code path.
+- `OPN_EXACT_DIVISOR_MODE=1`: add exact even-power check.
+- `OPN_EXACT_DIVISOR_MODE=2`: add cumulative sigma-divisor LCM cut (default in V22).
+
+Local primitive test passed (GMP/C++17; `3^2` forces `117`, adding `7^2` forces `108927`). Full V22 regression runs through `QualityChecks.yml` on this research branch.
+
+## Remaining performance experiment
+
+Use the same pinned factor database, 256-prefix LP tables, cutoff product, hardware, thread count, root order and selected difficult shards for all three modes. Record completed shards, total branches, CPU time, peak resident memory, and `EXACT_DIVISOR_STATS` counters. Prefer completed 10–30-second shards over partial node-rate comparisons. A claimed wall-time gain requires a completed matched test.
+
+Do not replace the V21 72-hour scheduler until this matched test passes. Mathematical release still requires independent validation of the original LP and all other tree cuts.
