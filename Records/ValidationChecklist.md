@@ -6,10 +6,13 @@
 
 ## 最新验证器及全量验收（2026-11-22）
 
-- [x] 集成外部固定根的 `IndependentVerifierV2.py`、可恢复 `FrontierLedgerV2.py` 及只读 `AuditRunner2400.py`，附合成/篡改测试源码。\n- [x] 整数算术独立复核原根顺序下 3,072 个顶层指数分支，找到 14 个直接由先前禁止根素数整除 \(\sigma(p^d)\) 的矛盾；新增一步 `FORBIDDEN_FACTOR` 证明与审计接入（详见 `Research/Session20261122/Reports/DirectRootClosure2400.md`）。\n- [ ] CI 执行 `DirectRootClosuresTests.py`，记录实际的完整独立验证器验收输出。
+- [x] 集成外部固定根的 `IndependentVerifierV2.py`、可恢复 `FrontierLedgerV2.py` 及只读 `AuditRunner2400.py`，附合成/篡改测试源码。
+- [x] 原根顺序下的 3,072 项纯整数枚举确认 14 个 `FORBIDDEN_FACTOR` 和 1,382 个 `SIGMA_DIVISOR_SIZE` 一步矛盾，共 1,396 项（45.44%）；证明规则已接入独立验证器与全量审计器。见 [DirectRootClosure2400.md](../Research/Session20261122/Reports/DirectRootClosure2400.md)。
+- [ ] 在最新 GitHub 提交实际运行 `AuditDirectRoot2400.py`，取得 1,396 个 `VERIFIED_CLOSED` 与 1,676 个 `UNSTARTED` 的可保存审计记录。
+- [ ] CI 执行 `DirectRootClosuresTests.py`、`RootOrderDirectClosureDP.py`、`SigmaPrecheckTests.cpp` 以及已有 V2 回归，保存测试记录。
 - [x] 原根集及替换根集互素类证书已有独立整数核验记录；两者分区隔离。
 - [ ] 冻结 V21 搜索和实验 Frontier 输出完整可重验的证明 DAG，兼容持续分裂、路障和 LP。
-- [ ] 全部 3,072 原根集顶层任务由独立验证器报告 `VERIFIED_CLOSED`，开放和未解决任务均为零。
+- [ ] 全部 3,072 原根集顶层任务由独立验证器报告 `VERIFIED_CLOSED`，开放和未解决任务均为零；当前已找到 1,396 项数学直接矛盾，其他 1,676 项待证明树闭合。
 - [ ] 证明生成、原子提交、独立验收在固定硬件和数据下完成 72 小时端到端实测。
 - [x] 目录调整后的 GitHub 文件名检查和全部 20 份 Markdown 的本地链接检查通过（0 失效链接）。
 - [ ] 手动执行最新 `RepositoryIntegrity.yml` 的 Python/C++ 回归，并保存运行证据。
