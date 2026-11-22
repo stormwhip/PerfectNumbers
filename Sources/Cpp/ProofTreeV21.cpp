@@ -1029,6 +1029,32 @@ int main(int argc, char** argv) {
         return 2;
     }
     LOG_BOUND = bound_exp * std::log(10.0);
+    // A validated permutation changes only the outer root-case partition.
+    // CIRC_ORDER remains fixed, as does its bit layout for all 256 LP masks.
+    if (const char* text = std::getenv("OPN_ROOT_ORDER")) {
+        std::stringstream ss(text);
+        std::vector<uint32_t> parsed;
+        std::string token;
+        while (std::getline(ss, token, ',')) {
+            if (token.empty()) { std::cerr << "Invalid root-order token\n"; return 2; }
+            char* end = nullptr;
+            unsigned long p = std::strtoul(token.c_str(), &end, 10);
+            if (*end != '\0' || p > 300000) {
+                std::cerr << "Invalid root-order prime: " << token << "\n";
+                return 2;
+            }
+            parsed.push_back(static_cast<uint32_t>(p));
+        }
+        auto lhs = parsed;
+        auto rhs = CIRC_ORDER;
+        std::sort(lhs.begin(), lhs.end());
+        std::sort(rhs.begin(), rhs.end());
+        if (lhs != rhs) {
+            std::cerr << "OPN_ROOT_ORDER must permute the fixed eight primes\n";
+            return 2;
+        }
+        ROOT_ORDER = std::move(parsed);
+    }
 
     init_primes(300000);
     if (!load_prime_cutoff_product("PrimeCutoffProduct.bin")) {
