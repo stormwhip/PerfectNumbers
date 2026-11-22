@@ -108,3 +108,20 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Full logs archived as `CompletedCaseBenchmarkLogs` in the run.
 - Interpretation: correct matching counters for the two completed roots, limited performance improvement at exponent 1000; single trials are susceptible to timing variation. Full unconditional proof at exponent 2201 remains incomplete.
 - Future priorities: independent proof audit of arithmetic bounds and exponent coverage; new mathematically stronger pruning; longer tests of V9 on high-exponent bottlenecks.
+
+## Experiment 009 — Eight-prime LP complement certificate candidate
+
+- Date: 2026-11-22.
+- GitHub Actions: [Run 44993433027](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993433027); source commit `1cef5b26c356149bc7460f3c5cbc2e56e8330bb5`.
+- Program: `Sources/Python/PrimeSetSearch.py` using `solve_and_certify`, `P_max=4000`, `a_cut=16`, and `certify=True` on final candidates.
+- Goal: find reduced forbidden-prime sets with complement LP bound exceeding \(10^{2300}\).
+- Both unrestricted greedy deletion and forced-delete-127 start converged to
+  \(S_* = \{3,5,7,11,13,17,19,31\}\).
+- Removed seven roots \(\{61,97,127,307,331,1093,398581\}\).
+- Floating LP lower-bound exponent: **2390.111019072194**.
+- Reported interval-dual lower-bound exponent: **2390.1110142932844**.
+- Margin over exponent 2300: **90.1110142932844**.
+- LP computation time: 8.997 seconds.
+- The 7-prime core \(\{3,5,7,11,13,17,19\}\) gave float LP exponent **1936.450754**; whether a different seven-prime set can certify the target requires separate proof or exhaustive check.
+- Status: **computational interval-dual result**; independently verify LP modeling, interval rounding and every forced-factor implication. No new unconditional odd-perfect-number bound has yet been proved.
+- Next: use reduced-set tree branches with recorded order; benchmark root costs and validate the mathematical proof before claiming a speedup.

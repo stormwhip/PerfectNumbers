@@ -14,3 +14,5 @@
 | Exceed unconditional exponent 2200 | Research target | Pending | Reproducible, rigorously checked proof tree and certificate |
 
 The numerical LP bound applies to the complementary forbidden-prime-free case. It must be combined with independently certified factor-chain branches to establish an unconditional lower bound.
+
+| Reduced prime set for exponent 2300 | Eight-prime candidate with interval-dual output | [Run 44993433027](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993433027) | Independent LP audit and reduced-set proof-tree benchmarking |

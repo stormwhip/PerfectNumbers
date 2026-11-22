@@ -72,3 +72,26 @@ Potential contribution: current versions mostly store forced primes as a set and
 2. Compare complete root searches at the same target and actual exclusion order (not just truncated branch throughput).
 3. Benchmark valuation propagation at exponent 1000, then 1500, then increasingly high targets.
 4. Require all selected roots plus the complementary endgame certificate for an unconditional statement.
+
+## Experiment 009 result (2026-11-22)
+
+Run [44993433027](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993433027) completed successfully, selecting the same eight-prime set under both greedy removal strategies:
+
+\[
+S_* = \{3,5,7,11,13,17,19,31\}.
+\]
+
+The interval-dual program returned \(L(S_*)\ge2390.1110142932844\) (reported double representation of the interval's lower endpoint). The full historical 15-prime set required twice as many candidate root branches as the eight-prime set. The *actual* new tree may be harder on individual roots due to the seven formerly forbidden primes becoming available.
+
+The seven-prime core alone scored 1936.450754 numerically, below exponent 2300. The mathematical LP model and rounding steps must be audited independently before the eight-prime result can be promoted to a formal theorem.
+
+## Stronger exponent congruence from an inexact branch
+
+Suppose a factor-chain branch records \(p^a\mid N\) by choosing \(d=a+1\) odd, and the genuine exponent \(e=\nu_p(N)\) satisfies \(d\mid e+1\). For a known lower obligation \(r_p\), we require \(e\ge\max(a,r_p)\).
+
+- If \(p\) is ordinary, \(e\) is even; therefore \((e+1)/d\) is odd. The smallest allowed \(e\) is \(d m-1\), where \(m\) is the smallest positive odd integer with \(d m\ge\max(a,r_p)+1\).
+- If \(p\) is Euler-special, then \(e\equiv1\pmod4\); since \(d\) is odd, \((e+1)/d\equiv2\pmod4\). The smallest allowed \(e\) is \(d m-1\), where \(m\equiv2\pmod4\) is minimal under the same inequality.
+
+Charge all forced prime exponents using their ordinary minimums and subtract the largest *positive* saving from making at most one eligible prime Euler-special. This yields an unconditional lower-bound inequality on the size of a hypothetical odd perfect number, conditional on the already established factorization constraints.
+
+This congruence sharpening can be checked with direct enumeration of every possible exponent at small bounds before being added to the proof search.
