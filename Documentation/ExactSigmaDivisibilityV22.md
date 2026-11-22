@@ -62,6 +62,7 @@ V22 keeps the original `get_exponents` branch list and rejects impossible branch
 - `OPN_EXACT_DIVISOR_MODE=0`: V21-equivalent code path.
 - `OPN_EXACT_DIVISOR_MODE=1`: add exact even-power check.
 - `OPN_EXACT_DIVISOR_MODE=2`: add cumulative sigma-divisor LCM cut (default in V22).
+- `OPN_EXACT_DIVISOR_MODE=3`: defer product-LCM computation until baseline size/abundance checks have passed and a cheap log(A*B) prefilter predicts that an exact contradiction may be possible. Reconstruct both products from branched prime powers only on demand.
 
 Local primitive test passed (GMP/C++17; `3^2` forces `117`, adding `7^2` forces `108927`). A new regression uses `3^2` and `61^2`: their sigma values share factor 13, and multiplying sigma contributions yields a mandatory divisor `548985177`, exactly 13 times the naive individual-LCM result `42229629`. Full V22 regression runs through `QualityChecks.yml` on this research branch.
 
@@ -70,3 +71,18 @@ Local primitive test passed (GMP/C++17; `3^2` forces `117`, adding `7^2` forces 
 Use the same pinned factor database, 256-prefix LP tables, cutoff product, hardware, thread count, root order and selected difficult shards for all three modes. Record completed shards, total branches, CPU time, peak resident memory, and `EXACT_DIVISOR_STATS` counters. Prefer completed 10–30-second shards over partial node-rate comparisons. A claimed wall-time gain requires a completed matched test.
 
 Do not replace the V21 72-hour scheduler until this matched test passes. Mathematical release still requires independent validation of the original LP and all other tree cuts.
+
+## Initial bounded matched benchmark (completed)
+
+Run: https://github.com/stormwhip/PerfectNumbers/actions/runs/45011182741. Four root-19 exponent shards, 2 threads, 12-second cap per test, same checksum-pinned inputs and LP tables.
+
+| Shard | V21 baseline | V22 mode 1 even-power | V22 mode 2 eager product-LCM |
+| --- | --- | --- | --- |
+| 35 | PROVEN, 45,987 branches, 1.44718s | PROVEN, 45,987 branches, 1.48195s | PROVEN, 45,713 branches, 2.06066s |
+| 130 | PROVEN, 2,230 branches, 0.06153s | PROVEN, 2,230 branches, 0.06205s | PROVEN, 2,230 branches, 0.08546s |
+| 0 | TIMEOUT 12s | TIMEOUT 12s | TIMEOUT 12s |
+| 100 | TIMEOUT 12s | TIMEOUT 12s | TIMEOUT 12s |
+
+At shard 100's 10-second progress mark, V21 had visited 376,475 branches while eager mode 2 had visited 245,666, with 138,987 cumulative LCM cuts. Shard 35 had 25,722 eager LCM cuts and removed only 274 visited branches overall. Thus **eager mode 2 does not show an end-to-end performance gain**; it is about 42% slower in the first completed shard. Partial visited-node counts are not speed measurements.
+
+The exact arithmetic lemma remains valid. Mode 3 tests whether postponing GMP product/LCM work until a branch survives cheap contradictions and passes an optional `log(A*B)` screening gate is a better implementation. Screening may miss a valid optional cut but cannot make a false cut, since final pruning uses GMP exact comparison.
