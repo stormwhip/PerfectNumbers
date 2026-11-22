@@ -51,6 +51,11 @@ PerfectNumbers/
 | [V21FrontierCodec.hpp](../Sources/Cpp/V21FrontierCodec.hpp) | 可恢复的状态编解码 V2 | 实验性 |
 | [SingleFlightFactCache.hpp](../Sources/Cpp/SingleFlightFactCache.hpp) | 同键单飞共享缓存 | 独立测试，未接入搜索 |
 | [IndependentVerifierV2.py](../Research/Session20261122/Python/IndependentVerifierV2.py) | 固定根独立证书检查 | 合成/篡改测试、未验完全部根 |
+| [DirectRootClosures2400.py](../Research/Session20261122/Python/DirectRootClosures2400.py) | 无分解整数因子和一节点矛盾证书生成器 | 原根集 1,396 项直接闭合，仓库回归待运行 |
+| [AuditDirectRoot2400.py](../Research/Session20261122/Python/AuditDirectRoot2400.py) | 3,072 项全量清单的直接证书独立审计 | 预期其余 1,676 项保持开放，仓库审计待运行 |
+| [RootOrderDirectClosureDP.py](../Research/Session20261122/Python/RootOrderDirectClosureDP.py) | 256 状态 DP 与 40,320 次排列对照 | 原根集最优 1,397 项直接闭合 |
+| [SigmaPrecheck.hpp](../Sources/Cpp/SigmaPrecheck.hpp) | 精确 64 位模因子和预筛（G2） | 恢复丢失头文件；本地 GMP 36,100 组对照 |
+| [SigmaPrecheckTests.cpp](../Sources/Cpp/SigmaPrecheckTests.cpp) | 精确预筛 C++ 差分回归 | 已加入手动 CI |
 | [FrontierLedgerV2.py](../Research/Session20261122/Python/FrontierLedgerV2.py) | SQLite 任务、租约与分裂证据 | 故障注入测试 |
 | [FrontierWorkerDriver.py](../Research/Session20261122/Python/FrontierWorkerDriver.py) | C++ 与 SQLite 调度接口 | 部分桥接 |
 | [AuditRunner2400.py](../Research/Session20261122/Python/AuditRunner2400.py) | 原根 3072 项只读验收 | 真实证书尚未填满 |
