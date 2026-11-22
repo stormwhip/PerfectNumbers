@@ -78,7 +78,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release download data-v1 --repo "$GITHUB_REPOSITORY" --pattern checkfacts.txt.gz
+          if ! gh release download data-v1 --repo "$GITHUB_REPOSITORY" --pattern checkfacts.txt.gz; then
+            curl --fail --location --retry 2 --max-time 600 \
+              --output checkfacts.txt.gz 'https://www.lirmm.fr/~ochem/opn/checkfacts.txt.gz'
+          fi
           echo 'ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119  checkfacts.txt.gz' | sha256sum --check
       - name: Build the factorization index
         if: github.event_name == 'workflow_dispatch'
