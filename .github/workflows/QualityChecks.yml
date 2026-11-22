@@ -46,6 +46,8 @@ jobs:
           done
       - name: Check restartable 72-hour scheduler on synthetic root partitions
         run: python3 Sources/Python/Run2400SchedulerTests.py
+      - name: Validate WSL reproducibility wrapper syntax
+        run: bash -n Scripts/Run72hWSL.sh
       - name: Run pure Python tests and syntax validation
         run: |
           python3 Sources/Python/CertificateTests.py
