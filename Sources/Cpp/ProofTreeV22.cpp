@@ -354,7 +354,7 @@ struct State {
     double log_abund_hi = 0.0;
     double lp_known_abund_upper = 0.0;
     size_t certified_residue_count = 0; // Invariant: [0,count) uses the strong certified bound.
-    mpz_class exact_forced_divisor = 1;
+    opn::ExactDivisorProducts exact_products;
 };
 
 double LOG_BOUND = 0.0;
@@ -603,10 +603,10 @@ bool branch_component(const State& base, const mpz_class& p, uint64_t a, bool is
 
     const SigmaFact& sf = get_sigma_fact(p, a);
     if (sf.div_by_4) return true;
-    mpz_class next_required;
+    opn::ExactDivisorProducts next_products;
     if (EXACT_DIVISOR_MODE >= 2) {
-        next_required = opn::extend_forced_divisor(base.exact_forced_divisor, p, a);
-        if (next_required > EXACT_INTEGER_CAP) {
+        next_products = opn::extend_forced_products(base.exact_products, p, a);
+        if (opn::mandatory_divisor(next_products) > EXACT_INTEGER_CAP) {
             exact_lcm_cuts.fetch_add(1, std::memory_order_relaxed);
             return true;
         }
@@ -621,7 +621,7 @@ bool branch_component(const State& base, const mpz_class& p, uint64_t a, bool is
     }
 
     State st = base;
-    if (EXACT_DIVISOR_MODE >= 2) st.exact_forced_divisor = std::move(next_required);
+    if (EXACT_DIVISOR_MODE >= 2) st.exact_products = std::move(next_products);
     st.unbranched.erase(p);
     if (is_exact && a == 1) st.has_special = true;
 
