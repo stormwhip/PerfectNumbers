@@ -33,6 +33,15 @@ g++ -std=c++17 -O2 -fopenmp Research/Session20261122/Cpp/ProofCoreTestsV24.cpp -
 
 原研究分支保留 [ExactSigmaV22Pilot.yml](https://github.com/stormwhip/PerfectNumbers/blob/research/exact-sigma-size-v22/.github/workflows/ExactSigmaV22Pilot.yml)、[V23PrimalityPilot.yml](https://github.com/stormwhip/PerfectNumbers/blob/research/exact-sigma-size-v22/.github/workflows/V23PrimalityPilot.yml)、[V24CompositePilot.yml](https://github.com/stormwhip/PerfectNumbers/blob/research/exact-sigma-size-v22/.github/workflows/V24CompositePilot.yml) 和 [ProofTreeV21Profiler.yml](https://github.com/stormwhip/PerfectNumbers/blob/research/exact-sigma-size-v22/.github/workflows/ProofTreeV21Profiler.yml)；归档代码与研究分支对应版本一致。
 
+## 2026-11-22：顶层整数证明与审计（新增）
+
+- [数学定理、3,072 项整数枚举、1,396 项直接排除结果](Reports/DirectRootClosure2400.md)：包含 14 个禁止根矛盾与 1,382 个奇数部分因子和尺寸矛盾。
+- [独立直接证明生成器](Python/DirectRootClosures2400.py)、[完整根分区审计入口](Python/AuditDirectRoot2400.py)、[严格边界测试](Python/DirectRootClosuresTests.py)。
+- [直接证明覆盖优化 DP](Python/RootOrderDirectClosureDP.py)：全枚举 40,320 种根排列，固定原顺序 1,396 项直接闭合，最优根顺序 1,397 项。
+- [精确 G2 因子和整除测试](../../Sources/Cpp/SigmaPrecheckTests.cpp)：恢复 [SigmaPrecheck.hpp](../../Sources/Cpp/SigmaPrecheck.hpp) 和 Frontier 头文件路径；本地同等源码实现通过 36,100 次 GMP 对照，新仓库 CI 待执行。
+
+原 V21 正式根分割没有变更。独立验收 1,676 个其余分片与 72 小时完整运行仍未完成。
+
 ## Roadblock 对偶研究
 
 - [固定点对偶原型](Python/RoadblockDual.py)与[复现实验](Python/RoadblockDualTests.py)。
