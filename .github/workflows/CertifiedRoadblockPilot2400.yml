@@ -1,4 +1,4 @@
-name: Certified roadblock pilot (2400)
+name: Certified roadblock reached-node pilot (2400)
 on:
   push:
     branches:
@@ -62,18 +62,18 @@ jobs:
           ./BuildIndex checkfacts.txt.gz
           test "$(stat -c %s facts.dat)" = 745826778
           test "$(stat -c %s facts.idx)" = 1322332128
-      - name: Matched root-19 shards on the same runner
+      - name: Matched root-19 shards known to reach roadblocks
         working-directory: Build
         run: |
           mkdir -p PilotLogs
           ./ProofTreeV21 2400 19 list > PilotLogs/Root19Shards.txt
-          grep -E '^SHARD root=19 .*index=(0|35|100|130) ' PilotLogs/Root19Shards.txt
-          for index in 35 130 0 100; do
-            for mode in legacy certified; do
+          grep -E '^SHARD root=19 .*index=(66|132|138|149) ' PilotLogs/Root19Shards.txt
+          for index in 66 132 138 149; do
+            for mode in legacy shadow certified; do
               log="PilotLogs/$mode-$index.log"
               start="$(date +%s%N)"
               rc=0
-              OPN_ROADBLOCK_MODE="$mode" timeout --signal=TERM --kill-after=2s 45s ./ProofTreeV21 2400 19 "$index" > "$log" 2>&1 || rc=$?
+              OPN_ROADBLOCK_MODE="$mode" timeout --signal=TERM --kill-after=2s 15s ./ProofTreeV21 2400 19 "$index" > "$log" 2>&1 || rc=$?
               end="$(date +%s%N)"
               if (( rc == 124 || rc == 137 )); then status=TIMEOUT
               elif (( rc == 0 )) && grep -Eq "^Forbid p=19 branch=$index/[0-9]+ -> PROVEN .*failed_rb=0" "$log"; then status=PROVEN
@@ -81,7 +81,7 @@ jobs:
               else status=CHECK_LOG
               fi
               echo "PILOT_RESULT mode=$mode index=$index status=$status rc=$rc elapsed_ms=$(( (end-start)/1000000 ))" | tee -a PilotLogs/Results.txt
-              grep -E '^RB_PILOT|^Forbid p=19 branch=|failed_rb:' "$log" | tail -26 || true
+              grep -E '^RB_PILOT|^Forbid p=19 branch=|failed_rb:|\[PROGRESS\]' "$log" | tail -26 || true
             done
           done
       - uses: actions/upload-artifact@v4
