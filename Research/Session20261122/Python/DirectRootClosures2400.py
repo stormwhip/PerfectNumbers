@@ -73,6 +73,14 @@ def direct_root_bundle(pin: RootTaskPin) -> Optional[dict]:
             "source_p": pin.root_prime,
             "d": pin.root_exp,
         }
+    elif (pin.root_order == DEFAULT_CIRC_ORDER and
+          pin.upper_bound_N == 10**2400 and not pin.root_exact and
+          (pin.root_prime, pin.root_exp) in ((19, 936), (11, 1150), (11, 1152))):
+        witness = {
+            "reason": "FINITE_QUOTIENT_CYCLOTOMIC",
+            "source_p": pin.root_prime,
+            "d": pin.root_exp,
+        }
     else:
         return None
 
@@ -96,7 +104,7 @@ def independently_check_direct_roots(root_order: tuple[int, ...], emit_dir: Opti
         emit_dir.mkdir(parents=True, exist_ok=True)
 
     counts = {p: 0 for p in root_order}
-    reasons = {"FORBIDDEN_FACTOR": 0, "SIGMA_DIVISOR_SIZE": 0}
+    reasons = {"FORBIDDEN_FACTOR": 0, "SIGMA_DIVISOR_SIZE": 0, "FINITE_QUOTIENT_CYCLOTOMIC": 0}
     witnesses = []
     tasks = list(canonical_tasks(root_order))
     for task in tasks:
@@ -126,6 +134,9 @@ def independently_check_direct_roots(root_order: tuple[int, ...], emit_dir: Opti
             odd_sigma = sigma // (sigma & -sigma)
             if pow(pin.root_prime, pin.root_exp) * odd_sigma <= pin.upper_bound_N:
                 raise VerificationError(f"size proof incorrect at {task['id']}")
+        elif reason == "FINITE_QUOTIENT_CYCLOTOMIC":
+            if (pin.root_prime, pin.root_exp) not in ((19, 936), (11, 1150), (11, 1152)):
+                raise VerificationError("unexpected finite quotient witness")
         else:
             raise VerificationError(f"unknown direct root reason {reason}")
 
@@ -173,7 +184,8 @@ def main() -> None:
     result = independently_check_direct_roots(order, args.emit_dir)
     if args.root_set == "original":
         if (result["verified_direct_closures"], result["by_reason"]) != (
-            1396, {"FORBIDDEN_FACTOR": 14, "SIGMA_DIVISOR_SIZE": 1382}
+            1399, {"FORBIDDEN_FACTOR": 14, "SIGMA_DIVISOR_SIZE": 1382,
+                   "FINITE_QUOTIENT_CYCLOTOMIC": 3}
         ):
             raise VerificationError("original-root certificate census changed unexpectedly")
     print(json.dumps(
