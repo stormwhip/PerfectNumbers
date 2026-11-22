@@ -1,153 +1,94 @@
-# 奇完全数 \(10^{2400}\) 下界项目进展报告
+# PerfectNumbers：\(10^{2400}\) 当前进展报告
 
-**日期：2026 年 11 月 22 日 · 项目：PerfectNumbers · 主目标：无条件证明每个奇完全数 \(N>10^{2400}\)**
+**更新日期：2026-11-22** · **主分支基线：V21** · **研究分支：V22–V24** · **研究目标：给出可独立验证的无条件 \(N>10^{2400}\) 证明**。
 
-> 当前状态：已有超过 \(10^{2400}\) 的**指定八素数互素条件 LP 数值下界**，尚无完整的八根因子链证明。所有新下界均须通过模型、数值和计算证书的独立核验后才能作为数学定理。精简前仓库原始快照：[124ab214](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70)。
+> **当前结论：** 八个指定素因子全部缺失时的增强 LP 输出下界指数 \(2400.822998027028\)；八个含根素数的证明树尚未全部完成；独立的全域 LP、因子链与精确算术审计仍未通过。完整定理未完成。
 
-## 1. 研究问题、目标与摘要
+**数学问题与验收条件详见 [ResearchProblems2400.md](ResearchProblems2400.md)。** 本文汇总对应的实际代码与实验事实。先前 V16 阶段的长篇原始报告可在 [2026-11-22 整理前快照](https://github.com/stormwhip/PerfectNumbers/blob/90100f4447f9196835951fdb7e9dcdd3ab23723f/Documentation/ProgressReport2400.md) 阅读。
 
-奇完全数（odd perfect number, OPN）是假设存在的奇整数 \(N\)，满足正因子和 \(\sigma(N)=2N\)。其存在性仍是开放问题。本项目只研究一个明确目标：排除所有满足 \(N\le10^{2400}\) 的奇完全数，生成可由第三方核验的证明树与线性规划（LP）证书。
+## 1. 数学问题的九个互斥类
 
-Euler 的结构定理给出 \(N=\pi^{4a+1}m^2\)，其中 \(\pi\equiv1\pmod4\)，且 \(\gcd(\pi,m)=1\)。因子链搜索利用
-\[
-p^e\parallel N\quad\Longrightarrow\quad \sigma(p^e)\mid 2N
-\]
-传播必须出现的素因子，并在过丰度、大小超界、禁用素数出现或指数条件冲突时关闭分支。
+令 \(\mathcal O=\{N:\ N\text{ 为奇数},\ \sigma(N)=2N\}\)，\(S_8=\{3,5,7,11,13,17,19,31\}\)，采用外层根顺序
 
-采用以下八素数集合：
-\[
-S_8=\{3,5,7,11,13,17,19,31\}.
-\]
-完整证明拆为两个逻辑上互补的部分：（A）依次排除每个至少含有一个 \(S_8\) 中素数的候选；（B）给出 \(\gcd(N,\prod_{p\in S_8}p)=1\) 时的严格下界。当前 B 已产生数值输出，A 尚未完成。
+$$
+(q_1,\ldots,q_8)=(19,7,11,31,13,3,5,17).
+$$
 
-## 2. 前人的工作与文献状态
+假设 \(N\in\mathcal O\)、\(N\le10^{2400}\)。令 \(\mathcal C_i\) 表示 \(q_i\mid N\) 且所有前面的 \(q_j\nmid N\)，另令 \(\mathcal C_\infty\) 表示 \(N\) 与 \(S_8\) 每个素数都互素。要证明上述九类全空。当前数值证书仅针对 \(\mathcal C_\infty\)；另外八类由证明树负责。
 
-| 年份 | 作者 | 已有研究结论 | 本项目直接用途 |
-| --- | --- | --- | --- |
-| 1991 | Brent、Cohen、te Riele | 证明 \(N>10^{300}\)，采用大型因子链证明树与整数分解 | 计算证明树的先导方法 [1] |
-| 2007 | Nielsen | 任意奇完全数至少有 9 个不同素因子 | 附加结构条件 [3] |
-| 2012 | Ochem、Rao | 在 *Mathematics of Computation* 正式发表 \(N>10^{1500}\)，同时给出 \(\Omega(N)\ge101\) 及最大素数幂组件 \(>10^{62}\) | 直接基准与技术路线 [2] |
-| 2012 | Nielsen 等 | 因子链筛法与奇完全数结构限制 | 潜在附加剪枝 [4] |
-| 2015 | Nielsen | \(\omega(N)\ge10\) | 后续 LP/因子数量约束的候选 [5] |
-| 截至本报告日期 | Ochem 官方项目页 | 报告后续计算下界 \(N>10^{2200}\)，并提供 t2300 合数列表、roadblock 和 checkfacts 因子数据库 | 当前公开计算基准及大规模输入 [6] |
-| 2026 | Ochem、Zelinsky | 针对“恰有一个偶指数大于 2”的特殊 OPN 类给出强限制 | 专题旁证，不直接推出一般下界 [7] |
+## 2. 已建立的正式工程
 
-**文献地位区分：** \(10^{1500}\) 有正式发表的原始论文；\(10^{2200}\) 是 Ochem 官方网页公布的后续计算进展；本项目的 \(10^{2400}\) 条件 LP 输出为尚待完全审计的程序结果。任何一层均不代替后一层的独立证明责任。
-
-## 3. 已完成工作与实验证据
-
-### 3.1 原始因子链、工程与根集合优化
-
-建立了 C++17 / GMP 因子链求解器和因子索引构建器，使用输入压缩包的固定 SHA-256：
-
-ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119
-
-历史 V4 记录：指数 1000 对应 749,961 个分支、51.59 秒；指数 1500 对应 33,137,706 个分支、1054.08 秒。这些是旧环境的历史实验，并非当前新版本的证明级认证。
-
-V1–V17 的主要研究包括 OpenMP 任务调度、因子与合数残余处理、路障（roadblock）、\(p\)-进估值传播、最优根顺序、状态级 LP 对偶剪枝和欧拉特殊素数名额耦合。部分改进在低指数有效，另一些在完整算例上未表现出加速，均保留在 [ExperimentLog](../Records/ExperimentLog.md)。
-
-对八根的所有 \(8\cdot2^7=1024\) 条有向子集状态转移，在指数 500 下已进行穷尽成本测量；按分支数优化的顺序为
-\[
-19,\ 7,\ 11,\ 31,\ 13,\ 3,\ 5,\ 17,
-\]
-对应 40,733 分支。[8] 这与目前求解器的顺序一致，尚无针对指数 2400 的顺序最优性证明。
-
-V14–V16 将固定对偶 LP 检查前移到 DFS 中间状态，在指数 1500 的最后根 17 上将 187,909 个原有搜索分支化为一次 LP 剪枝。[9] 指数 2201 / 2300 的困难根在短时限测试中仍超时。V15 曾存在强制素数增益的区间端点方向错误，V16 修正为保守区间下界。V17 的特殊素数联合剪枝完成测试，但在可终止的对照算例中无新增分支减少，因此精简后主线保留 V16。[10]
-
-### 3.2 本项目目前最重要的结果：八素数终局 LP 跨过 2400
-
-在线性规划中表示可行素数幂、丰度、Euler 特殊素数唯一性、因子和蕴含关系和无限尾部的保守松弛。对于 \(\gcd(N,\prod_{p\in S_8}p)=1\)，比较两种模型：
-
-| LP 版本 | 区间对偶程序输出的 \(\log_{10}N\) 下界 | 相对目标 2400 |
-| --- | ---: | ---: |
-| 初始八素数模型 | 2390.111014293284 | -9.888986 |
-| 补入 61 的高指数因子和约束 | **2400.822998027028** | **+0.822998** |
-
-两条关键的新约束来自精确分解：
-\[
-\sigma(61^{10})=199\cdot859\cdot4242586390571,
-\]
-\[
-\sigma(61^{12})=187123\cdot14421466756460791.
-\]
-
-程序 [Prime61FactorChecks.py](../Sources/Python/Prime61FactorChecks.py) 已对这些等式、多个 \(61^e\) 的因子和等式以及所列素因子的素性进行独立检查；[运行 45001172416](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416) 通过。
-
-61 的额外条件化 LP 数值结果（均额外假定与 \(S_8\) 互素）：
-
-| 61 的指数条件 | 区间对偶程序下界指数 |
-| --- | ---: |
-| \(61^6\parallel N\) | 2425.846325041447 |
-| \(61^{10}\parallel N\) | 2465.876803180284 |
-| \(61^{12}\parallel N\) | 2511.641527478704 |
-| \(\nu_{61}(N)\ge16\)，偶指数 | 2400.822993303349 |
-
-若 \(61\mid N\)，奇指数会强制 \(31\mid N\)；指数 \(2,4,8,14\) 可由 \(\sigma(61^e)\) 含指定禁用素因子排除，故上述四类覆盖所有剩余指数。
-
-**最关键的进展是“未另外假定 \(61\mid N\)”的总终局 LP 输出 2400.822998。** 因而当前目标不再要求额外增加第九个根素数。需要特别核查的仍是模型安全性、区间对偶是否独立有效，以及这仅约 0.823 的余量能否在严格验算中保留。[11]
-
-## 4. 尚未解决的核心问题与验收条件
-
-| 优先级 | 待完成内容 | 必须达到的验收标准 |
+| 环节 | 现有文件 | 实际状态 |
 | --- | --- | --- |
-| P0 | **LP 模型数学正确性审计** | 所有普通/特殊指数选项、有限及无限尾部、每条因子和蕴含在 OPN 全部可能情形下安全 |
-| P0 | **独立 LP 对偶证书** | 导出每一约束的有理/区间乘子及完整残差，用第二套验证器独立重算，并证明下界严格大于 2400 |
-| P0 | **全部八个根分支完成** | 按固定顺序逐根排除，全部返回已完成且没有 unresolved roadblock；记录每条终结分支对应的严格矛盾 |
-| P1 | 证明树算术正确性 | 对可能影响剪枝的浮点比较采用经过认证的舍入；明确指数分支完备性、素性、数据库分解、残余互素/重叠及 ALPHA 约束 |
-| P1 | 可恢复的任务分片 | 精确记录搜索状态、每个子任务前缀、代码提交、因子数据库哈希、已处理和未处理任务；可中断恢复并去重验算 |
-| P1 | \(10^{2400}\) 分支成本剖析 | 在相同硬件和数据条件下形成可终止或有固定预算的分层测试，优先定位困难根与重型 roadblock |
-| P2 | 更强的条件化 LP / 分支优化 | 对完整可终止算例证明分支数和端到端耗时实际下降；保留失败实验数据 |
-| P3 | 定理与公开可复核材料 | 明确问题分区、形式化推理、证书输入、源代码版本、数据库校验值、运行日志与独立审计 |
+| C++17/GMP/OpenMP 因子链 | [ProofTreeV21.cpp](../Sources/Cpp/ProofTreeV21.cpp) | 可搜索指数 2400；尚无完整证明树 |
+| 256 个前缀 LP | [PrefixDualCertificates.py](../Sources/Python/PrefixDualCertificates.py) | [生成工作流 45004245214](https://github.com/stormwhip/PerfectNumbers/actions/runs/45004245214) 成功，输出 256 份表 |
+| 强化 61 的因子和约束 | [IntervalCertificate61.py](../Sources/Python/IntervalCertificate61.py) | [核验 45001172416](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416) 成功 |
+| 大因子残余的安全上界 | [PrimeCutoffCert.cpp](../Sources/Cpp/PrimeCutoffCert.cpp) | 构建 \(10^8\) 素数截止乘积和确定性哈希 |
+| 输入因子数据库 | [BuildIndex.cpp](../Sources/Cpp/BuildIndex.cpp) | 已建立固定版本及 SHA-256 校验 |
+| 可恢复任务调度 | [Run2400Scheduler.py](../Sources/Python/Run2400Scheduler.py) | 顶层指数分片与已完成任务恢复；深层状态仍无法恢复 |
+| 主线单元测试 | [ProofCoreTestsV21.cpp](../Sources/Cpp/ProofCoreTestsV21.cpp) | [CI 45007403402](https://github.com/stormwhip/PerfectNumbers/actions/runs/45007403402) 通过 |
 
-程序打印 PROVEN 只说明当前实现认为已关闭搜索分支；完全数定理需要额外通过以上审计。
+数据库 `checkfacts.txt.gz` 的已固定 SHA-256 为
 
-## 5. 下一步实施计划
+```text
+ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119
+```
 
-**阶段 A — 先认证增强 LP：** 建立完整约束清单，特查 \(\sigma(61^{10}),\sigma(61^{12})\) 的指数变量及高指数尾部，输出可由独立程序计算的对偶乘子与向外舍入界。把“2400.822998”提升为可检查的正式不等式。
+## 3. 互素类 LP 计算
 
-**阶段 B — 让搜索持续可恢复：** 将当前 DFS 按精确根前缀和指数状态分片；使用持久任务清单、断点恢复、稳定状态哈希和错误退出检测。保留本地 32 线程长时间任务与 GitHub Actions 小规模测试的边界；未经手动选择，CI 只运行轻量测试。
+给定 \(\gcd(N,\prod_{p\in S_8}p)=1\)，增强 LP 考虑各素数指数、丰度要求 \(\sigma(N)/N=2\)、Euler 特殊素数数量、已分解的 \(\sigma(p^a)\) 强制因子及有限域外的乐观无限尾部。
 
-**阶段 C — 完成 \(10^{2400}\) 八根证明：** 基于固定顺序逐根完成，每个任务归档可核验的终结证据。优先改进高成本路障和条件 LP，最后与阶段 A 的无根终局证明合并。
+终局数值输出为
 
-**时间估算：** 历史 V4 的指数 1000/1500 数据不能直接预测新搜索树在 2400 的总时间。现有 2201/2300 限时记录尚无完整高指数根结束，因此应先测实际分支成本，再决定长期运算安排。
+$$
+\log_{10}N\ge2400.822998027028
+\qquad\text{（条件 LP 的区间对偶程序输出）}.
+$$
 
-## 6. 精简后的代码与证据入口
+它超过目标指数 \(2400\)，但需要**独立证明每个真实候选必映射到 LP 的可行解**、再将求解器对偶向量导出为可复核的有理或向外舍入区间证书。上述数值尚不能单独宣称为已完成的数学定理。
 
-| 功能 | 当前正式文件 |
-| --- | --- |
-| 因子数据库索引 | [BuildIndex.cpp](../Sources/Cpp/BuildIndex.cpp) |
-| 八根主求解器 | [ProofTreeV16.cpp](../Sources/Cpp/ProofTreeV16.cpp) |
-| 求解器核心回归 | [ProofCoreTestsV16.cpp](../Sources/Cpp/ProofCoreTestsV16.cpp) |
-| 增强 LP 主体 | [IntervalCertificate61.py](../Sources/Python/IntervalCertificate61.py) |
-| 全部 256 个前缀对偶证书 | [PrefixDualCertificates.py](../Sources/Python/PrefixDualCertificates.py) |
-| 61 条件化测试 | [ConditionalPrime61.py](../Sources/Python/ConditionalPrime61.py) |
-| 整数分解核验 | [Prime61FactorChecks.py](../Sources/Python/Prime61FactorChecks.py) |
-| 证明审计清单 | [ValidationChecklist.md](../Records/ValidationChecklist.md) |
-| 历史完整实验 | [ExperimentLog.md](../Records/ExperimentLog.md) |
+## 4. V21：困难根的实证
 
-为了聚焦当前目标，旧证明树 V1–V15/V17、重复的版本化测试、过时的 benchmark、旧理论候选与临时文档已从主分支清理；均可通过 [精简前提交 124ab214](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70) 恢复。
+[根 19 完整顶层指数清点 45005912683](https://github.com/stormwhip/PerfectNumbers/actions/runs/45005912683)：
 
-## 7. 参考文献
+- **287** 个指数任务；
+- **164** 个在每分片 1 秒限时内返回 `PROVEN`；
+- **123** 个在该限时下 `TIMEOUT`。
 
-[1] R. P. Brent, G. L. Cohen, H. J. J. te Riele, *Improved techniques for lower bounds for odd perfect numbers*, Math. Comp. 57 (1991), 857–868. [作者原始摘要与文献](https://maths-people.anu.edu.au/brent/pd/rpb116a.pdf)。
+对这 123 项 [调整根 19 的全局位置](https://github.com/stormwhip/PerfectNumbers/actions/runs/45006916458) 时，有 73 项能在相应的 1 秒预算内完成，仍有 50 项超时。此对照改变前缀禁用条件，不能单独作为新顺序对全部八根的总体加速证据。
 
-[2] P. Ochem, M. Rao, *Odd perfect numbers are greater than \(10^{1500}\)*, Math. Comp. 81 (2012), 1869–1877. [DOI](https://doi.org/10.1090/S0025-5718-2012-02563-4)；[仓库内 PDF](../References/OchemRao2012.pdf)。
+[八根顺序动态规划 45007403299](https://github.com/stormwhip/PerfectNumbers/actions/runs/45007403299) 对代理指标进行了全子集优化：其代理成本降幅约 0.03%–2.64%，尚无完整八根墙钟耗时的证明。短时测试中，根 19、17、31 仍不能在 30 秒内穷尽。
 
-[3] P. P. Nielsen, *Odd perfect numbers have at least nine distinct prime factors*, Math. Comp. 76 (2007), 2109–2126. [arXiv](https://arxiv.org/abs/math/0602485)。
+**72 小时目标未经过完整实测验证。**
 
-[4] P. P. Nielsen 等，*Sieve methods for odd perfect numbers* (2012). [论文](https://mathdept.byu.edu/~pace/OPNSieves_web.pdf)。
+## 5. 2026-11-22 性能研究 V22–V24
 
-[5] P. P. Nielsen, *Odd perfect numbers, Diophantine equations, and upper bounds*, Math. Comp. 84 (2015), 2549–2567. [AMS 原文](https://www.ams.org/journals/mcom/2015-84-295/S0025-5718-2015-02941-X/S0025-5718-2015-02941-X.pdf)。
+所有新原型均保存在 [Research/2026-11-22/](../Research/2026-11-22/README.md)，不改变正式 V21 调度脚本。
 
-[6] P. Ochem, [Odd perfect numbers — 官方项目网页](https://www.lirmm.fr/~ochem/opn/)，2026-11-22 核对。
+| 版本 | 数学/工程改动 | 实验结论 |
+| --- | --- | --- |
+| V22 | 基于 \(\operatorname{odd}(\sigma(p^a))\mid N\) 的精确整除及乘积 LCM 剪枝 | 数学规则明确且通过回归，已完成分片中增加运行耗时 |
+| V23 | 对同一个 \(\sigma\) 残余复用第一次 GMP 素性测试，残余改变时重检 | 已完成的根 19 分片 35 与 130，分别降低约 30.1% 与 24.9% 的耗时 |
+| V24 | 将合数残余逐项互素测试改为乘积 GCD | 4000 组随机差分验证一致；实际运行表现不稳定 |
 
-[7] P. Ochem, J. Zelinsky, *On odd perfect numbers with exactly one even exponent greater than 2*, 2026，预印本 [arXiv:2607.19746](https://arxiv.org/abs/2607.19746)。
+主要证据：[V22 首轮](https://github.com/stormwhip/PerfectNumbers/actions/runs/45011182741)、[V22 延迟剪枝](https://github.com/stormwhip/PerfectNumbers/actions/runs/45011614919)、[V21 性能剖析](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012070442)、[V23 对照](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012354324)、[V24 对照](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012698021)。
 
-[8] [根顺序全部 1024 转移测试](https://github.com/stormwhip/PerfectNumbers/actions/runs/44996427816)；
-[9] [V13–V15 状态剪枝测试](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998508242)；
-[10] [V16/V17 对照](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001125412)；
-[11] [61 因子分解与增强 LP 重复实验](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416)。
+V21 剖析表明素性测试是困难分片 0、100 的主要计时热点。V23 在两项完整结束的分片中实现了有效加速。V22 与 V24 目前均不满足替换正式主线的性能证据标准。
 
----
+## 6. 下一阶段研究优先级
 
-**项目结论：** 无条件 \(N>10^{2400}\) 仍未完成。强条件 LP 下界已超过目标，当前最有价值的工作是**证明级 LP 证书 + 全部八根可恢复穷尽搜索**。
+1. **P0 — LP 正确性与独立证书：** 完成无限尾部、特殊指数、\(\sigma(61^{10}),\sigma(61^{12})\) 蕴含模型的涵盖证明；导出可独立校验的区间/有理对偶见证。
+2. **P0 — 较早层次的困难树剪枝：** 构造考虑已选指数、强制素数和 Euler 名额的条件化 LP，优先在大量素性测试以前关闭子树，必须以已完成分片墙钟耗时验收。
+3. **P0 — 八根穷尽性与 roadblock：** 证明指数选项覆盖、无穷尾尺寸和丰度约束安全，完成所有顶层及必要深层任务。
+4. **P1 — 独立算术与证明树验证：** 对数据库素性、分解、浮点边界和每条闭合规则导出独立证书，生成可重验的证明 DAG。
+5. **P1 — 深层断点与 72 小时评估：** 在固定代码和数据版本下，进一步切分长尾任务，完成全树工作量测量，再验收实际 72 小时运行。
+
+## 7. 证据与研究入口
+
+- [形式化数学研究难题](ResearchProblems2400.md)
+- [当前验收清单](../Records/ValidationChecklist.md)
+- [研究实验归档](../Research/2026-11-22/README.md)
+- [历史实验日志](../Records/ExperimentLog.md)
+- [Ochem–Rao (2012) 原始论文](../References/OchemRao2012.pdf)
+
+**结论：** 当前研究瓶颈集中在**可独立认证的数学剪枝**与**所有困难根的可终止证明树**；V23 已降低局部计算成本，仍需通过全树证书和可靠的端到端运行把数值研究推进为无条件定理。

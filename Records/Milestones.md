@@ -1,44 +1,20 @@
-> **有效主目标：\(10^{2400}\)**。本文件保留过往正、负实验历史。旧版代码与 Benchmark 从主分支移除，见 [精简前快照](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70)。最新任务和完成定义详见 [2400 进展报告](../Documentation/ProgressReport2400.md) 与 [证明审计清单](ValidationChecklist.md)。
+# PerfectNumbers 当前里程碑
 
-# Research Milestones
+**状态快照：2026-11-22**。主要目标：证明每个奇完全数 \(N>10^{2400}\)，以独立可核验证书作为完成判据。
 
-| Milestone | Status | Supporting evidence | Next gate |
+| 里程碑 | 当前状态 | 直接证据 | 下一项验收 |
 | --- | --- | --- | --- |
-| 2012 published bound \(N>10^{1500}\) | Published external reference | [OchemRao2012](../References/OchemRao2012.pdf) | Reproduce locally for regression |
-| Local V4 search at exponent 1500 | Reported in historical handoff | [LegacyResearchHandoff](../Documentation/LegacyResearchHandoff.md) | Recover full run log and repeat independently |
-| Complement-case LP endgame around exponent 3129 | GitHub computation observed; mathematical audit open | [Python workflow run 44990184125](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990184125) | Independently audit the model and interval dual certificate |
-| GitHub directory and filename normalization | Completed 2026-11-22 | Reorganization commit | Compile and test renamed entry points |
-| V6 conservative roadblock and composite accounting | Core regression passed (2026-11-22) | [ProofTreeV6](../Sources/Cpp/ProofTreeV6.cpp) and [ProofCoreTests](../Sources/Cpp/ProofCoreTests.cpp) | Compilation and core checks passed; dataset-backed V5/V6 benchmark pending |
-| V7 block-parallel heavy roadblocks | Compilation and core checks passed; performance pending | [ProofTreeV7](../Sources/Cpp/ProofTreeV7.cpp) | Multi-thread equivalence, regression and benchmark |
-| V8 periodic diagnostics | Completed; 50s progress measured | [Probe 44991559032](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991559032) | Optimize ordinary DFS; large roadblocks were not encountered |
-| V9 deep task scheduling | Terminating-case comparison completed | [Run 44992192309](https://github.com/stormwhip/PerfectNumbers/actions/runs/44992192309) | Repeat measurements; strengthen pruning for exponent 2201 |
-| Complete unconditional exponent 2200 | Not yet verified in this project | [Bounded exponent-2201 probe](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991101998) timed out on roots 17 and 307 | Instrument high-exponent searches, optimize, then prove all 15 roots plus audited endgame |
-| Exceed unconditional exponent 2200 | Research target | Pending | Reproducible, rigorously checked proof tree and certificate |
+| 前人 \(10^{1500}\) 下界 | 已发表的参考结果 | [Ochem–Rao 2012](../References/OchemRao2012.pdf) | 用作独立回归比较 |
+| \(S_8\)-互素终局 LP | **输出 2400.822998，未完成独立数学审计** | [45001172416](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416) | LP 模型涵盖性证明 + 独立导出对偶 |
+| 256 个前缀区间表 | 生成成功 | [45004245214](https://github.com/stormwhip/PerfectNumbers/actions/runs/45004245214) | 独立核查系数、增益与调用条件 |
+| 正式证明树版本 | V21 | [源代码](../Sources/Cpp/ProofTreeV21.cpp) · [质量检查](https://github.com/stormwhip/PerfectNumbers/actions/runs/45007403402) | 完整覆盖性与证明规则审计 |
+| 根 19 指数分片 | 287 任务；164 个在 1 秒内完成，123 个超时 | [45005912683](https://github.com/stormwhip/PerfectNumbers/actions/runs/45005912683) | 长尾任务继续分片，穷尽证明 |
+| 八根顺序优化 | 代理成本已分析 | [45007403299](https://github.com/stormwhip/PerfectNumbers/actions/runs/45007403299) | 比较全部八根的真实总成本 |
+| V21 瓶颈剖析 | 素性测试是重要瓶颈 | [45012070442](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012070442) | 优先在浅层规避昂贵运算 |
+| V22 精确整除剪枝 | 数学规则可靠；性能实验负向 | [45011182741](https://github.com/stormwhip/PerfectNumbers/actions/runs/45011182741) | 仅作为理论与测试保留 |
+| V23 素性测试去重 | 两个完成分片加速约 25%–30% | [45012354324](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012354324) | 独立审计后考虑主线集成 |
+| V24 合数乘积 GCD | 4,000 组差分通过；性能结果混合 | [45012698021](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012698021) | 扩大已完成分片样本 |
+| 72 小时运行框架 | 顶层分片支持重启 | [Run2400Scheduler.py](../Sources/Python/Run2400Scheduler.py) | 深层断点及全树实测 |
+| 无条件 \(N>10^{2400}\) | **未完成** | [数学研究纲领](../Documentation/ResearchProblems2400.md) | 九类候选证书全部独立验收 |
 
-The numerical LP bound applies to the complementary forbidden-prime-free case. It must be combined with independently certified factor-chain branches to establish an unconditional lower bound.
-
-| Reduced prime set for exponent 2300 | Eight-prime candidate with interval-dual output | [Run 44993433027](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993433027) | Independent LP audit and reduced-set proof-tree benchmarking |
-
-| V10 prime-adic obligation cuts | Candidate, quality checks pending | [ProofTreeV10](../Sources/Cpp/ProofTreeV10.cpp) | Compile, regress, and compare complete roots |
-
-| V10 valuation-cut benchmark | Completed; no material branch reduction at measured targets | [Run 44993733799](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993733799) | Target cuts on states with substantial repeated factor valuations |
-| Reduced eight-root tree benchmark | Completed; slower at exponent 300 and 500 | [Run 44993825296](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993825296) | Optimize root order and deep-pruning policies |
-
-| V11 root-order subset DP | Profiler and exact optimizer implemented; full 1024-edge run pending | [RootOrderProfiler](../Sources/Cpp/RootOrderProfiler.cpp) | Compare optimal order against canonical order at 300 and 500 |
-
-| V11 root-order subset DP | 1024/1024 edges proven; complete-tree gains modest and target-dependent | [Run 44995684900](https://github.com/stormwhip/PerfectNumbers/actions/runs/44995684900) | Profile at exponent 500 before selecting production order |
-
-| V12 affine state-level LP | 256 interval-derived prefix certificates generated; 4 extra cuts in one completed test | [Run 44996209525](https://github.com/stormwhip/PerfectNumbers/actions/runs/44996209525) | Add state-forbidden variable-removal gains (V13) |
-
-| Exponent-500 exact subset DP | All 1024 edges completed; branch-optimal canonical order, distinct time optimum | [Run 44996427816](https://github.com/stormwhip/PerfectNumbers/actions/runs/44996427816) | Assess higher-exponent transferability |
-| Early-state V14 and forced-prime V15 | Both compile and core tests pass; matched benchmark running | [Run 44998627399](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998627399) | Quantify early LP cuts and compare complete roots |
-
-| V14 intermediate-state LP branch elimination | Verified root 17 eliminated at exponents 1000 and 1500; exponent 2201 still times out | [Run 44998508242](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998508242) | Generalize the cut to bound 2300 or seek stronger prime-power constraints |
-| V15 forced-prime dual gain | Computationally verified, no added pruning on matched complete roots | [Run 44998508242](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998508242) | Test dual reoptimization with required prime-power options |
-
-| V16 interval-safe forced-prime gain | Implemented; validation pending | [ProofTreeV16](../Sources/Cpp/ProofTreeV16.cpp) | Pass interval tests and exponent-2300 benchmark |
-
-| Strengthened S8 complement LP for exponent 2400 | **2400.822998027028** interval-dual exponent; conditional case only; proof-grade model audit open | [Run 45001172416](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416) | Independent dual witness verification and eight-root exhaustive trees at 2400 |
-| V17 Euler-special-slot coupled dual gains | Source and standalone algebra tests completed; high-exponent dataset benchmark pending | [V17 workflow](https://github.com/stormwhip/PerfectNumbers/actions/workflows/EulerCoupledBenchmark.yml) | Compare complete branch counts and runtime against V16 |
-
-| V17 coupled-dual matched benchmark | All synthetic tests and completed roots passed; no demonstrated end-to-end gain; 2201/2300 timed out | [Run 45001125412](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001125412) | Prioritize conditional LP strengthening and high-exponent tree profiling |
+历史 V1–V20 和更低目标的实验里程碑记录仍可通过[整理前版本](https://github.com/stormwhip/PerfectNumbers/blob/90100f4447f9196835951fdb7e9dcdd3ab23723f/Records/Milestones.md)访问；完整历史实验继续保存在 [ExperimentLog.md](ExperimentLog.md)。

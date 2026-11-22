@@ -1,50 +1,49 @@
-# Proof Validation Checklist
+# \(10^{2400}\) 证明发布验收清单
 
-A run printing `PROVEN` is experimental evidence until its mathematical and computational assumptions have been checked.
+**截至 2026-11-22。** 本清单区分**运行成功**与**数学证明成立**。关联数学定义见 [形式化研究难题](../Documentation/ResearchProblems2400.md)，具体证据见 [进展报告](../Documentation/ProgressReport2400.md)。
 
-- [x] Verify the exponent-covering combinatorial lemma on the V6 branch list for selected root primes and exponents through 2048 (automated test); independent formal proof review remains open.
-- [ ] Check that every roadblock bound covers the infinite prime tail beyond the finite sieve, and confirm binary-search monotonicity.
-- [ ] Replace all decision-critical floating-point inequalities with certified lower/upper enclosures or conservative directed rounding.
-- [ ] Check primality and factorization certificates for all database entries used as primes; `mpz_probab_prime_p` is probabilistic.
-- [ ] Audit composite-factor lower-bound assumptions (including ALPHA), overlapping factors, and multiplicities.
-- [ ] Verify the LP relaxation includes a safe infinite tail, handles all special-prime options and uses a checkable dual certificate.
-- [ ] Validate all eight root primes in the order `19,7,11,31,13,3,5,17` at exponent `2400` and the enhanced complementary LP.
-- [ ] Record a pinned source commit, database hash, compiler versions, runtime arguments and complete results.
-- [ ] Repeat critical targets with an independent checker or a second implementation.
+## A. 输入与程序可重复性
 
-## Initial audit findings (2026-11-22)
+- [x] 固定 Ochem 因子表输入哈希 `ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119`。
+- [x] 建立 C++ GMP 索引器与完整主线 V21；V21 核心单元测试通过（[45007403402](https://github.com/stormwhip/PerfectNumbers/actions/runs/45007403402)）。
+- [x] 生成所有 256 个根前缀的 LP 对偶表，附相应输出文件哈希（[45004245214](https://github.com/stormwhip/PerfectNumbers/actions/runs/45004245214)）。
+- [x] 建立顶层指数任务清单、SHA 校验和已完成分片恢复（调度器及其合成测试）。
+- [ ] 每个深层证明状态都可断点保存、恢复，且恢复前后无漏项、无重复接受。
+- [ ] 72 小时验收记录固定 commit、GMP 编译版本、CPU 核数、线程参数、所有输入与结果文件哈希。
 
-Historical V5 source is available in the [pre-cleanup snapshot](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70); the current proof engine is `Sources/Cpp/ProofTreeV16.cpp`. Re-audit the same questions for V16:
+## B. 数学模型与对偶证书
 
-1. `get_exponents` inserts the exact special-prime exponent `a=1` and generic even exponents; explicit coverage of `a=5,9,...` is not apparent. This is a proof-completeness risk.
-2. `compute_roadblock_bound` currently returns success when it exhausts a finite prime table. An analytic enclosure of the omitted infinite tail is needed for soundness.
-3. Floating-point cutoffs and probabilistic primality tests require proof-grade auditing.
+- [x] 增强 \(S_8\)-互素 LP 计算产生指数 \(2400.822998027028\)（**数值实验，不等同已证明的定理**）。
+- [x] 关键 \(\sigma(61^{10}),\sigma(61^{12})\) 的整数分解与素性检验脚本运行通过（[45001172416](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416)）。
+- [ ] 独立证明 LP 完整包含全部可能的奇完全数普通/特殊指数情形和 \(P_{\max},a_{\mathrm{cut}}\) 外的无限尾。
+- [ ] 验证所有因子和蕴含约束对实际素数指数选择成立，特别是 61 的高指数约束。
+- [ ] 导出完整对偶证书（精确矩阵系数、乘子、界约束、负 reduced costs、严格区间数值）；独立验证 \(\mathrm{LB}>2400\log10\)。
+- [ ] 对 256 个前缀和状态增益证书独立检查区间方向、重复扣除与 Euler 特殊素数名额。
 
-These are open audit items, not claims that a mathematical theorem is false.
+## C. 因子链证明的完备性和正确性
 
+- [ ] 形式化证明 V21 的每种顶层/内部分支指数覆盖引理（包含 \(p=3,7\)、特殊奇指数与非精确指数）。
+- [ ] 形式化证明各根的前缀互斥与九类完整覆盖。
+- [ ] 证明 roadblock 的分数背包放松和无限素数尾下界，以及确定上界 \(b\) 的单调性。
+- [ ] 证明合数残余的最小素因子界、丰度上界、尺寸计数及重叠处理全部安全。
+- [ ] 将所有决定分支生死的浮点阈值更换为严格区间/有理数比较，或附显式认证余量。
+- [ ] 数据库里每个当作素数使用的因子都提供确定性素性证书；分解过程需经整数乘法复核。
+- [ ] 对八根 \((19,7,11,31,13,3,5,17)\) 的全部指数分片完成搜索，且无 unresolved / timeout / 失败 roadblock。
+- [ ] 输出每个闭合叶节点对应的可独立验证的矛盾证据。
 
-## V6 audit changes (2026-11-22)
+## D. 独立验证与最终发布
 
-- V6 replaces finite-table exhaustion in the roadblock fractional knapsack with an explicit infinite even-prime tail, using an upper bound on abundance per unit log-size for all primes beyond the table. It optimistically grants a possible tail special prime's full maximum abundance for free. This produces a conservative relaxation.
-- V6 recomputes composite size contributions from pairwise coprime residuals that are also coprime to known prime divisors; every residual gets an optimistic abundance allowance even when it shares factors with another residual.
-- A limited combinatorial check finds no missing exponent classes for the V6 branches on selected primes through exponent 2048. Coverage follows from divisibility \(d+1\mid a+1\) for inexact branches; a complete, independently reviewed proof remains a separate task.
-- The ALPHA=10^8 residual factor assumption is inherited and must be checked against the database. No new unconditional lower bound is claimed from V6.
+- [ ] 开发与搜索器相互独立的短小证书验证器，覆盖全部 LP 对偶证书、根/指数覆盖以及每条叶结点推理。
+- [ ] 在第二环境重验完整数据、任务划分及全部已闭合叶节点，完成证书 DAG 的哈希/覆盖性审计。
+- [ ] 由完整八根证书与互素 LP 证书推出 \(\forall N\in\mathcal O,\ N>10^{2400}\)。
+- [ ] 在目标硬件上验证总运行墙钟时间 \(\le72\) 小时，包括可重启任务的全部输出和证明校验。
 
-## Source validation record
+## E. 已完成的性能研究（不计入证明验收）
 
-- 2026-11-22: [GitHub Actions quality run 44990984163](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990984163) succeeded for commit `9dc5cd6`. C++ compilation of the index builder and V1–V6, C++ core tests, and Python syntax checks all passed.
-- Dataset-backed proof-tree regression and independent mathematical certification remain separate verification gates.
+- [x] 根 19 的 287 个顶层指数任务普查：164 个 1 秒内完成、123 个超时（[45005912683](https://github.com/stormwhip/PerfectNumbers/actions/runs/45005912683)）。
+- [x] V21 函数计时定位 GMP 素性测试开销（[45012070442](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012070442)）。
+- [x] V22 精确整除剪枝：数学规则与实现测试通过，完成分片未体现运行时优势。
+- [x] V23 去除重复素性测试：两个已完成分片相对 V21 运行时间减少约 25%–30%（[45012354324](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012354324)）。
+- [x] V24 乘积 GCD：4,000 组随机差分一致，时间改善尚不稳定（[45012698021](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012698021)）。
 
-## 2400 proof-specific release gates (2026-11-22)
-
-- [x] Independent exact multiplication and primality testing of the sigma(61^e) factorization data used to strengthen the LP, including e=10,12; see [45001172416](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416).
-- [x] Computer-generated interval-dual lower exponent >2400 for the **S8-coprime** case, with recorded result 2400.822998027028.
-- [ ] Independent proof that the LP relaxation covers ordinary and Euler-special exponent families and the infinite tails conservatively.
-- [ ] Export and validate a fully checkable dual witness, including all numerical coefficient enclosures and multiplier signs.
-- [ ] Test complete 256-mask **enhanced** prefix-certificate production against V16's CSV loader; check terminal mask 255.
-- [ ] Complete all eight root trees at exponent 2400 with no unresolved branches or roadblocks.
-- [ ] Independently certify branch-critical float comparisons, prime certificates and ALPHA/composite bounds.
-- [ ] Add reliable checkpoint/restart/task-aggregation with source SHA and database hash before multi-day calculations.
-- [ ] Reproduce the assembled theorem with a separate verifier.
-
-See [ProgressReport2400](../Documentation/ProgressReport2400.md) for the task plan.
+原 V16 时期的历史审计记录保留于 [旧提交](https://github.com/stormwhip/PerfectNumbers/blob/90100f4447f9196835951fdb7e9dcdd3ab23723f/Records/ValidationChecklist.md)。

@@ -1,0 +1,38 @@
+# 2026-11-22 证明树研究原型归档
+
+本目录保存 V21 的函数级剖析与 V22–V24 的候选优化。它们来自 [原始研究分支 research/exact-sigma-size-v22](https://github.com/stormwhip/PerfectNumbers/tree/research/exact-sigma-size-v22)，复制为可追溯的独立研究材料。
+
+**正式主分支求解器仍是 [ProofTreeV21.cpp](../../Sources/Cpp/ProofTreeV21.cpp)。** 此目录不替换 WSL 72 小时运行入口。
+
+## C++ 原型及回归
+
+| 文件 | 功能 | 当前判断 |
+| --- | --- | --- |
+| [ProofTreeV21Profile.cpp](Cpp/ProofTreeV21Profile.cpp) | 给 V21 的因子和、素性、数据库、LP、残余与状态复制计时 | 性能诊断工具 |
+| [ExactSigmaDivisor.hpp](Cpp/ExactSigmaDivisor.hpp) | 精确 \(\sigma(p^a)\) 奇数部分整除及乘积 LCM 原语 | 数学规则与测试 |
+| [ProofTreeV22.cpp](Cpp/ProofTreeV22.cpp) | 精确整除剪枝与延迟触发实验 | 完成分片耗时增加 |
+| [ProofTreeV23.cpp](Cpp/ProofTreeV23.cpp) | 避免对未改变残余进行第二次 GMP 素性检测 | 两个完成分片性能改善 |
+| [ProofTreeV24.cpp](Cpp/ProofTreeV24.cpp) | 用乘积 GCD 替代残余的逐项互素检查 | 混合性能结果 |
+| [ProofCoreTestsV22.cpp](Cpp/ProofCoreTestsV22.cpp) | V22 原语与回归 | CI 通过 |
+| [ProofCoreTestsV23.cpp](Cpp/ProofCoreTestsV23.cpp) | V23 基础回归 | CI 通过 |
+| [ProofCoreTestsV24.cpp](Cpp/ProofCoreTestsV24.cpp) | V24 与 V21 的 4,000 组差分测试 | CI 通过 |
+
+此目录内的 C++ 文件保留了相互 `#include` 的原文件名。例：
+
+```bash
+g++ -std=c++17 -O2 -fopenmp Research/2026-11-22/Cpp/ProofCoreTestsV24.cpp -lgmpxx -lgmp -o /tmp/ProofCoreTestsV24
+/tmp/ProofCoreTestsV24
+```
+
+## 实验报告与固定证据
+
+- [V22 精确整除剪枝理论与负向实验](Reports/ExactSigmaDivisibilityV22.md)：[首轮 CI](https://github.com/stormwhip/PerfectNumbers/actions/runs/45011182741)、[延迟版 CI](https://github.com/stormwhip/PerfectNumbers/actions/runs/45011614919)。
+- [V23 去重复素性检测](Reports/V23PrimalityPerformance.md)：[对照 CI](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012354324)，完整分片性能改善约 25%–30%。
+- [V24 合数残余乘积 GCD](Reports/V24CompositePerformance.md)：[对照 CI](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012698021)，等价性测试通过，性能尚不稳定。
+- [V21 函数开销剖析](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012070442)。
+
+原研究分支保留 [ExactSigmaV22Pilot.yml](https://github.com/stormwhip/PerfectNumbers/blob/research/exact-sigma-size-v22/.github/workflows/ExactSigmaV22Pilot.yml)、[V23PrimalityPilot.yml](https://github.com/stormwhip/PerfectNumbers/blob/research/exact-sigma-size-v22/.github/workflows/V23PrimalityPilot.yml)、[V24CompositePilot.yml](https://github.com/stormwhip/PerfectNumbers/blob/research/exact-sigma-size-v22/.github/workflows/V24CompositePilot.yml) 和 [ProofTreeV21Profiler.yml](https://github.com/stormwhip/PerfectNumbers/blob/research/exact-sigma-size-v22/.github/workflows/ProofTreeV21Profiler.yml)；归档代码与研究分支对应版本一致。
+
+## 下一步数学研究
+
+优先推进 [形式化难题 IV：状态条件化 LP 早期剪枝](../../Documentation/ResearchProblems2400.md#5-核心难题-iv可早期证明的状态条件化-lp-剪枝)。需要同时保持证明完备性、可校验证书，以及在完整困难分片上的总运行时收益。

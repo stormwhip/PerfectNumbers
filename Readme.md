@@ -1,62 +1,53 @@
-# PerfectNumbers — 奇完全数 \(10^{2400}\) 下界研究
+# PerfectNumbers
 
-本仓库专注一个明确目标：证明每个奇完全数 \(N\) 都满足 **\(N>10^{2400}\)**，并提供可独立检查的完整计算证书。
+**目标：** 证明所有奇完全数 \(N\) 满足 \(N>10^{2400}\)，并输出能够由独立程序检查的有限证明证书。
 
-**当前状态：** 在 \(N\) 与 \(S_8=\{3,5,7,11,13,17,19,31\}\) 全部互素的前提下，增强 LP 的区间对偶程序输出 \(\log_{10}N\ge2400.822998027028\)。这是一项**条件性数值结果**。全部八个根素数的穷尽排除及 LP 数值的独立严格审计仍未完成。
+**截至 2026-11-22：无条件证明尚未完成。** 对与 \(S_8=\{3,5,7,11,13,17,19,31\}\) 全部互素的候选，增强 LP 生成器输出下界指数 **2400.822998027028**；模型涵盖性及对偶数值仍须独立严格审计。其余八根因子链尚未全部穷尽。
 
-## 项目进展报告
+## 从这里开始
 
-**[10^2400 项目进展报告](Documentation/ProgressReport2400.md)**：前人工作、我们已完成的代码与实验、验证风险、下一步工作的优先级和验收条件。
+- **[主要数学研究难题（形式化陈述）](Documentation/ResearchProblems2400.md)**：九类候选分割、对偶证书、证明树覆盖、roadblock、状态 LP、算术正确性与 72 小时目标。
+- **[当前进展报告](Documentation/ProgressReport2400.md)**：V21 阶段、实际实验、未解决的验收事项。
+- **[仓库文件导览](Documentation/RepositoryMap.md)**：正式代码、研究原型、工作流与历史记录的分层说明。
+- **[证明验收清单](Records/ValidationChecklist.md)**：数学与工程独立验收条件。
+- **[研究实验归档](Research/2026-11-22/README.md)**：V22–V24、性能剖析及相应的 CI 实证。
 
-## 当前工程
+## 正式实现与当前状态
 
-| 入口 | 作用 |
-| --- | --- |
-| [ProofTreeV16.cpp](Sources/Cpp/ProofTreeV16.cpp) | 当前八根 C++17 / GMP / OpenMP 证明树 |
-| [BuildIndex.cpp](Sources/Cpp/BuildIndex.cpp) | Ochem 固定因子数据库索引构建 |
-| [ProofCoreTestsV16.cpp](Sources/Cpp/ProofCoreTestsV16.cpp) | C++ 回归测试 |
-| [IntervalCertificate61.py](Sources/Python/IntervalCertificate61.py) | 含 61 高次幂因子和蕴含的增强 LP |
-| [PrefixDualCertificates.py](Sources/Python/PrefixDualCertificates.py) | 生成全部 256 个根前缀的增强对偶和 V16 的必要增益 CSV |
-| [ConditionalPrime61.py](Sources/Python/ConditionalPrime61.py) | 61 指数条件化 LP 交叉检查 |
-| [Prime61FactorChecks.py](Sources/Python/Prime61FactorChecks.py) | 精确整数等式及素性核验 |
-| [ExperimentLog.md](Records/ExperimentLog.md) | 历史正反实验、运行编号、版本留痕 |
-| [ValidationChecklist.md](Records/ValidationChecklist.md) | 证明级审计待办 |
+| 模块 | 入口 | 状态 |
+| --- | --- | --- |
+| 证明树主程序 | [ProofTreeV21.cpp](Sources/Cpp/ProofTreeV21.cpp) | 正式主线；未形成全部八根证明 |
+| 因子和数据库 | [BuildIndex.cpp](Sources/Cpp/BuildIndex.cpp) | 固定数据集、索引与哈希核对 |
+| 有限素数乘积 | [PrimeCutoffCert.cpp](Sources/Cpp/PrimeCutoffCert.cpp) | 截断相关残余约束 |
+| 区间 LP | [IntervalCertificate61.py](Sources/Python/IntervalCertificate61.py) | 互素类数值证书生成 |
+| 256 前缀证书 | [PrefixDualCertificates.py](Sources/Python/PrefixDualCertificates.py) | 生成全部 \(2^8\) 种前缀的对偶表 |
+| 72 小时调度器 | [Run2400Scheduler.py](Sources/Python/Run2400Scheduler.py) | 顶层分片恢复；深层断点尚缺 |
+| WSL 复现 | [Run72hWSL.sh](Scripts/Run72hWSL.sh) | 支持 selftest、prepare、run、status、verify |
 
-### 小规模复现
+V16、V18–V20 保存为复现实验的历史版本。V22–V24 保存于 [独立研究归档](Research/2026-11-22/README.md)，**未替代 V21 主程序**。
 
-在 Linux 或 WSL2 上安装 C++17、GMP、zlib、Python 及 Requirements.txt 中依赖。随后在仓库根目录执行：
+## 运行入口（Linux/WSL2）
 
-    python3 -m pip install -r Requirements.txt
-    python3 Sources/Python/Prime61FactorChecks.py
-    python3 Sources/Python/ConditionalPrime61.py
+要求 C++17、GMP、zlib、Python 3 与 GitHub CLI。仓库根目录执行：
 
-    mkdir -p Build
-    python3 -u Sources/Python/PrefixDualCertificates.py Build/PrefixDualBounds.csv
-    g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
-    g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV16.cpp -lgmpxx -lgmp -o Build/ProofTreeV16
-    g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV16.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV16
-    ./Build/ProofCoreTestsV16
+```bash
+bash Scripts/Run72hWSL.sh selftest
+bash Scripts/Run72hWSL.sh prepare
+bash Scripts/Run72hWSL.sh status
+```
 
-完整因子链运行需要 Ochem 提供的 checkfacts.txt.gz 固定数据库。其 SHA-256 为：
+只有显式运行 `bash Scripts/Run72hWSL.sh run` 才开始长时搜索；默认上限 72 小时，默认 16 个任务、每任务 2 个线程。其余环境变量见脚本。完成所有分片后还需数学规则审计与独立证书验证。
 
-    ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119
+因子表 `checkfacts.txt.gz` 固定 SHA-256：
 
-数据库放入 Build 目录后，从该目录执行：
+```text
+ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119
+```
 
-    ./BuildIndex checkfacts.txt.gz
-    export OMP_NUM_THREADS=2
-    ./ProofTreeV16 2400
+## 证据与历史
 
-单独运行某个根时，程序假定根顺序中此前的根素数已经被排除；**单根返回 PROVEN 不能代替全部八根证明**。
+- [原始实验日志](Records/ExperimentLog.md)；[当前里程碑](Records/Milestones.md)。
+- [Ochem–Rao (2012) 论文](References/OchemRao2012.pdf)。
+- [2026-11-22 整理前主分支](https://github.com/stormwhip/PerfectNumbers/tree/90100f4447f9196835951fdb7e9dcdd3ab23723f) 与 [V22–V24 原实验分支](https://github.com/stormwhip/PerfectNumbers/tree/research/exact-sigma-size-v22)。
 
-### GitHub Actions
-
-- [QualityChecks.yml](.github/workflows/QualityChecks.yml)：源代码编译和轻量单元测试。
-- [Conditional61Lp.yml](.github/workflows/Conditional61Lp.yml)：61 因子分解与增强 LP 数值复现。
-- [FactorChain2400.yml](.github/workflows/FactorChain2400.yml)：**只在手动启动时运行**，默认仅编译；用户明确选择后才下载大型数据库并执行指数 2400 计算。
-
-## 证明与历史版本
-
-严格的无条件 \(N>10^{2400}\) 需要：全部八根穷尽树 + 互素 LP 独立证书 + 所有分支剪枝与因子数据的证明级审计。详见 [审计清单](Records/ValidationChecklist.md)。
-
-旧版本 V1–V15、V17、历史实验代码及不再使用的工作流已移出当前主分支，完整内容可从[精简前快照 124ab214](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70)恢复；历史结果仍保存在 ExperimentLog 中。
+**证明验收原则：** `PROVEN` 是求解器输出标签；无条件 \(10^{2400}\) 下界还要求完整覆盖、对偶证书、逐叶矛盾、确定性算术和独立校验器。
