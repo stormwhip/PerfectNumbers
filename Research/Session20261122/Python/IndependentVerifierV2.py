@@ -951,6 +951,26 @@ def verify_leaf_node(
     for lemma in witness.get("deductions", []):
         working = apply_sigma_deduction(working, lemma, verified_primes)
 
+    if reason == "FINITE_QUOTIENT_CYCLOTOMIC":
+        # Root-only exact-integer certificate, re-enumerated by an independent
+        # checker. All theorem parameters come from the parent-derived state.
+        from FiniteQuotientClosure2400 import finite_quotient_certificate
+        src_p = require_strict_int(witness.get("source_p"), "finite_quotient.source_p", 3)
+        d = require_strict_int(witness.get("d"), "finite_quotient.d", 2)
+        if (witness.get("deductions") or set(working.branched) != {src_p}
+                or working.branched[src_p].exp != d
+                or working.branched[src_p].exact
+                or working.unbranched or working.composites
+                or working.has_special or working.source_v_bounds
+                or working.source_v2_bounds):
+            raise VerificationError("finite quotient certificate requires an unmodified non-exact root")
+        try:
+            finite_quotient_certificate(src_p, d, tuple(sorted(working.forbidden)),
+                                        upper_bound_N)
+        except ValueError as exc:
+            raise VerificationError(f"FINITE_QUOTIENT_CYCLOTOMIC rejected: {exc}") from exc
+        return "LEAF_ACCEPTED"
+
     if reason == "SIGMA_DIVISOR_SIZE":
         # For any branch d representing the true exponent e, either e=d
         # or d+1 divides e+1. Thus sigma(p^d) | sigma(p^e) | 2N.
