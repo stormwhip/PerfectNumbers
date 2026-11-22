@@ -1,6 +1,6 @@
 # \(10^{2400}\) 证明发布验收清单
 
-**截至 2026-11-22。** 本清单区分**运行成功**与**数学证明成立**。关联数学定义见 [形式化研究难题](../Documentation/ResearchProblems2400.md)，具体证据见 [进展报告](../Documentation/ProgressReport2400.md)。
+**截至 2026-11-23。** 本清单区分**运行成功**与**数学证明成立**。关联数学定义见 [形式化研究难题](../Documentation/ResearchProblems2400.md)，具体证据见 [进展报告](../Documentation/ProgressReport2400.md)。
 
 > 当前已新增独立验证器 V2、SQLite 账本与只读 3072 项验收框架。数学验收仍未完成。权威进度见 [CurrentStatus2400.md](../Documentation/CurrentStatus2400.md)。
 
@@ -8,11 +8,12 @@
 
 - [x] 集成外部固定根的 `IndependentVerifierV2.py`、可恢复 `FrontierLedgerV2.py` 及只读 `AuditRunner2400.py`，附合成/篡改测试源码。
 - [x] 原根顺序下的 3,072 项纯整数枚举确认 14 个 `FORBIDDEN_FACTOR` 和 1,382 个 `SIGMA_DIVISOR_SIZE` 一步矛盾，共 1,396 项（45.44%）；证明规则已接入独立验证器与全量审计器。见 [DirectRootClosure2400.md](../Research/Session20261122/Reports/DirectRootClosure2400.md)。
-- [ ] 在最新 GitHub 提交实际运行 `AuditDirectRoot2400.py`，取得 1,396 个 `VERIFIED_CLOSED` 与 1,676 个 `UNSTARTED` 的可保存审计记录。
-- [ ] CI 执行 `DirectRootClosuresTests.py`、`RootOrderDirectClosureDP.py`、`SigmaPrecheckTests.cpp` 以及已有 V2 回归，保存测试记录。
+- [x] 新增 3 个分圆有限乘子证明叶（根 19 的 d=936，根 11 的 d=1150、1152），穷举 734,381 个奇数余乘子全部排除；新证明规则与回归已写入仓库。见 [FiniteQuotientCyclotomic2400.md](../Research/Session20261122/Reports/FiniteQuotientCyclotomic2400.md)。
+- [ ] 在最新 GitHub 提交实际运行 `AuditDirectRoot2400.py`，取得 1,399 个 `VERIFIED_CLOSED` 与 1,673 个 `UNSTARTED` 的可保存审计记录。
+- [ ] CI 执行 `DirectRootClosuresTests.py`、`FiniteQuotientClosureTests.py`、`RootOrderDirectClosureDP.py`、`SigmaPrecheckTests.cpp` 以及已有 V2 回归，保存测试记录。
 - [x] 原根集及替换根集互素类证书已有独立整数核验记录；两者分区隔离。
 - [ ] 冻结 V21 搜索和实验 Frontier 输出完整可重验的证明 DAG，兼容持续分裂、路障和 LP。
-- [ ] 全部 3,072 原根集顶层任务由独立验证器报告 `VERIFIED_CLOSED`，开放和未解决任务均为零；当前已找到 1,396 项数学直接矛盾，其他 1,676 项待证明树闭合。
+- [ ] 全部 3,072 原根集顶层任务由独立验证器报告 `VERIFIED_CLOSED`，开放和未解决任务均为零；当前已找到 1,396 项直接矛盾及 3 项有限乘子整数穷举矛盾，其他 1,673 项待证明树闭合。
 - [ ] 证明生成、原子提交、独立验收在固定硬件和数据下完成 72 小时端到端实测。
 - [x] 目录调整后的 GitHub 文件名检查和全部 20 份 Markdown 的本地链接检查通过（0 失效链接）。
 - [ ] 手动执行最新 `RepositoryIntegrity.yml` 的 Python/C++ 回归，并保存运行证据。
