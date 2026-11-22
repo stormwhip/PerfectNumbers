@@ -1037,16 +1037,16 @@ int main(int argc, char** argv) {
         const auto root_exponents = get_exponents(init_st, p);
         if (shard_listing) {
             std::cout << "SHARD_COUNT root=" << p_ui
-                      << " count=" << root_exponents.size() << "\\n";
+                      << " count=" << root_exponents.size() << "\n";
             for (size_t i = 0; i < root_exponents.size(); ++i) {
                 const auto& [a, exact] = root_exponents[i];
                 std::cout << "SHARD root=" << p_ui << " index=" << i
-                          << " exponent=" << a << " exact=" << (exact ? 1 : 0) << "\\n";
+                          << " exponent=" << a << " exact=" << (exact ? 1 : 0) << "\n";
             }
             return 0;
         }
         if (shard_single && static_cast<size_t>(chosen_shard) >= root_exponents.size()) {
-            std::cerr << "Invalid shard index: " << chosen_shard << "\\n";
+            std::cerr << "Invalid shard index: " << chosen_shard << "\n";
             return 2;
         }
 
