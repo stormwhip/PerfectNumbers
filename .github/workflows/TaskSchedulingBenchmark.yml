@@ -1,0 +1,61 @@
+name: Deep-task V8 versus V9 benchmark
+on:
+  push:
+    paths:
+      - '.github/workflows/TaskSchedulingBenchmark.yml'
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    defaults:
+      run:
+        shell: bash
+    env:
+      OMP_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install GMP and zlib
+        run: sudo apt-get update && sudo apt-get install -y libgmp-dev zlib1g-dev
+      - name: Compile and index
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p Build
+          g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
+          for version in V8 V9; do
+            g++ -std=c++17 -O2 -fopenmp "Sources/Cpp/ProofTree${version}.cpp" -lgmpxx -lgmp -o "Build/ProofTree${version}"
+          done
+          cd Build
+          if ! gh release download data-v1 --repo "$GITHUB_REPOSITORY" --pattern checkfacts.txt.gz; then
+            curl --fail --location --retry 2 --max-time 300 \
+              --output checkfacts.txt.gz 'https://www.lirmm.fr/~ochem/opn/checkfacts.txt.gz'
+          fi
+          echo 'ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119  checkfacts.txt.gz' | sha256sum --check
+          ./BuildIndex checkfacts.txt.gz
+          test "$(stat -c %s facts.dat)" = 745826778
+          test "$(stat -c %s facts.idx)" = 1322332128
+      - name: Compare two versions at identical target and timeout
+        working-directory: Build
+        run: |
+          set +e
+          for root in 17 307; do
+            for version in V8 V9; do
+              echo "=== BENCHMARK version=$version exponent=2201 root=$root limit=35s ==="
+              log="Benchmark${version}Root${root}.log"
+              timeout --signal=TERM --kill-after=5s 35s "./ProofTree${version}" 2201 "$root" 2>&1 | tee "$log"
+              status="${PIPESTATUS[0]}"
+              echo "BENCHMARK_RESULT version=$version root=$root exit=$status"
+            done
+          done
+      - name: Archive benchmark logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V8V9BenchmarkLogs
+          path: Build/Benchmark*.log
+          if-no-files-found: ignore
+          retention-days: 30
