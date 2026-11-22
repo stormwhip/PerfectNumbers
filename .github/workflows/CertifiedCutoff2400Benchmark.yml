@@ -3,8 +3,8 @@ on:
   push:
     paths:
       - '.github/workflows/CertifiedCutoff2400Benchmark.yml'
-      - 'Sources/Cpp/ProofTreeV19.cpp'
-      - 'Sources/Cpp/ProofCoreTestsV19.cpp'
+      - 'Sources/Cpp/ProofTreeV21.cpp'
+      - 'Sources/Cpp/ProofCoreTestsV21.cpp'
 permissions:
   contents: read
 jobs:
@@ -33,7 +33,7 @@ jobs:
       - name: Compile V18 and V19, regression and exact sieve
         run: |
           mkdir -p Build
-          for name in ProofTreeV18 ProofTreeV19 ProofCoreTestsV19; do
+          for name in ProofTreeV18 ProofTreeV21 ProofCoreTestsV21; do
             g++ -std=c++17 -O2 -fopenmp "Sources/Cpp/$name.cpp" -lgmpxx -lgmp -o "Build/$name"
           done
           ./Build/ProofCoreTestsV19
@@ -68,7 +68,7 @@ jobs:
           set +e
           errors=0
           for root in 19 31 17; do
-            for version in V18 V19; do
+            for version in V18 V21; do
               echo "=== CUTOFF2400 version=$version root=$root cap=30 ==="
               timeout --signal=TERM --kill-after=5s 30s "./ProofTree$version" 2400 "$root" 2>&1 | tee "CUTOFF_${root}_${version}.log"
               rc="${PIPESTATUS[0]}"
