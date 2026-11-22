@@ -313,3 +313,12 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Added `DirectRootClosures2400.py`, `DirectRootClosuresTests.py`, `AuditDirectRoot2400.py`, `RootOrderDirectClosureDP.py`; extended `IndependentVerifierV2.py` and `AuditRunner2400.py` to accept mathematically verified one-node DAGs without relying on solver `PROVEN` status.
 - Current validation: independent local integer experiments and local C++ GMP differential test passed. **GitHub-side direct Python verifier tests, the archived terminal-certificate + 3,072-shard audit, and the updated repository CI have not yet been run in this session.** No completed 72-hour proof or unconditional bound is claimed.
 - Detailed proof, reproduction commands and open problems: [DirectRootClosure2400.md](../Research/Session20261122/Reports/DirectRootClosure2400.md).
+
+## 2026-11-23 — Cyclotomic finite-quotient closure pilot
+
+- Derived the restriction `q = 1 (mod 2(d+1))` for every prime factor of `sigma(p^d)=Phi_{d+1}(p)` when `d+1` is odd prime and greater than `p`.
+- Bounded `sigma(A)/A` by the exact rational expression `2m/(2m-C)`, where `C=1+ceil(log2(omega_upper(A)))`, without factoring the 1,000+-digit integer `A`.
+- Enumerated every admissible odd quotient `Q=N/(p^d A)` for three previously open tasks, using exact abundance, Euler structure, sigma forcing and forbidden-root contradictions: `(19,936):705908`, `(11,1150):28471`, `(11,1152):2`. All **734,381** candidates were excluded.
+- New verifier leaf: `FINITE_QUOTIENT_CYCLOTOMIC`, restricted to the three fixed original-partition root pins. Added `FiniteQuotientClosure2400.py`, independent verifier integration, `FiniteQuotientClosureTests.py`, and manual CI regression entry.
+- Current local integer-verified research total: 1,396 immediate certificates + 3 finite exhaustive certificates = **1,399/3,072**; open candidate tasks **1,673**. Fresh GitHub CI/full manifest audit and 72-hour end-to-end verification remain pending; theorem status is `INCOMPLETE_FRONTIER`.
+- Proof and reproduction: [FiniteQuotientCyclotomic2400.md](../Research/Session20261122/Reports/FiniteQuotientCyclotomic2400.md).
