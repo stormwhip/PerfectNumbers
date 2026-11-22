@@ -2,12 +2,8 @@
 #include <gmpxx.h>
 #include <cstdint>
 
-// Independent exact-integer inequalities for an odd-perfect-number factor chain.
-// Each inexact exponent a represents a true exponent e >= a with (a+1)|(e+1).
+// Exact integer cuts for distinct prime-power branches of a hypothetical OPN.
 namespace opn {
-// For even a, sigma(p^a) is odd, coprime to p, and divides N.
-// Thus N >= p^a * sigma(p^a) > p^(2a).
-// half_bound = 10^ceil(bound_exponent/2), an integer conservative threshold.
 inline bool even_exponent_power_exceeds_half_bound(const mpz_class& p, uint64_t a,
                                                   const mpz_class& half_bound) {
     if (a & 1ULL) return false;
@@ -16,20 +12,34 @@ inline bool even_exponent_power_exceeds_half_bound(const mpz_class& p, uint64_t 
     return power > half_bound;
 }
 
-// If every previously selected branch is compatible with N, earlier | N.
-// Likewise p^a | N, and the odd part of sigma(p^a) divides N, including
-// inexact a because (a+1)|(e+1) implies sigma(p^a)|sigma(p^e)|2N.
-// Their least common multiple is therefore a mandatory divisor of N.
-// No primality test or factor-database assumption is used in this cut.
-inline mpz_class extend_forced_divisor(const mpz_class& earlier,
-                                      const mpz_class& p, uint64_t a) {
-    mpz_class power, sigma_odd, required;
+struct ExactDivisorProducts {
+    mpz_class powers = 1;      // Product of all selected distinct prime powers.
+    mpz_class sigma_odds = 1;  // Product of the odd parts of their sigma values.
+};
+
+// Each representative a satisfies a+1 | e+1, hence sigma(p^a) | sigma(p^e).
+// Since sigma(N) = 2N is a PRODUCT over distinct primes p, the product of
+// odd sigma(p^a) values divides N, even when those sigma values share factors.
+// Keeping the product is stronger than merely taking the LCM of individual
+// sigma factors. Both products divide N, so their LCM divides N exactly.
+// This cut uses no factorization or probabilistic primality testing.
+inline ExactDivisorProducts extend_forced_products(const ExactDivisorProducts& earlier,
+                                                   const mpz_class& p, uint64_t a) {
+    ExactDivisorProducts result = earlier;
+    mpz_class power, sigma_odd;
     mpz_pow_ui(power.get_mpz_t(), p.get_mpz_t(), static_cast<unsigned long>(a));
     sigma_odd = power * p - 1;
     sigma_odd /= p - 1;
     while (mpz_even_p(sigma_odd.get_mpz_t())) sigma_odd >>= 1;
-    mpz_lcm(required.get_mpz_t(), earlier.get_mpz_t(), power.get_mpz_t());
-    mpz_lcm(required.get_mpz_t(), required.get_mpz_t(), sigma_odd.get_mpz_t());
+    result.powers *= power;
+    result.sigma_odds *= sigma_odd;
+    return result;
+}
+
+inline mpz_class mandatory_divisor(const ExactDivisorProducts& products) {
+    mpz_class required;
+    mpz_lcm(required.get_mpz_t(), products.powers.get_mpz_t(),
+            products.sigma_odds.get_mpz_t());
     return required;
 }
 }
