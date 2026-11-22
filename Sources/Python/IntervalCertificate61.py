@@ -60,7 +60,7 @@ def solve_and_certify(
         for a in range(2, a_cut, 2):
             if not has_forbidden_factor(p, a, eff_forbidden):
                 opts.append((a, False, a * math.log(p), ln_sigma_m1_float(p, a), False))
-                if do_factor and p ** a < factor_limit:
+                if do_factor and (p ** a < factor_limit or (p == 61 and a in (10, 12))):
                     val = (p ** (a + 1) - 1) // (p - 1)
                     for q, k in factorint(val).items():
                         if q > 2 and q not in existing_E:
@@ -160,15 +160,18 @@ def solve_and_certify(
     forced61_row = None
     allowed61_vids = []
     if force61_mode is not None:
-        if force61_mode not in ("exact6", "atleast10"):
+        if force61_mode not in ("exact6", "exact10", "exact12", "atleast10", "atleast16"):
             raise ValueError(f"Unknown conditional 61 mode {force61_mode}")
         if 61 not in options:
             raise ValueError("The conditional 61 model must explicitly represent 61")
         for a, spec, _, _, tail in options[61]:
             allowed = (
-                force61_mode == "exact6" and a == 6 and not spec and not tail
+                force61_mode in ("exact6", "exact10", "exact12") and
+                a == int(force61_mode.replace("exact", "")) and not spec and not tail
             ) or (
                 force61_mode == "atleast10" and a >= 10 and not spec
+            ) or (
+                force61_mode == "atleast16" and a >= 16 and not spec
             )
             if allowed:
                 vid = var_idx[(61, a, spec, tail)]

@@ -3,6 +3,8 @@ on:
   push:
     paths:
       - '.github/workflows/Conditional61Lp.yml'
+      - 'Sources/Python/IntervalCertificate61.py'
+      - 'Sources/Python/ConditionalPrime61.py'
 permissions:
   contents: read
 jobs:
