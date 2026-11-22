@@ -44,6 +44,11 @@ jobs:
             g++ -std=c++17 -O2 -fopenmp "Sources/Cpp/ProofCoreTestsV${version}.cpp" -lgmpxx -lgmp -o "Build/ProofCoreTestsV${version}"
             "./Build/ProofCoreTestsV${version}"
           done
+      - name: Verify experimental V22 exact sigma cuts
+        run: |
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV22.cpp -lgmpxx -lgmp -o Build/ProofTreeV22
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV22.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV22
+          ./Build/ProofCoreTestsV22
       - name: Check restartable 72-hour scheduler on synthetic root partitions
         run: python3 Sources/Python/Run2400SchedulerTests.py
       - name: Validate WSL reproducibility wrapper syntax
