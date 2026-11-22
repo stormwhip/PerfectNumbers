@@ -1,4 +1,4 @@
-name: Bounded exact sigma divisibility V22 research pilot
+name: Bounded exact sigma divisibility V22 research pilot (lazy rerun)
 on:
   push:
     branches:
@@ -66,7 +66,7 @@ jobs:
           ./ProofTreeV21 2400 19 list > Root19Shards.txt
           grep -q 'SHARD_COUNT root=19 count=287' Root19Shards.txt
           for index in 0 35 100 130; do
-            for label in baseline off even product; do
+            for label in baseline even product lazy; do
               if [[ "$label" == baseline ]]; then
                 program=ProofTreeV21
                 mode=0
@@ -76,9 +76,12 @@ jobs:
               elif [[ "$label" == even ]]; then
                 program=ProofTreeV22
                 mode=1
-              else
+              elif [[ "$label" == product ]]; then
                 program=ProofTreeV22
                 mode=2
+              else
+                program=ProofTreeV22
+                mode=3
               fi
               log="ExactPilotLogs/Root19_$index-$label.log"
               set +e
@@ -100,7 +103,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: ExactSigmaV22PilotResults
+          name: ExactSigmaV22LazyPilotResults
           path: |
             Build/ExactPilotSummary.txt
             Build/ExactPilotLogs/
