@@ -256,7 +256,9 @@ double certify_sigma_residual_abundance_upper(const mpz_class& composite) {
     // therefore >=100000001. Each factor contributes at most q/(q-1).
     const uint64_t n_small = prime_power_count_upper(extracted, 1009);
     const uint64_t n_large = prime_power_count_upper(rem, 100000001);
-    const double small_upper = RESIDUAL_ABUND_UPPER;
+    const double small_upper =
+        std::nextafter(std::log1p(1.0 / 1008.0) + 1e-14,
+                       std::numeric_limits<double>::infinity());
     const double large_upper =
         std::nextafter(std::log1p(1.0/100000000.0) + 1e-14,
                        std::numeric_limits<double>::infinity());
