@@ -1,5 +1,8 @@
 # Exact lattice search for roadblock multipliers
 
+> **进度标注（2026-11-22）**：本文记录对应阶段的数学推导、实验数据和当时的搜索状态。最新研究进度、独立验证器 V2、可恢复前沿及全量未闭合项目，统一见 [CurrentStatus2400.md](../../../Documentation/CurrentStatus2400.md)。本文历史计时和程序 `PROVEN` 均不作为 `10^2400` 完整证明。
+
+
 This experiment implements Gemini's concavity-based multiplier search as a reference for the C++ integration. It determines the smallest integer boundary that can be certified at a specified dyadic precision. The experiment keeps the existing Python fixed-point scale of \(2^{80}\) and uses arbitrary-precision integers.
 
 ## Derivation and corrections
@@ -23,7 +26,7 @@ The analysis uses concavity, without requiring strict concavity. A bounded heuri
 ## Reproduction
 
 ~~~bash
-python -S Research/2026-11-22/Python/RoadblockMultiplierSearchTests.py
+python -S Research/Session20261122/Python/RoadblockMultiplierSearchTests.py
 ~~~
 
 The test compared 224,456 exact lattice points in 80 randomized states with the prior independent evaluator. Every fixed-boundary maximum was checked by exhaustive enumeration of the small test lattice, and the first passing boundary was checked for strict equality cases. Successful witnesses were also replayed by the fixed-multiplier event sweep.

@@ -1,6 +1,9 @@
 # V24: product-GCD composite residual accounting
 
-Date: 2026-11-22. Research branch `research/exact-sigma-size-v22`. Source `Sources/Cpp/ProofTreeV24.cpp`, diff based on V23. Production V21 remains untouched.
+> **进度标注（2026-11-22）**：本文记录对应阶段的数学推导、实验数据和当时的搜索状态。最新研究进度、独立验证器 V2、可恢复前沿及全量未闭合项目，统一见 [CurrentStatus2400.md](../../../Documentation/CurrentStatus2400.md)。本文历史计时和程序 `PROVEN` 均不作为 `10^2400` 完整证明。
+
+
+Date: 2026-11-22. Research branch `research/exact-sigma-size-v22`. Source `Research/Session20261122/Cpp/ProofTreeV24.cpp`, diff based on V23. Production V21 remains untouched.
 
 ## Exact equivalence lemma
 

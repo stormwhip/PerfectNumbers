@@ -1,5 +1,8 @@
 # Native roadblock pilot and root-coverage audit
 
+> **进度标注（2026-11-22）**：本文记录对应阶段的数学推导、实验数据和当时的搜索状态。最新研究进度、独立验证器 V2、可恢复前沿及全量未闭合项目，统一见 [CurrentStatus2400.md](../../../Documentation/CurrentStatus2400.md)。本文历史计时和程序 `PROVEN` 均不作为 `10^2400` 完整证明。
+
+
 ## Native selector
 
 The experimental branch uses V21 with an optional \(2^{40}\) fixed-point roadblock check. Shadow mode evaluates the new selector and retains the historical branching decision. Certified mode uses the legacy boundary as an initial proposal, then expands the candidate boundary after failed attempts. Each attempt tests a cheap multiplier and up to 14 supergradient steps. A returned boundary passes a strict integer comparison; an exhausted search returns an unresolved node. The pilot does not use the legacy result as a fallback witness. The bounded search need not find the smallest certifiable boundary.

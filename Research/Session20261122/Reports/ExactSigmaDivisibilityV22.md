@@ -1,5 +1,8 @@
 # V22 research — exact sigma-divisibility size cuts
 
+> **进度标注（2026-11-22）**：本文记录对应阶段的数学推导、实验数据和当时的搜索状态。最新研究进度、独立验证器 V2、可恢复前沿及全量未闭合项目，统一见 [CurrentStatus2400.md](../../../Documentation/CurrentStatus2400.md)。本文历史计时和程序 `PROVEN` 均不作为 `10^2400` 完整证明。
+
+
 Date: 2026-11-22. Base commit: `90100f4447f9196835951fdb7e9dcdd3ab23723f`.
 Research branch: `research/exact-sigma-size-v22`. Production V21, the WSL 72-hour runner, and all input files remain unchanged.
 

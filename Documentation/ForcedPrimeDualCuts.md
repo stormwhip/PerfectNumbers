@@ -1,5 +1,8 @@
 > **历史理论笔记。** 文中 V17 联合 Euler 特殊素数剪枝曾通过测试，但未证明端到端加速；V17 源代码保存在 [精简前快照](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70)。当前工程采用 V16 的正确区间增益。完整状态见 [ProgressReport2400](ProgressReport2400.md)。
 
+> **当前状态**：原根集互素类已有独立整数证书；包含根素数的 3,072 个顶层分片仍未形成完整独立验收。本文为专项理论与历史实验说明，最新全量状态见 [CurrentStatus2400.md](CurrentStatus2400.md)。
+
+
 # Early-State Affine LP Cuts and Forced-Prime Dual Gains
 
 ## Research question
@@ -86,7 +89,7 @@ For the benchmark, stored prefix certificates are computed by the interval arith
 - Forced-prime dual adjustment: `ProofTreeV15.cpp`.
 - Isolated regression tests: `ProofCoreTestsV14.cpp`, `ProofCoreTestsV15.cpp`.
 - Two-mask interval-dual data generator: `TargetedPrefixCertificates.py`.
-- Matched benchmark: [ForcedPrimeLpBenchmark.yml](../.github/workflows/ForcedPrimeLpBenchmark.yml).
+- Matched benchmark: [ForcedPrimeLpBenchmark.yml](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70).
 
 Full result details belong in [ExperimentLog](../Records/ExperimentLog.md).
 

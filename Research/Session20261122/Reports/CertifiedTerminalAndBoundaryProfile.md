@@ -1,5 +1,8 @@
 # PerfectNumbers: certified terminal LP and fixed-multiplier roadblock sweep
 
+> **进度标注（2026-11-22）**：本文记录对应阶段的数学推导、实验数据和当时的搜索状态。最新研究进度、独立验证器 V2、可恢复前沿及全量未闭合项目，统一见 [CurrentStatus2400.md](../../../Documentation/CurrentStatus2400.md)。本文历史计时和程序 `PROVEN` 均不作为 `10^2400` 完整证明。
+
+
 The target remains \(N>10^{2400}\) for every odd perfect number. An independent integer verifier now establishes the mutual-coprimality case for each of two candidate eight-root sets. The eight divisibility classes, reachable-node replay, and a full 72-hour experiment remain open.
 
 ## Conditional terminal results
@@ -16,7 +19,7 @@ Given a hypothetical odd perfect number coprime to the root set, send each prime
 The verifier reconstructs the LP using lower cost and upper abundance endpoints. For nonnegative dyadic multipliers \(\lambda\), it computes \(r=c+A^\top\lambda\), checks the unbounded tail reduced cost is nonnegative, and uses \(-\lambda^\top d+\sum_{i\text{ bounded}}\min(0,r_i)\) as a lower bound. It compares the integer numerator against \(2400\) times an upper endpoint for \(\log 10\), so the numerical optimizer need only propose multipliers.
 
 ~~~bash
-cd Research/2026-11-22
+cd Research/Session20261122
 python -S Python/TerminalCertificate.py verify Certificates/TerminalOriginal.json.gz
 python -S Python/TerminalCertificate.py verify Certificates/TerminalReplacement.json.gz
 python Python/TerminalCertificate.py generate Replacement.json.gz --limit 5000 --cutoff 22 --factor-limit 5000

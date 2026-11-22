@@ -18,7 +18,7 @@ This log separates **imported historical claims**, **directly observed experimen
 - Baseline before renaming: commit `7d7c1c6`. Target: eliminate odd perfect numbers up to `10^2400`.
 - Status: original coprime-class certificate independently verified with `log10 N >= 4183.209493`. Original manifest: 3072 top-level exponent shards, no complete independently verified closure.
 - Integrated external-pinned Python verifier, SQLite frontier ledger, read-only audit runner, experimental G1 search with V2 frontier codec, and preliminary Worker bridge. Historical proof-tree V21 remains the reference executable.
-- Rename `Research/2026-11-22/` to `Research/Session20261122/`; rename the local research `README.md` to `Readme.md` while preserving certificate and unmodified prototype blob hashes. Add canonical [current status](../Documentation/CurrentStatus2400.md) and update inbound relative links.
+- Rename `Research/Session20261122/` to `Research/Session20261122/`; rename the local research `README.md` to `Readme.md` while preserving certificate and unmodified prototype blob hashes. Add canonical [current status](../Documentation/CurrentStatus2400.md) and update inbound relative links.
 - The directory rewrite and regression workflow do not imply new mathematical results or a 72-hour benchmark.
 - Pending: complete SPLIT/LEAF DAG export, original V21 roadblock/conditional LP parity, certified large primes, full original-root acceptance and timing.
 
@@ -168,7 +168,7 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - `RootOrderProfiler.cpp` evaluates all 1024 complete transitions at exponent 300 with one thread and a cold per-edge factorization cache.
 - `RootOrderOptimizer.py` runs exact subset DP twice: minimizing branch count (time tie-break) and minimizing measured seconds (branch-count tie-break).
 - Dataset: pinned `checkfacts.txt.gz` SHA-256 `ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119`.
-- Workflow: [RootOrderOptimization.yml](../.github/workflows/RootOrderOptimization.yml).
+- Workflow: [RootOrderOptimization.yml](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70).
 - Status: source validation and exhaustive profile pending.
 
 ## Experiment 013 — Affine state-level LP dual certificates (prototype)
@@ -195,7 +195,7 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Date: 2026-11-22.
 - Rationale: the exponent-300 optimum increased the branch count at exponent 500, so optimize the exact target used in the next test.
 - Method: measure all 1024 subset transitions at exponent 500 with one thread and cold factorization cache per edge; run exact branch-count and elapsed-time subset DP.
-- Workflow: [RootOrderOptimization500.yml](../.github/workflows/RootOrderOptimization500.yml).
+- Workflow: [RootOrderOptimization500.yml](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70).
 
 ## Experiment 016 — Dual variable-removal gains (V13, pending)
 
@@ -259,7 +259,7 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
   \]
 - Added `forced_prime_gain_lower` using outward-rounded endpoint conversion and accumulation in `DualGainBounds.py`, exhaustive endpoint regression tests, and V16 C++ accumulation with downward rounding.
 - V16 benchmark regenerates the two targeted prefix certificates from the corrected function and compares V13/V14/V15/V16 at exponents 1000, 1500, 2201, and 2300.
-- Workflow: [ForcedPrimeLpBenchmark.yml](../.github/workflows/ForcedPrimeLpBenchmark.yml).
+- Workflow: [ForcedPrimeLpBenchmark.yml](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70).
 - Status: implementation committed; source tests and corrected dataset-backed benchmark pending.
 
 ## Experiment 019 — Strengthened eight-prime complement LP crosses exponent 2400

@@ -1,5 +1,8 @@
 # Sigma pilot and persistent frontier
 
+> **进度标注（2026-11-22）**：本文记录对应阶段的数学推导、实验数据和当时的搜索状态。最新研究进度、独立验证器 V2、可恢复前沿及全量未闭合项目，统一见 [CurrentStatus2400.md](../../../Documentation/CurrentStatus2400.md)。本文历史计时和程序 `PROVEN` 均不作为 `10^2400` 完整证明。
+
+
 ## Implemented experiments
 
 The [sigma pilot branch](https://github.com/stormwhip/PerfectNumbers/commit/e56e76911a9427ec9e4785e23044878620756d8d) compares four modes of the same compiled V21. G0 preserves the two-test path. G1 reuses the probable-prime result unless the remainder changes during trial division. G2 performs a before-factorization v2 test and an exact-branch valuation quota test when the required modulus fits an unsigned long. G3 combines G1 and G2. All modes use the same original root order, data and legacy roadblock policy. Small-prime trial division was not reordered. Database prechecking, shared caching and state-LP early pruning are separate experiments.

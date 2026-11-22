@@ -1,5 +1,8 @@
 > **最新研究结论（2026-11-22）**：补充精确的 sigma(61^10)、sigma(61^12) 因子蕴含后，对与八素数 S8 全部互素、**未附加 61|N 条件**的 LP 模型，已得到 2400.822998027028 的区间对偶计算下界。输入整数分解已单独核验。详见 [完整 2400 项目报告](ProgressReport2400.md) 和 [实验记录](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416)。
 
+> **当前状态**：原根集互素类已有独立整数证书；包含根素数的 3,072 个顶层分片仍未形成完整独立验收。本文为专项理论与历史实验说明，最新全量状态见 [CurrentStatus2400.md](CurrentStatus2400.md)。
+
+
 # Conditional prime-61 linear programs for target 10^2400
 
 Assume an odd perfect number is coprime to

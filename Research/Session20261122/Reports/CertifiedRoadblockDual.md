@@ -1,5 +1,8 @@
 # Certified roadblock dual for the \(10^{2400}\) search
 
+> **进度标注（2026-11-22）**：本文记录对应阶段的数学推导、实验数据和当时的搜索状态。最新研究进度、独立验证器 V2、可恢复前沿及全量未闭合项目，统一见 [CurrentStatus2400.md](../../../Documentation/CurrentStatus2400.md)。本文历史计时和程序 `PROVEN` 均不作为 `10^2400` 完整证明。
+
+
 Baseline: [V21](../../../Sources/Cpp/ProofTreeV21.cpp#L712-L845). The research report [10_2400.md](https://chatgpt.com/library?file_id=libfile_569b2ac8e8c881918d81ab694cc0457e&account_id=personal) proposed replacing the rule that reserves the first eligible prime for the Euler special component. This experiment supplies an integer-arithmetic reference implementation and checks a faster formula for evaluating a candidate multiplier. Production integration and replay of reachable nodes remain open.
 
 ## Safe lower bound
@@ -44,8 +47,8 @@ The unrounded dual as a function of \(\mu\) is concave. It is the pointwise mini
 From the repository root:
 
 ~~~bash
-python Research/2026-11-22/Python/RoadblockDualTests.py
-python Research/2026-11-22/Python/RoadblockDualTests.py --compare-lp
+python Research/Session20261122/Python/RoadblockDualTests.py
+python Research/Session20261122/Python/RoadblockDualTests.py --compare-lp
 ~~~
 
 The first command needs only Python. The optional comparison uses SciPy HiGHS. The tests check 200 small integer-enumerated cases, 800 exact comparisons of the prefix-sum implementation against a linear scan, and 200 comparisons against an independently formulated fractional LP. The largest difference from HiGHS was \(9.15\times10^{-11}\) in natural-log units. HiGHS is a numerical cross-check. Integer arithmetic establishes the certified inequality.
