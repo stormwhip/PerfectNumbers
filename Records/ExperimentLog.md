@@ -237,3 +237,16 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Exponent **2201**, root **17**: all versions TIMEOUT after 30s. At 20s progress: V13 348,799 visited branches, V14 252,930, V15 330,134. Parallel visitation order differs; incomplete counters cannot determine final speedups. No completed root proof or bound improvement at 2201/2300.
 - **Conclusion**: early application of the already available affine LP correctly removes a redundant late root for bounds below 1644.68; this insight provides a useful terminal condition for root-order DP at moderate targets. For the intended exponent 2300, we need a substantially stronger state-conditioned LP or separate factor-chain pruning.
 - Quality assurance: first V15 test fixture inherited a nonzero known-size field and failed its assertion; the fixture was reset in commit `b4b966848c49bdebfe71c4ba5ba25b0710e32ba2`. [Run 44998627399](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998627399) passed V13/V14/V15 regression tests plus all legacy core checks.
+
+## Experiment 018 — Corrected interval arithmetic for forced-prime LP gains
+
+- Date: 2026-11-22.
+- Audit finding: V15 used reduced-cost lower endpoints in both the forced minimum and the baseline penalty. Subtracting a lower bound for the baseline penalty can overstate the forced-prime gain. V15 forced-gain tables are therefore marked non-proof-grade.
+- Corrected bound for intervals \(r_i\in[\ell_i,u_i]\):
+  \[
+  G_q\ge \min_i\ell_i-\sum_i\min(0,u_i).
+  \]
+- Added `forced_prime_gain_lower` using interval arithmetic, exhaustive endpoint regression tests, and V16 C++ accumulation with downward rounding.
+- V16 benchmark regenerates the two targeted prefix certificates from the corrected function and compares V13/V14/V15/V16 at exponents 1000, 1500, 2201, and 2300.
+- Workflow: [ForcedPrimeLpBenchmark.yml](../.github/workflows/ForcedPrimeLpBenchmark.yml).
+- Status: implementation committed; source tests and corrected dataset-backed benchmark pending.

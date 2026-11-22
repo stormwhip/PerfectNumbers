@@ -108,3 +108,19 @@ The p=17 early-state cut at exponents 1000 and 1500 is explained by excluding th
 For a forced prime \(q\), the V15 gain uses the existing Lagrange multipliers and requires only \(\sum_{a}x_{q,a}=1\). A stronger candidate is to solve a **separate primal-dual LP under \(x_{q,a}=1\)** for selected exponent options. Its new dual can exploit required divisor-sum factors and special-prime slot restrictions before the full recursive factor chain explores that option.
 
 Candidates should be screened numerically before generating interval-dual certificates. The experimental obligation is to show a branch-count reduction **at exponent 2300**, with the prime-power options partitioning all admissible exponents.
+
+## V16: interval-safe forced-prime gain
+
+The first V15 implementation computed
+\[
+\min_i \ell_i-\sum_i\min(0,\ell_i),
+\]
+where \([\ell_i,u_i]\) encloses each reduced cost. This can overestimate the gain because the baseline penalty needs an **upper** bound before it is subtracted. V15 is retained as a historical prototype; its forced-gain table is not proof-grade.
+
+V16 uses the valid conservative lower bound
+\[
+G_q\;\ge\;\min_i\ell_i-\sum_i\min(0,u_i).
+\]
+The minimum forced option cost is bounded below by the smallest interval lower endpoint. The old box-relaxation penalty is bounded above by the sum of the negative interval upper endpoints. Their difference is therefore a certified lower bound for the improvement from imposing \(\sum_i x_{q,i}=1\).
+
+The generator implements this with interval arithmetic in `forced_prime_gain_lower`; `CertificateTests.py` checks interval endpoint combinations. V16 also rounds each accumulated gain downward in C++.

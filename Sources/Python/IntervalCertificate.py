@@ -26,6 +26,25 @@ def ln_sigma_m1_iv(p, a):
     p_iv = iv.mpf(p)
     return iv.log(p_iv / (p_iv - 1)) + iv.log(1 - p_iv ** (-(a + 1)))
 
+def forced_prime_gain_lower(reduced_cost_intervals):
+    """Rigorous lower bound for the gain from requiring one option of a prime.
+
+    Each pair contains outward-rounded interval endpoints (lower, upper) for
+    a reduced cost r_i. The forced minimum is bounded below by min(lower_i).
+    The old box-relaxation penalty sum(min(0, r_i)) is bounded above by
+    sum(min(0, upper_i)). Their difference is therefore a valid lower bound.
+    """
+    if not reduced_cost_intervals:
+        return 0.0
+    min_lower = min(lower for lower, _ in reduced_cost_intervals)
+    baseline_upper = iv.mpf(0)
+    for _, upper in reduced_cost_intervals:
+        if upper < 0:
+            baseline_upper += iv.mpf(upper)
+    gain_interval = iv.mpf(min_lower) - baseline_upper
+    return math.nextafter(float(gain_interval.a), -math.inf)
+
+
 def solve_and_certify(
     forbidden_S,
     existing_E=frozenset(),
@@ -204,13 +223,13 @@ def solve_and_certify(
     # all its variables removes these penalties; only guaranteed-negative
     # intervals (upper endpoint < 0) contribute a certified removal gain.
     removal_gain_by_prime = {}
-    reduced_cost_lowers = {}
+    forced_cost_intervals = {}
     for vid, (p, a, is_spec, is_tail_a) in enumerate(var_meta):
         c_iv = iv.mpf(a) * iv.log(iv.mpf(p))
         rc_iv = c_iv + AT_lam[vid]
         rc_low = rc_iv.a
         if return_forced_gains and p <= 300000:
-            reduced_cost_lowers.setdefault(p, []).append(rc_low)
+            forced_cost_intervals.setdefault(p, []).append((rc_iv.a, rc_iv.b))
         if rc_low < 0:
             dual_obj += iv.mpf(rc_low)
         if p <= 300000 and rc_iv.b < 0:
@@ -233,19 +252,8 @@ def solve_and_certify(
         intercept_lower = math.nextafter(float(intercept_iv.a), -math.inf)
         if return_forced_gains:
             forced_gain_by_prime = {}
-            for p, lows in reduced_cost_lowers.items():
-                # Under the true factorization, a forced prime chooses exactly
-                # one exponent option: sum_i x_(p,i) = 1.
-                # Baseline relaxation allowed all x to be zero.
-                min_reduced_cost = min(lows, key=lambda x: float(x))
-                baseline_penalty = iv.mpf(0)
-                for lower in lows:
-                    if lower < 0:
-                        baseline_penalty += iv.mpf(lower)
-                gain_lower = math.nextafter(
-                    float((iv.mpf(min_reduced_cost) - baseline_penalty).a),
-                    -math.inf
-                )
+            for p, intervals in forced_cost_intervals.items():
+                gain_lower = forced_prime_gain_lower(intervals)
                 if gain_lower > 0:
                     forced_gain_by_prime[p] = gain_lower
             return (float_bound, rigorous_log10, lambda0_lower, intercept_lower,

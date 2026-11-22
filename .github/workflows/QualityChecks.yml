@@ -35,6 +35,13 @@ jobs:
           ./Build/ProofCoreTestsV14
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV15.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV15
           ./Build/ProofCoreTestsV15
+      - name: Compile V16 and test interval-safe forced-prime gains
+        run: |
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV16.cpp -lgmpxx -lgmp -o Build/ProofTreeV16
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV16.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV16
+          ./Build/ProofCoreTestsV16
+      - name: Run interval arithmetic regression tests
+        run: python3 Sources/Python/CertificateTests.py
       - name: Compile root-order profiler
         run: |
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/RootOrderProfiler.cpp -lgmpxx -lgmp -o Build/RootOrderProfiler

@@ -33,3 +33,5 @@ The numerical LP bound applies to the complementary forbidden-prime-free case. I
 
 | V14 intermediate-state LP branch elimination | Verified root 17 eliminated at exponents 1000 and 1500; exponent 2201 still times out | [Run 44998508242](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998508242) | Generalize the cut to bound 2300 or seek stronger prime-power constraints |
 | V15 forced-prime dual gain | Computationally verified, no added pruning on matched complete roots | [Run 44998508242](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998508242) | Test dual reoptimization with required prime-power options |
+
+| V16 interval-safe forced-prime gain | Implemented; validation pending | [ProofTreeV16](../Sources/Cpp/ProofTreeV16.cpp) | Pass interval tests and exponent-2300 benchmark |
