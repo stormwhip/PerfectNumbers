@@ -51,6 +51,29 @@ int main() {
     assert(bound_bad >= actual_bad);
     // This synthetic cutoff is *not* the complete 1e8 primorial, so the
     // second test uses only factors above the cutoff's maximum.
+    // A synthetic large-prime square certifies the lazy-upgrade accounting:
+    // ordinary conservative bound is much weaker, certification replaces
+    // it once, and child states preserve the certified residual prefix.
+    mpz_class big_prime("100000007");
+    mpz_class square = big_prime * big_prime;
+    State example;
+    example.composites.push_back(square);
+    example.log_abund_hi =
+        static_cast<double>(residual_factor_count_upper(square)) *
+        RESIDUAL_ABUND_UPPER;
+    const double weak = example.log_abund_hi;
+    strengthen_composite_residuals(example);
+    assert(example.certified_residue_count == 1);
+    assert(example.log_abund_hi > 0.0 && example.log_abund_hi < weak);
+    const double strong = example.log_abund_hi;
+    strengthen_composite_residuals(example);
+    assert(example.log_abund_hi == strong);
+    State fork = example;
+    fork.composites.push_back(square);
+    fork.log_abund_hi += weak;
+    strengthen_composite_residuals(fork);
+    assert(fork.certified_residue_count == 2);
+    assert(fork.log_abund_hi > strong && fork.log_abund_hi < strong + weak);
     std::cout << "ProofCoreTestsV21: OK" << std::endl;
     return 0;
 }
