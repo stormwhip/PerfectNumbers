@@ -74,6 +74,33 @@ int main() {
     strengthen_composite_residuals(fork);
     assert(fork.certified_residue_count == 2);
     assert(fork.log_abund_hi > strong && fork.log_abund_hi < strong + weak);
+    // Exhaustive finite verification of actual get_exponents() covering
+    // every admissible Euler/ordinary exponent within the 10^2400 size bound.
+    // A nonexact branch a covers e whenever (a+1)|(e+1) and a<=e,
+    // since sigma(p^a) then divides sigma(p^e).
+    init_primes(300000);
+    LOG_BOUND = 2400.0 * std::log(10.0);
+    State empty;
+    uint64_t covered_cases = 0;
+    for (uint32_t q : ROOT_ORDER) {
+        const auto choices = get_exponents(empty, mpz_class(q));
+        const int emax = static_cast<int>(std::ceil(LOG_BOUND / std::log(q))) + 2;
+        for (int e = 1; e <= emax; ++e) {
+            const bool ordinary = (e % 2 == 0);
+            const bool euler = (q % 4 == 1 && e % 4 == 1);
+            if ((!ordinary && !euler) ||
+                e * std::log(static_cast<double>(q)) >= LOG_BOUND) continue;
+            bool found = false;
+            for (const auto& [a, exact] : choices) {
+                if (exact && a == static_cast<uint64_t>(e)) found = true;
+                if (!exact && a <= static_cast<uint64_t>(e) &&
+                    (static_cast<uint64_t>(e) + 1) % (a + 1) == 0) found = true;
+            }
+            assert(found);
+            ++covered_cases;
+        }
+    }
+    assert(covered_cases > 10000);
     std::cout << "ProofCoreTestsV21: OK" << std::endl;
     return 0;
 }
