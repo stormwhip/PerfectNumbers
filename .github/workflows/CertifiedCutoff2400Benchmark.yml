@@ -3,6 +3,8 @@ on:
   push:
     paths:
       - '.github/workflows/CertifiedCutoff2400Benchmark.yml'
+      - 'Sources/Cpp/ProofTreeV19.cpp'
+      - 'Sources/Cpp/ProofCoreTestsV19.cpp'
 permissions:
   contents: read
 jobs:
