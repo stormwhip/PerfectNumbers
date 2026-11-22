@@ -299,3 +299,17 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - **Exponent 2201, root 17:** both TIMEOUT at 30s. At 20s, V16 had visited 334,635 branches and reported 6,398 LP cuts; V17 333,745 branches and 6,446 cuts. Incomplete traversal numbers are sensitive to scheduling.
 - **Exponent 2300, root 17:** both TIMEOUT at 30s. At 20s, V16 had visited 294,456 branches and reported 566 LP cuts; V17 268,547 branches and 315 cuts. **Do not interpret the lower visited-node count as a speedup**, since neither search completed.
 - **Outcome:** the coupled-dual formula and its regression tests are valid computational prototypes, but **no substantive end-to-end runtime improvement has been demonstrated** at the two terminating cases, nor a completed root proof at 2201/2300. The augmented eight-prime complementary LP result >2400 (experiment 019) is the stronger research finding this round.
+
+
+## Experiment 2026-11-22 — Certified one-node root contradictions and root-order optimization
+
+- Objective: close canonical root shards using independently checkable exact integer arithmetic before invoking the factor-chain search. Root set fixed at `{3,5,7,11,13,17,19,31}`, current order `(19,7,11,31,13,3,5,17)`, target `10^2400`.
+- Formal certificate 1, `FORBIDDEN_FACTOR`: `q` is a forbidden earlier odd root dividing `sigma(p^d)`, so `q|N`, contradiction.
+- Formal certificate 2, `SIGMA_DIVISOR_SIZE`: since `sigma(p^d)|sigma(p^e)|2N`, and `gcd(p,sigma(p^d))=1`, `p^d*odd(sigma(p^d))|N`. Strictly greater than `10^2400` is a complete one-node contradiction.
+- Local independent pure-Python exact integer census (canonical 3,072 options): 14 forbidden-factor branches and 1,382 sigma-size branches, with no overlap. Thus 1,396 direct mathematical closures (45.44%) and 1,676 remaining open at top level. Breakdown by root: 19→129, 7→191, 11→152, 31→116, 13→146, 3→311, 5→217, 17→134.
+- Root-order subset DP and exhaustive 40,320 permutations: original root set current combined 1,396, optimum 1,397; replacement root set current combined 1,390, optimum 1,393. Production V21 order is unchanged.
+- An additional trial incorporating squared forced factors from small divisors `q<=5000` into these root-level size certificates found **0 extra closures** over 1,396, so it is not enabled. This was a finite pilot, not a universal impossibility result.
+- Fixed missing `SigmaPrecheck.hpp` include path in experimental Frontier C++; implemented overflow-safe modular sigma geometric sum and checked equivalent local C++ source against GMP in 36,100 exact cases (PASS). Pushed repository test source and updated manual CI workflow.
+- Added `DirectRootClosures2400.py`, `DirectRootClosuresTests.py`, `AuditDirectRoot2400.py`, `RootOrderDirectClosureDP.py`; extended `IndependentVerifierV2.py` and `AuditRunner2400.py` to accept mathematically verified one-node DAGs without relying on solver `PROVEN` status.
+- Current validation: independent local integer experiments and local C++ GMP differential test passed. **GitHub-side direct Python verifier tests, the archived terminal-certificate + 3,072-shard audit, and the updated repository CI have not yet been run in this session.** No completed 72-hour proof or unconditional bound is claimed.
+- Detailed proof, reproduction commands and open problems: [DirectRootClosure2400.md](../Research/Session20261122/Reports/DirectRootClosure2400.md).
