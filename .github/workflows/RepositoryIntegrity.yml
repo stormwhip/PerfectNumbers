@@ -31,4 +31,6 @@ jobs:
           /tmp/OpnCodecTests
           g++ -std=c++17 -O2 -pthread Sources/Cpp/SingleFlightFactCacheTests.cpp -o /tmp/OpnSingleFlightTests
           /tmp/OpnSingleFlightTests
+          g++ -std=c++17 -O2 Sources/Cpp/SigmaPrecheckTests.cpp -lgmpxx -lgmp -o /tmp/OpnSigmaPrecheckTests
+          /tmp/OpnSigmaPrecheckTests
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV21Frontier.cpp -lgmpxx -lgmp -o /tmp/OpnFrontier
