@@ -135,3 +135,12 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Exact branch contradictions: reject a fixed exponent smaller than its cumulative forced valuation.
 - Tests: `ProofCoreTestsV10.cpp` checks exponent congruence and valuation-based size contradictions. Compilation and dataset performance pending.
 - Dependency: source factor primality and arithmetic decision bounds still require independent verification before promoting V10 to a mathematical proof.
+
+## Experiment 011 — Reduced-root proof-tree prototype (pending run)
+
+- Date: 2026-11-22.
+- Source: `ProofTreeReduced.cpp` retains V9's algorithm with root order filtered to \(19,7,11,31,13,3,5,17\).
+- Research question: do seven removed top-level roots reduce or increase *total* tree runtime after removing their forbidden-prime constraints from the other roots?
+- Benchmark: `ReducedRootBenchmark.yml` compares the complete 15-root and reduced eight-root trees at exponents 300 and 500, each with a fixed time cap and checksum-pinned database.
+- Important distinction: total proof-tree branch counts and run times depend on the forbidden set; the number of roots alone is not a performance metric.
+- Status: quality checks and dataset-backed benchmark pending.
