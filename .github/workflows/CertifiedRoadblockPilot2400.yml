@@ -38,6 +38,8 @@ jobs:
           mkdir -p Build
           g++ -std=c++17 -O2 Sources/Cpp/RoadblockPilotArithmeticTests.cpp -o Build/RoadblockPilotArithmeticTests
           ./Build/RoadblockPilotArithmeticTests
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV21.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV21
+          ./Build/ProofCoreTestsV21
           g++ -std=c++17 -O2 -DOPN_CERTIFIED_ROADBLOCK_PILOT -fopenmp Sources/Cpp/ProofTreeV21.cpp -lgmpxx -lgmp -o Build/ProofTreeV21
           g++ -std=c++17 -O2 Sources/Cpp/PrimeCutoffCert.cpp -lgmpxx -lgmp -o Build/PrimeCutoffCert
           g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
@@ -65,7 +67,7 @@ jobs:
         run: |
           mkdir -p PilotLogs
           ./ProofTreeV21 2400 19 list > PilotLogs/Root19Shards.txt
-          ./ProofTreeV21 2400 19 list | grep -E '^SHARD root=19 .*index=(0|35|100|130) '
+          grep -E '^SHARD root=19 .*index=(0|35|100|130) ' PilotLogs/Root19Shards.txt
           for index in 35 130 0 100; do
             for mode in legacy certified; do
               log="PilotLogs/$mode-$index.log"

@@ -36,6 +36,14 @@ Int prime_abundancy_upper(const mpz_class& p, const BranchedInfo& info) {
     if (mpz_sizeinbase(p.get_mpz_t(), 2) > 48) return 1;
     const uint64_t q = p.get_ui();
     if (info.exact && info.exp == 1) return log_ratio(q + 1, q).second;
+    if (info.exact && q <= 7 && info.exp <= 4) {
+        uint64_t power = 1, sigma = 1;
+        for (unsigned i = 0; i < info.exp; ++i) {
+            power *= q;
+            sigma += power;
+        }
+        return log_ratio(sigma, power).second;
+    }
     return log_ratio(q, q - 1).second;
 }
 

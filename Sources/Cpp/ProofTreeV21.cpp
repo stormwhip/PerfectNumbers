@@ -670,7 +670,25 @@ std::vector<std::pair<uint64_t, bool>> get_exponents(const State& st, const mpz_
 // Bound the number of outstanding tasks while allowing deep work stealing.
 std::atomic<int> outstanding_branch_tasks{0};
 
+// Circular choices can expose a prime already inside a counted residual.
+// Register the choice before computing its exponent and branch size budgets.
+bool prepare_circular_prime(const State& st, const mpz_class& p, State& adjusted) {
+    if (st.unbranched.count(p)) return false;
+    const bool overlaps = std::any_of(st.composites.begin(), st.composites.end(),
+        [&](const mpz_class& c) { return mpz_divisible_p(c.get_mpz_t(), p.get_mpz_t()) != 0; });
+    if (!overlaps) return false;
+    adjusted = st;
+    adjusted.unbranched.insert(p);
+    refresh_composite_size_bound(adjusted);
+    return true;
+}
+
 bool branch_prime(const State& st, const mpz_class& p, bool in_circ, int depth, std::atomic<bool>& ok_flag) {
+    if (in_circ) {
+        State adjusted;
+        if (prepare_circular_prime(st, p, adjusted))
+            return branch_prime(adjusted, p, in_circ, depth, ok_flag);
+    }
     auto exps = get_exponents(st, p);
     const int max_tasks = 8 * omp_get_max_threads();
     if (depth < 12 && exps.size() > 1 && omp_get_num_threads() > 1) {
