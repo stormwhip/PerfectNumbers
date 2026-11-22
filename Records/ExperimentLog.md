@@ -185,3 +185,12 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Rationale: the exponent-300 optimum increased the branch count at exponent 500, so optimize the exact target used in the next test.
 - Method: measure all 1024 subset transitions at exponent 500 with one thread and cold factorization cache per edge; run exact branch-count and elapsed-time subset DP.
 - Workflow: [RootOrderOptimization500.yml](../.github/workflows/RootOrderOptimization500.yml).
+
+## Experiment 016 — Dual variable-removal gains (V13, pending)
+
+- Date: 2026-11-22.
+- For each prefix LP, compute an interval enclosure of every variable's reduced cost.
+- If the reduced-cost interval is strictly negative, deleting that variable removes a guaranteed negative upper-bound penalty from the dual objective. The lower endpoint of this gain is accumulated by prime.
+- At each state, remove LP variables for primes already forbidden or already represented in the branched set. The original dual remains feasible for the reduced variable set; the gain is added only when the entire reduced-cost interval is negative.
+- V13 benchmark compares against V12 on identical root order and targets.
+- Status: proof-core tests, certificate generation, and full-root performance pending.

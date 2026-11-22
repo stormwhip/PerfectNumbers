@@ -191,3 +191,23 @@ The exhaustive exponent-300 profile [44995685025](https://github.com/stormwhip/P
 | 500 time | 7.99203 s | 7.80897 s |
 
 Thus the exponent-300 optimal sequence is not branch-optimal at exponent 500. The root-order objective depends on the target; the next profile should be measured at exponent 500 before choosing a production sequence.
+
+## V13: certified gain from deleting state-incompatible LP variables
+
+The V12 affine dual is feasible for the full residual LP outside prefix F. A DFS state additionally forbids some primes and has already fixed others into its explicit factor product. Deleting the corresponding prime-option variables produces a smaller feasible region and cannot lower the LP minimum.
+
+For each bounded LP variable \(x_{p,a}\), let \(r_{p,a}=c_{p,a}+(A^T\lambda)_{p,a}\) be its reduced cost. Its dual upper-bound penalty is \(\min(0,r_{p,a})\). If interval arithmetic proves \(r_{p,a}<0\), deleting this variable removes a negative penalty. The guaranteed gain is at least
+
+\[
+g_{p,a}=-\sup(r_{p,a})>0.
+\]
+
+Summing these gains over all variables belonging to a prime p gives a certified per-prime deletion gain \(G_F(p)\). At a state with forbidden set Q and branched set B, the dynamic residual lower bound is strengthened by
+
+\[
+\sum_{p\in Q\cup B}G_F(p).
+\]
+
+The dual multipliers on implication rows are retained. If a deleted q-variable had been the only possible witness for an implication, the corresponding row simply becomes more restrictive; the same dual remains feasible. Gains are added only for strictly negative reduced-cost intervals, so no sign ambiguity is used.
+
+The prototype exports gains only for primes at most 300000, matching the small-prime state representation used by the current search. Larger explicit factors remain in the LP relaxation. Composite residuals remain in the LP remainder.

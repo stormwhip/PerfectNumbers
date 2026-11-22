@@ -1,0 +1,82 @@
+name: State-level LP variable-removal gain benchmark
+on:
+  push:
+    paths:
+      - '.github/workflows/StateLevelLpGainBenchmark.yml'
+      - 'Sources/Cpp/ProofTreeV13.cpp'
+      - 'Sources/Python/PrefixDualCertificates.py'
+      - 'Sources/Python/IntervalCertificate.py'
+permissions:
+  contents: read
+jobs:
+  certify-and-compare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    defaults:
+      run:
+        shell: bash
+    env:
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: Requirements.txt
+      - name: Install Python and native dependencies
+        run: |
+          python -m pip install -r Requirements.txt
+          sudo apt-get update
+          sudo apt-get install -y libgmp-dev zlib1g-dev
+      - name: Generate affine dual certificates and variable-removal gains
+        run: |
+          mkdir -p Build
+          set -o pipefail
+          python -u Sources/Python/PrefixDualCertificates.py Build/PrefixDualBounds.csv | tee Build/PrefixDualCertificateLog.txt
+      - name: Compile V12 and V13
+        run: |
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV12Optimized.cpp -lgmpxx -lgmp -o Build/ProofTreeV12
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV13Optimized.cpp -lgmpxx -lgmp -o Build/ProofTreeV13
+          g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
+      - name: Download and verify factor database
+        working-directory: Build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh release download data-v1 --repo "$GITHUB_REPOSITORY" --pattern checkfacts.txt.gz; then
+            curl --fail --location --retry 2 --max-time 300 \
+              --output checkfacts.txt.gz 'https://www.lirmm.fr/~ochem/opn/checkfacts.txt.gz'
+          fi
+          echo 'ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119  checkfacts.txt.gz' | sha256sum --check
+          ./BuildIndex checkfacts.txt.gz
+          test "$(stat -c %s facts.dat)" = 745826778
+          test "$(stat -c %s facts.idx)" = 1322332128
+      - name: Compare V12 and V13 on matched roots
+        working-directory: Build
+        run: |
+          set +e
+          for spec in "1000 17 30" "1000 31 30" "1500 17 60" "2201 17 30"; do
+            read -r exponent root cap <<< "$spec"
+            for version in ProofTreeV12 ProofTreeV13; do
+              echo "=== LP_GAIN version=$version exponent=$exponent root=$root ==="
+              timeout --signal=TERM --kill-after=5s "${cap}s" "./$version" "$exponent" "$root" 2>&1 | tee "${version}_E${exponent}_P${root}.log"
+              rc="${PIPESTATUS[0]}"
+              echo "LP_GAIN_RESULT version=$version exponent=$exponent root=$root exit=$rc"
+            done
+          done
+      - name: Archive certificates and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: StateLevelLpVariableRemovalResults
+          path: |
+            Build/PrefixDualBounds.csv
+            Build/PrefixDualVariableGains.csv
+            Build/PrefixDualCertificateLog.txt
+            Build/ProofTreeV*.log
+          if-no-files-found: ignore
+          retention-days: 30

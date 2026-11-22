@@ -24,6 +24,11 @@ jobs:
           for source in Sources/Cpp/ProofTreeV*.cpp; do
             g++ -std=c++17 -O2 -fopenmp "$source" -lgmpxx -lgmp -o "Build/$(basename "$source" .cpp)"
           done
+      - name: Compile V13 and run dual-removal regression tests
+        run: |
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV13.cpp -lgmpxx -lgmp -o Build/ProofTreeV13
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV13.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV13
+          ./Build/ProofCoreTestsV13
       - name: Compile root-order profiler
         run: |
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/RootOrderProfiler.cpp -lgmpxx -lgmp -o Build/RootOrderProfiler

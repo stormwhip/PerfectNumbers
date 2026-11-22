@@ -195,12 +195,22 @@ def solve_and_certify(
     for p in explicit_primes:
         dual_obj -= lam[prime_rows[p]]
 
-    # 加上有界变量的负检验数惩罚 sum min(0, c_i + (A^T lam)_i)
+    # Negative reduced costs give a valid lower-bound penalty for each
+    # upper-bounded variable. If a prime is later fixed/forbidden, deleting
+    # all its variables removes these penalties; only guaranteed-negative
+    # intervals (upper endpoint < 0) contribute a certified removal gain.
+    removal_gain_by_prime = {}
     for vid, (p, a, is_spec, is_tail_a) in enumerate(var_meta):
         c_iv = iv.mpf(a) * iv.log(iv.mpf(p))
-        rc_low = (c_iv + AT_lam[vid]).a
+        rc_iv = c_iv + AT_lam[vid]
+        rc_low = rc_iv.a
         if rc_low < 0:
             dual_obj += iv.mpf(rc_low)
+        if p <= 300000 and rc_iv.b < 0:
+            gain = math.nextafter(-float(rc_iv.b), -math.inf)
+            if gain > 0:
+                previous = removal_gain_by_prime.get(p, 0.0)
+                removal_gain_by_prime[p] = math.nextafter(previous + gain, -math.inf)
 
     if allow_special:
         rc_spec_low = (iv.log(P_iv) - lam[0] * iv.log(P_iv / (P_iv - 1)) + lam[1]).a
@@ -214,7 +224,7 @@ def solve_and_certify(
         intercept_iv = dual_obj - lam[0] * iv.log(iv.mpf(target_abund_ratio))
         lambda0_lower = max(0.0, math.nextafter(float(lam[0].a), -math.inf))
         intercept_lower = math.nextafter(float(intercept_iv.a), -math.inf)
-        return float_bound, rigorous_log10, lambda0_lower, intercept_lower
+        return float_bound, rigorous_log10, lambda0_lower, intercept_lower, removal_gain_by_prime
     return float_bound, rigorous_log10
 
 if __name__ == "__main__":

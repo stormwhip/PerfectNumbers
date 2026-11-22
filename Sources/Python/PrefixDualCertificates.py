@@ -3,6 +3,7 @@
 import csv
 import math
 import sys
+from pathlib import Path
 
 from IntervalCertificate import solve_and_certify
 
@@ -12,9 +13,10 @@ A_CUT = 16
 
 def generate(output_path):
     rows = []
+    gain_rows = []
     for mask in range(1 << len(ROOTS)):
         forbidden = {p for i, p in enumerate(ROOTS) if mask & (1 << i)}
-        primal, certified, lam0, intercept = solve_and_certify(
+        primal, certified, lam0, intercept, gains = solve_and_certify(
             forbidden, P_max=P_MAX, a_cut=A_CUT,
             target_abund_ratio=2.0, certify=True, return_affine=True
         )
@@ -35,6 +37,7 @@ def generate(output_path):
                     f"dual={affine}, primal={primal_natural}"
                 )
         rows.append((mask, lam0, intercept, certified))
+        gain_rows.extend((mask, p, gain) for p, gain in sorted(gains.items()) if gain > 0)
         print(f"CERT mask={mask} lambda0={lam0:.17g} intercept={intercept:.17g} "
               f"baseLog10={certified:.12f}", flush=True)
 
@@ -42,7 +45,12 @@ def generate(output_path):
         writer = csv.writer(f)
         writer.writerow(("mask", "lambda0_lower", "intercept_lower", "base_log10_lower"))
         writer.writerows(rows)
-    print(f"COMPLETE certificates={len(rows)} output={output_path}", flush=True)
+    gain_path = str(Path(output_path).with_name("PrefixDualVariableGains.csv"))
+    with open(gain_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(("mask", "prime", "gain_lower"))
+        writer.writerows(gain_rows)
+    print(f"COMPLETE certificates={len(rows)} gains={len(gain_rows)} output={output_path} gains_output={gain_path}", flush=True)
 
 if __name__ == "__main__":
     output = sys.argv[1] if len(sys.argv) > 1 else "PrefixDualBounds.csv"
