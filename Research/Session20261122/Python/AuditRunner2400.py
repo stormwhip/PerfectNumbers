@@ -134,7 +134,7 @@ def audit_single_shard(
             "leaves_verified": verdict["leaves_verified"],
             "verified_primes_count": verdict["verified_primes_count"],
             "root_hash": verdict["root_hash"],
-            "certificate_source": "DIRECT_ROOT_FORBIDDEN_FACTOR",
+            "certificate_source": "DIRECT_ROOT_" + direct_bundle["nodes"][0]["witness"]["reason"],
             "verify_seconds": time.monotonic() - t0,
         }
 
