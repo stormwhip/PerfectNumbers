@@ -63,14 +63,14 @@ g(p,S) = number of canonical exponent options d at root p
 DP[S union {p}] = max(DP[S union {p}], DP[S] + g(p,S)).
 ```
 
-This exact subset DP takes `2^8` states. A separate oracle enumerates all `8!=40320` root orders and confirms the optimum:
+This exact subset DP takes `2^8` states. The implementation first removes the 1,382 (original) or 1,375 (replacement) sigma-size closures from the reward masks. A separate oracle enumerates all `8!=40320` root orders and confirms the optimum:
 
 | Root set | Current forbidden-factor closures | Maximum | One maximizing root order |
 | --- | ---: | ---: | --- |
 | Original (contains 19) | 14 | 15 | `(19,7,11,13,3,31,5,17)` |
 | Replacement (contains 23) | 15 | 18 | `(7,11,23,13,3,31,5,17)` |
 
-This maximizes **only the number of immediate forbidden-factor closures**. The full proof tree, LP certificates and runtime can change with the root order. **The production V21 order remains unchanged**.
+The optimizer now excludes the root options already closed by `SIGMA_DIVISOR_SIZE`, then maximizes additional forbidden-factor closures. Its independent 40,320-permutation oracle confirms **1,397 total direct closures** for the original root set (versus 1,396 currently), and **1,393** for the replacement set (versus 1,390 currently). The full proof tree, LP certificates and runtime can change with the root order. **The production V21 order remains unchanged**.
 
 ## 4. Repository changes and reproduction
 
