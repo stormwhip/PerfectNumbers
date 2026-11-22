@@ -1,0 +1,93 @@
+name: 2400 difficult root19 shard order comparison
+on:
+  push:
+    paths:
+      - '.github/workflows/Root19HardShardOrdering.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  compare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '2'
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install tools and compile V21
+        run: |
+          sudo apt-get update && sudo apt-get install -y libgmp-dev zlib1g-dev
+          mkdir -p Build
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV21.cpp -lgmpxx -lgmp -o Build/ProofTreeV21
+          g++ -std=c++17 -O2 Sources/Cpp/PrimeCutoffCert.cpp -lgmpxx -lgmp -o Build/PrimeCutoffCert
+          g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
+      - name: Retrieve full prefix duals and the prior root19 shard census
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p Evidence
+          gh run download 45004245214 --repo "$GITHUB_REPOSITORY" --name Full2400PrefixDualTables --dir Build
+          gh run download 45005912683 --repo "$GITHUB_REPOSITORY" --name Root19ShardCensus2400 --dir Evidence
+          test -s Build/PrefixDualBounds.csv
+          test -s Evidence/Root19Summary.txt
+          awk '/SHARD_CENSUS_RESULT/ && /status=TIMEOUT/ {for (i=1;i<=NF;i++) if ($i ~ /^index=/) {split($i,a,"=");print a[2]}}' Evidence/Root19Summary.txt > Evidence/HardIndices.txt
+          test "$(wc -l < Evidence/HardIndices.txt)" -eq 123
+      - name: Prepare fixed factor and 1e8 cutoff inputs
+        working-directory: Build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ./PrimeCutoffCert 100000000 > PrimeCutoffLog.txt
+          echo '70ba114b47e7539480c418094606b0f39b2bc230337212426872d7f7adb400ec  PrimeCutoffProduct.bin' | sha256sum --check
+          if ! gh release download data-v1 --repo "$GITHUB_REPOSITORY" --pattern checkfacts.txt.gz; then
+            curl --fail --location --retry 2 --max-time 300 --output checkfacts.txt.gz 'https://www.lirmm.fr/~ochem/opn/checkfacts.txt.gz'
+          fi
+          echo 'ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119  checkfacts.txt.gz' | sha256sum --check
+          ./BuildIndex checkfacts.txt.gz
+          test "$(stat -c %s facts.dat)" = 745826778
+          test "$(stat -c %s facts.idx)" = 1322332128
+      - name: Re-test only the 123 previously hard shards under two root orders
+        working-directory: Build
+        run: |
+          mkdir -p ShardOrderLogs
+          set +e
+          for spec in 'after3|3,19,7,11,31,13,5,17' 'last|3,5,7,11,13,17,31,19'; do
+            IFS='|' read -r label order <<< "$spec"
+            proven=0
+            timed=0
+            unresolved=0
+            while IFS= read -r index; do
+              export OPN_ROOT_ORDER="$order"
+              timeout --signal=TERM --kill-after=1s 1s ./ProofTreeV21 2400 19 "$index" > "ShardOrderLogs/$label-$index.log" 2>&1
+              rc=$?
+              if [[ "$rc" == 0 ]] && grep -Eq "^Forbid p=19 branch=$index/287 -> PROVEN .*failed_rb=0" "ShardOrderLogs/$label-$index.log"; then
+                state=PROVEN
+                proven=$((proven+1))
+              elif [[ "$rc" == 124 ]]; then
+                state=TIMEOUT
+                timed=$((timed+1))
+              else
+                state=UNRESOLVED
+                unresolved=$((unresolved+1))
+              fi
+              echo "ROOT19_REORDER_SHARD label=$label index=$index status=$state rc=$rc" >> RootOrderHardSummary.txt
+            done < ../Evidence/HardIndices.txt
+            echo "ROOT19_REORDER_COMPLETE label=$label hard_total=123 proven=$proven timeout=$timed unresolved=$unresolved" | tee -a RootOrderHardSummary.txt
+          done
+      - name: Preserve comparison and task results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Root19HardShardOrderingResults
+          path: |
+            Evidence/HardIndices.txt
+            Build/RootOrderHardSummary.txt
+            Build/ShardOrderLogs/
+          retention-days: 30
+          if-no-files-found: ignore
