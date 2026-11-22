@@ -359,8 +359,8 @@ struct State {
 
 double LOG_BOUND = 0.0;
 mpz_class EXACT_INTEGER_CAP, EXACT_HALF_CAP;
-int EXACT_DIVISOR_MODE = 2; // 0=V21, 1=even-power cut, 2=plus cumulative LCM.
-std::atomic<uint64_t> exact_even_power_cuts{0}, exact_lcm_cuts{0};
+int EXACT_DIVISOR_MODE = 2; // 0=V21, 1=even-power, 2=eager product-LCM, 3=lazy rebuild.
+std::atomic<uint64_t> exact_even_power_cuts{0}, exact_lcm_cuts{0}, exact_lazy_rebuilds{0};
 const double LN2 = std::log(2.0);
 // Every still-composite sigma residual was trial-divided by all odd primes
 // through 1000. Its least (unextracted) prime divisor is >=1009.
@@ -650,6 +650,24 @@ bool branch_component(const State& base, const mpz_class& p, uint64_t a, bool is
     refresh_composite_size_bound(st);
 
     if (check_contradiction(st)) return true;
+    if (EXACT_DIVISOR_MODE == 3) {
+        // log(A*B) = 2*sum(a log p) + sum(log(sigma(p^a)/p^a))
+        //            - log(2) if an exact special exponent was selected.
+        // lcm(A,B) <= A*B. This approximate test ONLY SKIPS optional cuts;
+        // it never closes any branch. Final decisions use exact GMP integers.
+        const double potential_log = 2.0 * st.log_size_branched +
+            st.log_abund_lo - (st.has_special ? LN2 : 0.0);
+        if (potential_log > LOG_BOUND - 1.0) {
+            exact_lazy_rebuilds.fetch_add(1, std::memory_order_relaxed);
+            opn::ExactDivisorProducts products;
+            for (const auto& [q, info] : st.branched)
+                products = opn::extend_forced_products(products, q, info.exp);
+            if (opn::mandatory_divisor(products) > EXACT_INTEGER_CAP) {
+                exact_lcm_cuts.fetch_add(1, std::memory_order_relaxed);
+                return true;
+            }
+        }
+    }
     return solve(st, in_circ, depth, ok_flag);
 }
 
@@ -1060,7 +1078,8 @@ int main(int argc, char** argv) {
         if (std::strcmp(mode_text, "0") == 0) EXACT_DIVISOR_MODE = 0;
         else if (std::strcmp(mode_text, "1") == 0) EXACT_DIVISOR_MODE = 1;
         else if (std::strcmp(mode_text, "2") == 0) EXACT_DIVISOR_MODE = 2;
-        else { std::cerr << "OPN_EXACT_DIVISOR_MODE must be 0, 1 or 2\n"; return 2; }
+        else if (std::strcmp(mode_text, "3") == 0) EXACT_DIVISOR_MODE = 3;
+        else { std::cerr << "OPN_EXACT_DIVISOR_MODE must be 0, 1, 2 or 3\n"; return 2; }
     }
     // A validated permutation changes only the outer root-case partition.
     // CIRC_ORDER remains fixed, as does its bit layout for all 256 LP masks.
@@ -1178,6 +1197,7 @@ int main(int argc, char** argv) {
                           << " | lp_early=" << state_lp_early_prunes.load(std::memory_order_relaxed)
                           << " | exact_even=" << exact_even_power_cuts.load(std::memory_order_relaxed)
                           << " | exact_lcm=" << exact_lcm_cuts.load(std::memory_order_relaxed)
+                          << " | exact_rebuild=" << exact_lazy_rebuilds.load(std::memory_order_relaxed)
                           << " | elapsed=" << elapsed << "s" << std::endl;
             }
         });
@@ -1230,7 +1250,8 @@ int main(int argc, char** argv) {
     double total_dt = std::chrono::duration<double>(t1 - t0).count();
     std::cout << "EXACT_DIVISOR_STATS mode=" << EXACT_DIVISOR_MODE
               << " even_power_cuts=" << exact_even_power_cuts.load()
-              << " lcm_cuts=" << exact_lcm_cuts.load() << std::endl;
+              << " lcm_cuts=" << exact_lcm_cuts.load()
+              << " lazy_rebuilds=" << exact_lazy_rebuilds.load() << std::endl;
     std::cout << "LAZY_STATS states=" << lazy_triggered_states.load()
               << " cache_hits=" << lazy_cache_hits.load() << std::endl;
     std::cout << "CUTOFF_STATS screened=" << screened_composites.load()
