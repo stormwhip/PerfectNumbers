@@ -37,7 +37,7 @@ def solve_and_certify(
     factor_limit=10**14,
     certify=False,
     return_affine=False,
-)
+):
     eff_forbidden = set(forbidden_S)
     if min_p > 3:
         for q in primerange(3, min_p):
