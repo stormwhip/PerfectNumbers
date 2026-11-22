@@ -60,6 +60,7 @@ jobs:
         working-directory: Build
         run: |
           set +e
+          unresolved=0
           for spec in "1000 31 30" "1500 17 45" "2201 17 30" "2300 17 30"; do
             read -r exponent root cap <<< "$spec"
             for version in ProofTreeV16 ProofTreeV17; do
@@ -74,8 +75,10 @@ jobs:
                 status=UNRESOLVED
               fi
               echo "EULER_BENCH_RESULT version=$version exponent=$exponent root=$root status=$status rc=$rc"
+              if [[ "$status" == "UNRESOLVED" ]]; then unresolved=$((unresolved + 1)); fi
             done
           done
+          if (( unresolved > 0 )); then echo "UNRESOLVED_COUNT=$unresolved"; exit 1; fi
       - name: Archive certificates and complete logs
         if: always()
         uses: actions/upload-artifact@v4

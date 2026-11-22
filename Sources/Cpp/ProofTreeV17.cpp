@@ -25,6 +25,8 @@
 #include <fstream>
 #include <sstream>
 #include <limits>
+#include <cstdlib>
+#include <stdexcept>
 
 struct IdxEntry {
     uint64_t h1;
@@ -383,11 +385,23 @@ bool load_prefix_duals(const char* path, const char* gain_path, const char* forc
         for (auto& val : vals) if (!std::getline(ss, val, ',')) return false;
         const unsigned mask = static_cast<unsigned>(std::stoul(vals[0]));
         const uint64_t prime = static_cast<uint64_t>(std::stoull(vals[1]));
+        // std::stod throws on some underflowing but meaningful subnormal
+        // endpoints (errno=ERANGE). strtod + nextafter preserves an outward
+        // enclosure even if the decimal is below the minimum normal double.
+        auto outward_csv = [](const std::string& raw, bool is_lower) -> double {
+            char* end = nullptr;
+            double value = std::strtod(raw.c_str(), &end);
+            if (end == raw.c_str() || *end != '\0' || !std::isfinite(value))
+                throw std::invalid_argument("invalid interval endpoint");
+            return std::nextafter(
+                value, is_lower ? -std::numeric_limits<double>::infinity()
+                                : std::numeric_limits<double>::infinity());
+        };
         EulerOptionCosts costs;
-        costs.ordinary_lower = std::stod(vals[2]);
+        costs.ordinary_lower = outward_csv(vals[2], true);
         costs.has_special = vals[3] != "NA";
-        costs.special_lower = costs.has_special ? std::stod(vals[3]) : 0.0;
-        costs.baseline_upper = std::stod(vals[4]);
+        costs.special_lower = costs.has_special ? outward_csv(vals[3], true) : 0.0;
+        costs.baseline_upper = outward_csv(vals[4], false);
         if (mask >= PREFIX_DUALS.size() || !PREFIX_DUALS[mask].valid ||
             !std::isfinite(costs.ordinary_lower) ||
             !std::isfinite(costs.baseline_upper) ||
