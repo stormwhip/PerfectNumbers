@@ -205,3 +205,23 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Exponent 1500 root 17: V11 187,909 / 33.9337 s; V12 187,909 / 33.7992 s; V12 added 4 state-level LP cuts.
 - Exponent 2201 root 17: both versions timed out at 30 seconds; no completion claim.
 - Conclusion: affine LP cut is valid as a relaxation and executes correctly, but its first form provides only marginal gains. V13 adds certified dual gains from removing variables belonging to state-forbidden or already-branched primes.
+
+## Experiment 015 result — Exponent-500 exact root-order DP
+
+- Date: 2026-11-22.
+- Completed GitHub Actions [run 44996427816](https://github.com/stormwhip/PerfectNumbers/actions/runs/44996427816).
+- All **1024/1024** directed subset transitions completed PROVEN at exponent 500.
+- Branch-count-minimizing order: `19,7,11,31,13,3,5,17`, **40,733** branches (summed single-root edges), cost sum **9.184198 s** on the serial cold-cache profiler.
+- Measured-time-minimizing order: `19,11,7,31,13,3,5,17`, **41,271** branches, measured-cost sum **9.053779 s**.
+- This differs from the exponent-300 branch optimum and reconfirms that ordering optima are target-dependent; the 500 timing advantage of approximately 1.42% is a profile-based estimate, not a fresh complete-tree timing benchmark.
+- The branch-minimizing order matches the canonical reduced-root order at exponent 500. Root order alone has not produced a large performance breakthrough.
+ 
+## Experiment 017 — Early-state dual and forced-prime cuts (bounded experiment)
+
+- Date: 2026-11-22.
+- Source: `ProofTreeV14.cpp` (moves previously certified affine LP test before forced-prime branching) and `ProofTreeV15.cpp` (adds per-prime forced-option reduced-cost gain), keeping V13 as baseline.
+- Model: prefix duals for masks 7 and 127 from the same LP implementation; all other masks use trivial zero affine lower bounds, explicitly recorded by the generator.
+- Certificates: `TargetedPrefixCertificates.py` emits `PrefixDualBounds.csv`, `PrefixDualVariableGains.csv`, and `PrefixDualForcedGains.csv`.
+- The mathematical gain formula and conditions are documented in `Documentation/ForcedPrimeDualCuts.md`.
+- Source compilation and core tests: [Quality run 44998627399](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998627399) **PASS**, including `ProofCoreTestsV14: OK` and `ProofCoreTestsV15: OK`. An earlier quality run had an incorrectly initialized test state; the test fixture was corrected, while the V14/V15 proof-tree source code was unchanged.
+- Dataset-backed benchmark: [run 44998508242](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998508242), fixed checksum, two threads; test results to follow.

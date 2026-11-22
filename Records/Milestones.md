@@ -27,3 +27,6 @@ The numerical LP bound applies to the complementary forbidden-prime-free case. I
 | V11 root-order subset DP | 1024/1024 edges proven; complete-tree gains modest and target-dependent | [Run 44995684900](https://github.com/stormwhip/PerfectNumbers/actions/runs/44995684900) | Profile at exponent 500 before selecting production order |
 
 | V12 affine state-level LP | 256 interval-derived prefix certificates generated; 4 extra cuts in one completed test | [Run 44996209525](https://github.com/stormwhip/PerfectNumbers/actions/runs/44996209525) | Add state-forbidden variable-removal gains (V13) |
+
+| Exponent-500 exact subset DP | All 1024 edges completed; branch-optimal canonical order, distinct time optimum | [Run 44996427816](https://github.com/stormwhip/PerfectNumbers/actions/runs/44996427816) | Assess higher-exponent transferability |
+| Early-state V14 and forced-prime V15 | Both compile and core tests pass; matched benchmark running | [Run 44998627399](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998627399) | Quantify early LP cuts and compare complete roots |
