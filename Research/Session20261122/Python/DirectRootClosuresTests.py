@@ -13,7 +13,7 @@ from IndependentVerifierV2 import DEFAULT_CIRC_ORDER, ORIGINAL_ROOTS, RootTaskPi
 
 def run() -> None:
     result = independently_check_direct_roots(DEFAULT_CIRC_ORDER)
-    expected = {19: 0, 7: 2, 11: 1, 31: 1, 13: 1, 3: 5, 5: 3, 17: 1}
+    expected = {19: 129, 7: 191, 11: 152, 31: 116, 13: 146, 3: 311, 5: 217, 17: 134}
     if result["total_tasks"] != 3072 or result["by_root"] != expected:
         raise RuntimeError(f"wrong independent closure census: {result}")
 
@@ -48,6 +48,22 @@ def run() -> None:
                 or outcome["open_tasks"] != 0):
             raise RuntimeError(f"valid direct certificate not counted: {outcome}")
 
+    # High root exponent: certified directly by p^d * odd(sigma(p^d)) > 10^2400.
+    size_pin = RootTaskPin(
+        upper_bound_N=10**2400,
+        root_set=ORIGINAL_ROOTS,
+        root_order=DEFAULT_CIRC_ORDER,
+        circ_order=DEFAULT_CIRC_ORDER,
+        root_prime=19,
+        root_exp=940,
+        root_exact=False,
+    )
+    size_proof = direct_root_bundle(size_pin)
+    if (size_proof is None
+            or size_proof["nodes"][0]["witness"]["reason"] != "SIGMA_DIVISOR_SIZE"
+            or verify_root_task_bundle(size_pin, size_proof)["status"] != "TREE_ACCEPTED"):
+        raise RuntimeError("root 19 exponent 940 must be independently certified by sigma size")
+
     no_direct = RootTaskPin(
         upper_bound_N=10**2400,
         root_set=ORIGINAL_ROOTS,
@@ -59,7 +75,7 @@ def run() -> None:
     )
     if direct_root_bundle(no_direct) is not None:
         raise RuntimeError("first root incorrectly certified as forbidden-factor closure")
-    print("DirectRootClosuresTests: PASS (3072 tasks, 14 certified direct leaves, audit integration)")
+    print("DirectRootClosuresTests: PASS (3072 tasks, 1396 independent integer leaves, audit integration)")
 
 
 if __name__ == "__main__":
