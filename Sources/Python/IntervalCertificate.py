@@ -37,6 +37,7 @@ def solve_and_certify(
     factor_limit=10**14,
     certify=False,
     return_affine=False,
+    return_forced_gains=False,
 ):
     eff_forbidden = set(forbidden_S)
     if min_p > 3:
@@ -152,6 +153,9 @@ def solve_and_certify(
     assert res.success, f"LP failed: {res.message}"
     float_bound = res.fun / math.log(10)
 
+    if return_forced_gains and not return_affine:
+        raise ValueError("return_forced_gains requires return_affine=True")
+
     if not certify:
         if return_affine:
             raise ValueError("return_affine requires certify=True")
@@ -200,10 +204,13 @@ def solve_and_certify(
     # all its variables removes these penalties; only guaranteed-negative
     # intervals (upper endpoint < 0) contribute a certified removal gain.
     removal_gain_by_prime = {}
+    reduced_cost_lowers = {}
     for vid, (p, a, is_spec, is_tail_a) in enumerate(var_meta):
         c_iv = iv.mpf(a) * iv.log(iv.mpf(p))
         rc_iv = c_iv + AT_lam[vid]
         rc_low = rc_iv.a
+        if return_forced_gains and p <= 300000:
+            reduced_cost_lowers.setdefault(p, []).append(rc_low)
         if rc_low < 0:
             dual_obj += iv.mpf(rc_low)
         if p <= 300000 and rc_iv.b < 0:
@@ -224,6 +231,25 @@ def solve_and_certify(
         intercept_iv = dual_obj - lam[0] * iv.log(iv.mpf(target_abund_ratio))
         lambda0_lower = max(0.0, math.nextafter(float(lam[0].a), -math.inf))
         intercept_lower = math.nextafter(float(intercept_iv.a), -math.inf)
+        if return_forced_gains:
+            forced_gain_by_prime = {}
+            for p, lows in reduced_cost_lowers.items():
+                # Under the true factorization, a forced prime chooses exactly
+                # one exponent option: sum_i x_(p,i) = 1.
+                # Baseline relaxation allowed all x to be zero.
+                min_reduced_cost = min(lows, key=lambda x: float(x))
+                baseline_penalty = iv.mpf(0)
+                for lower in lows:
+                    if lower < 0:
+                        baseline_penalty += iv.mpf(lower)
+                gain_lower = math.nextafter(
+                    float((iv.mpf(min_reduced_cost) - baseline_penalty).a),
+                    -math.inf
+                )
+                if gain_lower > 0:
+                    forced_gain_by_prime[p] = gain_lower
+            return (float_bound, rigorous_log10, lambda0_lower, intercept_lower,
+                    removal_gain_by_prime, forced_gain_by_prime)
         return float_bound, rigorous_log10, lambda0_lower, intercept_lower, removal_gain_by_prime
     return float_bound, rigorous_log10
 
