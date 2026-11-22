@@ -66,6 +66,17 @@ PerfectNumbers/
 - `Build/`、`Run2400Results/` 与大型分解数据库不纳入源码版本库。
 - 旧 `Research/2026-11-22/` 已迁移为 `Research/Session20261122/`。外部 Gemini 分支合并前须按本文件重定向路径。
 
+## 一键可重复检查
+
+- [RepositoryStructureChecks.py](../Sources/Python/RepositoryStructureChecks.py) 用 Git 已追踪文件清单核验 PascalCase 命名、旧目录消失以及 Markdown 相对文件链接。
+- [.github/workflows/RepositoryIntegrity.yml](../.github/workflows/RepositoryIntegrity.yml) 为手动触发的独立验证器、账本与 C++ 编解码/缓存轻量回归；无长时大规模计算。
+
+在仓库根目录运行：
+
+```sh
+python3 Sources/Python/RepositoryStructureChecks.py
+```
+
 ## 维护规则
 
 1. 更新当前理论状态时修改 `CurrentStatus2400.md` 和 `ProgressReport2400.md`；实验事实仅写入 `ExperimentLog.md` 并附 commit、参数和日志。

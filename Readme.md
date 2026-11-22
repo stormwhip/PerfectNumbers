@@ -6,6 +6,8 @@
 
 ## 从这里开始
 
+- **[仓库命名、链接与证明模块的手动回归](.github/workflows/RepositoryIntegrity.yml)**：通过 `workflow_dispatch` 手动运行轻量质量检查，不会自动启动长时证明树或付费模型。
+
 - **[最新证明状态与剩余任务](Documentation/CurrentStatus2400.md)**：当前唯一状态摘要、证明闭环、运行验收及目录迁移说明。
 
 - **[主要数学研究难题（形式化陈述）](Documentation/ResearchProblems2400.md)**：九类候选分割、对偶证书、证明树覆盖、roadblock、状态 LP、算术正确性与 72 小时目标。

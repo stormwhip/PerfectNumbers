@@ -45,3 +45,7 @@
 - [Milestones.md](../Records/Milestones.md) 为阶段任务表；[ValidationChecklist.md](../Records/ValidationChecklist.md) 是发布门槛；[ExperimentLog.md](../Records/ExperimentLog.md) 是历史运行记录。
 - 旧研究目录 `Research/2026-11-22/` 在本次整理中统一为 `Research/Session20261122/`；原 `README.md` 统一为 `Readme.md`。GitHub 必需的 `.github/workflows/`、`.gitignore` 采用平台固定命名。
 - 目录整理仅改变路径与文档链接；没有执行新一轮 72 小时大规模实验，没有新增完全证明。
+
+## 5. 仓库维护与质量回归
+
+整理后代码仍使用原 V21 正式生产入口。目录一致性可通过 [RepositoryStructureChecks.py](../Sources/Python/RepositoryStructureChecks.py) 检查；[手工 CI 工作流](../.github/workflows/RepositoryIntegrity.yml) 可以重新跑 Python 证明/账本的合成回归、C++ 编解码和缓存测试。该 CI 只验证实现一致性，不将任何程序标签自动升级为数学证明。
