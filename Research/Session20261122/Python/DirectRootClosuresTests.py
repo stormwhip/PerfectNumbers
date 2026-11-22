@@ -8,7 +8,7 @@ from pathlib import Path
 from AuditRunner2400 import audit_single_shard
 from DirectRootClosures2400 import direct_root_bundle, independently_check_direct_roots
 from FrontierLedgerV2 import DiskProofStore
-from IndependentVerifierV2 import DEFAULT_CIRC_ORDER, ORIGINAL_ROOTS, RootTaskPin, verify_root_task_bundle
+from IndependentVerifierV2 import DEFAULT_CIRC_ORDER, ORIGINAL_ROOTS, RootTaskPin, VerificationError, verify_leaf_node, verify_root_task_bundle
 
 
 def run() -> None:
@@ -63,6 +63,29 @@ def run() -> None:
             or size_proof["nodes"][0]["witness"]["reason"] != "SIGMA_DIVISOR_SIZE"
             or verify_root_task_bundle(size_pin, size_proof)["status"] != "TREE_ACCEPTED"):
         raise RuntimeError("root 19 exponent 940 must be independently certified by sigma size")
+
+    # Strict inequality: equality with the exact forced divisor must remain OPEN.
+    boundary_pin = RootTaskPin(
+        upper_bound_N=19**2 * ((19**3 - 1) // 18),
+        root_set=ORIGINAL_ROOTS,
+        root_order=DEFAULT_CIRC_ORDER,
+        circ_order=DEFAULT_CIRC_ORDER,
+        root_prime=19,
+        root_exp=2,
+        root_exact=False,
+    )
+    initial = boundary_pin.build_initial_state(set())
+    size_leaf = {"kind": "LEAF", "witness": {
+        "reason": "SIGMA_DIVISOR_SIZE", "source_p": 19, "d": 2
+    }}
+    try:
+        verify_leaf_node(initial, size_leaf, boundary_pin.upper_bound_N, set())
+    except VerificationError:
+        pass
+    else:
+        raise RuntimeError("sigma-size equality was wrongly treated as strict closure")
+    if verify_leaf_node(initial, size_leaf, boundary_pin.upper_bound_N - 1, set()) != "LEAF_ACCEPTED":
+        raise RuntimeError("sigma-size strict positive margin was wrongly rejected")
 
     no_direct = RootTaskPin(
         upper_bound_N=10**2400,
