@@ -1,3 +1,5 @@
+> **有效主目标：\(10^{2400}\)**。本文件保留过往正、负实验历史。旧版代码与 Benchmark 从主分支移除，见 [精简前快照](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70)。最新任务和完成定义详见 [2400 进展报告](../Documentation/ProgressReport2400.md) 与 [证明审计清单](ValidationChecklist.md)。
+
 # Research Milestones
 
 | Milestone | Status | Supporting evidence | Next gate |

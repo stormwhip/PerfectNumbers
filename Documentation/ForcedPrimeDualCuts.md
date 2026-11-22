@@ -1,3 +1,5 @@
+> **历史理论笔记。** 文中 V17 联合 Euler 特殊素数剪枝曾通过测试，但未证明端到端加速；V17 源代码保存在 [精简前快照](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70)。当前工程采用 V16 的正确区间增益。完整状态见 [ProgressReport2400](ProgressReport2400.md)。
+
 # Early-State Affine LP Cuts and Forced-Prime Dual Gains
 
 ## Research question

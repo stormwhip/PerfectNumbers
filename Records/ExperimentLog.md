@@ -1,3 +1,5 @@
+> **仓库精简记录（2026-11-22）**：主目标统一为 \(N>10^{2400}\)，过时的 V1–V15/V17 源代码、旧 CI 工作流与实验性脚本已从当前主分支删除。历史运行日志仍在本文及 Actions 中，全部旧文件可从 [精简前原始快照](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70) 恢复。当前入口为 [ProgressReport2400](../Documentation/ProgressReport2400.md)、ProofTreeV16.cpp 与 IntervalCertificate61.py。
+
 # Experiment Log
 
 This log separates **imported historical claims**, **directly observed experiments**, and **proof-checked results**. Dates use YYYY-MM-DD.
