@@ -5,6 +5,9 @@ on:
       - '.github/workflows/Conditional61Lp.yml'
       - 'Sources/Python/IntervalCertificate61.py'
       - 'Sources/Python/ConditionalPrime61.py'
+      - 'Sources/Python/Prime61FactorChecks.py'
+      - 'Sources/Python/DualGainBounds.py'
+      - 'Requirements.txt'
 permissions:
   contents: read
 jobs:

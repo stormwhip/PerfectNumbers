@@ -1,107 +1,62 @@
-# PerfectNumbers
+# PerfectNumbers — 奇完全数 \(10^{2400}\) 下界研究
 
-Computational research on lower bounds for odd perfect numbers (OPNs), combining factor-chain proof trees with endgame linear programming and interval-based certificates.
+本仓库专注一个明确目标：证明每个奇完全数 \(N\) 都满足 **\(N>10^{2400}\)**，并提供可独立检查的完整计算证书。
 
-## Research status
+**当前状态：** 在 \(N\) 与 \(S_8=\{3,5,7,11,13,17,19,31\}\) 全部互素的前提下，增强 LP 的区间对偶程序输出 \(\log_{10}N\ge2400.822998027028\)。这是一项**条件性数值结果**。全部八个根素数的穷尽排除及 LP 数值的独立严格审计仍未完成。
 
-- **Verified upstream reference:** Ochem and Rao (2012) established a published bound of \(N > 10^{1500}\). The reference paper is in [References/OchemRao2012.pdf](References/OchemRao2012.pdf).
-- **Historical local results:** earlier project notes report an endgame LP certificate above \(10^{3129}\) conditional on exclusion of the 15 forbidden primes, and a complete 15-root search at exponent 1500. Those results remain historical claims until independently reproduced and audited in this repository.
-- **Research target:** obtain a complete, independently checkable unconditional bound exceeding \(10^{2200}\). An endgame-only estimate is not a complete unconditional proof.
+## 项目进展报告
 
-## Repository layout
+**[10^2400 项目进展报告](Documentation/ProgressReport2400.md)**：前人工作、我们已完成的代码与实验、验证风险、下一步工作的优先级和验收条件。
 
-| Location | Contents |
+## 当前工程
+
+| 入口 | 作用 |
 | --- | --- |
-| [Sources/Cpp](Sources/Cpp) | GMP factorization index builder and proof-tree versions V1–V10 |
-| [Sources/Python](Sources/Python) | LP baseline, ablation study, interval dual certificate |
-| [Documentation](Documentation) | Technical LaTeX report and preserved historical research handoff |
-| [References](References) | Original Ochem–Rao reference paper |
-| [Records](Records) | Experiment log, milestone ledger and proof validation checklist |
-| [.github/workflows](.github/workflows) | Explicitly triggered reproducibility workflows |
+| [ProofTreeV16.cpp](Sources/Cpp/ProofTreeV16.cpp) | 当前八根 C++17 / GMP / OpenMP 证明树 |
+| [BuildIndex.cpp](Sources/Cpp/BuildIndex.cpp) | Ochem 固定因子数据库索引构建 |
+| [ProofCoreTestsV16.cpp](Sources/Cpp/ProofCoreTestsV16.cpp) | C++ 回归测试 |
+| [IntervalCertificate61.py](Sources/Python/IntervalCertificate61.py) | 含 61 高次幂因子和蕴含的增强 LP |
+| [PrefixDualCertificates.py](Sources/Python/PrefixDualCertificates.py) | 生成全部 256 个根前缀的增强对偶和 V16 的必要增益 CSV |
+| [ConditionalPrime61.py](Sources/Python/ConditionalPrime61.py) | 61 指数条件化 LP 交叉检查 |
+| [Prime61FactorChecks.py](Sources/Python/Prime61FactorChecks.py) | 精确整数等式及素性核验 |
+| [ExperimentLog.md](Records/ExperimentLog.md) | 历史正反实验、运行编号、版本留痕 |
+| [ValidationChecklist.md](Records/ValidationChecklist.md) | 证明级审计待办 |
 
-Tracked project filenames and directories use English PascalCase. GitHub's required `.github/workflows` location and `.gitignore` remain conventional.
+### 小规模复现
 
-## Reproduce locally
+在 Linux 或 WSL2 上安装 C++17、GMP、zlib、Python 及 Requirements.txt 中依赖。随后在仓库根目录执行：
 
-Install Linux build dependencies `g++`, `libgmp-dev`, `zlib1g-dev`, and `python3`. For Python experiments:
+    python3 -m pip install -r Requirements.txt
+    python3 Sources/Python/Prime61FactorChecks.py
+    python3 Sources/Python/ConditionalPrime61.py
 
-```bash
-python -m pip install -r Requirements.txt
-python Sources/Python/Baseline.py
-python Sources/Python/Ablation.py
-python Sources/Python/IntervalCertificate.py
-```
+    mkdir -p Build
+    python3 -u Sources/Python/PrefixDualCertificates.py Build/PrefixDualBounds.csv
+    g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
+    g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV16.cpp -lgmpxx -lgmp -o Build/ProofTreeV16
+    g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV16.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV16
+    ./Build/ProofCoreTestsV16
 
-For C++ (from the repository root):
+完整因子链运行需要 Ochem 提供的 checkfacts.txt.gz 固定数据库。其 SHA-256 为：
 
-```bash
-mkdir -p Build
-g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
-g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV5.cpp -lgmpxx -lgmp -o Build/ProofTreeV5
-cd Build
-./BuildIndex CheckFacts.txt.gz
-./ProofTreeV5 300 17
-```
+    ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119
 
-The historical builder writes `facts.dat` and `facts.idx` in the current directory. `CheckFacts.txt.gz` is an external, checksum-pinned database snapshot. Its pinned SHA-256 is:
+数据库放入 Build 目录后，从该目录执行：
 
-```text
-ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119
-```
+    ./BuildIndex checkfacts.txt.gz
+    export OMP_NUM_THREADS=2
+    ./ProofTreeV16 2400
 
-The full dataset is large. Heavy-data workflows require explicit manual dispatch; lightweight source compilation and core tests run automatically on source pushes. Use **Actions → Factor-chain proof experiments** for a compile check or proof run and **Actions → Python LP experiments** for a selected Python experiment.
+单独运行某个根时，程序假定根顺序中此前的根素数已经被排除；**单根返回 PROVEN 不能代替全部八根证明**。
 
-## Proof standard
+### GitHub Actions
 
-A claimed unconditional bound requires all forbidden-prime branches to finish with no unresolved roadblocks, a sound endgame certificate covering the complementary case, and a review of branch completeness, factorization correctness, floating-point bounds and data provenance. See [Records/ValidationChecklist.md](Records/ValidationChecklist.md). See [Records/ExperimentLog.md](Records/ExperimentLog.md) for test status and reproduction instructions.
+- [QualityChecks.yml](.github/workflows/QualityChecks.yml)：源代码编译和轻量单元测试。
+- [Conditional61Lp.yml](.github/workflows/Conditional61Lp.yml)：61 因子分解与增强 LP 数值复现。
+- [FactorChain2400.yml](.github/workflows/FactorChain2400.yml)：**只在手动启动时运行**，默认仅编译；用户明确选择后才下载大型数据库并执行指数 2400 计算。
 
-## V6 prototype
+## 证明与历史版本
 
-`Sources/Cpp/ProofTreeV6.cpp` preserves the V5 interface and adds an analytic infinite-prime-tail relaxation and overlap-safe composite accounting. Run `ProofCoreTests.cpp` before dataset-backed comparisons:
+严格的无条件 \(N>10^{2400}\) 需要：全部八根穷尽树 + 互素 LP 独立证书 + 所有分支剪枝与因子数据的证明级审计。详见 [审计清单](Records/ValidationChecklist.md)。
 
-```bash
-g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTests.cpp -lgmpxx -lgmp -o Build/ProofCoreTests
-./Build/ProofCoreTests
-```
-
-V6 is under validation. The ALPHA assumption, probabilistic primality decisions and floating-point comparison margins still require full mathematical audits.
-
-## Validated regression snapshot
-
-- V5, exponent 300, all 15 roots: 13,250 branches, no failed roadblocks, 0.390215 seconds for the proof tree on a two-thread GitHub runner ([original run](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990168041)).
-- V6 and earlier C++ versions compile, core regression tests print `ProofCoreTests: OK`, and Python syntax checks pass ([quality run](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990984163)).
-- The next performance gate is a dataset-backed, root-matched comparison of V5 and V6 at a higher exponent.
-
-The historical Python workflow output can be inspected in [Run 44990184125](https://github.com/stormwhip/PerfectNumbers/actions/runs/44990184125). It reports a 3129.458561 complement-case LP value and an interval dual output agreeing to six decimals. The full independent mathematical audit remains open.
-
-## V7 parallel roadblock prototype
-
-`Sources/Cpp/ProofTreeV7.cpp` introduces block-parallel circular prime case checking on large roadblocks. The partition preserves the prior-prime exclusion prefix for each block. Historical V1–V6 implementations remain unchanged, and `ProofCoreTestsV7.cpp` provides a separate smoke-test entry. V7 requires dataset-backed parallel equivalence testing before any proof claims.
-
-V7 also compiled and passed its core tests in [Run 44991317752](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991317752). The bounded 2201 candidate experiment is separately tracked in [Run 44991101998](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991101998).
-
-The first bounded probe at exponent 2201 timed out after 120 seconds on each of roots 17 and 307. Its V5/V6 control experiment at exponent 1000, root 17, matched exactly at 2,770 branches, with elapsed times 2.28969 s / 2.25512 s respectively. These two target timeouts are inconclusive and no new lower bound follows.
-
-## V8 diagnostic build
-
-`Sources/Cpp/ProofTreeV8.cpp` adds 10-second progress reports, allowing bounded high-exponent experiments to expose where time is spent. Each report includes branch and circular-branch counts and the largest roadblock bound encountered. A short follow-up probe at exponent 2201 is tracked in `.github/workflows/TargetedProbe.yml`.
-
-V8 diagnostics in [run 44991559032](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991559032) found 403,628 branches for root 17 and 412,952 for root 307 by 50 seconds of exponent-2201 search; neither root finished in 60 seconds. Their maximum observed roadblock bounds were only 3 and 29 respectively. V9 is an experimental bounded-deep-task prototype designed to address ordinary DFS load imbalance, subject to benchmark and proof audit.
-
-The [V8/V9 bounded benchmark](https://github.com/stormwhip/PerfectNumbers/actions/runs/44991855026) measured branch visits at 30 seconds: for root 17, V8 222,022 vs V9 245,875; for root 307, V8 233,773 vs V9 299,786. All four timed out at 35 seconds. These are non-equivalent partial traversals and do not establish a full-run speedup.
-
-Completed-case V8/V9 comparison in [Run 44992192309](https://github.com/stormwhip/PerfectNumbers/actions/runs/44992192309): exponent 1000 root 17 completed in 2.29845s / 2.25049s (2770 branches each); root 307 in 1.15197s / 1.13924s (1531 branches each). Both versions reported zero unresolved roadblocks. These small single-run time differences do not establish a robust high-exponent speedup.
-
-An LP-guided candidate reduction for exponent 2300 selected \(S_*=\{3,5,7,11,13,17,19,31\}\) and obtained an interval-dual output of \(2390.1110142932844\) for the complementary case. See [prime-set optimization theory](Documentation/PrimeSetOptimization.md) and [Run 44993433027](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993433027). Independent model verification and the full eight-root factor-chain proof are still outstanding.
-
-V10 adds prime-adic obligation propagation and quotient-congruence sharpening to ordinary factor-chain DFS, without changing the root set. It is a separately versioned candidate intended for a clean V9/V10 performance and correctness comparison.
-
-Measured reduced-root prototype: [Run 44993825296](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993825296) confirmed that at exponents 300 and 500 the eight-root tree was slightly slower than the original 15-root tree, because previously forbidden primes re-enter other branches. V10 valuation tests passed but did not reduce the number of branches on the completed regression roots ([Run 44993733799](https://github.com/stormwhip/PerfectNumbers/actions/runs/44993733799)). These experiments motivate optimizing the root permutation and tighter state-level LP cuts.
-
-V11 separates top-level root order from the fixed circular-prime partition order. An exhaustive profiler measures all 1024 subset transitions for the eight-prime set, and exact subset DP selects branch-count- and time-optimal root sequences.
-
-**New experimental branches** V14/V15: [quality check 44998627399](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998627399), [matched benchmark 44998508242](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998508242). At exponent 1500, root 17 decreased from 187,909 visited branches in V13 to an immediate affine LP cut (zero visited branches) in V14 and V15. The complement LP bound for the preceding seven roots is ~1644.68, so this cut is expected. Exponent 2201 still times out in all three versions, and an unconditional 2300 proof remains open. See [dual-cut mathematics](Documentation/ForcedPrimeDualCuts.md).
-
-New experimental terminal improvement (2026-11-22): factoring `sigma(61^10)` and `sigma(61^12)` yields an eight-prime-excluded complementary LP interval-dual lower exponent **2400.822998027028**, compared with the old eight-prime 2390.111014. Exact factors and primality checks passed; see [experiment 019](Records/ExperimentLog.md) and [run 45001172416](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416). This is **conditional on all eight small primes being absent**. The full eight-root search and proof-grade independent LP audit remain open. V17 adds a separate Euler-coupled dual-pruning experiment.
-
-V17 Euler-coupled pruning passed standalone tests and matched completed roots in [pilot 45001125412](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001125412), but did not yet demonstrate an end-to-end speedup at exponent 2201/2300 (both tests timed out). Preserve V16 and V17 for controlled comparisons.
+旧版本 V1–V15、V17、历史实验代码及不再使用的工作流已移出当前主分支，完整内容可从[精简前快照 124ab214](https://github.com/stormwhip/PerfectNumbers/tree/124ab21449d4afd9d017a32faa9bd27253943c70)恢复；历史结果仍保存在 ExperimentLog 中。

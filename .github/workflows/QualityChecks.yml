@@ -1,8 +1,9 @@
-name: Source quality checks
+name: Source quality checks (2400)
 on:
   push:
     paths:
       - 'Sources/**'
+      - 'Requirements.txt'
       - '.github/workflows/QualityChecks.yml'
   workflow_dispatch:
 permissions:
@@ -15,54 +16,18 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Install native build dependencies
+      - name: Install native dependencies
         run: sudo apt-get update && sudo apt-get install -y libgmp-dev zlib1g-dev
-      - name: Compile all C++ entries
+      - name: Build current C++ indexer and proof tree
         run: |
           mkdir -p Build
           g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
-          for source in Sources/Cpp/ProofTreeV*.cpp; do
-            g++ -std=c++17 -O2 -fopenmp "$source" -lgmpxx -lgmp -o "Build/$(basename "$source" .cpp)"
-          done
-      - name: Compile V13 and run dual-removal regression tests
-        run: |
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV13.cpp -lgmpxx -lgmp -o Build/ProofTreeV13
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV13.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV13
-          ./Build/ProofCoreTestsV13
-      - name: Validate early-state and forced-prime LP cuts
-        run: |
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV14.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV14
-          ./Build/ProofCoreTestsV14
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV15.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV15
-          ./Build/ProofCoreTestsV15
-      - name: Compile V16 and test interval-safe forced-prime gains
-        run: |
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV16.cpp -lgmpxx -lgmp -o Build/ProofTreeV16
+      - name: Run C++ interval LP regression tests
+        run: |
           g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV16.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV16
           ./Build/ProofCoreTestsV16
-      - name: Run interval arithmetic regression tests
-        run: python3 Sources/Python/CertificateTests.py
-      - name: Compile root-order profiler
+      - name: Run pure Python tests and syntax validation
         run: |
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/RootOrderProfiler.cpp -lgmpxx -lgmp -o Build/RootOrderProfiler
-      - name: Compile reduced root prototype
-        run: |
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeReduced.cpp -lgmpxx -lgmp -o Build/ProofTreeReduced
-      - name: Run independent lightweight regression tests
-        run: |
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTests.cpp -lgmpxx -lgmp -o Build/ProofCoreTests
-          ./Build/ProofCoreTests
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV7.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV7
-          ./Build/ProofCoreTestsV7
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV8.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV8
-          ./Build/ProofCoreTestsV8
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV9.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV9
-          ./Build/ProofCoreTestsV9
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV10.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV10
-          ./Build/ProofCoreTestsV10
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV12.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV12
-          ./Build/ProofCoreTestsV12
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ReducedRootTests.cpp -lgmpxx -lgmp -o Build/ReducedRootTests
-          ./Build/ReducedRootTests
-      - name: Validate Python syntax
-        run: python3 -m compileall -q Sources/Python
+          python3 Sources/Python/CertificateTests.py
+          python3 -m compileall -q Sources/Python
