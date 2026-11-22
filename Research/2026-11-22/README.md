@@ -52,3 +52,8 @@ g++ -std=c++17 -O2 -fopenmp Research/2026-11-22/Cpp/ProofCoreTestsV24.cpp -lgmpx
 ## 下一步数学研究
 
 优先推进 [形式化难题 IV：状态条件化 LP 早期剪枝](../../Documentation/ResearchProblems2400.md#5-核心难题-iv可早期证明的状态条件化-lp-剪枝)。需要同时保持证明完备性、可校验证书，以及在完整困难分片上的总运行时收益。
+
+
+## 2026-11-22 independent proof integration
+
+See [IndependentProofIntegration2400.md](Reports/IndependentProofIntegration2400.md) for the external-pin verifier, durable frontier ledger, V21 frontier codec, proof audits, exact mathematical obligations and unresolved 10^2400 blockers. The experimental searcher's `PROVEN_UNAUDITED` is not an independently certified theorem. New regression checks: `PrimeCutoffGCDTests.py` and `SingleFlightFactCacheTests.cpp`.
