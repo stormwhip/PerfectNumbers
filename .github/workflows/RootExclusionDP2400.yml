@@ -1,0 +1,36 @@
+name: Root-exclusion subset DP for exponent 2400
+on:
+  push:
+    paths:
+      - '.github/workflows/RootExclusionDP2400.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  optimize:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Reuse the 287-item root19 one-second census
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p Evidence
+          gh run download 45005912683 --repo "$GITHUB_REPOSITORY" --name Root19ShardCensus2400 --dir Evidence
+          test -s Evidence/Root19Summary.txt
+      - name: Solve all subset DP states using both structural and empirical weights
+        run: |
+          mkdir -p Build
+          set -o pipefail
+          python3 Sources/Python/RootExclusionDP2400.py --census Evidence/Root19Summary.txt | tee Build/RootExclusionDP2400.txt
+      - name: Archive complete root-order proxy result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: RootExclusionDP2400
+          path: Build/RootExclusionDP2400.txt
+          retention-days: 30
+          if-no-files-found: ignore
