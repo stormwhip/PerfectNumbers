@@ -36,3 +36,18 @@ factors in the tail rather than pretending to have a complete factorization.
 A conditional certificate does **not** imply the unconditional \(10^{2400}\)
 bound: the eight excluded-prime root branches must all be proved, and the LP
 model must undergo a proof-grade independent audit.
+
+## Numerical results and new eight-prime conclusion
+
+Run [45001172416](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416) independently verifies the exact integer products and primality of the six stated `sigma(61^a)` factorizations. The LP script additionally includes factorization implications for exponents 10 and 12, formerly excluded by the global `p^a<10^14` factorization heuristic.
+
+| Conditional model | Interval dual exponent lower bound |
+| --- | ---: |
+| **No 61 hypothesis**, only all S8 primes excluded | **2400.822998027028** |
+| 61 exactly to exponent 6 | 2425.846325041447 |
+| 61 exactly to exponent 10 | 2465.876803180284 |
+| 61 exactly to exponent 12 | 2511.641527478704 |
+| 61 exponent >=16 (even) | 2400.822993303349 |
+| 61 exponent >=10 (even) | 2400.822993303349 |
+
+The unconditional-on-61 *complementary LP* result is stronger than the previously known `2390.111014` eight-prime bound; the original extra root 61 is thus **not necessary for the terminal LP at exponent 2400**, pending independent proof audit. The containing-prime factor-chain trees for all eight members of S8 are still incomplete.

@@ -35,3 +35,6 @@ The numerical LP bound applies to the complementary forbidden-prime-free case. I
 | V15 forced-prime dual gain | Computationally verified, no added pruning on matched complete roots | [Run 44998508242](https://github.com/stormwhip/PerfectNumbers/actions/runs/44998508242) | Test dual reoptimization with required prime-power options |
 
 | V16 interval-safe forced-prime gain | Implemented; validation pending | [ProofTreeV16](../Sources/Cpp/ProofTreeV16.cpp) | Pass interval tests and exponent-2300 benchmark |
+
+| Strengthened S8 complement LP for exponent 2400 | **2400.822998027028** interval-dual exponent; conditional case only; proof-grade model audit open | [Run 45001172416](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416) | Independent dual witness verification and eight-root exhaustive trees at 2400 |
+| V17 Euler-special-slot coupled dual gains | Source and standalone algebra tests completed; high-exponent dataset benchmark pending | [V17 workflow](https://github.com/stormwhip/PerfectNumbers/actions/workflows/EulerCoupledBenchmark.yml) | Compare complete branch counts and runtime against V16 |

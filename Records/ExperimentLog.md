@@ -250,3 +250,21 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - V16 benchmark regenerates the two targeted prefix certificates from the corrected function and compares V13/V14/V15/V16 at exponents 1000, 1500, 2201, and 2300.
 - Workflow: [ForcedPrimeLpBenchmark.yml](../.github/workflows/ForcedPrimeLpBenchmark.yml).
 - Status: implementation committed; source tests and corrected dataset-backed benchmark pending.
+
+## Experiment 019 — Strengthened eight-prime complement LP crosses exponent 2400
+
+- Date: 2026-11-22. [Initial conditional test 45000659931](https://github.com/stormwhip/PerfectNumbers/actions/runs/45000659931); strengthened-and-repeated [run 45001172416](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416).
+- Source: `Sources/Python/IntervalCertificate61.py`, a separate auditable LP fork. For precisely `p=61` and exponents `a=10,12`, factor the divisor sums even though `p^a\ge 10^{14}`, adding the resulting exact forced-prime implications to the same LP.
+- `sigma(61^10)=199*859*4242586390571`; `sigma(61^12)=187123*14421466756460791`. [Independent exact-product and deterministic-sized primality checks](../Sources/Python/Prime61FactorChecks.py) passed in run 45001172416. All factors are below `2^64`.
+- Previously, eight-prime complement `S8={3,5,7,11,13,17,19,31}` had interval-dual exponent lower endpoint **2390.111014293284**. The **enhanced, unconditional-on-61** complement LP gives **2400.822998027028**, exceeding target 2400 by **0.822998027028**. This is a complement-only computational certificate, **not an unconditional OPN bound**.
+- The strengthened LP simultaneously reports these exponent-61 subcases, all assuming `N` coprime to `S8`: `61^6 || N`: **2425.846325041447**; `61^10 || N`: **2465.876803180284**; `61^12 || N`: **2511.641527478704**; `nu_61(N)>=16`: **2400.822993303349**; `nu_61(N)>=10`: **2400.822993303349**.
+- Exhaustiveness of 61 exponent partition: all odd exponents imply forbidden 31 since `61=-1 mod 31`; even exponents 2,4,8,14 imply one of forbidden `3,5,13,19` through the exact `sigma` identities or `sigma(61^2)|sigma(61^14)`. Remaining possibilities are 6,10,12, and even >=16.
+- **Next mathematical gate**: independently audit the entire LP primal relaxation (finite-exponent options, tail, every implication) and recheck a machine-readable dual witness using exact/interval arithmetic; separately finish all eight containing-prime proof trees at exponent 2400. The current 0.823 exponent margin should not be reported as a completed theorem before these steps.
+
+## Experiment 020 — V17 Euler-special-slot coupling (pilot)
+
+- Date: 2026-11-22. Source `ProofTreeV17.cpp`, distinct from V16's corrected independent forced-prime gains.
+- For every forced unbranched prime `q`, store interval lower bounds of the cheapest ordinary and Euler-special option, and an upper bound on its baseline negative reduced-cost penalty.
+- Since **at most one** forced prime may be special, joint minimum selected reduced cost is bounded by `sum(o_q)-max(0,max_q(o_q-s_q))`, or `sum(o_q)` if the special slot has already been consumed. Its difference from the upper baseline penalty is an outward-rounded LP gain. This **replaces** V16's independent forced gain; the gains are never double-counted.
+- Synthetic C++ regression and exhaustive endpoint Python tests pass. First data-backed pilot failed due a V16-only test-fixture leftover. Second pilot failed when the CSV loader rejected subnormal floats and CRLF row endings; both implementation-level issues were corrected in isolated V17 files. Latest pilot [45001125412](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001125412) is the expected decisive comparison.
+- The pilot uses two actual prefix dual certificates (masks 7 and 127) and 254 explicitly trivial safe zero lower bounds; complete 256-mask integration is a separate future step.

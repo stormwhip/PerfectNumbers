@@ -124,3 +124,31 @@ G_q\;\ge\;\min_i\ell_i-\sum_i\min(0,u_i).
 The minimum forced option cost is bounded below by the smallest interval lower endpoint. The old box-relaxation penalty is bounded above by the sum of the negative interval upper endpoints. Their difference is therefore a certified lower bound for the improvement from imposing \(\sum_i x_{q,i}=1\).
 
 The generator implements this with outward-rounded endpoint arithmetic in `Sources/Python/DualGainBounds.py`; `CertificateTests.py` checks endpoint combinations. V16 also rounds each accumulated gain downward in C++.
+
+## V17 Euler-slot-coupled forced-prime dual gain
+
+For all currently unbranched forced primes \(Q\), let \(I_q^o\) and \(I_q^s\) denote ordinary- and special-exponent LP options. If the individual reduced costs satisfy \(r_i\in[\ell_i,u_i]\), define
+
+\[
+o_q=\min_{i\in I_q^o}\ell_i,\quad
+s_q=\min_{i\in I_q^s}\ell_i,\quad
+B=\sum_{q\in Q}\sum_{i\in I_q}\min(0,u_i).
+\]
+
+If the Euler-special prime is not already assigned, any completion using the forced primes has total selected reduced cost at least
+
+\[
+C=\sum_{q\in Q}o_q-\max\{0,\max_{q\in Q}(o_q-s_q)\}.
+\]
+
+The inner maximum ranges only over primes with at least one special option. If a previously fixed component has already consumed the special slot, set \(C=\sum_qo_q\).
+
+Therefore the certified additional cut over the original box-relaxation dual penalty is
+
+\[
+\boxed{G_{17}=\max(0,C-B),}
+\]
+
+with **every intermediate sum and difference directed outwards**. The formula uses the special slot jointly; it replaces the independent V16 forced gains for those same groups, avoiding double counting. The code skips forced primes without explicit LP option groups (a safe relaxation).
+
+The main remaining audit obligations concern the LP model's completeness, interval coefficient recomputation and full-tree correctness; source-level unit tests alone are insufficient to establish a new unconditional bound.
