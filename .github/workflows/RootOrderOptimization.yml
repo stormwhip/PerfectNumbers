@@ -3,6 +3,9 @@ on:
   push:
     paths:
       - '.github/workflows/RootOrderOptimization.yml'
+      - 'Sources/Cpp/RootOrderProfiler.cpp'
+      - 'Sources/Cpp/ProofTreeV11.cpp'
+      - 'Sources/Python/RootOrderOptimizer.py'
 permissions:
   contents: read
 jobs:
