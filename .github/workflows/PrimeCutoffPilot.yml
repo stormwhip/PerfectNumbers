@@ -1,0 +1,39 @@
+name: Exact primorial-cutoff certificate pilot
+on:
+  push:
+    paths:
+      - '.github/workflows/PrimeCutoffPilot.yml'
+permissions:
+  contents: read
+jobs:
+  build-measure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install GMP
+        run: sudo apt-get update && sudo apt-get install -y libgmp-dev
+      - name: Compile deterministic prime-cutoff builder
+        run: |
+          mkdir -p Build
+          g++ -std=c++17 -O2 Sources/Cpp/PrimeCutoffCert.cpp -lgmpxx -lgmp -o Build/PrimeCutoffCert
+      - name: Produce exact product over primes from 1009 through 1e8 and benchmark gcd
+        working-directory: Build
+        run: |
+          set -o pipefail
+          ./PrimeCutoffCert 100000000 | tee PrimeCutoffLog.txt
+          sha256sum PrimeCutoffProduct.bin | tee PrimeCutoffSHA256.txt
+          test -s PrimeCutoffProduct.bin
+      - name: Archive reusable exact cutoff certificate and timings
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: PrimeCutoff100Million
+          path: |
+            Build/PrimeCutoffProduct.bin
+            Build/PrimeCutoffLog.txt
+            Build/PrimeCutoffSHA256.txt
+          retention-days: 30
+          if-no-files-found: ignore
