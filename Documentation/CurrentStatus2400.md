@@ -10,7 +10,7 @@
 - 已集成独立根固定证明核验器、可恢复 SQLite 前沿账本、C++ 状态编解码、实验性 G1 复用搜索器和只读全量审计运行器。**当前全局状态：`INCOMPLETE_FRONTIER`**。现有实验性求解器 `PROVEN_UNAUDITED` 不能计入定理证明。
 - 新增**两类纯整数顶层直接证明叶**：先前排除的根素数整除 `σ(p^d)` 产生 14 个 `FORBIDDEN_FACTOR` 证书；由 `p^d·odd(σ(p^d)) | N` 及尺寸超界产生 1,382 个 `SIGMA_DIVISOR_SIZE` 证书，互不重叠。独立整数枚举覆盖 **1,396 / 3,072（45.44%）** 个顶层分片；其余 **1,676 个**仍需证明树及证书。代码已接入独立验证器与全量审计器，新增仓库测试尚待 CI 运行。见 [证明与实验](../Research/Session20261122/Reports/DirectRootClosure2400.md)。
 - 新增**分圆多项式素因子 + 有限乘子证书**：根 `19,d=936`、根 `11,d=1150`、根 `11,d=1152` 的剩余乘子范围分别为 `1,411,815`、`56,941`、`3`。精确整数枚举对 `705,908`、`28,471`、`2` 个奇数剩余乘子均给出矛盾。代码已接入 V2 独立证明叶验收，新增 `FINITE_QUOTIENT_CYCLOTOMIC`。**该阶段累计 1,399/3,072（45.54%），当时剩余 1,673 项**；后续分圆–Euler 乘积界见下条。参见 [理论与复现实验](../Research/Session20261122/Reports/FiniteQuotientCyclotomic2400.md)。
-- 新增 **分圆–Euler 素数乘积丰度界**：无需分解 `Phi_m(p)`，利用其素因子模类、Euler 指数条件、禁用根与剩余乘子共享尺寸预算，排除 34 个顶层分片，其中 `(11,1152)` 与有限乘子证书重叠。净增加 **33 个**独立验证器可重算的整数证明叶。**当前候选累计 1,432/3,072（46.61%），剩余 1,640 项**；[严格数学证明与清单](../Research/Session20261122/Reports/CyclotomicEulerPrimorial2400.md)。已提交代码及单元测试，最新全量审计仍待执行。
+- 新增 **分圆–Euler 素数乘积丰度界**：无需分解 `Phi_m(p)`，利用其素因子模类、Euler 指数条件、禁用根与剩余乘子共享尺寸预算，排除 34 个顶层分片，其中 `(11,1152)` 与有限乘子证书重叠。净增加 **33 个**独立验证器可重算的整数证明叶。**该阶段候选累计 1,432/3,072（46.61%），当时剩余 1,640 项**；[严格数学证明与清单](../Research/Session20261122/Reports/CyclotomicEulerPrimorial2400.md)。已提交代码及单元测试，最新全量审计仍待执行。
 - 目前无全量独立核验完成记录，也无在固定条件下完成 72 小时目标的实测.禁止将短窗超时样本视为总运行时间的上界。
 
 ## 2. 本轮新增基础设施
@@ -21,10 +21,11 @@
 | 独立验证器 | [IndependentVerifierV2.py](../Research/Session20261122/Python/IndependentVerifierV2.py) | 合成树与防篡改测试；真实完整 DAG 未打通 |
 | 全量审计器 | [AuditRunner2400.py](../Research/Session20261122/Python/AuditRunner2400.py) | 覆盖 3072/3058 项；已接入两类直接整数证书快通道 |
 | 顶层直接闭合证书 | [DirectRootClosures2400.py](../Research/Session20261122/Python/DirectRootClosures2400.py) | 基础两类整数叶 1,396 项；另有两类新规则；见 [数学证明与实验](../Research/Session20261122/Reports/DirectRootClosure2400.md) |
+| 禁用根指数 DP 整数证书 | [CyclotomicExponentDPClosure2400.py](../Research/Session20261122/Python/CyclotomicExponentDPClosure2400.py) | 13 个新增整数叶；独立验证器已接入，待新完整 CI 审计 |
 | 分圆–Euler 素数乘积证书 | [CyclotomicPrimorialClosure2400.py](../Research/Session20261122/Python/CyclotomicPrimorialClosure2400.py) | 33 个新增非重叠整数叶；独立验证器已接入，待新完整 CI 审计 |
 | 分圆有限乘子证明 | [FiniteQuotientClosure2400.py](../Research/Session20261122/Python/FiniteQuotientClosure2400.py) | 3 项完整整数穷举，独立验证器已接入；最新 CI 待执行 |
 | 精确根顺序优化 | [RootOrderDirectClosureDP.py](../Research/Session20261122/Python/RootOrderDirectClosureDP.py) | 精确 DP + 40,320 个根排列交叉检查；正式根顺序保持不变 |
-| 全量直接证书审计 | [AuditDirectRoot2400.py](../Research/Session20261122/Python/AuditDirectRoot2400.py) | 以缺失账本为输入检查 1,432 项；新增回归尚待运行 |
+| 全量直接证书审计 | [AuditDirectRoot2400.py](../Research/Session20261122/Python/AuditDirectRoot2400.py) | 以缺失账本为输入检查 1,445 项；新增回归尚待运行 |
 | 原子前沿账本 | [FrontierLedgerV2.py](../Research/Session20261122/Python/FrontierLedgerV2.py) | 故障恢复/分裂存储测试 |
 | C++ 前沿编解码 | [V21FrontierCodec.hpp](../Sources/Cpp/V21FrontierCodec.hpp) | V2 状态协议、旧掩码坐标、残余保序 |
 | 实验性搜索器 | [ProofTreeV21Frontier.cpp](../Sources/Cpp/ProofTreeV21Frontier.cpp) | G1 初筛复用；未移植全部 V21 路障/LP |
@@ -35,7 +36,7 @@
 
 ## 3. 未完成任务（按依赖次序）
 
-1. **P0 — 生成真正的独立证明 DAG。** 已接入四类顶层整数证明叶（候选合计 1,432 项，待新完整审计）。下一步 C++ 为其余 1,640 项中的直接闭合、普通分裂、封闭叶、循环分裂导出全部父边证据；账本存储与 Python 验证器逐状态一致，并对篡改、重放、中断拒绝错误闭合。
+1. **P0 — 生成真正的独立证明 DAG。** 已接入五类顶层整数证明叶（候选合计 1,445 项，待新完整审计）。下一步 C++ 为其余 1,627 项中的直接闭合、普通分裂、封闭叶、循环分裂导出全部父边证据；账本存储与 Python 验证器逐状态一致，并对篡改、重放、中断拒绝错误闭合。
 2. **P0 — 补齐冻结 V21 的搜索规则。** 将路障、循环新素数枚举、延迟残余强化与全部 256 前缀/状态 LP 的数学语义转移到新搜索器，并独立证明每类剪枝可靠。先比较根 19 的分片 130、35，再比较 66、132、138、149，最后测困难 0、100。
 3. **P0 — 大素数的确定性素性证书与精确算术。** GMP probable-prime 仅用于探索，必须输出可独立检查的素性见证；校验来源分离赋值、Euler 指数、残余最小素因子下界和区间取整方向。
 4. **P1 — 提高困难分片吞吐。** 把单飞缓存接入 `get_sigma_fact`，固定键 `(p,d+1)` 与线程读写生命期；测算完整分片耗时、任务切分代价及关键路径。
