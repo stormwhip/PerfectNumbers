@@ -98,7 +98,7 @@ def direct_root_bundle(pin: RootTaskPin) -> Optional[dict]:
     elif (pin.root_order == DEFAULT_CIRC_ORDER and not pin.root_exact
           and (pin.root_prime, pin.root_exp) in (
               (5, 1626), (5, 1636),
-              (17, 726), (17, 732), (17, 738), (17, 742), (17, 750),
+              (17, 708), (17, 718), (17, 726), (17, 732), (17, 738), (17, 742), (17, 750),
               (17, 756), (17, 760), (17, 768), (17, 772), (17, 786),
               (17, 796),
           ) and weighted_cyclotomic_certificate(
@@ -228,10 +228,10 @@ def main() -> None:
     result = independently_check_direct_roots(order, args.emit_dir)
     if args.root_set == "original":
         if (result["verified_direct_closures"], result["by_reason"]) != (
-            1445, {"FORBIDDEN_FACTOR": 14, "SIGMA_DIVISOR_SIZE": 1382,
+            1447, {"FORBIDDEN_FACTOR": 14, "SIGMA_DIVISOR_SIZE": 1382,
                    "FINITE_QUOTIENT_CYCLOTOMIC": 3,
                    "CYCLOTOMIC_EULER_PRIMORIAL": 33,
-                   "CYCLOTOMIC_FORBIDDEN_EXPONENT_DP": 13}
+                   "CYCLOTOMIC_FORBIDDEN_EXPONENT_DP": 15}
         ):
             raise VerificationError("original-root certificate census changed unexpectedly")
     print(json.dumps(
