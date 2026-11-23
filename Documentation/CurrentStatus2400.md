@@ -1,91 +1,31 @@
-# PerfectNumbers — 当前证明状态与接下来的工作
+# PerfectNumbers 当前证明状态
 
-**更新日期：2026-11-23**。版本参考：`7d7c1c6`（目录重构前）；正式搜索基线 **V21**。研究目标：构造可独立复核的计算证明，排除全部奇完全数 `N <= 10^2400`；并在固定硬件上测量是否能在 **72 小时**内完成。
+**更新日期 2026-11-23。** 研究目标为独立复核全部 \(N\le10^{2400}\) 的奇完全数排除证据。全局状态为 `INCOMPLETE_FRONTIER`。
 
-## 1. 已有可复核结果与当前结论
+精确复验新增排除 **74 个实际指数**，关闭 **18 个顶层分片**。根 3 排除 29 个实际指数、关闭 9 个分片，根 5 排除 45 个实际指数、关闭 9 个分片。累计闭合 **1,869 / 3,072**，剩余 **1,203**。
 
-原根顺序 `19, 7, 11, 31, 13, 3, 5, 17` 的 **3,072 个顶层分片已闭合 1,851 个，剩余 1,221 个**。上轮合并审计闭合 1,805 个，本轮新增 46 个。全局状态为 `INCOMPLETE_FRONTIER`。
-
-| 根 | 总数 | 闭合 | 开放 | 本轮新增 |
+| 根 | 总数 | 已闭合 | 开放 | 本轮新增闭合 |
 | ---: | ---: | ---: | ---: | ---: |
-| 19 | 287 | 131 | 156 | 1 |
-| 7 | 412 | 193 | 219 | 1 |
-| 11 | 341 | 155 | 186 | 1 |
+| 19 | 287 | 131 | 156 | 0 |
+| 7 | 412 | 193 | 219 | 0 |
+| 11 | 341 | 155 | 186 | 0 |
 | 31 | 253 | 117 | 136 | 0 |
-| 13 | 325 | 149 | 176 | 3 |
-| 3 | 676 | 457 | 219 | 11 |
-| 5 | 481 | 352 | 129 | 29 |
+| 13 | 325 | 149 | 176 | 0 |
+| 3 | 676 | 466 | 210 | 9 |
+| 5 | 481 | 361 | 120 | 9 |
 | 17 | 297 | 297 | 0 | 0 |
-| **总计** | **3,072** | **1,851** | **1,221** | **46** |
+| **合计** | **3,072** | **1,869** | **1,203** | **18** |
 
-[批量来源判据](../Research/SupplierBatch/PerfectNumbers2400BatchReport.md)覆盖 40 个新增分片，扩大后的因子链覆盖另外 6 个。[合并复验](../Research/SupplierBatch/VerifyBatch2400.py)重放旧证书与新增证书，输出含 `open_manifest` 的[审计清单](../Research/SupplierBatch/BatchAudit2400.json)。
+## 本轮证据
 
-- 原根集 `S={3,5,7,11,13,17,19,31}` 的互素类，独立整数验证记录给出 `log10 N >= 4183.209493`。替换根集 `S'=(S-{19})+{23}` 对应 `log10 N >= 3954.197016`；两根集的八个含根类不得交叉拼接。
-- 原根集共有 **3,072 个顶层指数任务**，根 3、5、7、11、13、17、19、31 分别为 676、481、412、341、325、297、287、253 项；替换集为 3,058 项。这些是指数**覆盖任务数**，不是完成证明数。
-- V21 根 19 的 287 项历史 1 秒检查结果：164 项输出程序 `PROVEN`、123 项超时。二者都不代表已获独立证书；本页首段列出本轮原根集全清单复验结果。
-- 已集成独立根固定证明核验器、可恢复 SQLite 前沿账本、C++ 状态编解码、实验性 G1 复用搜索器和只读全量审计运行器。**当前全局状态：`INCOMPLETE_FRONTIER`**。现有实验性求解器 `PROVEN_UNAUDITED` 不能计入定理证明。
-- 新增**两类纯整数顶层直接证明叶**：先前排除的根素数整除 `σ(p^d)` 产生 14 个 `FORBIDDEN_FACTOR` 证书；由 `p^d·odd(σ(p^d)) | N` 及尺寸超界产生 1,382 个 `SIGMA_DIVISOR_SIZE` 证书，互不重叠。独立整数枚举覆盖 **1,396 / 3,072（45.44%）** 个顶层分片；其余 **1,676 个**仍需证明树及证书。代码已接入独立验证器与全量审计器，新增仓库测试尚待 CI 运行。见 [证明与实验](../Research/Session20261122/Reports/DirectRootClosure2400.md)。
-- 新增**分圆多项式素因子 + 有限乘子证书**：根 `19,d=936`、根 `11,d=1150`、根 `11,d=1152` 的剩余乘子范围分别为 `1,411,815`、`56,941`、`3`。精确整数枚举对 `705,908`、`28,471`、`2` 个奇数剩余乘子均给出矛盾。代码已接入 V2 独立证明叶验收，新增 `FINITE_QUOTIENT_CYCLOTOMIC`。**该阶段累计 1,399/3,072（45.54%），当时剩余 1,673 项**；后续分圆–Euler 乘积界见下条。参见 [理论与复现实验](../Research/Session20261122/Reports/FiniteQuotientCyclotomic2400.md)。
-- 新增 **分圆–Euler 素数乘积丰度界**：无需分解 `Phi_m(p)`，利用其素因子模类、Euler 指数条件、禁用根与剩余乘子共享尺寸预算，排除 34 个顶层分片，其中 `(11,1152)` 与有限乘子证书重叠。净增加 **33 个**独立验证器可重算的整数证明叶。**该阶段候选累计 1,432/3,072（46.61%），当时剩余 1,640 项**；[严格数学证明与清单](../Research/Session20261122/Reports/CyclotomicEulerPrimorial2400.md)。已提交代码及单元测试，最新全量审计仍待执行。
-- 合并审计已核验全部 3,072 个规范分片。全量搜索的 72 小时目标仍待实测。
+- 原根顺序为 `19, 7, 11, 31, 13, 3, 5, 17`。合并审计重放上一批的 1,851 个已闭合分片，再检查根 3、5 的实际指数。逐项证据与开放分片见 [合并审计清单](../Research/IndicatorCapacity/Audit2400.json)。
+- Gemini 报告中的 96 个指数、29 个分片经原程序可复现。新验证器对 \(A=\sigma(p^e)\) 内部素数的赋值单独计价，并补足 Euler 素数和来源素数的对偶扣款。数学推导、适用条件与复验命令见 [本轮核验报告](../Research/IndicatorCapacity/Readme.md)。
+- 原根集互素类已独立验证 \(\log_{10}N\ge4183.209493\)。替换 19 为 23 的互素类独立下界为 3954.197016，两个根集各有独立的分片清单。
 
-## 2. 本轮新增基础设施
+## 剩余工作
 
-| 模块 | 文件入口 | 状态 |
-| --- | --- | --- |
-| 正式搜索基线 | [ProofTreeV21.cpp](../Sources/Cpp/ProofTreeV21.cpp) | 保留作对照，八根未全闭合 |
-| 独立验证器 | [IndependentVerifierV2.py](../Research/Session20261122/Python/IndependentVerifierV2.py) | 合成树与防篡改测试；真实完整 DAG 未打通 |
-| 根 3、5 分片证书 | [Verify.py](../Research/FermatRootValuation/Verify.py) 与 [IndependentCheck.py](../Research/FermatRootValuation/IndependentCheck.py) | 双重重放 241 项，合并后净增 176 项 |
-| 全量审计器 | [AuditRunner2400.py](../Research/Session20261122/Python/AuditRunner2400.py) | 覆盖 3072/3058 项；已接入两类直接整数证书快通道 |
-| 顶层直接闭合证书 | [DirectRootClosures2400.py](../Research/Session20261122/Python/DirectRootClosures2400.py) | 基础两类整数叶 1,396 项；另有两类新规则；见 [数学证明与实验](../Research/Session20261122/Reports/DirectRootClosure2400.md) |
-| 单素数指数整数穷举 | [ForcedPrimeExponentClosure2400.py](../Research/Session20261122/Python/ForcedPrimeExponentClosure2400.py) | 新增根 3 一项直接证书；断点长时扫描，已本地逐指数复算 |\n| 禁用根指数 DP 整数证书 | [CyclotomicExponentDPClosure2400.py](../Research/Session20261122/Python/CyclotomicExponentDPClosure2400.py) | 15 个新增整数叶；独立验证器已接入，待新完整 CI 审计 |
-| 分圆–Euler 素数乘积证书 | [CyclotomicPrimorialClosure2400.py](../Research/Session20261122/Python/CyclotomicPrimorialClosure2400.py) | 33 个新增非重叠整数叶；独立验证器已接入，待新完整 CI 审计 |
-| 分圆有限乘子证明 | [FiniteQuotientClosure2400.py](../Research/Session20261122/Python/FiniteQuotientClosure2400.py) | 3 项完整整数穷举，独立验证器已接入；最新 CI 待执行 |
-| 精确根顺序优化 | [RootOrderDirectClosureDP.py](../Research/Session20261122/Python/RootOrderDirectClosureDP.py) | 精确 DP + 40,320 个根排列交叉检查；正式根顺序保持不变 |
-| 全量直接证书审计 | [AuditDirectRoot2400.py](../Research/Session20261122/Python/AuditDirectRoot2400.py) | 当前应检查 1,448 项；新证书的完整 CI 回归尚待运行 |
-| 原子前沿账本 | [FrontierLedgerV2.py](../Research/Session20261122/Python/FrontierLedgerV2.py) | 故障恢复/分裂存储测试 |
-| C++ 前沿编解码 | [V21FrontierCodec.hpp](../Sources/Cpp/V21FrontierCodec.hpp) | V2 状态协议、旧掩码坐标、残余保序 |
-| 实验性搜索器 | [ProofTreeV21Frontier.cpp](../Sources/Cpp/ProofTreeV21Frontier.cpp) | G1 初筛复用；未移植全部 V21 路障/LP |
-| 并发单飞缓存 | [SingleFlightFactCache.hpp](../Sources/Cpp/SingleFlightFactCache.hpp) | 独立组件，尚未接入实际因子缓存 |
-| Worker 桥接 | [FrontierWorkerDriver.py](../Research/Session20261122/Python/FrontierWorkerDriver.py) | 部分串联；未导出可接受的完整证明 DAG |
+1. 根 3、5 当前最大的开放分片代表指数分别为 1302、676，剩余分片数分别为 210、120。完整覆盖要求核验每个分片的所有剩余实际指数。
+2. 根 19、7、11、31、13 共有 873 个开放分片。用于根 3、5 的赋值公式依赖 \(p-1\) 为 2 的幂，这五类需要另外的赋值判据或独立证明树。
+3. 原根集全部 3,072 项与互素类均通过独立复验后，才能验收全局定理。固定硬件上的 72 小时全量运行仍待实测。
 
-先前上传材料报告 Python 合成/故障注入和 C++ 小型测试成功；目录重构后的 CI 要重新运行这些测试。旧性能数据详见 [实验记录](../Records/ExperimentLog.md) 与 [集成报告](../Research/Session20261122/Reports/IndependentProofIntegration2400.md)。
-
-## 3. 未完成任务（按依赖次序）
-
-1. **P0 — 生成真正的独立证明 DAG。** 全清单审计接受了 1,851 项。下一步 C++ 为其余 1,221 项中的直接闭合、普通分裂、封闭叶、循环分裂导出全部父边证据；账本存储与 Python 验证器逐状态一致，并对篡改、重放、中断拒绝错误闭合。
-2. **P0 — 补齐冻结 V21 的搜索规则。** 将路障、循环新素数枚举、延迟残余强化与全部 256 前缀/状态 LP 的数学语义转移到新搜索器，并独立证明每类剪枝可靠。先比较根 19 的分片 130、35，再比较 66、132、138、149，最后测困难 0、100。
-3. **P0 — 大素数的确定性素性证书与精确算术。** GMP probable-prime 仅用于探索，必须输出可独立检查的素性见证；校验来源分离赋值、Euler 指数、残余最小素因子下界和区间取整方向。
-4. **P1 — 提高困难分片吞吐。** 把单飞缓存接入 `get_sigma_fact`，固定键 `(p,d+1)` 与线程读写生命期；测算完整分片耗时、任务切分代价及关键路径。
-5. **P1 — 全量 3,072 项独立验收。** 统一根集、清单和哈希，输出 `VERIFIED_CLOSED` 全量统计；未核验的 `PROVEN`、超时、开放前沿、证书缺项一律视为未完成。
-6. **P2 — 72 小时实机验收。** 固定机器、GMP/编译器版本、数据库指纹、证书规则，实测 `T_prep+T_search+T_verify`；报告每项任务、最长链与调度开销。
-
-### 定理验收标准
-
-固定 `B=10^2400`，先独立核验原根集的互素终结证书，再对 3,072 项逐根回放证明 DAG。所有叶与分裂均由确定性数学规则验证、所有真实强制素数均有确定性证书，且总开放前沿、失败证书、未覆盖分支均为零，才可输出 `UNCONDITIONALLY_VERIFIED`。
-
-## 4. 文档职责与迁移说明
-
-- 本文为唯一**当前状态入口**；[ProgressReport2400.md](ProgressReport2400.md) 保留完整阶段细节；[RepositoryMap.md](RepositoryMap.md) 列出最新代码与文件夹。
-- [ResearchProblems2400.md](ResearchProblems2400.md) 是形式化数学难题，部分旧数值实验属于历史阶段。
-- [Milestones.md](../Records/Milestones.md) 为阶段任务表；[ValidationChecklist.md](../Records/ValidationChecklist.md) 是发布门槛；[ExperimentLog.md](../Records/ExperimentLog.md) 是历史运行记录。
-- 旧研究目录 `Research/2026-11-22/` 在本次整理中统一为 `Research/Session20261122/`；原 `README.md` 统一为 `Readme.md`。GitHub 必需的 `.github/workflows/`、`.gitignore` 采用平台固定命名。
-- 目录整理仅改变路径与文档链接；没有执行新一轮 72 小时大规模实验，没有新增完全证明。
-
-## 5. 仓库维护与质量回归
-
-整理后代码仍使用原 V21 正式生产入口。实验性 V21 Frontier 已修复旧路径引用的缺失 `SigmaPrecheck.hpp`，并增加精确 GMP 差分回归；本地同等实现通过 36,100 组对照，GitHub 最新 CI 尚待执行。目录一致性可通过 [RepositoryStructureChecks.py](../Sources/Python/RepositoryStructureChecks.py) 检查；[手工 CI 工作流](../.github/workflows/RepositoryIntegrity.yml) 可以重新跑 Python 证明/账本的合成回归、C++ 编解码和缓存测试。该 CI 只验证实现一致性，不将任何程序标签自动升级为数学证明。
-
-### 目录整理核验（2026-11-22）
-
-- GitHub 文件树复核：97 个已追踪文件，20 份 Markdown 文档；所有实际路径均符合 PascalCase 约定，平台保留名称 `.github/workflows` 与 `.gitignore` 不变。
-- 原 `Research/2026-11-22/` 下 41 个文件已完整迁移至 `Research/Session20261122/`；31 个文件 SHA-1 未变，其余 10 个为更新 README 与历史报告状态/路径的文档。两份 `Terminal*.json.gz` 证书 blob 保持完全一致。
-- 已直接读取并扫描全部 20 份当前 Markdown 的本地相对链接：**0 条失效链接**；历史已移除工作流的链接已改指历史 Git 快照。
-- 加入 [RepositoryStructureChecks.py](../Sources/Python/RepositoryStructureChecks.py) 和可手工运行的 [RepositoryIntegrity.yml](../.github/workflows/RepositoryIntegrity.yml)，用于今后重复验证。工作流尚未手动触发，本记录不宣称最新代码回归已在 CI 中运行。
-- 上述目录整理数字为历史快照。其后新增了直接整数证明叶、独立审计入口和 C++ 回归；当前总文件数与 Markdown 数已改变。本轮没有运行八根完整证明树，也没有建立新的无条件奇完全数下界。
-
-## 历史外部报告
-
-> **2026-11-23 Gemini v5 最新研究记录：** 新报告称 3,072 个顶层任务中 **1,679 项 REPRODUCED_VERIFIED**、**1,393 项 OPEN**（较上一份 Gemini 报告净关闭 30 项）；终局互素类与根 17 整类仍报告闭合；根 5 已报告 301/481 项闭合。规则 VII 旧整除断言已被反例推翻，改为仅可用于数值尺寸下界；`P13_I00165` 尚未复现。**上传仅有研究报告和一个 C++ 因子发现工具源码，未提供所述 JSON 证书、完整 31 份 DAG 和独立验证器供本仓库复现。** 请区分 Gemini 报告中的 `REPRODUCED_VERIFIED` 与本仓库的 `EXTERNAL_REPORTED_PENDING_REPLAY`。报告归档见 [ResearchResultV5](../Research/Session20261123/Reports/ResearchResultV5.md)，逐根状态与下一步见 [GeminiProgressReviewV5](../Records/ExternalReviews/GeminiProgressReviewV5.md)。**全局定理：`INCOMPLETE_FRONTIER`；72 小时全量运行：未完成。**
-
-> **2026-11-23 Gemini 外部报告更新：** Gemini 提交了一份新进展报告，宣称原根集的顶层任务已有 **1,649 / 3,072** 闭合、剩余 **1,423**，并称终局互素类及根 17 整类已通过证书验证。该次上传包含报告及旧交接文件，**未附新 JSON 证书、19 份 DAG、完整验证器和新开放清单**。本仓库仅记录外部报告，新增数字统一标为 `EXTERNAL_REPORTED_PENDING_REPLAY`；原文较早的 1,447 项基线与历史进展保留，详见 [Gemini 新进展与验证待办](../Records/ExternalReviews/GeminiProgressReview20261123.md)。**全局状态仍为 `INCOMPLETE_FRONTIER`。**
+[阶段进度](ProgressReport2400.md) · [目录和复验入口](RepositoryMap.md) · [形式化研究问题](ResearchProblems2400.md)

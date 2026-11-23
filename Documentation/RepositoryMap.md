@@ -4,7 +4,8 @@
 
 ## 合并证明与文档归档
 
-- [SupplierBatch](../Research/SupplierBatch/PerfectNumbers2400BatchReport.md)集中存放本轮验证器、证明程序、证书、审计清单和扫描工具。
+- [IndicatorCapacity](../Research/IndicatorCapacity/Readme.md) 保存指标容量对偶证书、候选生成器、独立复验与最新的合并审计清单。
+- [SupplierBatch](../Research/SupplierBatch/PerfectNumbers2400BatchReport.md)集中存放上一批验证器、证明程序、证书、审计清单和扫描工具。
 - [旧外部结果评审](../Records/ExternalReviews/GeminiProgressReviewV5.md)归档于 `Records/ExternalReviews/`。
 
 ## 目录结构
@@ -16,7 +17,11 @@ PerfectNumbers/
 ├── Records/                            # 里程碑、历史实验、验收清单
 ├── References/                         # 原始论文及参考资料
 ├── Research/
-│   ├── Session20261123/             # 新一轮独立分片研究及实测报告\n│   └── Session20261122/
+│   ├── FermatRootValuation/             # 根 3、5 基础证书与核验器
+│   ├── IndicatorCapacity/              # 最新合并证书、审计与开放清单
+│   ├── SupplierBatch/                  # 上一批来源判据证书与基线
+│   ├── Session20261123/                 # 独立分片研究及实测报告
+│   └── Session20261122/
 │       ├── Certificates/               # 原根与替换根互素类证书（不可改变字节）
 │       ├── Cpp/                        # V21 profile 和 V22–V24 历史原型
 │       ├── Python/                     # 独立验证器、账本、审计器与测试
@@ -44,7 +49,9 @@ PerfectNumbers/
 | [ExperimentLog.md](../Records/ExperimentLog.md) | 不可篡改的历史实验记录 |
 | [独立验证集成报告](../Research/Session20261122/Reports/IndependentProofIntegration2400.md) | V2 工程规格、复现命令、缺口 |
 
-新增研究报告：[ForcedPrimeExponentPilot2400.md](../Research/Session20261123/Reports/ForcedPrimeExponentPilot2400.md) 记录分圆同余候选筛选、整数引理、实测以及用户设备长时续跑入口。\n\n## 正式与实验程序
+新增研究报告：[ForcedPrimeExponentPilot2400.md](../Research/Session20261123/Reports/ForcedPrimeExponentPilot2400.md) 记录分圆同余候选筛选、整数引理、实测以及用户设备长时续跑入口。
+
+## 正式与实验程序
 
 | 文件 | 用途 | 当前地位 |
 | --- | --- | --- |
@@ -56,7 +63,8 @@ PerfectNumbers/
 | [V21FrontierCodec.hpp](../Sources/Cpp/V21FrontierCodec.hpp) | 可恢复的状态编解码 V2 | 实验性 |
 | [SingleFlightFactCache.hpp](../Sources/Cpp/SingleFlightFactCache.hpp) | 同键单飞共享缓存 | 独立测试，未接入搜索 |
 | [IndependentVerifierV2.py](../Research/Session20261122/Python/IndependentVerifierV2.py) | 固定根独立证书检查 | 合成/篡改测试、未验完全部根 |
-| [DirectRootClosures2400.py](../Research/Session20261122/Python/DirectRootClosures2400.py) | 一节点整数矛盾证书生成器 | 新增强制素数穷举后共 1,448 项候选独立叶 |\n| [ForcedPrimeExponentClosure2400.py](../Research/Session20261122/Python/ForcedPrimeExponentClosure2400.py) | 同余类单素数扫描 + 逐指数确切整数验证 + 断点恢复 | P3_I00368 新证书；本地验证与搜索已完成 |
+| [DirectRootClosures2400.py](../Research/Session20261122/Python/DirectRootClosures2400.py) | 一节点整数矛盾证书生成器 | 新增强制素数穷举后共 1,448 项候选独立叶 |
+| [ForcedPrimeExponentClosure2400.py](../Research/Session20261122/Python/ForcedPrimeExponentClosure2400.py) | 同余类单素数扫描 + 逐指数确切整数验证 + 断点恢复 | P3_I00368 新证书；本地验证与搜索已完成 |
 | [AuditDirectRoot2400.py](../Research/Session20261122/Python/AuditDirectRoot2400.py) | 3,072 项全量清单的直接证书独立审计 | 当前预期接受 1,448，剩余 1,624；完整 CI 尚待运行 |
 | [RootOrderDirectClosureDP.py](../Research/Session20261122/Python/RootOrderDirectClosureDP.py) | 256 状态 DP 与 40,320 次排列对照 | 原根集最优 1,397 项直接闭合 |
 | [SigmaPrecheck.hpp](../Sources/Cpp/SigmaPrecheck.hpp) | 精确 64 位模因子和预筛（G2） | 恢复丢失头文件；本地 GMP 36,100 组对照 |
@@ -93,4 +101,3 @@ python3 Sources/Python/RepositoryStructureChecks.py
 2. 成功编译、搜索器输出 `PROVEN`、独立验证器返回 `TREE_ACCEPTED` 和最终 `UNCONDITIONALLY_VERIFIED` 必须分开记录。
 3. 历史报告保留当时数据和结论，上方统一增加当前状态入口。
 4. 没有显式许可不运行付费 API 或启动长时间付费云资源。
-│   ├── FermatRootValuation/           # 根 3、5 证明、两套核验器和逐项证书

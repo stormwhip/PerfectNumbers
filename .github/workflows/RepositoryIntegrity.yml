@@ -11,6 +11,7 @@ on:
       - 'Research/Session20261122/Certificates/**'
       - 'Research/Session20261122/Python/**'
       - 'Research/SupplierBatch/**'
+      - 'Research/IndicatorCapacity/**'
       - 'Sources/Python/RepositoryStructureChecks.py'
       - '.github/workflows/RepositoryIntegrity.yml'
 
@@ -40,8 +41,9 @@ jobs:
         run: |
           python3 Research/FermatRootValuation/IndependentCheck.py
           mkdir -p Build
-          python3 Research/SupplierBatch/VerifyBatch2400.py --output Build/AuditSummary2400.json
-          cmp Research/SupplierBatch/BatchAudit2400.json Build/AuditSummary2400.json
+          python3 Research/IndicatorCapacity/IndicatorCapacityTests.py
+          python3 Research/IndicatorCapacity/AuditIndicatorCapacity2400.py --output Build/AuditSummary2400.json
+          cmp Research/IndicatorCapacity/Audit2400.json Build/AuditSummary2400.json
       - name: Upload the exact audit and remaining shard manifest
         uses: actions/upload-artifact@v4
         with:
