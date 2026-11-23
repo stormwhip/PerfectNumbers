@@ -21,7 +21,7 @@ jobs:
       - name: Run independent Python verifier and ledger regressions
         run: |
           set -e
-          for name in VerifierV2Tests VerifierV2AuditTests FrontierV2FaultTests AuditRunnerTests AuditRunnerAuditTests FrontierV2MixedEdgeTests PrimeCutoffGCDTests DirectRootClosuresTests FiniteQuotientClosureTests CyclotomicPrimorialClosureTests RootOrderDirectClosureDP; do
+          for name in VerifierV2Tests VerifierV2AuditTests FrontierV2FaultTests AuditRunnerTests AuditRunnerAuditTests FrontierV2MixedEdgeTests PrimeCutoffGCDTests DirectRootClosuresTests FiniteQuotientClosureTests CyclotomicPrimorialClosureTests CyclotomicExponentDPClosureTests RootOrderDirectClosureDP; do
             python3 -S -O "Research/Session20261122/Python/${name}.py"
           done
       - name: Build C++ codec and single-flight regressions
