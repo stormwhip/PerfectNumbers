@@ -1,9 +1,11 @@
 # PerfectNumbers 当前里程碑
 
-**状态快照：2026-11-23（46 个新增分片已复验）**。目标与当前完整状态见 [CurrentStatus2400.md](../Documentation/CurrentStatus2400.md)。全局状态仍为 `INCOMPLETE_FRONTIER`。
+**状态快照 2026-11-24。** 当前证明状态见 [CurrentStatus2400.md](../Documentation/CurrentStatus2400.md)。全局状态为 `INCOMPLETE_FRONTIER`。
 
 | 里程碑 | 当前状态 | 直接证据 | 下一项验收 |
 | --- | --- | --- | --- |
+| Teichmüller 提升赋值判据 | 新增 146 项，累计闭合 2,015，开放 1,057 | [合并清单](../Research/TeichmullerValuation/Audit2400.json) | 继续证明开放分片 |
+| 指标容量对偶 | 新增 18 项，累计闭合 1,869，开放 1,203 | [基线审计](../Research/IndicatorCapacity/Audit2400.json) | 已纳入最新合并审计 |
 | 批量来源判据与扩大因子链 | 新增 46 项，累计闭合 1,851，开放 1,221 | [合并清单](../Research/SupplierBatch/BatchAudit2400.json) | 继续证明开放分片 |
 | 根 3、5 的赋值和特殊素数来源证明 | 独立核验 241 项，与历史审计去重后净增 176 项。合计 1,805 项闭合，1,267 项开放 | [数学证明与核验](../Research/FermatRootValuation/FermatRootValuationReport.md) | 按合并审计清单继续求证 |
 | 前人 \(10^{1500}\) 下界 | 已发表的参考结果 | [Ochem–Rao 2012](../References/OchemRao2012.pdf) | 用作独立回归比较 |

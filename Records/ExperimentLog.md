@@ -349,3 +349,11 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Parent audit: `26cb81d5c95a6d6505b54b3ef78fd52edf920f9d`. Replay with `python3 Research/SupplierBatch/VerifyBatch2400.py --output Build/AuditSummary2400.json`.
 - Exact replay added 40 shards via 51 actual-exponent exclusions and six via finite factor trees. The merged audit returned 1,851 closed, 1,221 open, and `INCOMPLETE_FRONTIER`.
 - [Proof notes](../Research/SupplierBatch/PerfectNumbers2400BatchReport.md) · [machine-readable audit](../Research/SupplierBatch/BatchAudit2400.json).
+
+## 2026-11-24 — Teichmüller valuation pricing for roots 19, 7, 11, 31, 13
+
+- Parent audit: `Research/IndicatorCapacity/Audit2400.json` (1,869 closed, 1,203 open), replayed in full before the new rule is applied.
+- New rule: `v_p(sigma(r^f)) = lambda(r) + v_p((f+1)/o)` with `o = ord_p(r)`. A prime of p-adic level `t` is either `> p^t` or equals the Teichmüller lift `a^(p^(t-1)) mod p^t`. The finitely many lifts that are cheap form a constant deficit `U`, so the non-Euler part of `N` is at least `p^(kappa*K)/U` with `kappa = 2,2,4,2,2`. The Euler branches give `N >= p^(3e)/U` (exponent >= 5) or `(2p^s-1) p^e max(A, p^(kappa(e-s))/U)` (exponent 1).
+- Result: 146 new shard closures (19:24, 7:32, 11:42, 31:21, 13:27). The merged audit reproduced 2,015 closed and 1,057 open, with status `INCOMPLETE_FRONTIER`. All six regression groups passed.
+- Independent check: a separate computation used digit-by-digit Hensel lifting, SymPy primality testing and exact fractions. It reproduced every new shard ID, its full list of actual exponents and rules, and the remaining manifest. Of the 173 distinct root/exponent pairs covered by the additions, 146 use the new rule and 27 use the prior size inequality.
+- Replay: `python3 Research/TeichmullerValuation/AuditTeichmullerValuation2400.py --output Build/AuditTeichmuller2400.json`. Proof: [Readme](../Research/TeichmullerValuation/Readme.md).
