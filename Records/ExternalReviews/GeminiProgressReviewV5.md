@@ -2,7 +2,7 @@
 
 ## Provenance and acceptance
 
-Source: [full user-supplied Gemini report](../Research/Session20261123/Reports/ResearchResultV5.md) (archive path relative to this document: `../Research/Session20261123/Reports/ResearchResultV5.md`). The report describes experiments carried out by Gemini on Apple A18 Pro, Python 3.14.7 and C++17, including its claimed independent checker and adversarial tests.
+Source: [full user-supplied Gemini report](../../Research/Session20261123/Reports/ResearchResultV5.md) (archive path relative to this document: `../Research/Session20261123/Reports/ResearchResultV5.md`). The report describes experiments carried out by Gemini on Apple A18 Pro, Python 3.14.7 and C++17, including its claimed independent checker and adversarial tests.
 
 **Repository verification status:** `EXTERNAL_REPORTED_PENDING_REPLAY`. The uploaded v5 report provides the full experimental `Rho128.cpp` source and textual results, but **not** the named primal/dual JSON certificates, manifests, 31 DAG JSON files, Python verifier modules, LP builder, milestone orchestrators, or all C++ executables. Consequently this commit does not elevate the report's `REPRODUCED_VERIFIED` labels to an independently reproduced repository-wide theorem. The report's 6.208 s figure is *verification of available closed tasks in Gemini's environment*, not an end-to-end 72-hour completion.
 

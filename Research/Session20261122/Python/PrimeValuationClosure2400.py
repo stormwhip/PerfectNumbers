@@ -1,7 +1,7 @@
 """Recompute exact root-shard contradictions using partial sigma valuations."""
 
 from functools import lru_cache
-from math import gcd, lcm
+from math import gcd, isqrt, lcm
 
 from RoadblockDual import odd_primes
 from TerminalCertificate import allowed, sigma
@@ -49,7 +49,7 @@ def odd_sigma(q, e):
     return s // (s & -s)
 
 
-def analyze(root, d, exact, forbidden, bound, fixed=(), steps=12):
+def analyze(root, d, exact, forbidden, bound, fixed=(), steps=12, known_primes=()):
     """Return a verified contradiction or None. Fixed branches are exact."""
     forced_sigma = {root: odd_sigma(root, d)}
     fixed = dict(fixed)
@@ -61,7 +61,7 @@ def analyze(root, d, exact, forbidden, bound, fixed=(), steps=12):
     for s in forced_sigma.values():
         divisor *= s
 
-    candidates = tuple(odd_primes(TRIAL_LIMIT))
+    candidates = (*odd_primes(TRIAL_LIMIT), *known_primes)
     choices = {}
     for _ in range(steps):
         if any(divisor % q == 0 for q in forbidden):
@@ -141,15 +141,26 @@ def analyze(root, d, exact, forbidden, bound, fixed=(), steps=12):
     return choices
 
 
-def contradicts(root, d, exact, forbidden, bound, node_budget=1, split_cap=12):
+@lru_cache(maxsize=16384)
+def valid_extra_prime(q):
+    return (type(q) is int and 2 < q <= 2_000_000_000 and q % 2 == 1
+            and all(q % r for r in odd_primes(isqrt(q))))
+
+
+def contradicts(root, d, exact, forbidden, bound, node_budget=1, split_cap=12, known_primes=()):
     """Explore complete exact-exponent splits within fixed resource limits."""
+    if known_primes:
+        initial = odd_sigma(root, d)
+        if any(not valid_extra_prime(q) or initial % q for q in known_primes):
+            raise ValueError("invalid explicit root-sigma prime")
+        known_primes = tuple(q for q in sorted(set(known_primes)) if q > TRIAL_LIMIT)
     unseen = [()]
     nodes = 0
     direct = None
     while unseen and nodes < node_budget:
         fixed = unseen.pop()
         nodes += 1
-        result = analyze(root, d, exact, forbidden, bound, fixed)
+        result = analyze(root, d, exact, forbidden, bound, fixed, known_primes=known_primes)
         if isinstance(result, str):
             if nodes == 1:
                 direct = result

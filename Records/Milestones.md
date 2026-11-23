@@ -1,9 +1,10 @@
 # PerfectNumbers 当前里程碑
 
-**状态快照：2026-11-23（根 3、5 分片合并审计完成）**。目标与当前完整状态见 [CurrentStatus2400.md](../Documentation/CurrentStatus2400.md)。全局状态仍为 `INCOMPLETE_FRONTIER`。
+**状态快照：2026-11-23（46 个新增分片已复验）**。目标与当前完整状态见 [CurrentStatus2400.md](../Documentation/CurrentStatus2400.md)。全局状态仍为 `INCOMPLETE_FRONTIER`。
 
 | 里程碑 | 当前状态 | 直接证据 | 下一项验收 |
 | --- | --- | --- | --- |
+| 批量来源判据与扩大因子链 | 新增 46 项，累计闭合 1,851，开放 1,221 | [合并清单](../Research/SupplierBatch/BatchAudit2400.json) | 继续证明开放分片 |
 | 根 3、5 的赋值和特殊素数来源证明 | 独立核验 241 项，与历史审计去重后净增 176 项。合计 1,805 项闭合，1,267 项开放 | [数学证明与核验](../Research/FermatRootValuation/FermatRootValuationReport.md) | 按合并审计清单继续求证 |
 | 前人 \(10^{1500}\) 下界 | 已发表的参考结果 | [Ochem–Rao 2012](../References/OchemRao2012.pdf) | 用作独立回归比较 |
 | \(S_8\)-互素终局 LP | 旧阶段 LP 数值输出 2400.822998；最新互素类证书见上方 | [45001172416](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416) | LP 模型涵盖性证明 + 独立导出对偶 |

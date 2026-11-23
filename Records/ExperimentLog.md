@@ -339,3 +339,9 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Rebuilt all 3,072 canonical shards and 5,090 legal exponents for roots 3 and 5. The standard-library verifier accepted both checked-in CSVs. The standalone multiplicative verifier independently replayed 135 root-3 and 106 root-5 shards.
 - Replayed the original coprime certificate and root-class audit. The historical proofs cover 1,629 shards, with 65 in common with the 241 Fermat root proofs. The merged audit added 176 closures and returned 1,805 closed, 1,267 open, and `INCOMPLETE_FRONTIER`.
 - Replay commands and proofs are in [FermatRootValuationReport.md](../Research/FermatRootValuation/FermatRootValuationReport.md).
+
+## 2026-11-23 — Supplier-product and valuation-dual batch
+
+- Parent audit: `26cb81d5c95a6d6505b54b3ef78fd52edf920f9d`. Replay with `python3 Research/SupplierBatch/VerifyBatch2400.py --output Build/AuditSummary2400.json`.
+- Exact replay added 40 shards via 51 actual-exponent exclusions and six via finite factor trees. The merged audit returned 1,851 closed, 1,221 open, and `INCOMPLETE_FRONTIER`.
+- [Proof notes](../Research/SupplierBatch/PerfectNumbers2400BatchReport.md) · [machine-readable audit](../Research/SupplierBatch/BatchAudit2400.json).

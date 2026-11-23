@@ -54,9 +54,9 @@ jobs:
         run: |
           mkdir -p Build
           g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV16.cpp -lgmpxx -lgmp -o Build/ProofTreeV16
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV16.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV16
-          ./Build/ProofCoreTestsV16
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV21.cpp -lgmpxx -lgmp -o Build/ProofTreeV21
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV21.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV21
+          ./Build/ProofCoreTestsV21
           echo "SOURCE_COMMIT=$GITHUB_SHA"
       - name: Install LP dependencies
         if: inputs.mode != 'CompileOnly'
@@ -94,14 +94,14 @@ jobs:
           echo "TARGET=2400 MODE=$MODE ROOT=$ROOT SOURCE_COMMIT=$GITHUB_SHA" | tee ProofRun.log
           rc=0
           if [[ "$MODE" == "AllRoots" ]]; then
-            ./ProofTreeV16 2400 2>&1 | tee -a ProofRun.log || rc=$?
+            ./ProofTreeV21 2400 2>&1 | tee -a ProofRun.log || rc=$?
             for p in 19 7 11 31 13 3 5 17; do
               grep -Eq "^Forbid p=$p -> PROVEN .*failed_rb=0" ProofRun.log || {
                 echo "UNRESOLVED_ROOT=$p"; rc=1;
               }
             done
           elif [[ "$MODE" == "ProbeRoot" ]]; then
-            timeout --signal=TERM --kill-after=5s 120s ./ProofTreeV16 2400 "$ROOT" 2>&1 | tee -a ProofRun.log || rc=$?
+            timeout --signal=TERM --kill-after=5s 120s ./ProofTreeV21 2400 "$ROOT" 2>&1 | tee -a ProofRun.log || rc=$?
             if [[ "$rc" == 124 ]]; then
               echo "PROBE_TIMEOUT=120s; NOT_A_PROOF" | tee -a ProofRun.log
               rc=0
@@ -109,7 +109,7 @@ jobs:
               grep -Eq "^Forbid p=$ROOT -> PROVEN .*failed_rb=0" ProofRun.log || rc=1
             fi
           else
-            ./ProofTreeV16 2400 "$ROOT" 2>&1 | tee -a ProofRun.log || rc=$?
+            ./ProofTreeV21 2400 "$ROOT" 2>&1 | tee -a ProofRun.log || rc=$?
             grep -Eq "^Forbid p=$ROOT -> PROVEN .*failed_rb=0" ProofRun.log || rc=1
           fi
           if (( rc != 0 )); then echo "::error::Proof unresolved or engine error"; exit 1; fi

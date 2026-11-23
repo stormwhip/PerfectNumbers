@@ -18,32 +18,13 @@ jobs:
           persist-credentials: false
       - name: Install native dependencies
         run: sudo apt-get update && sudo apt-get install -y libgmp-dev zlib1g-dev
-      - name: Build current C++ indexer and proof tree
+      - name: Build and test the current C++ proof tree
         run: |
           mkdir -p Build
           g++ -std=c++17 -O2 Sources/Cpp/BuildIndex.cpp -lz -o Build/BuildIndex
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV16.cpp -lgmpxx -lgmp -o Build/ProofTreeV16
-      - name: Run C++ interval LP regression tests
-        run: |
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV16.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV16
-          ./Build/ProofCoreTestsV16
-      - name: Verify V18 safe residual counts
-        run: |
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV18.cpp -lgmpxx -lgmp -o Build/ProofTreeV18
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV18.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV18
-          ./Build/ProofCoreTestsV18
-      - name: Verify V19 exact prime-cutoff classification on a synthetic case
-        run: |
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV19.cpp -lgmpxx -lgmp -o Build/ProofTreeV19
-          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV19.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV19
-          ./Build/ProofCoreTestsV19
-      - name: Verify V20 shard manifest and V21 lazy residual core logic
-        run: |
-          for version in 20 21; do
-            g++ -std=c++17 -O2 -fopenmp "Sources/Cpp/ProofTreeV${version}.cpp" -lgmpxx -lgmp -o "Build/ProofTreeV${version}"
-            g++ -std=c++17 -O2 -fopenmp "Sources/Cpp/ProofCoreTestsV${version}.cpp" -lgmpxx -lgmp -o "Build/ProofCoreTestsV${version}"
-            "./Build/ProofCoreTestsV${version}"
-          done
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofTreeV21.cpp -lgmpxx -lgmp -o Build/ProofTreeV21
+          g++ -std=c++17 -O2 -fopenmp Sources/Cpp/ProofCoreTestsV21.cpp -lgmpxx -lgmp -o Build/ProofCoreTestsV21
+          ./Build/ProofCoreTestsV21
       - name: Check restartable 72-hour scheduler on synthetic root partitions
         run: python3 Sources/Python/Run2400SchedulerTests.py
       - name: Validate WSL reproducibility wrapper syntax

@@ -2,6 +2,17 @@ name: Repository integrity and independent proof smoke checks
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'Documentation/**'
+      - 'Records/**'
+      - 'Readme.md'
+      - 'Research/FermatRootValuation/**'
+      - 'Research/Session20261122/Certificates/**'
+      - 'Research/Session20261122/Python/**'
+      - 'Research/SupplierBatch/**'
+      - 'Sources/Python/RepositoryStructureChecks.py'
+      - '.github/workflows/RepositoryIntegrity.yml'
 
 permissions:
   contents: read
@@ -25,15 +36,17 @@ jobs:
             python3 -S -O "Research/Session20261122/Python/${name}.py"
           done
           python3 Research/Session20261122/Python/ForcedPrimeExponentClosure2400.py --verify --root 3 --exponent 2476 --forced-prime 980893
-      - name: Replay Fermat root proofs and merge the original partition audit
+      - name: Replay and compare the complete 2400 audit
         run: |
           python3 Research/FermatRootValuation/IndependentCheck.py
-          python3 Research/Session20261122/Python/AuditRootClass2400.py --output AuditSummary2400.json
+          mkdir -p Build
+          python3 Research/SupplierBatch/VerifyBatch2400.py --output Build/AuditSummary2400.json
+          cmp Research/SupplierBatch/BatchAudit2400.json Build/AuditSummary2400.json
       - name: Upload the exact audit and remaining shard manifest
         uses: actions/upload-artifact@v4
         with:
           name: AuditSummary2400
-          path: AuditSummary2400.json
+          path: Build/AuditSummary2400.json
       - name: Build C++ codec and single-flight regressions
         run: |
           set -e

@@ -1,64 +1,24 @@
 # PerfectNumbers
 
-**目标：** 证明所有奇完全数 \(N\) 满足 \(N>10^{2400}\)，并输出能够由独立程序检查的有限证明证书。
+目标是证明每个奇完全数 $N>10^{2400}$，并让独立程序复核证明。
 
-**截至 2026-11-23，原根集的 3,072 个顶层分片已独立复验闭合 1,805 项（58.76%），仍有 1,267 项。** 根 3、5 的新方法共证明 241 项，按分片 ID 去重后净增 176 项。原根集互素类另已复验 `log10 N >= 4183.209493`。全局定理状态为 `INCOMPLETE_FRONTIER`。
+截至 2026-11-23，原根集的 **3,072** 个顶层分片中，**1,851** 个已闭合，**1,221** 个仍开放。最新批次新增 **46** 个分片。原根集互素类已有独立整数证书给出 `log10 N >= 4183.209493`。全局状态为 `INCOMPLETE_FRONTIER`。
 
-## 从这里开始
+- [当前状态和逐根进度](Documentation/CurrentStatus2400.md)
+- [本轮推导、证书和复验说明](Research/SupplierBatch/PerfectNumbers2400BatchReport.md)
+- [完整审计结果与开放分片清单](Research/SupplierBatch/BatchAudit2400.json)
+- [目录和运行入口](Documentation/RepositoryMap.md)
+- [数学问题与验收条件](Documentation/ResearchProblems2400.md)
 
-- **[根 3、5 的 241 项证明](Research/FermatRootValuation/FermatRootValuationReport.md)**。含数学推导、两套独立 Python 核验器和逐项证书。
-- **[合并审计](Research/Session20261122/Python/AuditRootClass2400.py)**。复验原根集复合证书，按任务 ID 去重，并可导出精确的未闭合分片清单。
+## 复验
 
-- **[仓库命名、链接与证明模块的手动回归](.github/workflows/RepositoryIntegrity.yml)**：通过 `workflow_dispatch` 手动运行轻量质量检查，不会自动启动长时证明树或付费模型。
+在仓库根目录运行以下命令。Python 3.10+ 标准库足以复验证书。
 
-- **[最新证明状态与剩余任务](Documentation/CurrentStatus2400.md)**：当前唯一状态摘要、证明闭环、运行验收及目录迁移说明。
-- **[顶层直接整数证明与 1,396 项清单](Research/Session20261122/Reports/DirectRootClosure2400.md)**：因子和禁止根矛盾、`odd(σ)` 整数尺寸界、独立验收与根顺序动态规划。
-
-- **[新增 3 个有限剩余乘子分片证明](Research/Session20261122/Reports/FiniteQuotientCyclotomic2400.md)**：分圆素因子限制、精确丰度界、全部奇数剩余乘子枚举及独立验证接入。
-- **[新增 33 个分圆–Euler 素数乘积整数叶](Research/Session20261122/Reports/CyclotomicEulerPrimorial2400.md)**：34 项数学排除与有限乘子规则重叠 1 项，现已接入独立验证器与回归测试。
-- **[新增 15 个禁用根指数 DP 证书](Research/Session20261122/Reports/CyclotomicExponentDP2400.md)**：将小素数幂的因子和禁用根条件纳入整数动态规划，独立验证器可逐项复核。
-- **[主要数学研究难题（形式化陈述）](Documentation/ResearchProblems2400.md)**：九类候选分割、对偶证书、证明树覆盖、roadblock、状态 LP、算术正确性与 72 小时目标。
-- **[当前进展报告](Documentation/ProgressReport2400.md)**：V21 阶段、实际实验、未解决的验收事项。
-- **[仓库文件导览](Documentation/RepositoryMap.md)**：正式代码、研究原型、工作流与历史记录的分层说明。
-- **[证明验收清单](Records/ValidationChecklist.md)**：数学与工程独立验收条件。
-- **[研究实验归档](Research/Session20261122/Readme.md)**：V22–V24、性能剖析及相应的 CI 实证。
-
-## 正式实现与当前状态
-
-| 模块 | 入口 | 状态 |
-| --- | --- | --- |
-| 证明树主程序 | [ProofTreeV21.cpp](Sources/Cpp/ProofTreeV21.cpp) | 正式主线；未形成全部八根证明 |
-| 因子和数据库 | [BuildIndex.cpp](Sources/Cpp/BuildIndex.cpp) | 固定数据集、索引与哈希核对 |
-| 有限素数乘积 | [PrimeCutoffCert.cpp](Sources/Cpp/PrimeCutoffCert.cpp) | 截断相关残余约束 |
-| 区间 LP | [IntervalCertificate61.py](Sources/Python/IntervalCertificate61.py) | 互素类数值证书生成 |
-| 256 前缀证书 | [PrefixDualCertificates.py](Sources/Python/PrefixDualCertificates.py) | 生成全部 \(2^8\) 种前缀的对偶表 |
-| 72 小时调度器 | [Run2400Scheduler.py](Sources/Python/Run2400Scheduler.py) | 顶层分片恢复；深层断点尚缺 |
-| WSL 复现 | [Run72hWSL.sh](Scripts/Run72hWSL.sh) | 支持 selftest、prepare、run、status、verify |
-
-V16、V18–V20 保存为复现实验的历史版本。独立验证器 V2、原子账本与 G1 实验搜索器现已集成到研究目录/实验代码。V22–V24 保存于 [独立研究归档](Research/Session20261122/Readme.md)，**未替代 V21 主程序**。
-
-## 运行入口（Linux/WSL2）
-
-要求 C++17、GMP、zlib、Python 3 与 GitHub CLI。仓库根目录执行：
-
-```bash
-bash Scripts/Run72hWSL.sh selftest
-bash Scripts/Run72hWSL.sh prepare
-bash Scripts/Run72hWSL.sh status
+```sh
+mkdir -p Build
+python3 Research/FermatRootValuation/IndependentCheck.py
+python3 Research/SupplierBatch/VerifyBatch2400.py --output Build/AuditSummary2400.json
+cmp Research/SupplierBatch/BatchAudit2400.json Build/AuditSummary2400.json
 ```
 
-只有显式运行 `bash Scripts/Run72hWSL.sh run` 才开始长时搜索；默认上限 72 小时，默认 16 个任务、每任务 2 个线程。其余环境变量见脚本。完成所有分片后还需数学规则审计与独立证书验证。
-
-因子表 `checkfacts.txt.gz` 固定 SHA-256：
-
-```text
-ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119
-```
-
-## 证据与历史
-
-- [原始实验日志](Records/ExperimentLog.md)；[当前里程碑](Records/Milestones.md)。
-- [Ochem–Rao (2012) 论文](References/OchemRao2012.pdf)。
-- [2026-11-22 整理前主分支](https://github.com/stormwhip/PerfectNumbers/tree/90100f4447f9196835951fdb7e9dcdd3ab23723f) 与 [V22–V24 原实验分支](https://github.com/stormwhip/PerfectNumbers/tree/research/exact-sigma-size-v22)。
-
-**证明验收原则：** `PROVEN` 是求解器输出标签；无条件 \(10^{2400}\) 下界还要求完整覆盖、对偶证书、逐叶矛盾、确定性算术和独立校验器。
+长时研究搜索使用 [V21](Sources/Cpp/ProofTreeV21.cpp)、[调度器](Sources/Python/Run2400Scheduler.py) 和 [Linux/WSL2 脚本](Scripts/Run72hWSL.sh)。运行产物存放在 `Build/` 或 `Run2400Results/`。工程基准与证明实验见 [实验日志](Records/ExperimentLog.md)，背景论文见 [Ochem–Rao 2012](References/OchemRao2012.pdf)。

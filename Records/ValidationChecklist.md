@@ -8,7 +8,8 @@
 
 - [x] 独立核验根 3、5 的 241 项证明，重建顶层分片表和实际指数表。 [证明和重放命令](../Research/FermatRootValuation/FermatRootValuationReport.md)
 - [x] 原根顺序下逐项合并历史证书，核对闭合 1,805 项、开放 1,267 项。 [合并审计](../Research/Session20261122/Python/AuditRootClass2400.py)
-- [ ] 完成其余 1,267 项并重放全局定理的完整证书。
+- [x] 合并并验收新增 46 份证明，累计闭合 1,851 项、开放 1,221 项。 [审计结果](../Research/SupplierBatch/BatchAudit2400.json)
+- [ ] 完成其余 1,221 项并重放全局定理的完整证书。
 
 ## 历史验证器及验收记录（2026-11-22）
 

@@ -2,6 +2,11 @@
 
 **更新：2026-11-23；当前数学状态见 [CurrentStatus2400.md](CurrentStatus2400.md)。** 主线为冻结 V21，新的独立验证器与 Frontier 搜索器仍是候选系统。全量证明未完成。
 
+## 合并证明与文档归档
+
+- [SupplierBatch](../Research/SupplierBatch/PerfectNumbers2400BatchReport.md)集中存放本轮验证器、证明程序、证书、审计清单和扫描工具。
+- [旧外部结果评审](../Records/ExternalReviews/GeminiProgressReviewV5.md)归档于 `Records/ExternalReviews/`。
+
 ## 目录结构
 
 ```text
@@ -66,7 +71,7 @@ PerfectNumbers/
 
 - [研究索引](../Research/Session20261122/Readme.md)：V22–V24、路障、数值 LP、互素证书及新模块。
 - `Research/Session20261122/Certificates/` 两个 `.json.gz` 为证书工件，迁移保持 Git blob SHA 原值。
-- `Sources/Cpp/ProofTreeV16.cpp`、`V18`、`V19`、`V20` 以及 `Research/Session20261122/Cpp/` 下 V22–V24 是历史实现，用于精确复核不同实验。
+- 活跃 C++ 目录保留 V21。V16、V18–V20 与十五素数探针可从[整理前快照](https://github.com/stormwhip/PerfectNumbers/tree/26cb81d5c95a6d6505b54b3ef78fd52edf920f9d)复现。V22–V24 位于 `Research/Session20261122/Cpp/`。
 - `.github/workflows/` 已按现有约定命名，手工大型任务不因整理而自动触发。
 - `Build/`、`Run2400Results/` 与大型分解数据库不纳入源码版本库。
 - 旧 `Research/2026-11-22/` 已迁移为 `Research/Session20261122/`。外部 Gemini 分支合并前须按本文件重定向路径。
