@@ -39,13 +39,13 @@ def main() -> None:
             root_set_name="original",
         )
         expected = {
-            "VERIFIED_CLOSED": 1399,
-            "UNSTARTED": 1673,
+            "VERIFIED_CLOSED": 1432,
+            "UNSTARTED": 1640,
         }
         if (summary["total_tasks"] != 3072
                 or summary["counts_by_status"] != expected
-                or summary["verified_closed_tasks"] != 1399
-                or summary["total_open_frontier_tasks"] != 1673
+                or summary["verified_closed_tasks"] != 1432
+                or summary["total_open_frontier_tasks"] != 1640
                 or summary["final_theorem_status"] != "INCOMPLETE_FRONTIER"):
             raise RuntimeError(f"unexpected rigorous audit summary: {summary}")
         print(json.dumps({
