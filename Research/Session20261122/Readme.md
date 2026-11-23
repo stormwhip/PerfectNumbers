@@ -42,7 +42,7 @@ g++ -std=c++17 -O2 -fopenmp Research/Session20261122/Cpp/ProofCoreTestsV24.cpp -
 
 - [分圆有限乘子闭合新增 3 项](Reports/FiniteQuotientCyclotomic2400.md)：[(19,936)、(11,1150)、(11,1152) 的精确剩余乘子枚举](Python/FiniteQuotientClosure2400.py)，`FINITE_QUOTIENT_CYCLOTOMIC` 已接入 V2 独立验证器。候选累计 `1,399/3,072`，仍待新 GitHub CI 审计。
 
-新增 [分圆–Euler 素数乘积界证明](Reports/CyclotomicEulerPrimorial2400.md) 与 [精确测试](Python/CyclotomicPrimorialClosureTests.py)：34 项数学排除与此前有限乘子证明重叠 1 项，净新增 33 项。候选累计 1,432 个整数证明叶，余 1,640 个待闭合分片，待最新独立 CI 审计。原 V21 正式根分割没有变更，72 小时完整运行仍未完成。
+新增 [分圆–Euler 素数乘积界证明](Reports/CyclotomicEulerPrimorial2400.md) 与 [精确测试](Python/CyclotomicPrimorialClosureTests.py)：34 项数学排除与此前有限乘子证明重叠 1 项，净新增 33 项。另有 [禁用根因子和指数 DP 的 13 项新增整数证明](Reports/CyclotomicExponentDP2400.md)，由 [独立整数 DP](Python/CyclotomicExponentDPClosure2400.py) 及 [防篡改回归](Python/CyclotomicExponentDPClosureTests.py) 核验。候选累计 1,445 个整数证明叶，余 1,627 个待闭合分片，待最新独立 CI 审计。原 V21 正式根分割没有变更，72 小时完整运行仍未完成。
 
 ## Roadblock 对偶研究
 
