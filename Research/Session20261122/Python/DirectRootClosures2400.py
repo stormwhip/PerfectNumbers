@@ -26,6 +26,7 @@ from IndependentVerifierV2 import (
     verify_root_task_bundle,
 )
 from VerifyRootExponentCoverage import canonical_tasks
+from CyclotomicPrimorialClosure2400 import cyclotomic_primorial_certificate
 
 
 def divides_sigma_mod(p: int, d: int, q: int) -> bool:
@@ -81,6 +82,18 @@ def direct_root_bundle(pin: RootTaskPin) -> Optional[dict]:
             "source_p": pin.root_prime,
             "d": pin.root_exp,
         }
+    elif (pin.root_order == DEFAULT_CIRC_ORDER
+          and not pin.root_exact
+          and cyclotomic_primorial_certificate(
+              pin.root_prime, pin.root_exp,
+              tuple(sorted(pin.root_order[:pin.root_order.index(pin.root_prime)])),
+              pin.upper_bound_N
+          ) is not None):
+        witness = {
+            "reason": "CYCLOTOMIC_EULER_PRIMORIAL",
+            "source_p": pin.root_prime,
+            "d": pin.root_exp,
+        }
     else:
         return None
 
@@ -104,7 +117,8 @@ def independently_check_direct_roots(root_order: tuple[int, ...], emit_dir: Opti
         emit_dir.mkdir(parents=True, exist_ok=True)
 
     counts = {p: 0 for p in root_order}
-    reasons = {"FORBIDDEN_FACTOR": 0, "SIGMA_DIVISOR_SIZE": 0, "FINITE_QUOTIENT_CYCLOTOMIC": 0}
+    reasons = {"FORBIDDEN_FACTOR": 0, "SIGMA_DIVISOR_SIZE": 0, "FINITE_QUOTIENT_CYCLOTOMIC": 0,
+               "CYCLOTOMIC_EULER_PRIMORIAL": 0}
     witnesses = []
     tasks = list(canonical_tasks(root_order))
     for task in tasks:
@@ -137,6 +151,12 @@ def independently_check_direct_roots(root_order: tuple[int, ...], emit_dir: Opti
         elif reason == "FINITE_QUOTIENT_CYCLOTOMIC":
             if (pin.root_prime, pin.root_exp) not in ((19, 936), (11, 1150), (11, 1152)):
                 raise VerificationError("unexpected finite quotient witness")
+        elif reason == "CYCLOTOMIC_EULER_PRIMORIAL":
+            if cyclotomic_primorial_certificate(
+                    pin.root_prime, pin.root_exp,
+                    tuple(sorted(pin.root_order[:pin.root_order.index(pin.root_prime)])),
+                    pin.upper_bound_N) is None:
+                raise VerificationError("cyclotomic primorial proof unexpectedly failed")
         else:
             raise VerificationError(f"unknown direct root reason {reason}")
 
@@ -184,8 +204,9 @@ def main() -> None:
     result = independently_check_direct_roots(order, args.emit_dir)
     if args.root_set == "original":
         if (result["verified_direct_closures"], result["by_reason"]) != (
-            1399, {"FORBIDDEN_FACTOR": 14, "SIGMA_DIVISOR_SIZE": 1382,
-                   "FINITE_QUOTIENT_CYCLOTOMIC": 3}
+            1432, {"FORBIDDEN_FACTOR": 14, "SIGMA_DIVISOR_SIZE": 1382,
+                   "FINITE_QUOTIENT_CYCLOTOMIC": 3,
+                   "CYCLOTOMIC_EULER_PRIMORIAL": 33}
         ):
             raise VerificationError("original-root certificate census changed unexpectedly")
     print(json.dumps(
