@@ -7,6 +7,7 @@ from pathlib import Path
 import tempfile
 
 from AuditRunner2400 import run_full_audit
+from DirectRootClosures2400 import independently_check_direct_roots
 from FrontierLedgerV2 import DiskProofStore, FrontierLedgerV2
 from IndependentVerifierV2 import (
     DEFAULT_CIRC_ORDER,
@@ -157,9 +158,23 @@ def main() -> None:
             s_prod = run_full_audit(
                 m_prod, cert_p, empty_ledgers, proof_dir, fp, root_set_name=name,
             )
-            if s_prod["total_tasks"] != len(tasks_prod) or s_prod["verified_closed_tasks"] != 0:
-                raise RuntimeError(f"P3-4 production manifest audit mismatch for {name}: {s_prod}")
-            print(f"[PASS] P3-4: production 10^2400 {name} manifest ({len(tasks_prod)} tasks) + terminal cert verified")
+            direct = independently_check_direct_roots(tuple(sorted(roots)))
+            expected_closed = direct["verified_direct_closures"]
+            expected_open = len(tasks_prod) - expected_closed
+            if (
+                s_prod["total_tasks"] != len(tasks_prod)
+                or not 0 < expected_closed < len(tasks_prod)
+                or s_prod["verified_closed_tasks"] != expected_closed
+                or s_prod["total_open_frontier_tasks"] != expected_open
+                or s_prod["counts_by_status"] != {
+                    "UNSTARTED": expected_open, "VERIFIED_CLOSED": expected_closed,
+                }
+                or s_prod["final_theorem_status"] != "INCOMPLETE_FRONTIER"
+            ):
+                raise RuntimeError(f"P3-4 production manifest audit mismatch for {name}")
+            print(f"[PASS] P3-4: {name} production manifest verified with "
+                  f"{expected_closed} direct proofs and {expected_open} unstarted shards")
+
 
         # P3-4B: Missing task in production manifest must raise VerificationError (not raw ValueError)
         m_broken = root_tmp / "Manifest_broken.json"
