@@ -88,3 +88,4 @@ python3 Sources/Python/RepositoryStructureChecks.py
 2. 成功编译、搜索器输出 `PROVEN`、独立验证器返回 `TREE_ACCEPTED` 和最终 `UNCONDITIONALLY_VERIFIED` 必须分开记录。
 3. 历史报告保留当时数据和结论，上方统一增加当前状态入口。
 4. 没有显式许可不运行付费 API 或启动长时间付费云资源。
+│   ├── FermatRootValuation/           # 根 3、5 证明、两套核验器和逐项证书

@@ -333,3 +333,9 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Local standard-library Python pilot (approximate development-machine wall times): all roots, residual<=500 digits, \`q<=2e6\`: 299 scanned, 4 identified forced-prime closed leaves (three overlapped existing baseline), ~0.38 s; root 3, \`q<=1e8\`, residual<=500: 68 scanned, one closed, ~0.83 s; root 5, \`q<=1e8\`, residual<=1000: 99 scanned, none closed, ~1.75 s. An all-root \`q<=2e9\` development run was interrupted at 120 seconds with only a partial checkpoint and **no full-result claim**.
 - New report: [ForcedPrimeExponentPilot2400.md](../Research/Session20261123/Reports/ForcedPrimeExponentPilot2400.md). Runtime verification: \`python3 Research/Session20261122/Python/ForcedPrimeExponentClosure2400.py --verify --root 3 --exponent 2476 --forced-prime 980893\`. Six-hour optional scan: \`python3 -u Research/Session20261122/Python/ForcedPrimeExponentClosure2400.py --root all --prime-limit 2000000000 --residual-digits 1000 --hours 6 --checkpoint Build/ForcedPrimeScan2400.jsonl\`.
 - Status remains \`INCOMPLETE_FRONTIER\`; no complete 72h end-to-end run and no unconditional \`10^2400\` theorem.
+
+## 2026-11-23 — Fermat root valuation and supplier proofs at exponent 2400
+
+- Rebuilt all 3,072 canonical shards and 5,090 legal exponents for roots 3 and 5. The standard-library verifier accepted both checked-in CSVs. The standalone multiplicative verifier independently replayed 135 root-3 and 106 root-5 shards.
+- Replayed the original coprime certificate and root-class audit. The historical proofs cover 1,629 shards, with 65 in common with the 241 Fermat root proofs. The merged audit added 176 closures and returned 1,805 closed, 1,267 open, and `INCOMPLETE_FRONTIER`.
+- Replay commands and proofs are in [FermatRootValuationReport.md](../Research/FermatRootValuation/FermatRootValuationReport.md).

@@ -4,7 +4,13 @@
 
 > 当前已新增独立验证器 V2、SQLite 账本与只读 3072 项验收框架。数学验收仍未完成。权威进度见 [CurrentStatus2400.md](../Documentation/CurrentStatus2400.md)。
 
-## 最新验证器及全量验收（2026-11-22）
+## 2026-11-23 根 3、5 分片
+
+- [x] 独立核验根 3、5 的 241 项证明，重建顶层分片表和实际指数表。 [证明和重放命令](../Research/FermatRootValuation/FermatRootValuationReport.md)
+- [x] 原根顺序下逐项合并历史证书，核对闭合 1,805 项、开放 1,267 项。 [合并审计](../Research/Session20261122/Python/AuditRootClass2400.py)
+- [ ] 完成其余 1,267 项并重放全局定理的完整证书。
+
+## 历史验证器及验收记录（2026-11-22）
 
 - [x] 集成外部固定根的 `IndependentVerifierV2.py`、可恢复 `FrontierLedgerV2.py` 及只读 `AuditRunner2400.py`，附合成/篡改测试源码。
 - [x] 原根顺序下的 3,072 项纯整数枚举确认 14 个 `FORBIDDEN_FACTOR` 和 1,382 个 `SIGMA_DIVISOR_SIZE` 一步矛盾，共 1,396 项（45.44%）；证明规则已接入独立验证器与全量审计器。见 [DirectRootClosure2400.md](../Research/Session20261122/Reports/DirectRootClosure2400.md)。

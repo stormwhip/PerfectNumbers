@@ -3,6 +3,7 @@
 import argparse
 from collections import Counter, defaultdict
 import gzip
+import importlib.util
 import json
 from pathlib import Path
 
@@ -16,6 +17,26 @@ from VerifyRootExponentCoverage import canonical_tasks
 
 def read_certificate(path):
     return strict_json_loads(gzip.decompress(path.read_bytes()).decode("ascii"))
+
+
+def replay_fermat_shards(tasks):
+    folder = Path(__file__).resolve().parents[2] / "FermatRootValuation"
+    spec = importlib.util.spec_from_file_location("FermatRootValuation", folder / "Verify.py")
+    verifier = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(verifier)
+    if tuple(verifier.ORDER) != tuple(ORDER) or verifier.B != 10**TARGET:
+        raise ValueError("Fermat proof root order or target mismatch")
+    rows, _ = verifier.check_tables((folder / "Results.csv", folder / "Exponents.csv"))
+    result = {}
+    for task, row in zip(tasks, rows, strict=True):
+        task_id, root, exponent, mode, rule = row[:5]
+        if (task_id, root, exponent, mode) != (
+            task["id"], task["root"], task["exponent"], "exact" if task["exact"] else "divisor"
+        ):
+            raise ValueError(f"Fermat proof task mismatch: {task_id}")
+        if rule in ("VALUATION", "ALL_EXPONENTS"):
+            result[task_id] = "FERMAT_ROOT_" + rule
+    return result
 
 
 def audit(terminal_path, bank_path):
@@ -53,6 +74,12 @@ def audit(terminal_path, bank_path):
         if reason is not None:
             closed[task_id] = reason
 
+    previous_count = len(closed)
+    fermat = replay_fermat_shards(tasks)
+    fermat_overlap = len(fermat.keys() & closed.keys())
+    for task_id, reason in fermat.items():
+        closed.setdefault(task_id, reason)
+
     opened = [t for t in tasks if t["id"] not in closed]
     open_by_root = Counter(t["root"] for t in opened)
     by_root = {p: {"verified": sum(t["root"] == p and t["id"] in closed for t in tasks),
@@ -61,6 +88,8 @@ def audit(terminal_path, bank_path):
         theorem_status="INCOMPLETE_FRONTIER" if opened else "UNCONDITIONALLY_VERIFIED",
         total_tasks=len(tasks), closed_tasks=len(closed), open_tasks=len(opened),
         by_root=by_root, by_source=dict(Counter(closed.values())),
+        fermat_root_replay=dict(previous_closed=previous_count, certified=len(fermat),
+                                overlap=fermat_overlap, newly_closed=len(fermat) - fermat_overlap),
         partial_branch_coverage=[
             dict(root=root, prime=prime, present=present,
                  still_open_top_level=len(ids - closed.keys()),
