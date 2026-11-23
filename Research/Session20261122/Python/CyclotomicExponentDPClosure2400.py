@@ -8,6 +8,7 @@ small primes, with at most one Euler-special odd exponent.
 """
 from __future__ import annotations
 from functools import lru_cache
+from bisect import bisect_right
 from CyclotomicPrimorialClosure2400 import is_prime, odd_primes_below, BOUND
 
 @lru_cache(maxsize=10000)
@@ -53,6 +54,13 @@ def weighted_cyclotomic_certificate(
     if C >= 2*m:
         return None
 
+    # Sharper, exact rational cyclotomic abundance envelope:
+    # sigma(A)/A < product_{i=1}^t (2*m*i+1)/(2*m*i).
+    a_num, a_den = 1, 1
+    for i in range(1, t+1):
+        a_num *= 2*m*i+1
+        a_den *= 2*m*i
+
     small = [q for q in odd_primes_below(L) if q != p and q not in forbidden]
     # Universal unweighted Euler-size bound limits the number of
     # distinct small primes that any Q<=R could contain.
@@ -89,18 +97,32 @@ def weighted_cyclotomic_certificate(
                 cap, regular_dp[k+1], regular_dp[k]*w_regular
             )
 
+    # Any v distinct large primes are >= the first v actual primes >=L.
+    # Their least product and greatest abundance both follow this
+    # deterministic increasing-prime list.
+    large_product = [1]
+    large_ab_num = [1]
+    large_ab_den = [1]
+    for q in odd_primes_below(20000):
+        if q < L:
+            continue
+        large_product.append(large_product[-1]*q)
+        large_ab_num.append(large_ab_num[-1]*q)
+        large_ab_den.append(large_ab_den[-1]*(q-1))
+        if large_product[-1] > R:
+            break
+    if large_product[-1] <= R:
+        return None  # Insufficient sieve coverage; never assert a false proof.
+
     examined, maximum_num, maximum_den = 0, 0, 1
     for k in range(K+1):
         min_cost = min(regular_dp[k], special_dp[k])
         if min_cost > R:
             continue
         remaining = R//min_cost
-        large_count = 0
-        while remaining >= L:
-            remaining //= L
-            large_count += 1
-        num = p*(2*m)*factor_num[k]*pow(L, large_count)
-        den = (p-1)*(2*m-C)*factor_den[k]*pow(L-1, large_count)
+        large_count = bisect_right(large_product, remaining)-1
+        num = p*a_num*factor_num[k]*large_ab_num[large_count]
+        den = (p-1)*a_den*factor_den[k]*large_ab_den[large_count]
         examined += 1
         if num*maximum_den > maximum_num*den:
             maximum_num, maximum_den = num, den
