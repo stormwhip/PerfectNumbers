@@ -971,6 +971,24 @@ def verify_leaf_node(
             raise VerificationError(f"FINITE_QUOTIENT_CYCLOTOMIC rejected: {exc}") from exc
         return "LEAF_ACCEPTED"
 
+    if reason == "CYCLOTOMIC_EULER_PRIMORIAL":
+        from CyclotomicPrimorialClosure2400 import cyclotomic_primorial_certificate
+        src_p = require_strict_int(witness.get("source_p"), "cyclotomic_primorial.source_p", 3)
+        d = require_strict_int(witness.get("d"), "cyclotomic_primorial.d", 2)
+        if (witness.get("deductions") or set(working.branched) != {src_p}
+                or working.branched[src_p].exp != d
+                or working.branched[src_p].exact
+                or working.unbranched or working.composites
+                or working.has_special or working.source_v_bounds
+                or working.source_v2_bounds):
+            raise VerificationError("cyclotomic primorial certificate requires an unmodified non-exact root")
+        result = cyclotomic_primorial_certificate(
+            src_p, d, tuple(sorted(working.forbidden)), upper_bound_N
+        )
+        if result is None:
+            raise VerificationError("CYCLOTOMIC_EULER_PRIMORIAL inequality did not exclude root")
+        return "LEAF_ACCEPTED"
+
     if reason == "SIGMA_DIVISOR_SIZE":
         # For any branch d representing the true exponent e, either e=d
         # or d+1 divides e+1. Thus sigma(p^d) | sigma(p^e) | 2N.
