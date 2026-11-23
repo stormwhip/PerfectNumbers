@@ -1,0 +1,120 @@
+name: Forced Prime Exponent Scan 2400
+
+on:
+  workflow_dispatch:
+    inputs:
+      root:
+        description: 'Prime root, or all'
+        required: true
+        type: choice
+        default: 'all'
+        options:
+          - 'all'
+          - '19'
+          - '7'
+          - '11'
+          - '31'
+          - '13'
+          - '3'
+          - '5'
+          - '17'
+      prime_limit:
+        description: 'Upper bound for candidate forced primes'
+        required: true
+        default: '2000000000'
+        type: string
+      residual_digits:
+        description: 'Maximum remaining budget decimal digits to scan'
+        required: true
+        default: '1000'
+        type: string
+      hours:
+        description: 'Scan hours (5.5 leaves time for uploading artifacts)'
+        required: true
+        default: '5.5'
+        type: string
+      resume_run_id:
+        description: 'Optional earlier run ID to resume from its saved checkpoint'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: forced-prime-2400
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    env:
+      SCAN_ROOT: ${{ inputs.root }}
+      PRIME_LIMIT: ${{ inputs.prime_limit }}
+      RESIDUAL_DIGITS: ${{ inputs.residual_digits }}
+      SCAN_HOURS: ${{ inputs.hours }}
+      RESUME_RUN_ID: ${{ inputs.resume_run_id }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Restore optional previous checkpoint
+        shell: bash
+        run: |
+          mkdir -p Build
+          if [[ -n "$RESUME_RUN_ID" ]]; then
+            [[ "$RESUME_RUN_ID" =~ ^[0-9]+$ ]] || { echo "Invalid run ID"; exit 1; }
+            gh run download "$RESUME_RUN_ID" \
+              --repo "$GITHUB_REPOSITORY" \
+              --name "ForcedPrimeCheckpoint-$RESUME_RUN_ID" \
+              --dir Build
+            test -f Build/ForcedPrimeScan2400.jsonl
+            echo "Restored checkpoint from workflow run $RESUME_RUN_ID"
+          fi
+      - name: Run bounded proof search
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -u Research/Session20261122/Python/ForcedPrimeExponentClosure2400.py \
+            --root "$SCAN_ROOT" \
+            --prime-limit "$PRIME_LIMIT" \
+            --residual-digits "$RESIDUAL_DIGITS" \
+            --hours "$SCAN_HOURS" \
+            --checkpoint Build/ForcedPrimeScan2400.jsonl \
+            2>&1 | tee Build/ForcedPrimeScanLog.txt
+      - name: Summarize checkpoint
+        if: always()
+        shell: bash
+        run: |
+          if [[ -f Build/ForcedPrimeScan2400.jsonl ]]; then
+            python - <<'PY'
+          import collections
+          import json
+          from pathlib import Path
+          latest = {}
+          for line in Path("Build/ForcedPrimeScan2400.jsonl").read_text().splitlines():
+              item = json.loads(line)
+              latest[item["id"]] = item
+          counts = collections.Counter(x["status"] for x in latest.values())
+          print("Checkpoint task statuses:", json.dumps(dict(counts), sort_keys=True))
+          PY
+          fi
+      - name: Upload checkpoint and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ForcedPrimeCheckpoint-${{ github.run_id }}
+          path: |
+            Build/ForcedPrimeScan2400.jsonl
+            Build/ForcedPrimeScanLog.txt
+          if-no-files-found: warn
+          retention-days: 30
