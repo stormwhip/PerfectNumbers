@@ -168,6 +168,10 @@ def scan(args):
             closed = None
             end_k = (args.prime_limit-1)//step
             for k in range(first_k, end_k+1):
+                if args.hours and k % 1024 == 0 and (time.monotonic()-started)/3600 >= args.hours:
+                    write({'id':tid,'status':'PROGRESS','next_k':k,'root':p,'exponent':d})
+                    print('PAUSED_AT_LIMIT',tid,'next_k',k,flush=True)
+                    return
                 q = 1+step*k
                 if pow(p,m,q) == 1 and is_prime_trial(q) and A % q == 0:
                     closed = verify_forced_prime(p,d,False,forbidden,q)
