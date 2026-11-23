@@ -1,3 +1,5 @@
+> **2026-11-23 Gemini v5 最新研究记录：** 新报告称 3,072 个顶层任务中 **1,679 项 REPRODUCED_VERIFIED**、**1,393 项 OPEN**（较上一份 Gemini 报告净关闭 30 项）；终局互素类与根 17 整类仍报告闭合；根 5 已报告 301/481 项闭合。规则 VII 旧整除断言已被反例推翻，改为仅可用于数值尺寸下界；`P13_I00165` 尚未复现。**上传仅有研究报告和一个 C++ 因子发现工具源码，未提供所述 JSON 证书、完整 31 份 DAG 和独立验证器供本仓库复现。** 请区分 Gemini 报告中的 `REPRODUCED_VERIFIED` 与本仓库的 `EXTERNAL_REPORTED_PENDING_REPLAY`。报告归档见 [ResearchResultV5](../Research/Session20261123/Reports/ResearchResultV5.md)，逐根状态与下一步见 [GeminiProgressReviewV5](GeminiProgressReviewV5.md)。**全局定理：`INCOMPLETE_FRONTIER`；72 小时全量运行：未完成。**
+
 > **2026-11-23 Gemini 外部报告更新：** Gemini 提交了一份新进展报告，宣称原根集的顶层任务已有 **1,649 / 3,072** 闭合、剩余 **1,423**，并称终局互素类及根 17 整类已通过证书验证。该次上传包含报告及旧交接文件，**未附新 JSON 证书、19 份 DAG、完整验证器和新开放清单**。本仓库仅记录外部报告，新增数字统一标为 `EXTERNAL_REPORTED_PENDING_REPLAY`；原文较早的 1,447 项基线与历史进展保留，详见 [Gemini 新进展与验证待办](GeminiProgressReview20261123.md)。**全局状态仍为 `INCOMPLETE_FRONTIER`。**
 
 # PerfectNumbers — 当前证明状态与接下来的工作
