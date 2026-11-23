@@ -11,12 +11,12 @@ from DirectRootClosures2400 import direct_root_bundle
 
 EXPECTED = {
     5: (1626, 1636),
-    17: (726, 732, 738, 742, 750, 756,
+    17: (708, 718, 726, 732, 738, 742, 750, 756,
          760, 768, 772, 786, 796),
 }
 
 def run() -> None:
-    if sum(map(len, EXPECTED.values())) != 13:
+    if sum(map(len, EXPECTED.values())) != 15:
         raise RuntimeError("incorrect candidate count")
     for p, exponents in EXPECTED.items():
         forbidden = tuple(sorted(DEFAULT_CIRC_ORDER[:DEFAULT_CIRC_ORDER.index(p)]))
@@ -47,7 +47,7 @@ def run() -> None:
 
     f17 = tuple(sorted(DEFAULT_CIRC_ORDER[:DEFAULT_CIRC_ORDER.index(17)]))
     f5 = tuple(sorted(DEFAULT_CIRC_ORDER[:DEFAULT_CIRC_ORDER.index(5)]))
-    if certificate(17, 718, f17) is not None:
+    if certificate(17, 700, f17) is not None:
         raise RuntimeError("nonpositive strict margin was accepted")
     if certificate(5, 1620, f5) is not None:
         raise RuntimeError("nonpositive strict margin was accepted")
@@ -55,7 +55,7 @@ def run() -> None:
         raise RuntimeError("forged bound was accepted")
     if certificate(17, 727, f17) is not None:
         raise RuntimeError("odd representative was accepted")
-    print("CyclotomicExponentDPClosureTests: PASS (13 exact integer leaves, forged pins rejected)")
+    print("CyclotomicExponentDPClosureTests: PASS (15 exact integer leaves, forged pins rejected)")
 
 if __name__ == "__main__":
     run()
