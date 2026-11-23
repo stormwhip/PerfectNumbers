@@ -1007,6 +1007,22 @@ def verify_leaf_node(
             raise VerificationError("CYCLOTOMIC_FORBIDDEN_EXPONENT_DP did not exclude root")
         return "LEAF_ACCEPTED"
 
+    if reason == "FORCED_PRIME_EXPONENT_EXHAUSTION":
+        from ForcedPrimeExponentClosure2400 import verify_forced_prime
+        src_p = require_strict_int(witness.get("source_p"), "forced_prime.source_p", 3)
+        d = require_strict_int(witness.get("d"), "forced_prime.d", 1)
+        q = require_strict_int(witness.get("forced_q"), "forced_prime.forced_q", 3)
+        if (witness.get("deductions") or set(working.branched) != {src_p}
+                or working.branched[src_p].exp != d
+                or working.unbranched or working.composites
+                or working.source_v_bounds or working.source_v2_bounds):
+            raise VerificationError("forced-prime certificate requires an unmodified root")
+        outcome = verify_forced_prime(src_p, d, working.branched[src_p].exact,
+                                      tuple(sorted(working.forbidden)), q, upper_bound_N)
+        if outcome is None:
+            raise VerificationError("FORCED_PRIME_EXPONENT_EXHAUSTION failed exact replay")
+        return "LEAF_ACCEPTED"
+
     if reason == "SIGMA_DIVISOR_SIZE":
         # For any branch d representing the true exponent e, either e=d
         # or d+1 divides e+1. Thus sigma(p^d) | sigma(p^e) | 2N.
