@@ -140,7 +140,7 @@ def scan(args):
                 continue
             tid = f'P{p}_I{index:05d}'
             old = status.get(tid)
-            if old and old['status'] in ('DONE','CLOSED','SKIPPED'):
+            if old and old['status'] in ('DONE','SEARCHED_OPEN','CLOSED','SKIPPED'):
                 continue
             if args.hours and (time.monotonic()-started)/3600 >= args.hours:
                 break
@@ -184,7 +184,7 @@ def scan(args):
                 print('CLOSED',tid,'q',closed['forced_prime'],flush=True)
                 write({'id':tid,'status':'CLOSED','proof':closed})
             else:
-                write({'id':tid,'status':'DONE','root':p,'exponent':d})
+                write({'id':tid,'status':'SEARCHED_OPEN','root':p,'exponent':d})
             completed += 1
             if completed % 10 == 0:
                 print('CHECKED',completed,'CLOSED',found,'SECONDS',round(time.monotonic()-started,1),flush=True)
