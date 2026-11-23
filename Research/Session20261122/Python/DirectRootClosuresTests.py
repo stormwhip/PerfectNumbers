@@ -13,7 +13,7 @@ from IndependentVerifierV2 import DEFAULT_CIRC_ORDER, ORIGINAL_ROOTS, RootTaskPi
 
 def run() -> None:
     result = independently_check_direct_roots(DEFAULT_CIRC_ORDER)
-    expected = {19: 130, 7: 191, 11: 154, 31: 116, 13: 146, 3: 311, 5: 227, 17: 172}
+    expected = {19: 130, 7: 191, 11: 154, 31: 116, 13: 146, 3: 312, 5: 227, 17: 172}
     if result["total_tasks"] != 3072 or result["by_root"] != expected:
         raise RuntimeError(f"wrong independent closure census: {result}")
 
@@ -64,6 +64,32 @@ def run() -> None:
             or verify_root_task_bundle(size_pin, size_proof)["status"] != "TREE_ACCEPTED"):
         raise RuntimeError("root 19 exponent 940 must be independently certified by sigma size")
 
+    # Exact forced-prime leaf: q=980893 forces one of five exhaustive exponents,
+    # each contradicted by a forbidden sigma factor or the integer LCM bound.
+    from copy import deepcopy
+    forced_pin = RootTaskPin(
+        upper_bound_N=10**2400,
+        root_set=ORIGINAL_ROOTS,
+        root_order=DEFAULT_CIRC_ORDER,
+        circ_order=DEFAULT_CIRC_ORDER,
+        root_prime=3,
+        root_exp=2476,
+        root_exact=False,
+    )
+    forced_bundle = direct_root_bundle(forced_pin)
+    if (forced_bundle is None
+            or forced_bundle["nodes"][0]["witness"]["reason"] != "FORCED_PRIME_EXPONENT_EXHAUSTION"
+            or verify_root_task_bundle(forced_pin, forced_bundle)["status"] != "TREE_ACCEPTED"):
+        raise RuntimeError("P3_I00368 forced-prime certificate not accepted")
+    forged = deepcopy(forced_bundle)
+    forged["nodes"][0]["witness"]["forced_q"] = 980891
+    try:
+        verify_root_task_bundle(forced_pin, forged)
+    except VerificationError:
+        pass
+    else:
+        raise RuntimeError("fake forced prime accepted")
+
     # Strict inequality: equality with the exact forced divisor must remain OPEN.
     boundary_pin = RootTaskPin(
         upper_bound_N=19**2 * ((19**3 - 1) // 18),
@@ -98,7 +124,7 @@ def run() -> None:
     )
     if direct_root_bundle(no_direct) is not None:
         raise RuntimeError("first root incorrectly certified as forbidden-factor closure")
-    print("DirectRootClosuresTests: PASS (3072 tasks, 1447 independently checked leaves, audit integration)")
+    print("DirectRootClosuresTests: PASS (3072 tasks, 1448 independently checked leaves, audit integration)")
 
 
 if __name__ == "__main__":
