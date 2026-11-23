@@ -1,4 +1,4 @@
-# Forbidden-Sigma Exponent DP: 13 More Certified Root Contradictions
+# Forbidden-Sigma Exponent DP: 15 More Certified Root Contradictions
 
 **Research date:** 2026-11-23. **Target:** exclude odd perfect numbers `N<=10^2400` in selected canonical exponent shards. **Status:** exact-integer mathematical certificates and independent verifier implementation committed; fresh repository CI and full direct-root audit remain to be executed.
 
@@ -77,27 +77,54 @@ sigma(N)/N <
     * [L/(L-1)]^v_k.
 ```
 
-For all cases with `M_k<=R`, the independent verifier checks by exact integer multiplication that the right side is **strictly less than 2**. Each passing top-level shard is therefore impossible, with no factorization of `A`, floating-point comparison, or acceptance of solver flags.
+For all cases with `M_k<=R`, a strict upper bound below 2 suffices.
+
+### Stronger final implementation: exact cyclotomic and large-prime products
+
+The checked code uses two strictly sharper rational expressions.
+
+First, `A=Phi_m(p)` has at most `T` distinct prime divisors, and its abundance is bounded by the **full exact product**
+
+```
+A_upper = product_(i=1)^T (2mi+1)/(2mi).
+```
+
+Second, let `s_1<s_2<...` be the actual increasing sequence of prime numbers at least `L`. For `Q/M_k` size budget `R/M_k`, define `v_k` as the largest nonnegative integer satisfying
+
+```
+product_(j=1)^v_k s_j <= floor(R/M_k).
+```
+
+Any `v` distinct large prime factors have product at least the product of the first `v` such primes and abundance at most `product_(j=1)^v s_j/(s_j-1)`. Hence the final integer-certified exclusion compares
+
+```
+sigma(N)/N <
+  [p/(p-1)] * A_upper
+  * [product_(i=1)^k r_i/(r_i-1)]
+  * [product_(j=1)^v_k s_j/(s_j-1)] < 2.
+```
+
+The program builds every numerator, denominator, and initial prime product with exact integers. Its deterministic sieve includes primes below 20,000 and explicitly returns an *inconclusive* result if these primes do not exhaust the size budget. Root-17 exponent `708` has an upper bound approximately `1.9997019240`; exponent `718` approximately `1.9906026916`. Both comparisons are strictly certified as integer inequalities. Each passing top-level shard is therefore impossible, with no factorization of `A`, floating-point comparison, or acceptance of solver flags.
 
 ## 4. New verified-integer candidate census
 
 | Root | Newly excluded nonoverlapping exponents | Count |
 | --- | --- | ---: |
 | 5 | 1626, 1636 | 2 |
-| 17 | 726, 732, 738, 742, 750, 756, 760, 768, 772, 786, 796 | 11 |
-| **Total** | | **13** |
+| 17 | 708, 718, 726, 732, 738, 742, 750, 756, 760, 768, 772, 786, 796 | 13 |
+| **Total** | | **15** |
 
-The simpler cyclotomic Euler primorial test already excludes 34 shards, one of which overlaps the earlier finite quotient census. The strengthened DP excludes 13 *additional* shards. Thus the current candidate top-level census is
+The simpler cyclotomic Euler primorial test already excludes 34 shards, one of which overlaps the earlier finite quotient census. The strengthened DP excludes 15 *additional* shards. Thus the current candidate top-level census is
 
 ```
 14 forbidden factors
 + 1382 exact sigma-divisor-size contradictions
 + 3 fully exhausted finite quotients
 + 33 new simple cyclotomic-Euler bounds
-+ 13 new forbidden-exponent DP bounds
-= 1445 candidate integer proof leaves / 3072.
++ 15 new forbidden-exponent DP bounds
+= 1447 candidate integer proof leaves / 3072.
 
-Open top-level shard count = 1627.
+Open top-level shard count = 1625.
 ```
 
 ## 5. Repository integration and validation
@@ -106,7 +133,7 @@ Open top-level shard count = 1627.
 - [Regression and tampering tests](../Python/CyclotomicExponentDPClosureTests.py)
 - [Independent verifier](../Python/IndependentVerifierV2.py): new root-only leaf reason `CYCLOTOMIC_FORBIDDEN_EXPONENT_DP`.
 - [Direct proof generator](../Python/DirectRootClosures2400.py): selects the 13 independently recomputed positive cases.
-- [3,072-shard audit](../Python/AuditDirectRoot2400.py): expects 1,445 independently accepted leaves, 1,627 open, and global `INCOMPLETE_FRONTIER`.
+- [3,072-shard audit](../Python/AuditDirectRoot2400.py): expects 1,447 independently accepted leaves, 1,625 open, and global `INCOMPLETE_FRONTIER`.
 
 Reproduce from the repository root:
 
