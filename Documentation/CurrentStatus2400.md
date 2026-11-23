@@ -21,11 +21,11 @@
 | 独立验证器 | [IndependentVerifierV2.py](../Research/Session20261122/Python/IndependentVerifierV2.py) | 合成树与防篡改测试；真实完整 DAG 未打通 |
 | 全量审计器 | [AuditRunner2400.py](../Research/Session20261122/Python/AuditRunner2400.py) | 覆盖 3072/3058 项；已接入两类直接整数证书快通道 |
 | 顶层直接闭合证书 | [DirectRootClosures2400.py](../Research/Session20261122/Python/DirectRootClosures2400.py) | 基础两类整数叶 1,396 项；另有两类新规则；见 [数学证明与实验](../Research/Session20261122/Reports/DirectRootClosure2400.md) |
-| 禁用根指数 DP 整数证书 | [CyclotomicExponentDPClosure2400.py](../Research/Session20261122/Python/CyclotomicExponentDPClosure2400.py) | 13 个新增整数叶；独立验证器已接入，待新完整 CI 审计 |
+| 禁用根指数 DP 整数证书 | [CyclotomicExponentDPClosure2400.py](../Research/Session20261122/Python/CyclotomicExponentDPClosure2400.py) | 15 个新增整数叶；独立验证器已接入，待新完整 CI 审计 |
 | 分圆–Euler 素数乘积证书 | [CyclotomicPrimorialClosure2400.py](../Research/Session20261122/Python/CyclotomicPrimorialClosure2400.py) | 33 个新增非重叠整数叶；独立验证器已接入，待新完整 CI 审计 |
 | 分圆有限乘子证明 | [FiniteQuotientClosure2400.py](../Research/Session20261122/Python/FiniteQuotientClosure2400.py) | 3 项完整整数穷举，独立验证器已接入；最新 CI 待执行 |
 | 精确根顺序优化 | [RootOrderDirectClosureDP.py](../Research/Session20261122/Python/RootOrderDirectClosureDP.py) | 精确 DP + 40,320 个根排列交叉检查；正式根顺序保持不变 |
-| 全量直接证书审计 | [AuditDirectRoot2400.py](../Research/Session20261122/Python/AuditDirectRoot2400.py) | 以缺失账本为输入检查 1,445 项；新增回归尚待运行 |
+| 全量直接证书审计 | [AuditDirectRoot2400.py](../Research/Session20261122/Python/AuditDirectRoot2400.py) | 以缺失账本为输入检查 1,447 项；新增回归尚待运行 |
 | 原子前沿账本 | [FrontierLedgerV2.py](../Research/Session20261122/Python/FrontierLedgerV2.py) | 故障恢复/分裂存储测试 |
 | C++ 前沿编解码 | [V21FrontierCodec.hpp](../Sources/Cpp/V21FrontierCodec.hpp) | V2 状态协议、旧掩码坐标、残余保序 |
 | 实验性搜索器 | [ProofTreeV21Frontier.cpp](../Sources/Cpp/ProofTreeV21Frontier.cpp) | G1 初筛复用；未移植全部 V21 路障/LP |
@@ -36,7 +36,7 @@
 
 ## 3. 未完成任务（按依赖次序）
 
-1. **P0 — 生成真正的独立证明 DAG。** 已接入五类顶层整数证明叶（候选合计 1,445 项，待新完整审计）。下一步 C++ 为其余 1,627 项中的直接闭合、普通分裂、封闭叶、循环分裂导出全部父边证据；账本存储与 Python 验证器逐状态一致，并对篡改、重放、中断拒绝错误闭合。
+1. **P0 — 生成真正的独立证明 DAG。** 已接入五类顶层整数证明叶（候选合计 1,447 项，待新完整审计）。下一步 C++ 为其余 1,625 项中的直接闭合、普通分裂、封闭叶、循环分裂导出全部父边证据；账本存储与 Python 验证器逐状态一致，并对篡改、重放、中断拒绝错误闭合。
 2. **P0 — 补齐冻结 V21 的搜索规则。** 将路障、循环新素数枚举、延迟残余强化与全部 256 前缀/状态 LP 的数学语义转移到新搜索器，并独立证明每类剪枝可靠。先比较根 19 的分片 130、35，再比较 66、132、138、149，最后测困难 0、100。
 3. **P0 — 大素数的确定性素性证书与精确算术。** GMP probable-prime 仅用于探索，必须输出可独立检查的素性见证；校验来源分离赋值、Euler 指数、残余最小素因子下界和区间取整方向。
 4. **P1 — 提高困难分片吞吐。** 把单飞缓存接入 `get_sigma_fact`，固定键 `(p,d+1)` 与线程读写生命期；测算完整分片耗时、任务切分代价及关键路径。
