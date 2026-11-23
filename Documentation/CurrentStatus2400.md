@@ -1,3 +1,5 @@
+> **2026-11-23 单素数指数穷举新证书：** 新增根 3 顶层分片 `P3_I00368`（`p=3,d=2476`）的确定性整数验证：素数 `q=980893` 被 `σ(3^2476)` 强制整除，枚举全部可行 `v_q(N)` 后由禁用根或精确 LCM 尺寸界逐项排除。新规则已接入独立验证器及直接根证书；直接根证书计数由 **1,447 增至 1,448**。以最近完整审计 **1,628/3,072** 为基础，本轮新叶预计使下一次全量重放达到 **1,629 项闭合、1,443 项开放**，**该次完整审计与 CI 尚未运行**。本地单独验证与可恢复的长时分圆同余筛选记录见 [ForcedPrimeExponentPilot2400](../Research/Session20261123/Reports/ForcedPrimeExponentPilot2400.md)。全局状态仍为 `INCOMPLETE_FRONTIER`。
+
 > **整数复验更新（2026-11-23）**　原根集固定顺序下，合并审计已复验 **1,628 / 3,072** 个顶层分片，剩余 **1,444** 个。相对仓库 1,447 项基线，根 17 整类新增 125 项、根 5 分圆剩余乘子对偶新增 54 项，根 7、根 31 各新增 1 项。根 17 的整类下界为 `log10 N >= 2847.836220`。根 5 另有 18 项已排除 `17∤N` 分支，其 `17|N` 分支仍开放。完整规则、逐根清单与复验命令见 [RootClassValuationAudit2400](../Research/Session20261123/Reports/RootClassValuationAudit2400.md)。全局状态仍为 `INCOMPLETE_FRONTIER`。
 
 > **2026-11-23 Gemini v5 最新研究记录：** 新报告称 3,072 个顶层任务中 **1,679 项 REPRODUCED_VERIFIED**、**1,393 项 OPEN**（较上一份 Gemini 报告净关闭 30 项）；终局互素类与根 17 整类仍报告闭合；根 5 已报告 301/481 项闭合。规则 VII 旧整除断言已被反例推翻，改为仅可用于数值尺寸下界；`P13_I00165` 尚未复现。**上传仅有研究报告和一个 C++ 因子发现工具源码，未提供所述 JSON 证书、完整 31 份 DAG 和独立验证器供本仓库复现。** 请区分 Gemini 报告中的 `REPRODUCED_VERIFIED` 与本仓库的 `EXTERNAL_REPORTED_PENDING_REPLAY`。报告归档见 [ResearchResultV5](../Research/Session20261123/Reports/ResearchResultV5.md)，逐根状态与下一步见 [GeminiProgressReviewV5](GeminiProgressReviewV5.md)。**全局定理：`INCOMPLETE_FRONTIER`；72 小时全量运行：未完成。**
@@ -27,11 +29,11 @@
 | 独立验证器 | [IndependentVerifierV2.py](../Research/Session20261122/Python/IndependentVerifierV2.py) | 合成树与防篡改测试；真实完整 DAG 未打通 |
 | 全量审计器 | [AuditRunner2400.py](../Research/Session20261122/Python/AuditRunner2400.py) | 覆盖 3072/3058 项；已接入两类直接整数证书快通道 |
 | 顶层直接闭合证书 | [DirectRootClosures2400.py](../Research/Session20261122/Python/DirectRootClosures2400.py) | 基础两类整数叶 1,396 项；另有两类新规则；见 [数学证明与实验](../Research/Session20261122/Reports/DirectRootClosure2400.md) |
-| 禁用根指数 DP 整数证书 | [CyclotomicExponentDPClosure2400.py](../Research/Session20261122/Python/CyclotomicExponentDPClosure2400.py) | 15 个新增整数叶；独立验证器已接入，待新完整 CI 审计 |
+| 单素数指数整数穷举 | [ForcedPrimeExponentClosure2400.py](../Research/Session20261122/Python/ForcedPrimeExponentClosure2400.py) | 新增根 3 一项直接证书；断点长时扫描，已本地逐指数复算 |\n| 禁用根指数 DP 整数证书 | [CyclotomicExponentDPClosure2400.py](../Research/Session20261122/Python/CyclotomicExponentDPClosure2400.py) | 15 个新增整数叶；独立验证器已接入，待新完整 CI 审计 |
 | 分圆–Euler 素数乘积证书 | [CyclotomicPrimorialClosure2400.py](../Research/Session20261122/Python/CyclotomicPrimorialClosure2400.py) | 33 个新增非重叠整数叶；独立验证器已接入，待新完整 CI 审计 |
 | 分圆有限乘子证明 | [FiniteQuotientClosure2400.py](../Research/Session20261122/Python/FiniteQuotientClosure2400.py) | 3 项完整整数穷举，独立验证器已接入；最新 CI 待执行 |
 | 精确根顺序优化 | [RootOrderDirectClosureDP.py](../Research/Session20261122/Python/RootOrderDirectClosureDP.py) | 精确 DP + 40,320 个根排列交叉检查；正式根顺序保持不变 |
-| 全量直接证书审计 | [AuditDirectRoot2400.py](../Research/Session20261122/Python/AuditDirectRoot2400.py) | 以缺失账本为输入检查 1,447 项；新增回归尚待运行 |
+| 全量直接证书审计 | [AuditDirectRoot2400.py](../Research/Session20261122/Python/AuditDirectRoot2400.py) | 当前应检查 1,448 项；新证书的完整 CI 回归尚待运行 |
 | 原子前沿账本 | [FrontierLedgerV2.py](../Research/Session20261122/Python/FrontierLedgerV2.py) | 故障恢复/分裂存储测试 |
 | C++ 前沿编解码 | [V21FrontierCodec.hpp](../Sources/Cpp/V21FrontierCodec.hpp) | V2 状态协议、旧掩码坐标、残余保序 |
 | 实验性搜索器 | [ProofTreeV21Frontier.cpp](../Sources/Cpp/ProofTreeV21Frontier.cpp) | G1 初筛复用；未移植全部 V21 路障/LP |
