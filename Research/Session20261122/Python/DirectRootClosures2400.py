@@ -28,6 +28,7 @@ from IndependentVerifierV2 import (
 from VerifyRootExponentCoverage import canonical_tasks
 from CyclotomicPrimorialClosure2400 import cyclotomic_primorial_certificate
 from CyclotomicExponentDPClosure2400 import weighted_cyclotomic_certificate
+from ForcedPrimeExponentClosure2400 import verify_forced_prime
 
 
 def divides_sigma_mod(p: int, d: int, q: int) -> bool:
@@ -111,6 +112,16 @@ def direct_root_bundle(pin: RootTaskPin) -> Optional[dict]:
             "source_p": pin.root_prime,
             "d": pin.root_exp,
         }
+    elif (pin.root_order == DEFAULT_CIRC_ORDER
+          and pin.upper_bound_N == 10**2400
+          and pin.root_prime == 3 and pin.root_exp == 2476 and not pin.root_exact
+          and verify_forced_prime(3, 2476, False,
+                                  tuple(sorted(pin.root_order[:pin.root_order.index(3)])),
+                                  980893) is not None):
+        witness = {
+            "reason": "FORCED_PRIME_EXPONENT_EXHAUSTION",
+            "source_p": 3, "d": 2476, "forced_q": 980893,
+        }
     else:
         return None
 
@@ -136,7 +147,8 @@ def independently_check_direct_roots(root_order: tuple[int, ...], emit_dir: Opti
     counts = {p: 0 for p in root_order}
     reasons = {"FORBIDDEN_FACTOR": 0, "SIGMA_DIVISOR_SIZE": 0, "FINITE_QUOTIENT_CYCLOTOMIC": 0,
                "CYCLOTOMIC_EULER_PRIMORIAL": 0,
-               "CYCLOTOMIC_FORBIDDEN_EXPONENT_DP": 0}
+               "CYCLOTOMIC_FORBIDDEN_EXPONENT_DP": 0,
+               "FORCED_PRIME_EXPONENT_EXHAUSTION": 0}
     witnesses = []
     tasks = list(canonical_tasks(root_order))
     for task in tasks:
@@ -181,6 +193,11 @@ def independently_check_direct_roots(root_order: tuple[int, ...], emit_dir: Opti
                     tuple(sorted(pin.root_order[:pin.root_order.index(pin.root_prime)])),
                     pin.upper_bound_N) is None:
                 raise VerificationError("cyclotomic exponent DP unexpectedly failed")
+        elif reason == "FORCED_PRIME_EXPONENT_EXHAUSTION":
+            if verify_forced_prime(pin.root_prime, pin.root_exp, pin.root_exact,
+                                   tuple(sorted(pin.root_order[:pin.root_order.index(pin.root_prime)])),
+                                   witness["forced_q"]) is None:
+                raise VerificationError("forced prime integer certificate failed")
         else:
             raise VerificationError(f"unknown direct root reason {reason}")
 
@@ -228,10 +245,11 @@ def main() -> None:
     result = independently_check_direct_roots(order, args.emit_dir)
     if args.root_set == "original":
         if (result["verified_direct_closures"], result["by_reason"]) != (
-            1447, {"FORBIDDEN_FACTOR": 14, "SIGMA_DIVISOR_SIZE": 1382,
+            1448, {"FORBIDDEN_FACTOR": 14, "SIGMA_DIVISOR_SIZE": 1382,
                    "FINITE_QUOTIENT_CYCLOTOMIC": 3,
                    "CYCLOTOMIC_EULER_PRIMORIAL": 33,
-                   "CYCLOTOMIC_FORBIDDEN_EXPONENT_DP": 15}
+                   "CYCLOTOMIC_FORBIDDEN_EXPONENT_DP": 15,
+                   "FORCED_PRIME_EXPONENT_EXHAUSTION": 1}
         ):
             raise VerificationError("original-root certificate census changed unexpectedly")
     print(json.dumps(
