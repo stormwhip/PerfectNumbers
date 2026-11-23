@@ -24,6 +24,7 @@ jobs:
           for name in VerifierV2Tests VerifierV2AuditTests FrontierV2FaultTests AuditRunnerTests AuditRunnerAuditTests FrontierV2MixedEdgeTests PrimeCutoffGCDTests DirectRootClosuresTests FiniteQuotientClosureTests CyclotomicPrimorialClosureTests CyclotomicExponentDPClosureTests RootOrderDirectClosureDP; do
             python3 -S -O "Research/Session20261122/Python/${name}.py"
           done
+          python3 Research/Session20261122/Python/ForcedPrimeExponentClosure2400.py --verify --root 3 --exponent 2476 --forced-prime 980893
       - name: Build C++ codec and single-flight regressions
         run: |
           set -e
