@@ -50,7 +50,7 @@ for h in (11, 121):
 
 ## 丰度回退原型
 
-[程序](../../Research/AbundanceSearch/RecursiveAbundance2400.py)（提交 f4af458）用整数比较执行尺寸、Euler 指数、强制赋值和丰度检查。若 \(V\) 是若干精确素幂的乘积，则 \(I(N/V)=2V/\sigma(V)\)，所以既约分母必须整除 \(N/V\)。对分母的剩余合数只需试除到 5000 即可估计丰度。若还需一个新素数，则枚举最小新素因子。算力或深度耗尽的结点保留为待验证；重跑预算中止父节点时可能重复一部分工作。
+[程序](../../Research/AbundanceSearch/RecursiveAbundance2400.py)（提交 1aa0fae）用整数比较执行尺寸、Euler 指数、强制赋值和丰度检查。若 \(V\) 是若干精确素幂的乘积，则 \(I(N/V)=2V/\sigma(V)\)，所以既约分母必须整除 \(N/V\)。对分母的剩余合数只需试除到 5000 即可估计丰度。若还需一个新素数，则枚举最小新素因子。算力或深度耗尽的结点保留为待验证；重跑预算中止父节点时可能重复一部分工作。
 
 对根 3、5，\(p-1\) 是 2 的幂。任何偶幂来源只在 \(r\equiv1\bmod p\) 时贡献 \(b=v_p(f+1)\)，且 \(r^f\ge r^{(p-1)b}\)。当 Euler 指数 \(a\ge5\) 时，若 \(q\equiv1\bmod p\)，则 \(a\ge2p^s-1\) 对 \(s\ge1\) 已足够。若 \(q\equiv-1\bmod p\)，令 \(t=v_p(q+1)\)、\(j=v_p((a+1)/2)\)，有 \(s=t+j,\ q\ge p^t,\ a\ge\max(5,2p^j-1)\)，推出 \(at\ge5(t+j-1)\)。其余阶给出零贡献。因此 Euler 项至少占 \(p^{5s-5}\) 的尺寸。程序结合未分配的根赋值与当前尺寸预算压掉 \(a\ge5\)，并对已选 Euler 项的节点用偶幂供给界剪枝。涉及两项独立下界时保守取各自结论，避免重复计入强制因子。
 
@@ -68,7 +68,13 @@ for h in (11, 121):
 
 ~~~sh
 python RecursiveAbundance2400.py --depth 1 --seconds 30 --frontier pilot.jsonl
-python RecursiveAbundance2400.py --states pilot.jsonl --partition 0 16 --depth 2 --seconds 10 --frontier pending-0.jsonl
+python RecursiveAbundance2400.py --states pilot.jsonl --partition 0 16 --depth 2 --seconds 10 --trial-fallback --frontier pending-0.jsonl
 ~~~
 
 分区编号从 0 起。保存的状态要用生成时的同一个尺寸上界复跑。7 天预算的核心实测量是整机有效节点吞吐、无分支节点的比例和最长子树的进展；无分支节点需要额外的因子或数学剪枝。
+
+### 试除回退复测
+
+对根指数 \( (3,1302) \) 的原始深度优先搜索最先遇到的 100 个无分支状态逐个复测。试除到 5000 时全部无分支，延伸到 20000 后，99 个得到分支且 1 个排除。独立试到 50000 未改善这 100 个结果。带 `--trial-fallback` 的 15,000 节点试验耗时 22.17 秒，1590 个节点触发重试，522 个仍无分支，整棵子树开放。现有样本来自确定的遍历顺序，供同一输入上的实现比较。
+
+候选排除之间的分圆因子复用也有范围。在已核验基线所余的 2204 个根指数对中，检查 \(h\mid e+1\) 后，\(h>300\) 的 1431 个 \((p,h)\) 对各出现一次。可以复用同一分圆值的已知因子。高指标的分解任务仍应按具体节点是否受益选择。
