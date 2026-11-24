@@ -538,6 +538,10 @@
   ],
   [
    5,
+   138
+  ],
+  [
+   5,
    142
   ],
   [
@@ -2277,18 +2281,18 @@
    612
   ]
  ],
- "new_shards": 248,
+ "new_shards": 249,
  "by_root": {
   "3": 76,
-  "5": 49,
+  "5": 50,
   "7": 23,
   "11": 27,
   "13": 35,
   "19": 14,
   "31": 24
  },
- "closed": 2440,
- "open": 632,
+ "closed": 2441,
+ "open": 631,
  "closed_shards": [
   {
    "root": 19,
@@ -4560,6 +4564,17 @@
    "id": "P5_I00032",
    "remaining_actuals": [
     136
+   ]
+  },
+  {
+   "root": 5,
+   "index": 33,
+   "count": 481,
+   "exponent": 138,
+   "exact": false,
+   "id": "P5_I00033",
+   "remaining_actuals": [
+    138
    ]
   },
   {
@@ -12818,17 +12833,6 @@
    "id": "P5_I00031",
    "remaining_actuals": [
     130
-   ]
-  },
-  {
-   "root": 5,
-   "index": 33,
-   "count": 481,
-   "exponent": 138,
-   "exact": false,
-   "id": "P5_I00033",
-   "remaining_actuals": [
-    138
    ]
   },
   {
