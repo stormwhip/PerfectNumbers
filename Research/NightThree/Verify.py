@@ -176,6 +176,7 @@ def main():
    try:st=E.replay(row,cap=50000)
    finally:E.proven=old
    es.append(e);print('ACCEPT GENERIC',st,flush=True);continue
-  one,hi=J.audit(e,fs);require(all(s>0 for s in one),'zero branch remains');highstats=independent(e,fs,edges,hi,reduced=True,high=True,internal=row.get('internal',False)) if hi else {};st=independent(e,fs,edges,one,boost=row.get('boost',False),reduced=row.get('reduced',False),parity=row.get('parity',False),internal=row.get('internal',False),exception=row.get('exception',False)) if one else {};es.append(e);summary.append(dict(e=e,windows=len(one),stats=st,high=highstats));print('ACCEPT',summary[-1],flush=True)
+  one,hi=J.audit(e,fs);require(all(s>0 for s in one),'zero branch remains');highstats=independent(e,fs,edges,hi,reduced=True,high=True,internal=row.get('internal',False)) if hi else {}
+  partitions=row.get('windows',[one]);require(isinstance(partitions,list) and sorted(v for w in partitions for v in w)==sorted(one),'incomplete or duplicate Euler-one subwindow');stlist=[independent(e,fs,edges,w,boost=row.get('boost',False),reduced=row.get('reduced',False),parity=row.get('parity',False),internal=row.get('internal',False),exception=row.get('exception',False)) for w in partitions if w];st=stlist[0] if len(stlist)==1 else stlist;es.append(e);summary.append(dict(e=e,windows=len(one),stats=st,high=highstats));print('ACCEPT',summary[-1],flush=True)
  print('actuals',sorted(es),'complete shards',J.delta(es),'baseline 880 ->',880-len(J.delta(es)))
 if __name__=='__main__':main()
