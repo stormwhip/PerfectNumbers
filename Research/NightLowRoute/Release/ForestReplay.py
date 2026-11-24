@@ -31,7 +31,7 @@ def proof(row,certs,*,forced=None):
  seen=set();queue=list(K)
  while queue:
   z=queue.pop();check(z not in seen,'cycle');seen.add(z);queue.extend(kids[z])
- check(seen==V,'unreachable');U=p*A*math.prod(parent)*(forced or 1);ban=R[:R.index(p)];cs={z:valuation(A,z) for z in K};base=p**e*A//math.prod(z**c for z,c in cs.items());cs={z:max(1,c) for z,c in cs.items()};cap=row.get('head',6);check(type(cap)==int and 1<=cap<=24,'prefix');
+ check(seen==V,'unreachable');U=p*A*math.prod(parent)*(forced or 1);ban=R[:R.index(p)];cs={z:valuation(A,z) for z in K};base=p**e*A//math.prod(z**c for z,c in cs.items());cs={z:max(1,c) for z,c in cs.items()};cap=row.get('head',6);check(type(cap)==int and 1<=cap<=512,'prefix');
  @functools.cache
  def oddpossible(q):return q%4==1 and all((q+1)%b for b in ban)
  @functools.cache
