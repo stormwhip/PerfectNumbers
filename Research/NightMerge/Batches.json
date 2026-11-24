@@ -1,1 +1,1 @@
-{"order":["Batch01.json","Batch02.json","Batch03.json"],"five":["Batch1.json"],"three":["Batch1","BatchS","Batch2","BatchT","BatchE"],"five_more":true,"five_extra":[["Batch3.json","VerifyResidue.py"],["Batch4.json","VerifyDual.py"],["Batch5.json","VerifyPaid.py"]]}
+{"order":["Batch01.json","Batch02.json","Batch03.json"],"five":["Batch1.json"],"three":["Batch1","BatchS","Batch2","BatchT","BatchE","Batch3","Batch4","BatchF","BatchH"],"five_more":true,"five_extra":[["Batch3.json","VerifyResidue.py"],["Batch4.json","VerifyDual.py"],["Batch5.json","VerifyPaid.py"]]}
