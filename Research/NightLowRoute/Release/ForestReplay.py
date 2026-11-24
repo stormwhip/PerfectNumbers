@@ -16,9 +16,14 @@ def nonsupport(x,U):
  while g!=1:x//=g;g=math.gcd(x,U)
  return x
 
-def proof(row,certs,*,forced=None):
+def proof(row,certs,*,forced=None,support=None):
  p,e=row['p'],row['e'];check(p in (13,19,31) and type(e)==int and e>=2 and not e%2,'root');A=sigma(p,e);K=set(row['roots']);edges=row['owners'];parent=dict(edges);check(len(K)==len(row['roots']) and len(parent)==len(edges),'duplicates')
  if forced is not None:check((p==31 and forced in (3,5,13)) or (p==13 and forced in (3,5)),'conditional root');K.add(forced)
+ extra_ban=()
+ if support is not None:
+  q,yes=support;check(forced is None and type(yes)==bool and q in (3,5,7,11,13,17,19,23,29,31) and q not in (*R[:R.index(p)],p),'invalid binary conditional')
+  if yes:forced=q;K.add(q)
+  else:extra_ban=(q,)
  V=set(parent)|K;check(not (K & parent.keys()),'cross root')
  for q in V:
   t=q
@@ -31,7 +36,7 @@ def proof(row,certs,*,forced=None):
  seen=set();queue=list(K)
  while queue:
   z=queue.pop();check(z not in seen,'cycle');seen.add(z);queue.extend(kids[z])
- check(seen==V,'unreachable');U=p*A*math.prod(parent)*(forced or 1);ban=R[:R.index(p)];cs={z:valuation(A,z) for z in K};base=p**e*A//math.prod(z**c for z,c in cs.items());cs={z:max(1,c) for z,c in cs.items()};cap=row.get('head',6);check(type(cap)==int and 1<=cap<=512,'prefix');
+ check(seen==V,'unreachable');U=p*A*math.prod(parent)*(forced or 1);ban=(*R[:R.index(p)],*extra_ban);cs={z:valuation(A,z) for z in K};base=p**e*A//math.prod(z**c for z,c in cs.items());cs={z:max(1,c) for z,c in cs.items()};cap=row.get('head',6);check(type(cap)==int and 1<=cap<=512,'prefix');
  den=row.get('den',1);price=dict(row.get('rho',[]));check(type(den)==int and 1<=den<=8 and set(price)<=V and len(price)==len(row.get('rho',[])) and all(type(u)==int and 0<u<den for u in price.values()),'invalid sharing weights');base=base**den*math.prod(z**(u*valuation(A,z)) for z,u in price.items());target=B**den
  @functools.cache
  def oddpossible(q):return q%4==1 and all((q+1)%b for b in ban)
