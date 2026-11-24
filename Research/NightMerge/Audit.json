@@ -1862,6 +1862,10 @@
   ],
   [
    13,
+   396
+  ],
+  [
+   13,
    398
   ],
   [
@@ -1887,6 +1891,10 @@
   [
    13,
    426
+  ],
+  [
+   13,
+   430
   ],
   [
    13,
@@ -2062,6 +2070,10 @@
   ],
   [
    13,
+   642
+  ],
+  [
+   13,
    648
   ],
   [
@@ -2171,6 +2183,10 @@
   [
    13,
    852
+  ],
+  [
+   19,
+   136
   ],
   [
    19,
@@ -2502,6 +2518,22 @@
   ],
   [
    31,
+   52
+  ],
+  [
+   31,
+   66
+  ],
+  [
+   31,
+   70
+  ],
+  [
+   31,
+   72
+  ],
+  [
+   31,
    88
   ],
   [
@@ -2825,19 +2857,31 @@
    612
   ]
  ],
- "new_shards": 300,
+ "new_shards": 308,
  "by_root": {
   "3": 95,
   "5": 53,
   "7": 26,
   "11": 30,
-  "13": 47,
-  "19": 17,
-  "31": 32
+  "13": 50,
+  "19": 18,
+  "31": 36
  },
- "closed": 2492,
- "open": 580,
+ "closed": 2500,
+ "open": 572,
  "closed_shards": [
+  {
+   "root": 19,
+   "index": 31,
+   "count": 287,
+   "exponent": 136,
+   "exact": false,
+   "id": "P19_I00031",
+   "remaining_actuals": [
+    136,
+    410
+   ]
+  },
   {
    "root": 19,
    "index": 43,
@@ -3643,6 +3687,57 @@
   },
   {
    "root": 31,
+   "index": 14,
+   "count": 253,
+   "exponent": 52,
+   "exact": false,
+   "id": "P31_I00014",
+   "remaining_actuals": [
+    52,
+    158,
+    370
+   ]
+  },
+  {
+   "root": 31,
+   "index": 17,
+   "count": 253,
+   "exponent": 66,
+   "exact": false,
+   "id": "P31_I00017",
+   "remaining_actuals": [
+    66,
+    200,
+    468
+   ]
+  },
+  {
+   "root": 31,
+   "index": 18,
+   "count": 253,
+   "exponent": 70,
+   "exact": false,
+   "id": "P31_I00018",
+   "remaining_actuals": [
+    70,
+    212
+   ]
+  },
+  {
+   "root": 31,
+   "index": 19,
+   "count": 253,
+   "exponent": 72,
+   "exact": false,
+   "id": "P31_I00019",
+   "remaining_actuals": [
+    72,
+    218,
+    510
+   ]
+  },
+  {
+   "root": 31,
    "index": 22,
    "count": 253,
    "exponent": 88,
@@ -4295,6 +4390,28 @@
   },
   {
    "root": 13,
+   "index": 77,
+   "count": 325,
+   "exponent": 396,
+   "exact": false,
+   "id": "P13_I00077",
+   "remaining_actuals": [
+    396
+   ]
+  },
+  {
+   "root": 13,
+   "index": 82,
+   "count": 325,
+   "exponent": 430,
+   "exact": false,
+   "id": "P13_I00082",
+   "remaining_actuals": [
+    430
+   ]
+  },
+  {
+   "root": 13,
    "index": 100,
    "count": 325,
    "exponent": 546,
@@ -4324,6 +4441,17 @@
    "id": "P13_I00114",
    "remaining_actuals": [
     630
+   ]
+  },
+  {
+   "root": 13,
+   "index": 116,
+   "count": 325,
+   "exponent": 642,
+   "exact": false,
+   "id": "P13_I00116",
+   "remaining_actuals": [
+    642
    ]
   },
   {
@@ -6710,17 +6838,6 @@
    "id": "P19_I00030",
    "remaining_actuals": [
     130
-   ]
-  },
-  {
-   "root": 19,
-   "index": 31,
-   "count": 287,
-   "exponent": 136,
-   "exact": false,
-   "id": "P19_I00031",
-   "remaining_actuals": [
-    136
    ]
   },
   {
@@ -10620,17 +10737,6 @@
   },
   {
    "root": 31,
-   "index": 14,
-   "count": 253,
-   "exponent": 52,
-   "exact": false,
-   "id": "P31_I00014",
-   "remaining_actuals": [
-    52
-   ]
-  },
-  {
-   "root": 31,
    "index": 15,
    "count": 253,
    "exponent": 58,
@@ -10649,39 +10755,6 @@
    "id": "P31_I00016",
    "remaining_actuals": [
     60
-   ]
-  },
-  {
-   "root": 31,
-   "index": 17,
-   "count": 253,
-   "exponent": 66,
-   "exact": false,
-   "id": "P31_I00017",
-   "remaining_actuals": [
-    66
-   ]
-  },
-  {
-   "root": 31,
-   "index": 18,
-   "count": 253,
-   "exponent": 70,
-   "exact": false,
-   "id": "P31_I00018",
-   "remaining_actuals": [
-    70
-   ]
-  },
-  {
-   "root": 31,
-   "index": 19,
-   "count": 253,
-   "exponent": 72,
-   "exact": false,
-   "id": "P31_I00019",
-   "remaining_actuals": [
-    72
    ]
   },
   {
@@ -11883,17 +11956,6 @@
   },
   {
    "root": 13,
-   "index": 77,
-   "count": 325,
-   "exponent": 396,
-   "exact": false,
-   "id": "P13_I00077",
-   "remaining_actuals": [
-    396
-   ]
-  },
-  {
-   "root": 13,
    "index": 78,
    "count": 325,
    "exponent": 400,
@@ -11934,17 +11996,6 @@
    "id": "P13_I00081",
    "remaining_actuals": [
     420
-   ]
-  },
-  {
-   "root": 13,
-   "index": 82,
-   "count": 325,
-   "exponent": 430,
-   "exact": false,
-   "id": "P13_I00082",
-   "remaining_actuals": [
-    430
    ]
   },
   {
@@ -12242,17 +12293,6 @@
    "id": "P13_I00115",
    "remaining_actuals": [
     640
-   ]
-  },
-  {
-   "root": 13,
-   "index": 116,
-   "count": 325,
-   "exponent": 642,
-   "exact": false,
-   "id": "P13_I00116",
-   "remaining_actuals": [
-    642
    ]
   },
   {
