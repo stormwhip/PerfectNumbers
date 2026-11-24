@@ -2158,6 +2158,10 @@
   ],
   [
    13,
+   250
+  ],
+  [
+   13,
    254
   ],
   [
@@ -2475,6 +2479,10 @@
   [
    13,
    496
+  ],
+  [
+   13,
+   498
   ],
   [
    13,
@@ -3670,6 +3678,10 @@
   ],
   [
    31,
+   292
+  ],
+  [
+   31,
    296
   ],
   [
@@ -3905,18 +3917,18 @@
    612
   ]
  ],
- "new_shards": 392,
+ "new_shards": 395,
  "by_root": {
   "3": 101,
   "5": 57,
   "7": 30,
   "11": 33,
-  "13": 75,
+  "13": 77,
   "19": 38,
-  "31": 58
+  "31": 59
  },
- "closed": 2584,
- "open": 488,
+ "closed": 2587,
+ "open": 485,
  "closed_shards": [
   {
    "root": 19,
@@ -5457,6 +5469,17 @@
   },
   {
    "root": 31,
+   "index": 60,
+   "count": 253,
+   "exponent": 292,
+   "exact": false,
+   "id": "P31_I00060",
+   "remaining_actuals": [
+    292
+   ]
+  },
+  {
+   "root": 31,
    "index": 63,
    "count": 253,
    "exponent": 312,
@@ -6121,6 +6144,17 @@
   },
   {
    "root": 13,
+   "index": 53,
+   "count": 325,
+   "exponent": 250,
+   "exact": false,
+   "id": "P13_I00053",
+   "remaining_actuals": [
+    250
+   ]
+  },
+  {
+   "root": 13,
    "index": 56,
    "count": 325,
    "exponent": 268,
@@ -6282,6 +6316,17 @@
    "id": "P13_I00091",
    "remaining_actuals": [
     478
+   ]
+  },
+  {
+   "root": 13,
+   "index": 94,
+   "count": 325,
+   "exponent": 498,
+   "exact": false,
+   "id": "P13_I00094",
+   "remaining_actuals": [
+    498
    ]
   },
   {
@@ -12340,17 +12385,6 @@
   },
   {
    "root": 31,
-   "index": 60,
-   "count": 253,
-   "exponent": 292,
-   "exact": false,
-   "id": "P31_I00060",
-   "remaining_actuals": [
-    292
-   ]
-  },
-  {
-   "root": 31,
    "index": 61,
    "count": 253,
    "exponent": 306,
@@ -12832,17 +12866,6 @@
   },
   {
    "root": 13,
-   "index": 53,
-   "count": 325,
-   "exponent": 250,
-   "exact": false,
-   "id": "P13_I00053",
-   "remaining_actuals": [
-    250
-   ]
-  },
-  {
-   "root": 13,
    "index": 55,
    "count": 325,
    "exponent": 262,
@@ -13059,17 +13082,6 @@
    "id": "P13_I00093",
    "remaining_actuals": [
     490
-   ]
-  },
-  {
-   "root": 13,
-   "index": 94,
-   "count": 325,
-   "exponent": 498,
-   "exact": false,
-   "id": "P13_I00094",
-   "remaining_actuals": [
-    498
    ]
   },
   {
