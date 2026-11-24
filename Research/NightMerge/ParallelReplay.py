@@ -38,6 +38,9 @@ def main():
         name,cmd=item;safe_name=name.replace('/','_').replace('\\','_');rec=args.receipts/(safe_name+'.json');log=args.receipts/(safe_name+'.log');prev=read(rec) if rec.exists() else {}; old=prev.get('sha256')==key and prev.get('passed') is True
         if old and not args.fresh:return name,'cached',prev['seconds']
         sec=run(cmd,D,log);temp=rec.with_suffix('.tmp');temp.write_text(json.dumps(dict(name=name,sha256=key,passed=True,seconds=sec,log=log.name))+'\n');temp.replace(rec);return name,'replayed',sec
+    # Schedule known long tails first. Only scheduling order changes: every proof still runs, and aggregation waits for every result.
+    slow={'five-Batch18.json':100000,'five-Batch16.json':90000,'five-Batch19.json':60000,'five-Batch14.json':40000,'five-Batch17.json':35000,'five-Batch15.json':30000,'order-Batch08.json':25000}
+    jobs.sort(key=lambda item: -slow.get(item[0],10000 if item[0].startswith('order-') else 0))
     with ThreadPoolExecutor(args.workers) as pool:
         for result in as_completed([pool.submit(job,item) for item in jobs]):print(*result.result(),flush=True)
     # A second isolated process checks that the exact proven union reproduces the release ledger.
