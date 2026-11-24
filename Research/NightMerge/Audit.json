@@ -350,6 +350,10 @@
   ],
   [
    5,
+   180
+  ],
+  [
+   5,
    186
   ],
   [
@@ -371,6 +375,10 @@
   [
    5,
    210
+  ],
+  [
+   5,
+   216
   ],
   [
    5,
@@ -414,7 +422,15 @@
   ],
   [
    5,
+   312
+  ],
+  [
+   5,
    318
+  ],
+  [
+   5,
+   322
   ],
   [
    5,
@@ -1661,18 +1677,18 @@
    612
   ]
  ],
- "new_shards": 184,
+ "new_shards": 186,
  "by_root": {
   "3": 49,
-  "5": 36,
+  "5": 38,
   "7": 17,
   "11": 19,
   "13": 26,
   "19": 14,
   "31": 23
  },
- "closed": 2376,
- "open": 696,
+ "closed": 2378,
+ "open": 694,
  "closed_shards": [
   {
    "root": 19,
@@ -3317,6 +3333,17 @@
   },
   {
    "root": 5,
+   "index": 41,
+   "count": 481,
+   "exponent": 180,
+   "exact": false,
+   "id": "P5_I00041",
+   "remaining_actuals": [
+    180
+   ]
+  },
+  {
+   "root": 5,
    "index": 42,
    "count": 481,
    "exponent": 190,
@@ -3445,6 +3472,17 @@
    "id": "P5_I00063",
    "remaining_actuals": [
     310
+   ]
+  },
+  {
+   "root": 5,
+   "index": 64,
+   "count": 481,
+   "exponent": 312,
+   "exact": false,
+   "id": "P5_I00064",
+   "remaining_actuals": [
+    312
    ]
   },
   {
@@ -11976,8 +12014,7 @@
     90,
     118,
     132,
-    160,
-    216
+    160
    ]
   },
   {
@@ -12017,8 +12054,7 @@
    "id": "P5_I00006",
    "remaining_actuals": [
     16,
-    118,
-    322
+    118
    ]
   },
   {
@@ -12031,8 +12067,7 @@
    "remaining_actuals": [
     18,
     132,
-    208,
-    322
+    208
    ]
   },
   {
@@ -12066,8 +12101,7 @@
    "exact": false,
    "id": "P5_I00010",
    "remaining_actuals": [
-    30,
-    216
+    30
    ]
   },
   {
@@ -12391,17 +12425,6 @@
   },
   {
    "root": 5,
-   "index": 41,
-   "count": 481,
-   "exponent": 180,
-   "exact": false,
-   "id": "P5_I00041",
-   "remaining_actuals": [
-    180
-   ]
-  },
-  {
-   "root": 5,
    "index": 59,
    "count": 481,
    "exponent": 280,
@@ -12409,17 +12432,6 @@
    "id": "P5_I00059",
    "remaining_actuals": [
     280
-   ]
-  },
-  {
-   "root": 5,
-   "index": 64,
-   "count": 481,
-   "exponent": 312,
-   "exact": false,
-   "id": "P5_I00064",
-   "remaining_actuals": [
-    312
    ]
   },
   {
