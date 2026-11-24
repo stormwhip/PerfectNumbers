@@ -87,6 +87,12 @@ def main():
         replay(R/'NightFive/VerifyForestFive.py',name);j=json.loads(gzip.decompress((R/'NightFive'/name).read_bytes()));pairs.update((5,r['e']) for r in j['rows'])
     for name,p,e in read(H/'Batches.json').get('sigma_lift',[]):
         replay(H/'LiftTarget.py',name,p,e);pairs.add((p,e))
+    splits=read(H/'Batches.json').get('seven_split',[])
+    if splits:
+        import gzip
+        replay(R/'NightSevenForest/Release/SplitReplay.py',*splits)
+        for name in splits:
+            j=json.loads(gzip.decompress((R/'NightSevenForest/Release'/name).read_bytes()));pairs.update((r['p'],r['e']) for r in j['rows'])
     audit=merge(base,pairs); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
     if a.output:a.output.write_text(json.dumps(audit,indent=1)+'\n',encoding='utf-8')
     elif json.loads(json.dumps(audit))!=read(H/'Audit.json'):raise ValueError('snapshot mismatch')
