@@ -1098,6 +1098,10 @@
   ],
   [
    19,
+   682
+  ],
+  [
+   19,
    708
   ],
   [
@@ -1282,6 +1286,10 @@
   ],
   [
    31,
+   598
+  ],
+  [
+   31,
    606
   ],
   [
@@ -1289,18 +1297,18 @@
    612
   ]
  ],
- "new_shards": 133,
+ "new_shards": 135,
  "by_root": {
   "3": 25,
   "5": 24,
   "7": 14,
   "11": 17,
   "13": 22,
-  "19": 11,
-  "31": 20
+  "19": 12,
+  "31": 21
  },
- "closed": 2325,
- "open": 747,
+ "closed": 2327,
+ "open": 745,
  "closed_shards": [
   {
    "root": 19,
@@ -1377,6 +1385,17 @@
    "id": "P19_I00114",
    "remaining_actuals": [
     640
+   ]
+  },
+  {
+   "root": 19,
+   "index": 122,
+   "count": 287,
+   "exponent": 682,
+   "exact": false,
+   "id": "P19_I00122",
+   "remaining_actuals": [
+    682
    ]
   },
   {
@@ -1960,6 +1979,17 @@
    "id": "P31_I00106",
    "remaining_actuals": [
     592
+   ]
+  },
+  {
+   "root": 31,
+   "index": 107,
+   "count": 253,
+   "exponent": 598,
+   "exact": false,
+   "id": "P31_I00107",
+   "remaining_actuals": [
+    598
    ]
   },
   {
@@ -4257,17 +4287,6 @@
    "id": "P19_I00121",
    "remaining_actuals": [
     676
-   ]
-  },
-  {
-   "root": 19,
-   "index": 122,
-   "count": 287,
-   "exponent": 682,
-   "exact": false,
-   "id": "P19_I00122",
-   "remaining_actuals": [
-    682
    ]
   },
   {
@@ -8538,17 +8557,6 @@
    "id": "P31_I00102",
    "remaining_actuals": [
     568
-   ]
-  },
-  {
-   "root": 31,
-   "index": 107,
-   "count": 253,
-   "exponent": 598,
-   "exact": false,
-   "id": "P31_I00107",
-   "remaining_actuals": [
-    598
    ]
   },
   {
