@@ -194,3 +194,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T03:57+08:00	forest/ForestQ13.json.gz	3b50576	1	1	472	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
 2026-11-25T03:57+08:00	forest/ForestQ14.json.gz	3b50576	1	1	470	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
 2026-11-25T03:59+08:00	binary 31/478	3b50576	1	1	see audit	29 present/absent give independently valid lower exponent 2404/2402. Canonical P31_I00090.
+2026-11-25T03:59+08:00	forest/ForestQ15.json.gz	3b50576	1	1	468	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
