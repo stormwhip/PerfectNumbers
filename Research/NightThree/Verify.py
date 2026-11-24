@@ -11,6 +11,8 @@ def require(v,w):
  if not v:raise ValueError(w)
 
 @cache
+def emax():return E.ilog(B,5)
+@cache
 def high_floor(s):
  # Require s>7 globally, hence q=-1 mod3 and j=v3(a+1)<=7. For a fixed j, any a>=5 with a=1 mod4 has a minimal such value. A lower bound on its q^a uses CRT q>=2*3^(s-j)-1.
  require(s>7,'short high cell');vals=[B+1]
@@ -86,7 +88,7 @@ def independent(e,fs,ee,windows,boost=False,reduced=False,parity=False,internal=
   for s in active:
    if need<s:continue
    if high:
-    require(s>7 and 3**8>1+E.ilog(B,5),'unrestricted internal high Euler');q0=2*3**(s-7)-1;j=min(7,E.ilog(1+E.ilog(B//X,q0),3)) if internal else 7;y=3**(s-j);Q=2*y-1
+    require(s>7 and 3**8>1+emax(),'unrestricted internal high Euler');q0=2*3**(s-7)-1;j=min(7,E.ilog(1+E.ilog(B//X,q0),3)) if internal else 7;y=3**(s-j);Q=2*y-1
     require(not any(r%4==1 and (r+1)%y==0 for r in floor),'known high Euler not external');inside=U//Q>=(-U%y or y) and any((w:=math.gcd(U,sg))//Q>=(-w%y or y) for sg in checks)
     if inside:
      require(internal,'rough high Euler not external')
@@ -165,6 +167,9 @@ def main():
   e=row['e'];require(type(e)==int and e in baseline and e not in es,'not unique/open');fs=list(map(int,row['root']));require(len(set(fs))==len(fs) and all(r>3 and E.sigma(3,e)%r==0 and prime(r) for r in fs),'bad root');edges={}
   for x,m,y in row['edges']:
    x,y=int(x),int(y);require(x>3 and y>3 and type(m)==int and m>0 and pow(x,m+1,y*(x-1))==1 and prime(y),'invalid edge');edges.setdefault((x,m),set()).add(y)
+  if row.get('pivots'):
+   from PivotReplay import check
+   st=check(row);es.append(e);print('ACCEPT PIVOTS',e,st,flush=True);continue
   if row.get('generic'):
    # Exact baseline solver enumerates Euler and ordinary powers itself; the only substituted function is its prime oracle, backed by the packet ECPP and deterministic MR already checked above.
    old=E.proven;E.proven=prime

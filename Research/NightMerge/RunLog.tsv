@@ -49,3 +49,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T00:35+08:00	five15	3b50576	9	8	686	VerifySmall.py passed; cumulative 427 actuals / 194 complete shards.
 2026-11-25T00:37+08:00	order-Batch09	3b50576	35	7	679	Standalone replay passed. Total actuals=462; net shards=201. Resume full replay from Checkpoint.py and Batches.json.
 2026-11-25T00:37+08:00	uniform11/732,742,702	3b50576	see Measured.tsv	see ledger	see ledger	Exact row/CRT/sturm certificates checked separately. Lifted D1/D2 modulus increases to p^(s+b) but q minimum still uses p^s. Overlap removed.
+2026-11-25T00:39+08:00	three-BatchAuto01	3b50576	1	1	677	Standalone replay passed. Total actuals=464; net shards=203. Resume full replay from Checkpoint.py and Batches.json.
