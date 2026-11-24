@@ -47,7 +47,7 @@ def main():
         elif script in ('Verify31.py','later/new/verify.py'):keys={(int(args[0]),int(args[1]))}
         else:raise ValueError('unregistered uniform proof type')
         if keys!=set(map(tuple,records)):raise ValueError('claimed exponents differ from verified command')
-        replay(R/'NightUniformReview'/script,*[str(R/'NightUniformReview'/v) if v.endswith('.gz') else v for v in args]);pairs.update(keys)
+        replay(R/'NightUniformReview'/script,*[str(R/'NightUniformReview'/v) if v.endswith('.gz') and script=='Verify31.py' else v for v in args]);pairs.update(keys)
     audit=merge(base,pairs); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
     if a.output:a.output.write_text(json.dumps(audit,indent=1)+'\n',encoding='utf-8')
     elif json.loads(json.dumps(audit))!=read(H/'Audit.json'):raise ValueError('snapshot mismatch')

@@ -30,4 +30,4 @@ if __name__=='__main__':
    cur=h+1
    if cur>hi:return True
   return False
- R.rect=check;x=next(z for z in json.loads((R.D/'input.json').read_bytes()) if (z['p'],z['e'])==(p,e));r=R.run(x,0);assert not r['inside'] and not r['outside'] and sum(r['counts'].values())==e+1 and len(used)==sum(map(len,proofs.values()));print('VERIFIED',p,e,'s',e+1,'post',len(r['post_sponsor']),'boxes',num,'leaves',len(used),'seconds',round(time.time()-t,1),flush=True)
+ R.rect=check;x=next(z for z in json.loads((R.D/'input.json').read_bytes()) if (z['p'],z['e'])==(p,e));import lift_core;run=lift_core.run if '--delta' in sys.argv[4:] else R.run;r=run(x,0);assert not r['inside'] and not r['outside'] and sum(r['counts'].values())==e+1 and len(used)==sum(map(len,proofs.values()));print('VERIFIED',p,e,'s',e+1,'post',len(r['post_sponsor']),'boxes',num,'leaves',len(used),'seconds',round(time.time()-t,1),flush=True)
