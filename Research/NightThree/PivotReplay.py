@@ -10,7 +10,7 @@ def check(row):
  for r,f,q in row['edges']:edges.setdefault((int(r),f),set()).add(int(q))
  def visit(ex):
   nonlocal nodes,md
-  nodes+=1;md=max(md,len(ex)-1);V.require(nodes<=60000 and len(ex)<=60,'pivot safety cap');X=prod(z**f for z,f in ex);S=prod(E.sigma(z,f) for z,f in ex);D=S//gcd(2*X,S);eu=any(f&1 for z,f in ex)
+  nodes+=1;md=max(md,len(ex)-1);V.require(nodes<=155000 and len(ex)<=60,'pivot safety cap');X=prod(z**f for z,f in ex);S=prod(E.sigma(z,f) for z,f in ex);D=S//gcd(2*X,S);eu=any(f&1 for z,f in ex)
   if S>2*X or X*D>B or gcd(D,X*prod(E.BANNED))!=1:return True
   pool=root|set(E.SM)
   for sf in ex:pool.update(edges.get(sf,()))
