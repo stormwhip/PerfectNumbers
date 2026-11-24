@@ -73,3 +73,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T01:32+08:00	uniform-19/670-id	3b50576	0	0	645	Whole-domain identity-priced replayer passed; overlaps removed.
 2026-11-25T01:33+08:00	three-BatchQueue05	3b50576	2	1	644	Standalone replay passed. Total actuals=541; net shards=236. Resume full replay from Checkpoint.py and Batches.json.
 2026-11-25T01:35+08:00	five16	3b50576	2	1	643	VerifyPromoted.py passed; cumulative 543 actuals / 237 complete shards.
+2026-11-25T01:35+08:00	order-Batch12	3b50576	24	10	633	Standalone replay passed. Total actuals=567; net shards=247. Resume full replay from Checkpoint.py and Batches.json.
