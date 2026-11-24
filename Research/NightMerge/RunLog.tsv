@@ -14,3 +14,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-24T23:07+08:00	three-BatchR	3b50576	7	4	820	Standalone replay passed. Total actuals=159; net shards=60. Resume full replay from Checkpoint.py and Batches.json.
 2026-11-24T23:07+08:00	five6	3b50576	2	2	818	New exponents 576,616; independently validated all root and secondary sigma divisors. P5_I00105,P5_I00112. After concurrently registered three/BatchR: 161 confirmed actuals,62 complete shards.
 2026-11-24T23:14+08:00	three-BatchI	3b50576	2	2	816	Standalone replay passed. Total actuals=163; net shards=64. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-24T23:13+08:00	ecm111	3b50576	1	1	817	11/250: final 201-digit prime comes from sigma(z^4); all four witness divisibilities checked and independent replay visits26 nodes. Global ¦²:162 actuals and 63 shards.
