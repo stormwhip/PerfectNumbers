@@ -98,3 +98,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T02:24+08:00	three-BatchAL	3b50576	2	1	605	Standalone replay passed. Total actuals=637; net shards=275. Resume full replay from Checkpoint.py and Batches.json.
 2026-11-25T02:26+08:00	five21	3b50576	1	1	604	VerifySecond.py passed; cumulative 638 actuals / 276 complete shards.
 2026-11-25T02:26+08:00	three-BatchQueue14	3b50576	1	0	604	Standalone replay passed. Total actuals=639; net shards=276. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:27+08:00	shared support obstruction	3b50576	0	0	see audit	If 3*5*17*31 divides N, 18 additional small primes through 83 are universally excluded, via 3328 Cartesian cells. First r=89 cell survives. Not a full root/shard exclusion.
