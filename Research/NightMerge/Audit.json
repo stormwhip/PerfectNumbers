@@ -14,6 +14,18 @@
   ],
   [
    3,
+   400
+  ],
+  [
+   3,
+   412
+  ],
+  [
+   3,
+   418
+  ],
+  [
+   3,
    430
   ],
   [
@@ -71,6 +83,10 @@
   [
    3,
    786
+  ],
+  [
+   3,
+   808
   ],
   [
    3,
@@ -1305,9 +1321,9 @@
    612
   ]
  ],
- "new_shards": 137,
+ "new_shards": 140,
  "by_root": {
-  "3": 27,
+  "3": 30,
   "5": 24,
   "7": 14,
   "11": 17,
@@ -1315,8 +1331,8 @@
   "19": 12,
   "31": 21
  },
- "closed": 2329,
- "open": 743,
+ "closed": 2332,
+ "open": 740,
  "closed_shards": [
   {
    "root": 19,
@@ -2290,6 +2306,28 @@
   },
   {
    "root": 3,
+   "index": 80,
+   "count": 676,
+   "exponent": 400,
+   "exact": false,
+   "id": "P3_I00080",
+   "remaining_actuals": [
+    400
+   ]
+  },
+  {
+   "root": 3,
+   "index": 82,
+   "count": 676,
+   "exponent": 418,
+   "exact": false,
+   "id": "P3_I00082",
+   "remaining_actuals": [
+    418
+   ]
+  },
+  {
+   "root": 3,
    "index": 84,
    "count": 676,
    "exponent": 430,
@@ -2363,6 +2401,17 @@
    "id": "P3_I00139",
    "remaining_actuals": [
     786
+   ]
+  },
+  {
+   "root": 3,
+   "index": 141,
+   "count": 676,
+   "exponent": 808,
+   "exact": false,
+   "id": "P3_I00141",
+   "remaining_actuals": [
+    808
    ]
   },
   {
@@ -10067,7 +10116,6 @@
     328,
     342,
     370,
-    412,
     426,
     510,
     538,
@@ -10302,7 +10350,6 @@
    "id": "P3_I00018",
    "remaining_actuals": [
     58,
-    412,
     1002
    ]
   },
@@ -10958,28 +11005,6 @@
   },
   {
    "root": 3,
-   "index": 80,
-   "count": 676,
-   "exponent": 400,
-   "exact": false,
-   "id": "P3_I00080",
-   "remaining_actuals": [
-    400
-   ]
-  },
-  {
-   "root": 3,
-   "index": 82,
-   "count": 676,
-   "exponent": 418,
-   "exact": false,
-   "id": "P3_I00082",
-   "remaining_actuals": [
-    418
-   ]
-  },
-  {
-   "root": 3,
    "index": 87,
    "count": 676,
    "exponent": 442,
@@ -11174,17 +11199,6 @@
    "id": "P3_I00140",
    "remaining_actuals": [
     796
-   ]
-  },
-  {
-   "root": 3,
-   "index": 141,
-   "count": 676,
-   "exponent": 808,
-   "exact": false,
-   "id": "P3_I00141",
-   "remaining_actuals": [
-    808
    ]
   },
   {
