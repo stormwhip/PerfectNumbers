@@ -229,3 +229,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T04:36+08:00	forest/ForestC04.json.gz	3b50576	1	1	435	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
 2026-11-25T04:36+08:00	three-BatchAW	3b50576	2	1	434	Standalone replay passed. Total actuals=1083; net shards=446. Resume full replay from Checkpoint.py and Batches.json.
 2026-11-25T04:36+08:00	forest/ForestQ27.json.gz	3b50576	1	1	433	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:36+08:00	double class incompatibility	3b50576	0	0	see audit	247 pairs of exponent families cannot coexist; minimum excess beyond 2 verified exactly, 203772/1e9 lower. No full canonical closure counted.
