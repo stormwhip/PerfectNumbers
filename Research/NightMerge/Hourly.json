@@ -36,9 +36,9 @@
  },
  {
   "reporting_cutoff": "2026-11-25T03:40:00+08:00",
-  "last_commit_time": "2026-11-25T03:03:54+08:00",
-  "net_actuals": 131,
-  "net_shards": 62,
+  "last_commit_time": "2026-11-25T03:35:44+08:00",
+  "net_actuals": 262,
+  "net_shards": 101,
   "complete_hour": false
  }
 ]
