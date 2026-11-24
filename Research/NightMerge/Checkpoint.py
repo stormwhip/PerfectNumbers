@@ -63,6 +63,12 @@ def main():
         replay(R/'NightLowRoute/Release/SixReplay.py',*conditional)
         for name in conditional:
             rows=json.loads(gzip.decompress((R/'NightLowRoute/Release'/name).read_bytes()))['rows'];pairs.update((r['p'],r['e']) for r in rows)
+    conditional13=read(H/'Batches.json').get('support13_forest',[])
+    if conditional13:
+        import gzip
+        replay(R/'NightLowRoute/Release/FourReplay.py',*conditional13)
+        for name in conditional13:
+            rows=json.loads(gzip.decompress((R/'NightLowRoute/Release'/name).read_bytes()))['rows'];pairs.update((r['p'],r['e']) for r in rows)
     for script,name in read(H/'Batches.json').get('structural_only',[]):
         # No exact exponent is credited for a support-only theorem.
         replay(R/'NightUniform'/script,R/'NightUniform'/name)
