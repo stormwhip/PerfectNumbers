@@ -54,7 +54,39 @@
   ],
   [
    3,
+   478
+  ],
+  [
+   3,
+   480
+  ],
+  [
+   3,
+   490
+  ],
+  [
+   3,
+   498
+  ],
+  [
+   3,
+   502
+  ],
+  [
+   3,
+   508
+  ],
+  [
+   3,
    526
+  ],
+  [
+   3,
+   532
+  ],
+  [
+   3,
+   538
   ],
   [
    3,
@@ -1333,9 +1365,9 @@
    612
   ]
  ],
- "new_shards": 143,
+ "new_shards": 148,
  "by_root": {
-  "3": 32,
+  "3": 37,
   "5": 24,
   "7": 14,
   "11": 17,
@@ -1343,8 +1375,8 @@
   "19": 13,
   "31": 21
  },
- "closed": 2335,
- "open": 737,
+ "closed": 2340,
+ "open": 732,
  "closed_shards": [
   {
    "root": 19,
@@ -2413,6 +2445,61 @@
    "id": "P3_I00092",
    "remaining_actuals": [
     466
+   ]
+  },
+  {
+   "root": 3,
+   "index": 93,
+   "count": 676,
+   "exponent": 478,
+   "exact": false,
+   "id": "P3_I00093",
+   "remaining_actuals": [
+    478
+   ]
+  },
+  {
+   "root": 3,
+   "index": 95,
+   "count": 676,
+   "exponent": 490,
+   "exact": false,
+   "id": "P3_I00095",
+   "remaining_actuals": [
+    490
+   ]
+  },
+  {
+   "root": 3,
+   "index": 96,
+   "count": 676,
+   "exponent": 498,
+   "exact": false,
+   "id": "P3_I00096",
+   "remaining_actuals": [
+    498
+   ]
+  },
+  {
+   "root": 3,
+   "index": 97,
+   "count": 676,
+   "exponent": 502,
+   "exact": false,
+   "id": "P3_I00097",
+   "remaining_actuals": [
+    502
+   ]
+  },
+  {
+   "root": 3,
+   "index": 98,
+   "count": 676,
+   "exponent": 508,
+   "exact": false,
+   "id": "P3_I00098",
+   "remaining_actuals": [
+    508
    ]
   },
   {
@@ -10152,7 +10239,6 @@
     370,
     426,
     510,
-    538,
     916,
     958,
     1042
@@ -10176,7 +10262,6 @@
     318,
     340,
     406,
-    538,
     802,
     868,
     912,
@@ -10200,8 +10285,6 @@
     298,
     376,
     402,
-    480,
-    532,
     688,
     922,
     948,
@@ -10314,7 +10397,6 @@
     36,
     258,
     406,
-    480,
     628
    ]
   },
@@ -10328,7 +10410,6 @@
    "remaining_actuals": [
     40,
     286,
-    532,
     778,
     942
    ]
@@ -11046,61 +11127,6 @@
    "id": "P3_I00090",
    "remaining_actuals": [
     460
-   ]
-  },
-  {
-   "root": 3,
-   "index": 93,
-   "count": 676,
-   "exponent": 478,
-   "exact": false,
-   "id": "P3_I00093",
-   "remaining_actuals": [
-    478
-   ]
-  },
-  {
-   "root": 3,
-   "index": 95,
-   "count": 676,
-   "exponent": 490,
-   "exact": false,
-   "id": "P3_I00095",
-   "remaining_actuals": [
-    490
-   ]
-  },
-  {
-   "root": 3,
-   "index": 96,
-   "count": 676,
-   "exponent": 498,
-   "exact": false,
-   "id": "P3_I00096",
-   "remaining_actuals": [
-    498
-   ]
-  },
-  {
-   "root": 3,
-   "index": 97,
-   "count": 676,
-   "exponent": 502,
-   "exact": false,
-   "id": "P3_I00097",
-   "remaining_actuals": [
-    502
-   ]
-  },
-  {
-   "root": 3,
-   "index": 98,
-   "count": 676,
-   "exponent": 508,
-   "exact": false,
-   "id": "P3_I00098",
-   "remaining_actuals": [
-    508
    ]
   },
   {
