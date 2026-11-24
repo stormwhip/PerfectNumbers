@@ -226,3 +226,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T04:28+08:00	five_weighted/Batch31.json.gz	3b50576	1	0	438	Independent arithmetic replay passed; all legal actuals covered before canonical acceptance.
 2026-11-25T04:30+08:00	forest/ForestC03.json.gz	3b50576	1	1	437	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
 2026-11-25T04:32+08:00	forest/ForestQ26.json.gz	3b50576	1	1	436	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:36+08:00	forest/ForestC04.json.gz	3b50576	1	1	435	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
