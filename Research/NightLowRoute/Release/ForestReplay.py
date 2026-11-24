@@ -32,6 +32,7 @@ def proof(row,certs,*,forced=None):
  while queue:
   z=queue.pop();check(z not in seen,'cycle');seen.add(z);queue.extend(kids[z])
  check(seen==V,'unreachable');U=p*A*math.prod(parent)*(forced or 1);ban=R[:R.index(p)];cs={z:valuation(A,z) for z in K};base=p**e*A//math.prod(z**c for z,c in cs.items());cs={z:max(1,c) for z,c in cs.items()};cap=row.get('head',6);check(type(cap)==int and 1<=cap<=512,'prefix');
+ den=row.get('den',1);price=dict(row.get('rho',[]));check(type(den)==int and 1<=den<=8 and set(price)<=V and len(price)==len(row.get('rho',[])) and all(type(u)==int and 0<u<den for u in price.values()),'invalid sharing weights');base=base**den*math.prod(z**(u*valuation(A,z)) for z,u in price.items());target=B**den
  @functools.cache
  def oddpossible(q):return q%4==1 and all((q+1)%b for b in ban)
  @functools.cache
@@ -42,11 +43,11 @@ def proof(row,certs,*,forced=None):
   sp=kind==2;f=h+((1-h)%4 if sp else h%2);step=4 if sp else 2
   if sp:check(oddpossible(z),'invalid mode')
   def admissible(a):return all((a+1)%b if z%b==1 else pow(z,a+1,b)!=1 for b in ban)
-  best=B+1;n=0
+  best=target+1;n=0;ex=den-price.get(z,0)
   while n<cap:
-   if z**f>=best:break
+   if z**(ex*f)>=best:break
    if admissible(f):
-    S=sigma(z,f)//(2 if sp else 1);cst=z**f*nonsupport(S,U);used=[]
+    S=sigma(z,f)//(2 if sp else 1);cst=z**(ex*f)*nonsupport(S,U)**den*math.prod(q**(u*valuation(S,q)) for q,u in price.items());used=[]
     for q in kids[z]:
      c=valuation(S,q)
      if c:
@@ -56,7 +57,7 @@ def proof(row,certs,*,forced=None):
     best=min(best,cst);n+=1
    f+=step
   while not admissible(f):f+=step
-  return min(best,z**f)
+  return min(best,z**(ex*f))
  no={z:evalnode(z,h,0) for z,h in cs.items()};total=base*math.prod(no.values());vals={}
  vals[0]=min([total]+[total//no[z]*evalnode(z,h,3) for z,h in cs.items()]);
  for z,h in cs.items():
@@ -69,5 +70,7 @@ def main():
   import gzip
   d=json.loads(gzip.decompress(path.read_bytes()) if path.suffix=='.gz' else path.read_bytes());
   for row in d['rows']:
-   vals=proof(row,d['ecpp']);m=min(vals.values());print(row['p'],row['e'],len(vals),len(str(m))-1,flush=True);check(m>B,'not closed')
+   vals=proof(row,d['ecpp']);m=min(vals.values());den=row.get('den',1);check(m>B**den,'not closed');l=2400
+   while 10**((l+1)*den)<=m:l+=1
+   print(row['p'],row['e'],len(vals),l,flush=True)
 if __name__=='__main__':main()
