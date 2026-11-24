@@ -22,6 +22,11 @@ Gemini 提交的 **51 个实际指数排除**已全部独立复验，新增闭�
 
 - Claude 的 Euler 筛证书另行复验通过，涉及四个实际指数和两个顶层分片，均已由 Gemini 批次覆盖。合并后仍有 **1,045** 个开放分片。见 [证书与复验命令](../Research/EulerOneSieve/Readme.md)。
 
+## 2026-11-24 增量研究
+
+- Gemini 分圆批次报告 88 个额外指数排除。覆盖关系和 20 条已提供的素因子见证已复核，完整回放仍待提交。若 88 项全部核验通过，可新增关闭 31 个分片。见 [审计与根 3 的来源约束](../Records/ExternalReviews/GeminiCyclotomicAudit20261124.md)。
+- [丰度回退原型](../Research/AbundanceSearch/RecursiveAbundance2400.py) 已进行七根样例测试，支持导出并分区重跑待验证子树。
+
 ## 基线证据
 
 - 原根顺序为 `19, 7, 11, 31, 13, 3, 5, 17`。合并审计先完整重放指标容量审计的 1,869 个已闭合分片，再检验五个根的开放分片。逐项证据与开放清单见 [合并审计清单](../Research/TeichmullerValuation/Audit2400.json)。
