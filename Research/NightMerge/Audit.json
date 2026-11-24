@@ -6,6 +6,26 @@
  "new_actuals": [
   [
    3,
+   430
+  ],
+  [
+   3,
+   432
+  ],
+  [
+   3,
+   438
+  ],
+  [
+   3,
+   466
+  ],
+  [
+   3,
+   472
+  ],
+  [
+   3,
    526
   ],
   [
@@ -1201,9 +1221,9 @@
    612
   ]
  ],
- "new_shards": 116,
+ "new_shards": 120,
  "by_root": {
-  "3": 21,
+  "3": 25,
   "5": 19,
   "7": 9,
   "11": 17,
@@ -1211,8 +1231,8 @@
   "19": 9,
   "31": 19
  },
- "closed": 2308,
- "open": 764,
+ "closed": 2312,
+ "open": 760,
  "closed_shards": [
   {
    "root": 19,
@@ -2050,6 +2070,50 @@
    "id": "P13_I00146",
    "remaining_actuals": [
     852
+   ]
+  },
+  {
+   "root": 3,
+   "index": 84,
+   "count": 676,
+   "exponent": 430,
+   "exact": false,
+   "id": "P3_I00084",
+   "remaining_actuals": [
+    430
+   ]
+  },
+  {
+   "root": 3,
+   "index": 85,
+   "count": 676,
+   "exponent": 432,
+   "exact": false,
+   "id": "P3_I00085",
+   "remaining_actuals": [
+    432
+   ]
+  },
+  {
+   "root": 3,
+   "index": 86,
+   "count": 676,
+   "exponent": 438,
+   "exact": false,
+   "id": "P3_I00086",
+   "remaining_actuals": [
+    438
+   ]
+  },
+  {
+   "root": 3,
+   "index": 92,
+   "count": 676,
+   "exponent": 466,
+   "exact": false,
+   "id": "P3_I00092",
+   "remaining_actuals": [
+    466
    ]
   },
   {
@@ -9869,7 +9933,6 @@
     318,
     340,
     406,
-    472,
     538,
     802,
     868,
@@ -10037,7 +10100,6 @@
    "remaining_actuals": [
     42,
     300,
-    472,
     730,
     816,
     988
@@ -10779,39 +10841,6 @@
   },
   {
    "root": 3,
-   "index": 84,
-   "count": 676,
-   "exponent": 430,
-   "exact": false,
-   "id": "P3_I00084",
-   "remaining_actuals": [
-    430
-   ]
-  },
-  {
-   "root": 3,
-   "index": 85,
-   "count": 676,
-   "exponent": 432,
-   "exact": false,
-   "id": "P3_I00085",
-   "remaining_actuals": [
-    432
-   ]
-  },
-  {
-   "root": 3,
-   "index": 86,
-   "count": 676,
-   "exponent": 438,
-   "exact": false,
-   "id": "P3_I00086",
-   "remaining_actuals": [
-    438
-   ]
-  },
-  {
-   "root": 3,
    "index": 87,
    "count": 676,
    "exponent": 442,
@@ -10841,17 +10870,6 @@
    "id": "P3_I00090",
    "remaining_actuals": [
     460
-   ]
-  },
-  {
-   "root": 3,
-   "index": 92,
-   "count": 676,
-   "exponent": 466,
-   "exact": false,
-   "id": "P3_I00092",
-   "remaining_actuals": [
-    466
    ]
   },
   {

@@ -86,8 +86,12 @@ def independent(e,fs,ee,windows,boost=False,reduced=False,parity=False,internal=
   for s in active:
    if need<s:continue
    if high:
-    require(s>7 and 3**8>1+E.ilog(B,5),'unrestricted internal high Euler');y=3**(s-7);Q=2*y-1
-    require(not any(r%4==1 and (r+1)%y==0 for r in floor),'known high Euler not external');require(not any((w:=math.gcd(U,sg))//Q>=(-w%y or y) for sg in checks) or U//Q<(-U%y or y),'rough high Euler not external')
+    require(s>7 and 3**8>1+E.ilog(B,5),'unrestricted internal high Euler');q0=2*3**(s-7)-1;j=min(7,E.ilog(1+E.ilog(B//X,q0),3)) if internal else 7;y=3**(s-j);Q=2*y-1
+    require(not any(r%4==1 and (r+1)%y==0 for r in floor),'known high Euler not external');inside=U//Q>=(-U%y or y) and any((w:=math.gcd(U,sg))//Q>=(-w%y or y) for sg in checks)
+    if inside:
+     require(internal,'rough high Euler not external')
+     if M*cost[max(0,need-s-free)]*high_floor(s)>B*U:stats['floor']+=1;continue
+     rough_internal=True;live.append(s);continue
     if M*cost[max(0,need-s-free)]*high_floor(s)>B:stats['floor']+=1;continue
     live.append(s);continue
    y=3**s;Q=2*y-1
@@ -140,7 +144,7 @@ def independent(e,fs,ee,windows,boost=False,reduced=False,parity=False,internal=
    live.append(s)
   if not live:return True
   if not floor:return False
-  r=max(floor);c,m=floor[r];upper=B//((min(high_floor(s) for s in live) if high else (1 if rough_internal else 2*3**min(live)-1))*(M//r**m));f=m
+  r=max(floor);c,m=floor[r];upper=B//((1 if rough_internal else (min(high_floor(s) for s in live) if high else 2*3**min(live)-1))*(M//r**m));f=m
   while r**f<=upper:
    if E.legal(r,f) and not walk(ex+[(r,f)],live):return False
    f+=2
@@ -161,6 +165,6 @@ def main():
   e=row['e'];require(type(e)==int and e in baseline and e not in es,'not unique/open');fs=list(map(int,row['root']));require(len(set(fs))==len(fs) and all(r>3 and E.sigma(3,e)%r==0 and prime(r) for r in fs),'bad root');edges={}
   for x,m,y in row['edges']:
    x,y=int(x),int(y);require(x>3 and y>3 and type(m)==int and m>0 and pow(x,m+1,y*(x-1))==1 and prime(y),'invalid edge');edges.setdefault((x,m),set()).add(y)
-  one,hi=J.audit(e,fs);require(all(s>0 for s in one),'zero branch remains');highstats=independent(e,fs,edges,hi,reduced=True,high=True) if hi else {};st=independent(e,fs,edges,one,boost=row.get('boost',False),reduced=row.get('reduced',False),parity=row.get('parity',False),internal=row.get('internal',False),exception=row.get('exception',False)) if one else {};es.append(e);summary.append(dict(e=e,windows=len(one),stats=st,high=highstats));print('ACCEPT',summary[-1],flush=True)
+  one,hi=J.audit(e,fs);require(all(s>0 for s in one),'zero branch remains');highstats=independent(e,fs,edges,hi,reduced=True,high=True,internal=row.get('internal',False)) if hi else {};st=independent(e,fs,edges,one,boost=row.get('boost',False),reduced=row.get('reduced',False),parity=row.get('parity',False),internal=row.get('internal',False),exception=row.get('exception',False)) if one else {};es.append(e);summary.append(dict(e=e,windows=len(one),stats=st,high=highstats));print('ACCEPT',summary[-1],flush=True)
  print('actuals',sorted(es),'complete shards',J.delta(es),'baseline 880 ->',880-len(J.delta(es)))
 if __name__=='__main__':main()
