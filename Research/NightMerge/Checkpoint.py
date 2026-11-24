@@ -57,6 +57,16 @@ def main():
         replay(R/'NightLowRoute/Release/ForestReplay.py',name);packet=json.loads(gzip.decompress((R/'NightLowRoute/Release'/name).read_bytes()));pairs.update((r['p'],r['e']) for r in packet['rows'])
     for name in read(H/'Batches.json').get('pivot',[]):
         replay(H/'PivotCheck.py',name);pairs.update((r['p'],r['e']) for r in read(H/name))
+    # Only unconditional ordinary-source forests transfer across exponents; their root supply divides the new sigma. Never lift arbitrary trees or support-conditioned packets.
+    frozen=read(H/'Batches.json');seeds=set()
+    import gzip
+    for directory,key in [('NightSevenForest/Release','seven_forest'),('NightLowRoute/Release','forest'),('NightFive','five_forest')]:
+        for name in frozen.get(key,[]):
+            if key=='seven_forest':replay(R/directory/'Replay.py',name)
+            rs=json.loads(gzip.decompress((R/directory/name).read_bytes()))['rows']
+            if any('extra' in row or row['e']<2 or row['e']%2 for row in rs):raise ValueError('not an ordinary unconditional forest seed')
+            seeds.update((r['p'],r['e']) for r in rs)
+    pending={(s['root'],e) for s in base['remaining_shards'] for e in s['remaining_actuals']};pairs.update((p,e) for p,e in pending if any(p==q and (e+1)%(d+1)==0 for q,d in seeds))
     conditional=read(H/'Batches.json').get('support_forest',[])
     if conditional:
         import gzip
