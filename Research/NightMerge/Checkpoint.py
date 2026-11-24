@@ -29,6 +29,10 @@ def main():
         pairs.update((r['p'],r['e']) for r in read(packet))
     for name in read(H/'Batches.json')['five']:
         replay(R/'NightFive/Verify.py',name);j=read(R/'NightFive'/name);pairs.update((5,int(e)) for e in j.get('exponents',j))
+    for name in read(H/'Batches.json')['three']:
+        replay(R/'NightThree/Verify.py',name);pairs.update((3,r['e']) for r in read(R/'NightThree'/(name+'.json')))
+    if read(H/'Batches.json').get('five_more'):
+        replay(R/'NightFive/VerifyMore.py');pairs.update((5,int(e)) for e in read(R/'NightFive/Batch2.json')['exponents'])
     audit=merge(base,pairs); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
     if a.output:a.output.write_text(json.dumps(audit,indent=1)+'\n',encoding='utf-8')
     elif json.loads(json.dumps(audit))!=read(H/'Audit.json'):raise ValueError('snapshot mismatch')
