@@ -2338,6 +2338,22 @@
   ],
   [
    19,
+   138
+  ],
+  [
+   19,
+   150
+  ],
+  [
+   19,
+   180
+  ],
+  [
+   19,
+   190
+  ],
+  [
+   19,
    196
   ],
   [
@@ -2346,7 +2362,15 @@
   ],
   [
    19,
+   210
+  ],
+  [
+   19,
    218
+  ],
+  [
+   19,
+   228
   ],
   [
    19,
@@ -3073,18 +3097,18 @@
    612
   ]
  ],
- "new_shards": 334,
+ "new_shards": 340,
  "by_root": {
   "3": 96,
   "5": 53,
   "7": 27,
   "11": 30,
   "13": 60,
-  "19": 20,
+  "19": 26,
   "31": 48
  },
- "closed": 2526,
- "open": 546,
+ "closed": 2532,
+ "open": 540,
  "closed_shards": [
   {
    "root": 19,
@@ -3125,6 +3149,52 @@
   },
   {
    "root": 19,
+   "index": 32,
+   "count": 287,
+   "exponent": 138,
+   "exact": false,
+   "id": "P19_I00032",
+   "remaining_actuals": [
+    138,
+    416
+   ]
+  },
+  {
+   "root": 19,
+   "index": 34,
+   "count": 287,
+   "exponent": 150,
+   "exact": false,
+   "id": "P19_I00034",
+   "remaining_actuals": [
+    150,
+    452
+   ]
+  },
+  {
+   "root": 19,
+   "index": 40,
+   "count": 287,
+   "exponent": 180,
+   "exact": false,
+   "id": "P19_I00040",
+   "remaining_actuals": [
+    180
+   ]
+  },
+  {
+   "root": 19,
+   "index": 41,
+   "count": 287,
+   "exponent": 190,
+   "exact": false,
+   "id": "P19_I00041",
+   "remaining_actuals": [
+    190
+   ]
+  },
+  {
+   "root": 19,
    "index": 43,
    "count": 287,
    "exponent": 196,
@@ -3143,6 +3213,28 @@
    "id": "P19_I00044",
    "remaining_actuals": [
     198
+   ]
+  },
+  {
+   "root": 19,
+   "index": 45,
+   "count": 287,
+   "exponent": 210,
+   "exact": false,
+   "id": "P19_I00045",
+   "remaining_actuals": [
+    210
+   ]
+  },
+  {
+   "root": 19,
+   "index": 48,
+   "count": 287,
+   "exponent": 228,
+   "exact": false,
+   "id": "P19_I00048",
+   "remaining_actuals": [
+    228
    ]
   },
   {
@@ -7334,17 +7426,6 @@
   },
   {
    "root": 19,
-   "index": 32,
-   "count": 287,
-   "exponent": 138,
-   "exact": false,
-   "id": "P19_I00032",
-   "remaining_actuals": [
-    138
-   ]
-  },
-  {
-   "root": 19,
    "index": 33,
    "count": 287,
    "exponent": 148,
@@ -7352,17 +7433,6 @@
    "id": "P19_I00033",
    "remaining_actuals": [
     148
-   ]
-  },
-  {
-   "root": 19,
-   "index": 34,
-   "count": 287,
-   "exponent": 150,
-   "exact": false,
-   "id": "P19_I00034",
-   "remaining_actuals": [
-    150
    ]
   },
   {
@@ -7422,28 +7492,6 @@
   },
   {
    "root": 19,
-   "index": 40,
-   "count": 287,
-   "exponent": 180,
-   "exact": false,
-   "id": "P19_I00040",
-   "remaining_actuals": [
-    180
-   ]
-  },
-  {
-   "root": 19,
-   "index": 41,
-   "count": 287,
-   "exponent": 190,
-   "exact": false,
-   "id": "P19_I00041",
-   "remaining_actuals": [
-    190
-   ]
-  },
-  {
-   "root": 19,
    "index": 42,
    "count": 287,
    "exponent": 192,
@@ -7451,17 +7499,6 @@
    "id": "P19_I00042",
    "remaining_actuals": [
     192
-   ]
-  },
-  {
-   "root": 19,
-   "index": 45,
-   "count": 287,
-   "exponent": 210,
-   "exact": false,
-   "id": "P19_I00045",
-   "remaining_actuals": [
-    210
    ]
   },
   {
@@ -7484,17 +7521,6 @@
    "id": "P19_I00047",
    "remaining_actuals": [
     226
-   ]
-  },
-  {
-   "root": 19,
-   "index": 48,
-   "count": 287,
-   "exponent": 228,
-   "exact": false,
-   "id": "P19_I00048",
-   "remaining_actuals": [
-    228
    ]
   },
   {
