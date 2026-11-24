@@ -52,6 +52,9 @@ def main():
         packet=R/'NightUniform'/name;replay(R/'NightUniform/ReleaseNode.py',packet);pairs.update((r[0],r[1]) for r in read(packet))
     for name in read(H/'Batches.json').get('mass',[]):
         replay(R/'NightLowRoute/Release/Replay.py',name);j=read(R/'NightLowRoute/Release'/name);pairs.add((j['p'],j['e']))
+    for name in read(H/'Batches.json').get('forest',[]):
+        import gzip
+        replay(R/'NightLowRoute/Release/ForestReplay.py',name);packet=json.loads(gzip.decompress((R/'NightLowRoute/Release'/name).read_bytes()));pairs.update((r['p'],r['e']) for r in packet['rows'])
     audit=merge(base,pairs); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
     if a.output:a.output.write_text(json.dumps(audit,indent=1)+'\n',encoding='utf-8')
     elif json.loads(json.dumps(audit))!=read(H/'Audit.json'):raise ValueError('snapshot mismatch')
