@@ -39,6 +39,8 @@ def main():
         replay(R/'NightFive'/script);pairs.add((5,read(R/'NightFive'/packet)['e']))
     for name in read(H/'Batches.json').get('extra',[]):
         replay(H/'ExtraVerify.py',name);pairs.update((r['p'],r['e']) for r in read(H/name))
+    for script,args,records in read(H/'Batches.json').get('uniform',[]):
+        replay(R/'NightUniformReview'/script,*[str(R/'NightUniformReview'/v) if v.endswith('.gz') else v for v in args]);pairs.update(map(tuple,records))
     audit=merge(base,pairs); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
     if a.output:a.output.write_text(json.dumps(audit,indent=1)+'\n',encoding='utf-8')
     elif json.loads(json.dumps(audit))!=read(H/'Audit.json'):raise ValueError('snapshot mismatch')
