@@ -35,6 +35,8 @@ def main():
         replay(R/'NightFive/VerifyMore.py');pairs.update((5,int(e)) for e in read(R/'NightFive/Batch2.json')['exponents'])
     for packet,script in read(H/'Batches.json').get('five_extra',[]):
         replay(R/'NightFive'/script);j=read(R/'NightFive'/packet);pairs.update((5,int(e)) for e in (j['exponents'] if 'exponents' in j else j['roots']))
+    for packet,script in read(H/'Batches.json').get('five_chain',[]):
+        replay(R/'NightFive'/script);pairs.add((5,read(R/'NightFive'/packet)['e']))
     for name in read(H/'Batches.json').get('extra',[]):
         replay(H/'ExtraVerify.py',name);pairs.update((r['p'],r['e']) for r in read(H/name))
     audit=merge(base,pairs); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
