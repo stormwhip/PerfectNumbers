@@ -1,12 +1,12 @@
 """Root-3 joint supplier/source replay; Python stdlib, no data downloaded. Run with -B."""
 from pathlib import Path
 import sys,json,math,argparse,gzip
-from functools import cache
+from functools import cache,lru_cache
 from itertools import accumulate
 from hashlib import sha256
 H=Path(__file__).resolve().parent; R=H.parent;sys.path.insert(0,str(R/'EveningRoot3'));import IndependentEvening as I
 B=10**2400;T=I.T;BAN=I.BAN
-@cache
+@lru_cache(maxsize=16384)
 def powerlog(n,b):
  if n<1:return -1
  j=max(0,int(math.log(n)/math.log(b)));z=b**j
