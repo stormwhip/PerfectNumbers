@@ -71,7 +71,7 @@ def audit(e,fs,details=False,finance=False):
    if g<=stop:missed.append(s);break
  if finance and missed and min(missed)>0:
   import Finance as F
-  budget=F.bounds(e,pe,A,u,{z:(d[z],f[z]) for z in d},M,e,missed,T+1,{3},source_h=True); rem=[]
+  budget=F.bounds(e,pe,A,u,{z:(d[z],f[z]) for z in d},M,e,missed,T+1,{3},source_h=5); rem=[]
   for s in missed:
    y=3**s;Q=2*y-1;k=e-s;n,b=budget[s]
    # Treat all internal emitters via the uniform D,E bound, deducting the largest known parity premium if the emitter is already priced through its even floor. Exterior emitter abundance was debited in the dual.
