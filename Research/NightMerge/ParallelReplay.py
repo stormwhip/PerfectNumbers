@@ -24,6 +24,7 @@ def main():
     if reg['five_more']:add('five-more',R/'NightFive/VerifyMore.py')
     for n,script in reg['five_extra']+reg.get('five_chain',[]):add('five-'+n,R/'NightFive'/script)
     for script,params,records in reg.get('uniform',[]):add('uniform-'+script+'-'+str(records[0][1]),R/'NightUniformReview'/script,*[str(R/'NightUniformReview'/v) if v.endswith('.gz') and script=='Verify31.py' else v for v in params])
+    for n in reg.get('source_nodes',[]):add('source-nodes-'+n,R/'NightUniform/ReleaseNode.py',R/'NightUniform'/n)
     for n in reg.get('extra',[]):add('extra-'+n,H/'ExtraVerify.py',n)
     # Bind receipts to actual bytes of tracked inputs, not merely a Git label. Never cache untracked dependencies.
     # Final check must run in a clean detached worktree containing only released inputs.

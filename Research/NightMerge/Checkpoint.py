@@ -48,6 +48,8 @@ def main():
         else:raise ValueError('unregistered uniform proof type')
         if keys!=set(map(tuple,records)):raise ValueError('claimed exponents differ from verified command')
         replay(R/'NightUniformReview'/script,*[str(R/'NightUniformReview'/v) if v.endswith('.gz') and script=='Verify31.py' else v for v in args]);pairs.update(keys)
+    for name in read(H/'Batches.json').get('source_nodes',[]):
+        packet=R/'NightUniform'/name;replay(R/'NightUniform/ReleaseNode.py',packet);pairs.update((r[0],r[1]) for r in read(packet))
     audit=merge(base,pairs); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
     if a.output:a.output.write_text(json.dumps(audit,indent=1)+'\n',encoding='utf-8')
     elif json.loads(json.dumps(audit))!=read(H/'Audit.json'):raise ValueError('snapshot mismatch')
