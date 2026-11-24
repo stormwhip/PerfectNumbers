@@ -163,3 +163,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T03:35+08:00	forest/ForestS16.json.gz	3b50576	5	0	500	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
 2026-11-25T03:37+08:00	forest/ForestS17.json.gz	3b50576	5	0	500	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
 2026-11-25T03:37+08:00	fractional-seed transfer	3b50576	0	0	see audit	Unclosed seed 31/80 lower floor2029; size-only lift2271 not enough for 31/242, but including the support-disjoint root-sigma ratio yields2512. Exponent already in union, no duplicate credit.
+2026-11-25T03:39+08:00	forest/ForestS18.json.gz	3b50576	4	0	500	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
