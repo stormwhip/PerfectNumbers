@@ -10,7 +10,7 @@ B=J.B;I=J.I
 def require(v,w):
  if not v:raise ValueError(w)
 
-def independent(e,fs,ee,windows,boost=False):
+def independent(e,fs,ee,windows,boost=False,reduced=False,parity=False):
  pe=3**e;A=(3*pe-1)//2;ban=math.prod(I.BAN);basic={z for z in I.PS if 3<z<=1999 and z not in I.BAN};P0=[(z,2) for z in I.SUP if z*z<=4000000];prices=sorted(z**d for z,d in P0 if I.legal(z,d)); stats={'nodes':0,'depth':0,'floor':0,'source':0,'internal':0,'sigma':0,'branch':0}
  # Additional repeated marginal prices (r^6 may fall below cap). For min allowed supplier r>=37, even r^6 > 4e6; check rather than assume.
  require(min(z for z,d in P0)**6>4000000,'short price list')
@@ -32,18 +32,46 @@ def independent(e,fs,ee,windows,boost=False):
     if val>4000000:break
     charges.append(val);f=g;g=3*(g+1)-1
   M*=U; free+=E.ilog(U,4000000);charges.extend([2000]*E.ilog(U,2000));charges.extend([4000000]*e);cost=[1,*accumulate(sorted(charges)[:e],lambda a,b:a*b)];need=e-E.val(S,3);live=[]
+  def support():
+   cells=[U] if U>1 else []
+   for orig in src:
+    temp=[]
+    for v in cells:
+     g=math.gcd(v,orig)
+     while g not in (1,v):
+      j=math.gcd(g*g,v)
+      if j==g:break
+      g=j
+     if g>1:temp.append(g)
+     if v//g>1:temp.append(v//g)
+    cells=temp
+   require(math.prod(cells)==U,'parity partition');return cells
+  cells_for_parity=support() if parity else [];odd=sum(math.isqrt(v)**2!=v for v in cells_for_parity)
+  checks=src[1:]
+  if reduced:
+   checks=[]
+   for z,g in ex[1:]:
+    n=g+1
+    while n%3==0:n//=3
+    # Factor sigma(z^(n-1)) exactly as product of cyclotomics.
+    phi={}
+    for d in range(1,n+1):
+     if n%d:continue
+     phi[d]=(z**d-1)//math.prod(v for h,v in phi.items() if d%h==0)
+    require(math.prod(v for d,v in phi.items() if d>1)==E.sigma(z,n-1),'bad reduced indices');checks.extend(v for d,v in phi.items() if d>1)
   for s in active:
    if need<s:continue
    y=3**s;Q=2*y-1
    for r,(c,f) in floor.items():
     if r%4==1 and c==1 and r>=Q and (r+1)%y==0:raise ValueError('feasible forced Euler')
    # Exclude q | U using individual origin sigmas, not a factorization of U. The root cannot source q by reciprocity. Every non-root component here is exact and even.
-   if U//Q>=(-U%y or y):
-    for sig in src[1:]:
-     v=math.gcd(sig,U)
-     if v//Q>=(-v%y or y):raise ValueError('unresolved internal Euler')
    c=cost[max(0,need-s-free)];v=M*c
-   if v*Q>B:stats['floor']+=1;continue
+   if U//Q>=(-U%y or y) and any((w:=math.gcd(sig,U))//Q>=(-w%y or y) for sig in checks):
+    if reduced and v>B:stats['floor']+=1;continue
+    raise ValueError('unresolved internal Euler')
+   parity_charge=2000**odd*cost[max(0,need-s-free-odd)] if odd else c
+   if M*max(c,parity_charge)*Q>B:stats['floor']+=1;continue
+   if odd:v=M*max(c,parity_charge//2000)
    if 8*pe*Q**4>=27*B and 2*v*Q**2>=3*B*max([U]+[r**f for r,(_,f) in floor.items()]):stats['source']+=1;continue
    if boost and 8*pe*Q**4>=27*B and 2*v*Q**2>=3*B:
     # Divide U into coprime blocks via gcd with powers of each sigma. Refining gcd(u,sigma) to its full supported part by repeated squaring works without primality assumptions.
@@ -98,6 +126,6 @@ def main():
   e=row['e'];require(type(e)==int and e in baseline and e not in es,'not unique/open');fs=list(map(int,row['root']));require(len(set(fs))==len(fs) and all(r>3 and E.sigma(3,e)%r==0 and prime(r) for r in fs),'bad root');edges={}
   for x,m,y in row['edges']:
    x,y=int(x),int(y);require(x>3 and y>3 and type(m)==int and m>0 and pow(x,m+1,y*(x-1))==1 and prime(y),'invalid edge');edges.setdefault((x,m),set()).add(y)
-  one,hi=J.audit(e,fs);require(not hi and all(s>0 for s in one),'high Euler or zero branch remains');st=independent(e,fs,edges,one,boost=row.get('boost',False)) if one else {};es.append(e);summary.append(dict(e=e,windows=len(one),stats=st));print('ACCEPT',summary[-1],flush=True)
+  one,hi=J.audit(e,fs);require(not hi and all(s>0 for s in one),'high Euler or zero branch remains');st=independent(e,fs,edges,one,boost=row.get('boost',False),reduced=row.get('reduced',False),parity=row.get('parity',False)) if one else {};es.append(e);summary.append(dict(e=e,windows=len(one),stats=st));print('ACCEPT',summary[-1],flush=True)
  print('actuals',sorted(es),'complete shards',J.delta(es),'baseline 880 ->',880-len(J.delta(es)))
 if __name__=='__main__':main()
