@@ -35,6 +35,7 @@ def main():
     for n in reg.get('seven_forest',[]):add('forest-seven-'+n,R/'NightSevenForest/Release/Replay.py',n)
     for name,p,e in reg.get('sigma_lift',[]):add('sigma-lift-'+str(p)+'-'+str(e),H/'LiftTarget.py',name,p,e)
     if reg.get('seven_split'):add('seven-split',R/'NightSevenForest/Release/SplitReplay.py',*reg['seven_split'])
+    for n in reg.get('binary_forest',[]):add('binary-forest-'+n,R/'NightLowRoute/Release/SupportReplay.py',n)
     for n in reg.get('extra',[]):add('extra-'+n,H/'ExtraVerify.py',n)
     # Bind receipts to actual bytes of tracked inputs, not merely a Git label. Never cache untracked dependencies.
     # Final check must run in a clean detached worktree containing only released inputs.
