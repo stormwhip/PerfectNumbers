@@ -40,7 +40,14 @@ def main():
     for name in read(H/'Batches.json').get('extra',[]):
         replay(H/'ExtraVerify.py',name);pairs.update((r['p'],r['e']) for r in read(H/name))
     for script,args,records in read(H/'Batches.json').get('uniform',[]):
-        replay(R/'NightUniformReview'/script,*[str(R/'NightUniformReview'/v) if v.endswith('.gz') else v for v in args]);pairs.update(map(tuple,records))
+        if script=='Verify19.py':
+            import ast
+            tree=ast.parse((R/'NightUniformReview'/script).read_text(encoding='utf-8')); fixed=next(ast.literal_eval(n.value) for n in tree.body if isinstance(n,ast.Assign) and any(getattr(t,'id','')=='EXPECTED' for t in n.targets));keys={(p,e) for p,es in fixed.items() for e in es}
+            if args:raise ValueError('unexpected fixed-batch argument')
+        elif script in ('Verify31.py','later/new/verify.py'):keys={(int(args[0]),int(args[1]))}
+        else:raise ValueError('unregistered uniform proof type')
+        if keys!=set(map(tuple,records)):raise ValueError('claimed exponents differ from verified command')
+        replay(R/'NightUniformReview'/script,*[str(R/'NightUniformReview'/v) if v.endswith('.gz') else v for v in args]);pairs.update(keys)
     audit=merge(base,pairs); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
     if a.output:a.output.write_text(json.dumps(audit,indent=1)+'\n',encoding='utf-8')
     elif json.loads(json.dumps(audit))!=read(H/'Audit.json'):raise ValueError('snapshot mismatch')
