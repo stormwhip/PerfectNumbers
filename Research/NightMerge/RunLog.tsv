@@ -9,3 +9,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-24T22:53+08:00	threeE,five4	3b50576	3	3	840	Root3 secondary ECM certified by independent ECPP and complete enumeration; root5 exact dual prices in two additional lines. 103 complete actuals and 40 net shards.
 2026-11-24T22:55+08:00	five5	3b50576	1	1	839	Exact paid/nonpaid Euler source cases excluded for 5/508. 104 actuals,41 completed shards. SHA-preserving API fallback for prior checkpoints worked.
 2026-11-24T22:59+08:00	three3,4,F,H	3b50576	5	2	837	Cumulative109 actuals,43 complete shards; first low-value closures at 3/766 and 3/690. Order04 replay in progress. Reuse new sigma-chain ECM hints separately.
+2026-11-24T23:01+08:00	order-Batch04	3b50576	40	11	826	Standalone replay passed. Total actuals=149; net shards=54. Resume full replay from Checkpoint.py and Batches.json.
