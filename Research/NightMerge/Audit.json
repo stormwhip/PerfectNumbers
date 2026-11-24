@@ -346,6 +346,42 @@
   ],
   [
    5,
+   82
+  ],
+  [
+   5,
+   100
+  ],
+  [
+   5,
+   106
+  ],
+  [
+   5,
+   126
+  ],
+  [
+   5,
+   136
+  ],
+  [
+   5,
+   150
+  ],
+  [
+   5,
+   156
+  ],
+  [
+   5,
+   160
+  ],
+  [
+   5,
+   162
+  ],
+  [
+   5,
    178
   ],
   [
@@ -1677,18 +1713,18 @@
    612
   ]
  ],
- "new_shards": 186,
+ "new_shards": 194,
  "by_root": {
   "3": 49,
-  "5": 38,
+  "5": 46,
   "7": 17,
   "11": 19,
   "13": 26,
   "19": 14,
   "31": 23
  },
- "closed": 2378,
- "open": 694,
+ "closed": 2386,
+ "open": 686,
  "closed_shards": [
   {
    "root": 19,
@@ -3318,6 +3354,94 @@
    "id": "P3_I00208",
    "remaining_actuals": [
     1278
+   ]
+  },
+  {
+   "root": 5,
+   "index": 22,
+   "count": 481,
+   "exponent": 82,
+   "exact": false,
+   "id": "P5_I00022",
+   "remaining_actuals": [
+    82
+   ]
+  },
+  {
+   "root": 5,
+   "index": 25,
+   "count": 481,
+   "exponent": 100,
+   "exact": false,
+   "id": "P5_I00025",
+   "remaining_actuals": [
+    100
+   ]
+  },
+  {
+   "root": 5,
+   "index": 27,
+   "count": 481,
+   "exponent": 106,
+   "exact": false,
+   "id": "P5_I00027",
+   "remaining_actuals": [
+    106
+   ]
+  },
+  {
+   "root": 5,
+   "index": 30,
+   "count": 481,
+   "exponent": 126,
+   "exact": false,
+   "id": "P5_I00030",
+   "remaining_actuals": [
+    126
+   ]
+  },
+  {
+   "root": 5,
+   "index": 32,
+   "count": 481,
+   "exponent": 136,
+   "exact": false,
+   "id": "P5_I00032",
+   "remaining_actuals": [
+    136
+   ]
+  },
+  {
+   "root": 5,
+   "index": 35,
+   "count": 481,
+   "exponent": 150,
+   "exact": false,
+   "id": "P5_I00035",
+   "remaining_actuals": [
+    150
+   ]
+  },
+  {
+   "root": 5,
+   "index": 36,
+   "count": 481,
+   "exponent": 156,
+   "exact": false,
+   "id": "P5_I00036",
+   "remaining_actuals": [
+    156
+   ]
+  },
+  {
+   "root": 5,
+   "index": 37,
+   "count": 481,
+   "exponent": 162,
+   "exact": false,
+   "id": "P5_I00037",
+   "remaining_actuals": [
+    162
    ]
   },
   {
@@ -12013,8 +12137,7 @@
     76,
     90,
     118,
-    132,
-    160
+    132
    ]
   },
   {
@@ -12078,8 +12201,7 @@
    "exact": false,
    "id": "P5_I00008",
    "remaining_actuals": [
-    22,
-    160
+    22
    ]
   },
   {
@@ -12227,17 +12349,6 @@
   },
   {
    "root": 5,
-   "index": 22,
-   "count": 481,
-   "exponent": 82,
-   "exact": false,
-   "id": "P5_I00022",
-   "remaining_actuals": [
-    82
-   ]
-  },
-  {
-   "root": 5,
    "index": 23,
    "count": 481,
    "exponent": 88,
@@ -12260,17 +12371,6 @@
   },
   {
    "root": 5,
-   "index": 25,
-   "count": 481,
-   "exponent": 100,
-   "exact": false,
-   "id": "P5_I00025",
-   "remaining_actuals": [
-    100
-   ]
-  },
-  {
-   "root": 5,
    "index": 26,
    "count": 481,
    "exponent": 102,
@@ -12278,17 +12378,6 @@
    "id": "P5_I00026",
    "remaining_actuals": [
     102
-   ]
-  },
-  {
-   "root": 5,
-   "index": 27,
-   "count": 481,
-   "exponent": 106,
-   "exact": false,
-   "id": "P5_I00027",
-   "remaining_actuals": [
-    106
    ]
   },
   {
@@ -12315,17 +12404,6 @@
   },
   {
    "root": 5,
-   "index": 30,
-   "count": 481,
-   "exponent": 126,
-   "exact": false,
-   "id": "P5_I00030",
-   "remaining_actuals": [
-    126
-   ]
-  },
-  {
-   "root": 5,
    "index": 31,
    "count": 481,
    "exponent": 130,
@@ -12333,17 +12411,6 @@
    "id": "P5_I00031",
    "remaining_actuals": [
     130
-   ]
-  },
-  {
-   "root": 5,
-   "index": 32,
-   "count": 481,
-   "exponent": 136,
-   "exact": false,
-   "id": "P5_I00032",
-   "remaining_actuals": [
-    136
    ]
   },
   {
@@ -12366,39 +12433,6 @@
    "id": "P5_I00034",
    "remaining_actuals": [
     148
-   ]
-  },
-  {
-   "root": 5,
-   "index": 35,
-   "count": 481,
-   "exponent": 150,
-   "exact": false,
-   "id": "P5_I00035",
-   "remaining_actuals": [
-    150
-   ]
-  },
-  {
-   "root": 5,
-   "index": 36,
-   "count": 481,
-   "exponent": 156,
-   "exact": false,
-   "id": "P5_I00036",
-   "remaining_actuals": [
-    156
-   ]
-  },
-  {
-   "root": 5,
-   "index": 37,
-   "count": 481,
-   "exponent": 162,
-   "exact": false,
-   "id": "P5_I00037",
-   "remaining_actuals": [
-    162
    ]
   },
   {
