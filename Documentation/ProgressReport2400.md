@@ -1,12 +1,14 @@
 # PerfectNumbers：\(10^{2400}\) 当前进展报告
 
-**更新日期：2026-11-24（Teichmüller 赋值计价新增 146 个分片，累计 2,015 / 3,072）** · **基线：V21** · **实验性前沿：V2 验证器/G1 C++** · **全局状态：`INCOMPLETE_FRONTIER`**。
+**更新日期：2026-11-24（Gemini 批次新增 12 个分片，累计 2,027 / 3,072）** · **基线：V21** · **实验性前沿：V2 验证器/G1 C++** · **全局状态：`INCOMPLETE_FRONTIER`**。
 
 > **当前结论：** 原八根互素类已独立验证 \(\log_{10}N\ge4183.209493\)，替换根 \(19\to23\) 的互素类已独立验证 \(\log_{10}N\ge3954.197016\)。两套集合的八个含根分支类仍需完成全量计算与独立核验。
 
 ## 最新合并复验
 
-Teichmüller 提升赋值判据在根 19、7、11、31、13 分别关闭 24、32、42、21、27 个原有开放分片，净增 **146** 项，累计闭合 **2,015 / 3,072** 项，尚余 **1,057** 项。[推导与复验](../Research/TeichmullerValuation/Readme.md) · [逐项清单](../Research/TeichmullerValuation/Audit2400.json)
+Gemini 批次经独立复验排除 51 个实际指数，净增 **12** 个顶层分片。累计闭合 **2,027 / 3,072** 项，尚余 **1,045** 项。[复验证明](../Research/TeichmullerValuation/GeminiBatchProof2400.md) · [批次审计](../Research/TeichmullerValuation/GeminiBatchAudit2400.json)
+
+作为本轮基线，Teichmüller 提升赋值判据在根 19、7、11、31、13 分别关闭 24、32、42、21、27 个原有开放分片，净增 **146** 项，累计闭合 **2,015 / 3,072** 项，尚余 **1,057** 项。[推导与复验](../Research/TeichmullerValuation/Readme.md) · [逐项清单](../Research/TeichmullerValuation/Audit2400.json)
 
 ## 此前指标容量复验
 

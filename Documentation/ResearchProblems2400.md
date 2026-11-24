@@ -1,6 +1,6 @@
 # 奇完全数下界 \(10^{2400}\) 的形式化研究问题
 
-当前待证明的 1,057 个规范分片见 [合并审计清单](../Research/TeichmullerValuation/Audit2400.json)。最新可复验状态见 [CurrentStatus2400.md](CurrentStatus2400.md)。
+当前有 1,045 个待证明的规范分片。运行 [Gemini 批次复验](../Research/TeichmullerValuation/GeminiBatchProof2400.md) 的审计程序并传入 `--remaining` 可生成剩余清单。最新状态见 [CurrentStatus2400.md](CurrentStatus2400.md)。
 
 > **2026-11-22 状态更新：** 原根集互素类已具备独立证书（`log10 N >= 4183.209493`）；V21 含根 3,072 项尚无全量独立证明。本文正文部分 `2400.822998027028` 属于此前的区间 LP 原型数据，原始理论问题与历史分析保留。最新模块与未完成义务请见 [CurrentStatus2400.md](CurrentStatus2400.md)。
 

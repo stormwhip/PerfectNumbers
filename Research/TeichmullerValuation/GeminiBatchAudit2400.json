@@ -1,0 +1,428 @@
+{
+  "theorem_status": "INCOMPLETE_FRONTIER",
+  "total": 3072,
+  "closed": 2027,
+  "open": 1045,
+  "by_root": {
+    "3": {
+      "verified": 466,
+      "open": 210,
+      "added": 0
+    },
+    "5": {
+      "verified": 361,
+      "open": 120,
+      "added": 0
+    },
+    "7": {
+      "verified": 226,
+      "open": 186,
+      "added": 1
+    },
+    "11": {
+      "verified": 206,
+      "open": 135,
+      "added": 9
+    },
+    "13": {
+      "verified": 177,
+      "open": 148,
+      "added": 1
+    },
+    "17": {
+      "verified": 297,
+      "open": 0,
+      "added": 0
+    },
+    "19": {
+      "verified": 156,
+      "open": 131,
+      "added": 1
+    },
+    "31": {
+      "verified": 138,
+      "open": 115,
+      "added": 0
+    }
+  },
+  "verified_exponents": [
+    [
+      7,
+      1084
+    ],
+    [
+      7,
+      1104
+    ],
+    [
+      7,
+      1120
+    ],
+    [
+      7,
+      1122
+    ],
+    [
+      7,
+      1126
+    ],
+    [
+      7,
+      1132
+    ],
+    [
+      7,
+      1134
+    ],
+    [
+      7,
+      1138
+    ],
+    [
+      11,
+      774
+    ],
+    [
+      11,
+      778
+    ],
+    [
+      11,
+      780
+    ],
+    [
+      11,
+      786
+    ],
+    [
+      11,
+      790
+    ],
+    [
+      11,
+      792
+    ],
+    [
+      11,
+      796
+    ],
+    [
+      11,
+      798
+    ],
+    [
+      11,
+      802
+    ],
+    [
+      11,
+      804
+    ],
+    [
+      11,
+      808
+    ],
+    [
+      11,
+      810
+    ],
+    [
+      11,
+      814
+    ],
+    [
+      11,
+      816
+    ],
+    [
+      11,
+      820
+    ],
+    [
+      11,
+      822
+    ],
+    [
+      11,
+      826
+    ],
+    [
+      11,
+      828
+    ],
+    [
+      11,
+      832
+    ],
+    [
+      11,
+      834
+    ],
+    [
+      11,
+      838
+    ],
+    [
+      13,
+      818
+    ],
+    [
+      13,
+      824
+    ],
+    [
+      13,
+      836
+    ],
+    [
+      13,
+      844
+    ],
+    [
+      13,
+      846
+    ],
+    [
+      13,
+      854
+    ],
+    [
+      13,
+      860
+    ],
+    [
+      13,
+      862
+    ],
+    [
+      19,
+      692
+    ],
+    [
+      19,
+      724
+    ],
+    [
+      19,
+      734
+    ],
+    [
+      19,
+      740
+    ],
+    [
+      19,
+      744
+    ],
+    [
+      19,
+      746
+    ],
+    [
+      19,
+      748
+    ],
+    [
+      19,
+      750
+    ],
+    [
+      19,
+      752
+    ],
+    [
+      31,
+      608
+    ],
+    [
+      31,
+      620
+    ],
+    [
+      31,
+      626
+    ],
+    [
+      31,
+      636
+    ],
+    [
+      31,
+      638
+    ]
+  ],
+  "additions": [
+    {
+      "root": 19,
+      "index": 131,
+      "count": 287,
+      "exponent": 750,
+      "exact": false,
+      "id": "P19_I00131",
+      "proof": [
+        {
+          "exponent": 750,
+          "rule": "gemini-replay"
+        }
+      ]
+    },
+    {
+      "root": 7,
+      "index": 187,
+      "count": 412,
+      "exponent": 1122,
+      "exact": false,
+      "id": "P7_I00187",
+      "proof": [
+        {
+          "exponent": 1122,
+          "rule": "gemini-replay"
+        }
+      ]
+    },
+    {
+      "root": 11,
+      "index": 136,
+      "count": 341,
+      "exponent": 786,
+      "exact": false,
+      "id": "P11_I00136",
+      "proof": [
+        {
+          "exponent": 786,
+          "rule": "gemini-replay"
+        }
+      ]
+    },
+    {
+      "root": 11,
+      "index": 137,
+      "count": 341,
+      "exponent": 796,
+      "exact": false,
+      "id": "P11_I00137",
+      "proof": [
+        {
+          "exponent": 796,
+          "rule": "gemini-replay"
+        }
+      ]
+    },
+    {
+      "root": 11,
+      "index": 138,
+      "count": 341,
+      "exponent": 808,
+      "exact": false,
+      "id": "P11_I00138",
+      "proof": [
+        {
+          "exponent": 808,
+          "rule": "gemini-replay"
+        }
+      ]
+    },
+    {
+      "root": 11,
+      "index": 139,
+      "count": 341,
+      "exponent": 810,
+      "exact": false,
+      "id": "P11_I00139",
+      "proof": [
+        {
+          "exponent": 810,
+          "rule": "gemini-replay"
+        }
+      ]
+    },
+    {
+      "root": 11,
+      "index": 140,
+      "count": 341,
+      "exponent": 820,
+      "exact": false,
+      "id": "P11_I00140",
+      "proof": [
+        {
+          "exponent": 820,
+          "rule": "gemini-replay"
+        }
+      ]
+    },
+    {
+      "root": 11,
+      "index": 141,
+      "count": 341,
+      "exponent": 822,
+      "exact": false,
+      "id": "P11_I00141",
+      "proof": [
+        {
+          "exponent": 822,
+          "rule": "gemini-replay"
+        }
+      ]
+    },
+    {
+      "root": 11,
+      "index": 142,
+      "count": 341,
+      "exponent": 826,
+      "exact": false,
+      "id": "P11_I00142",
+      "proof": [
+        {
+          "exponent": 826,
+          "rule": "gemini-replay"
+        }
+      ]
+    },
+    {
+      "root": 11,
+      "index": 143,
+      "count": 341,
+      "exponent": 828,
+      "exact": false,
+      "id": "P11_I00143",
+      "proof": [
+        {
+          "exponent": 828,
+          "rule": "gemini-replay"
+        }
+      ]
+    },
+    {
+      "root": 11,
+      "index": 144,
+      "count": 341,
+      "exponent": 838,
+      "exact": false,
+      "id": "P11_I00144",
+      "proof": [
+        {
+          "exponent": 838,
+          "rule": "gemini-replay"
+        }
+      ]
+    },
+    {
+      "root": 13,
+      "index": 149,
+      "count": 325,
+      "exponent": 862,
+      "exact": false,
+      "id": "P13_I00149",
+      "proof": [
+        {
+          "exponent": 862,
+          "rule": "gemini-replay"
+        },
+        {
+          "exponent": 1725,
+          "rule": "base-size"
+        }
+      ]
+    }
+  ]
+}
