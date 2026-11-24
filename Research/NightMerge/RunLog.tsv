@@ -140,3 +140,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T03:20+08:00	forest/ForestS04.json.gz	3b50576	5	5	519	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
 2026-11-25T03:21+08:00	three-BatchAP	3b50576	1	1	518	Standalone replay passed. Total actuals=812; net shards=362. Resume full replay from Checkpoint.py and Batches.json.
 2026-11-25T03:21+08:00	five23	3b50576	1	0	518	Verify118.py passed; cumulative 813 actuals / 362 complete shards.
+2026-11-25T03:21+08:00	five-forest25	3b50576	2	2	see audit	Two low-exponent singleton shards: e=66,78; direct lower exponent floors 2404,2402. 5/118 registered from two 13033-node replays, no complete extra shard.
