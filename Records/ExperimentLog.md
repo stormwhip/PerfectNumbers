@@ -4,6 +4,13 @@
 
 This log separates **imported historical claims**, **directly observed experiments**, and **proof-checked results**. Dates use YYYY-MM-DD.
 
+## 2026-11-24 Euler-source interval replay
+
+- Baseline commit: `37eb94b0a2cd18daed980b902fd913da3420e434`. The input derives from the checked-in exact-exponent exclusions and open shard manifests.
+- Replay: Python 3.11.9 on Windows, `python Research/EulerSourceIntervals/VerifyEulerSourceIntervals2400.py --output Build/AuditEulerSourceIntervals2400.json`.
+- Root 3: 350 input exponents, 48 with expanded coverage, 3,473 additional Euler-one valuation combinations. Root 5: 183 input exponents, 28 with expanded coverage, 717 additional combinations. The comparison is against the direct valuation and size bound.
+- For `(3,1330)`, six exact first-power factors checked. The internal-source replay excludes `f = c` for `s = 1284..1330` and `c = 1` for `s = 1327..1330`. These are branch-level results. See the [proof and replay](../Documentation/ResearchReport2400.md).
+
 ## 2026-11-23 Indicator-capacity proof replay
 
 Replaying the supplied Gemini verifier reproduced its reported 96 exclusions and 29 closures. The corrected verifier prices valuations supplied by factors of the root divisor, handles missing indicator targets in each Euler/supplier branch, and rechecks the supplied rational flows. The merged replay accepted 74 actual exponents and 18 previously open shards. The C++17 generator reproduced both certificate files byte for byte. Seven verifier regression groups passed locally. See the [proof and replay instructions](../Research/IndicatorCapacity/Readme.md).

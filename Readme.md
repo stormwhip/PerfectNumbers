@@ -5,7 +5,9 @@
 截至 2026-11-24，原根集的 **3,072** 个顶层分片中，**2,027** 个已闭合，**1,045** 个仍开放。Gemini 批次经独立复验排除 **51** 个实际指数，新增闭合 **12** 个顶层分片。原根集互素类已有独立整数证书给出 `log10 N >= 4183.209493`。全局状态为 `INCOMPLETE_FRONTIER`。
 
 - [当前状态和逐根进度](Documentation/CurrentStatus2400.md)
-- [本轮推导和复验说明](Research/TeichmullerValuation/GeminiBatchProof2400.md)
+- [项目研究报告、最新实验和下一步](Documentation/ResearchReport2400.md)
+- [历史进度与工程实验](Documentation/ProgressReport2400.md)
+- [已验收 Gemini 批次的推导和复验](Research/TeichmullerValuation/GeminiBatchProof2400.md)
 - [Claude 的 Euler 筛证书与合并复验](Research/EulerOneSieve/Readme.md)
 - [Gemini 批次审计](Research/TeichmullerValuation/GeminiBatchAudit2400.json)
 - [Teichmüller 基线审计](Research/TeichmullerValuation/Audit2400.json)

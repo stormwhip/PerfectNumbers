@@ -4,6 +4,8 @@
 
 ## 合并证明与文档归档
 
+- [EulerSourceIntervals](../Research/EulerSourceIntervals/VerifyEulerSourceIntervals2400.py) 保存根 3、5 的来源区间实验复验器，输入由已签入的审计重建。
+
 - [TeichmullerValuation](../Research/TeichmullerValuation/Readme.md) 保存根 19、7、11、31、13 的 Teichmüller 赋值计价验证器、回归检查与基线审计清单。[Gemini 批次复验](../Research/TeichmullerValuation/GeminiBatchProof2400.md) 给出增量闭合证据和输出剩余分片的命令。
 - [EulerOneSieve](../Research/EulerOneSieve/Readme.md) 保存 Claude 批次的实际指数证书、两套回放入口和与 Gemini 审计的重叠情况。
 - [IndicatorCapacity](../Research/IndicatorCapacity/Readme.md) 保存指标容量对偶证书、候选生成器、独立复验与本轮采用的基线审计清单。
@@ -22,6 +24,7 @@ PerfectNumbers/
 │   ├── FermatRootValuation/             # 根 3、5 基础证书与核验器
 │   ├── TeichmullerValuation/           # 最新合并审计（根 19、7、11、31、13 的赋值判据）
 │   ├── EulerOneSieve/                  # Euler 筛证书与回放
+│   ├── EulerSourceIntervals/           # Euler 来源区间复验
 │   ├── IndicatorCapacity/              # 根 3、5 指标容量对偶证书与审计
 │   ├── SupplierBatch/                  # 上一批来源判据证书与基线
 │   ├── Session20261123/                 # 独立分片研究及实测报告
@@ -46,6 +49,7 @@ PerfectNumbers/
 | 文档 | 作用 |
 | --- | --- |
 | [CurrentStatus2400.md](CurrentStatus2400.md) | **唯一当前状态摘要**与完整剩余任务 |
+| [ResearchReport2400.md](ResearchReport2400.md) | 研究结果、覆盖范围、复验命令和下一步 |
 | [ProgressReport2400.md](ProgressReport2400.md) | 历史过程、对照实验和新模块进展 |
 | [ResearchProblems2400.md](ResearchProblems2400.md) | 数学定义、所有待证条件及不可省略的证明义务 |
 | [ValidationChecklist.md](../Records/ValidationChecklist.md) | 发布前逐项验收要求 |
