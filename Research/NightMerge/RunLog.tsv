@@ -139,3 +139,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T03:18+08:00	five-forest24	3b50576	2	1	see audit	Proof of 5/132 and 5/130 (lower log10 integers 2523 and 2410), generalized duplicate-safe weighted sigma forest from roots13/19/31. Full validation isolated and deduplicated.
 2026-11-25T03:20+08:00	forest/ForestS04.json.gz	3b50576	5	5	519	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
 2026-11-25T03:21+08:00	three-BatchAP	3b50576	1	1	518	Standalone replay passed. Total actuals=812; net shards=362. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T03:21+08:00	five23	3b50576	1	0	518	Verify118.py passed; cumulative 813 actuals / 362 complete shards.
