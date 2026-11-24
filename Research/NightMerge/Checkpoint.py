@@ -63,6 +63,9 @@ def main():
         replay(R/'NightLowRoute/Release/SixReplay.py',*conditional)
         for name in conditional:
             rows=json.loads(gzip.decompress((R/'NightLowRoute/Release'/name).read_bytes()))['rows'];pairs.update((r['p'],r['e']) for r in rows)
+    for script,name in read(H/'Batches.json').get('structural_only',[]):
+        # No exact exponent is credited for a support-only theorem.
+        replay(R/'NightUniform'/script,R/'NightUniform'/name)
     audit=merge(base,pairs); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
     if a.output:a.output.write_text(json.dumps(audit,indent=1)+'\n',encoding='utf-8')
     elif json.loads(json.dumps(audit))!=read(H/'Audit.json'):raise ValueError('snapshot mismatch')
