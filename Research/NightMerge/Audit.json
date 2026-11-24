@@ -3082,6 +3082,10 @@
   ],
   [
    19,
+   166
+  ],
+  [
+   19,
    170
   ],
   [
@@ -4341,18 +4345,18 @@
    612
   ]
  ],
- "new_shards": 447,
+ "new_shards": 448,
  "by_root": {
   "3": 107,
   "5": 62,
   "7": 30,
   "11": 38,
   "13": 91,
-  "19": 46,
+  "19": 47,
   "31": 73
  },
- "closed": 2639,
- "open": 433,
+ "closed": 2640,
+ "open": 432,
  "closed_shards": [
   {
    "root": 19,
@@ -4517,6 +4521,18 @@
    "id": "P19_I00035",
    "remaining_actuals": [
     156
+   ]
+  },
+  {
+   "root": 19,
+   "index": 37,
+   "count": 287,
+   "exponent": 166,
+   "exact": false,
+   "id": "P19_I00037",
+   "remaining_actuals": [
+    166,
+    500
    ]
   },
   {
@@ -9776,17 +9792,6 @@
    "id": "P19_I00036",
    "remaining_actuals": [
     162
-   ]
-  },
-  {
-   "root": 19,
-   "index": 37,
-   "count": 287,
-   "exponent": 166,
-   "exact": false,
-   "id": "P19_I00037",
-   "remaining_actuals": [
-    166
    ]
   },
   {
