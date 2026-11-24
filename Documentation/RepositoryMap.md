@@ -5,6 +5,7 @@
 ## 合并证明与文档归档
 
 - [TeichmullerValuation](../Research/TeichmullerValuation/Readme.md) 保存根 19、7、11、31、13 的 Teichmüller 赋值计价验证器、回归检查与基线审计清单。[Gemini 批次复验](../Research/TeichmullerValuation/GeminiBatchProof2400.md) 给出增量闭合证据和输出剩余分片的命令。
+- [EulerOneSieve](../Research/EulerOneSieve/Readme.md) 保存 Claude 批次的实际指数证书、两套回放入口和与 Gemini 审计的重叠情况。
 - [IndicatorCapacity](../Research/IndicatorCapacity/Readme.md) 保存指标容量对偶证书、候选生成器、独立复验与本轮采用的基线审计清单。
 - [SupplierBatch](../Research/SupplierBatch/PerfectNumbers2400BatchReport.md)集中存放上一批验证器、证明程序、证书、审计清单和扫描工具。
 - [旧外部结果评审](../Records/ExternalReviews/GeminiProgressReviewV5.md)归档于 `Records/ExternalReviews/`。
@@ -20,6 +21,7 @@ PerfectNumbers/
 ├── Research/
 │   ├── FermatRootValuation/             # 根 3、5 基础证书与核验器
 │   ├── TeichmullerValuation/           # 最新合并审计（根 19、7、11、31、13 的赋值判据）
+│   ├── EulerOneSieve/                  # Euler 筛证书与回放
 │   ├── IndicatorCapacity/              # 根 3、5 指标容量对偶证书与审计
 │   ├── SupplierBatch/                  # 上一批来源判据证书与基线
 │   ├── Session20261123/                 # 独立分片研究及实测报告

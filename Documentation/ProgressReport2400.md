@@ -10,6 +10,8 @@ Gemini 批次经独立复验排除 51 个实际指数，净增 **12** 个顶层�
 
 作为本轮基线，Teichmüller 提升赋值判据在根 19、7、11、31、13 分别关闭 24、32、42、21、27 个原有开放分片，净增 **146** 项，累计闭合 **2,015 / 3,072** 项，尚余 **1,057** 项。[推导与复验](../Research/TeichmullerValuation/Readme.md) · [逐项清单](../Research/TeichmullerValuation/Audit2400.json)
 
+Claude 的 Euler 筛独立排除四个实际指数，相对 Teichmüller 基线关闭两个分片。四条排除均已由 Gemini 批次覆盖，合并后的闭合数仍为 2,027。[Claude 批次证书与复验](../Research/EulerOneSieve/Readme.md)
+
 ## 此前指标容量复验
 
 精确复验新增排除 **74 个实际指数**，关闭 **18 个顶层分片**。根 3 排除 29 个实际指数、关闭 9 个分片，根 5 排除 45 个实际指数、关闭 9 个分片。累计闭合 **1,869 / 3,072**，剩余 **1,203**。 [数学推导与复验](../Research/IndicatorCapacity/Readme.md) · [完整清单](../Research/IndicatorCapacity/Audit2400.json)

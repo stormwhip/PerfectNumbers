@@ -6,6 +6,7 @@
 
 - [当前状态和逐根进度](Documentation/CurrentStatus2400.md)
 - [本轮推导和复验说明](Research/TeichmullerValuation/GeminiBatchProof2400.md)
+- [Claude 的 Euler 筛证书与合并复验](Research/EulerOneSieve/Readme.md)
 - [Gemini 批次审计](Research/TeichmullerValuation/GeminiBatchAudit2400.json)
 - [Teichmüller 基线审计](Research/TeichmullerValuation/Audit2400.json)
 - [上一轮：指标容量对偶](Research/IndicatorCapacity/Readme.md)
