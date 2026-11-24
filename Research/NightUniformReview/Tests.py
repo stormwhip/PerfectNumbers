@@ -1,5 +1,5 @@
 """Exhaustive small grids, including comparison to actual NightUniform routines (read-only)."""
-import replay as R,sys,itertools
+import Replay as R,sys,itertools
 sys.path.insert(0,str(R.A0));import Rectangle as original
 from math import gcd
 nfs=nrect=nplant=nroot=0

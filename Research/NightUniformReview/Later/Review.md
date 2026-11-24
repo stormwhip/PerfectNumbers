@@ -9,8 +9,8 @@
 
 严格复验（在 `overnight` 目录）：
 ```
-python -B Research/NightUniformReview/Verify31.py 31 598 --compact Research/NightUniformReview/later/short31.json.gz
-python -B Research/NightUniformReview/Verify31.py 19 682 --compact Research/NightUniformReview/later/short19.json.gz
+python -B Research/NightUniformReview/Verify31.py 31 598 --compact Research/NightUniformReview/Later/Short31.json.gz
+python -B Research/NightUniformReview/Verify31.py 19 682 --compact Research/NightUniformReview/Later/Short19.json.gz
 ```
 
 两条均实际 EXIT 0。SHA-256：31/598 `acc2968fd06bb9461cb1b40116fe7e1f1adf681008c263b38508a0b160ae75e3`；19/682 `25de6d5263435bdc55e30b3ec43135434e5d62818bb4b157186b35f91cfcd305`。`--collect` 只供发现，输出 NOT CERTIFIED，不能当作数学结论。

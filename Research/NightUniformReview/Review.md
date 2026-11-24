@@ -1,14 +1,14 @@
 # 独立复核：首批 only-inner 41 个实际指数
 
-**判定**：在既有根序、奇完全数假设和 `N≤10^2400` 下，附 28 个已验多项式叶后，首批 41 项中 **18 个完整实际指数可接受，23 个不接受**；不是 18 个分片，更不是总定理。逐项见 [rows](rows.md)，逐个 s 与真实用过的叶指纹见 [最终明细](results-0-0-41-pack.json)。原始非矩形规则只能关闭 16 项；仅加矩形能关 17 项。未发现导致错误剪枝的数学反例。首个**完整性漏洞**：若把原二阶矩形单独当作 11/760 的证书，`s=563,h=761,c=3,f=4,b_min=126` 即未排；其后 s=564,565 也未排。这是未证窗口，不是奇完全数反例。新叶补齐这三窗。首个附证后未完成的实际指数是 11/756，首个余窗 s=523，h=757,c=3,f=4,b_min=138。未知仍保留。
+**判定**：在既有根序、奇完全数假设和 `N≤10^2400` 下，附 28 个已验多项式叶后，首批 41 项中 **18 个完整实际指数可接受，23 个不接受**；不是 18 个分片，更不是总定理。逐项见 `rows.md`，逐个 s 与真实用过的叶指纹见 `results-0-0-41-pack.json`。原始非矩形规则只能关闭 16 项；仅加矩形能关 17 项。未发现导致错误剪枝的数学反例。首个**完整性漏洞**：若把原二阶矩形单独当作 11/760 的证书，`s=563,h=761,c=3,f=4,b_min=126` 即未排；其后 s=564,565 也未排。这是未证窗口，不是奇完全数反例。新叶补齐这三窗。首个附证后未完成的实际指数是 11/756，首个余窗 s=523，h=757,c=3,f=4,b_min=138。未知仍保留。
 
 ## 覆盖与证据
 
-输入只含 [p,e 与试验素因子](input.json)，不读原程序的区间、乘数、cut 或 marks；素因子先验证素性及整除。原始 `41` 项确与外源原判全空的键集合吻合，事后比较，不用来佐证数学。全域 32,001 个 s，Kernel 后 7,797，Sponsor 后 7,644，外源无余；非矩形内源余 2,295（逐 s 与原明细一致），二阶矩形余 1,874；加 28 叶后余 1,871，全部位于其余 23 项。**没有按余 s 数对指数部分入账。**
+输入只含 [p,e 与试验素因子](Input.json)，不读原程序的区间、乘数、cut 或 marks；素因子先验证素性及整除。原始 `41` 项确与外源原判全空的键集合吻合，事后比较，不用来佐证数学。全域 32,001 个 s，Kernel 后 7,797，Sponsor 后 7,644，外源无余；非矩形内源余 2,295（逐 s 与原明细一致），二阶矩形余 1,874；加 28 叶后余 1,871，全部位于其余 23 项。**没有按余 s 数对指数部分入账。**
 
 * 19/732：s=0..732；Kernel 剪 662、Sponsor 再剪 5，338..403 全 66 个 s 内外均空。显式素因子 24923，尺寸溢价 24923；h=733 的奇重数尺寸下界 14670263。赋值溢价分别为 621155929、215216616489169。取来源预算前分别扣掉本账最大的一项，不能将两个账本相乘。
 * 11/760：s=0..760；Kernel 剪 701，Sponsor 再剪 3，515..571 共 57 个 s。外源均空，二阶矩形后内源剩 3 个。独立 Hensel 源分支自动产生并命中 28 个互异 SHA-256 键，逐条验非零整数多项式、整除次数、系数幅度及区间根；不信任发现端 LLL 的输出结论。57 个窗至此全空。
-* 附证 SHA256：`d53a087853e9e668fc512b585a66d7b8b5c55f00d4ed9df7ef6f57c77468d4de`；[本地副本](leaf-packet.json)。两个独立 CRT 实现还在 475272 个矩形与有限格点暴力比较，含 46873 个有真除数的盒；32400 个有符号 floor-sum、2138 个合法 LTE 来源类均过。有限测试不是大整数覆盖的替代。
+* 附证 SHA256：`d53a087853e9e668fc512b585a66d7b8b5c55f00d4ed9df7ef6f57c77468d4de`；[本地副本](LeafPacket.json)。两个独立 CRT 实现还在 475272 个矩形与有限格点暴力比较，含 46873 个有真除数的盒；32400 个有符号 floor-sum、2138 个合法 LTE 来源类均过。有限测试不是大整数覆盖的替代。
 
 ## 推导与防重账
 
@@ -23,11 +23,10 @@
 
 在仓库根执行（标准库，无网络）：
 ```
-python -B overnight/Research/NightUniformReview/replay.py --mode -1
-python -B overnight/Research/NightUniformReview/replay.py --mode 0
-python -B overnight/Research/NightUniformReview/replay.py --pack overnight/Research/NightUniformReview/leaf-packet.json
-python -B overnight/Research/NightUniformReview/discount_check.py
-python -B overnight/Research/NightUniformReview/tests.py
-python -B overnight/Research/NightUniformReview/report.py
+python -B Research/NightUniformReview/Replay.py --mode -1
+python -B Research/NightUniformReview/Replay.py --mode 0
+python -B Research/NightUniformReview/Replay.py --pack Research/NightUniformReview/LeafPacket.json
+python -B Research/NightUniformReview/DiscountCheck.py
+python -B Research/NightUniformReview/Tests.py
 ```
-[验证程序](replay.py) 复用已建立的 Teich blanket ledger、赞助候选生成及素性证明器；不是从零重证外部基线。[独立赞助检验](discount_check.py) 检查被删亏额的唯一可能不足幂、禁素证据、保留次数、无重付、强制赞助素数确定素性及其独立价格。所用 N 小于既有边界、根序、Euler 分解均为条件。回归 [tests](tests.py)，[事后逐项比对](report.py)。全程没有写入 NightUniform，也未修改全局 frontier。
+[验证程序](Replay.py) 复用已建立的 Teich blanket ledger、赞助候选生成及素性证明器；不是从零重证外部基线。[独立赞助检验](DiscountCheck.py) 检查被删亏额的唯一可能不足幂、禁素证据、保留次数、无重付、强制赞助素数确定素性及其独立价格。所用 N 小于既有边界、根序、Euler 分解均为条件。回归 [tests](Tests.py)，`report.py`。全程没有写入 NightUniform，也未修改全局 frontier。

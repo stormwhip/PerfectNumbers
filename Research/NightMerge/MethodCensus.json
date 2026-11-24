@@ -1,37 +1,37 @@
 {
  "order + finite trees": {
-  "actuals": 466,
-  "standalone_shards": 139,
-  "unique_actuals": 277,
+  "actuals": 486,
+  "standalone_shards": 143,
+  "unique_actuals": 264,
   "shards_lost_if_omitted": 116
  },
  "uniform source and interval": {
   "actuals": 35,
   "standalone_shards": 26,
-  "unique_actuals": 12,
-  "shards_lost_if_omitted": 12
+  "unique_actuals": 11,
+  "shards_lost_if_omitted": 11
  },
  "root-3 valuation and trees": {
-  "actuals": 174,
-  "standalone_shards": 105,
-  "unique_actuals": 174,
-  "shards_lost_if_omitted": 105
+  "actuals": 179,
+  "standalone_shards": 109,
+  "unique_actuals": 179,
+  "shards_lost_if_omitted": 109
  },
  "root-5 prices and trees": {
-  "actuals": 75,
-  "standalone_shards": 55,
-  "unique_actuals": 74,
-  "shards_lost_if_omitted": 55
+  "actuals": 78,
+  "standalone_shards": 57,
+  "unique_actuals": 76,
+  "shards_lost_if_omitted": 57
  },
  "static forest, support splits and lifts": {
-  "actuals": 503,
-  "standalone_shards": 131,
-  "unique_actuals": 335,
-  "shards_lost_if_omitted": 122
+  "actuals": 553,
+  "standalone_shards": 146,
+  "unique_actuals": 352,
+  "shards_lost_if_omitted": 134
  },
  "combined": {
-  "actuals": 1062,
-  "shards": 433,
+  "actuals": 1106,
+  "shards": 454,
   "synergy_only": 1
  }
 }

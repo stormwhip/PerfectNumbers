@@ -25,7 +25,9 @@ python3 Research/TeichmullerValuation/AuditTeichmullerValuation2400.py --output 
 cmp Research/TeichmullerValuation/Audit2400.json Build/AuditTeichmuller2400.json
 python3 Research/TeichmullerValuation/AuditGeminiBatch2400.py --remaining Build/RemainingBeforeGapSupply2400.json
 python3 Research/EveningMerge/VerifyFrontier.py --workers 6
-python3 -B Research/NightMerge/Checkpoint.py
+python3 -B Research/NightMerge/ParallelReplay.py --workers 10 --fresh --receipts ../PerfectNumbersNightReceipts
 ```
+
+最后一条命令应在干净检出中运行，回执目录位于仓库外。只需重算分片清单时，可运行 `python3 -B Research/NightMerge/Checkpoint.py --manifest-only`。各方法的独立覆盖数与重叠统计见[方法统计](Research/NightMerge/MethodCensus.json)。
 
 长时研究搜索使用 [V21](Sources/Cpp/ProofTreeV21.cpp)、[调度器](Sources/Python/Run2400Scheduler.py) 和 [Linux/WSL2 脚本](Scripts/Run72hWSL.sh)。运行产物存放在 `Build/` 或 `Run2400Results/`。工程基准与证明实验见 [实验日志](Records/ExperimentLog.md)，背景论文见 [Ochem–Rao 2012](References/OchemRao2012.pdf)。

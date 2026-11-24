@@ -6,7 +6,7 @@ R=V.R
 if __name__=='__main__':
  if not __debug__:raise RuntimeError('disabled assertions')
  if hasattr(sys,'set_int_max_str_digits'):sys.set_int_max_str_digits(0)
- sys.setrecursionlimit(30000);p,e=map(int,sys.argv[1:3]);proofs=json.loads(gzip.decompress((D/(sys.argv[3] if len(sys.argv)>3 else f'cert-{p}-{e}.gz')).read_bytes()));used=set();num=0;origin=R.rect;t=time.time()
+ sys.setrecursionlimit(30000);p,e=map(int,sys.argv[1:3]);proofs=json.loads(gzip.decompress((D/(sys.argv[3] if len(sys.argv)>3 else f'Cert{p}x{e}.gz')).read_bytes()));used=set();num=0;origin=R.rect;t=time.time()
  def check(C,c,z,T,lo,hi,cap):
   global num
   if not origin(C,c,z,T,lo,hi,0):return False
@@ -30,4 +30,4 @@ if __name__=='__main__':
    cur=h+1
    if cur>hi:return True
   return False
- R.rect=check;x=next(z for z in json.loads((R.D/'input.json').read_bytes()) if (z['p'],z['e'])==(p,e));from importlib import import_module;run=import_module('identity').run if '--id' in sys.argv[4:] else import_module('lift_core').run if '--delta' in sys.argv[4:] else R.run;r=run(x,0);assert not r['inside'] and not r['outside'] and sum(r['counts'].values())==e+1 and len(used)==sum(map(len,proofs.values()));print('VERIFIED',p,e,'s',e+1,'post',len(r['post_sponsor']),'boxes',num,'leaves',len(used),'seconds',round(time.time()-t,1),flush=True)
+ R.rect=check;x=next(z for z in json.loads((R.D/'Input.json').read_bytes()) if (z['p'],z['e'])==(p,e));from importlib import import_module;run=import_module('Identity').run if '--id' in sys.argv[4:] else import_module('LiftCore').run if '--delta' in sys.argv[4:] else R.run;r=run(x,0);assert not r['inside'] and not r['outside'] and sum(r['counts'].values())==e+1 and len(used)==sum(map(len,proofs.values()));print('VERIFIED',p,e,'s',e+1,'post',len(r['post_sponsor']),'boxes',num,'leaves',len(used),'seconds',round(time.time()-t,1),flush=True)

@@ -1,7 +1,7 @@
 """Additional full-domain exponent review; compact packets prove a union of boxes per congruence. Never trusts discovery flags or partial windows."""
 import sys, json, gzip, collections, argparse,hashlib,time
 from pathlib import Path
-import replay as R
+import Replay as R
 D=Path(__file__).resolve().parent
 
 def key(C,c,z,T):return hashlib.sha256(('|'.join(map(str,(C,c,z,T)))).encode()).hexdigest()
@@ -9,7 +9,7 @@ def main():
  if not __debug__:raise RuntimeError('assertions disabled')
  ap=argparse.ArgumentParser();ap.add_argument('p',type=int);ap.add_argument('e',type=int);group=ap.add_mutually_exclusive_group(required=True);group.add_argument('--raw',type=Path);group.add_argument('--compact',type=Path);group.add_argument('--collect',type=Path);a=ap.parse_args();sys.setrecursionlimit(30000)
  if hasattr(sys,'set_int_max_str_digits'):sys.set_int_max_str_digits(0)
- x=next(z for z in json.loads((D/'input.json').read_bytes()) if (z['p'],z['e'])==(a.p,a.e));t=time.time();boxes=collections.defaultdict(set);rec={};used=set();origin=R.rect
+ x=next(z for z in json.loads((D/'Input.json').read_bytes()) if (z['p'],z['e'])==(a.p,a.e));t=time.time();boxes=collections.defaultdict(set);rec={};used=set();origin=R.rect
  if a.raw:R.pack=json.loads(gzip.decompress(a.raw.read_bytes()));assert R.pack
  else:
   if a.compact:

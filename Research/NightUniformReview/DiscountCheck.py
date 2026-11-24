@@ -1,5 +1,5 @@
 """Audit the sponsor generator as a mathematical ledger, without assuming its decisions valid."""
-from replay import *
+from Replay import *
 for p in (7,11,19,31):
  prof=O.profile(p);k=prof.kap;ds=O.G.discounts(p,prof);dep={(t,x):(d,ws) for t,x,d,ws in ds};used={x for t,x,o in prof.non_euler};paid=set();nskip=0
  assert len(dep)==len(ds);assert len(used)==len(prof.non_euler)

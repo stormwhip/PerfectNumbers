@@ -1,7 +1,7 @@
 """Fail-closed adapter: only a concrete integer bound above B for the claimed target counts."""
 from pathlib import Path
 import sys,json,gzip
-R=Path(__file__).resolve().parents[1];H=R/'NightFiveReview/forest-lift';sys.path.insert(0,str(H));import Target as T
+R=Path(__file__).resolve().parents[1];H=R/'NightFiveReview/ForestLift';sys.path.insert(0,str(H));import Target as T
 
 def main():
     if not __debug__:raise SystemExit('Run without -O')

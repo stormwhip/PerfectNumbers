@@ -14,6 +14,9 @@ EXTENSION = re.compile(r"^[a-z0-9]+(?:\.[a-z0-9]+)*$")
 INLINE_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 REFERENCE_LINK = re.compile(r"^\s*\[[^\]]+\]:\s*(\S+)", re.MULTILINE)
 PLATFORM_PARTS = {".github", "workflows", ".gitignore"}
+# The ECPP loaders address these generated certificates by a truncated SHA-256
+# of the decimal prime. The lowercase hash stem is part of the on-disk format.
+ECPP_CERTIFICATE = re.compile(r"Research/(?:NightOrder|NightMerge)/ECPP/[0-9a-f]{24}\.json\.gz")
 
 
 def tracked_files() -> list[str]:
@@ -61,7 +64,7 @@ def main() -> int:
                 if not separator or not EXTENSION.fullmatch(ext):
                     failures.append(f"invalid file suffix: {rel}")
                     break
-                if not FILE_NAME.fullmatch(base):
+                if not FILE_NAME.fullmatch(base) and not ECPP_CERTIFICATE.fullmatch(rel):
                     failures.append(f"non-PascalCase file: {rel}")
                     break
             elif not FILE_NAME.fullmatch(segment):

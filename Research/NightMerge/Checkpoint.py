@@ -44,7 +44,7 @@ def main():
             import ast
             tree=ast.parse((R/'NightUniformReview'/script).read_text(encoding='utf-8')); fixed=next(ast.literal_eval(n.value) for n in tree.body if isinstance(n,ast.Assign) and any(getattr(t,'id','')=='EXPECTED' for t in n.targets));keys={(p,e) for p,es in fixed.items() for e in es}
             if args:raise ValueError('unexpected fixed-batch argument')
-        elif script in ('Verify31.py','later/new/verify.py'):keys={(int(args[0]),int(args[1]))}
+        elif script in ('Verify31.py','later/New/verify.py'):keys={(int(args[0]),int(args[1]))}
         else:raise ValueError('unregistered uniform proof type')
         if keys!=set(map(tuple,records)):raise ValueError('claimed exponents differ from verified command')
         replay(R/'NightUniformReview'/script,*[str(R/'NightUniformReview'/v) if v.endswith('.gz') and script=='Verify31.py' else v for v in args]);pairs.update(keys)

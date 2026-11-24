@@ -1,4 +1,4 @@
-from replay import *
+from Replay import *
 
 def run(x,mode):
  p,e=x['p'],x['e'];rs=x['rs'];prof=O.profile(p);k=prof.kap;U=prof.U(e);P=p**(e+1);A=sig(p,e);pe=p**e

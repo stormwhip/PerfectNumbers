@@ -25,6 +25,12 @@ for n in reg['mass']:
  x=read(R/'NightLowRoute/Release'/n);FF.add((x['p'],x['e']))
 for k,dr in [('support_forest','NightLowRoute/Release'),('support13_forest','NightLowRoute/Release'),('binary_forest','NightLowRoute/Release'),('seven_split','NightSevenForest/Release')]:
  for n in reg.get(k,[]):FF.update((x['p'],x['e']) for x in read(R/dr/n)['rows'])
+for name in reg.get('ladder', []):
+ for row in read(R/'NightSevenForest/Release'/name)['rows']:
+  FF.add((row['forest']['p'], row['forest']['e']))
+for name in reg.get('forbidden_lift', []):
+ row = read(R/'NightLowRoute/Release'/name)['row']
+ FF.update((p, e) for p, e in allkeys if p == row['p'] and (e+1) % (row['e']+1) == 0)
 def complete(keys):return {x['id'] for x in base if all((x['root'],e)in keys for e in x['remaining_actuals'])}
 full=set.union(*groups.values())&allkeys;total=complete(full);arch=read(R/'NightMerge/Audit.json');assert full==set(map(tuple,arch['new_actuals'])) and len(total)==arch['new_shards'];report={};
 for name,pairs in groups.items():
