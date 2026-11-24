@@ -60,3 +60,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T01:00+08:00	three-BatchAF	3b50576	1	0	661	Standalone replay passed. Total actuals=504; net shards=219. Resume full replay from Checkpoint.py and Batches.json.
 2026-11-25T01:01+08:00	uniform-11/696-id	3b50576	0	0	661	Whole-domain identity-priced replayer passed; overlaps removed.
 2026-11-25T01:02+08:00	three-BatchAE	3b50576	3	3	658	Standalone replay passed. Total actuals=507; net shards=222. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:03+08:00	root13-independent-six	3b50576	0	0	see audit	Standalone Verify.py uses only stdlib and reproduces six fully covered exponents which overlap order01/03/04. 26 lower inputs failed; no additional counts. Published lemma derivation in existing total proof.
