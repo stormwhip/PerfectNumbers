@@ -1,0 +1,23 @@
+{
+  "baseline": "4aad42d",
+  "sha256": {
+    "Replay.py": "f0d73f9b64775c224edba4693f4e8a81a43066c798ee7d90ce0f1756363b2ad6",
+    "Certificates.json": "08d41ebf16efadacdcf6043d6e58465d95768c636d82b27392532cf412b4bb72",
+    "Primality.json.gz": "999a592d4600e163d61a91697096b2ad7f589bd40b1b32c306d78af4259704ab",
+    "Tests.py": "957ee496c89be745b525e50883439b5bb36708aa8ac0b5be5fa8b2f3c1ec060f",
+    "Audit.json": "01662db0b68ce89ef6df8ee67b27bb785a14ab1d31caace575fdbcca6010bec7",
+    "Proof.md": "261a507fd84e649bc8fc56d35e3de0c71090298bec287d0fb0ab7a795f3e5a79"
+  },
+  "minimal_runtime": [
+    "Replay.py",
+    "Certificates.json",
+    "Primality.json.gz"
+  ],
+  "command": "python -I -S -B Research/ThreeChainNext/Replay.py",
+  "tests": "python -I -S -B Research/ThreeChainNext/Tests.py",
+  "clean_replay_audit_sha256": "01662db0b68ce89ef6df8ee67b27bb785a14ab1d31caace575fdbcca6010bec7",
+  "actual": 87,
+  "complete_shards": 48,
+  "partial_shards": 29,
+  "global_open": 994
+}

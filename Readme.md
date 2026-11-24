@@ -2,7 +2,7 @@
 
 目标是证明每个奇完全数 $N>10^{2400}$，并让独立程序复核证明。
 
-截至 2026-11-24，原根集的 **3,072** 个顶层分片中，**2,030** 个已闭合，**1,042** 个仍开放。[来源间隙与供给联合证书](Research/GapSupply2400/Proof.md)在 Gemini 基线之上独立复验了根 3 的 **6** 个实际指数，新增闭合 **3** 个顶层分片。原根集互素类已有独立整数证书给出 `log10 N >= 4183.209493`。全局状态为 `INCOMPLETE_FRONTIER`。
+截至 2026-11-24，原根集的 **3,072** 个顶层分片中，**2,192** 个已闭合，**880** 个仍开放。相对于 [4aad42d 基线](Research/GapSupply2400/Proof.md)，[晚间合并审计](Research/EveningMerge/README.md)净排除 **530** 个实际指数，关闭 **162** 个完整分片。原根集互素类已有独立整数证书给出 `log10 N >= 4183.209493`。全局状态为 `INCOMPLETE_FRONTIER`。
 
 - [当前状态和逐根进度](Documentation/CurrentStatus2400.md)
 - [项目研究报告、最新实验和下一步](Documentation/ResearchReport2400.md)
@@ -30,6 +30,7 @@ python3 Research/TeichmullerValuation/AuditTeichmullerValuation2400.py --output 
 cmp Research/TeichmullerValuation/Audit2400.json Build/AuditTeichmuller2400.json
 python3 Research/TeichmullerValuation/AuditGeminiBatch2400.py --remaining Build/RemainingBeforeGapSupply2400.json
 python3 Research/GapSupply2400/CheckShards.py
+python3 Research/EveningMerge/VerifyFrontier.py --workers 6
 ```
 
 长时研究搜索使用 [V21](Sources/Cpp/ProofTreeV21.cpp)、[调度器](Sources/Python/Run2400Scheduler.py) 和 [Linux/WSL2 脚本](Scripts/Run72hWSL.sh)。运行产物存放在 `Build/` 或 `Run2400Results/`。工程基准与证明实验见 [实验日志](Records/ExperimentLog.md)，背景论文见 [Ochem–Rao 2012](References/OchemRao2012.pdf)。
