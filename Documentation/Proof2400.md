@@ -67,6 +67,8 @@ r^cD_1=P(w(r-1)-1)-(q+1)w(r-1),\qquad r^cD_2=P(w+\sigma(r^{c-1}))-w(q+1).
 
 另有不取具体 \(e\) 的结论：在八根中任选以下一根允许出现、其余七根均不整除 \(N\)，则在只允许 19、31、13 的三个类别分别得到 \(\log_{10}N\ge2658.984830,3116.739321,2494.264085\)。验证器重建松弛、恢复符合新禁素表的选项、重新核验所有使用的整除蕴含、有向对数和无界尾的非负约化成本。允许 17 的相应证书也超过目标，但并非新的 17 类结论。复验：[19/31/17 子类](../Research/NightUniform/TerminalWitness.py) 配 [SevenList](../Research/NightUniform/SevenList.json)，[13 子类](../Research/NightUniform/TerminalUnionWitness.py) 配 [SevenAllow13](../Research/NightUniform/SevenAllow13.json)。这些是整类的支持条件结论；规范分片通常还包含其它根共存的情形，故不直接增加闭合数。
 
+进一步对已知分圆块的最大公因子和平方核逐一验证后，[显式六根对偶](../Research/NightUniform/TerminalSixWitness.py)、[未分解余因子对偶](../Research/NightUniform/TerminalAnonymousWitness.py)、[带至多一笔 Euler 折扣的对偶](../Research/NightUniform/ParityTerminalWitness.py)给出六个联合排除：在共同禁素集合 \(\{3,5,7,11\}\) 上，再禁止 \(\{13,17,19,31\}\) 的任意两项，均有严格的 \(N>10^{2400}\) 下界。这里余因子只用整数整除和经过认证的大小、丰度及平方核界，**不把合数当作素数**。因此在共同四禁类中，四个较大的根至少出现三个。它限制一个完整根支持族，但不消灭该族的全部规范分片。对根 31 且已禁 19 的任务，禁止 3、5、13 三者共存于缺席集合已不可能；可把它分成“至少含3、5、13之一”三个可重叠但穷尽的子证书。[三路森林](../Research/NightLowRoute/Release/SixReplay.py)先重放所需终端引理，再验证三个子域，而不把三个子证书计为三个分片。
+
 ## 4. 素性与重放
 
 每个作为素数使用的因子先验证其整除关系及素性。小于 \(2^{64}\) 的候选用确定性七底 Miller–Rabin。大因子的 ECPP 链逐层绑定当前整数 \(n\)，验证曲线判别式为单位，验证 \([s]P\) 在每个素因子剩余域中非零且 \([q][s]P=O\)，其中子素数 \(q>(n^{1/4}+1)^2\)。若 \(n\) 合数，最小素因子 \(\ell\le\sqrt n\)，Hasse 界与该阶为 \(q\) 的点矛盾。链尾回到确定性范围。预算用尽或只有概率素性见证的指数继续开放。
