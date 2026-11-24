@@ -30,6 +30,7 @@ def main():
     for n in reg.get('pivot',[]):add('pivot-'+n,H/'PivotCheck.py',n)
     if reg.get('support_forest'):add('support-forest',R/'NightLowRoute/Release/SixReplay.py',*reg['support_forest'])
     for script,name in reg.get('structural_only',[]):add('structural-'+name,R/'NightUniform'/script,R/'NightUniform'/name)
+    for n in reg.get('five_forest',[]):add('five-forest-'+n,R/'NightFive/VerifyForestFive.py',n)
     for n in reg.get('extra',[]):add('extra-'+n,H/'ExtraVerify.py',n)
     # Bind receipts to actual bytes of tracked inputs, not merely a Git label. Never cache untracked dependencies.
     # Final check must run in a clean detached worktree containing only released inputs.
