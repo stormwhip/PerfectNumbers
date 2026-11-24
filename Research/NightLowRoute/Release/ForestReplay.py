@@ -16,20 +16,22 @@ def nonsupport(x,U):
  while g!=1:x//=g;g=math.gcd(x,U)
  return x
 
-def proof(row,certs):
- p,e=row['p'],row['e'];check(p in (13,19,31) and type(e)==int and e>=2 and not e%2,'root');A=sigma(p,e);K=set(row['roots']);edges=row['owners'];parent=dict(edges);check(len(K)==len(row['roots']) and len(parent)==len(edges),'duplicates');V=set(parent)|K;check(not (K & parent.keys()),'cross root')
+def proof(row,certs,*,forced=None):
+ p,e=row['p'],row['e'];check(p in (13,19,31) and type(e)==int and e>=2 and not e%2,'root');A=sigma(p,e);K=set(row['roots']);edges=row['owners'];parent=dict(edges);check(len(K)==len(row['roots']) and len(parent)==len(edges),'duplicates')
+ if forced is not None:check(p==31 and forced in (3,5,13),'conditional root');K.add(forced)
+ V=set(parent)|K;check(not (K & parent.keys()),'cross root')
  for q in V:
   t=q
   if q>=2**64:
    for v in certs[str(q)]:check(v[0]==t,'broken ECPP');t=pc.level(*v)
   check(type(q)==int and q>2 and pc.prime64(t),'nonprime')
- for z in K:check(A%z==0,'not root sigma divisor')
+ for z in K:check(z==forced or A%z==0,'not root sigma divisor')
  kids={q:[] for q in V}
  for q,z in parent.items():check(z in V and A*p%q!=0,'invalid edge');kids[z].append(q)
  seen=set();queue=list(K)
  while queue:
   z=queue.pop();check(z not in seen,'cycle');seen.add(z);queue.extend(kids[z])
- check(seen==V,'unreachable');U=p*A*math.prod(parent);ban=R[:R.index(p)];cs={z:valuation(A,z) for z in K};base=p**e*A//math.prod(z**c for z,c in cs.items());cap=row.get('head',6);check(type(cap)==int and 1<=cap<=24,'prefix');
+ check(seen==V,'unreachable');U=p*A*math.prod(parent)*(forced or 1);ban=R[:R.index(p)];cs={z:valuation(A,z) for z in K};base=p**e*A//math.prod(z**c for z,c in cs.items());cs={z:max(1,c) for z,c in cs.items()};cap=row.get('head',6);check(type(cap)==int and 1<=cap<=24,'prefix');
  @functools.cache
  def oddpossible(q):return q%4==1 and all((q+1)%b for b in ban)
  @functools.cache
