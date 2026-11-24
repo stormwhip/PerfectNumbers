@@ -35,6 +35,8 @@ def main():
         replay(R/'NightFive/VerifyMore.py');pairs.update((5,int(e)) for e in read(R/'NightFive/Batch2.json')['exponents'])
     for packet,script in read(H/'Batches.json').get('five_extra',[]):
         replay(R/'NightFive'/script);j=read(R/'NightFive'/packet);pairs.update((5,int(e)) for e in (j['exponents'] if 'exponents' in j else j['roots']))
+    for name in read(H/'Batches.json').get('extra',[]):
+        replay(H/'ExtraVerify.py',name);pairs.update((r['p'],r['e']) for r in read(H/name))
     audit=merge(base,pairs); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
     if a.output:a.output.write_text(json.dumps(audit,indent=1)+'\n',encoding='utf-8')
     elif json.loads(json.dumps(audit))!=read(H/'Audit.json'):raise ValueError('snapshot mismatch')

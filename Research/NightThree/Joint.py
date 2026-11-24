@@ -32,7 +32,7 @@ def res(h,u):
  return powerlog(u,floor*floor),powerlog(u,floor),floor
 @cache
 def pricebase():return sorted(v for z in I.SUP for v in rates(z,0,(T+1)**2))
-def audit(e,fs,details=False,finance=False):
+def audit(e,fs,details=False,finance=False,phisource=False):
  A=(3**(e+1)-1)//2;pe=3**e;P=3*pe; d,u=I.factor_small(A)
  for z in sorted(set(fs)):
   if z<=T:continue
@@ -59,7 +59,11 @@ def audit(e,fs,details=False,finance=False):
   if 2*ordinary*Q*Q>=3*B:continue
   # Exterior source distinct from A. Internal unknown: balance lemma. Known sources permit a finite CRT check.
   rhs=B*max(P,Q)*(P//y+4);L=m*Q*Q*y
-  if 2*m*Q*Q<3*B or (u>1 and L<rhs):missed.append(s);continue
+  if 2*m*Q*Q<3*B:missed.append(s);continue
+  if u>1 and L<rhs:
+   if not phisource:missed.append(s);continue
+   from SourcePhi import source
+   if any(source(e,h,v,s,M,c) for h,v in chunks if v>1):missed.append(s);continue
   for z,c0 in d.items():
    if L>=rhs*extr[z]:continue
    limit=B//(m*Q);stop=f[z]+powerlog(limit,z); g=f[z]
