@@ -79,3 +79,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T01:46+08:00	five20	3b50576	1	1	631	VerifyRefresh.py passed; cumulative 569 actuals / 249 complete shards.
 2026-11-25T01:48+08:00	cold-validation	3b50576	0	0	see audit	Clean detached a443374: all 80 packets passed with 10 workers in 1501.1s ->228 net shards. Full audited payload after NUL-path repair. A rehearsal, not an estimate for unsolved cases.
 2026-11-25T01:53+08:00	three-BatchAI	3b50576	2	1	630	Standalone replay passed. Total actuals=571; net shards=250. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:54+08:00	order-Batch13	3b50576	17	5	625	Standalone replay passed. Total actuals=588; net shards=255. Resume full replay from Checkpoint.py and Batches.json.
