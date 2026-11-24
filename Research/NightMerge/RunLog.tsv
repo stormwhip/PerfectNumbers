@@ -17,3 +17,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-24T23:13+08:00	ecm111	3b50576	1	1	817	11/250: final 201-digit prime comes from sigma(z^4); all four witness divisibilities checked and independent replay visits26 nodes. Global ¦²:162 actuals and 63 shards.
 2026-11-24T23:14+08:00	order-Batch05	3b50576	40	15	801	Standalone replay passed. Total actuals=203; net shards=79. Resume full replay from Checkpoint.py and Batches.json.
 2026-11-24T23:21+08:00	five7	3b50576	1	0	801	5/376 passed two 4610-node replays; neither divisibility shard is fully closed. 204 actuals,79 net shards. Open PR count rechecked 0 at 23:09.
+2026-11-24T23:31+08:00	five8+9	3b50576	5	5	796	Explicit guard for secondary pivot that might be Euler. Clean replay of earlier 26 jobs at 057968b: 343.7s at 6 workers.
