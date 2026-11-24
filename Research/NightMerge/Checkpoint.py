@@ -55,6 +55,8 @@ def main():
     for name in read(H/'Batches.json').get('forest',[]):
         import gzip
         replay(R/'NightLowRoute/Release/ForestReplay.py',name);packet=json.loads(gzip.decompress((R/'NightLowRoute/Release'/name).read_bytes()));pairs.update((r['p'],r['e']) for r in packet['rows'])
+    for name in read(H/'Batches.json').get('pivot',[]):
+        replay(H/'PivotCheck.py',name);pairs.update((r['p'],r['e']) for r in read(H/name))
     audit=merge(base,pairs); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
     if a.output:a.output.write_text(json.dumps(audit,indent=1)+'\n',encoding='utf-8')
     elif json.loads(json.dumps(audit))!=read(H/'Audit.json'):raise ValueError('snapshot mismatch')

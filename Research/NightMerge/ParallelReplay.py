@@ -27,6 +27,7 @@ def main():
     for n in reg.get('source_nodes',[]):add('source-nodes-'+n,R/'NightUniform/ReleaseNode.py',R/'NightUniform'/n)
     for n in reg.get('mass',[]):add('mass-'+n,R/'NightLowRoute/Release/Replay.py',n)
     for n in reg.get('forest',[]):add('forest-'+n,R/'NightLowRoute/Release/ForestReplay.py',n)
+    for n in reg.get('pivot',[]):add('pivot-'+n,H/'PivotCheck.py',n)
     for n in reg.get('extra',[]):add('extra-'+n,H/'ExtraVerify.py',n)
     # Bind receipts to actual bytes of tracked inputs, not merely a Git label. Never cache untracked dependencies.
     # Final check must run in a clean detached worktree containing only released inputs.
