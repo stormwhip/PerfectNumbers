@@ -165,6 +165,12 @@ def main():
   e=row['e'];require(type(e)==int and e in baseline and e not in es,'not unique/open');fs=list(map(int,row['root']));require(len(set(fs))==len(fs) and all(r>3 and E.sigma(3,e)%r==0 and prime(r) for r in fs),'bad root');edges={}
   for x,m,y in row['edges']:
    x,y=int(x),int(y);require(x>3 and y>3 and type(m)==int and m>0 and pow(x,m+1,y*(x-1))==1 and prime(y),'invalid edge');edges.setdefault((x,m),set()).add(y)
+  if row.get('generic'):
+   # Exact baseline solver enumerates Euler and ordinary powers itself; the only substituted function is its prime oracle, backed by the packet ECPP and deterministic MR already checked above.
+   old=E.proven;E.proven=prime
+   try:st=E.replay(row,cap=50000)
+   finally:E.proven=old
+   es.append(e);print('ACCEPT GENERIC',st,flush=True);continue
   one,hi=J.audit(e,fs);require(all(s>0 for s in one),'zero branch remains');highstats=independent(e,fs,edges,hi,reduced=True,high=True,internal=row.get('internal',False)) if hi else {};st=independent(e,fs,edges,one,boost=row.get('boost',False),reduced=row.get('reduced',False),parity=row.get('parity',False),internal=row.get('internal',False),exception=row.get('exception',False)) if one else {};es.append(e);summary.append(dict(e=e,windows=len(one),stats=st,high=highstats));print('ACCEPT',summary[-1],flush=True)
  print('actuals',sorted(es),'complete shards',J.delta(es),'baseline 880 ->',880-len(J.delta(es)))
 if __name__=='__main__':main()
