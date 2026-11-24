@@ -22,6 +22,22 @@
   ],
   [
    3,
+   358
+  ],
+  [
+   3,
+   366
+  ],
+  [
+   3,
+   378
+  ],
+  [
+   3,
+   382
+  ],
+  [
+   3,
    400
   ],
   [
@@ -150,11 +166,43 @@
   ],
   [
    3,
+   900
+  ],
+  [
+   3,
    928
   ],
   [
    3,
+   958
+  ],
+  [
+   3,
+   960
+  ],
+  [
+   3,
+   978
+  ],
+  [
+   3,
+   988
+  ],
+  [
+   3,
+   996
+  ],
+  [
+   3,
    1000
+  ],
+  [
+   3,
+   1002
+  ],
+  [
+   3,
+   1006
   ],
   [
    3,
@@ -1429,9 +1477,9 @@
    612
   ]
  ],
- "new_shards": 161,
+ "new_shards": 166,
  "by_root": {
-  "3": 37,
+  "3": 42,
   "5": 36,
   "7": 14,
   "11": 18,
@@ -1439,8 +1487,8 @@
   "19": 13,
   "31": 21
  },
- "closed": 2353,
- "open": 719,
+ "closed": 2358,
+ "open": 714,
  "closed_shards": [
   {
    "root": 19,
@@ -2458,6 +2506,50 @@
   },
   {
    "root": 3,
+   "index": 73,
+   "count": 676,
+   "exponent": 358,
+   "exact": false,
+   "id": "P3_I00073",
+   "remaining_actuals": [
+    358
+   ]
+  },
+  {
+   "root": 3,
+   "index": 74,
+   "count": 676,
+   "exponent": 366,
+   "exact": false,
+   "id": "P3_I00074",
+   "remaining_actuals": [
+    366
+   ]
+  },
+  {
+   "root": 3,
+   "index": 76,
+   "count": 676,
+   "exponent": 378,
+   "exact": false,
+   "id": "P3_I00076",
+   "remaining_actuals": [
+    378
+   ]
+  },
+  {
+   "root": 3,
+   "index": 77,
+   "count": 676,
+   "exponent": 382,
+   "exact": false,
+   "id": "P3_I00077",
+   "remaining_actuals": [
+    382
+   ]
+  },
+  {
+   "root": 3,
    "index": 80,
    "count": 676,
    "exponent": 400,
@@ -2663,6 +2755,17 @@
    "id": "P3_I00159",
    "remaining_actuals": [
     928
+   ]
+  },
+  {
+   "root": 3,
+   "index": 169,
+   "count": 676,
+   "exponent": 996,
+   "exact": false,
+   "id": "P3_I00169",
+   "remaining_actuals": [
+    996
    ]
   },
   {
@@ -10436,7 +10539,6 @@
     426,
     510,
     916,
-    958,
     1042
    ]
   },
@@ -10460,8 +10562,7 @@
     406,
     802,
     868,
-    912,
-    978
+    912
    ]
   },
   {
@@ -10503,9 +10604,7 @@
     322,
     390,
     628,
-    730,
-    900,
-    1002
+    730
    ]
   },
   {
@@ -10526,8 +10625,7 @@
     550,
     588,
     778,
-    816,
-    1006
+    816
    ]
   },
   {
@@ -10544,8 +10642,7 @@
     298,
     390,
     436,
-    942,
-    988
+    942
    ]
   },
   {
@@ -10578,8 +10675,7 @@
     340,
     402,
     588,
-    898,
-    960
+    898
    ]
   },
   {
@@ -10621,8 +10717,7 @@
     42,
     300,
     730,
-    816,
-    988
+    816
    ]
   },
   {
@@ -10647,9 +10742,7 @@
    "remaining_actuals": [
     52,
     370,
-    688,
-    900,
-    1006
+    688
    ]
   },
   {
@@ -10660,8 +10753,7 @@
    "exact": false,
    "id": "P3_I00018",
    "remaining_actuals": [
-    58,
-    1002
+    58
    ]
   },
   {
@@ -10746,8 +10838,7 @@
    "exact": false,
    "id": "P3_I00025",
    "remaining_actuals": [
-    88,
-    978
+    88
    ]
   },
   {
@@ -10847,8 +10938,7 @@
    "exact": false,
    "id": "P3_I00034",
    "remaining_actuals": [
-    136,
-    958
+    136
    ]
   },
   {
@@ -11228,28 +11318,6 @@
   },
   {
    "root": 3,
-   "index": 73,
-   "count": 676,
-   "exponent": 358,
-   "exact": false,
-   "id": "P3_I00073",
-   "remaining_actuals": [
-    358
-   ]
-  },
-  {
-   "root": 3,
-   "index": 74,
-   "count": 676,
-   "exponent": 366,
-   "exact": false,
-   "id": "P3_I00074",
-   "remaining_actuals": [
-    366
-   ]
-  },
-  {
-   "root": 3,
    "index": 75,
    "count": 676,
    "exponent": 372,
@@ -11257,28 +11325,6 @@
    "id": "P3_I00075",
    "remaining_actuals": [
     372
-   ]
-  },
-  {
-   "root": 3,
-   "index": 76,
-   "count": 676,
-   "exponent": 378,
-   "exact": false,
-   "id": "P3_I00076",
-   "remaining_actuals": [
-    378
-   ]
-  },
-  {
-   "root": 3,
-   "index": 77,
-   "count": 676,
-   "exponent": 382,
-   "exact": false,
-   "id": "P3_I00077",
-   "remaining_actuals": [
-    382
    ]
   },
   {
@@ -11620,17 +11666,6 @@
    "id": "P3_I00168",
    "remaining_actuals": [
     990
-   ]
-  },
-  {
-   "root": 3,
-   "index": 169,
-   "count": 676,
-   "exponent": 996,
-   "exact": false,
-   "id": "P3_I00169",
-   "remaining_actuals": [
-    996
    ]
   },
   {
