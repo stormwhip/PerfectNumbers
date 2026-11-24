@@ -9,7 +9,8 @@ from collections import Counter, defaultdict
 from decimal import Decimal as D, localcontext, ROUND_FLOOR, ROUND_CEILING
 from functools import cache
 R=Path(__file__).resolve().parents[2]; P=R/'NightUniform/ThreeAvoid.json'; S=2**80; W=2**24
-expected='ca0cdfa7ae32063c00fb4ad5aef96d3f779f3099497e60a7ba3155e50e792a9f'
+# Pin the canonical Git (LF) text; never normalize binary ECPP/archive data.
+expected='80d112af3138c9ecd7ccb26274355692761d682b5445d0bdf939a48a467bc6cb'
 def check(x,msg):
  if not x:raise ValueError(msg)
 @cache
@@ -39,7 +40,7 @@ def mr(n):
   return False
  return True
 if __name__=='__main__':
- check(hashlib.sha256(P.read_bytes()).hexdigest()==expected,'unexpected publication');packet=json.loads(P.read_bytes());d,=packet['cases'];bad=tuple(d['forbidden']);check(bad==(3,5,7),'wrong class');prod_bad=math.prod(bad);proof=dict(packet['proof']);arch=[]
+ check(hashlib.sha256(P.read_bytes().replace(b'\r\n',b'\n')).hexdigest()==expected,'unexpected publication');packet=json.loads(P.read_bytes());d,=packet['cases'];bad=tuple(d['forbidden']);check(bad==(3,5,7),'wrong class');prod_bad=math.prod(bad);proof=dict(packet['proof']);arch=[]
  for v in ('Original','Replacement'):
   g=(R/f'Session20261122/Certificates/Terminal{v}.json.gz').read_bytes();check(hashlib.sha256(g).hexdigest()==packet['archive_sha256'][v],'archive');ar=json.loads(gzip.decompress(g));arch.extend(ar['edges']);proof.update(ar['proofs'])
  @cache

@@ -9,7 +9,7 @@ from collections import Counter, defaultdict
 from decimal import Decimal as D, localcontext, ROUND_FLOOR, ROUND_CEILING
 from functools import cache
 R=Path(__file__).resolve().parents[2]; P=R/'NightUniform/FourAvoid.json'; S=2**80; W=2**24
-expected='e141e86e04c662397c93b0f4cac7f0f3ef3b92daf12255619712339889081d2f'
+expected='7f003102d9b0496a09e6b8744264a5e0f5617e3139bb2a806cb0aa39ea2b75d8'  # Git/LF text digest
 def check(x,msg):
  if not x:raise ValueError(msg)
 @cache
@@ -39,7 +39,7 @@ def mr(n):
   return False
  return True
 if __name__=='__main__':
- check(hashlib.sha256(P.read_bytes()).hexdigest()==expected,'unexpected publication');packet=json.loads(P.read_bytes());d,=packet['cases'];bad=tuple(d['forbidden']);check(bad==(3,5,7,11),'wrong class');prod_bad=math.prod(bad);proof=dict(packet['proof']);arch=[]
+ check(hashlib.sha256(P.read_bytes().replace(b'\r\n',b'\n')).hexdigest()==expected,'unexpected publication');packet=json.loads(P.read_bytes());d,=packet['cases'];bad=tuple(d['forbidden']);check(bad==(3,5,7,11),'wrong class');prod_bad=math.prod(bad);proof=dict(packet['proof']);arch=[]
  for v in ('Original','Replacement'):
   g=(R/f'Session20261122/Certificates/Terminal{v}.json.gz').read_bytes();check(hashlib.sha256(g).hexdigest()==packet['archive_sha256'][v],'archive');ar=json.loads(gzip.decompress(g));arch.extend(ar['edges']);proof.update(ar['proofs'])
  @cache
