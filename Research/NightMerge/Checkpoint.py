@@ -105,6 +105,12 @@ def main():
     for name in read(H/'Batches.json').get('ladder',[]):
         import gzip
         replay(R/'NightSevenForest/Release/LadderReplay.py',name);j=json.loads(gzip.decompress((R/'NightSevenForest/Release'/name).read_bytes()));pairs.update((r['forest']['p'],r['forest']['e']) for r in j['rows'])
+    for name in read(H/'Batches.json').get('forbidden_lift',[]):
+        import gzip
+        replay(R/'NightLowRoute/Release/BanAbundanceReplay.py',name);j=json.loads(gzip.decompress((R/'NightLowRoute/Release'/name).read_bytes()));r=j['row'];p=r['p'];anchor=r['e']
+        # The no-q implication uses only I(p^e)>=I(p^anchor) and multiplicities supplied by sigma(p^anchor). It therefore transfers across the same divisibility family as the q-absent static forest.
+        if anchor%2 or anchor<2 or r.get('den',1)!=1:raise ValueError('unexpected source anchor')
+        pairs.update((pp,e) for pp,e in pending if pp==p and (e+1)%(anchor+1)==0)
     audit=merge(base,pairs); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
     if a.output:a.output.write_text(json.dumps(audit,indent=1)+'\n',encoding='utf-8')
     elif json.loads(json.dumps(audit))!=read(H/'Audit.json'):raise ValueError('snapshot mismatch')

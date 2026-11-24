@@ -1,0 +1,7 @@
+# Conditional index lift
+
+The `IndexLift` lemma may also be used when a forest has additional premises that remain true at the higher power. A raw support branch is **not alone** a proof. For an entire q|N/q∤N dichotomy both premises are statements about N and independent of e, hence the paired forest (once both branches are verified) also lifts. Likewise a global three-prime-hitting theorem depends on N, not the exact root exponent. Conversely a Four13 exception test justified specifically at e does not automatically transfer to every f.
+
+For the `NoFive13_32` certificate the 5-incompatibility proof (under the specified preceding-root exclusions) itself also lifts to every f with 33|(f+1). The original small forced primes and their necessary multiplicities still divide σ(13^f), and I(13,f)≥I(13,32). All other minimal abundancies in the finite Euler partition stay valid. Thus 5∤N in every such higher-exponent branch; the same forest permanently excludes 5 at every level and its static balance can be reused. This does not assume five is forbidden on every 13-root branch: other index classes do not inherit it.
+
+Arithmetic replay of this statement: run `BanAbundanceReplay.py NoFive13_32.json.gz`, then filter the standard 880 ledger to p=13 and f+1 divisible by 33. For those pairs the identical frozen A_32 and fixed source graph may be used. The `IndexLift.py` CLI deliberately accepts only plain unconditional `Forest*.gz` records; it does not silently interpret any auxiliary manifest.
