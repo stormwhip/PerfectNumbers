@@ -50,6 +50,8 @@ def main():
         replay(R/'NightUniformReview'/script,*[str(R/'NightUniformReview'/v) if v.endswith('.gz') and script=='Verify31.py' else v for v in args]);pairs.update(keys)
     for name in read(H/'Batches.json').get('source_nodes',[]):
         packet=R/'NightUniform'/name;replay(R/'NightUniform/ReleaseNode.py',packet);pairs.update((r[0],r[1]) for r in read(packet))
+    for name in read(H/'Batches.json').get('mass',[]):
+        replay(R/'NightLowRoute/Release/Replay.py',name);j=read(R/'NightLowRoute/Release'/name);pairs.add((j['p'],j['e']))
     audit=merge(base,pairs); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
     if a.output:a.output.write_text(json.dumps(audit,indent=1)+'\n',encoding='utf-8')
     elif json.loads(json.dumps(audit))!=read(H/'Audit.json'):raise ValueError('snapshot mismatch')
