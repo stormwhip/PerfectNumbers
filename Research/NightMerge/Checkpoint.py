@@ -102,6 +102,9 @@ def main():
     for name in read(H/'Batches.json').get('five_weighted',[]):
         import gzip
         replay(R/'NightFive/WeightedSecond.py',name);j=json.loads(gzip.decompress((R/'NightFive'/name).read_bytes()));pairs.update((5,r['e']) for r in j['rows'])
+    for name in read(H/'Batches.json').get('ladder',[]):
+        import gzip
+        replay(R/'NightSevenForest/Release/LadderReplay.py',name);j=json.loads(gzip.decompress((R/'NightSevenForest/Release'/name).read_bytes()));pairs.update((r['forest']['p'],r['forest']['e']) for r in j['rows'])
     audit=merge(base,pairs); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
     if a.output:a.output.write_text(json.dumps(audit,indent=1)+'\n',encoding='utf-8')
     elif json.loads(json.dumps(audit))!=read(H/'Audit.json'):raise ValueError('snapshot mismatch')
