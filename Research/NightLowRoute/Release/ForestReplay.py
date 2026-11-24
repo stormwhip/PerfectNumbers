@@ -18,7 +18,7 @@ def nonsupport(x,U):
 
 def proof(row,certs,*,forced=None):
  p,e=row['p'],row['e'];check(p in (13,19,31) and type(e)==int and e>=2 and not e%2,'root');A=sigma(p,e);K=set(row['roots']);edges=row['owners'];parent=dict(edges);check(len(K)==len(row['roots']) and len(parent)==len(edges),'duplicates')
- if forced is not None:check(p==31 and forced in (3,5,13),'conditional root');K.add(forced)
+ if forced is not None:check((p==31 and forced in (3,5,13)) or (p==13 and forced in (3,5)),'conditional root');K.add(forced)
  V=set(parent)|K;check(not (K & parent.keys()),'cross root')
  for q in V:
   t=q
