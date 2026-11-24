@@ -45,6 +45,10 @@ def main():
                 k=str(w);used.add(k)
                 for level in cert[k]:assert level[0]==n;n=I.ec.level(*level)
             assert I.ec.prime64(n)
-        ok,nodes=run(p,e,fs,row['depth']);assert ok,(p,e,nodes);print(p,e,nodes,'closed',flush=True)
+        if row.get('tariff')=='legal':
+            sys.path.insert(0,str(H));from SourcePrices import PriceTree
+            t=PriceTree(p,e,fs,False,True);t.depth_limit=row['depth'];ok=t.prove();nodes=t.stats['nodes']
+        else:ok,nodes=run(p,e,fs,row['depth'])
+        assert ok,(p,e,nodes);print(p,e,nodes,'closed',flush=True)
     assert used==set(cert)
 if __name__=='__main__':main()
