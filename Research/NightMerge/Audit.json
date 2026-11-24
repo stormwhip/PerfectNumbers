@@ -1582,6 +1582,10 @@
   ],
   [
    13,
+   70
+  ],
+  [
+   13,
    72
   ],
   [
@@ -1595,6 +1599,10 @@
   [
    13,
    96
+  ],
+  [
+   13,
+   106
   ],
   [
    13,
@@ -1627,6 +1635,10 @@
   [
    13,
    166
+  ],
+  [
+   13,
+   172
   ],
   [
    13,
@@ -1730,6 +1742,10 @@
   ],
   [
    13,
+   268
+  ],
+  [
+   13,
    270
   ],
   [
@@ -1814,6 +1830,10 @@
   ],
   [
    13,
+   348
+  ],
+  [
+   13,
    350
   ],
   [
@@ -1847,6 +1867,10 @@
   [
    13,
    370
+  ],
+  [
+   13,
+   378
   ],
   [
    13,
@@ -2893,18 +2917,18 @@
    612
   ]
  ],
- "new_shards": 316,
+ "new_shards": 322,
  "by_root": {
   "3": 95,
   "5": 53,
   "7": 26,
   "11": 30,
-  "13": 50,
+  "13": 56,
   "19": 18,
   "31": 44
  },
- "closed": 2508,
- "open": 564,
+ "closed": 2514,
+ "open": 558,
  "closed_shards": [
   {
    "root": 19,
@@ -4220,6 +4244,20 @@
   },
   {
    "root": 13,
+   "index": 19,
+   "count": 325,
+   "exponent": 70,
+   "exact": false,
+   "id": "P13_I00019",
+   "remaining_actuals": [
+    70,
+    212,
+    354,
+    496
+   ]
+  },
+  {
+   "root": 13,
    "index": 20,
    "count": 325,
    "exponent": 72,
@@ -4272,6 +4310,19 @@
     290,
     484,
     678
+   ]
+  },
+  {
+   "root": 13,
+   "index": 27,
+   "count": 325,
+   "exponent": 106,
+   "exact": false,
+   "id": "P13_I00027",
+   "remaining_actuals": [
+    106,
+    320,
+    534
    ]
   },
   {
@@ -4344,6 +4395,17 @@
    "remaining_actuals": [
     166,
     500
+   ]
+  },
+  {
+   "root": 13,
+   "index": 39,
+   "count": 325,
+   "exponent": 172,
+   "exact": false,
+   "id": "P13_I00039",
+   "remaining_actuals": [
+    172
    ]
   },
   {
@@ -4461,6 +4523,17 @@
   },
   {
    "root": 13,
+   "index": 56,
+   "count": 325,
+   "exponent": 268,
+   "exact": false,
+   "id": "P13_I00056",
+   "remaining_actuals": [
+    268
+   ]
+  },
+  {
+   "root": 13,
    "index": 57,
    "count": 325,
    "exponent": 270,
@@ -4494,6 +4567,17 @@
   },
   {
    "root": 13,
+   "index": 69,
+   "count": 325,
+   "exponent": 348,
+   "exact": false,
+   "id": "P13_I00069",
+   "remaining_actuals": [
+    348
+   ]
+  },
+  {
+   "root": 13,
    "index": 70,
    "count": 325,
    "exponent": 352,
@@ -4512,6 +4596,17 @@
    "id": "P13_I00071",
    "remaining_actuals": [
     358
+   ]
+  },
+  {
+   "root": 13,
+   "index": 74,
+   "count": 325,
+   "exponent": 378,
+   "exact": false,
+   "id": "P13_I00074",
+   "remaining_actuals": [
+    378
    ]
   },
   {
@@ -11693,17 +11788,6 @@
   },
   {
    "root": 13,
-   "index": 19,
-   "count": 325,
-   "exponent": 70,
-   "exact": false,
-   "id": "P13_I00019",
-   "remaining_actuals": [
-    70
-   ]
-  },
-  {
-   "root": 13,
    "index": 22,
    "count": 325,
    "exponent": 82,
@@ -11733,17 +11817,6 @@
    "id": "P13_I00026",
    "remaining_actuals": [
     102
-   ]
-  },
-  {
-   "root": 13,
-   "index": 27,
-   "count": 325,
-   "exponent": 106,
-   "exact": false,
-   "id": "P13_I00027",
-   "remaining_actuals": [
-    106
    ]
   },
   {
@@ -11805,17 +11878,6 @@
   },
   {
    "root": 13,
-   "index": 39,
-   "count": 325,
-   "exponent": 172,
-   "exact": false,
-   "id": "P13_I00039",
-   "remaining_actuals": [
-    172
-   ]
-  },
-  {
-   "root": 13,
    "index": 40,
    "count": 325,
    "exponent": 178,
@@ -11845,17 +11907,6 @@
    "id": "P13_I00055",
    "remaining_actuals": [
     262
-   ]
-  },
-  {
-   "root": 13,
-   "index": 56,
-   "count": 325,
-   "exponent": 268,
-   "exact": false,
-   "id": "P13_I00056",
-   "remaining_actuals": [
-    268
    ]
   },
   {
@@ -11926,17 +11977,6 @@
   },
   {
    "root": 13,
-   "index": 69,
-   "count": 325,
-   "exponent": 348,
-   "exact": false,
-   "id": "P13_I00069",
-   "remaining_actuals": [
-    348
-   ]
-  },
-  {
-   "root": 13,
    "index": 72,
    "count": 325,
    "exponent": 366,
@@ -11955,17 +11995,6 @@
    "id": "P13_I00073",
    "remaining_actuals": [
     372
-   ]
-  },
-  {
-   "root": 13,
-   "index": 74,
-   "count": 325,
-   "exponent": 378,
-   "exact": false,
-   "id": "P13_I00074",
-   "remaining_actuals": [
-    378
    ]
   },
   {
