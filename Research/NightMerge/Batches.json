@@ -1,1 +1,1 @@
-{"order":["Batch01.json","Batch02.json"],"five":["Batch1.json"],"three":["Batch1","BatchS"],"five_more":true}
+{"order":["Batch01.json","Batch02.json","Batch03.json"],"five":["Batch1.json"],"three":["Batch1","BatchS"],"five_more":true,"five_extra":[["Batch3.json","VerifyResidue.py"]]}
