@@ -14,7 +14,8 @@ import json
 ROOTS = (19, 7, 11, 31, 13, 3, 5, 17)
 PILOT = [(19, 742), (7, 1128), (11, 772), (31, 642), (13, 858), (3, 1302), (5, 676)]
 THRESHOLDS = (25, 50, 100, 200, 300, 500, 750, 1000, 1500, 2000, 3000, 5000)
-ROUGH = 5001
+TRIAL_LIMIT = 5000
+FALLBACK_LIMIT = 20000
 
 
 @lru_cache(maxsize=4)
@@ -52,21 +53,23 @@ def sigma(p, f):
 
 
 class Search:
-    def __init__(self, p, e, digits, max_depth, max_nodes, seconds, strategy, on_uncovered=None):
+    def __init__(self, p, e, digits, max_depth, max_nodes, seconds, strategy,
+                 on_uncovered=None, trial_fallback=False):
         self.p, self.e = p, e
         self.digits = digits
         self.bound = 10 ** digits
         self.max_depth, self.max_nodes = max_depth, max_nodes
         self.seconds, self.strategy = seconds, strategy
         self.fixed_forbidden = frozenset(ROOTS[:ROOTS.index(p)])
-        self.primes = primes_up_to(20000)
-        self.trial = self.primes[:bisect_right(self.primes, ROUGH - 1)]
+        self.primes = primes_up_to(FALLBACK_LIMIT)
+        self.trial = self.primes[:bisect_right(self.primes, TRIAL_LIMIT)]
         self.tail = {}
         self.stats = Counter()
         self.depth_stats = Counter()
         self.sample_open = []
         self.first_split = None
         self.on_uncovered = on_uncovered
+        self.trial_fallback = trial_fallback
 
     def tail_table(self, threshold, euler_used):
         key = threshold, euler_used
@@ -100,12 +103,13 @@ class Search:
         if self.on_uncovered is not None:
             self.on_uncovered(state)
 
-    def visit(self, exact, value, divisor_sum, euler_used, forbidden, depth):
-        if self.stats['nodes'] >= self.max_nodes or perf_counter() >= self.deadline:
+    def visit(self, exact, value, divisor_sum, euler_used, forbidden, depth, retry=False):
+        if (not retry and self.stats['nodes'] >= self.max_nodes) or perf_counter() >= self.deadline:
             self.uncovered('budget', exact, depth, forbidden)
             return False
-        self.stats['nodes'] += 1
-        self.depth_stats[depth] += 1
+        if not retry:
+            self.stats['nodes'] += 1
+            self.depth_stats[depth] += 1
         if value > self.bound:
             self.stats['size'] += 1
             return True
@@ -146,7 +150,7 @@ class Search:
         forced_primes = []
         # Pay for parity rounding of known factors, saving at most one premium.
         rounded, max_saving = 1, 1
-        for r in self.trial:
+        for r in self.primes if retry else self.trial:
             if rough == 1:
                 break
             if rough % r:
@@ -173,10 +177,11 @@ class Search:
             self.stats['abundancy_lower'] += 1
             return True
         # When the forced cofactor is rough, its distinct primes are at least
-        # ROUGH and their count is at most floor(log_ROUGH(rough)).
-        count = floor_log(rough, ROUGH)
-        upper_num *= ROUGH ** count
-        upper_den *= (ROUGH - 1) ** count
+        # the first integer past the trial limit.
+        rough_min = (FALLBACK_LIMIT if retry else TRIAL_LIMIT) + 1
+        count = floor_log(rough, rough_min)
+        upper_num *= rough_min ** count
+        upper_den *= (rough_min - 1) ** count
         threshold = None
         budget = self.bound // paid
         if upper_num < 2 * upper_den:
@@ -212,6 +217,9 @@ class Search:
                                 'mode': 'new-prime' if acquire else 'forced-prime',
                                 'euler_one_only': euler_one_only}
         if not pivots:
+            if self.trial_fallback and not retry:
+                self.stats['trial_fallbacks'] += 1
+                return self.visit(exact, value, divisor_sum, euler_used, forbidden, depth, retry=True)
             self.uncovered('no_pivot', exact, depth, forbidden, threshold)
             return False
         if depth == self.max_depth:
@@ -280,6 +288,7 @@ def main():
     parser.add_argument('--nodes', type=int, default=100000)
     parser.add_argument('--seconds', type=float, default=10, help='wall time per case')
     parser.add_argument('--strategy', choices=('reverse-first', 'forced-first'), default='reverse-first')
+    parser.add_argument('--trial-fallback', action='store_true', help='retry blocked nodes with trial division to 20000')
     parser.add_argument('--frontier', type=Path, help='write unresolved branches as JSON lines')
     parser.add_argument('--states', type=Path, help='read JSON lines from a previous --frontier output')
     parser.add_argument('--partition', nargs=2, type=int, metavar=('INDEX', 'COUNT'), default=(0, 1))
@@ -306,7 +315,7 @@ def main():
             if job % count != index:
                 continue
             search = Search(p, e, args.digits, args.depth, args.nodes, args.seconds,
-                            args.strategy, save if frontier else None)
+                            args.strategy, save if frontier else None, args.trial_fallback)
             print(json.dumps(search.run(state)), flush=True)
 
 
