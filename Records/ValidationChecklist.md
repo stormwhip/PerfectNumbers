@@ -1,6 +1,6 @@
 # \(10^{2400}\) 证明发布验收清单
 
-**截至 2026-11-24。** 本清单区分**运行成功**与**数学证明成立**。关联数学定义见 [形式化研究难题](../Documentation/ResearchProblems2400.md)，具体证据见 [进展报告](../Documentation/ProgressReport2400.md)。
+**截至 2026-11-24。** 本清单区分**运行成功**与**数学证明成立**。关联数学定义见 [形式化研究难题](../Documentation/ResearchProblems2400.md)，具体证据见 [总证明](../Documentation/Proof2400.md)。
 
 > 当前已新增独立验证器 V2、SQLite 账本与只读 3072 项验收框架。数学验收仍未完成。权威进度见 [CurrentStatus2400.md](../Documentation/CurrentStatus2400.md)。
 

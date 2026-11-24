@@ -9,7 +9,7 @@ This log separates **imported historical claims**, **directly observed experimen
 - Baseline commit: `37eb94b0a2cd18daed980b902fd913da3420e434`. The input derives from the checked-in exact-exponent exclusions and open shard manifests.
 - Replay: Python 3.11.9 on Windows, `python Research/EulerSourceIntervals/VerifyEulerSourceIntervals2400.py --output Build/AuditEulerSourceIntervals2400.json`.
 - Root 3: 350 input exponents, 48 with expanded coverage, 3,473 additional Euler-one valuation combinations. Root 5: 183 input exponents, 28 with expanded coverage, 717 additional combinations. The comparison is against the direct valuation and size bound.
-- For `(3,1330)`, six exact first-power factors checked. The internal-source replay excludes `f = c` for `s = 1284..1330` and `c = 1` for `s = 1327..1330`. These are branch-level results. See the [proof and replay](../Documentation/ResearchReport2400.md).
+- For `(3,1330)`, six exact first-power factors checked. The internal-source replay excludes `f = c` for `s = 1284..1330` and `c = 1` for `s = 1327..1330`. These are branch-level results. See the [historical source-interval report](https://github.com/stormwhip/PerfectNumbers/blob/ea08da38e38ab3309da4360ea2bb60ecb616a025/Documentation/ResearchReport2400.md).
 
 ## 2026-11-23 Indicator-capacity proof replay
 
