@@ -1,0 +1,185 @@
+{
+ "baseline": "3b50576",
+ "actuals": [
+  [
+   11,
+   324
+  ],
+  [
+   11,
+   430
+  ],
+  [
+   11,
+   444
+  ],
+  [
+   11,
+   448
+  ],
+  [
+   11,
+   604
+  ],
+  [
+   11,
+   678
+  ],
+  [
+   13,
+   226
+  ],
+  [
+   13,
+   356
+  ],
+  [
+   13,
+   412
+  ],
+  [
+   13,
+   434
+  ],
+  [
+   13,
+   436
+  ],
+  [
+   13,
+   440
+  ],
+  [
+   13,
+   468
+  ],
+  [
+   13,
+   552
+  ],
+  [
+   13,
+   852
+  ],
+  [
+   19,
+   336
+  ],
+  [
+   19,
+   366
+  ],
+  [
+   19,
+   386
+  ],
+  [
+   19,
+   394
+  ],
+  [
+   19,
+   410
+  ],
+  [
+   31,
+   586
+  ]
+ ],
+ "complete_shards": [
+  "P19_I00066",
+  "P19_I00071",
+  "P11_I00081",
+  "P11_I00085",
+  "P31_I00105",
+  "P13_I00048",
+  "P13_I00146"
+ ],
+ "command": "python -B Research/NightOrder/Replay.py --input Batch01.json",
+ "hashes": {
+  "Research/EveningMerge/Audit.json": "5c7455f8a2bbe24e5dcc2e85efbf2ac0aa4466f7507a5005285ebaf321c0c393",
+  "Research/EveningTree/IndependentTree.py": "a89658c2b562a40d3d3696ce71f912d01f6b9ad981f53d8b652e6e42497bf6c9",
+  "Research/NightOrder/Batch01.json": "e88f0478c0c2c71b305ead9b485c3fcf9200df4e27ff25a801393fcafe194e49",
+  "Research/NightOrder/ECPP/04857e4d35f90c95f405c532.json.gz": "3f2460b7d2c82daad162341d4f8403c335f4eef87fa55cb6f272e1d6440716b3",
+  "Research/NightOrder/ECPP/065f0421eab202906b244aa3.json.gz": "689ccde25c42b74132e461d3a156aed20144a495c8696bfa2eb529f8d524607a",
+  "Research/NightOrder/ECPP/077d491548986f7368597690.json.gz": "797084f4c50c8d5a5e20ce29d4ab7551903b1f68bace6dba67ceb43c50615a0b",
+  "Research/NightOrder/ECPP/08584508257a6cbaa139da11.json.gz": "0fa0b85ed3b5f7cc1ab58f304ecad5c9649ed3d1140e99e8c2a29ee17d1eea91",
+  "Research/NightOrder/ECPP/09ab1923a14680834a49d4e1.json.gz": "7730bab2347fbacbae58f929adcf5efef74ab7ff391fd03ed588431cf55fe245",
+  "Research/NightOrder/ECPP/0e5741c59b948302c049fb28.json.gz": "83ee73f6b240beeb4093555e229d1fcc08f5e8dc89f53bea47e4b7a002f0178d",
+  "Research/NightOrder/ECPP/10d73cfb9607ee1923ada7ea.json.gz": "080acc2f3c3e534a496527631b978aede27665e5a07116a4b3723d760696c6b6",
+  "Research/NightOrder/ECPP/1b9542423464107097ebc2ce.json.gz": "95ec649f9fbaadc3877d66ada007ee6f1a353098788360ca6c7272ff57f5fd79",
+  "Research/NightOrder/ECPP/1cbb3e116ec37814cc5665be.json.gz": "386c6bb9dba811b91dddf68e870ffe0884b8bc3e9845a9256491599785a4cf6c",
+  "Research/NightOrder/ECPP/1cf0c9a1050344d5d7883924.json.gz": "cacd16cafaa873e97a7b61d9b5362e5873f469868bdc1791bb6720d776120b8c",
+  "Research/NightOrder/ECPP/1e83f36b79531a1157ab31a9.json.gz": "cdd525d13155f0a864b93e8191e14c97079a1d52f5f439b2f2405edb2afcf32d",
+  "Research/NightOrder/ECPP/23dd17df13d966d6bf22f1c0.json.gz": "f22a86073747efea02b658a6e720880c42eba80e27a72935bf48c7c2feb4b874",
+  "Research/NightOrder/ECPP/2c2c8f15b0ee852678bfb05a.json.gz": "51d7e7982b313f163ef227ea57d95e7df9910fc2a7997da5cacbb153c905571f",
+  "Research/NightOrder/ECPP/303a6396134bd14ed306dbcb.json.gz": "13e58b9b0a44a615f06292456ba2507139fc06f108f2e67c00655b966ea86879",
+  "Research/NightOrder/ECPP/310c133db5496c5ce35eeb8b.json.gz": "519fcbcff691a5e5dc5ecfeba706c6174f515458abdb93626eaed481246bdcc7",
+  "Research/NightOrder/ECPP/352a968bda197835f25a14a2.json.gz": "f0d9055f057db894bc22511b468c7909d604e5a23424f6974af22bec1a0d889a",
+  "Research/NightOrder/ECPP/37f91c47c356aad321eddd10.json.gz": "1919de02ac1d44999e736acc99071b0d8b4cfe8e380921d01dd96f93b9abfab5",
+  "Research/NightOrder/ECPP/3eca99e0e71a8ab128c12978.json.gz": "4963b24c0bdbdfe38f8e54ae24eaf9bcf59df9eec62129e3af36bea20c8a49a9",
+  "Research/NightOrder/ECPP/3f54710f919e8a55dbb6d644.json.gz": "e5f4e9fb04ec6dc98a86d5d4519269372127711359968b13a528824266a2340c",
+  "Research/NightOrder/ECPP/3fa42ffe646139bb1ea9eaa4.json.gz": "f5b38c94d8ee886b46767410c8d32c1ec8486819219c140027903162d41b0741",
+  "Research/NightOrder/ECPP/460d1801c9537d401e740d37.json.gz": "15c57f32549bec1afc18257c127c9be5f5e5c3c1f647141d3021b028d54f8b0d",
+  "Research/NightOrder/ECPP/4c50f708a3215422822c3f51.json.gz": "8ff13d82068a31ac1e1ac32586ca1121d8bcb8eee499a0aee5fbeae89948388f",
+  "Research/NightOrder/ECPP/548a156ae0697c2f1d1985ad.json.gz": "226fd2ccab5b71306b95f37e12162a8872c66145879d61dd3d853271da49f81e",
+  "Research/NightOrder/ECPP/56567adbe25121a39eb877bf.json.gz": "76696cc4193ddff5c2454944dca6d0d334fd21725a2a62ad7a5023acd7b6e311",
+  "Research/NightOrder/ECPP/58797a0dc2db191803b99c39.json.gz": "bb2334ee6a5a779524d1965132a58239a42e6c3a24ae848156a1b9222086d789",
+  "Research/NightOrder/ECPP/5a62ed03d234830d93b29d28.json.gz": "5beb61ca5c631ba3f97b77688d57e2d63b2735338e5333d17fc5b5aa0df4640c",
+  "Research/NightOrder/ECPP/5cf9d672c60750e6d3223679.json.gz": "8557f455bc19ed70af32416e6740fb79a34eb0ae87c9ff4e610d3259b1053b65",
+  "Research/NightOrder/ECPP/5e4112b1c52932dc0038bd06.json.gz": "88aa8ed1eec57d9bb73f4b4b31adaeebf525eb3527c4d88bb9a946acb204a294",
+  "Research/NightOrder/ECPP/680b02c3ac427563a78b4587.json.gz": "1260ecbfeab1c03df096b2ef5b1ffe4e1ca61e156c19bd7bc3c942fd0b5ea87d",
+  "Research/NightOrder/ECPP/6e8900d517bd62cb17b8fc42.json.gz": "ad3355440d3ed6370cf2a3a04a14de91818530cfffd954a57f31f56f05d76902",
+  "Research/NightOrder/ECPP/70612b60bf2a1bb5b4bc0d36.json.gz": "fa3067732e0e9bf67fbee58898f41384ea10316d4374370defbedb0880c749ab",
+  "Research/NightOrder/ECPP/70ed0387d568dcbd0eda0a5e.json.gz": "01888f92d792890fecd91ef47e7e5af07773202396b6dccdd28d367d51f1c2fb",
+  "Research/NightOrder/ECPP/7208a0a27d9196a07ac8f2dd.json.gz": "e4be998baf8dd3cb0983107f947e2a49e847d9c63b2fa949f6068da2f0703546",
+  "Research/NightOrder/ECPP/7568b311141e4ff908685f3d.json.gz": "4468f3e0b8578547dba4cc3f2ce66d31484fd33ba29819c1da2ec8a4d469662a",
+  "Research/NightOrder/ECPP/783f0a9da4994cd181bb7d1b.json.gz": "4d0a63839783315651163183450c9aae7128b761c751bde8e51da03a33c65487",
+  "Research/NightOrder/ECPP/790bde969df2ed687e473f5a.json.gz": "140db95630dabae43c3e09b21a25a9e6ef3dcf90de87e3f91c7484cecec21e09",
+  "Research/NightOrder/ECPP/7dc214b4be01b24fad9cef5a.json.gz": "37fd2e6ab97b9f0d79123ff4b4f093b8c662475fcb8100f6503898454625db6d",
+  "Research/NightOrder/ECPP/81a5d45f5151a5a7701f0536.json.gz": "da364ed0b02b8627e9b44280e64aa10e64a2c0ac5f39c9f6b953526055748def",
+  "Research/NightOrder/ECPP/81b172a684ae06dcc9723d2c.json.gz": "28ae67fbd33a73439aa1a2eb51d15a5bef18daa81f7367f842dc2f13cb9f44f8",
+  "Research/NightOrder/ECPP/89c03d032eba626af634e755.json.gz": "6d67a9aa15b141e783d1280f7229781a08b6bf692c96a4b46770a052d0cca01a",
+  "Research/NightOrder/ECPP/8c07a96d6edda0fe5c9b3a23.json.gz": "daf85f4defe4fa811b2cc8ed22f64b69f275f7c1e62125a79c882c38a5528ee8",
+  "Research/NightOrder/ECPP/8f880c1f6f5e5bbffb76cdb5.json.gz": "6682a12484899274651d31cf3c7aab52dc294447f727a5d5b6119cff91ec4c73",
+  "Research/NightOrder/ECPP/9066042c31d7cee26cd631f9.json.gz": "f6ad16933cf3e51f55ed5d3d2ff15023f72eb995ce58732fdba9ec9784756b54",
+  "Research/NightOrder/ECPP/907bf37ce839f85ccd1890ee.json.gz": "b88825f048d04b1eaa1bf11e56b60f6b4d9d0d8d65d06e20f88f1540836309d2",
+  "Research/NightOrder/ECPP/9266f8ac5fd11d34120b42ec.json.gz": "e8d776305a0ff533261e33016c8fea69f40e33c3f9cd27fd03e3ccd228911ca6",
+  "Research/NightOrder/ECPP/980cf5c353a635b75a07c75a.json.gz": "c92719878f6b79c992708f3afcfc2d39ffc4d244b41412aba0a902eb09ed963d",
+  "Research/NightOrder/ECPP/9d8c9d7c677bd8b21afc2ad6.json.gz": "cd872de6f177c8acbd6fa31cc0f09976e6c04a7e34714db6f7f92654aa3807db",
+  "Research/NightOrder/ECPP/9dcdea4c7d6a7713d7551bfa.json.gz": "8a12b00b3c8a9d5ea1210b10c50b8c7191adf2d7b3d371115ddc7027f10605cd",
+  "Research/NightOrder/ECPP/a3e6d06cd10cfdc286924b95.json.gz": "7db20605ae3cb790a663bfd861fb3b61c051c12e259370340b9ca9e0819be452",
+  "Research/NightOrder/ECPP/a99df4cff61393c413f720b2.json.gz": "7f59b5c9446e793ca59081a0b74bb6d6b5a93198e22bfd66a3dab967ffe5e648",
+  "Research/NightOrder/ECPP/af2ff85971b2dc8b3e74c718.json.gz": "27064bd6da13d3f3d0715337e2d0c42550cc621409c1f690a03395c543a2d678",
+  "Research/NightOrder/ECPP/b2636684bbe7c47e71b1124a.json.gz": "fc7ac234009770eaf882dd94970f590bf8de84061f1f7d3828ed023365e26598",
+  "Research/NightOrder/ECPP/b70a4dc7644f0e297033aad4.json.gz": "59519070c795639a1c6d76ebccbd095a5097d5b051328345d23a7d3eaa469079",
+  "Research/NightOrder/ECPP/b930ea12b68b3242e06c2abf.json.gz": "e6d139740b49cc9447936b9ffe1d1a1a7377f4c2f9bc569aea0de4c194042ab9",
+  "Research/NightOrder/ECPP/bdb5dd692f4d64c79387bd4a.json.gz": "3ea443decd114e7f6a5e4c8b3399f81fbccd246fab00770fa6ca053d7c6ca3ba",
+  "Research/NightOrder/ECPP/c0815f356f711127328a2391.json.gz": "9d8aa5cc0a86d8494caec90892a4e99da203c7926925203267dfd1c5b1217723",
+  "Research/NightOrder/ECPP/c946a20406457319980abbc7.json.gz": "422c09ac438ce45a538ad68f9492412f9f114b48228a3d461c5879afd30821f5",
+  "Research/NightOrder/ECPP/cbfa8fc99ca2c2aba16fa7e7.json.gz": "9da84a392f8d3558fbb6472d4fcc07360af5df64f58d01a7b79f802d2cb5616f",
+  "Research/NightOrder/ECPP/cfe0511bf56e5463c4eca91d.json.gz": "6b6db721abf684aa687ef49f0a2562ac9fc4d29f8983eb7989868913482478e8",
+  "Research/NightOrder/ECPP/d0b1631f5938701a4255ed6d.json.gz": "eae17b9df61d5d3cd43829c3ed0456deec289bac0ac2c0229134ae882789cd6e",
+  "Research/NightOrder/ECPP/d21ada55b5a2783a69b47903.json.gz": "763f966f4e76a41eaded76166191b7b9b9cda4a10b460d3acb612f98d2549dda",
+  "Research/NightOrder/ECPP/d296e637d710965dd88da5fd.json.gz": "484821cb0b2065812e88f1bc0e5bfd7304f712701931b84d8ce40c8cb49d4e59",
+  "Research/NightOrder/ECPP/d7f375f5aaab50448c5d71f6.json.gz": "83ce2863b3236db45590ba7b04364e6c16cf661c3c901c92735a97d161f75fe7",
+  "Research/NightOrder/ECPP/de3b93cd11dcb1eb019ca908.json.gz": "d519000343f88eb1e8e9ba4da5badc4768520e3b018cf3b5a7b4db3b2ee8aeb1",
+  "Research/NightOrder/ECPP/e0270fc3a66161f21e7344f7.json.gz": "6299c439766637ee6cff42be17b0f1e0fb2fb5e1fc831f8f09b6b792a5aa234f",
+  "Research/NightOrder/ECPP/e1f20fcfd9bfe1bdcbd42e74.json.gz": "8538b4ef5935d76c7f30b3292d710c560c1143a61e1ea0293da93cfa00d46659",
+  "Research/NightOrder/ECPP/e224fe4271f2ed1481e8439a.json.gz": "c64610d1d09ac39dc1ba90638ff56a5cc7c0227dc24172c15241fb3bda074331",
+  "Research/NightOrder/ECPP/e9ae0e93a4e256333d89de7b.json.gz": "8b8043819d0e418a7e0238a9af414a8b06ff407fe5df9ffd86342cdedeb359c5",
+  "Research/NightOrder/ECPP/e9f38007b7a49dc56baaad01.json.gz": "a8b25894464c894cbf0966acd90fdaa501f9d838b045ca6ba7165da67b2dffca",
+  "Research/NightOrder/ECPP/eaba27c521d416d491ba8629.json.gz": "bb18fda0b8f4daa71956052b000fd6ee76de9689da307de2943d79b966e94c47",
+  "Research/NightOrder/ECPP/ebb4b737a50b7f8a079d2c00.json.gz": "b42b80773387c8847b4ab71e6039b3b3d22cd7ff6bc88bde7d98c9a025b5ccd9",
+  "Research/NightOrder/ECPP/ecb807e0e22427ade51db256.json.gz": "83bc116635a414ceb7720324389e28d26ec21d65f190ff9e27bf1de1413911bb",
+  "Research/NightOrder/ECPP/f0f949c0d8c9f4d48b2133d7.json.gz": "6d15c1a86f93c7f8f420ff8b24943afc2ca6f5f78d65b99c2c14d5d6ee237e21",
+  "Research/NightOrder/ECPP/f239097b4b3abbe8cf84fdcd.json.gz": "658e43f60b4bd28859d21e27abb5d3bb2f776750e9883fc9ffae645713b48510",
+  "Research/NightOrder/ECPP/f461990b97e14d1a6402215a.json.gz": "43f759d4163f596fa5859aa939791429404085905c1cb82ab09f08d81b926231",
+  "Research/NightOrder/ECPP/f502d4ea4626b9283219c220.json.gz": "169957e57a350831f08a26c95afd58cbe6ac6add4455d93977c90a8613f082b2",
+  "Research/NightOrder/ECPP/fa4fb9989b0e10b380558f1e.json.gz": "ca82f6ec9f785663c880400b7f9eb14760e776a949cb8d46ca57caf8d694e356",
+  "Research/NightOrder/Replay.py": "bb0508e02100b90de49d23ff113248108f1b258441bb933c7fc0175f87a7c0af",
+  "Research/RootFiveNext/PrimeCheck.py": "5119ef57a4f88b04577657841db7cc6ee915b89649d909a71f70ac6b10c5fea9",
+  "Research/TeichmullerValuation/VerifyGeminiExponents2400.py": "7ce91e9f01d139545c96bb00e89b36716a4926b538cadd74320ed92c6e5ab9b5",
+  "Research/TeichmullerValuation/VerifyTeichmullerValuation2400.py": "8fb9fd62b71dc05cebd16ca2921c837f0f7edc15a47d48837d7c5a2245c10a00"
+ }
+}

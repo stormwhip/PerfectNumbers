@@ -20,7 +20,13 @@ def main():
     ap=argparse.ArgumentParser();ap.add_argument('--output',type=Path);a=ap.parse_args();base=read(R/'EveningMerge/Audit.json');rows=read(H/'Pilot.json')
     if [(r['p'],r['e']) for r in rows]!=[(11,306)]:raise ValueError('pilot scope')
     subprocess.run([sys.executable,'-B',str(R/'EveningTree/IndependentTree.py'),'--allow-overlap','--valuation','--input',str(H/'Pilot.json')],check=True)
-    audit=merge(base,[(r['p'],r['e']) for r in rows]); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
+    pairs={(r['p'],r['e']) for r in rows}
+    for packet in [R/'NightOrder/Batch01.json']:
+        subprocess.run([sys.executable,'-B',str(R/'NightOrder/Replay.py'),'--input',packet.name],check=True)
+        pairs.update((r['p'],r['e']) for r in read(packet))
+    for name in ['Batch1.json']:
+        subprocess.run([sys.executable,'-B',str(R/'NightFive/Verify.py'),name],check=True);j=read(R/'NightFive'/name);pairs.update((5,int(e)) for e in j.get('exponents',j))
+    audit=merge(base,pairs); print('new complete shards',audit['new_shards'],'remaining',audit['open'])
     if a.output:a.output.write_text(json.dumps(audit,indent=1)+'\n',encoding='utf-8')
     elif json.loads(json.dumps(audit))!=read(H/'Audit.json'):raise ValueError('snapshot mismatch')
 if __name__=='__main__':main()
