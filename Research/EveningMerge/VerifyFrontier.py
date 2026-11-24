@@ -9,9 +9,11 @@ def read(path):return json.loads((R/path).read_text(encoding='utf-8'))
 def replay(workers):
     with tempfile.TemporaryDirectory() as tmp:
         five=Path(tmp)/'five.json'
-        jobs=[['GapSupply2400/CheckShards.py'],['OrderSupplyNext/VerifyOrderSupply.py','--workers',str(workers),'--output',str(five)],['RootFiveNext/CheckCertificate.py'],['EveningRoot3/IndependentEvening.py','--verify-accepted'],['ThreeChainNext/Replay.py'],['EveningTree/IndependentTree.py','--allow-overlap','--input',str(R/'EveningTree/Verified.json')],['EveningTree/IndependentTree.py','--valuation','--allow-overlap','--input',str(R/'EveningTree/OrderVerified.json')]]
+        three=Path(tmp)/'three.json'
+        jobs=[['GapSupply2400/CheckShards.py'],['OrderSupplyNext/VerifyOrderSupply.py','--workers',str(workers),'--output',str(five)],['RootFiveNext/CheckCertificate.py'],['EveningRoot3/IndependentEvening.py','--verify-accepted'],['ThreeChainNext/Replay.py','--write-summary',str(three)],['EveningTree/IndependentTree.py','--allow-overlap','--input',str(R/'EveningTree/Verified.json')],['EveningTree/IndependentTree.py','--valuation','--allow-overlap','--input',str(R/'EveningTree/OrderVerified.json')]]
         for script,*args in jobs:subprocess.run([sys.executable,'-B',str(R/script),*args],check=True)
         if json.loads(five.read_text())!=read('OrderSupplyNext/Audit.json'):raise ValueError('five-root replay does not reproduce manifest')
+        if json.loads(three.read_text())!=read('ThreeChainNext/Audit.json'):raise ValueError('root-3 chain replay does not reproduce manifest')
 
 def merge():
     sys.path.insert(0,str(R/'OrderSupplyNext'));import VerifyOrderSupply as v
