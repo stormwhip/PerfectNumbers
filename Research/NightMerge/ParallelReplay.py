@@ -35,7 +35,7 @@ def main():
         digest.update(fn.encode()+b'\0'+hashlib.sha256((D/fn).read_bytes()).digest())
     key=digest.hexdigest();print('input SHA256',key,'jobs',len(jobs),flush=True);start=time.time()
     def job(item):
-        name,cmd=item;rec=args.receipts/(name+'.json');log=args.receipts/(name+'.log');prev=read(rec) if rec.exists() else {}; old=prev.get('sha256')==key and prev.get('passed') is True
+        name,cmd=item;safe_name=name.replace('/','_').replace('\\','_');rec=args.receipts/(safe_name+'.json');log=args.receipts/(safe_name+'.log');prev=read(rec) if rec.exists() else {}; old=prev.get('sha256')==key and prev.get('passed') is True
         if old and not args.fresh:return name,'cached',prev['seconds']
         sec=run(cmd,D,log);temp=rec.with_suffix('.tmp');temp.write_text(json.dumps(dict(name=name,sha256=key,passed=True,seconds=sec,log=log.name))+'\n');temp.replace(rec);return name,'replayed',sec
     with ThreadPoolExecutor(args.workers) as pool:
