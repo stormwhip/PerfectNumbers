@@ -4,6 +4,7 @@
 
 | 里程碑 | 当前状态 | 直接证据 | 下一项验收 |
 | --- | --- | --- | --- |
+| 两批来源与多根因子链证书 | 新增 165 项，累计闭合 2,192，开放 880 | [总证明](../Documentation/Proof2400.md)及[合并审计](../Research/EveningMerge/Audit.json) | [下一步计划](../Documentation/NextPlan2400.md) |
 | Teichmüller 提升赋值判据 | 新增 146 项，累计闭合 2,015，开放 1,057 | [合并清单](../Research/TeichmullerValuation/Audit2400.json) | 继续证明开放分片 |
 | 指标容量对偶 | 新增 18 项，累计闭合 1,869，开放 1,203 | [基线审计](../Research/IndicatorCapacity/Audit2400.json) | 已纳入最新合并审计 |
 | 批量来源判据与扩大因子链 | 新增 46 项，累计闭合 1,851，开放 1,221 | [合并清单](../Research/SupplierBatch/BatchAudit2400.json) | 继续证明开放分片 |

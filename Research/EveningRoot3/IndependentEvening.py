@@ -106,7 +106,7 @@ def elliptic_step(n, tr, co, a, xy):
 @cache
 def prime(n):
     if n<2**64: return mr64(n)
-    cert=H/'ECPP'/(sha256(str(n).encode('ascii')).hexdigest()[:24]+'.json')
+    cert=H/'ECPP'/('Prime'+sha256(str(n).encode('ascii')).hexdigest()[:24]+'.json')
     if not cert.exists(): return False
     q=n
     for row in load(cert):
@@ -337,7 +337,7 @@ def main():
         need(len(expected)==len(set(expected)),'duplicate accepted exponent')
         brief=json.dumps(sorted(expected),separators=(',',':'))
         need(len(rows)==42 and sha256(brief.encode()).hexdigest()=='953665a25a0746324a18b26e95e05882c4810f4ee5d54d479cc14220ac6db570','missing or changed exponent from the 42-row acceptance set')
-        names=sorted({'ECPP/'+sha256(str(int(z)).encode('ascii')).hexdigest()[:24]+'.json' for r in rows for z in r['fs'] if int(z)>=2**64})
+        names=sorted({'ECPP/Prime'+sha256(str(int(z)).encode('ascii')).hexdigest()[:24]+'.json' for r in rows for z in r['fs'] if int(z)>=2**64})
         if a.list_ecpp:
             print('\n'.join(names))
             if not a.verify_accepted:return

@@ -4,6 +4,8 @@
 
 ## 合并证明与文档归档
 
+- [总证明](Proof2400.md)汇总各批推导和证书入口。[EveningMerge](../Research/EveningMerge/VerifyFrontier.py)复验最近两批及覆盖关系，[审计清单](../Research/EveningMerge/Audit.json)为当前待证集合。
+
 - [EulerSourceIntervals](../Research/EulerSourceIntervals/VerifyEulerSourceIntervals2400.py) 保存根 3、5 的来源区间实验复验器，输入由已签入的审计重建。
 
 - [TeichmullerValuation](../Research/TeichmullerValuation/Readme.md) 保存根 19、7、11、31、13 的 Teichmüller 赋值计价验证器、回归检查与基线审计清单。[Gemini 批次复验](../Research/TeichmullerValuation/GeminiBatchProof2400.md) 给出增量闭合证据和输出剩余分片的命令。
@@ -21,8 +23,12 @@ PerfectNumbers/
 ├── Records/                            # 里程碑、历史实验、验收清单
 ├── References/                         # 原始论文及参考资料
 ├── Research/
+│   ├── EveningMerge/                   # 合并复验与当前清单
+│   ├── EveningRoot3/、ThreeChainNext/   # 根 3 证书
+│   ├── GapSupply2400/、RootFiveNext/    # 来源间隙与根 5 证书
+│   ├── OrderSupplyNext/、EveningTree/   # 五根证书
 │   ├── FermatRootValuation/             # 根 3、5 基础证书与核验器
-│   ├── TeichmullerValuation/           # 最新合并审计（根 19、7、11、31、13 的赋值判据）
+│   ├── TeichmullerValuation/           # 历史基线（根 19、7、11、31、13 的赋值判据）
 │   ├── EulerOneSieve/                  # Euler 筛证书与回放
 │   ├── EulerSourceIntervals/           # Euler 来源区间复验
 │   ├── IndicatorCapacity/              # 根 3、5 指标容量对偶证书与审计
@@ -49,7 +55,8 @@ PerfectNumbers/
 | 文档 | 作用 |
 | --- | --- |
 | [CurrentStatus2400.md](CurrentStatus2400.md) | **唯一当前状态摘要**与完整剩余任务 |
-| [ResearchReport2400.md](ResearchReport2400.md) | 研究结果、覆盖范围、复验命令和下一步 |
+| [Proof2400.md](Proof2400.md) | 总证明、覆盖范围与复验 |
+| [NextPlan2400.md](NextPlan2400.md) | 下一步研究与验收顺序 |
 | [ProgressReport2400.md](ProgressReport2400.md) | 历史过程、对照实验和新模块进展 |
 | [ResearchProblems2400.md](ResearchProblems2400.md) | 数学定义、所有待证条件及不可省略的证明义务 |
 | [ValidationChecklist.md](../Records/ValidationChecklist.md) | 发布前逐项验收要求 |
@@ -105,7 +112,7 @@ python3 Sources/Python/RepositoryStructureChecks.py
 
 ## 维护规则
 
-1. 更新当前理论状态时修改 `CurrentStatus2400.md` 和 `ProgressReport2400.md`；实验事实仅写入 `ExperimentLog.md` 并附 commit、参数和日志。
+1. 更新当前理论状态时修改 `CurrentStatus2400.md` 和总证明；实验事实仅写入 `ExperimentLog.md` 并附 commit、参数和日志。
 2. 成功编译、搜索器输出 `PROVEN`、独立验证器返回 `TREE_ACCEPTED` 和最终 `UNCONDITIONALLY_VERIFIED` 必须分开记录。
 3. 历史报告保留当时数据和结论，上方统一增加当前状态入口。
 4. 没有显式许可不运行付费 API 或启动长时间付费云资源。

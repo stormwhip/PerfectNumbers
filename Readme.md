@@ -2,25 +2,20 @@
 
 目标是证明每个奇完全数 $N>10^{2400}$，并让独立程序复核证明。
 
-截至 2026-11-24，原根集的 **3,072** 个顶层分片中，**2,192** 个已闭合，**880** 个仍开放。相对于 [4aad42d 基线](Research/GapSupply2400/Proof.md)，[晚间合并审计](Research/EveningMerge/README.md)净排除 **530** 个实际指数，关闭 **162** 个完整分片。原根集互素类已有独立整数证书给出 `log10 N >= 4183.209493`。全局状态为 `INCOMPLETE_FRONTIER`。
+截至 2026-11-24，**2,192 / 3,072** 个规范分片已闭合，余 **880** 个。原八根互素类已通过独立证书，证明 `log10 N >= 4183.209493`。全局状态为 `INCOMPLETE_FRONTIER`。
 
-- [当前状态和逐根进度](Documentation/CurrentStatus2400.md)
-- [项目研究报告、最新实验和下一步](Documentation/ResearchReport2400.md)
-- [历史进度与工程实验](Documentation/ProgressReport2400.md)
-- [已验收 Gemini 批次的推导和复验](Research/TeichmullerValuation/GeminiBatchProof2400.md)
-- [Claude 的 Euler 筛证书与合并复验](Research/EulerOneSieve/Readme.md)
-- [Gemini 批次审计](Research/TeichmullerValuation/GeminiBatchAudit2400.json)
-- [Teichmüller 基线审计](Research/TeichmullerValuation/Audit2400.json)
-- [上一轮：指标容量对偶](Research/IndicatorCapacity/Readme.md)
-- [目录和运行入口](Documentation/RepositoryMap.md)
-- [数学问题与验收条件](Documentation/ResearchProblems2400.md)
+- [总证明](Documentation/Proof2400.md)
+- [当前状态](Documentation/CurrentStatus2400.md)及[逐片待证清单](Research/EveningMerge/Audit.json)
+- [下一步计划](Documentation/NextPlan2400.md)
+- [仓库目录](Documentation/RepositoryMap.md)和[历史实验](Records/ExperimentLog.md)
 
 ## 复验
 
-在仓库根目录运行以下命令。Python 3.10+ 标准库足以复验证书。
+单独复验此次合并的新增证书可直接运行下面代码块的最后一条命令。其它命令复验互素类和历史基线。运行环境为仓库根目录及 Python 3.10+ 标准库。
 
 ```sh
 mkdir -p Build
+python3 -S Research/Session20261122/Python/TerminalCertificate.py verify Research/Session20261122/Certificates/TerminalOriginal.json.gz
 python3 Research/FermatRootValuation/IndependentCheck.py
 python3 Research/IndicatorCapacity/IndicatorCapacityTests.py
 python3 Research/IndicatorCapacity/AuditIndicatorCapacity2400.py --output Build/AuditSummary2400.json
@@ -29,7 +24,6 @@ python3 Research/TeichmullerValuation/TeichmullerValuationTests.py
 python3 Research/TeichmullerValuation/AuditTeichmullerValuation2400.py --output Build/AuditTeichmuller2400.json
 cmp Research/TeichmullerValuation/Audit2400.json Build/AuditTeichmuller2400.json
 python3 Research/TeichmullerValuation/AuditGeminiBatch2400.py --remaining Build/RemainingBeforeGapSupply2400.json
-python3 Research/GapSupply2400/CheckShards.py
 python3 Research/EveningMerge/VerifyFrontier.py --workers 6
 ```
 

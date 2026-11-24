@@ -30,7 +30,7 @@ ECPP_FILES=set()
 @cache
 def prime(n):
     if n<2**64: return ec.prime64(n)
-    name=sha256(str(n).encode('ascii')).hexdigest()[:24]+'.json'
+    name='Prime'+sha256(str(n).encode('ascii')).hexdigest()[:24]+'.json'
     for directory in (H/'ECPP', R/'OrderSupplyNext/certs', R/'EveningRoot3/ECPP', R/'RootFiveNext/ECPP'):
         path=directory/name
         if path.is_file():
