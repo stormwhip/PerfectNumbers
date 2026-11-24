@@ -1,0 +1,229 @@
+{
+ "timestamp": 1795544968.1576297,
+ "scope": "Discovery-only. Candidate and partial counts do not appear in the cumulative proof ledger.",
+ "trials": [
+  {
+   "method": "idx3",
+   "tested": 98,
+   "candidate_only": 10,
+   "nodes": 0,
+   "sample": {
+    "p": 19,
+    "e": 676,
+    "first": [
+     [
+      19,
+      676
+     ],
+     [
+      16678454203,
+      2
+     ]
+    ],
+    "rounds": [
+     6,
+     13,
+     13,
+     13,
+     13,
+     13
+    ],
+    "n": 46
+   }
+  },
+  {
+   "method": "idx-low",
+   "tested": 111,
+   "candidate_only": 9,
+   "nodes": 0,
+   "sample": {
+    "p": 7,
+    "e": 534,
+    "first": [
+     [
+      7,
+      534
+     ],
+     [
+      1206506689449517154664984054683391885701717268373,
+      2
+     ]
+    ],
+    "rounds": [
+     19,
+     19,
+     922,
+     1801,
+     1801,
+     1801,
+     1801,
+     1801,
+     1801,
+     1801,
+     1801,
+     1801,
+     1801,
+     1801,
+     1801,
+     1801
+    ],
+    "n": 199
+   }
+  },
+  {
+   "method": "idx-mid2",
+   "tested": 33,
+   "candidate_only": 4,
+   "nodes": 0,
+   "sample": {
+    "p": 7,
+    "e": 592,
+    "first": [
+     [
+      7,
+      592
+     ],
+     [
+      110542677471192891289155116767118794703,
+      2
+     ]
+    ],
+    "rounds": [
+     9,
+     23,
+     75,
+     2747,
+     2154,
+     3601,
+     3601,
+     3601,
+     3601,
+     3601
+    ],
+    "n": 117
+   }
+  },
+  {
+   "method": "deep1",
+   "tested": 325,
+   "candidate_only": 16,
+   "nodes": 83712,
+   "sample": {
+    "p": 11,
+    "e": 676
+   }
+  },
+  {
+   "method": "deep2",
+   "tested": 330,
+   "candidate_only": 21,
+   "nodes": 71743,
+   "sample": {
+    "p": 11,
+    "e": 718
+   }
+  },
+  {
+   "method": "sat1",
+   "tested": 930,
+   "candidate_only": 18,
+   "nodes": 404827,
+   "sample": {
+    "p": 7,
+    "e": 562
+   }
+  },
+  {
+   "method": "tinytraces",
+   "tested": 808,
+   "candidate_only": 1,
+   "nodes": 106387,
+   "sample": {
+    "p": 31,
+    "e": 52,
+    "first": {
+     "exact": [
+      [
+       "31",
+       52
+      ],
+      [
+       "478103814896755465120707905491",
+       4
+      ],
+      [
+       "203914899573466890131247296058170728101193204388235163932606728656788356383910512861079564957544809237471311",
+       4
+      ],
+      [
+       "1593405992841712852324481273",
+       4
+      ],
+      [
+       "30788031633119141",
+       6
+      ],
+      [
+       "2210276655188599",
+       12
+      ],
+      [
+       "182211240690390913",
+       1
+      ],
+      [
+       "2462314063383661",
+       6
+      ],
+      [
+       "26046073",
+       28
+      ]
+     ],
+     "rough_digits": 958,
+     "known_count": 18,
+     "blocked": "budget"
+    }
+   }
+  },
+  {
+   "method": "NumeratorTrial",
+   "tested": 1148,
+   "candidate_only": 32,
+   "nodes": 0,
+   "sample": {
+    "p": 3,
+    "e": 1162,
+    "first": [
+     [
+      "3",
+      1162
+     ]
+    ],
+    "n": 1
+   }
+  },
+  {
+   "method": "Dynamic-bank1",
+   "tested": 1325,
+   "candidate_only": 127,
+   "nodes": 22197,
+   "sample": {
+    "p": 7,
+    "e": 1102,
+    "added": 11
+   }
+  },
+  {
+   "method": "Dynamic-bank2",
+   "tested": 1325,
+   "candidate_only": 224,
+   "nodes": 99621,
+   "sample": {
+    "p": 7,
+    "e": 1102,
+    "added": 683
+   }
+  }
+ ]
+}
