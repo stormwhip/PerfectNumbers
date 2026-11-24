@@ -67,3 +67,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T01:06+08:00	three-BatchQueue02	3b50576	1	1	654	Standalone replay passed. Total actuals=513; net shards=226. Resume full replay from Checkpoint.py and Batches.json.
 2026-11-25T01:07+08:00	three-BatchZ	3b50576	5	1	653	Standalone replay passed. Total actuals=518; net shards=227. Resume full replay from Checkpoint.py and Batches.json.
 2026-11-25T01:09+08:00	three-BatchQueue03	3b50576	2	1	652	Standalone replay passed. Total actuals=520; net shards=228. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:15+08:00	order-Batch11	3b50576	14	4	648	Standalone replay passed. Total actuals=534; net shards=232. Resume full replay from Checkpoint.py and Batches.json.
