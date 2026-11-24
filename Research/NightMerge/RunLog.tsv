@@ -208,3 +208,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T04:04+08:00	forest/ForestReverse288.json.gz	3b50576	1	0	458	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
 2026-11-25T04:05+08:00	forest/ForestQ19.json.gz	3b50576	1	1	457	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
 2026-11-25T04:05+08:00	seven-forest-Forest10.json.gz	3b50576	3	1	456	New frozen outgoing-sigma forest; all budgets finite, lower bound independently verified.
+2026-11-25T04:06+08:00	forest/ForestQ20.json.gz	3b50576	1	1	455	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
