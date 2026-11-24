@@ -107,3 +107,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T02:41+08:00	forest/Forest02.json.gz	3b50576	12	0	601	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
 2026-11-25T02:41+08:00	forest/Forest03.json.gz	3b50576	6	6	595	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
 2026-11-25T02:43+08:00	forest/Forest04.json.gz	3b50576	6	1	594	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T02:44+08:00	three-BatchAM	3b50576	1	1	593	Standalone replay passed. Total actuals=680; net shards=287. Resume full replay from Checkpoint.py and Batches.json.
