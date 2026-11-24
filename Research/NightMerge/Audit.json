@@ -30,6 +30,14 @@
   ],
   [
    3,
+   346
+  ],
+  [
+   3,
+   352
+  ],
+  [
+   3,
    358
   ],
   [
@@ -71,6 +79,14 @@
   [
    3,
    438
+  ],
+  [
+   3,
+   442
+  ],
+  [
+   3,
+   448
   ],
   [
    3,
@@ -1897,9 +1913,9 @@
    612
   ]
  ],
- "new_shards": 209,
+ "new_shards": 213,
  "by_root": {
-  "3": 56,
+  "3": 60,
   "5": 46,
   "7": 19,
   "11": 23,
@@ -1907,8 +1923,8 @@
   "19": 14,
   "31": 23
  },
- "closed": 2401,
- "open": 671,
+ "closed": 2405,
+ "open": 667,
  "closed_shards": [
   {
    "root": 19,
@@ -3157,6 +3173,28 @@
   },
   {
    "root": 3,
+   "index": 70,
+   "count": 676,
+   "exponent": 346,
+   "exact": false,
+   "id": "P3_I00070",
+   "remaining_actuals": [
+    346
+   ]
+  },
+  {
+   "root": 3,
+   "index": 72,
+   "count": 676,
+   "exponent": 352,
+   "exact": false,
+   "id": "P3_I00072",
+   "remaining_actuals": [
+    352
+   ]
+  },
+  {
+   "root": 3,
    "index": 73,
    "count": 676,
    "exponent": 358,
@@ -3263,6 +3301,28 @@
    "id": "P3_I00086",
    "remaining_actuals": [
     438
+   ]
+  },
+  {
+   "root": 3,
+   "index": 87,
+   "count": 676,
+   "exponent": 442,
+   "exact": false,
+   "id": "P3_I00087",
+   "remaining_actuals": [
+    442
+   ]
+  },
+  {
+   "root": 3,
+   "index": 88,
+   "count": 676,
+   "exponent": 448,
+   "exact": false,
+   "id": "P3_I00088",
+   "remaining_actuals": [
+    448
    ]
   },
   {
@@ -11831,17 +11891,6 @@
   },
   {
    "root": 3,
-   "index": 70,
-   "count": 676,
-   "exponent": 346,
-   "exact": false,
-   "id": "P3_I00070",
-   "remaining_actuals": [
-    346
-   ]
-  },
-  {
-   "root": 3,
    "index": 71,
    "count": 676,
    "exponent": 348,
@@ -11853,17 +11902,6 @@
   },
   {
    "root": 3,
-   "index": 72,
-   "count": 676,
-   "exponent": 352,
-   "exact": false,
-   "id": "P3_I00072",
-   "remaining_actuals": [
-    352
-   ]
-  },
-  {
-   "root": 3,
    "index": 78,
    "count": 676,
    "exponent": 388,
@@ -11871,28 +11909,6 @@
    "id": "P3_I00078",
    "remaining_actuals": [
     388
-   ]
-  },
-  {
-   "root": 3,
-   "index": 87,
-   "count": 676,
-   "exponent": 442,
-   "exact": false,
-   "id": "P3_I00087",
-   "remaining_actuals": [
-    442
-   ]
-  },
-  {
-   "root": 3,
-   "index": 88,
-   "count": 676,
-   "exponent": 448,
-   "exact": false,
-   "id": "P3_I00088",
-   "remaining_actuals": [
-    448
    ]
   },
   {
