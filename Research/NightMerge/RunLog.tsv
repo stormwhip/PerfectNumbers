@@ -30,3 +30,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T00:01+08:00	uniform19 + short2	3b50576	see union	see union	see audit	Two whole-progression packets 31/598 and 19/682 reduce 7242+7062 certificates to 2+4 exact polynomial witnesses. Verified19: 15935 complete s levels, including 28 leaves for 11/760. Overlaps with NightOrder removed.
 2026-11-25T00:03+08:00	three-BatchU	3b50576	2	2	743	Standalone replay passed. Total actuals=325; net shards=137. Resume full replay from Checkpoint.py and Batches.json.
 2026-11-25T00:05+08:00	three-BatchQ	3b50576	4	3	740	Standalone replay passed. Total actuals=329; net shards=140. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:05+08:00	three-BatchW	3b50576	2	2	738	Standalone replay passed. Total actuals=331; net shards=142. Resume full replay from Checkpoint.py and Batches.json.
