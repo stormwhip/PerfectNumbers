@@ -34,3 +34,4 @@ Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_an
 2026-11-25T00:08+08:00	uniform-31/550	3b50576	0	0	738	Cold independent full-domain replay passed. No partial boxes counted.
 2026-11-25T00:11+08:00	uniform-31/592	3b50576	0	0	738	Cold independent full-domain replay passed. No partial boxes counted.
 2026-11-25T00:11+08:00	uniform-19/666	3b50576	0	0	738	Cold independent full-domain replay passed. No partial boxes counted.
+2026-11-25T00:12+08:00	uniform-19/690	3b50576	1	1	737	Cold independent full-domain replay passed. No partial boxes counted.
