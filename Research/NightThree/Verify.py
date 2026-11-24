@@ -173,7 +173,7 @@ def main():
   if row.get('generic'):
    # Exact baseline solver enumerates Euler and ordinary powers itself; the only substituted function is its prime oracle, backed by the packet ECPP and deterministic MR already checked above.
    old=E.proven;E.proven=prime
-   try:st=E.replay(row,cap=50000)
+   try:st=E.replay(row,cap=160000)
    finally:E.proven=old
    es.append(e);print('ACCEPT GENERIC',st,flush=True);continue
   one,hi=J.audit(e,fs);require(all(s>0 for s in one),'zero branch remains');highstats=independent(e,fs,edges,hi,reduced=True,high=True,internal=row.get('internal',False)) if hi else {}
