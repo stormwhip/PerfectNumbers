@@ -2163,6 +2163,56 @@
    ]
   },
   {
+   "packet": "Research/MiddayDirected/Directed7x646.json.gz",
+   "seed": [
+    7,
+    646
+   ],
+   "actuals": [
+    646
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed11x658.json.gz",
+   "seed": [
+    11,
+    658
+   ],
+   "actuals": [
+    658
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed11x168.json.gz",
+   "seed": [
+    11,
+    168
+   ],
+   "actuals": [
+    168
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed7x120.json.gz",
+   "seed": [
+    7,
+    120
+   ],
+   "actuals": [
+    120
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed11x94.json.gz",
+   "seed": [
+    11,
+    94
+   ],
+   "actuals": [
+    94
+   ]
+  },
+  {
    "packet": "Research/MiddayGraph/Batch4_13x136d5.json.gz",
    "seed": [
     13,
@@ -2391,6 +2441,36 @@
    "actuals": [
     172
    ]
+  },
+  {
+   "packet": "Research/Midday/Euler13x562.json.gz",
+   "seed": [
+    13,
+    562
+   ],
+   "actuals": [
+    562
+   ]
+  },
+  {
+   "packet": "Research/Midday/Support11x682.json.gz",
+   "seed": [
+    11,
+    682
+   ],
+   "actuals": [
+    682
+   ]
+  },
+  {
+   "packet": "Research/Midday/Support7x112.json.gz",
+   "seed": [
+    7,
+    112
+   ],
+   "actuals": [
+    112
+   ]
   }
  ],
  "new_actuals": [
@@ -2564,11 +2644,19 @@
   ],
   [
    7,
+   112
+  ],
+  [
+   7,
    114
   ],
   [
    7,
    118
+  ],
+  [
+   7,
+   120
   ],
   [
    7,
@@ -2892,6 +2980,10 @@
   ],
   [
    7,
+   646
+  ],
+  [
+   7,
    672
   ],
   [
@@ -3032,6 +3124,10 @@
   ],
   [
    11,
+   94
+  ],
+  [
+   11,
    96
   ],
   [
@@ -3089,6 +3185,10 @@
   [
    11,
    162
+  ],
+  [
+   11,
+   168
   ],
   [
    11,
@@ -3195,6 +3295,14 @@
    652
   ],
   [
+   11,
+   658
+  ],
+  [
+   11,
+   682
+  ],
+  [
    13,
    10
   ],
@@ -3241,6 +3349,10 @@
   [
    13,
    490
+  ],
+  [
+   13,
+   562
   ],
   [
    19,
@@ -3369,6 +3481,7 @@
   "P7_I00023",
   "P7_I00026",
   "P7_I00027",
+  "P7_I00029",
   "P7_I00030",
   "P7_I00032",
   "P7_I00033",
@@ -3421,6 +3534,7 @@
   "P7_I00114",
   "P7_I00115",
   "P7_I00116",
+  "P7_I00117",
   "P7_I00121",
   "P7_I00124",
   "P7_I00125",
@@ -3487,6 +3601,8 @@
   "P11_I00113",
   "P11_I00114",
   "P11_I00117",
+  "P11_I00118",
+  "P11_I00122",
   "P31_I00007",
   "P31_I00031",
   "P31_I00048",
@@ -3504,6 +3620,7 @@
   "P13_I00072",
   "P13_I00089",
   "P13_I00093",
+  "P13_I00102",
   "P3_I00024",
   "P3_I00029",
   "P3_I00030",
@@ -3530,10 +3647,10 @@
   "P5_I00015",
   "P5_I00019"
  ],
- "closed": 2847,
- "open": 225,
- "open_actuals": 273,
- "singletons": 199,
+ "closed": 2852,
+ "open": 220,
+ "open_actuals": 265,
+ "singletons": 195,
  "remaining_shards": [
   {
    "root": 19,
@@ -4210,8 +4327,7 @@
    "remaining_actuals": [
     10,
     54,
-    76,
-    120
+    76
    ]
   },
   {
@@ -4393,17 +4509,6 @@
    "id": "P7_I00025",
    "remaining_actuals": [
     100
-   ]
-  },
-  {
-   "root": 7,
-   "index": 29,
-   "count": 412,
-   "exponent": 112,
-   "exact": false,
-   "id": "P7_I00029",
-   "remaining_actuals": [
-    112
    ]
   },
   {
@@ -4591,17 +4696,6 @@
    "id": "P7_I00109",
    "remaining_actuals": [
     600
-   ]
-  },
-  {
-   "root": 7,
-   "index": 117,
-   "count": 412,
-   "exponent": 646,
-   "exact": false,
-   "id": "P7_I00117",
-   "remaining_actuals": [
-    646
    ]
   },
   {
@@ -4835,7 +4929,6 @@
     4,
     24,
     34,
-    94,
     124
    ]
   },
@@ -4871,8 +4964,7 @@
    "exact": false,
    "id": "P11_I00004",
    "remaining_actuals": [
-    12,
-    168
+    12
    ]
   },
   {
@@ -4895,7 +4987,6 @@
    "id": "P11_I00006",
    "remaining_actuals": [
     18,
-    94,
     360
    ]
   },
@@ -5165,17 +5256,6 @@
   },
   {
    "root": 11,
-   "index": 118,
-   "count": 341,
-   "exponent": 658,
-   "exact": false,
-   "id": "P11_I00118",
-   "remaining_actuals": [
-    658
-   ]
-  },
-  {
-   "root": 11,
    "index": 120,
    "count": 341,
    "exponent": 672,
@@ -5194,17 +5274,6 @@
    "id": "P11_I00121",
    "remaining_actuals": [
     676
-   ]
-  },
-  {
-   "root": 11,
-   "index": 122,
-   "count": 341,
-   "exponent": 682,
-   "exact": false,
-   "id": "P11_I00122",
-   "remaining_actuals": [
-    682
    ]
   },
   {
@@ -5594,17 +5663,6 @@
    "id": "P13_I00101",
    "remaining_actuals": [
     556
-   ]
-  },
-  {
-   "root": 13,
-   "index": 102,
-   "count": 325,
-   "exponent": 562,
-   "exact": false,
-   "id": "P13_I00102",
-   "remaining_actuals": [
-    562
    ]
   },
   {

@@ -217,7 +217,12 @@
   "Research/Midday/LatePackets/Forest7x282.json.gz": "340c9daf012ec4838a74d30cb30bec1e9425626b7b4fc3e28f3f255075c42f77",
   "Research/MiddayDirected/Directed11x120.json.gz": "053a88315502abde5e73703630cb0555a26ff590a75c601313958cca344ca577",
   "Research/MiddayDirected/Directed11x64.json.gz": "f711da77f40e2dd725e62c3cb1cc2ec9f870b8580e9733a8867078d411e8765d",
-  "Research/MiddayDirected/Directed13x14.json.gz": "4c390d3732d7575208eec5a15430ddaada871111c5541c13e982039ef5bfc1cc"
+  "Research/MiddayDirected/Directed13x14.json.gz": "4c390d3732d7575208eec5a15430ddaada871111c5541c13e982039ef5bfc1cc",
+  "Research/MiddayDirected/Directed7x646.json.gz": "c159b9f3633e4706b9aa52b215aac9fdc2201a993d27089b5f09a5e0bb199d93",
+  "Research/MiddayDirected/Directed11x658.json.gz": "c5b84d3d9f2d248283b62159ced92b603d25790ddb6a7387392065b024a8c0cb",
+  "Research/MiddayDirected/Directed11x168.json.gz": "a1474848ccb9b872b077fcbf9f66a6abccd5623413c9a359188a2cbfb3a21c29",
+  "Research/MiddayDirected/Directed7x120.json.gz": "d51f01d0c1649644e51a8712f65cb7b559135c963c93eb8d5eb4c9f289b91f66",
+  "Research/MiddayDirected/Directed11x94.json.gz": "11fd0e464184f47017981c3ee95c05bc4db7aa28f87d23fe423b45af270552a3"
  },
  "prefix_trees": {
   "Research/MiddayGraph/Batch4_13x136d5.json.gz": "7908bcb078236c1deb77945eb7ddd4c33ba589e64f7a64003e49700e4adb5059",
@@ -231,6 +236,9 @@
   "Research/MiddayThree/Pivot108.json.gz": "e3da2e0b865f8bd839f0acc7086214aad7c715417f1e55e3ee47e67ffbff1ed5",
   "Research/MiddayThree/Pivot126.json.gz": "3fe6a2d9e068e6349f186a4c8a1a4d72ae28435ec3892b3c77a352aaa1cf146e",
   "Research/Midday/Euler7x700.json.gz": "7f521c8f37aee7fbd52da609ebccb05c2a78e89873b6e36003a6407cb6b7286b",
-  "Research/Midday/Euler7x172.json.gz": "608629be6ab066d0b9c6cd43e00744e82dfc41fe3076be9b2daf89265f643c1e"
+  "Research/Midday/Euler7x172.json.gz": "608629be6ab066d0b9c6cd43e00744e82dfc41fe3076be9b2daf89265f643c1e",
+  "Research/Midday/Euler13x562.json.gz": "3e65b29560ce187f38beb6cebf5d634691c9e4babcd906cd831f87f3e30d0f94",
+  "Research/Midday/Support11x682.json.gz": "f44fc29b7068cb9abc683041e2082e5727921c1eee7f521457bf332b107b8723",
+  "Research/Midday/Support7x112.json.gz": "fa7dc1d8163b2c706152a75a476e071698597222cdb54ea0ad6e154938556cc6"
  }
 }
