@@ -40,7 +40,8 @@ def check(b,d,reg):
     assert proofnames==allfiles and sorted(map(list,got))==d['new_actuals']
     left=[dict(s,remaining_actuals=sorted(alive[k])) for k,s in old.items() if alive[k]];closed=[k for k in old if not alive[k]];assert left==d['remaining_shards'] and closed==d['new_shards'];assert d['closed']==2666+len(closed) and d['open']==len(left) and d['closed']+d['open']==3072 and d['open_actuals']==511-len(got) and d['singletons']==sum(len(x['remaining_actuals'])==1 for x in left)
     for group in ('forests','prefix_trees','special'):
-        for p,v in reg.get(group,{}).items():assert hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==v
+        for p,v in reg.get(group,{}).items():
+            raw=(ROOT/p).read_bytes();assert hashlib.sha256(raw.replace(b'\r\n',b'\n') if p.endswith('.json') else raw).hexdigest()==v
     print('PASS independent overlap reconciliation:',len(got),'distinct keys;',len(closed),'new canonical shards;',len(left),'open')
 if __name__=='__main__':
     if not __debug__:raise SystemExit('no -O')

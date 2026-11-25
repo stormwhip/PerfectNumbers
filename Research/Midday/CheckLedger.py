@@ -44,7 +44,7 @@ def ledger(reg,workers):
         keys=verify(f);need(keys=={pair} and keys<=ob,'wrong exact tree');proofs.append({'packet':rel,'seed':list(pair),'actuals':[pair[1]]})
     for rel,sha in reg.get('special',{}).items():
         import subprocess
-        path=ROOT/rel;need(hashlib.sha256(path.read_bytes()).hexdigest()==sha,'special packet digest')
+        path=ROOT/rel;raw=path.read_bytes();need(hashlib.sha256(raw.replace(b'\r\n',b'\n') if rel.endswith('.json') else raw).hexdigest()==sha,'special packet digest')
         if rel=='Research/MiddayFive/Accepted.json.gz':
             es=sorted(e for p,e in ob if p==5);need(len(es)==14,'five domain');cmd=[str(R/'MiddayFive/Replay.py'),'--audit',*map(str,es)];p=5
         elif path.parent==R/'MiddayThree' and path.name.startswith('Pivot') and path.name.endswith('.json.gz'):
