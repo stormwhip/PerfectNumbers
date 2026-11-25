@@ -4,6 +4,13 @@
 
 This log separates **imported historical claims**, **directly observed experiments**, and **proof-checked results**. Dates use YYYY-MM-DD.
 
+## 2026-11-25 支持分割与仓库整理
+
+- 基线提交：[`9d74c34d`](https://github.com/stormwhip/PerfectNumbers/commit/9d74c34dda8908a19542b855c78ef2feb8844b66)。冻结账本 Git blob 为 `3a7b6812aafed3dddd228c34ed9575324d242887`。
+- 用 `python3 -I -S -B Research/SupportSplit/Verify.py` 从固定提交的程序和账本复验。结果为 11,398 个组合、4,833 个基础排除、9 个新增条件排除、6,556 个开放组合，完整实际指数新增为 0。[证据表与命令](../Research/SupportSplit/Readme.md)。
+- 主证明合并支持分割推导，版本进度表索引各批冻结账本。上午批次的候选排序见[历史快照](https://github.com/stormwhip/PerfectNumbers/blob/9d74c34dda8908a19542b855c78ef2feb8844b66/Research/Nov25/Forecast.md)。当前闭合分片为 2,868，开放分片为 204。
+- PR #5 的已验收隔离重放与原始摘要见[发布审计](../Research/Midday/ReleaseAudit.md)。
+
 ## 2026-11-24 Euler-source interval replay
 
 - Baseline commit: `37eb94b0a2cd18daed980b902fd913da3420e434`. The input derives from the checked-in exact-exponent exclusions and open shard manifests.

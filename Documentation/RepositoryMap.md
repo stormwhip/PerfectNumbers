@@ -24,6 +24,7 @@ PerfectNumbers/
 ├── References/                         # 原始论文及参考资料
 ├── Research/
 │   ├── Midday/                         # 证书登记、核验入口与待证账本
+│   ├── SupportSplit/                   # 条件支持排除与标准库复验
 │   ├── Midday*/                        # 根五、来源供给、森林及支持证明包
 │   ├── Nov25/、NightMerge/              # 上午及夜间历史复验
 │   ├── EveningMerge/                   # 晚间历史复验
@@ -102,7 +103,18 @@ PerfectNumbers/
 - `Build/`、`Run2400Results/` 与大型分解数据库不纳入源码版本库。
 - 旧 `Research/2026-11-22/` 已迁移为 `Research/Session20261122/`。外部 Gemini 分支合并前须按本文件重定向路径。
 
-## 一键可重复检查
+## 运行依赖与输入
+
+| 用途 | 依赖与输入 |
+|---|---|
+| 当前证书复验 | Python 3.11 或更高版本及标准库。按登记表读取版本库内的 JSON 与 gzip 证书。 |
+| V21 原生搜索 | C++17、GMP/GMPXX、OpenMP。索引构建另需 zlib。 |
+| 历史 LP 与候选搜索 | [Requirements.txt](../Requirements.txt) 列出 NumPy、SciPy、SymPy、mpmath；个别发现器另用 python-flint 或 PARI。 |
+| 全库长时搜索 | [data-v1](https://github.com/stormwhip/PerfectNumbers/releases/tag/data-v1) 提供历史因子库；[运行脚本](../Scripts/Run72hWSL.sh)校验输入摘要。 |
+
+按职责读取对应入口。[午间证书](../Research/Midday/README.md)说明证书登记、独立投影及全量重放。[SupportSplit](../Research/SupportSplit/Readme.md)绑定同一账本，单独验证条件证据。
+
+## 可重复检查
 
 - [RepositoryStructureChecks.py](../Sources/Python/RepositoryStructureChecks.py) 用 Git 已追踪文件清单核验 PascalCase 命名、旧目录消失以及 Markdown 相对文件链接。
 - [.github/workflows/RepositoryIntegrity.yml](../.github/workflows/RepositoryIntegrity.yml) 为手动触发的独立验证器、账本与 C++ 编解码/缓存轻量回归；无长时大规模计算。

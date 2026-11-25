@@ -1,5 +1,11 @@
 # \(10^{2400}\) 证明发布验收清单
 
+## 2026-11-25 当前证据验收
+
+- 用 [LedgerTests.py](../Research/Midday/LedgerTests.py) 独立核验登记摘要和去重后的分片投影：2,868 闭合、204 开放。
+- 用 [CheckLedger.py](../Research/Midday/CheckLedger.py) 重算午间登记包的算术及分支覆盖。原发布的隔离复验范围见 [ReleaseAudit.md](../Research/Midday/ReleaseAudit.md)。
+- 用 [SupportSplit/Verify.py](../Research/SupportSplit/Verify.py) 核验冻结输入与九项条件排除。完整实际指数新增为 0。
+
 **截至 2026-11-24。** 本清单区分**运行成功**与**数学证明成立**。关联数学定义见 [形式化研究难题](../Documentation/ResearchProblems2400.md)，具体证据见 [总证明](../Documentation/Proof2400.md)。
 
 > 当前已新增独立验证器 V2、SQLite 账本与只读 3072 项验收框架。数学验收仍未完成。权威进度见 [CurrentStatus2400.md](../Documentation/CurrentStatus2400.md)。
