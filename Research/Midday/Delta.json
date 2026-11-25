@@ -2663,6 +2663,16 @@
    "actuals": [
     112
    ]
+  },
+  {
+   "packet": "Research/MiddaySupport/Refined31.json.gz",
+   "seed": [
+    31,
+    10
+   ],
+   "actuals": [
+    10
+   ]
   }
  ],
  "new_actuals": [
@@ -3692,6 +3702,10 @@
   ],
   [
    31,
+   10
+  ],
+  [
+   31,
    22
   ],
   [
@@ -3878,6 +3892,7 @@
   "P11_I00117",
   "P11_I00118",
   "P11_I00122",
+  "P31_I00003",
   "P31_I00007",
   "P31_I00031",
   "P31_I00047",
@@ -3929,10 +3944,10 @@
   "P5_I00015",
   "P5_I00019"
  ],
- "closed": 2866,
- "open": 206,
- "open_actuals": 246,
- "singletons": 183,
+ "closed": 2867,
+ "open": 205,
+ "open_actuals": 245,
+ "singletons": 182,
  "remaining_shards": [
   {
    "root": 19,
@@ -5505,17 +5520,6 @@
    "id": "P31_I00002",
    "remaining_actuals": [
     6
-   ]
-  },
-  {
-   "root": 31,
-   "index": 3,
-   "count": 253,
-   "exponent": 10,
-   "exact": false,
-   "id": "P31_I00003",
-   "remaining_actuals": [
-    10
    ]
   },
   {
