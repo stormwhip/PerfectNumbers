@@ -84,3 +84,12 @@
 - [x] V24 乘积 GCD：4,000 组随机差分一致，时间改善尚不稳定（[45012698021](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012698021)）。
 
 原 V16 时期的历史审计记录保留于 [旧提交](https://github.com/stormwhip/PerfectNumbers/blob/90100f4447f9196835951fdb7e9dcdd3ab23723f/Records/ValidationChecklist.md)。
+
+## 根 3 续研验收
+
+- [x] 五指数的 E0/E1/E2 独立整数证明、42 叶保守重算、5829 个来源素数检查。
+- [x] 34972 余块与 $A$ 的 gcd 及候选 Euler 素数下界检查。
+- [x] 新对偶 1441 列的精确有理数检验及恶意篡改回归。
+- [ ] 完成未激活森林节点丰度、大余块与来源重叠、全部叶的联合严格下界。
+
+[证书、结果与复验命令](../Research/P3I00193Review/Progress.md)。

@@ -1,0 +1,64 @@
+{
+  "baseline_commit": "839a1b036e446e7f2bcc56d9bcddc8752af1ce88",
+  "python": "3.11.9",
+  "accepted_actuals": [],
+  "tests": [
+    {
+      "command": "python -I -S -B Research/P3I00193Review/VerifyPartial.py (isolated checkout; result equals published JSON)",
+      "exit_code": 0
+    },
+    {
+      "command": "python -I -S -B Research/P3I00193Review/Tests.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python -I -S -B Research/P3I00193Review/VerifyDualRational.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python -I -S -B Research/P3I00193Review/ResidualAudit.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python -I -S -B -X int_max_str_digits=0 Research/Midday/LedgerTests.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python Sources/Python/RepositoryStructureChecks.py",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --cached --check",
+      "exit_code": 0
+    }
+  ],
+  "expanded_source_replay": {
+    "auxiliary_primes": 5829,
+    "completed": true,
+    "leaf_rows": 42,
+    "elapsed_seconds": 489.172
+  },
+  "legacy_full_arithmetic_replay": {
+    "status": "STOPPED_BEFORE_COMPLETE",
+    "exit_code": 1,
+    "verified_forests": 231,
+    "verified_prefix_trees": 5,
+    "verified_pivot_actuals": [
+      [
+        3,
+        138
+      ]
+    ],
+    "verified_root5_actuals": [
+      6,
+      10,
+      12
+    ],
+    "log": "LedgerReplay.log.gz",
+    "log_sha256_lf": "6cfe22f937c54c1a3c19df92008c724421ea69e6a83968df9e106c5d0f5b9495"
+  },
+  "frozen_sha256_lf": {
+    "Registry.json": "a8ca5d34e83ac2ba2570d911c9ad67773377443dff63de8049dfc0aad0f0e0df",
+    "Delta.json": "39bf18fbe8650afa1f198f78fdcb1e5d6dbbb16c71a75f86e374b4800795a129"
+  }
+}

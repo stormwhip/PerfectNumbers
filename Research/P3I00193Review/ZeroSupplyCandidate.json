@@ -1,0 +1,19 @@
+{
+  "accepted_actuals": [],
+  "rows": [
+    {
+      "e": 1108,
+      "assumed_R_A": 100000000000,
+      "b0_euler_base_digits": "2068.6216692053985965902957467468838203319515809944",
+      "s_min_candidate_b0": 1002,
+      "status": "CANDIDATE_BASE_ONLY"
+    },
+    {
+      "e": 1162,
+      "assumed_R_A": 5000000000,
+      "b0_euler_base_digits": "2164.0459201493331090160805399401459709221960720144",
+      "s_min_candidate_b0": 1072,
+      "status": "CANDIDATE_BASE_ONLY"
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 状态：`REPLAY_PASSED_MATH_PENDING`；新增实际指数、闭合分片均为 0。基线为 2,868/3,072，开放 204，实际指数 244。输入 $(p,e)=(3,1162)$，$A=\sigma(3^{1162})$，$B=10^{2400}$。
 
+最新续研见 [Progress.md](Progress.md)：独立整数分支证明、新有理对偶、42 叶重算、5829 个来源素数及联合丰度缺口。完整闭合增量仍为 0。
+
 ## 重放结果
 
 上传的 P3_I00193_proof_bundle.zip（SHA-256 `cd075ec9722345dfe731d1866f328f7c23d42f7e826b06ffe58151460acaa7a4`）及报告 perfectnumbers2400_shardproof_report.md（SHA-256 `677b0da35b99ee2508054d2ef5a64e051e84c25cb625a4bce636e304c4c1b044`）为候选输入，本目录保存审计结论而非原始包。

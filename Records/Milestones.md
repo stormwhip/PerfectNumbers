@@ -4,7 +4,7 @@
 
 | 里程碑 | 当前状态 | 直接证据 | 下一项验收 |
 | --- | --- | --- | --- |
-| 根 3 指数 1162 候选 | 数值重放通过；净成本待修补，闭合增量 0 | [审计](../Research/P3I00193Review/Readme.md) | 重建联合计价及对偶 |
+| 根 3 指数 1162 候选 | 新对偶及五指数的 E0/E1/E2 已复验，闭合增量 0 | [审计](../Research/P3I00193Review/Readme.md) | 完成共同素数池丰度及来源重叠计价 |
 | 八根支持分割 | 复现 9 项新增条件排除，完整实际指数新增为 0 | [条件证据](../Research/SupportSplit/Readme.md) | 穷尽同一实际指数的剩余支持 |
 | 午间证书并集 | 新增 202 片，累计闭合 2,868，开放 204 | [午间证书](../Research/Midday/README.md) | [剩余分片](../Research/Midday/Delta.json) |
 | 两批来源与多根因子链证书 | 新增 165 项，累计闭合 2,192，开放 880 | [总证明](../Documentation/Proof2400.md)及[合并审计](../Research/EveningMerge/Audit.json) | [下一步计划](../Documentation/NextPlan2400.md) |

@@ -1,0 +1,32 @@
+{
+  "original_zip_sha256": "cd075ec9722345dfe731d1866f328f7c23d42f7e826b06ffe58151460acaa7a4",
+  "hash_convention": "LF normalized bytes; file contents retained",
+  "files": [
+    {
+      "original": "check.py",
+      "stored": "Candidate/Check.py",
+      "sha256_lf": "2f0b6142a7501c66853771b04bcae2b94f6dcd79c5b511da7adb00f3dbde3ce5"
+    },
+    {
+      "original": "verify_P3_1162.py",
+      "stored": "Candidate/VerifyP31162.py",
+      "sha256_lf": "afd6b98f68e302a30b41aee1e30728294722c9b15080a81693516dbcdf479628"
+    },
+    {
+      "original": "verify_forest.py",
+      "stored": "Candidate/VerifyForest.py",
+      "sha256_lf": "af3cf9dba6471af19d31eb29f66f0cc13fb85339da4e1852ea30388eddfcaa10"
+    },
+    {
+      "original": "P3_e1162_complete.json",
+      "stored": "Candidate/P3E1162Complete.json",
+      "sha256_lf": "54652cb67d6f807170248c00eb0c9004a200cd7b9027a73e923b7ea1a46cb30b"
+    },
+    {
+      "original": "sieve_A.cpp",
+      "stored": "Candidate/SieveA.cpp",
+      "sha256_lf": "517c0ac653d904742110b6e9fd1e92e01186dcfde813dde4baac03234c9b3797"
+    }
+  ],
+  "original_report_sha256_lf": "677b0da35b99ee2508054d2ef5a64e051e84c25cb625a4bce636e304c4c1b044"
+}

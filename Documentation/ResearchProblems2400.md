@@ -33,3 +33,5 @@
 完整证书须覆盖八根互素类及 3,072 个含根分片。独立验证器须从冻结输入重建分支、因子条件与终端不等式，并输出可重算的分片并集。72 小时评估另需给出固定机器、证书快照、峰值资源和恢复实测。
 
 [任务顺序](NextPlan2400.md) · [发布验收](../Records/ValidationChecklist.md) · [早期研究纲领](https://github.com/stormwhip/PerfectNumbers/blob/9d74c34dda8908a19542b855c78ef2feb8844b66/Documentation/ResearchProblems2400.md)
+
+联合模型新增待证条件：未激活森林节点的丰度必须进入同一素数池；森林与 LP 的余块需求须按 $v_u(N)=\sum_vv_u(\sigma(v^{h_v}))$ 共同分配，未知余因子与 Euler 来源共享时须单独处理。[实验与明确缺口](../Research/P3I00193Review/Progress.md)。

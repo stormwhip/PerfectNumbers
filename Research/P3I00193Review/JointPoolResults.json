@@ -1,0 +1,69 @@
+{
+  "status": "FLOATING_JOINT_RELAXATION_ONLY",
+  "accepted_actuals": [],
+  "rows": [
+    {
+      "name": "cell10_17_23",
+      "pool_primes": 460,
+      "columns": 2499,
+      "constraints": 718,
+      "joint_net_digits_float": 198.62700836138202,
+      "minimum_inequality_slack_float": 0.0,
+      "leaf_index": 0
+    },
+    {
+      "name": "cell10_17_no23_29_37",
+      "pool_primes": 467,
+      "columns": 2338,
+      "constraints": 765,
+      "joint_net_digits_float": 254.7163183757686,
+      "minimum_inequality_slack_float": 0.0,
+      "leaf_index": 2
+    },
+    {
+      "name": "cell10_17_41_no23_29_37",
+      "pool_primes": 470,
+      "columns": 2471,
+      "constraints": 838,
+      "joint_net_digits_float": 216.90893815116823,
+      "minimum_inequality_slack_float": 0.0,
+      "leaf_index": 3
+    },
+    {
+      "name": "cell10_17_no23_29_37_41",
+      "pool_primes": 425,
+      "columns": 1775,
+      "constraints": 609,
+      "joint_net_digits_float": 212.81132293423948,
+      "minimum_inequality_slack_float": 0.0,
+      "leaf_index": 4
+    },
+    {
+      "name": "cell10_no17_23_29",
+      "pool_primes": 394,
+      "columns": 1755,
+      "constraints": 470,
+      "joint_net_digits_float": 215.2328376786243,
+      "minimum_inequality_slack_float": 0.0,
+      "leaf_index": 8
+    },
+    {
+      "name": "cell10_no17_23_29_37",
+      "pool_primes": 367,
+      "columns": 1523,
+      "constraints": 405,
+      "joint_net_digits_float": 227.83313318433005,
+      "minimum_inequality_slack_float": 0.0,
+      "leaf_index": 9
+    },
+    {
+      "name": "cell11_neg",
+      "pool_primes": 445,
+      "columns": 1454,
+      "constraints": 604,
+      "joint_net_digits_float": 204.32178803605964,
+      "minimum_inequality_slack_float": 0.0,
+      "leaf_index": 12
+    }
+  ]
+}

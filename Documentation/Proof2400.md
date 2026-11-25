@@ -239,3 +239,5 @@ $$
 
 1. P. Ochem and M. Rao, “Odd perfect numbers are greater than $10^{1500}$”, Mathematics of Computation 81 (2012). [原文](../References/OchemRao2012.pdf)。
 2. [午间发布审计](../Research/Midday/ReleaseAudit.md)，含固定提交、复验命令及隔离回执。
+
+根 3 的五个高指数 E0/E1/E2 已有独立整数分支证明。令普通供给总量为 $U$，以 $K=10^8$ 及 277 个有限折让因子构造 $O\ge K^U/\prod_rD_r$；E1 穷尽 Euler 的赋值拆分，E2 取 $U\ge e/2$。外部来源降阶给出 $N>8\cdot3^eq^4/27$，从而在 $(e,s)=(1162,s\ge967)$ 或 $(1108,s\ge981)$ 的窗口有来源赋值为零。推导、整数证书与未完成的联合丰度条件见[续研](../Research/P3I00193Review/Progress.md)。完整闭合增量为 0。

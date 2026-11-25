@@ -15,7 +15,7 @@
 - [旧外部结果评审](../Records/ExternalReviews/GeminiProgressReviewV5.md)归档于 `Records/ExternalReviews/`。
 
 
-- [P3I00193Review](../Research/P3I00193Review/Readme.md) 保存外部候选证书的输入摘要、独立重放、来源枚举修补及净成本缺口；未登记为有效证书。
+- [P3I00193Review](../Research/P3I00193Review/Readme.md) 保存原始输入、独立整数部分证明、严格有理对偶、42 叶及余块审计、共同素数池实验；完整实际指数新增为 0。[最新推导](../Research/P3I00193Review/Progress.md)。
 
 ## 目录结构
 

@@ -1,0 +1,76 @@
+{
+  "status": "CONDITIONAL_WEIGHTED_FOREST_ONLY",
+  "accepted_actuals": [],
+  "rows": [
+    {
+      "name": "cell10_17_23",
+      "weighted_net_plus_lp_digits_candidate": "261.92854267033502785674135364028567967464273113150",
+      "optional_nodes_with_negative_reduced_cost": 7,
+      "best_multiplier_scale": [
+        1,
+        1
+      ],
+      "leaf_index": 0
+    },
+    {
+      "name": "cell10_17_no23_29_37",
+      "weighted_net_plus_lp_digits_candidate": "276.51263699499438242513942585514486531582850051162",
+      "optional_nodes_with_negative_reduced_cost": 12,
+      "best_multiplier_scale": [
+        1,
+        1
+      ],
+      "leaf_index": 2
+    },
+    {
+      "name": "cell10_17_41_no23_29_37",
+      "weighted_net_plus_lp_digits_candidate": "257.13003258563964140485350920823729423592619532499",
+      "optional_nodes_with_negative_reduced_cost": 16,
+      "best_multiplier_scale": [
+        1,
+        1
+      ],
+      "leaf_index": 3
+    },
+    {
+      "name": "cell10_17_no23_29_37_41",
+      "weighted_net_plus_lp_digits_candidate": "189.66503083714985589475965017870952652155672903321",
+      "optional_nodes_with_negative_reduced_cost": 11,
+      "best_multiplier_scale": [
+        6,
+        10
+      ],
+      "leaf_index": 4
+    },
+    {
+      "name": "cell10_no17_23_29",
+      "weighted_net_plus_lp_digits_candidate": "231.31736291105609986858041563376778208963940889553",
+      "optional_nodes_with_negative_reduced_cost": 7,
+      "best_multiplier_scale": [
+        1,
+        1
+      ],
+      "leaf_index": 8
+    },
+    {
+      "name": "cell10_no17_23_29_37",
+      "weighted_net_plus_lp_digits_candidate": "226.07405974575962006194268336061427438398751291343",
+      "optional_nodes_with_negative_reduced_cost": 3,
+      "best_multiplier_scale": [
+        1,
+        1
+      ],
+      "leaf_index": 9
+    },
+    {
+      "name": "cell11_neg",
+      "weighted_net_plus_lp_digits_candidate": "263.76891352289429632988460323050083667296544717277",
+      "optional_nodes_with_negative_reduced_cost": 4,
+      "best_multiplier_scale": [
+        1,
+        1
+      ],
+      "leaf_index": 12
+    }
+  ]
+}
