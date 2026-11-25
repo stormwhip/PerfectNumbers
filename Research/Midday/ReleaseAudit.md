@@ -19,12 +19,18 @@ The [registry](Registry.json) pins the SHA-256 of the compressed bytes. The firs
 | `5d3dec47` | 184 | 137 | 269 | Third complete ledger and independent projection; includes all 14 root-five actuals and 13 root-five shards |
 | `97c2ff21` | 207 | 157 | 249 | Third plus 19 new ordinary forests, one exact prefix tree, and three exact root-three certificates; isolated replay of the difference and independent projection of the entire union |
 | `417ef66e` | 230 | 176 | 230 | 23 additional ordinary forests from three producers; isolated difference replay at `076e4c86`, 12:15:53–12:16:55 UTC+08:00; entire union independently projected |
+| `e1a656b4` | 238 | 181 | 225 | Added six ordinary seeds and two exact Euler-location partitions |
+| `832a3f06` | 246 | 186 | 220 | Five directed seeds, one more Euler cover and two exhaustive binary supports |
+| `70650ba4` | 250 | 190 | 216 | Two further graph exact trees, the joined `(7,1018)` binary support and a nested Three tree |
+| `c2986e29` | 259 | 196 | 210 | More frozen forests, exact binary supports and complete Three join |
+| `28ccde92` | 262 | 197 | 209 | Directed lifts reconciled without double counting, plus complete Three 88 |
+| `16b17796` | 265 | 200 | 206 | Intake control: final group of 14 Forest packets and Three's 24 complete actuals |
 
 ## Disjoint credit
 
 * [Root three](../MiddayThree/README.md) and [root five](../MiddayFive/README.md) are complete certificates **for their stated canonical actuals**. See the additional [root-five audit](../MiddaySupply/FiveAudit.md).
 * [Graph trees](../MiddayGraph/ReleaseNotes.md) consume their complete exact cases. [Forest controls](../MiddayForest/README.md) independently check arithmetic and overlap.
-* [Terminal hitting-set reductions](../MiddayTerminal/FiveSets.md) and [support restrictions](../MiddaySupport/README.md) are useful necessary conditions, **not** additional complete exponents or shards. They are not registered as forest seeds.
+* [Terminal hitting-set reductions](../MiddayTerminal/FiveSets.md) and individual [support restrictions](../MiddaySupport/README.md) do **not** add complete exponents or shards on their own. A union covering every support cell may admit one exact pair if its closed-world verifier succeeds. It cannot be registered as a liftable forest seed.
 
 ## Rechecked block and conditional chain
 
