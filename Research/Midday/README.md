@@ -2,6 +2,8 @@
 
 本分支基线为 `6732a1a894817457a1bc1b88b7d214ac4d6c9872`（[十点快照](../Nov25/Delta.json)）。基线 406 个开放规范分片包含 582 个 `(片, 指数)` 义务，其中不同 `(p,e)` 只有 511 个；因此不得按义务数累计成果。[本轮增量账本](Delta.json) 由实际证书重放生成。状态仍是 `INCOMPLETE_FRONTIER`。
 
+**本轮已验结果与完整索引**：[研究报告](FinalReport.md) · [数学证明综述](ProofSummary.md) · [完整登记表](Registry.json) · [具体剩余分片](Delta.json)。
+
 ## 第一个固定检查点（非本轮最终结果）
 
 北京 10:55 完成 **68 个实际指数、47 个完整分片**的并集冷验，累计 2713/3072；余359片、443个指数。[固定登记和复验代码](https://github.com/stormwhip/PerfectNumbers/tree/7de233b99c8be799318ab994e7978c670071b7bb/Research/Midday)。证明不依赖网络和第三方包。仓库根运行：

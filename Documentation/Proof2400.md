@@ -1,6 +1,6 @@
 # 奇完全数 \(10^{2400}\) 下界的合并证明
 
-令 \(B=10^{2400}\)。本文件汇总已验收的排除结论及其证明规则。固定根序为 \((19,7,11,31,13,3,5,17)\)。取第一个整除 \(N\) 的根 \(p\)，其前面的根构成禁素数集合。与八个根均互素的情形由[原根集独立证书](../Research/Session20261122/Python/TerminalCertificate.py)排除，所得下界为 \(\log_{10}N\ge4183.209493\)。含根的 3,072 个规范分片已闭合 **2,666** 个，余 **406** 个。目标定理的当前状态为 INCOMPLETE_FRONTIER。
+令 \(B=10^{2400}\)。本文件汇总已验收的排除结论及其证明规则。固定根序为 \((19,7,11,31,13,3,5,17)\)。取第一个整除 \(N\) 的根 \(p\)，其前面的根构成禁素数集合。与八个根均互素的情形由[原根集独立证书](../Research/Session20261122/Python/TerminalCertificate.py)排除，所得下界为 \(\log_{10}N\ge4183.209493\)。含根的 3,072 个规范分片已闭合 **2,862** 个，余 **210** 个。目标定理的当前状态为 INCOMPLETE_FRONTIER。
 
 <!-- night-state:begin -->
 **夜间快照（相对 `3b50576`）：** 净排除 **1106** 个实际指数，新增闭合 **454** 个完整分片。支持-only 的统一结论、部分区间和已由其它路线排除的指数均不重复计数。[总注册表](../Research/NightMerge/Batches.json) · [完整在证/待证映射](../Research/NightMerge/Audit.json)。
@@ -12,7 +12,7 @@
 
 设 \(N=q^aM^2\)，其中 \(q\nmid M\)，\(q\equiv a\equiv1\pmod 4\)。每个分片的代表指数记为 \(d\)。精确分片要求 \(e=d\)，整除分片要求 \(d+1\mid e+1\)，其中 \(p^e\parallel N\)。指数受 \(p^e\le B\) 和 Euler 结构约束。由几何级数整除关系，后一类可共用 \(\sigma(p^d)\) 的因子见证。整数预筛以 \(p^e\operatorname{odd}(\sigma(p^e))>B\) 或禁素因子排除指数，其中 \(\operatorname{odd}\) 表示去掉全部 2 因子的奇数部分。
 
-取每个分片中尚未被基线排除的全部合法 \(e\)。新证书以 \((p,e)\) 为键求并集。只有该分片的每个待证 \(e\) 都被覆盖时才新增一次闭合。例如 P31_I00038 需要同时排除 \(172\) 与 \(518\)。[当前审计清单](../Research/Nov25/Delta.json) 记录新增指数、完整闭合及开放分片的逐项指数。
+取每个分片中尚未被基线排除的全部合法 \(e\)。新证书以 \((p,e)\) 为键求并集。只有该分片的每个待证 \(e\) 都被覆盖时才新增一次闭合。例如 P31_I00038 需要同时排除 \(172\) 与 \(518\)。[当前审计清单](../Research/Midday/Delta.json) 记录新增指数、完整闭合及开放分片的逐项指数。
 
 ## 2. 强制因子链、尺寸与丰度
 
@@ -102,3 +102,9 @@ r^cD_1=P(w(r-1)-1)-(q+1)w(r-1),\qquad r^cD_2=P(w+\sigma(r^{c-1}))-w(q+1).
 Euler 来源的分圆指数约简曾在 533 个根 3、5 实际指数上做区间复验，扩大了其中 76 项的覆盖。分支级推导及部分覆盖记录见[历史来源区间报告](https://github.com/stormwhip/PerfectNumbers/blob/ea08da38e38ab3309da4360ea2bb60ecb616a025/Documentation/ResearchReport2400.md)。
 
 两批逐分支推导、发布命令及原始统计保存在 [PR #1 快照](https://github.com/stormwhip/PerfectNumbers/tree/4aad42d895d44782d69e28ed065ca4fda2401b1d/Research/GapSupply2400)和 [PR #2 快照](https://github.com/stormwhip/PerfectNumbers/tree/ea08da38e38ab3309da4360ea2bb60ecb616a025/Research)。[当前状态](CurrentStatus2400.md)与[下一步计划](NextPlan2400.md)使用同一份审计清单。
+
+
+
+### 11 月 25 日午间增量
+
+相对 11 月 25 日 10:05 的 `main`（`6732a1a`），新增排除 **259** 个不同实际指数、闭合 **196** 个规范分片；累计 **2,862 / 3,072**，余 **210** 片、**252** 个不同实际指数，其中 **186** 片只剩一个实际指数。全局状态仍为 `INCOMPLETE_FRONTIER`。 [证书入口](../Research/Midday/README.md)。新方法包含[多源整数对偶](../Research/MiddayFive/README.md)、[Euler 素数精确位置覆盖](../Research/Midday/EulerCover.md)及[由实际发射节点构造的支持分支](../Research/Midday/EndogenousSupports.md)。重数、外部余因子与丰度的完整计费以及所有 Euler 选择均在上述证明中说明。

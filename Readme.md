@@ -2,10 +2,10 @@
 
 目标是证明每个奇完全数 $N>10^{2400}$，并让独立程序复核证明。
 
-截至北京时间 2026-11-25，累计闭合 **2,666 / 3,072** 个规范分片。本轮新增闭合 20 个，排除 51 个不同实际指数，余 406 个分片、511 个待证实际指数。原八根互素类下界为 `log10 N >= 4183.209493`，三根互素类下界为 `log10 N >= 2406.575051`。全局状态为 `INCOMPLETE_FRONTIER`。
+相对 11 月 25 日 10:05 的 `main`（`6732a1a`），新增排除 **259** 个不同实际指数、闭合 **196** 个规范分片；累计 **2,862 / 3,072**，余 **210** 片、**252** 个不同实际指数，其中 **186** 片只剩一个实际指数。全局状态仍为 `INCOMPLETE_FRONTIER`。 [午间研究及复验](Research/Midday/README.md)。
 
 - [总证明](Documentation/Proof2400.md)
-- [当前状态](Documentation/CurrentStatus2400.md)及[逐片待证清单](Research/Nov25/Delta.json)
+- [当前状态](Documentation/CurrentStatus2400.md)及[逐片待证清单](Research/Midday/Delta.json)
 - [下一步计划](Documentation/NextPlan2400.md)
 - [仓库目录](Documentation/RepositoryMap.md)和[历史实验](Records/ExperimentLog.md)
 
