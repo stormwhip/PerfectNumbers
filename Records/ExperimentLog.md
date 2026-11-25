@@ -4,6 +4,11 @@
 
 This log separates **imported historical claims**, **directly observed experiments**, and **proof-checked results**. Dates use YYYY-MM-DD.
 
+## 2026-11-25 根 3 指数 1162 候选审计
+
+- 原包标准库重放 39.11 s：166 个素性证书、1,276 个显式辅助素数及 42 个叶节点通过，程序报告 2400.93。
+- 扩大 Euler 来源枚举后 1,276 个显式辅助素数通过（20.27 s）；删除单重数净成本优惠后，最弱叶重算为 2399.9768082683。结果尚未获数学验收，新增指数和分片均为 0。[审计及输入摘要](../Research/P3I00193Review/Readme.md)。
+
 ## 2026-11-25 支持分割与仓库整理
 
 - 基线提交：[`9d74c34d`](https://github.com/stormwhip/PerfectNumbers/commit/9d74c34dda8908a19542b855c78ef2feb8844b66)。冻结账本 Git blob 为 `3a7b6812aafed3dddd228c34ed9575324d242887`。
