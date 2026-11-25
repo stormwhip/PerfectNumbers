@@ -800,6 +800,19 @@
    "forest_leaves": 9
   },
   {
+   "actuals": [
+    26
+   ],
+   "forest_leaf_min_floor": 2400,
+   "forest_leaves": 22,
+   "packet": "Pivot13x26.json.gz",
+   "seed": [
+    13,
+    26
+   ],
+   "sha256": "fabaf929331596bcd605dcfe7045c8e6618da2dcf02dd1576bd0a8a569b02ff0"
+  },
+  {
    "packet": "Pivot13x330.json.gz",
    "sha256": "b5ef81a7263c768fad29cdaa6087fc539b37e695d47cdd27981c0032d04a43e4",
    "seed": [
@@ -1153,6 +1166,20 @@
    "direct_cases": 104
   },
   {
+   "actuals": [
+    106
+   ],
+   "direct_cases": 514,
+   "forest_leaves": 484,
+   "packet": "Tree19x106.json.gz",
+   "seed": [
+    19,
+    106
+   ],
+   "sha256": "9c4efdb4273efccaded02314603946712622549b1f0bed1ce99be07e926d1afc",
+   "split_nodes": 16
+  },
+  {
    "packet": "Tree19x400.json.gz",
    "sha256": "485ca8ed3f45c92d10e7297cf2ebcfcc176bc23a32c48ad0a63491acbcf6b66e",
    "seed": [
@@ -1277,6 +1304,20 @@
    "forest_leaves": 77,
    "split_nodes": 2,
    "direct_cases": 79
+  },
+  {
+   "actuals": [
+    660
+   ],
+   "direct_cases": 322,
+   "forest_leaves": 296,
+   "packet": "Tree7x660.json.gz",
+   "seed": [
+    7,
+    660
+   ],
+   "sha256": "16f98708dbb12657713fc9cbc6acb3acb94fbb4ebfed0d1c88b7a209f660c31f",
+   "split_nodes": 21
   },
   {
    "packet": "Tree7x76.json.gz",
@@ -1887,6 +1928,30 @@
    }
   },
   {
+   "actuals": [
+    420
+   ],
+   "packet": "SupplyForest/Recursive/Recursive11x420.json.gz",
+   "receipt": {
+    "e": 420,
+    "max_depth": 12,
+    "p": 11,
+    "rules": {
+     "abundance": 1,
+     "mass": 4226,
+     "mixed": 1150,
+     "pivot-Euler": 238,
+     "split": 561
+    },
+    "states": 6176
+   },
+   "seed": [
+    11,
+    420
+   ],
+   "sha256": "7f8f21d6d33eba57c28b8b43bf50e3897e752e4a58f09619a5ff57372586a2fb"
+  },
+  {
    "packet": "SupplyForest/Recursive/Recursive11x522.json.gz",
    "sha256": "a2557ea6ed98e8705c2d326283b7f1c15813af08c255db6a732ae785b74ac584",
    "seed": [
@@ -2002,6 +2067,28 @@
    }
   },
   {
+   "actuals": [
+    432
+   ],
+   "packet": "SupplyForest/Recursive/Recursive7x432.json.gz",
+   "receipt": {
+    "e": 432,
+    "max_depth": 18,
+    "p": 7,
+    "rules": {
+     "abundance": 779,
+     "mass": 17514,
+     "split": 3263
+    },
+    "states": 21556
+   },
+   "seed": [
+    7,
+    432
+   ],
+   "sha256": "7af41daf94df26121c498c8bb940c122abc2eaf60076cf29954f6c87d5432d32"
+  },
+  {
    "packet": "SupplyForest/Recursive/Recursive7x856.json.gz",
    "sha256": "f0414c6f74e8b61189cea7dff0dafeb3e421dfc658c9e573d9ec7b74182552c4",
    "seed": [
@@ -2023,6 +2110,31 @@
      "mixed": 216
     }
    }
+  },
+  {
+   "actuals": [
+    862
+   ],
+   "packet": "SupplyForest/Recursive/Recursive7x862.json.gz",
+   "receipt": {
+    "e": 862,
+    "max_depth": 16,
+    "p": 7,
+    "rules": {
+     "mass": 7219,
+     "mixed": 4041,
+     "pivot-Euler": 796,
+     "source-square": 1,
+     "split": 818,
+     "valuation": 1
+    },
+    "states": 12876
+   },
+   "seed": [
+    7,
+    862
+   ],
+   "sha256": "1b1f647fdd2b945c6140a19da74d168ff6859b7bb4df13f5a20eff53510cc4d3"
   },
   {
    "actuals": [
@@ -2231,6 +2343,10 @@
   ],
   [
    7,
+   432
+  ],
+  [
+   7,
    462
   ],
   [
@@ -2251,6 +2367,10 @@
   ],
   [
    7,
+   660
+  ],
+  [
+   7,
    772
   ],
   [
@@ -2264,6 +2384,10 @@
   [
    7,
    856
+  ],
+  [
+   7,
+   862
   ],
   [
    7,
@@ -2315,6 +2439,10 @@
   ],
   [
    11,
+   420
+  ],
+  [
+   11,
    478
   ],
   [
@@ -2356,6 +2484,10 @@
   [
    13,
    24
+  ],
+  [
+   13,
+   26
   ],
   [
    13,
@@ -2439,6 +2571,10 @@
   ],
   [
    19,
+   106
+  ],
+  [
+   19,
    378
   ],
   [
@@ -2517,6 +2653,7 @@
  "new_shards": [
   "P19_I00008",
   "P19_I00012",
+  "P19_I00026",
   "P19_I00073",
   "P19_I00077",
   "P19_I00083",
@@ -2540,15 +2677,18 @@
   "P7_I00025",
   "P7_I00040",
   "P7_I00047",
+  "P7_I00083",
   "P7_I00089",
   "P7_I00099",
   "P7_I00100",
   "P7_I00103",
   "P7_I00118",
+  "P7_I00120",
   "P7_I00136",
   "P7_I00138",
   "P7_I00141",
   "P7_I00147",
+  "P7_I00149",
   "P7_I00157",
   "P7_I00164",
   "P11_I00007",
@@ -2558,6 +2698,7 @@
   "P11_I00065",
   "P11_I00073",
   "P11_I00078",
+  "P11_I00080",
   "P11_I00090",
   "P11_I00096",
   "P11_I00097",
@@ -2606,9 +2747,9 @@
   "P3_I00187",
   "P3_I00193"
  ],
- "closed": 2958,
- "open": 114,
- "open_actuals": 132,
+ "closed": 2963,
+ "open": 109,
+ "open_actuals": 126,
  "remaining_shards": [
   {
    "root": 19,
@@ -2767,17 +2908,6 @@
    "id": "P19_I00021",
    "remaining_actuals": [
     82
-   ]
-  },
-  {
-   "root": 19,
-   "index": 26,
-   "count": 287,
-   "exponent": 106,
-   "exact": false,
-   "id": "P19_I00026",
-   "remaining_actuals": [
-    106
    ]
   },
   {
@@ -3218,17 +3348,6 @@
   },
   {
    "root": 7,
-   "index": 83,
-   "count": 412,
-   "exponent": 432,
-   "exact": false,
-   "id": "P7_I00083",
-   "remaining_actuals": [
-    432
-   ]
-  },
-  {
-   "root": 7,
    "index": 84,
    "count": 412,
    "exponent": 438,
@@ -3306,17 +3425,6 @@
   },
   {
    "root": 7,
-   "index": 120,
-   "count": 412,
-   "exponent": 660,
-   "exact": false,
-   "id": "P7_I00120",
-   "remaining_actuals": [
-    660
-   ]
-  },
-  {
-   "root": 7,
    "index": 123,
    "count": 412,
    "exponent": 682,
@@ -3368,17 +3476,6 @@
    "id": "P7_I00145",
    "remaining_actuals": [
     838
-   ]
-  },
-  {
-   "root": 7,
-   "index": 149,
-   "count": 412,
-   "exponent": 862,
-   "exact": false,
-   "id": "P7_I00149",
-   "remaining_actuals": [
-    862
    ]
   },
   {
@@ -3512,17 +3609,6 @@
    "id": "P11_I00076",
    "remaining_actuals": [
     396
-   ]
-  },
-  {
-   "root": 11,
-   "index": 80,
-   "count": 341,
-   "exponent": 420,
-   "exact": false,
-   "id": "P11_I00080",
-   "remaining_actuals": [
-    420
    ]
   },
   {
@@ -3677,8 +3763,7 @@
    "id": "P13_I00001",
    "remaining_actuals": [
     2,
-    8,
-    26
+    8
    ]
   },
   {
