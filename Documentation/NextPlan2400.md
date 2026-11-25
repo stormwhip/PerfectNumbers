@@ -21,3 +21,8 @@
 | 3 | `P3_I00193` | 1162 | 1162 |
 
 [总证明](Proof2400.md) · [状态](CurrentStatus2400.md) · [午间证书](../Research/Midday/README.md)
+
+
+### 晚间支持分割增量
+
+[支持分割实验](../Research/SupportSplit/Readme.md)给出 6,556 个仍开放的条件支持组合（相对本次筛选）。优先把已确定的支持和禁素输入各自森林：对 $(19,14),(19,44)$，各仅余八个支持组合；对 $(31,8)$，已排除八根中恰含 3、5、13、31 的子域。必须覆盖该实际指数的全部支持组合后才记账；复验程序在 [SupportSplit/Verify.py](../Research/SupportSplit/Verify.py)。
