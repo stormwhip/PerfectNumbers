@@ -67,18 +67,23 @@ def aggregate(audit, verified_batches):
                 closed_shards=closed, remaining_shards=left)
 
 
-def verified_batches():
+def verified_batches(workers=1):
     # Only explicit, fail-closed adapters go here; no discovery results.
     import sys
+    from concurrent.futures import ProcessPoolExecutor
     sys.path.insert(0, str(HERE))
-    from five.Verify148 import verify as five148
-    from five.Verify520 import verify as five520
-    from ForestPackets import verify as forest
-    names = ('19x274-QFine19_274.json.gz', '19x86-HDir19_86.json.gz', '13x76-QFine13_76.json.gz',
+    from ProofJobs import verify_job
+    names = ('five148', 'five520',
+             '19x274-QFine19_274.json.gz', '19x86-HDir19_86.json.gz', '13x76-QFine13_76.json.gz',
              '19x102-CacheD19_102.json.gz', '13x418-CacheD13_418.json.gz',
-             '31x396-CacheD31_396.json.gz', '13x42-CacheD13_42.json.gz')
-    return (('root 5, exponent 148', five148()), ('root 5, exponent 520', five520()),
-            *((name, forest(HERE / 'Forests' / name)) for name in names))
+             '31x396-CacheD31_396.json.gz', '13x42-CacheD13_42.json.gz',
+             '13x38-NoExtra13_38.json.gz', '13x54-QFine13_54.json.gz', '13x68-NoExtra13_68.json.gz',
+             '13x84-QFine13_84.json.gz', '19x68-QFine19_68.json.gz', '19x84-QFine19_84.json.gz',
+             '19x98-QFine19_98.json.gz')
+    if workers == 1:
+        return tuple(map(verify_job, names))
+    with ProcessPoolExecutor(workers) as executor:
+        return tuple(executor.map(verify_job, names))
 
 
 def main():
@@ -86,8 +91,10 @@ def main():
     group = parser.add_mutually_exclusive_group()
     group.add_argument('--write', type=Path)
     group.add_argument('--check', type=Path)
+    parser.add_argument('--workers', type=int, default=1)
     args = parser.parse_args()
-    result = aggregate(load_baseline(), verified_batches())
+    if not 1<=args.workers<=12:parser.error('--workers must be in 1..12')
+    result = aggregate(load_baseline(), verified_batches(args.workers))
     text = json.dumps(result, indent=1) + '\n'
     if args.write:
         args.write.write_text(text, encoding='utf-8', newline='\n')
