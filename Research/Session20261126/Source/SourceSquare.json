@@ -1,0 +1,72 @@
+{
+  "status": "VERIFIED_CONDITIONAL_ONLY",
+  "proof": "Every E3 source is primitive: ord_q(r)=f+1 (in particular b=0)",
+  "accepted_actuals": [],
+  "rows": [
+    {
+      "e": 856,
+      "window": [
+        1,
+        856
+      ],
+      "tested": 5971,
+      "min_log10_floor": 2523,
+      "worst_s_b": [
+        737,
+        5
+      ]
+    },
+    {
+      "e": 970,
+      "window": [
+        1,
+        970
+      ],
+      "tested": 6769,
+      "min_log10_floor": 2863,
+      "worst_s_b": [
+        837,
+        6
+      ]
+    },
+    {
+      "e": 990,
+      "window": [
+        1,
+        990
+      ],
+      "tested": 6909,
+      "min_log10_floor": 2924,
+      "worst_s_b": [
+        855,
+        6
+      ]
+    },
+    {
+      "e": 1108,
+      "window": [
+        1,
+        1108
+      ],
+      "tested": 7735,
+      "min_log10_floor": 3280,
+      "worst_s_b": [
+        959,
+        6
+      ]
+    },
+    {
+      "e": 1162,
+      "window": [
+        1,
+        1162
+      ],
+      "tested": 8113,
+      "min_log10_floor": 3442,
+      "worst_s_b": [
+        1007,
+        6
+      ]
+    }
+  ]
+}

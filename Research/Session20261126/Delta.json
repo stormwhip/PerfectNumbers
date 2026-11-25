@@ -15,6 +15,66 @@
    ]
   },
   {
+   "packet": "Forest11x360.json.gz",
+   "sha256": "9b51650fad984a5dfdbef31dc498745417c06ee73483711b309a3e2dd5857e7c",
+   "seed": [
+    11,
+    360
+   ],
+   "floor": 2402,
+   "actuals": [
+    360
+   ]
+  },
+  {
+   "packet": "Forest13x486.json.gz",
+   "sha256": "a45a1ee14eee421e7b3951aa6310d1703513db824634f5c1f035752c5bd4c8b4",
+   "seed": [
+    13,
+    486
+   ],
+   "floor": 2400,
+   "actuals": [
+    486
+   ]
+  },
+  {
+   "packet": "Forest19x90.json.gz",
+   "sha256": "9d6415ae6a0b1c4898bbf00488c65322241645e92f7673f3343cfa5d4813627b",
+   "seed": [
+    19,
+    90
+   ],
+   "floor": 2400,
+   "actuals": [
+    90
+   ]
+  },
+  {
+   "packet": "Forest3x100.json.gz",
+   "sha256": "88e8902d7986c5cea125e84872fd08463213154d8a85c504f133547e0c97f6bb",
+   "seed": [
+    3,
+    100
+   ],
+   "floor": 2404,
+   "actuals": [
+    100
+   ]
+  },
+  {
+   "packet": "Forest3x102.json.gz",
+   "sha256": "dbbf3064f5b97562bf6a0950b5faff89dcefa69ef606609867e034b069568b83",
+   "seed": [
+    3,
+    102
+   ],
+   "floor": 2403,
+   "actuals": [
+    102
+   ]
+  },
+  {
    "packet": "Forest3x118.json.gz",
    "sha256": "2e91bb71dbeddeaa9327542c0154a389e89bcbad3f9714e04a3c9e701e441f5a",
    "seed": [
@@ -27,6 +87,18 @@
    ]
   },
   {
+   "packet": "Forest3x120.json.gz",
+   "sha256": "555f29ea267d1e161bf2b36c40afb8bf64d82847684d43242babb7cea2607dba",
+   "seed": [
+    3,
+    120
+   ],
+   "floor": 2407,
+   "actuals": [
+    120
+   ]
+  },
+  {
    "packet": "Forest3x130.json.gz",
    "sha256": "1708034f9cf426e390b0a620c9f0195bbeca239e00f9fc517ccd3e1f5edb75b5",
    "seed": [
@@ -36,6 +108,30 @@
    "floor": 2400,
    "actuals": [
     130
+   ]
+  },
+  {
+   "packet": "Forest3x132.json.gz",
+   "sha256": "080569f8329b8518fe2d5634c31b5a2ea2b019f7d7109ed91abf8e7f39f05983",
+   "seed": [
+    3,
+    132
+   ],
+   "floor": 2428,
+   "actuals": [
+    132
+   ]
+  },
+  {
+   "packet": "Forest3x136.json.gz",
+   "sha256": "bce4a830a2bbff0f241441bee6d08e6fef98a8b757cdebde5e91be23f426df08",
+   "seed": [
+    3,
+    136
+   ],
+   "floor": 2401,
+   "actuals": [
+    136
    ]
   },
   {
@@ -63,6 +159,18 @@
    ]
   },
   {
+   "packet": "Forest3x168.json.gz",
+   "sha256": "6418fd75b0f8a05223060f7804d6f637e52258d6f591d3395cb0055ef5a0fc8b",
+   "seed": [
+    3,
+    168
+   ],
+   "floor": 2405,
+   "actuals": [
+    168
+   ]
+  },
+  {
    "packet": "Forest3x30.json.gz",
    "sha256": "8d762c26d2e486df9b07899d86614271298784f4bea0da2b772b5d9246549293",
    "seed": [
@@ -72,6 +180,18 @@
    "floor": 2412,
    "actuals": [
     30
+   ]
+  },
+  {
+   "packet": "Forest3x36.json.gz",
+   "sha256": "522c76a73a0b57f9af5ec59ed4f0a2750a6973509401b2ae201b9a8a1c24092d",
+   "seed": [
+    3,
+    36
+   ],
+   "floor": 2401,
+   "actuals": [
+    36
    ]
   },
   {
@@ -133,12 +253,53 @@
    "actuals": [
     66
    ]
+  },
+  {
+   "packet": "Forest3x76.json.gz",
+   "sha256": "5b096519b506668123764e749aea7602cbd1bf12f6168872a970a002cbae4aca",
+   "seed": [
+    3,
+    76
+   ],
+   "floor": 2417,
+   "actuals": [
+    76
+   ]
+  },
+  {
+   "packet": "Forest7x96.json.gz",
+   "sha256": "36062e85435091345f4d9fd7d843448559c2e2343d199f3f616d517c29e48e2b",
+   "seed": [
+    7,
+    96
+   ],
+   "floor": 2400,
+   "actuals": [
+    96
+   ]
+  },
+  {
+   "packet": "Pivot11x408.json.gz",
+   "sha256": "3a839285f0312dcd571a9c4827e8b4d95e487b800780c9321b6e135ca99baf82",
+   "seed": [
+    11,
+    408
+   ],
+   "floor": 2401,
+   "forest_leaves": 10,
+   "actuals": [
+    408
+   ]
   }
  ],
  "new_actuals": [
   [
    3,
    30
+  ],
+  [
+   3,
+   36
   ],
   [
    3,
@@ -162,11 +323,35 @@
   ],
   [
    3,
+   76
+  ],
+  [
+   3,
+   100
+  ],
+  [
+   3,
+   102
+  ],
+  [
+   3,
    118
   ],
   [
    3,
+   120
+  ],
+  [
+   3,
    130
+  ],
+  [
+   3,
+   132
+  ],
+  [
+   3,
+   136
   ],
   [
    3,
@@ -177,22 +362,53 @@
    160
   ],
   [
+   3,
+   168
+  ],
+  [
+   7,
+   96
+  ],
+  [
    11,
    22
+  ],
+  [
+   11,
+   360
+  ],
+  [
+   11,
+   408
+  ],
+  [
+   13,
+   486
+  ],
+  [
+   19,
+   90
   ]
  ],
  "new_shards": [
+  "P7_I00024",
   "P11_I00007",
+  "P11_I00078",
+  "P13_I00092",
   "P3_I00012",
+  "P3_I00013",
   "P3_I00014",
   "P3_I00016",
   "P3_I00018",
   "P3_I00020",
-  "P3_I00033"
+  "P3_I00027",
+  "P3_I00028",
+  "P3_I00033",
+  "P3_I00034"
  ],
- "closed": 2875,
- "open": 197,
- "open_actuals": 233,
+ "closed": 2882,
+ "open": 190,
+ "open_actuals": 220,
  "remaining_shards": [
   {
    "root": 19,
@@ -243,8 +459,7 @@
     20,
     34,
     48,
-    76,
-    90
+    76
    ]
   },
   {
@@ -270,8 +485,7 @@
    "id": "P19_I00004",
    "remaining_actuals": [
     12,
-    38,
-    90
+    38
    ]
   },
   {
@@ -1004,17 +1218,6 @@
   },
   {
    "root": 7,
-   "index": 24,
-   "count": 412,
-   "exponent": 96,
-   "exact": false,
-   "id": "P7_I00024",
-   "remaining_actuals": [
-    96
-   ]
-  },
-  {
-   "root": 7,
    "index": 25,
    "count": 412,
    "exponent": 100,
@@ -1465,8 +1668,7 @@
    "exact": false,
    "id": "P11_I00006",
    "remaining_actuals": [
-    18,
-    360
+    18
    ]
   },
   {
@@ -1566,17 +1768,6 @@
    "id": "P11_I00076",
    "remaining_actuals": [
     396
-   ]
-  },
-  {
-   "root": 11,
-   "index": 78,
-   "count": 341,
-   "exponent": 408,
-   "exact": false,
-   "id": "P11_I00078",
-   "remaining_actuals": [
-    408
    ]
   },
   {
@@ -2025,17 +2216,6 @@
   },
   {
    "root": 13,
-   "index": 92,
-   "count": 325,
-   "exponent": 486,
-   "exact": false,
-   "id": "P13_I00092",
-   "remaining_actuals": [
-    486
-   ]
-  },
-  {
-   "root": 13,
    "index": 96,
    "count": 325,
    "exponent": 508,
@@ -2175,9 +2355,7 @@
    "id": "P3_I00005",
    "remaining_actuals": [
     6,
-    76,
-    90,
-    132
+    90
    ]
   },
   {
@@ -2188,9 +2366,7 @@
    "exact": false,
    "id": "P3_I00006",
    "remaining_actuals": [
-    10,
-    76,
-    120
+    10
    ]
   },
   {
@@ -2202,8 +2378,7 @@
    "id": "P3_I00007",
    "remaining_actuals": [
     12,
-    90,
-    168
+    90
    ]
   },
   {
@@ -2225,8 +2400,7 @@
    "exact": false,
    "id": "P3_I00009",
    "remaining_actuals": [
-    18,
-    132
+    18
    ]
   },
   {
@@ -2249,17 +2423,6 @@
    "id": "P3_I00011",
    "remaining_actuals": [
     28
-   ]
-  },
-  {
-   "root": 3,
-   "index": 13,
-   "count": 676,
-   "exponent": 36,
-   "exact": false,
-   "id": "P3_I00013",
-   "remaining_actuals": [
-    36
    ]
   },
   {
@@ -2326,39 +2489,6 @@
    "id": "P3_I00023",
    "remaining_actuals": [
     78
-   ]
-  },
-  {
-   "root": 3,
-   "index": 27,
-   "count": 676,
-   "exponent": 100,
-   "exact": false,
-   "id": "P3_I00027",
-   "remaining_actuals": [
-    100
-   ]
-  },
-  {
-   "root": 3,
-   "index": 28,
-   "count": 676,
-   "exponent": 102,
-   "exact": false,
-   "id": "P3_I00028",
-   "remaining_actuals": [
-    102
-   ]
-  },
-  {
-   "root": 3,
-   "index": 34,
-   "count": 676,
-   "exponent": 136,
-   "exact": false,
-   "id": "P3_I00034",
-   "remaining_actuals": [
-    136
    ]
   },
   {

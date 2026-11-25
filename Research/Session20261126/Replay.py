@@ -29,6 +29,13 @@ def projection():
         excluded.update((p,f) for f in hits)
         proofs.append(dict(packet=path.name,sha256=digest,seed=[p,e],floor=floor,actuals=hits))
         print('PASS',p,e,floor,hits,flush=True)
+    sys.path.insert(0,str(H))
+    import PivotCheck
+    for path in sorted(H.glob('Pivot*.json.gz')):
+        p,e,floor,n=PivotCheck.verify(path)
+        assert path.name==f'Pivot{p}x{e}.json.gz' and (p,e) in original
+        excluded.add((p,e));proofs.append(dict(packet=path.name,sha256=sha256(path.read_bytes()).hexdigest(),seed=[p,e],floor=floor,forest_leaves=n,actuals=[e]))
+        print('PASS exact pivot',p,e,floor,n,flush=True)
     remaining=[];closed=[]
     for s in sh:
         left=[e for e in s['remaining_actuals'] if (s['root'],e) not in excluded]
