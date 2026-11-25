@@ -230,6 +230,11 @@ $$
 $$
 若 $5\mid N$，则按 $v_3(N)=2,4,\ge6$ 分三支。前两支分别由 $\sigma(3^2)=13$ 和 $\sigma(3^4)=11^2$ 强制 $13$ 和 $11$，第三支至少含 $3^6$。三个丰度下界分别为 $KI(3^2)I(5)I(13)$、$KI(3^4)I(5)I(11)$、$KI(3^6)I(5)$。有理数比较均严格大于 2。$\square$
 
+
+### 候选联合净成本证书（根 3，指数 1162）
+
+设普通素数 $u$ 的实际偶指数为 $h$。当 $u\equiv1\pmod3$ 时，$v_3(h+1)\le h/2$，故净成本至少为 $h(\ln u-2\ln3)$；多个余块须按总重数计价，不能分别采用单次重数的平方补价。`P3_I00193` 的森林与 LP 余块存在共享因子，原候选未获数学验收。见[独立审计](../Research/P3I00193Review/Readme.md)。
+
 ## 参考资料
 
 1. P. Ochem and M. Rao, “Odd perfect numbers are greater than $10^{1500}$”, Mathematics of Computation 81 (2012). [原文](../References/OchemRao2012.pdf)。
