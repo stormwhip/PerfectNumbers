@@ -68,4 +68,8 @@ python -I -S -B Research/Nov25/DirectedExperiment.py --p 19
 python -B Research/Nov25/LatticeScout.py --p 19 --s 172 --s 191 --s 230 --s 270 --s 283 --seconds 270 --output <仓库外文件>
 ```
 
-格证探测需要 SymPy 和 python-flint；如非标准安装，可用 `--flint-path` 指向已有发行目录。每个候选叶须过原有精确多项式与 Sturm 校验；探测结果不进入账本。
+格证探测需要 SymPy 和 python-flint；如非标准安装，可用 `--flint-path` 指向已有发行目录。每个候选叶须过原有精确多项式与 Sturm 校验；探测结果不进入账本。另见[支持、Pollard p−1 与根三单位约束试验](PrimeCuts.md)。
+
+## 根五简化交叉复验
+
+`python -I -S -B Research/Nov25/five/Simple520.py` 以相同终端权重将分界前移至 `s=300`。`q∣A` 的内部 Euler 总供给至多 265；外部高幂的 521 个 s 和外部一次幂的前 300 个 s 都直接以指标定价排除。其余外部一次幂给 `q≥2·5^300−1`，两个日志实现仍得到下界 `floor(log10 N) ≥ 2456`。它不调用来源间隙或付费来源分支，不另记一项。

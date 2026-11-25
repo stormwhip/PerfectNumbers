@@ -79,7 +79,12 @@ def verified_batches(workers=1):
              '31x396-CacheD31_396.json.gz', '13x42-CacheD13_42.json.gz',
              '13x38-NoExtra13_38.json.gz', '13x54-QFine13_54.json.gz', '13x68-NoExtra13_68.json.gz',
              '13x84-QFine13_84.json.gz', '19x68-QFine19_68.json.gz', '19x84-QFine19_84.json.gz',
-             '19x98-QFine19_98.json.gz')
+             '19x98-QFine19_98.json.gz',
+             '13x34-CacheD13_34.json.gz', '13x44-QFine13_44.json.gz', '13x48-CacheD13_48.json.gz',
+             '13x50-NoExtra13_50.json.gz', '13x56-NoExtra13_56.json.gz', '13x74-NoExtra13_74.json.gz',
+             '19x50-CacheD19_50.json.gz', '19x64-CacheD19_64.json.gz', '19x74-CacheD19_74.json.gz',
+             '19x104-QFine19_104.json.gz', '19x120-QFine19_120.json.gz', '19x124-QFine19_124.json.gz',
+             '31x26-CacheD31_26.json.gz', '31x32-Long231_32.json.gz')
     if workers == 1:
         return tuple(map(verify_job, names))
     with ProcessPoolExecutor(workers) as executor:

@@ -48,7 +48,8 @@ def primeprod(n):
     return prod(odd_primes(n))
 
 
-def model(logs=log_bounds, verify_all=True):
+def model(logs=log_bounds, verify_all=True, lower_q=Q):
+    Q = lower_q
     if verify_all:
         req(gcd(A, primeprod(L0-1)*2*5) == 1, 'root rough threshold')
     auth = json.loads(TRACE.read_bytes()); ext, = auth['cases']
@@ -160,11 +161,11 @@ def weighted(m, weights):
     return total + sum(min(0,*(reduced[j] for j,_,_ in g)) for g in groups.values())
 
 
-def verify(verbose=False, *, logs=log_bounds, verify_all=True):
+def verify(verbose=False, *, logs=log_bounds, verify_all=True, lower_q=Q):
     packet = json.loads((HERE/'Late520Dual.json').read_bytes())
-    m = model(logs, verify_all=verify_all)
+    m = model(logs, verify_all=verify_all, lower_q=lower_q)
     v = weighted(m, packet['weights'])
-    bound = v + DYADIC*logs(P5*A*Q)[0]
+    bound = v + DYADIC*logs(P5*A*lower_q)[0]
     req(bound > 2400*DYADIC*logs(10)[1], 'insufficient terminal lower bound')
     if verbose:
         print('late Euler dual: floor log10(N)', bound//(DYADIC*logs(10)[1]),
