@@ -40,6 +40,9 @@ def ledger(reg,workers):
         elif rel=='Research/MiddayGraph/Batch4_31x136d4.json.gz':
             from Release31136 import verify
             pair=(31,136)
+        elif rel=='Research/MiddayGraph/Next19x40d2.json.gz':
+            from Release1940 import verify
+            pair=(19,40)
         else:raise ValueError('unsupported prefix proof')
         keys=verify(f);need(keys=={pair} and keys<=ob,'wrong exact tree');proofs.append({'packet':rel,'seed':list(pair),'actuals':[pair[1]]})
     for rel,sha in reg.get('special',{}).items():
