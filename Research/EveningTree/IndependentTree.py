@@ -193,7 +193,7 @@ class Proof:
                 costs,ns,ds=allowance(self.p,t,used);k=bisect_right(costs,room)-1
                 if num*ns[k]<2*den*ds[k]: limit=t;break
             if limit==1:self.stats['deficient']+=1;return True
-        if len(parts)>6:return False  # failure, not closure
+        if len(parts)>getattr(self,'depth_limit',6):return False  # failure, not closure
         if blocks and (limit is None or max(blocks)>10000):
             z=max(blocks);c,m,a,ds=blocks[z]
             # Enumerate every integer f>=c without presupposing which congruence
@@ -258,7 +258,7 @@ def main():
         need((p,e) not in seen and tech in ('cut','size','valuation'),'duplicate or unknown technique');seen.add((p,e))
         if old is not None:need(old.pending(p,e),('not previously open',p,e))
         need(all(z>2 and sigma(p,e)%z==0 and prime(z) for z in fs),('uncertified divisor',p,e))
-        tr=Proof(p,e,fs,tech=='cut',tech=='valuation');need(tr.prove(),('tree incomplete',p,e,tr.stats));stats.update(tr.stats);roots[p]+=1
+        tr=Proof(p,e,fs,tech=='cut',tech=='valuation');tr.depth_limit=max(6,min(20,int(row.get('depth',6))));need(tr.prove(),('tree incomplete',p,e,tr.stats));stats.update(tr.stats);roots[p]+=1
         print(p,e,tech,dict(tr.stats),flush=True)
     print('ECPP_FILES',json.dumps(sorted(ECPP_FILES)))
     print('ALL VERIFIED',len(seen),'roots',dict(sorted(roots.items())),'totals',dict(stats),'novelty',('not checked' if old is None else 'checked'))

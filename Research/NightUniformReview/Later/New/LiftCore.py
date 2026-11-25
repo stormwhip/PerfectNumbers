@@ -1,0 +1,45 @@
+from Replay import *
+
+def run(x,mode):
+ p,e=x['p'],x['e'];rs=x['rs'];prof=O.profile(p);k=prof.kap;U=prof.U(e);P=p**(e+1);A=sig(p,e);pe=p**e
+ assert p%4==3 and e%2==0 and p**((k+1)*e)>B*U
+ if p==11:assert p**((k+1)*e)>B*U*max([F(1),*(v for t,v in hl(p,prof.top,k) if t<=e)])
+ else:assert p**(3*e)>B*U*prof.D(e)
+ primes(rs,A);ss=set(rs)|{r for r in small if A%r==0};C=chunks(p,e,ss);bs=blocks(p,C);cr={r:val(A,r) for r in ss};jp=[];vp=[]
+ for r in rs:
+  c=cr[r];f=c+c%2
+  while any(sig(r,f)%t==0 for t in O.tb.forbidden(p)):f+=2
+  jp.append(r**(f-c));vp.append(price(p,k,r,c));assert vp[-1]==max(1,O.price(p,k,r,c))
+ ds=O.G.discounts(p,prof);sp={r for t,x0,d,w in ds for r in w};C2=chunks(p,e,ss|{r for r in sp if A%r==0});bs2=blocks(p,C2)
+ base=pe*A*prod(jp);mv=[1,*jp,*[l for h,l,v in bs]];M=base*prod(l for h,l,v in bs);mx=max(mv);vpre=[1,*vp,*[v*v for h,l,v in bs]];K=p**((k+1)*e);Vfull=F(K*prod(vpre),U);V=Vfull/max(vpre);M2=base*prod(l for h,l,v in bs2);mx2=max([1,*jp,*[l for h,l,v in bs2]]);VS=K*prod(v for r,v in zip(rs,vp) if r not in sp)*prod(v*v for h,l,v in bs2)
+ ct=collections.Counter();surv=[];post=[];outside=[];ker=[];w={};Ctot=prod(C.values());maxc=logi(Ctot,10001)
+ for s in range(e+1):
+  Y=p**s;Q=max(5,2*Y-1);den=max(Q,P)*(P//Y+4);budget=B*Y**k
+  if Vfull*Q>budget or M*Q>B or (M*Q**2*Y>=B*mx*den and 2*M*Q**2>=3*B):ct['kernel']+=1;continue
+  ker.append(s)
+  loss=prod(d for t,x0,d,ws in ds if t<=e-s and not any(r%4==3 or r<Q or val(r+1,p)!=s for r in ws))
+  if VS*Q>budget*loss or M2*Q>B or (M2*Q**2*Y>=B*mx2*den and 2*M2*Q**2>=3*B):ct['sponsor']+=1;continue
+  post.append(s);N=2*V.numerator*Q**2;Z=3*budget*V.denominator;b=0 if N<=Z else (logi((N-1)//Z,p)//(k-1)+1)
+  if b>e-s:ct['b']+=1;continue
+  if 2*M*Q**2*p**b<=3*B:outside.append(s)
+  room=B*mx//(M*Q);need=2*Q*p**b//3;Z=Y*p**b;th=Z*Q//(max(P,Q)*(P//Z+4));hit=None
+  for r,c in cr.items():
+   for f in range(c+c%2,c+logi(room,r)+1,2):
+    if r**(f-c)<=th or r**f<=need:continue
+    n=sig(r,f)
+    if val(n,p)>=b and qfactor(n,Y,Q,min(n,B//(pe*A))):hit=('known',r,c,f,b);break
+   if hit:break
+  if not hit:
+   for g in range(logi(room,10001)+1):
+    if g==0 and th>=1:continue
+    lo=max(10001,root(th,g)+1) if g else 10001;hi=root(room,g) if g else Ctot
+    if lo>hi:continue
+    for h,n in C.items():
+     for c in range(2-g%2,logi(n,lo)+1,2):
+      f=c+g;L=max(lo,root(need,f)+1);H=min(hi,root(n,c));
+      if cand(n,c,p,f,L,H,b,h,mode):hit=('unknown',h,c,f,b);break
+     if hit:break
+    if hit:break
+  if hit:surv.append(s);w[s]=hit
+  else:ct['inside_empty']+=1
+ return dict(p=p,e=e,multipliers=dict(size=[str(i) for i in mv],valuation=[str(i) for i in vpre],sponsor_bases=sorted(sp)),kernel=ker,post_sponsor=post,outside=outside,inside=surv,first=[[s,w[s]] for s in surv[:1]],counts=ct)

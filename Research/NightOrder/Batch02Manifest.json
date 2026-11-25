@@ -1,0 +1,65 @@
+{
+ "baseline": "3b50576",
+ "actuals": [
+  [
+   7,
+   972
+  ],
+  [
+   11,
+   388
+  ],
+  [
+   11,
+   402
+  ],
+  [
+   11,
+   436
+  ],
+  [
+   13,
+   532
+  ],
+  [
+   13,
+   684
+  ],
+  [
+   31,
+   282
+  ]
+ ],
+ "complete_shards": [
+  "P11_I00075",
+  "P31_I00059"
+ ],
+ "command": "python -B Research/NightOrder/Replay.py --input Batch02.json",
+ "hashes": {
+  "Research/EveningMerge/Audit.json": "5c7455f8a2bbe24e5dcc2e85efbf2ac0aa4466f7507a5005285ebaf321c0c393",
+  "Research/EveningTree/IndependentTree.py": "a89658c2b562a40d3d3696ce71f912d01f6b9ad981f53d8b652e6e42497bf6c9",
+  "Research/NightOrder/Batch02.json": "44d569d626e90e767c91e8035f3dee1d3836385ebc887f15cb52566b44f97db1",
+  "Research/NightOrder/ECPP/08e80e30ce5157980e8ac3fd.json.gz": "4949fdcd6958c6fadee25e32c1ced49c02d6160238cb067da85e4fca9763869b",
+  "Research/NightOrder/ECPP/0e0b518b5497ec509c0f56c5.json.gz": "c845086b1e17e06dcb36e970520bba45afe8171a8ef8294a890709b4fb5695b7",
+  "Research/NightOrder/ECPP/2bcf90aab25acc56f3637e3e.json.gz": "c0baf6f3437d5c278d0073521e9086a8db32ee5467976ac7fd4ede2df79b7d92",
+  "Research/NightOrder/ECPP/43e9600b9dfb876820570df4.json.gz": "969e7320e55eb19a0b495c5eb8584bbce81dbf97a2a3a4f36a30510dd21d17f5",
+  "Research/NightOrder/ECPP/4fb71e6ca30b5715224471bd.json.gz": "945293e9a084ae09c7f83ec69e96e90f66b5b78165aae30fd0d692a70e73ab30",
+  "Research/NightOrder/ECPP/59e7a74c73ce338d7a94ce0c.json.gz": "c8643a0405abe11e90dbd1b9dbf4b69a66733d5c06b8d444a33452e76e2974e7",
+  "Research/NightOrder/ECPP/64f31de48d475e3609ffffff.json.gz": "a191254b581d9236055b01285f8b6444b4819e8018fa270dd18404064ffa736d",
+  "Research/NightOrder/ECPP/6b7c5694bcd3e473483373e1.json.gz": "c770cc1d02c449fc2740757db3a68c6e80d00891d2ec0302912575b8d8c4e700",
+  "Research/NightOrder/ECPP/763d6f593c8df7c10f10b7a3.json.gz": "b0330654f512cf45cd6661d526d28035fc03c472fe7a1fd098bbe1c93dce4ebe",
+  "Research/NightOrder/ECPP/7d8369335438c4e3f3a6e8ef.json.gz": "79702575493d9bfcfd478ac2b3694239f5bd78efe48108156ba0d61a63472772",
+  "Research/NightOrder/ECPP/8425a6c6e32ee82c59dc8662.json.gz": "72d39f0f4764b2657868c33f10142fc31a2c9f55a0c6ea190b7b446dd82cc5aa",
+  "Research/NightOrder/ECPP/8bd442745789bf1e79fd69a6.json.gz": "e66e05b6719e0f7539d55f7f6b7f58043f89166c172dd388b4c50220c1bdb407",
+  "Research/NightOrder/ECPP/900eb0bbe4651928ad62573c.json.gz": "dee94767603ebe0752a88a2f0fdf74367371dc21cae3ce6f1e362f1cbc1700a4",
+  "Research/NightOrder/ECPP/9b1d9ddc620a512c290efd28.json.gz": "ae6f14613f5f26e29647a922234b29bbd50d9c4949ace49754a2063d9141854d",
+  "Research/NightOrder/ECPP/a49a740b42b89943eab9e5c2.json.gz": "d92c942352bf6d2662e2f8e83f10a613165b0e10c0ba6d6acec338a9d671216e",
+  "Research/NightOrder/ECPP/eff08b1c69ce60e2c65423e0.json.gz": "86754286b883900832bb4615a5a03b4bb529f5bc29dd27947acad5a75116363b",
+  "Research/NightOrder/ECPP/f04b28ce8cebbd635ff9b976.json.gz": "a10583e61ec3d5e4915acc5a653b3b0d48a40a7dfbc09c134cb4a6a4f48ecbc9",
+  "Research/NightOrder/ECPP/f62c7c2174f11eb4a870b3d0.json.gz": "423d8fe79275b7870fef4f836882a09136d5d82a0e9dbae731da79d36834ea45",
+  "Research/NightOrder/Replay.py": "bb0508e02100b90de49d23ff113248108f1b258441bb933c7fc0175f87a7c0af",
+  "Research/RootFiveNext/PrimeCheck.py": "5119ef57a4f88b04577657841db7cc6ee915b89649d909a71f70ac6b10c5fea9",
+  "Research/TeichmullerValuation/VerifyGeminiExponents2400.py": "7ce91e9f01d139545c96bb00e89b36716a4926b538cadd74320ed92c6e5ab9b5",
+  "Research/TeichmullerValuation/VerifyTeichmullerValuation2400.py": "8fb9fd62b71dc05cebd16ca2921c837f0f7edc15a47d48837d7c5a2245c10a00"
+ }
+}

@@ -1,0 +1,331 @@
+{
+ "commit": "a443374",
+ "input_set_digest": "9c53acf144793d0b299cf7700b74248c05039f9d631dd46e2f1881424e59fa41",
+ "proof_jobs": 80,
+ "cold_wall_seconds": 1501.1,
+ "hardware": "Intel Core i9-14900HX (24 physical cores), Windows Python 3.11.9; 10 concurrent replays; other searches running",
+ "new_shards": 228,
+ "remaining": 652,
+ "job_results": [
+  {
+   "job": "extra-ExtraAnchors.json",
+   "seconds": 22.263
+  },
+  {
+   "job": "five-Batch1.json",
+   "seconds": 15.6
+  },
+  {
+   "job": "five-Batch10.json",
+   "seconds": 40.326
+  },
+  {
+   "job": "five-Batch12.json",
+   "seconds": 241.875
+  },
+  {
+   "job": "five-Batch13.json",
+   "seconds": 687.866
+  },
+  {
+   "job": "five-Batch14.json",
+   "seconds": 779.194
+  },
+  {
+   "job": "five-Batch15.json",
+   "seconds": 697.966
+  },
+  {
+   "job": "five-Batch17.json",
+   "seconds": 806.665
+  },
+  {
+   "job": "five-Batch3.json",
+   "seconds": 15.688
+  },
+  {
+   "job": "five-Batch4.json",
+   "seconds": 13.824
+  },
+  {
+   "job": "five-Batch5.json",
+   "seconds": 14.716
+  },
+  {
+   "job": "five-Batch6.json",
+   "seconds": 22.682
+  },
+  {
+   "job": "five-Batch8.json",
+   "seconds": 31.283
+  },
+  {
+   "job": "five-Batch9.json",
+   "seconds": 17.325
+  },
+  {
+   "job": "five-ChainPacket340.json",
+   "seconds": 140.506
+  },
+  {
+   "job": "five-ChainPacket376.json",
+   "seconds": 202.831
+  },
+  {
+   "job": "five-more",
+   "seconds": 16.459
+  },
+  {
+   "job": "order-Batch01.json",
+   "seconds": 194.692
+  },
+  {
+   "job": "order-Batch02.json",
+   "seconds": 118.322
+  },
+  {
+   "job": "order-Batch03.json",
+   "seconds": 433.241
+  },
+  {
+   "job": "order-Batch04.json",
+   "seconds": 364.189
+  },
+  {
+   "job": "order-Batch05.json",
+   "seconds": 508.307
+  },
+  {
+   "job": "order-Batch06.json",
+   "seconds": 677.417
+  },
+  {
+   "job": "order-Batch07.json",
+   "seconds": 571.685
+  },
+  {
+   "job": "order-Batch08.json",
+   "seconds": 1051.231
+  },
+  {
+   "job": "order-Batch09.json",
+   "seconds": 317.121
+  },
+  {
+   "job": "order-Batch10.json",
+   "seconds": 316.642
+  },
+  {
+   "job": "pilot",
+   "seconds": 27.222
+  },
+  {
+   "job": "source-nodes-ReleaseA.json",
+   "seconds": 119.133
+  },
+  {
+   "job": "three-Batch1",
+   "seconds": 76.231
+  },
+  {
+   "job": "three-Batch2",
+   "seconds": 102.785
+  },
+  {
+   "job": "three-Batch3",
+   "seconds": 4.996
+  },
+  {
+   "job": "three-Batch4",
+   "seconds": 3.511
+  },
+  {
+   "job": "three-BatchAA",
+   "seconds": 16.547
+  },
+  {
+   "job": "three-BatchAC",
+   "seconds": 76.953
+  },
+  {
+   "job": "three-BatchAD",
+   "seconds": 234.266
+  },
+  {
+   "job": "three-BatchAE",
+   "seconds": 66.442
+  },
+  {
+   "job": "three-BatchAF",
+   "seconds": 16.248
+  },
+  {
+   "job": "three-BatchAuto00",
+   "seconds": 1.986
+  },
+  {
+   "job": "three-BatchAuto01",
+   "seconds": 47.102
+  },
+  {
+   "job": "three-BatchAuto02",
+   "seconds": 157.269
+  },
+  {
+   "job": "three-BatchE",
+   "seconds": 11.244
+  },
+  {
+   "job": "three-BatchF",
+   "seconds": 49.093
+  },
+  {
+   "job": "three-BatchG",
+   "seconds": 132.139
+  },
+  {
+   "job": "three-BatchH",
+   "seconds": 6.385
+  },
+  {
+   "job": "three-BatchI",
+   "seconds": 94.323
+  },
+  {
+   "job": "three-BatchK",
+   "seconds": 126.37
+  },
+  {
+   "job": "three-BatchL",
+   "seconds": 5.428
+  },
+  {
+   "job": "three-BatchM",
+   "seconds": 21.936
+  },
+  {
+   "job": "three-BatchN",
+   "seconds": 232.641
+  },
+  {
+   "job": "three-BatchO",
+   "seconds": 172.458
+  },
+  {
+   "job": "three-BatchP",
+   "seconds": 10.89
+  },
+  {
+   "job": "three-BatchQ",
+   "seconds": 63.217
+  },
+  {
+   "job": "three-BatchQueue00",
+   "seconds": 7.781
+  },
+  {
+   "job": "three-BatchQueue01",
+   "seconds": 24.371
+  },
+  {
+   "job": "three-BatchQueue02",
+   "seconds": 2.369
+  },
+  {
+   "job": "three-BatchQueue03",
+   "seconds": 10.329
+  },
+  {
+   "job": "three-BatchR",
+   "seconds": 43.087
+  },
+  {
+   "job": "three-BatchS",
+   "seconds": 20.782
+  },
+  {
+   "job": "three-BatchT",
+   "seconds": 276.257
+  },
+  {
+   "job": "three-BatchU",
+   "seconds": 1.596
+  },
+  {
+   "job": "three-BatchV",
+   "seconds": 172.755
+  },
+  {
+   "job": "three-BatchW",
+   "seconds": 25.03
+  },
+  {
+   "job": "three-BatchY",
+   "seconds": 230.249
+  },
+  {
+   "job": "three-BatchZ",
+   "seconds": 26.385
+  },
+  {
+   "job": "uniform-Verify19.py-1048",
+   "seconds": 366.234
+  },
+  {
+   "job": "uniform-Verify31.py-598",
+   "seconds": 69.069
+  },
+  {
+   "job": "uniform-Verify31.py-682",
+   "seconds": 43.612
+  },
+  {
+   "job": "uniform-Verify31.py-690",
+   "seconds": 131.689
+  },
+  {
+   "job": "uniform-later/new/verify.py-1030",
+   "seconds": 79.656
+  },
+  {
+   "job": "uniform-later/new/verify.py-550",
+   "seconds": 94.325
+  },
+  {
+   "job": "uniform-later/new/verify.py-592",
+   "seconds": 159.273
+  },
+  {
+   "job": "uniform-later/new/verify.py-666",
+   "seconds": 77.849
+  },
+  {
+   "job": "uniform-later/new/verify.py-696",
+   "seconds": 32.331
+  },
+  {
+   "job": "uniform-later/new/verify.py-702",
+   "seconds": 34.627
+  },
+  {
+   "job": "uniform-later/new/verify.py-712",
+   "seconds": 90.6
+  },
+  {
+   "job": "uniform-later/new/verify.py-732",
+   "seconds": 161.503
+  },
+  {
+   "job": "uniform-later/new/verify.py-742",
+   "seconds": 26.542
+  },
+  {
+   "job": "uniform-later/new/verify.py-756",
+   "seconds": 181.28
+  },
+  {
+   "job": "uniform-later/new/verify.py-988",
+   "seconds": 34.663
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "baseline": "3b50576",
+ "scope": "diagnostic only, no exclusions",
+ "size_abundance": {
+  "inputs": 1668,
+  "depth": 6,
+  "nodes_per_case": 140,
+  "closed": 0,
+  "positive_dual_leaves": 0,
+  "first_open": {
+   "p": 3,
+   "e": 1278,
+   "ok": false,
+   "elapsed": 0.048727899993536994,
+   "n": 7,
+   "dual": 0,
+   "first": [
+    [
+     [
+      [
+       "3",
+       1278
+      ],
+      [
+       "249176491331",
+       1
+      ],
+      [
+       "491137",
+       2
+      ],
+      [
+       "2579",
+       2
+      ],
+      [
+       "337",
+       2
+      ],
+      [
+       "883",
+       2
+      ],
+      [
+       "43",
+       2
+      ]
+     ],
+     2,
+     2059
+    ]
+   ],
+   "fs": []
+  },
+  "elapsed_tree_seconds": 1181.1
+ },
+ "square_kernel": {
+  "rows": 780,
+  "max_gain_bits": 29,
+  "multi_block_count": 1,
+  "multiplier_cutoff": 25000
+ },
+ "euler_location_only": {
+  "complete": 0
+ },
+ "switch": "indexed higher-level factors; tighter legal-price and directed source cuts"
+}

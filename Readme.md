@@ -2,10 +2,10 @@
 
 目标是证明每个奇完全数 $N>10^{2400}$，并让独立程序复核证明。
 
-截至 2026-11-24，**2,192 / 3,072** 个规范分片已闭合，余 **880** 个。原八根互素类已通过独立证书，证明 `log10 N >= 4183.209493`。全局状态为 `INCOMPLETE_FRONTIER`。
+截至北京时间 2026-11-25，此研究分支有 **2,646 / 3,072** 个规范分片闭合，余 **426** 个。夜间相对 `3b50576` 净增 454 个完整分片、1106 个实际指数。原八根互素类保持 `log10 N >= 4183.209493`；与 3、5、7 均互素时，独立重建的终端证书给出 `log10 N >= 2406.575051`。全局状态为 `INCOMPLETE_FRONTIER`。
 
 - [总证明](Documentation/Proof2400.md)
-- [当前状态](Documentation/CurrentStatus2400.md)及[逐片待证清单](Research/EveningMerge/Audit.json)
+- [当前状态](Documentation/CurrentStatus2400.md)及[逐片待证清单](Research/NightMerge/Audit.json)
 - [下一步计划](Documentation/NextPlan2400.md)
 - [仓库目录](Documentation/RepositoryMap.md)和[历史实验](Records/ExperimentLog.md)
 
@@ -25,6 +25,9 @@ python3 Research/TeichmullerValuation/AuditTeichmullerValuation2400.py --output 
 cmp Research/TeichmullerValuation/Audit2400.json Build/AuditTeichmuller2400.json
 python3 Research/TeichmullerValuation/AuditGeminiBatch2400.py --remaining Build/RemainingBeforeGapSupply2400.json
 python3 Research/EveningMerge/VerifyFrontier.py --workers 6
+python3 -B Research/NightMerge/ParallelReplay.py --workers 10 --fresh --receipts ../PerfectNumbersNightReceipts
 ```
+
+最后一条命令应在干净检出中运行，回执目录位于仓库外。只需重算分片清单时，可运行 `python3 -B Research/NightMerge/Checkpoint.py --manifest-only`。各方法的独立覆盖数与重叠统计见[方法统计](Research/NightMerge/MethodCensus.json)。
 
 长时研究搜索使用 [V21](Sources/Cpp/ProofTreeV21.cpp)、[调度器](Sources/Python/Run2400Scheduler.py) 和 [Linux/WSL2 脚本](Scripts/Run72hWSL.sh)。运行产物存放在 `Build/` 或 `Run2400Results/`。工程基准与证明实验见 [实验日志](Records/ExperimentLog.md)，背景论文见 [Ochem–Rao 2012](References/OchemRao2012.pdf)。

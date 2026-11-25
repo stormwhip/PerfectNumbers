@@ -1,0 +1,250 @@
+Beijing_time	stage	baseline	actuals_added	shards_added	remaining	observations_and_next
+2026-11-24T21:40+08:00	start	3b50576bc6af2a8fa3e6ed1bee077039b1ed86ce	0	0	880	main fetched; open PRs 0; 666 singleton shards, each distinct. Resume: git checkout overnight-certified-frontier; python -B Research/NightMerge/Checkpoint.py.
+2026-11-24T21:45+08:00	pilot-11-306	3b50576	1	1	879	P11_I00061; two ECPP chains (17,18 levels); depth6 stopped at node8; depth9 independently replays 29 nodes; complete feasible exponents with monotone size tails; no open PR overlap at start. Next: expand ranked singletons and compare shared-block screens.
+2026-11-24T22:13+08:00	order01-five1	3b50576	24	8	871	Cumulative 25 pairs/9 shards; no open PR at launch. Checkpoint.py replays pilot, order batch01 (21), and five batch1 (3). Shared64: 50 blocks, up to 477 extra bits, zero complete; MaskSieve 44,084 mask cells remain, residual dual 44,022. Next: certified secondary witnesses and shared source windows.
+2026-11-24T22:20+08:00	order02	3b50576	7	2	869	7 replays in 88.9s; total 32 new actuals,11 shards. Resume from registry; --manifest-only is not proof. New masks/secondary source searches in progress.
+2026-11-24T22:23+08:00	three1+S,five2	3b50576	15	9	860	Total 47 actuals/20 shards, 871->869->860. Three Batch1/BatchS independent 8 (first five close no shard alone), five 7/6. Uniform mask tail down 43 more conditional cells only. Continue with targeted factor/cofactor sources.
+2026-11-24T22:43+08:00	order03, five3	3b50576	43	14	846	Order 40 cases in 358s, 3 exact root5 cofactor residues. Global single multiplier trial 1668 inputs/0 leaves, stopped and switched; 338 shared recursive trees no complete tail within frontier. PR overlap recheck 22:34 none.
+2026-11-24T22:52+08:00	three2+T	3b50576	10	3	843	100 complete actuals, 37 net shards from starting main; full source-window replays independently pass, no timeout credit. Next: ECM at secondary source leaves in parallel with uniform tests.
+2026-11-24T22:53+08:00	threeE,five4	3b50576	3	3	840	Root3 secondary ECM certified by independent ECPP and complete enumeration; root5 exact dual prices in two additional lines. 103 complete actuals and 40 net shards.
+2026-11-24T22:55+08:00	five5	3b50576	1	1	839	Exact paid/nonpaid Euler source cases excluded for 5/508. 104 actuals,41 completed shards. SHA-preserving API fallback for prior checkpoints worked.
+2026-11-24T22:59+08:00	three3,4,F,H	3b50576	5	2	837	Cumulative109 actuals,43 complete shards; first low-value closures at 3/766 and 3/690. Order04 replay in progress. Reuse new sigma-chain ECM hints separately.
+2026-11-24T23:01+08:00	order-Batch04	3b50576	40	11	826	Standalone replay passed. Total actuals=149; net shards=54. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-24T23:02+08:00	three-BatchG	3b50576	3	2	824	Standalone replay passed. Total actuals=152; net shards=56. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-24T23:07+08:00	three-BatchR	3b50576	7	4	820	Standalone replay passed. Total actuals=159; net shards=60. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-24T23:07+08:00	five6	3b50576	2	2	818	New exponents 576,616; independently validated all root and secondary sigma divisors. P5_I00105,P5_I00112. After concurrently registered three/BatchR: 161 confirmed actuals,62 complete shards.
+2026-11-24T23:14+08:00	three-BatchI	3b50576	2	2	816	Standalone replay passed. Total actuals=163; net shards=64. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-24T23:13+08:00	ecm111	3b50576	1	1	816	11/250: 201-digit prime comes from sigma(z^4); 26 nodes. Together with concurrent three/BatchI the union reached 163 actuals and 64 shards. Exact commit deltas in Measured.tsv.
+2026-11-24T23:14+08:00	order-Batch05	3b50576	40	15	801	Standalone replay passed. Total actuals=203; net shards=79. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-24T23:21+08:00	five7	3b50576	1	0	801	5/376 passed two 4610-node replays; neither divisibility shard is fully closed. 204 actuals,79 net shards. Open PR count rechecked 0 at 23:09.
+2026-11-24T23:31+08:00	five8+9	3b50576	5	5	796	Explicit guard for secondary pivot that might be Euler. Clean replay of earlier 26 jobs at 057968b: 343.7s at 6 workers.
+2026-11-24T23:34+08:00	LLL(11,760)-partial	3b50576	0	0	796	Found 28 short integer relations (dimension7,power4) for all remaining rectangles at s=563,564,565; no LLL library trusted. Full exponent not yet registered pending independent whole-domain verifier. LatticeTests passes 609 planted-root cases.
+2026-11-24T23:37+08:00	order-Batch06	3b50576	40	13	783	Standalone replay passed. Total actuals=249; net shards=97. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-24T23:40+08:00	three-BatchK	3b50576	4	2	781	Standalone replay passed. Total actuals=253; net shards=99. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-24T23:44+08:00	three-BatchL	3b50576	2	0	781	Standalone replay passed. Total actuals=255; net shards=99. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-24T23:48+08:00	three-BatchM	3b50576	2	2	778	Standalone replay passed. Total actuals=260; net shards=102. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-24T23:48+08:00	five10+11	3b50576	3	1	780	5/340:3597 nodes,5/528 and 540: interval-verified refunded prices. Machine audit reports 260 102 778. No partial shards counted.
+2026-11-24T23:56+08:00	order-Batch07	3b50576	39	14	764	Standalone replay passed. Total actuals=299; net shards=116. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-24T23:59+08:00	three-BatchP	3b50576	5	4	760	Standalone replay passed. Total actuals=304; net shards=120. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-24T23:59+08:00	five12	3b50576	9	5	755	VerifySnapshot.py passed; cumulative 313 actuals / 125 complete shards.
+2026-11-25T00:01+08:00	uniform19 + short2	3b50576	see union	see union	see audit	Two whole-progression packets 31/598 and 19/682 reduce 7242+7062 certificates to 2+4 exact polynomial witnesses. Verified19: 15935 complete s levels, including 28 leaves for 11/760. Overlaps with NightOrder removed.
+2026-11-25T00:03+08:00	three-BatchU	3b50576	2	2	743	Standalone replay passed. Total actuals=325; net shards=137. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:05+08:00	three-BatchQ	3b50576	4	3	740	Standalone replay passed. Total actuals=329; net shards=140. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:05+08:00	three-BatchW	3b50576	2	2	738	Standalone replay passed. Total actuals=331; net shards=142. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:08+08:00	uniform-31/550	3b50576	0	0	738	Cold independent full-domain replay passed. No partial boxes counted.
+2026-11-25T00:11+08:00	uniform-31/592	3b50576	0	0	738	Cold independent full-domain replay passed. No partial boxes counted.
+2026-11-25T00:11+08:00	uniform-19/666	3b50576	0	0	738	Cold independent full-domain replay passed. No partial boxes counted.
+2026-11-25T00:12+08:00	uniform-19/690	3b50576	1	1	737	Cold independent full-domain replay passed. No partial boxes counted.
+2026-11-25T00:15+08:00	three-BatchN	3b50576	8	5	732	Standalone replay passed. Total actuals=340; net shards=148. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:22+08:00	uniform-7/988	3b50576	0	0	732	Cold independent full-domain replay passed. No partial boxes counted.
+2026-11-25T00:22+08:00	uniform-11/712	3b50576	0	0	732	Cold independent full-domain replay passed. No partial boxes counted.
+2026-11-25T00:22+08:00	five13	3b50576	15	12	720	VerifyAny.py passed; cumulative 355 actuals / 160 complete shards.
+2026-11-25T00:25+08:00	uniform-11/756	3b50576	1	1	719	Cold independent full-domain replay passed. No partial boxes counted.
+2026-11-25T00:26+08:00	three-BatchV	3b50576	12	5	714	Standalone replay passed. Total actuals=368; net shards=166. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:27+08:00	three-BatchAA	3b50576	1	1	713	Standalone replay passed. Total actuals=369; net shards=167. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:28+08:00	three-BatchAuto00	3b50576	1	1	712	Standalone replay passed. Total actuals=370; net shards=168. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:29+08:00	order-Batch08	3b50576	38	11	701	Standalone replay passed. Total actuals=408; net shards=179. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:32+08:00	three-BatchO	3b50576	6	5	696	Standalone replay passed. Total actuals=414; net shards=184. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:35+08:00	five14	3b50576	4	2	694	VerifyMid.py passed; cumulative 418 actuals / 186 complete shards.
+2026-11-25T00:35+08:00	five15	3b50576	9	8	686	VerifySmall.py passed; cumulative 427 actuals / 194 complete shards.
+2026-11-25T00:37+08:00	order-Batch09	3b50576	35	7	679	Standalone replay passed. Total actuals=462; net shards=201. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:37+08:00	uniform11/732,742,702	3b50576	see Measured.tsv	see ledger	see ledger	Exact row/CRT/sturm certificates checked separately. Lifted D1/D2 modulus increases to p^(s+b) but q minimum still uses p^s. Overlap removed.
+2026-11-25T00:39+08:00	three-BatchAuto01	3b50576	1	1	677	Standalone replay passed. Total actuals=464; net shards=203. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:44+08:00	three-BatchY	3b50576	9	6	671	Standalone replay passed. Total actuals=473; net shards=209. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:46+08:00	three-BatchAC	3b50576	4	4	667	Standalone replay passed. Total actuals=477; net shards=213. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:47+08:00	uniform-7/1030	3b50576	0	0	667	Cold independent full-domain replay passed. No partial boxes counted.
+2026-11-25T00:46+08:00	root-source tree A	3b50576	see audit	see audit	see audit	Independent cached replayer in clean interpreter: 11/742 (overlap),7/1032; 43,15 nodes respectively; 111.389 sec. 7/1030 separately: 6 polynomial leaves.
+2026-11-25T00:50+08:00	three-BatchAD	3b50576	1	1	665	Standalone replay passed. Total actuals=479; net shards=215. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:56+08:00	order-Batch10	3b50576	21	1	664	Standalone replay passed. Total actuals=500; net shards=216. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T00:59+08:00	three-BatchAuto02	3b50576	3	3	661	Standalone replay passed. Total actuals=503; net shards=219. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:00+08:00	three-BatchAF	3b50576	1	0	661	Standalone replay passed. Total actuals=504; net shards=219. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:01+08:00	uniform-11/696-id	3b50576	0	0	661	Whole-domain identity-priced replayer passed; overlaps removed.
+2026-11-25T01:02+08:00	three-BatchAE	3b50576	3	3	658	Standalone replay passed. Total actuals=507; net shards=222. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:03+08:00	root13-independent-six	3b50576	0	0	see audit	Standalone Verify.py uses only stdlib and reproduces six fully covered exponents which overlap order01/03/04. 26 lower inputs failed; no additional counts. Published lemma derivation in existing total proof.
+2026-11-25T01:03+08:00	three-BatchQueue00	3b50576	1	0	658	Standalone replay passed. Total actuals=508; net shards=222. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:04+08:00	five17	3b50576	2	2	656	VerifyOldPrice.py passed; cumulative 510 actuals / 224 complete shards.
+2026-11-25T01:05+08:00	three-BatchQueue01	3b50576	2	1	655	Standalone replay passed. Total actuals=512; net shards=225. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:06+08:00	three-BatchQueue02	3b50576	1	1	654	Standalone replay passed. Total actuals=513; net shards=226. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:07+08:00	three-BatchZ	3b50576	5	1	653	Standalone replay passed. Total actuals=518; net shards=227. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:09+08:00	three-BatchQueue03	3b50576	2	1	652	Standalone replay passed. Total actuals=520; net shards=228. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:15+08:00	order-Batch11	3b50576	14	4	648	Standalone replay passed. Total actuals=534; net shards=232. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:23+08:00	three-BatchQueue04	3b50576	2	1	647	Standalone replay passed. Total actuals=536; net shards=233. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:31+08:00	three-BatchAG	3b50576	3	2	645	Standalone replay passed. Total actuals=539; net shards=235. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:32+08:00	uniform-19/670-id	3b50576	0	0	645	Whole-domain identity-priced replayer passed; overlaps removed.
+2026-11-25T01:33+08:00	three-BatchQueue05	3b50576	2	1	644	Standalone replay passed. Total actuals=541; net shards=236. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:35+08:00	five16	3b50576	2	1	643	VerifyPromoted.py passed; cumulative 543 actuals / 237 complete shards.
+2026-11-25T01:35+08:00	order-Batch12	3b50576	24	10	633	Standalone replay passed. Total actuals=567; net shards=247. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:40+08:00	root5 independence audit and queue guard	3b50576	0	0	see machine audit	Three conditional roots (460,568,592) plus 196,178 independently modeled; old high/root gate shared between original dual implementations, not two independent axioms. Squarefree kernel 5/520 > 10^11, but 520 stays OPEN. Exact 3 chunks at 196 rejected omitted odd f=1, duplicate, stale inputs, budget=0.
+2026-11-25T01:43+08:00	three-BatchAH	3b50576	1	1	632	Standalone replay passed. Total actuals=568; net shards=248. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:46+08:00	five20	3b50576	1	1	631	VerifyRefresh.py passed; cumulative 569 actuals / 249 complete shards.
+2026-11-25T01:48+08:00	cold-validation	3b50576	0	0	see audit	Clean detached a443374: all 80 packets passed with 10 workers in 1501.1s ->228 net shards. Full audited payload after NUL-path repair. A rehearsal, not an estimate for unsolved cases.
+2026-11-25T01:53+08:00	three-BatchAI	3b50576	2	1	630	Standalone replay passed. Total actuals=571; net shards=250. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:54+08:00	order-Batch13	3b50576	17	5	625	Standalone replay passed. Total actuals=588; net shards=255. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T01:56+08:00	three-BatchQueue07	3b50576	1	0	625	Standalone replay passed. Total actuals=589; net shards=255. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:00+08:00	three-BatchAuto07	3b50576	3	2	623	Standalone replay passed. Total actuals=592; net shards=257. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:00+08:00	three-BatchAJ	3b50576	4	2	621	Standalone replay passed. Total actuals=596; net shards=259. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:01+08:00	three-BatchQueue08	3b50576	1	1	620	Standalone replay passed. Total actuals=597; net shards=260. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:03+08:00	three-BatchX	3b50576	3	3	617	Standalone replay passed. Total actuals=600; net shards=263. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:04+08:00	five19	3b50576	1	0	617	VerifySibling.py passed; cumulative 601 actuals / 263 complete shards.
+2026-11-25T02:09+08:00	three-BatchAK	3b50576	4	2	615	Standalone replay passed. Total actuals=605; net shards=265. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:13+08:00	five18	3b50576	1	1	614	VerifyWide.py passed; cumulative 606 actuals / 266 complete shards.
+2026-11-25T02:14+08:00	three-BatchAuto08	3b50576	3	1	613	Standalone replay passed. Total actuals=609; net shards=267. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:18+08:00	order-Batch14	3b50576	19	5	608	Standalone replay passed. Total actuals=628; net shards=272. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:19+08:00	three-BatchQueue09	3b50576	2	1	607	Standalone replay passed. Total actuals=630; net shards=273. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:20+08:00	three-BatchQueue11	3b50576	1	1	606	Standalone replay passed. Total actuals=631; net shards=274. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:21+08:00	three-BatchQueue10	3b50576	2	0	606	Standalone replay passed. Total actuals=633; net shards=274. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:21+08:00	three-BatchQueue12	3b50576	1	0	606	Standalone replay passed. Total actuals=634; net shards=274. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:23+08:00	three-BatchQueue13	3b50576	1	0	606	Standalone replay passed. Total actuals=635; net shards=274. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:24+08:00	three-BatchAL	3b50576	2	1	605	Standalone replay passed. Total actuals=637; net shards=275. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:26+08:00	five21	3b50576	1	1	604	VerifySecond.py passed; cumulative 638 actuals / 276 complete shards.
+2026-11-25T02:26+08:00	three-BatchQueue14	3b50576	1	0	604	Standalone replay passed. Total actuals=639; net shards=276. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:27+08:00	shared support obstruction	3b50576	0	0	see audit	If 3*5*17*31 divides N, 18 additional small primes through 83 are universally excluded, via 3328 Cartesian cells. First r=89 cell survives. Not a full root/shard exclusion.
+2026-11-25T02:32+08:00	mass-13/314	3b50576	1	0	see audit	Disjoint outgoing sigma-mass lower bound for all 9 Euler selections; minimum floor(log10 N)=2414, no low-degree coverage shortcut. 3 divisibility shards reduced but not closed.
+2026-11-25T02:34+08:00	seven-roots LP	3b50576	0	0	see audit	Rational dual finite options + nonnegative tail. Avoid all original roots except 19 or 31: log10 N >= 2658.984830 or 3116.739321. With only 17 allowed:2846.937270 already weaker than prior. Among original support masks whole singleton support classes ruled out, but no entire canonical shard solely for this reason.
+2026-11-25T02:35+08:00	three-BatchAuto10	3b50576	2	2	602	Standalone replay passed. Total actuals=642; net shards=278. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:38+08:00	order-Batch15	3b50576	12	1	601	Standalone replay passed. Total actuals=654; net shards=279. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:39+08:00	forest/Forest01.json.gz	3b50576	1	0	601	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T02:41+08:00	forest/Forest02.json.gz	3b50576	12	0	601	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T02:41+08:00	forest/Forest03.json.gz	3b50576	6	6	595	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T02:43+08:00	forest/Forest04.json.gz	3b50576	6	1	594	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T02:44+08:00	three-BatchAM	3b50576	1	1	593	Standalone replay passed. Total actuals=680; net shards=287. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:45+08:00	forest/Forest05.json.gz	3b50576	11	2	591	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T02:48+08:00	three-BatchQueue15	3b50576	1	0	591	Standalone replay passed. Total actuals=692; net shards=289. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:52+08:00	forest/Forest06.json.gz	3b50576	8	8	582	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T02:53+08:00	three-BatchRestore9	3b50576	3	1	581	Standalone replay passed. Total actuals=704; net shards=299. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:54+08:00	five22	3b50576	1	1	580	VerifySecond72.py passed; cumulative 705 actuals / 300 complete shards.
+2026-11-25T02:55+08:00	forest/Forest07.json.gz	3b50576	8	8	572	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T02:56+08:00	order-Batch16	3b50576	2	1	571	Standalone replay passed. Total actuals=715; net shards=309. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T02:56+08:00	forest/Forest08.json.gz	3b50576	7	7	564	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T02:57+08:00	forest/ForestHigh01.json.gz	3b50576	6	6	558	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T02:57+08:00	conditional-forest5+7/982	3b50576	see audit	see audit	see audit	Five 31-index three-way partitions rely on verified six-prime terminal prerequisite; each branch rechecked, not counted thrice. 7/982 with explicit per-forced-Euler scan, 378-node finite tree. Conditional log lower bounds also checked for allowing 11,31 and 13,17.
+2026-11-25T02:59+08:00	forest/Forest09.json.gz	3b50576	8	1	553	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T02:59+08:00	three-BatchQueue16	3b50576	1	1	552	Standalone replay passed. Total actuals=743; net shards=328. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T03:00+08:00	terminal-allow13plus19	3b50576	0	0	see audit	78 pairwise-disjoint blocks, 78 Euler refund options. Lower exponent 2401.423312, not a blanket theorem for all odd perfect numbers.
+2026-11-25T03:01+08:00	forest/Forest10.json.gz	3b50576	8	0	552	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:01+08:00	forest/ForestHigh02.json.gz	3b50576	6	6	546	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:01+08:00	forest/Forest11.json.gz	3b50576	8	0	546	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:02+08:00	forest/ForestTiny01.json.gz	3b50576	2	0	546	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:02+08:00	forest/ForestHigh03.json.gz	3b50576	6	6	540	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:02+08:00	three-BatchAN	3b50576	1	1	539	Standalone replay passed. Total actuals=774; net shards=341. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T03:03+08:00	forest/Forest12.json.gz	3b50576	8	0	539	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:03+08:00	forest/ForestD19.json.gz	3b50576	4	0	539	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:12+08:00	forest/ForestS01.json.gz	3b50576	5	2	537	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:12+08:00	three-BatchAO	3b50576	2	2	535	Standalone replay passed. Total actuals=793; net shards=345. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T03:13+08:00	forest/ForestPrice01.json.gz	3b50576	1	1	534	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:13+08:00	forest/ForestS02.json.gz	3b50576	5	4	530	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:14+08:00	forest/ForestS03.json.gz	3b50576	4	4	526	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:15+08:00	four-root partition	3b50576	0	0	see audit	Under four forbidden primes 3,5,7,11 the new hitting-set forces 13|N; 895+ tail cut, finite 671 admissible exponents check to 162 (max564). Explicit OPEN set, no blanket four-root exclusion.
+2026-11-25T03:16+08:00	forest/ForestSmall18.json.gz	3b50576	1	1	525	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:18+08:00	five-forest24	3b50576	2	1	see audit	Proof of 5/132 and 5/130 (lower log10 integers 2523 and 2410), generalized duplicate-safe weighted sigma forest from roots13/19/31. Full validation isolated and deduplicated.
+2026-11-25T03:20+08:00	forest/ForestS04.json.gz	3b50576	5	5	519	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:21+08:00	three-BatchAP	3b50576	1	1	518	Standalone replay passed. Total actuals=812; net shards=362. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T03:21+08:00	five23	3b50576	1	0	518	Verify118.py passed; cumulative 813 actuals / 362 complete shards.
+2026-11-25T03:21+08:00	five-forest25	3b50576	2	2	see audit	Two low-exponent singleton shards: e=66,78; direct lower exponent floors 2404,2402. 5/118 registered from two 13033-node replays, no complete extra shard.
+2026-11-25T03:24+08:00	forest/Forest718.json.gz	3b50576	1	1	515	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:26+08:00	forest/ForestS05.json.gz	3b50576	5	5	510	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:27+08:00	forest/ForestS06.json.gz	3b50576	5	0	510	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:27+08:00	forest/ForestS07.json.gz	3b50576	5	0	510	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:27+08:00	terminal-four-hitting + conditional 13 and 5/96	3b50576	see audit	see audit	see audit	Two independent generators of the four-root dual: floor exponent 2411.108934. Conditional 13/600 all s; root5/96 ECPP77-layer indispensable. Canonical union computed, no double counting.
+2026-11-25T03:27+08:00	forest/ForestS08.json.gz	3b50576	5	0	508	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:28+08:00	forest/ForestS09.json.gz	3b50576	5	0	508	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:28+08:00	forest/ForestS10.json.gz	3b50576	5	0	508	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:29+08:00	order-Batch17	3b50576	17	5	503	Standalone replay passed. Total actuals=865; net shards=377. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T03:29+08:00	forest/ForestS11.json.gz	3b50576	4	0	503	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:29+08:00	forest/ForestS12.json.gz	3b50576	4	0	503	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:30+08:00	forest-lift + roots7/11	3b50576	see audit	see audit	see audit	Only frozen UNCONDITIONAL ordinary forests may replace p^e0 by higher p^e where e0+1 divides e+1; all seed divisors and weighted outgoing multiplicities remain lower bounds. Do not transfer exact-exponent factor trees, terminal-gated forests or root Euler assumptions. Seed 31/18 alone covers all ten baseline obligations of P31_I00006.
+2026-11-25T03:31+08:00	three-BatchAuto13	3b50576	1	1	501	Standalone replay passed. Total actuals=878; net shards=379. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T03:31+08:00	forest/ForestS13.json.gz	3b50576	5	0	501	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:32+08:00	forest/ForestPrice02.json.gz	3b50576	1	1	500	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:32+08:00	three-BatchAQ	3b50576	0	0	500	Standalone replay passed. Total actuals=888; net shards=380. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T03:32+08:00	forest/ForestS14.json.gz	3b50576	5	0	500	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:34+08:00	forest/ForestS15.json.gz	3b50576	5	0	500	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:35+08:00	seven-forest-Forest03.json.gz	3b50576	14	0	500	New frozen outgoing-sigma forest; all budgets finite, lower bound independently verified.
+2026-11-25T03:35+08:00	forest/ForestS16.json.gz	3b50576	5	0	500	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:37+08:00	forest/ForestS17.json.gz	3b50576	5	0	500	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:37+08:00	fractional-seed transfer	3b50576	0	0	see audit	Unclosed seed 31/80 lower floor2029; size-only lift2271 not enough for 31/242, but including the support-disjoint root-sigma ratio yields2512. Exponent already in union, no duplicate credit.
+2026-11-25T03:39+08:00	forest/ForestS18.json.gz	3b50576	4	0	500	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:39+08:00	seven-forest-Forest04.json.gz	3b50576	10	0	500	New frozen outgoing-sigma forest; all budgets finite, lower bound independently verified.
+2026-11-25T03:41+08:00	forest/ForestS19.json.gz	3b50576	5	0	500	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:44+08:00	forest/ForestS20.json.gz	3b50576	5	0	498	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:44+08:00	seven-forest-Forest05.json.gz	3b50576	1	0	498	New frozen outgoing-sigma forest; all budgets finite, lower bound independently verified.
+2026-11-25T03:46+08:00	forest/ForestE01.json.gz	3b50576	1	1	497	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:46+08:00	forest/ForestS21.json.gz	3b50576	5	0	497	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:47+08:00	forest/ForestQ01.json.gz	3b50576	1	1	496	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:48+08:00	forest/ForestE02.json.gz	3b50576	3	3	493	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:48+08:00	forest/ForestQ02.json.gz	3b50576	1	1	492	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:48+08:00	forest/ForestQ03.json.gz	3b50576	1	1	491	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:48+08:00	seven-forest-Forest06.json.gz	3b50576	5	0	491	New frozen outgoing-sigma forest; all budgets finite, lower bound independently verified.
+2026-11-25T03:48+08:00	forest/ForestQ04.json.gz	3b50576	1	1	490	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:49+08:00	forest/ForestQ05.json.gz	3b50576	1	1	489	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:49+08:00	forest/ForestS22.json.gz	3b50576	5	0	489	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:50+08:00	forest/ForestQ06.json.gz	3b50576	1	1	488	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:51+08:00	forest/ForestE03.json.gz	3b50576	3	3	485	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:51+08:00	forest/ForestQ07.json.gz	3b50576	1	1	484	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:52+08:00	forest/ForestQ08.json.gz	3b50576	1	1	483	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:52+08:00	forest/ForestQ09.json.gz	3b50576	1	1	482	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:53+08:00	forest/ForestS23.json.gz	3b50576	5	0	482	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:53+08:00	forest/ForestQ10.json.gz	3b50576	1	1	481	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:54+08:00	three-BatchAS	3b50576	1	1	479	Standalone replay passed. Total actuals=992; net shards=401. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T03:54+08:00	forest/ForestE04.json.gz	3b50576	3	3	476	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:54+08:00	forest/ForestQ11.json.gz	3b50576	1	1	475	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:56+08:00	forest/ForestQ12.json.gz	3b50576	1	1	474	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:56+08:00	forest/ForestS24.json.gz	3b50576	5	0	474	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:57+08:00	forest/ForestSmall12.json.gz	3b50576	1	1	473	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:57+08:00	forest/ForestQ13.json.gz	3b50576	1	1	472	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:57+08:00	forest/ForestQ14.json.gz	3b50576	1	1	470	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T03:59+08:00	binary 31/478	3b50576	1	1	see audit	29 present/absent give independently valid lower exponent 2404/2402. Canonical P31_I00090.
+2026-11-25T03:59+08:00	forest/ForestQ15.json.gz	3b50576	1	1	468	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:00+08:00	seven-forest-Forest09.json.gz	3b50576	12	0	468	New frozen outgoing-sigma forest; all budgets finite, lower bound independently verified.
+2026-11-25T04:00+08:00	forest/ForestQ16.json.gz	3b50576	1	1	467	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:02+08:00	forest/ForestE05.json.gz	3b50576	3	3	463	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:02+08:00	forest/ForestQ17.json.gz	3b50576	1	1	462	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:02+08:00	three-BatchAT	3b50576	1	1	461	Standalone replay passed. Total actuals=1027; net shards=419. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T04:03+08:00	forest/ForestHitSeeds01.json.gz	3b50576	2	0	461	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:03+08:00	forest/ForestReverse80.json.gz	3b50576	1	0	461	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:03+08:00	forest/ForestS25.json.gz	3b50576	5	0	461	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:04+08:00	forest/ForestQ18.json.gz	3b50576	1	1	460	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:04+08:00	order-Batch18	3b50576	2	2	458	Standalone replay passed. Total actuals=1038; net shards=422. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T04:04+08:00	forest/ForestReverse288.json.gz	3b50576	1	0	458	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:05+08:00	forest/ForestQ19.json.gz	3b50576	1	1	457	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:05+08:00	seven-forest-Forest10.json.gz	3b50576	3	1	456	New frozen outgoing-sigma forest; all budgets finite, lower bound independently verified.
+2026-11-25T04:06+08:00	forest/ForestQ20.json.gz	3b50576	1	1	455	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:08+08:00	forest/ForestQ21.json.gz	3b50576	1	1	453	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:09+08:00	three-BatchQueue18	3b50576	2	2	451	Standalone replay passed. Total actuals=1048; net shards=429. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T04:09+08:00	forest/ForestE06.json.gz	3b50576	3	2	449	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:10+08:00	forest/ForestQ22.json.gz	3b50576	1	1	448	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:15+08:00	forest/ForestQ23.json.gz	3b50576	1	1	447	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:17+08:00	forest/ForestS26.json.gz	3b50576	4	0	447	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:17+08:00	forest/ForestReverse20.json.gz	3b50576	1	0	447	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:18+08:00	seven-forest-Forest12.json.gz	3b50576	1	1	446	New frozen outgoing-sigma forest; all budgets finite, lower bound independently verified.
+2026-11-25T04:19+08:00	forest/ForestQ24.json.gz	3b50576	1	1	445	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:23+08:00	forest/ForestC01.json.gz	3b50576	1	1	444	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:23+08:00	forest/ForestQ25.json.gz	3b50576	1	1	443	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:25+08:00	forest/ForestC02.json.gz	3b50576	1	1	442	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:28+08:00	three-BatchAU	3b50576	1	1	439	Standalone replay passed. Total actuals=1070; net shards=441. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T04:28+08:00	seven-forest-Forest13.json.gz	3b50576	3	1	438	New frozen outgoing-sigma forest; all budgets finite, lower bound independently verified.
+2026-11-25T04:28+08:00	five_weighted/Batch31.json.gz	3b50576	1	0	438	Independent arithmetic replay passed; all legal actuals covered before canonical acceptance.
+2026-11-25T04:30+08:00	forest/ForestC03.json.gz	3b50576	1	1	437	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:32+08:00	forest/ForestQ26.json.gz	3b50576	1	1	436	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:36+08:00	forest/ForestC04.json.gz	3b50576	1	1	435	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:36+08:00	three-BatchAW	3b50576	2	1	434	Standalone replay passed. Total actuals=1083; net shards=446. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T04:36+08:00	forest/ForestQ27.json.gz	3b50576	1	1	433	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:36+08:00	double class incompatibility	3b50576	0	0	see audit	247 pairs of exponent families cannot coexist; minimum excess beyond 2 verified exactly, 203772/1e9 lower. No full canonical closure counted.
+2026-11-25T04:39+08:00	forest/ForestC05.json.gz	3b50576	1	1	432	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:40+08:00	forest/ForestQ28.json.gz	3b50576	1	1	431	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:40+08:00	seven-forest-Forest15.json.gz	3b50576	2	0	431	New frozen outgoing-sigma forest; all budgets finite, lower bound independently verified.
+2026-11-25T04:42+08:00	forest/ForestS27.json.gz	3b50576	5	0	431	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:45+08:00	forest/ForestC06.json.gz	3b50576	1	1	430	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:46+08:00	forest/ForestQ29.json.gz	3b50576	1	1	429	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:47+08:00	three-BatchQueue20	3b50576	1	1	428	Standalone replay passed. Total actuals=1096; net shards=452. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T04:48+08:00	forest/ForestQ30.json.gz	3b50576	2	0	428	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:49+08:00	seven-forest-Forest16.json.gz	3b50576	1	0	428	New frozen outgoing-sigma forest; all budgets finite, lower bound independently verified.
+2026-11-25T04:49+08:00	five_forest/Batch32.json.gz	3b50576	2	0	428	Independent arithmetic replay passed; all legal actuals covered before canonical acceptance.
+2026-11-25T04:50+08:00	forest/ForestQ31.json.gz	3b50576	2	0	428	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:50+08:00	forest/ForestC07.json.gz	3b50576	1	1	427	Mandatory component outgoing-mass static forest with unique owners; exact finite exponent heads and rigorous monotone tails.
+2026-11-25T04:52+08:00	three-BatchAX	3b50576	1	1	426	Standalone replay passed. Total actuals=1105; net shards=454. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T05:08+08:00	order-Batch20	3b50576	0	0	426	Standalone replay passed. Total actuals=1105; net shards=454. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T05:16+08:00	order-Batch21	3b50576	0	0	426	Standalone replay passed. Total actuals=1105; net shards=454. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T05:40+08:00	order-Batch22	3b50576	1	0	426	Standalone replay passed. Total actuals=1106; net shards=454. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T05:54+08:00	order-Batch23	3b50576	0	0	426	Standalone replay passed. Total actuals=1106; net shards=454. Resume full replay from Checkpoint.py and Batches.json.
+2026-11-25T06:22+08:00	order-Batch24	3b50576	0	0	426	Standalone replay passed. Total actuals=1106; net shards=454. Resume full replay from Checkpoint.py and Batches.json.
