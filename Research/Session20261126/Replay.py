@@ -77,6 +77,8 @@ def projection():
     excluded.add((3,1162));proofs.append(joint);print('PASS complete E0/E1/E2/E3 and range sieve: 3 1162',flush=True)
     j1108=json.loads(check_output([sys.executable,'-I','-S','-B','-X','int_max_str_digits=0',str(H/'Joint1108/Check.py')],text=True).splitlines()[-1]);assert j1108['seed']==[3,1108] and (3,1108) in original and j1108['source_leaves']==[42,42]
     excluded.add((3,1108));proofs.append(j1108);print('PASS complete E0/E1/E2/E3 and range sieve: 3 1108',flush=True)
+    anon=json.loads(check_output([sys.executable,'-I','-B','-X','int_max_str_digits=0',str(H/'Anon568/Check.py')],text=True).splitlines()[-1]);assert anon['seed']==[13,568] and (13,568) in original and anon['receipt']['rules']['anonymous-square']==6
+    excluded.add((13,568));proofs.append(anon);print('PASS full recursive anonymous block tree: 13 568',flush=True)
     remaining=[];closed=[]
     for s in sh:
         left=[e for e in s['remaining_actuals'] if (s['root'],e) not in excluded]
