@@ -364,3 +364,8 @@ Record the date, Git commit SHA, command, compiler and libraries, CPU and memory
 - Result: 146 new shard closures (19:24, 7:32, 11:42, 31:21, 13:27). The merged audit reproduced 2,015 closed and 1,057 open, with status `INCOMPLETE_FRONTIER`. All six regression groups passed.
 - Independent check: a separate computation used digit-by-digit Hensel lifting, SymPy primality testing and exact fractions. It reproduced every new shard ID, its full list of actual exponents and rules, and the remaining manifest. Of the 173 distinct root/exponent pairs covered by the additions, 146 use the new rule and 27 use the prior size inequality.
 - Replay: `python3 Research/TeichmullerValuation/AuditTeichmullerValuation2400.py --output Build/AuditTeichmuller2400.json`. Proof: [Readme](../Research/TeichmullerValuation/Readme.md).
+
+
+## 2026-11-25 晚间：支持集合与指数分割
+
+冻结午间账本 blob `3a7b6812aafed3dddd228c34ed9575324d242887`。精确有理数本地筛选 11,398 个支持组合，基础排除 4,833；一层分割新增 8，低指数二层分割新增 1，余 6,556。未与历史条件叶去重，无完整实际指数/规范分片新增。证明及复验状态见 [SupportSplit](../Research/SupportSplit/Readme.md)，发布版复验器已提交，待干净检出执行。未使用付费计算资源。
