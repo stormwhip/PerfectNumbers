@@ -56,6 +56,8 @@ def ledger(reg,workers):
         elif rel in ('Research/Midday/ReleaseSupply7x1018.json','Research/Midday/ReleaseSupply11x718.json'):
             d=json.loads(path.read_bytes());p,e=(7,1018) if rel.endswith('7x1018.json') else (11,718);es=[e];need(d=={'root':p,'exponent':e,'domain':[0,e],'forbidden':[19] if p==7 else [19,7]} and (p,e) in ob,'source scope')
             cmd=[sys.executable,'-I','-S','-B',str(R/'MiddaySupply/Release.py'),str(p),'0',str(e),'--kind','independent','--require-complete'];run=subprocess.run(cmd,check=True,capture_output=True,text=True);answer=json.loads(run.stdout.splitlines()[-1]);need(answer=={'p':p,'e':e,'domain':[0,e],'kind':'independent','open':[],'count':e+1},'source domain incomplete');print('PASS source',p,e,e+1,'windows',flush=True);proofs.append({'packet':rel,'seed':[p,e],'actuals':[e]});continue
+        elif path.parent==H and path.name.startswith('Support') and path.name.endswith('.json.gz'):
+            pkt=json.loads(gzip.decompress(raw));p,e=pkt['p'],pkt['e'];need(type(p)==type(e)==int and (p,e) in ob and path.name==f'Support{p}x{e}.json.gz','binary support scope');es=[e];script=str(H/'SupportCover.py');subprocess.run([sys.executable,'-I','-S','-B',script,str(path)],check=True);cmd=[script,'--audit',str(path)]
         elif path.parent==H and path.name.startswith('Euler') and path.name.endswith('.json.gz'):
             pkt=json.loads(gzip.decompress(path.read_bytes()));p,e=pkt['general']['p'],pkt['general']['e'];need(type(p)==type(e)==int and (p,e) in ob and path.name==f'Euler{p}x{e}.json.gz','Euler-cover scope');es=[e]
             subprocess.run([sys.executable,'-I','-S','-B',str(H/'ModeCheck.py'),str(path)],check=True);cmd=[str(H/'IndependentModes.py'),str(path)]
