@@ -1,19 +1,18 @@
 """Heuristic cutting-plane search for eighth-grid prices accepted by pinned replay."""
 import argparse
-from collections import Counter,defaultdict
-from itertools import combinations
+from collections import Counter
 import json
 import math
 from pathlib import Path
 import time
-from scipy.optimize import linprog
+from scipy.optimize import Bounds, LinearConstraint, milp
 from scipy.sparse import csr_matrix
 from Search import H,load,scorer,arithmetic,sigma,nonsupport,valuation
 
 
 def optimize(row,seconds=180,prior=None):
     t=time.monotonic(); r=dict(row); r['head']=max(120,r['head']); vertices=set(r['roots'])|dict(r['owners']).keys(); p,e=r['p'],r['e']; A=sigma(p,e); U=p*A*math.prod(dict(r['owners'])); logs={q:math.log10(q) for q in vertices};
-    W=prior or {}; best=-math.inf; bw={}; all_q=set(W); planes={}; tried=set(); iterations=0; sf_out={}
+    W=prior or {}; best=-math.inf; bw={}; all_q=set(W); planes={}; tried=set(); sf_out={}
     def plane(v,S):
         slope=Counter({q:-f for q,(h,f,k,w) in S.items()});
         for q in r['roots']:slope[q]+=valuation(A,q)
@@ -31,24 +30,19 @@ def optimize(row,seconds=180,prior=None):
         if nz not in planes or b<planes[nz]:planes[nz]=b
     def see(W):
         vals,tr=scorer(r,W); mn=min(vals.values()); return vals,tr,mn
-    def optimum(grid):
-        qs=sorted(all_q); idx={q:i for i,q in enumerate(qs)}; m=len(qs); ys=[0]*(m+1); ys[-1]=-1
-        a=[]; b=[]; rr=[]; cc=[]; vv=[]
+    def optimum():
+        qs=sorted(all_q); idx={q:i for i,q in enumerate(qs)}; m=len(qs); ys=[0]*m+[-1]
+        b=[]; rr=[]; cc=[]; vv=[]
         for sl,c in planes.items():
             j=len(b);b.append(c)
             for q,x in sl:
-                if q in idx:rr.append(j);cc.append(idx[q]);vv.append(-x*logs[q])
+                if q in idx:rr.append(j);cc.append(idx[q]);vv.append(-x*logs[q]/8)
             rr.append(j);cc.append(m);vv.append(1)
-        aa=csr_matrix((vv,(rr,cc)),shape=(len(b),m+1));
-        if grid:
-            from scipy.optimize import milp,Bounds,LinearConstraint
-            vv=[x if c==m else x/8 for x,c in zip(vv,cc)]; aa=csr_matrix((vv,(rr,cc)),shape=(len(b),m+1));
-            rc=milp(ys,integrality=[1]*m+[0],bounds=Bounds([0]*m+[-math.inf],[7]*m+[math.inf]),constraints=LinearConstraint(aa,[-math.inf]*len(b),b),options={'time_limit':min(8,max(1,seconds-(time.monotonic()-t)))})
-            if rc.x is None:return {},-math.inf
-            return {q:round(w)/8 for q,w in zip(qs,rc.x[:-1]) if round(w)},rc.x[-1]
-        rc=linprog(ys,A_ub=aa,b_ub=b,bounds=[(0,.875)]*m+[(None,None)],method='highs',options={'time_limit':5})
-        if not rc.success:return {},-math.inf
-        return {q:w for q,w in zip(qs,rc.x[:-1]) if w>1e-9},rc.x[-1]
+        aa=csr_matrix((vv,(rr,cc)),shape=(len(b),m+1))
+        rc=milp(ys,integrality=[1]*m+[0],bounds=Bounds([0]*m+[-math.inf],[7]*m+[math.inf]),constraints=LinearConstraint(aa,[-math.inf]*len(b),b),options={'time_limit':min(8,max(1,seconds-(time.monotonic()-t)))})
+        if rc.x is None:return {},-math.inf
+        return {q:round(w)/8 for q,w in zip(qs,rc.x[:-1]) if round(w)},rc.x[-1]
+    iterations=0
     while time.monotonic()-t<seconds:
         iterations+=1
         vals,tr,mn=see(W)
@@ -59,7 +53,7 @@ def optimize(row,seconds=180,prior=None):
         for m,v in sorted(vals.items(),key=lambda kv:kv[1])[:7]:
             if math.isfinite(v) and v<max(2460,mn+100):plane(v,tr(m))
         tried.add(tuple(sorted(W.items())))
-        W,cap=optimum(True)
+        W,cap=optimum()
         if tuple(sorted(W.items())) in tried or cap<=best+1e-7:
             break
     r['den']=8;r['rho']=[[q,round(w*8)] for q,w in bw.items() if w]; r['scout']=best

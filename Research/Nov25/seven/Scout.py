@@ -70,6 +70,7 @@ def scorer(row,prices=None,exclude=None):
         modes[z]=f0-zs[z]+node(z,load[z],2)[0];mode_dict[z]=(2,z)
     w=min(roots,key=lambda z:node(z,load[z],3)[0]-zs[z]);modes[0]=f0-zs[w]+node(w,load[w],3)[0];mode_dict[0]=(3,w)
     def trace(m):
+        if not math.isfinite(modes[m]):raise ValueError('cannot trace an impossible Euler mode')
         kind,w=mode_dict[m]; states={};
         def visit(z,h,k):
             if k==1:k=min((2,3),key=lambda x:node(z,h,x)[0]);

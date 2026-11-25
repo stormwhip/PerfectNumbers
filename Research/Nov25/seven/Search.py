@@ -3,7 +3,6 @@ import argparse
 from functools import cache
 import gzip
 from hashlib import sha256
-from itertools import combinations
 import json
 import math
 from pathlib import Path
@@ -97,6 +96,14 @@ def search(p,e,seconds=300,seed=1,weight=None,start=None,deny=(),max_new_bits=14
     while (extra:={q for q,z in ow.items() if z in blocked and q not in blocked}):blocked.update(extra)
     ow={q:z for q,z in ow.items() if q not in blocked}
     r={k:v for k,v in r.items() if k in ('p','e','roots','owners','head')}; r['head']=max(120,r['head']); W=weight or {};best=float('-inf');bestrow=None; bestw={}; seen=set(); cycling=0; outer=0; fresh={}
+    fname=H/f'best-{p}x{e}-{seed}.json'
+    checkpoint=fname.with_name(fname.stem+'.checkpoint.json')
+    def payload(rec,weights,score):
+        data=dict(rec)
+        if weights:
+            data.update(den=8,rho=[[q,round(8*w)] for q,w in weights.items() if w and q in set(data['roots'])|dict(data['owners']).keys()])
+        data['scout']=score
+        return data
     def eval(ow,head=None):
         row=dict(r,owners=list(ow.items()),head=head or r['head']);return scorer(row,W)
     while time.monotonic()-t<seconds:
@@ -105,10 +112,13 @@ def search(p,e,seconds=300,seed=1,weight=None,start=None,deny=(),max_new_bits=14
         if v>best+1e-7:
             best=v;bestrow=dict(r,owners=sorted(ow.items()));bestw=dict(W);cycling=0
             print('best',p,e,outer,round(v,6),m,len(ow),len(states),round(time.monotonic()-t,1),flush=True)
+            if outer%10==0 or v>target:
+                tmp=checkpoint.with_suffix('.tmp')
+                tmp.write_text(json.dumps(payload(bestrow,bestw,best),separators=(',',':'))+'\n',encoding='utf-8')
+                tmp.replace(checkpoint)
             if v>target:break
         new=[]; switches=[]
-        U=A*math.prod(ow)
-        for mode in sorted(values,key=values.get)[:1+min(4,cycling)]:
+        for mode in sorted((k for k in values if math.isfinite(values[k])),key=values.get)[:1+min(4,cycling)]:
             for z,(h,f,k,w) in (states if mode==m else tr(mode)).items():
                 if w is False:
                     r['head']=min(512,r['head']+12);continue
@@ -122,6 +132,7 @@ def search(p,e,seconds=300,seed=1,weight=None,start=None,deny=(),max_new_bits=14
         for q,z in new:
             ow.setdefault(q,z)
         if new:continue
+        U=A*math.prod(ow)
         for q,z in switches:
             fresh.setdefault(q,set()).add(z)
         for z,(h,f,k,w) in states.items():
@@ -155,10 +166,7 @@ def search(p,e,seconds=300,seed=1,weight=None,start=None,deny=(),max_new_bits=14
             for q in lose:ow.pop(q,None)
             seen.clear(); continue
     if bestrow is None:return
-    fname=H/f'best-{p}x{e}-{seed}.json'
-    den=8 if bestw else 1
-    if den>1:bestrow.update(den=den,rho=[[q,round(den*w)] for q,w in bestw.items() if w and q in set(bestrow['roots'])|dict(bestrow['owners']).keys()])
-    bestrow['scout']=best
+    bestrow=payload(bestrow,bestw,best)
     fname.write_text(json.dumps(bestrow,separators=(',',':'))+'\n',encoding='utf-8')
     print('saved',fname,best,flush=True)
     if do_trim and best>2400.000001:
