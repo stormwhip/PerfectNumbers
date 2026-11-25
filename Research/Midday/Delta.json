@@ -1873,6 +1873,236 @@
    ]
   },
   {
+   "packet": "Research/Midday/Packets/Forest7x886.json.gz",
+   "seed": [
+    7,
+    886
+   ],
+   "actuals": [
+    886
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest7x768.json.gz",
+   "seed": [
+    7,
+    768
+   ],
+   "actuals": [
+    768
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed7x1012.json.gz",
+   "seed": [
+    7,
+    1012
+   ],
+   "actuals": [
+    1012
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest7x708.json.gz",
+   "seed": [
+    7,
+    708
+   ],
+   "actuals": [
+    708
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed11x78.json.gz",
+   "seed": [
+    11,
+    78
+   ],
+   "actuals": [
+    78
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest7x576.json.gz",
+   "seed": [
+    7,
+    576
+   ],
+   "actuals": [
+    576
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest7x226.json.gz",
+   "seed": [
+    7,
+    226
+   ],
+   "actuals": [
+    226
+   ]
+  },
+  {
+   "packet": "Research/Midday/LatePackets/Forest3x82.json.gz",
+   "seed": [
+    3,
+    82
+   ],
+   "actuals": [
+    82
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest7x138.json.gz",
+   "seed": [
+    7,
+    138
+   ],
+   "actuals": [
+    138
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed7x828.json.gz",
+   "seed": [
+    7,
+    828
+   ],
+   "actuals": [
+    828
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest7x184.json.gz",
+   "seed": [
+    7,
+    184
+   ],
+   "actuals": [
+    184
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed7x102.json.gz",
+   "seed": [
+    7,
+    102
+   ],
+   "actuals": [
+    102
+   ]
+  },
+  {
+   "packet": "Research/Midday/LatePackets/Forest7x106.json.gz",
+   "seed": [
+    7,
+    106
+   ],
+   "actuals": [
+    106
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest7x352.json.gz",
+   "seed": [
+    7,
+    352
+   ],
+   "actuals": [
+    352
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest7x78.json.gz",
+   "seed": [
+    7,
+    78
+   ],
+   "actuals": [
+    78
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest7x498.json.gz",
+   "seed": [
+    7,
+    498
+   ],
+   "actuals": [
+    498
+   ]
+  },
+  {
+   "packet": "Research/Midday/LatePackets/Forest11x432.json.gz",
+   "seed": [
+    11,
+    432
+   ],
+   "actuals": [
+    432
+   ]
+  },
+  {
+   "packet": "Research/Midday/LatePackets/Forest7x52.json.gz",
+   "seed": [
+    7,
+    52
+   ],
+   "actuals": [
+    52
+   ]
+  },
+  {
+   "packet": "Research/MiddayForest/Forest19x62.json.gz",
+   "seed": [
+    19,
+    62
+   ],
+   "actuals": [
+    62
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed7x118.json.gz",
+   "seed": [
+    7,
+    118
+   ],
+   "actuals": [
+    118
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed11x90.json.gz",
+   "seed": [
+    11,
+    90
+   ],
+   "actuals": [
+    90
+   ]
+  },
+  {
+   "packet": "Research/MiddayForest/Forest13x22.json.gz",
+   "seed": [
+    13,
+    22
+   ],
+   "actuals": [
+    22
+   ]
+  },
+  {
+   "packet": "Research/MiddayForest/Forest13x18.json.gz",
+   "seed": [
+    13,
+    18
+   ],
+   "actuals": [
+    18
+   ]
+  },
+  {
    "packet": "Research/MiddayGraph/Batch4_13x136d5.json.gz",
    "seed": [
     13,
@@ -2086,6 +2316,10 @@
  "new_actuals": [
   [
    3,
+   82
+  ],
+  [
+   3,
    106
   ],
   [
@@ -2222,7 +2456,15 @@
   ],
   [
    7,
+   52
+  ],
+  [
+   7,
    72
+  ],
+  [
+   7,
+   78
   ],
   [
    7,
@@ -2234,7 +2476,19 @@
   ],
   [
    7,
+   102
+  ],
+  [
+   7,
+   106
+  ],
+  [
+   7,
    114
+  ],
+  [
+   7,
+   118
   ],
   [
    7,
@@ -2247,6 +2501,10 @@
   [
    7,
    136
+  ],
+  [
+   7,
+   138
   ],
   [
    7,
@@ -2286,6 +2544,10 @@
   ],
   [
    7,
+   184
+  ],
+  [
+   7,
    186
   ],
   [
@@ -2319,6 +2581,10 @@
   [
    7,
    220
+  ],
+  [
+   7,
+   226
   ],
   [
    7,
@@ -2426,6 +2692,10 @@
   ],
   [
    7,
+   352
+  ],
+  [
+   7,
    360
   ],
   [
@@ -2458,6 +2728,10 @@
   ],
   [
    7,
+   498
+  ],
+  [
+   7,
    502
   ],
   [
@@ -2487,6 +2761,10 @@
   [
    7,
    562
+  ],
+  [
+   7,
+   576
   ],
   [
    7,
@@ -2538,6 +2816,10 @@
   ],
   [
    7,
+   708
+  ],
+  [
+   7,
    718
   ],
   [
@@ -2554,6 +2836,10 @@
   ],
   [
    7,
+   768
+  ],
+  [
+   7,
    786
   ],
   [
@@ -2562,7 +2848,15 @@
   ],
   [
    7,
+   828
+  ],
+  [
+   7,
    876
+  ],
+  [
+   7,
+   886
   ],
   [
    7,
@@ -2583,6 +2877,10 @@
   [
    7,
    990
+  ],
+  [
+   7,
+   1012
   ],
   [
    11,
@@ -2614,6 +2912,10 @@
   ],
   [
    11,
+   78
+  ],
+  [
+   11,
    82
   ],
   [
@@ -2623,6 +2925,10 @@
   [
    11,
    88
+  ],
+  [
+   11,
+   90
   ],
   [
    11,
@@ -2726,6 +3032,10 @@
   ],
   [
    11,
+   432
+  ],
+  [
+   11,
    438
   ],
   [
@@ -2782,7 +3092,15 @@
   ],
   [
    13,
+   18
+  ],
+  [
+   13,
    20
+  ],
+  [
+   13,
+   22
   ],
   [
    13,
@@ -2815,6 +3133,10 @@
   [
    19,
    36
+  ],
+  [
+   19,
+   62
   ],
   [
    19,
@@ -2928,11 +3250,16 @@
   "P19_I00110",
   "P19_I00120",
   "P19_I00121",
+  "P7_I00015",
   "P7_I00020",
+  "P7_I00021",
   "P7_I00022",
   "P7_I00023",
+  "P7_I00026",
+  "P7_I00027",
   "P7_I00030",
   "P7_I00032",
+  "P7_I00033",
   "P7_I00035",
   "P7_I00036",
   "P7_I00038",
@@ -2941,6 +3268,7 @@
   "P7_I00043",
   "P7_I00044",
   "P7_I00045",
+  "P7_I00048",
   "P7_I00049",
   "P7_I00050",
   "P7_I00051",
@@ -2956,18 +3284,21 @@
   "P7_I00065",
   "P7_I00066",
   "P7_I00068",
+  "P7_I00070",
   "P7_I00073",
   "P7_I00075",
   "P7_I00077",
   "P7_I00079",
   "P7_I00085",
   "P7_I00090",
+  "P7_I00094",
   "P7_I00095",
   "P7_I00096",
   "P7_I00097",
   "P7_I00098",
   "P7_I00101",
   "P7_I00102",
+  "P7_I00105",
   "P7_I00107",
   "P7_I00108",
   "P7_I00110",
@@ -2978,23 +3309,29 @@
   "P7_I00116",
   "P7_I00121",
   "P7_I00124",
+  "P7_I00126",
   "P7_I00127",
   "P7_I00128",
   "P7_I00131",
   "P7_I00133",
+  "P7_I00135",
   "P7_I00137",
   "P7_I00140",
+  "P7_I00144",
   "P7_I00150",
+  "P7_I00153",
   "P7_I00155",
   "P7_I00156",
   "P7_I00162",
   "P7_I00163",
   "P7_I00166",
+  "P7_I00169",
   "P11_I00010",
   "P11_I00011",
   "P11_I00014",
   "P11_I00015",
   "P11_I00016",
+  "P11_I00020",
   "P11_I00021",
   "P11_I00022",
   "P11_I00023",
@@ -3019,6 +3356,7 @@
   "P11_I00055",
   "P11_I00068",
   "P11_I00077",
+  "P11_I00082",
   "P11_I00083",
   "P11_I00094",
   "P11_I00095",
@@ -3041,12 +3379,15 @@
   "P31_I00078",
   "P31_I00088",
   "P13_I00004",
+  "P13_I00007",
+  "P13_I00008",
   "P13_I00032",
   "P13_I00037",
   "P13_I00068",
   "P13_I00072",
   "P13_I00089",
   "P13_I00093",
+  "P3_I00024",
   "P3_I00029",
   "P3_I00030",
   "P3_I00032",
@@ -3072,10 +3413,10 @@
   "P5_I00015",
   "P5_I00019"
  ],
- "closed": 2823,
- "open": 249,
- "open_actuals": 304,
- "singletons": 221,
+ "closed": 2842,
+ "open": 230,
+ "open_actuals": 281,
+ "singletons": 203,
  "remaining_shards": [
   {
    "root": 19,
@@ -3094,7 +3435,6 @@
     38,
     44,
     56,
-    62,
     80,
     92
    ]
@@ -3127,7 +3467,6 @@
     20,
     34,
     48,
-    62,
     76,
     90
    ]
@@ -3726,8 +4065,7 @@
     64,
     84,
     94,
-    124,
-    184
+    124
    ]
   },
   {
@@ -3742,8 +4080,7 @@
     34,
     48,
     76,
-    90,
-    118
+    90
    ]
   },
   {
@@ -3783,8 +4120,7 @@
    "id": "P7_I00006",
    "remaining_actuals": [
     16,
-    84,
-    118
+    84
    ]
   },
   {
@@ -3840,8 +4176,7 @@
    "exact": false,
    "id": "P7_I00011",
    "remaining_actuals": [
-    36,
-    184
+    36
    ]
   },
   {
@@ -3875,17 +4210,6 @@
    "id": "P7_I00014",
    "remaining_actuals": [
     46
-   ]
-  },
-  {
-   "root": 7,
-   "index": 15,
-   "count": 412,
-   "exponent": 52,
-   "exact": false,
-   "id": "P7_I00015",
-   "remaining_actuals": [
-    52
    ]
   },
   {
@@ -3934,17 +4258,6 @@
   },
   {
    "root": 7,
-   "index": 21,
-   "count": 412,
-   "exponent": 78,
-   "exact": false,
-   "id": "P7_I00021",
-   "remaining_actuals": [
-    78
-   ]
-  },
-  {
-   "root": 7,
    "index": 24,
    "count": 412,
    "exponent": 96,
@@ -3967,28 +4280,6 @@
   },
   {
    "root": 7,
-   "index": 26,
-   "count": 412,
-   "exponent": 102,
-   "exact": false,
-   "id": "P7_I00026",
-   "remaining_actuals": [
-    102
-   ]
-  },
-  {
-   "root": 7,
-   "index": 27,
-   "count": 412,
-   "exponent": 106,
-   "exact": false,
-   "id": "P7_I00027",
-   "remaining_actuals": [
-    106
-   ]
-  },
-  {
-   "root": 7,
    "index": 29,
    "count": 412,
    "exponent": 112,
@@ -4007,17 +4298,6 @@
    "id": "P7_I00031",
    "remaining_actuals": [
     130
-   ]
-  },
-  {
-   "root": 7,
-   "index": 33,
-   "count": 412,
-   "exponent": 138,
-   "exact": false,
-   "id": "P7_I00033",
-   "remaining_actuals": [
-    138
    ]
   },
   {
@@ -4066,17 +4346,6 @@
   },
   {
    "root": 7,
-   "index": 48,
-   "count": 412,
-   "exponent": 226,
-   "exact": false,
-   "id": "P7_I00048",
-   "remaining_actuals": [
-    226
-   ]
-  },
-  {
-   "root": 7,
    "index": 60,
    "count": 412,
    "exponent": 282,
@@ -4084,17 +4353,6 @@
    "id": "P7_I00060",
    "remaining_actuals": [
     282
-   ]
-  },
-  {
-   "root": 7,
-   "index": 70,
-   "count": 412,
-   "exponent": 352,
-   "exact": false,
-   "id": "P7_I00070",
-   "remaining_actuals": [
-    352
    ]
   },
   {
@@ -4187,17 +4445,6 @@
   },
   {
    "root": 7,
-   "index": 94,
-   "count": 412,
-   "exponent": 498,
-   "exact": false,
-   "id": "P7_I00094",
-   "remaining_actuals": [
-    498
-   ]
-  },
-  {
-   "root": 7,
    "index": 99,
    "count": 412,
    "exponent": 540,
@@ -4227,17 +4474,6 @@
    "id": "P7_I00103",
    "remaining_actuals": [
     568
-   ]
-  },
-  {
-   "root": 7,
-   "index": 105,
-   "count": 412,
-   "exponent": 576,
-   "exact": false,
-   "id": "P7_I00105",
-   "remaining_actuals": [
-    576
    ]
   },
   {
@@ -4330,17 +4566,6 @@
   },
   {
    "root": 7,
-   "index": 126,
-   "count": 412,
-   "exponent": 708,
-   "exact": false,
-   "id": "P7_I00126",
-   "remaining_actuals": [
-    708
-   ]
-  },
-  {
-   "root": 7,
    "index": 129,
    "count": 412,
    "exponent": 732,
@@ -4359,17 +4584,6 @@
    "id": "P7_I00130",
    "remaining_actuals": [
     738
-   ]
-  },
-  {
-   "root": 7,
-   "index": 135,
-   "count": 412,
-   "exponent": 768,
-   "exact": false,
-   "id": "P7_I00135",
-   "remaining_actuals": [
-    768
    ]
   },
   {
@@ -4429,17 +4643,6 @@
   },
   {
    "root": 7,
-   "index": 144,
-   "count": 412,
-   "exponent": 828,
-   "exact": false,
-   "id": "P7_I00144",
-   "remaining_actuals": [
-    828
-   ]
-  },
-  {
-   "root": 7,
    "index": 145,
    "count": 412,
    "exponent": 838,
@@ -4495,17 +4698,6 @@
   },
   {
    "root": 7,
-   "index": 153,
-   "count": 412,
-   "exponent": 886,
-   "exact": false,
-   "id": "P7_I00153",
-   "remaining_actuals": [
-    886
-   ]
-  },
-  {
-   "root": 7,
    "index": 154,
    "count": 412,
    "exponent": 906,
@@ -4550,17 +4742,6 @@
   },
   {
    "root": 7,
-   "index": 169,
-   "count": 412,
-   "exponent": 1012,
-   "exact": false,
-   "id": "P7_I00169",
-   "remaining_actuals": [
-    1012
-   ]
-  },
-  {
-   "root": 7,
    "index": 170,
    "count": 412,
    "exponent": 1018,
@@ -4596,8 +4777,7 @@
    "remaining_actuals": [
     6,
     34,
-    48,
-    90
+    48
    ]
   },
   {
@@ -4622,7 +4802,6 @@
    "remaining_actuals": [
     12,
     64,
-    90,
     168
    ]
   },
@@ -4703,17 +4882,6 @@
    "id": "P11_I00019",
    "remaining_actuals": [
     72
-   ]
-  },
-  {
-   "root": 11,
-   "index": 20,
-   "count": 341,
-   "exponent": 78,
-   "exact": false,
-   "id": "P11_I00020",
-   "remaining_actuals": [
-    78
    ]
   },
   {
@@ -4802,17 +4970,6 @@
    "id": "P11_I00080",
    "remaining_actuals": [
     420
-   ]
-  },
-  {
-   "root": 11,
-   "index": 82,
-   "count": 341,
-   "exponent": 432,
-   "exact": false,
-   "id": "P11_I00082",
-   "remaining_actuals": [
-    432
    ]
   },
   {
@@ -5259,28 +5416,6 @@
    "id": "P13_I00006",
    "remaining_actuals": [
     16
-   ]
-  },
-  {
-   "root": 13,
-   "index": 7,
-   "count": 325,
-   "exponent": 18,
-   "exact": false,
-   "id": "P13_I00007",
-   "remaining_actuals": [
-    18
-   ]
-  },
-  {
-   "root": 13,
-   "index": 8,
-   "count": 325,
-   "exponent": 22,
-   "exact": false,
-   "id": "P13_I00008",
-   "remaining_actuals": [
-    22
    ]
   },
   {
@@ -5747,17 +5882,6 @@
    "id": "P3_I00023",
    "remaining_actuals": [
     78
-   ]
-  },
-  {
-   "root": 3,
-   "index": 24,
-   "count": 676,
-   "exponent": 82,
-   "exact": false,
-   "id": "P3_I00024",
-   "remaining_actuals": [
-    82
    ]
   },
   {
