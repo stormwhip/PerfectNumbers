@@ -20,7 +20,7 @@ def make(pivots,trees,confirm=False):
    if n:nested(p)
    else:verify(p);independent(p)
   rows.append(dict(exponent=e,proof='nested' if n else 'pivot',file=name,sha256=hashlib.sha256(p.read_bytes()).hexdigest()))
- es={r['exponent'] for r in rows};delta=json.loads((H.parent/'Nov25/Delta.json').read_bytes());shards=[s for s in delta['remaining_shards'] if s['root']==3];legit=set().union(*(s['remaining_actuals'] for s in shards));assert len(es)==len(rows) and es<=legit;closed=[s['id'] for s in shards if set(s['remaining_actuals'])<=es];return dict(root=3,fixed_baseline_sha256=hashlib.sha256((H.parent/'Nov25/Delta.json').read_bytes()).hexdigest(),covered_actuals=sorted(es),closed_shards=closed,remaining_actuals=sorted(legit-es),rows=sorted(rows,key=lambda r:r['exponent']))
+ es={r['exponent'] for r in rows};delta=json.loads((H.parent/'Nov25/Delta.json').read_bytes());shards=[s for s in delta['remaining_shards'] if s['root']==3];legit=set().union(*(s['remaining_actuals'] for s in shards));assert len(es)==len(rows) and es<=legit;closed=[s['id'] for s in shards if set(s['remaining_actuals'])<=es];return dict(root=3,fixed_baseline_sha256=hashlib.sha256((H.parent/'Nov25/Delta.json').read_bytes().replace(b'\r\n',b'\n')).hexdigest(),covered_actuals=sorted(es),closed_shards=closed,remaining_actuals=sorted(legit-es),rows=sorted(rows,key=lambda r:r['exponent']))
 if __name__=='__main__':
  p=H/'Release.json';args=sys.argv[1:];write='--make' in args
  if write:

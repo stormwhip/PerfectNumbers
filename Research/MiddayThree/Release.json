@@ -1,6 +1,6 @@
 {
   "root": 3,
-  "fixed_baseline_sha256": "6d687d3844c16e6df93a75918ea48249a833a8b308bb059c59e4b15b8332dd19",
+  "fixed_baseline_sha256": "36d731e1b0584a94a00cd2321f6349dccf6e93ac514a273cadf7aa9694cfea32",
   "covered_actuals": [
     106,
     108,
