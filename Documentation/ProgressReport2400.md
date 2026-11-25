@@ -14,6 +14,7 @@
 | 11 月 25 日上午 | 2,666 | 406 | [账本](../Research/Nov25/Delta.json) |
 | 11 月 25 日午间 | 2,868 | 204 | [账本](../Research/Midday/Delta.json) |
 | 11 月 25 日 SupportSplit | 2,868 | 204 | [九项条件排除](../Research/SupportSplit/Readme.md) |
+| 11 月 25 日 P3_I00193 | 2,868 | 204 | [候选重放及净成本缺口](../Research/P3I00193Review/Readme.md) |
 
 原八根互素类的认证下界为 $\log_{10}N\ge4183.209493$。将根 $19$ 换为 $23$ 后，替换根集的互素类下界为 $\log_{10}N\ge3954.197016$，作为独立的历史实验保留。
 
