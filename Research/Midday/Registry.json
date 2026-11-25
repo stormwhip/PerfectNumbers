@@ -222,7 +222,13 @@
   "Research/MiddayDirected/Directed11x658.json.gz": "c5b84d3d9f2d248283b62159ced92b603d25790ddb6a7387392065b024a8c0cb",
   "Research/MiddayDirected/Directed11x168.json.gz": "a1474848ccb9b872b077fcbf9f66a6abccd5623413c9a359188a2cbfb3a21c29",
   "Research/MiddayDirected/Directed7x120.json.gz": "d51f01d0c1649644e51a8712f65cb7b559135c963c93eb8d5eb4c9f289b91f66",
-  "Research/MiddayDirected/Directed11x94.json.gz": "11fd0e464184f47017981c3ee95c05bc4db7aa28f87d23fe423b45af270552a3"
+  "Research/MiddayDirected/Directed11x94.json.gz": "11fd0e464184f47017981c3ee95c05bc4db7aa28f87d23fe423b45af270552a3",
+  "Research/MiddayDirected/Directed11x486.json.gz": "0ab8414b85875c4f2cf8140ac56d86d806a674dc3974c94c8b6d19aea2e44ac9",
+  "Research/MiddayDirected/Directed7x84.json.gz": "3ccd59194abeb99fb66a952e5d5e7dfa81545e5b780bfbfd08e830ada837528e",
+  "Research/MiddayDirected/Directed7x946.json.gz": "b6ac7b637300815125c52b2d7e4be843d5fc7cfffa635d689759015b410772f9",
+  "Research/MiddayDirected/Directed11x124.json.gz": "9385a522c15525aac7e51739986ae58b2519928af25c5d31339ea5278afdbcf1",
+  "Research/MiddayDirected/Directed7x826.json.gz": "bd9df880bc62e557b40bd58de840269cb1d2d4054aa12c42ed1334ebc75819ed",
+  "Research/MiddayDirected/Directed7x124.json.gz": "9f74ba497abf0b2ed17468f36ffa908796e681b76f169ce9cc93b9064f42c575"
  },
  "prefix_trees": {
   "Research/MiddayGraph/Batch4_13x136d5.json.gz": "7908bcb078236c1deb77945eb7ddd4c33ba589e64f7a64003e49700e4adb5059",
@@ -243,6 +249,9 @@
   "Research/Midday/Support11x682.json.gz": "f44fc29b7068cb9abc683041e2082e5727921c1eee7f521457bf332b107b8723",
   "Research/Midday/Support7x112.json.gz": "fa7dc1d8163b2c706152a75a476e071698597222cdb54ea0ad6e154938556cc6",
   "Research/Midday/Support7x1018.json.gz": "d22b770440c6e311f159586e61684a9f68aa6ad107a8f5bbbc462209bf7b41ef",
-  "Research/MiddayThree/Nested96.json.gz": "7dbc8e15ad6ba143bf539843f4840adbc83f5543d1cdc731ac0d9fd66b702a5f"
+  "Research/MiddayThree/Nested96.json.gz": "7dbc8e15ad6ba143bf539843f4840adbc83f5543d1cdc731ac0d9fd66b702a5f",
+  "Research/MiddayThree/Complement148.json.gz": "2739eeb17201a67edc628e081ee793a532c4719da22f5f901fbeff9d7bd2bb5b",
+  "Research/Midday/Support11x30.json.gz": "ae1f0a95a04df52a10863a37a62ff5665df5176ffaaf28b9eef13adc66554250",
+  "Research/Midday/Support7x60.json.gz": "264d6ce1eed6b58ec2c68e19ea8d81c0940def02dc729b27943cc12e61adc4ce"
  }
 }
