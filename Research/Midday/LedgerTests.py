@@ -23,6 +23,7 @@ def check(b,d,reg):
         elif rel in reg.get('prefix_trees',{}):keys=[(packet['p'],packet['e'])]
         elif rel=='Research/MiddayFive/Accepted.json.gz':keys=[(5,r['e']) for r in packet];assert set(keys)=={k for k in users if k[0]==5}
         elif rel.startswith('Research/MiddayThree/'):keys=[(3,packet['e'])]
+        elif rel.startswith('Research/Midday/Euler'):keys=[(packet['general']['p'],packet['general']['e'])]
         else:raise ValueError('unsupported packet '+rel)
         required.update((rel,p,e) for p,e in keys)
     for row in d['proofs']:

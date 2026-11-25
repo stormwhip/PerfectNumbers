@@ -51,6 +51,9 @@ def ledger(reg,workers):
             e=json.loads(gzip.decompress(path.read_bytes()))['e'];need(type(e)==int and (3,e) in ob and path.name==f'Pivot{e}.json.gz','wrong pivot');p=3;es=[e];cmd=[str(R/'MiddayThree/IndependentPivot.py'),str(path)]
         elif path.parent==R/'MiddayThree' and path.name.startswith('Nested') and path.name.endswith('.json.gz'):
             pkt=json.loads(gzip.decompress(path.read_bytes()));e=pkt['e'];need(type(e)==int and (3,e) in ob and path.name==f'Nested{e}.json.gz','wrong nested packet');p=3;es=[e];cmd=[str(R/'MiddayThree/NestedReplay.py'),str(path)]
+        elif path.parent==H and path.name.startswith('Euler') and path.name.endswith('.json.gz'):
+            pkt=json.loads(gzip.decompress(path.read_bytes()));p,e=pkt['general']['p'],pkt['general']['e'];need(type(p)==type(e)==int and (p,e) in ob and path.name==f'Euler{p}x{e}.json.gz','Euler-cover scope');es=[e]
+            subprocess.run([sys.executable,'-I','-S','-B',str(H/'ModeCheck.py'),str(path)],check=True);cmd=[str(H/'IndependentModes.py'),str(path)]
         else:raise ValueError('unsupported special packet')
         subprocess.run([sys.executable,'-I','-S','-B',*cmd],check=True)
         for e in es:proofs.append({'packet':rel,'seed':[p,e],'actuals':[e]})
