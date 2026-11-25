@@ -2274,6 +2274,27 @@
    ]
   },
   {
+   "packet": "Research/MiddayDirected/Directed7x94.json.gz",
+   "seed": [
+    7,
+    94
+   ],
+   "actuals": [
+    94
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed7x64.json.gz",
+   "seed": [
+    7,
+    64
+   ],
+   "actuals": [
+    64,
+    324
+   ]
+  },
+  {
    "packet": "Research/MiddayGraph/Batch4_13x136d5.json.gz",
    "seed": [
     13,
@@ -2602,12 +2623,26 @@
    "actuals": [
     60
    ]
+  },
+  {
+   "packet": "Research/MiddayThree/Complement88.json.gz",
+   "seed": [
+    3,
+    88
+   ],
+   "actuals": [
+    88
+   ]
   }
  ],
  "new_actuals": [
   [
    3,
    82
+  ],
+  [
+   3,
+   88
   ],
   [
    3,
@@ -2763,6 +2798,10 @@
   ],
   [
    7,
+   64
+  ],
+  [
+   7,
    72
   ],
   [
@@ -2780,6 +2819,10 @@
   [
    7,
    88
+  ],
+  [
+   7,
+   94
   ],
   [
    7,
@@ -3813,6 +3856,7 @@
   "P13_I00093",
   "P13_I00102",
   "P3_I00024",
+  "P3_I00025",
   "P3_I00026",
   "P3_I00029",
   "P3_I00030",
@@ -3840,9 +3884,9 @@
   "P5_I00015",
   "P5_I00019"
  ],
- "closed": 2862,
- "open": 210,
- "open_actuals": 252,
+ "closed": 2863,
+ "open": 209,
+ "open_actuals": 249,
  "singletons": 186,
  "remaining_shards": [
   {
@@ -4477,9 +4521,7 @@
     4,
     24,
     34,
-    54,
-    64,
-    94
+    54
    ]
   },
   {
@@ -4519,7 +4561,6 @@
    "id": "P7_I00005",
    "remaining_actuals": [
     12,
-    64,
     90,
     168
    ]
@@ -4543,8 +4584,7 @@
    "exact": false,
    "id": "P7_I00007",
    "remaining_actuals": [
-    18,
-    94
+    18
    ]
   },
   {
@@ -6098,17 +6138,6 @@
    "id": "P3_I00023",
    "remaining_actuals": [
     78
-   ]
-  },
-  {
-   "root": 3,
-   "index": 25,
-   "count": 676,
-   "exponent": 88,
-   "exact": false,
-   "id": "P3_I00025",
-   "remaining_actuals": [
-    88
    ]
   },
   {
