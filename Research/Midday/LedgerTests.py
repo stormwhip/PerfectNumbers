@@ -16,8 +16,10 @@ def check(b,d,reg):
     assert reg['baseline']==d['baseline']
     required=Counter();reported=Counter()
     for rel in allfiles:
-        packet=json.loads(gzip.decompress((ROOT/rel).read_bytes()))
-        if rel in reg['forests']:
+        raw=(ROOT/rel).read_bytes();packet=json.loads(gzip.decompress(raw) if rel.endswith('.gz') else raw)
+        if rel in ('Research/Midday/ReleaseSupply7x1018.json','Research/Midday/ReleaseSupply11x718.json'):
+            p,e=packet['root'],packet['exponent'];assert rel==f'Research/Midday/ReleaseSupply{p}x{e}.json' and packet['domain']==[0,e];keys=[(p,e)]
+        elif rel in reg['forests']:
             if 'row' in packet:keys=[(3,packet['row']['e'])]
             else:r,=packet['rows'];keys=[(r['p'],r['e'])]
         elif rel in reg.get('prefix_trees',{}):keys=[(packet['p'],packet['e'])]
