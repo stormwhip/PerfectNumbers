@@ -74,7 +74,7 @@ python -B Research/Nov25/LatticeScout.py --p 19 --s 172 --s 191 --s 230 --s 270 
 
 十九根、十三根、三十一根的 28 个静态种子分别补齐缺失的素性链，然后逐项复验。能入账的证书显式列在 [Ledger.py](Ledger.py)；[Delta.json](Delta.json) 是去重后的输出，而不是独立的证明输入。
 
-另为七根和十一根的 `(7,234)`、`(11,220)` 试验按首坏来源重新分配森林所有者，并补充新的圆分因子。两个完整森林通过固定 [七／十一根算术](../NightSevenForest/Release/Replay.py)；严格整数阈值分别给 `floor(log10 N) ≥ 2400`（严格超过阈值）和 `≥2419`。两项减少分片的实际指数义务，但不单独关闭分片。
+另为七根和十一根试验按首坏来源重新分配森林所有者，并补充新的圆分因子。[先导与复验说明](seven/README.md) 将浮点发现排名与固定 [七／十一根算术](../NightSevenForest/Release/Replay.py) 的整数结果分开。最初 `(7,234)`、`(11,220)`、`(7,252)`、`(11,132)` 四项均通过；留存的整数界分别向下舍入为 2400、2419、2400、2436，其中 2400 表示严格超过阈值。四项减少分片义务但未单独关闭分片。
 
 ```text
 python -I -S -B Research/Nov25/seven/Verify.py Research/Nov25/seven/best-11x220-1.pack.json.gz Research/Nov25/seven/best-7x234-1.pack.json.gz
