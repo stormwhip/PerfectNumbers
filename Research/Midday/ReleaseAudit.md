@@ -26,6 +26,14 @@ The [registry](Registry.json) pins the SHA-256 of the compressed bytes. The firs
 * [Graph trees](../MiddayGraph/ReleaseNotes.md) consume their complete exact cases. [Forest controls](../MiddayForest/README.md) independently check arithmetic and overlap.
 * [Terminal hitting-set reductions](../MiddayTerminal/FiveSets.md) and [support restrictions](../MiddaySupport/README.md) are useful necessary conditions, **not** additional complete exponents or shards. They are not registered as forest seeds.
 
+## Rechecked block and conditional chain
+
+At clean commit `076e4c86`, all 217 non-five packets in the fifth checkpoint (210 ordinary forests, 3 prefix trees, 4 root-three exact covers) passed together between 12:16:47 and 12:26:49 UTC+08:00 on November 25, 2026. The resulting 216 distinct keys and 163 shards reconcile with the 14 actuals / 13 shards of the frozen five audit. That earlier successful 14-line run ended at 11:51:22 UTC+08:00 (log SHA-256 `2be0944e0fc05807dc25941d09b2a9ee9b7d8c0497d320669add66570766479e`). No root-five verifier or input changed relative to `16e1682b`. The archived [root-five receipt](../MiddaySupply/FiveReceipt.json) reports the exit status and exact floors.
+
+The [three-prime hitting theorem](../MiddayTerminal/Triple.md) is a global support restriction, **not** an additional canonical actual or shard. The initial chain including the historical `{3,5,7}` witness, its pair refinements, all three alternate cases, and the final triple each passed from isolated clean commits. The alternate exact Graph certificate for `(19,62)` also passed; this key is already registered through its ordinary forest and was not counted twice.
+
+See [timed clean-run receipts](ReleaseReceipts.json) for UTC offsets, commit IDs, commands, exit codes, log digests, and the lack of uncommitted files before and after each reported run. These metadata aid reproducibility; the certificate replay itself remains authoritative.
+
 ## Runtime
 
 Rolling isolated tests used CPython 3.11.9 (64-bit), Windows build 26200, Intel Core i9-14900HX (32 logical processors), `-I -S -B`, no numerical packages or discovery caches. Run from a release checkout rather than an active discovery tree. Full offline replay may take substantially longer than verifying a single packet. Researchers reusing an earlier completed sub-run must bind both the packet and the verifier plus all data dependencies to the earlier snapshot.

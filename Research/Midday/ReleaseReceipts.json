@@ -1,0 +1,322 @@
+{
+  "environment": {
+    "host": "DivineGift",
+    "os": "Windows 10.0.26200 AMD64",
+    "python": "CPython 3.11.9 MSC v.1938 64-bit",
+    "cpu": "Intel Core i9-14900HX",
+    "logical_cpus": 32
+  },
+  "purpose": "Machine timing and provenance, not proof authority; public full reproduction uses the committed Registry and Delta with CheckLedger.py and LedgerTests.py. Relative ../MiddayScratch arguments identify local rolling subsets; those inputs are not required for full reproduction. All mathematical conclusions require strict checks. Conditional-only runs add no canonical credit.",
+  "runs": [
+    {
+      "snapshot": "076e4c8699a2e6f9252c91d164ccfb8dff44f0a2",
+      "start": "2026-11-25T12:15:53+08:00",
+      "end": "2026-11-25T12:16:55+08:00",
+      "seconds": 60.78,
+      "exit": 0,
+      "log_sha256": "769eef2ad7af544ad636ba32011ec45e223595142ff10182788cca4203bc8224",
+      "python_arguments": [
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "int_max_str_digits=0",
+        "Research/Midday/CheckLedger.py",
+        "--workers",
+        "4",
+        "--registry",
+        "../MiddayScratch/Integration5Diff.json",
+        "--write",
+        "../MiddayScratch/Integration5DiffDelta.json"
+      ],
+      "clean_before_after": true,
+      "registry_sha256_lf": "5fea63148b66f7c94b9f897490a0ba298a69c872ab955ba6272407a052f64e47",
+      "packets": {
+        "forests": 23,
+        "prefix_trees": 0,
+        "special": 0
+      },
+      "projection_sha256_lf": "b1c9d5f51d6226df03affd9142db44a029e36377b6c897514bc57455c0b5c612"
+    },
+    {
+      "snapshot": "076e4c8699a2e6f9252c91d164ccfb8dff44f0a2",
+      "start": "2026-11-25T12:15:53+08:00",
+      "end": "2026-11-25T12:18:30+08:00",
+      "seconds": 155.53,
+      "exit": 0,
+      "log_sha256": "a1bb494b8f710d217c38e9e5c368f698363b3fcb59907d82bbd33de1404310a4",
+      "python_arguments": [
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "int_max_str_digits=0",
+        "Research/MiddayForest/Control.py"
+      ],
+      "clean_before_after": true
+    },
+    {
+      "snapshot": "076e4c8699a2e6f9252c91d164ccfb8dff44f0a2",
+      "start": "2026-11-25T12:15:53+08:00",
+      "end": "2026-11-25T12:23:21+08:00",
+      "seconds": 446.34,
+      "exit": 0,
+      "log_sha256": "e4ee4e34baf62acab07f6b27053ea7fb5650cedf3c62b2f57096d7484ef14e6c",
+      "python_arguments": [
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "int_max_str_digits=0",
+        "Research/MiddayTerminal/ReleaseFour.py",
+        "--baseline"
+      ],
+      "clean_before_after": true
+    },
+    {
+      "snapshot": "076e4c8699a2e6f9252c91d164ccfb8dff44f0a2",
+      "start": "2026-11-25T12:15:54+08:00",
+      "end": "2026-11-25T12:22:42+08:00",
+      "seconds": 407.41,
+      "exit": 0,
+      "log_sha256": "dc27f4c4b03d3348208ad2203b448fc4774688f6ae3902d43f40b86612b70e39",
+      "python_arguments": [
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "int_max_str_digits=0",
+        "Research/Nov25/Compose/Replay.py",
+        "--conditional",
+        "Research/MiddaySupport/Support517.json.gz"
+      ],
+      "clean_before_after": true
+    },
+    {
+      "snapshot": "076e4c8699a2e6f9252c91d164ccfb8dff44f0a2",
+      "start": "2026-11-25T12:16:47+08:00",
+      "end": "2026-11-25T12:26:49+08:00",
+      "seconds": 600.12,
+      "exit": 0,
+      "log_sha256": "37c6a989c0071777eba4bab17ddbea34f704d0a966a3cf4093f10ecae86351a0",
+      "python_arguments": [
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "int_max_str_digits=0",
+        "Research/Midday/CheckLedger.py",
+        "--workers",
+        "4",
+        "--registry",
+        "../MiddayScratch/IntegrationBaseColdRegistry.json",
+        "--write",
+        "../MiddayScratch/IntegrationBaseColdDelta.json"
+      ],
+      "clean_before_after": true,
+      "registry_sha256_lf": "5bab06c88449f40a9e2ca8fd58a8485a33a4c732544fe5e0706ae6befbc743dc",
+      "packets": {
+        "forests": 210,
+        "prefix_trees": 3,
+        "special": 4
+      },
+      "projection_sha256_lf": "4db12f544db1c11c35ecd6da9bc821bdb3561d741f495c0b1190418731c64f65"
+    },
+    {
+      "snapshot": "076e4c8699a2e6f9252c91d164ccfb8dff44f0a2",
+      "start": "2026-11-25T12:18:36+08:00",
+      "end": "2026-11-25T12:20:58+08:00",
+      "seconds": 139.62,
+      "exit": 0,
+      "log_sha256": "b53ffac0e5f6f724ebb2b00465f99a64b90bb214eb5f71dde43c9db536e2b337",
+      "python_arguments": [
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "int_max_str_digits=0",
+        "Research/MiddaySupport/CheckPairPartitions.py"
+      ],
+      "clean_before_after": true
+    },
+    {
+      "snapshot": "076e4c8699a2e6f9252c91d164ccfb8dff44f0a2",
+      "start": "2026-11-25T12:22:45+08:00",
+      "end": "2026-11-25T12:27:47+08:00",
+      "seconds": 300.12,
+      "exit": 0,
+      "log_sha256": "7f4ecf964f37c29f8ac550da1dcbe240e67818c7b5c9904c0558a703b67f8414",
+      "python_arguments": [
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "int_max_str_digits=0",
+        "Research/MiddaySupport/IndependentRemaining.py",
+        "517"
+      ],
+      "clean_before_after": true
+    },
+    {
+      "snapshot": "076e4c8699a2e6f9252c91d164ccfb8dff44f0a2",
+      "start": "2026-11-25T12:23:23+08:00",
+      "end": "2026-11-25T12:27:54+08:00",
+      "seconds": 269.23,
+      "exit": 0,
+      "log_sha256": "38278593e4dad4b6a215adf9e22cbf55346fc2f51c0ad97bff6d8c4eec0d0948",
+      "python_arguments": [
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "int_max_str_digits=0",
+        "Research/MiddayTerminal/ReleasePairs.py",
+        "--only-new"
+      ],
+      "clean_before_after": true
+    },
+    {
+      "snapshot": "187f5770ba31a2fecc4662e7a5bdd0479ef5dc09",
+      "start": "2026-11-25T12:23:27+08:00",
+      "end": "2026-11-25T12:25:08+08:00",
+      "seconds": 99.11,
+      "exit": 0,
+      "log_sha256": "51eaf76007b459adb1e9eae538e4cec30b04c208a4bc6fcf9bc9d150e33b464a",
+      "python_arguments": [
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "int_max_str_digits=0",
+        "Research/Midday/CheckLedger.py",
+        "--workers",
+        "3",
+        "--registry",
+        "../MiddayScratch/Integration6Diff.json",
+        "--write",
+        "../MiddayScratch/Integration6DiffDelta.json"
+      ],
+      "clean_before_after": true,
+      "registry_sha256_lf": "4228591e0e274c63eecbae4ab7aae7c6d291dac4fefb3af94e274ba306151450",
+      "packets": {
+        "forests": 6,
+        "prefix_trees": 0,
+        "special": 1
+      },
+      "projection_sha256_lf": "77a72a0829ff1da42da9f6e7a939fd0f17f7e2b2abc1d849b6ca14b273c656a0"
+    },
+    {
+      "snapshot": "187f5770ba31a2fecc4662e7a5bdd0479ef5dc09",
+      "start": "2026-11-25T12:23:28+08:00",
+      "end": "2026-11-25T12:25:15+08:00",
+      "seconds": 105.0,
+      "exit": 0,
+      "log_sha256": "01118f55e3434842fd64f9c78905196fba07be823bc51181ab41ac24699c9608",
+      "python_arguments": [
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "int_max_str_digits=0",
+        "Research/MiddayGraph/Release1962.py"
+      ],
+      "clean_before_after": true
+    },
+    {
+      "snapshot": "eb30a4ba99b326cd67b768f239564ca927c7e23e",
+      "start": "2026-11-25T12:24:27+08:00",
+      "end": "2026-11-25T12:24:30+08:00",
+      "seconds": 2.61,
+      "exit": 0,
+      "log_sha256": "11126eaeb5bdb7c8ffa69bca88f5131bfd0ebad934e74a3b350e5bb1b33ff4b2",
+      "python_arguments": [
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "int_max_str_digits=0",
+        "Research/Midday/CheckLedger.py",
+        "--workers",
+        "1",
+        "--registry",
+        "../MiddayScratch/Integration7Diff.json",
+        "--write",
+        "../MiddayScratch/Integration7DiffDelta.json"
+      ],
+      "clean_before_after": true,
+      "registry_sha256_lf": "fa82f964191cafb6ac713a79d1314341a260bc6014e951b4220bc4a99f5f5617",
+      "packets": {
+        "forests": 0,
+        "prefix_trees": 0,
+        "special": 1
+      },
+      "projection_sha256_lf": "af05e2457fa30d549d5d4df18ff3c8bac86e7ad19f43d61d294f85c31cd08f1f"
+    },
+    {
+      "snapshot": "187f5770ba31a2fecc4662e7a5bdd0479ef5dc09",
+      "start": "2026-11-25T12:25:17+08:00",
+      "end": "2026-11-25T12:29:43+08:00",
+      "seconds": 264.23,
+      "exit": 0,
+      "log_sha256": "2bf2e9c56703c90b61e0dbce1cf09b99b4f1e4f7268890cc6ba0e356afe1bd5d",
+      "python_arguments": [
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "int_max_str_digits=0",
+        "Research/MiddayTerminal/ReleaseAlternates.py",
+        "--only-new"
+      ],
+      "clean_before_after": true
+    },
+    {
+      "snapshot": "24766599da8f5a8923f2b7711cddc47af8223d22",
+      "start": "2026-11-25T12:26:49+08:00",
+      "end": "2026-11-25T12:29:22+08:00",
+      "seconds": 150.58,
+      "exit": 0,
+      "log_sha256": "e230abbeb0853f447334c36223e073ecb046e595c7dd1e1c5d4558fea62743d0",
+      "python_arguments": [
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "int_max_str_digits=0",
+        "Research/MiddayTerminal/ReleaseTriple.py",
+        "--only-new"
+      ],
+      "clean_before_after": true
+    },
+    {
+      "snapshot": "24766599da8f5a8923f2b7711cddc47af8223d22",
+      "start": "2026-11-25T12:26:55+08:00",
+      "end": "2026-11-25T12:27:05+08:00",
+      "seconds": 8.0,
+      "exit": 0,
+      "log_sha256": "bbccc7fae4e9c1bc43204c4940dbfecfeba60ac2e1e27686cf1fa1efa9bd308c",
+      "python_arguments": [
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "int_max_str_digits=0",
+        "Research/Midday/CheckLedger.py",
+        "--workers",
+        "1",
+        "--registry",
+        "../MiddayScratch/Integration8Diff.json",
+        "--write",
+        "../MiddayScratch/Integration8DiffDelta.json"
+      ],
+      "clean_before_after": true,
+      "registry_sha256_lf": "71055e198f25c105aab41690f625e1334d93d6b7940bd9950167b95c25a08859",
+      "packets": {
+        "forests": 0,
+        "prefix_trees": 0,
+        "special": 1
+      },
+      "projection_sha256_lf": "104911f16998ff60850a6a1b7bce951e997738c556d3151b9221ea3fea7d086a"
+    }
+  ]
+}

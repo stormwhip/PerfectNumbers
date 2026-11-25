@@ -1,12 +1,13 @@
-# 三份精确前缀森林证书
+# 四份精确前缀森林证书
 
-这三份证书仅证明：在对应的规范根类内，奇完全数 `N ≤ 10^2400` 不可能有指定的实际根指数。根序为 `19,7,11,31,13,3,5,17`，只能排除列在该根之前的根。无条件指不需额外支持前提，不是全局下界定理。与其他路线重复的 `(p,e)` 在总账本只取一次。
+这四份证书仅证明：在对应的规范根类内，奇完全数 `N ≤ 10^2400` 不可能有指定的实际根指数。根序为 `19,7,11,31,13,3,5,17`，只能排除列在该根之前的根。无条件指不需额外支持前提，不是全局下界定理。与其他路线重复的 `(p,e)` 在总账本只取一次。
 
 | `(p,e)` | 固定包 | 独立入口 | 森林求界 / 精确分支 / 未闭 |
 |---|---|---|---|
 | (13,136) | [输入](Batch4_13x136d5.json.gz) | [Release](Release.py) | 223 / 11 / 0 |
 | (13,80) | [输入](EcmC13x80d3.json.gz) | [Release80](Release80.py) | 79 / 3 / 0 |
 | (31,136) | [输入](Batch4_31x136d4.json.gz) | [Release31136](Release31136.py) | 65 / 4 / 0 |
+| (19,62) | [输入](Whole19x62d1.json.gz) | [Release1962](Release1962.py) | 51 / 1 / 0 |
 
 从仓库根运行，均只依赖 [Check.py](Check.py)、标准库和基线的 [PrimeCheck.py](../RootFiveNext/PrimeCheck.py)。不需要 GP、ECM、历史工作树、发现缓存或联网。
 
@@ -14,6 +15,7 @@
 python -I -S -B Research/MiddayGraph/Release.py
 python -I -S -B Research/MiddayGraph/Release80.py
 python -I -S -B Research/MiddayGraph/Release31136.py
+python -I -S -B Research/MiddayGraph/Release1962.py
 ```
 
 固定包 SHA-256（同表顺序）：
@@ -22,6 +24,7 @@ python -I -S -B Research/MiddayGraph/Release31136.py
 7908bcb078236c1deb77945eb7ddd4c33ba589e64f7a64003e49700e4adb5059
 64fe64868f6d7496f67acae0c79009137a14f170afee8f64eaf1558ea2d43316
 7d46080dfaf9feec2869bb78acb613402a0b2849f742119e7573ade53ae88f18
+f0aefa7dda5a8b248e80a623a8081cef09b25ed9e05e74a625448bfe7cca9f0b
 ```
 
 ## 证明依据
