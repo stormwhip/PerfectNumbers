@@ -1,0 +1,28 @@
+"""Independent projection and cold-ledger integrity tests. No proof search or discovery input."""
+import json,hashlib,sys,argparse
+from pathlib import Path
+H=Path(__file__).resolve().parent;R=H.parent;ROOT=R.parent
+
+def check(b,d,reg):
+    s0=b['remaining_shards'];users={};old={}
+    for s in s0:
+        k=s['id'];assert k not in old;old[k]=s.copy();es=s['remaining_actuals'];assert es==sorted(set(es)) and es
+        for e in es:
+            assert (e==s['exponent'] if s['exact'] else (e+1)%(s['exponent']+1)==0);users.setdefault((s['root'],e),set()).add(k)
+    assert (len(s0),len(users),sum(map(len,users.values())))==(406,511,582)
+    got=set(); alive={k:set(s['remaining_actuals']) for k,s in old.items()};proofnames=set();allfiles=set(reg['forests'])|set(reg.get('prefix_trees',{}))|set(reg.get('special',{}))
+    for row in d['proofs']:
+        rel=row['packet'];p,e=row['seed'];assert rel in allfiles and (p,e) in users;proofnames.add(rel)
+        wanted={f for pp,f in users if pp==p and (f+1)%(e+1)==0 and f>=e} if rel in reg['forests'] else {e};assert sorted(wanted)==row['actuals']
+        for f in wanted:
+            if (p,f) in got:continue
+            got.add((p,f))
+            for k in users[p,f]:alive[k].remove(f)
+    assert proofnames==allfiles and sorted(map(list,got))==d['new_actuals']
+    left=[dict(s,remaining_actuals=sorted(alive[k])) for k,s in old.items() if alive[k]];closed=[k for k in old if not alive[k]];assert left==d['remaining_shards'] and closed==d['new_shards'];assert d['closed']==2666+len(closed) and d['open']==len(left) and d['closed']+d['open']==3072 and d['open_actuals']==511-len(got) and d['singletons']==sum(len(x['remaining_actuals'])==1 for x in left)
+    for group in ('forests','prefix_trees','special'):
+        for p,v in reg.get(group,{}).items():assert hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==v
+    print('PASS independent overlap reconciliation:',len(got),'distinct keys;',len(closed),'new canonical shards;',len(left),'open')
+if __name__=='__main__':
+    if not __debug__:raise SystemExit('no -O')
+    ap=argparse.ArgumentParser();ap.add_argument('--delta',type=Path,default=H/'Delta.json');ap.add_argument('--registry',type=Path,default=H/'Registry.json');a=ap.parse_args();check(json.loads((R/'Nov25/Delta.json').read_bytes()),json.loads(a.delta.read_bytes()),json.loads(a.registry.read_bytes()))

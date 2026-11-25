@@ -30,8 +30,25 @@ def ledger(reg,workers):
             need((p,e) in ob,'seed not open');hits=sorted(f for pp,f in ob if pp==p and (f+1)%(e+1)==0 and f>=e);proofs.append({'packet':rel,'seed':[p,e],'actuals':hits});print('PASS',p,e,'Euler-complete; targets',hits,flush=True)
     # Exact-prefix trees have no automatic index lift.
     for rel,sha in reg.get('prefix_trees',{}).items():
-        f=ROOT/rel;need(hashlib.sha256(f.read_bytes()).hexdigest()==sha,'tree digest');need(rel=='Research/MiddayGraph/Batch4_13x136d5.json.gz','unsupported prefix proof');sys.path.insert(0,str(R/'MiddayGraph'));from Release import verify
-        keys=verify(f);need(keys=={(13,136)} and keys<=ob,'wrong exact tree');proofs.append({'packet':rel,'seed':[13,136],'actuals':[136]})
+        f=ROOT/rel;need(hashlib.sha256(f.read_bytes()).hexdigest()==sha,'tree digest');sys.path.insert(0,str(R/'MiddayGraph'))
+        if rel=='Research/MiddayGraph/Batch4_13x136d5.json.gz':
+            from Release import verify
+            pair=(13,136)
+        elif rel=='Research/MiddayGraph/EcmC13x80d3.json.gz':
+            from Release80 import verify
+            pair=(13,80)
+        else:raise ValueError('unsupported prefix proof')
+        keys=verify(f);need(keys=={pair} and keys<=ob,'wrong exact tree');proofs.append({'packet':rel,'seed':list(pair),'actuals':[pair[1]]})
+    for rel,sha in reg.get('special',{}).items():
+        import subprocess
+        path=ROOT/rel;need(hashlib.sha256(path.read_bytes()).hexdigest()==sha,'special packet digest')
+        if rel=='Research/MiddayFive/Accepted.json.gz':
+            es=sorted(e for p,e in ob if p==5);need(len(es)==14,'five domain');cmd=[str(R/'MiddayFive/Replay.py'),'--audit',*map(str,es)];p=5
+        elif rel=='Research/MiddayThree/Pivot138.json.gz':
+            need(json.loads(gzip.decompress(path.read_bytes()))['e']==138,'wrong pivot');p=3;es=[138];cmd=[str(R/'MiddayThree/IndependentPivot.py'),str(path)]
+        else:raise ValueError('unsupported special packet')
+        subprocess.run([sys.executable,'-I','-S','-B',*cmd],check=True)
+        for e in es:proofs.append({'packet':rel,'seed':[p,e],'actuals':[e]})
     new={(x['seed'][0],f) for x in proofs for f in x['actuals']};closed=[];left=[]
     for s in sh:
         es=[e for e in s['remaining_actuals'] if (s['root'],e) not in new]
