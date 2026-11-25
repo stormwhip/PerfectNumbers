@@ -22,4 +22,5 @@ python -I -S -B Research/Session20261126/SupportProjection.py
 2. [增量账本](Delta.json)：按 `(root,e)` 而非证明包数去重，再要求分片的**全部**剩余实际指数被包含。[复验入口](Replay.py)只允许普通森林作指标整除提升；枢轴、条件树、联合供给、精确大指数证书一律不自动提升。
 3. [联合供给森林](SupplyForest/Proof.md)、[枢轴断点](SupplyForest/Breakpoint/Proof.md)：区分一次 Euler 所在位置与其未知来源，处理多账本的共同指数选择及单一退款。[根三 1162](Joint/Additional.md)另需分别证内部、外部来源的所有叶。
 4. [条件支持](Support/Readme.md)、[全局命中集](GlobalSupport/Readme.md)、[来源理论](Source/SourceSquare.md)：注意不同分母与适用假设。[支持投影](SupportProjection.py)给出条件与完整结果的精确交并。
-5. [实验日志](../../Records/ExperimentLog.md)与[可选发现器](Discover.py)。后者从 `data-v1` 的索引产生不可信候选标签；正式验收另做精确整除、素性证书、尾部完备性及严格阈值检查。
+5. [其余四个根三高指数的基础界](NextBase/README.md)和[根十九精确 Euler 位置限制](LowSupport/README.md)是**部分结果**，不独立计为完整指数。可选范围复验可用精确模块算术库 python-flint；已登记的完整指数验收不依赖它。
+6. [实验日志](../../Records/ExperimentLog.md)与[可选发现器](Discover.py)。后者从 `data-v1` 的索引产生不可信候选标签；正式验收另做精确整除、素性证书、尾部完备性及严格阈值检查。

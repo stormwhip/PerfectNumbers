@@ -37,7 +37,7 @@ def main():
     approved=[[],[]]
     for i in range(42):
         clean,by=leaf(i,True);vals=[min([clean]+list(by.values())),clean]
-        for k,tag in [(0,'external'),(1,'flow')]:
+        for k,tag in [(0,'DualExternal'),(1,'DualFlow')]:
             if (Path(__file__).parent/(tag+str(i)+'.json')).exists():vals[k]=max(vals[k],getdual(i,k==0)['net_nanonats'])
         if base[0]+vals[0]<=2400*hi(10):
             if i in (0,1,5,6,12):vals[0]=max(vals[0],calc(i))

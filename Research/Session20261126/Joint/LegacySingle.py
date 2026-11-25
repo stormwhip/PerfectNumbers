@@ -38,7 +38,7 @@ def calc(i):
         return total//DEN
     key=f.Path(f.__file__).parent; pool=[]
     for tag in ('flow','external'):
-        local=here/(tag+str(i)+'.json'); path=local if local.exists() else key/(tag+str(i)+'.json')
+        local=here/('Dual'+tag.title()+str(i)+'.json'); path=local if local.exists() else key/('Dual'+tag.title()+str(i)+'.json')
         if not path.exists():path=local
         if not path.exists() and 'search' in sys.argv:
             from scipy.optimize import linprog
@@ -94,7 +94,7 @@ def calc(i):
             d={k:int(round(max(0.,-v)*DEN)) for k,v in zip(names,res.ineqlin.marginals) if v<0};delta=max(0,d.get('ab',0)*(-rows[names.index('ab')][n-1])+d.get('vol',0)*T-T*DEN)
             if delta:d.update({k:(x*T*DEN)//(T*DEN+delta) for k,x in d.items()})
             zz=evaldual(d,a);print('separate',a,round((5052805597654+zz)/hi(10),5),[(j,next(name for name,row in zip(names,rows) if name.startswith('sel') and j in row),x) for j,x in bad[a]],flush=True)
-            (here/f'atom-{i}-{str(a)[:20]}.json').write_text(json.dumps({'a':a,'d':d,'bound':zz},separators=(',',':')),encoding='utf-8')
+            (here/f'Atom{i}x{str(a)[:20]}.json').write_text(json.dumps({'a':a,'d':d,'bound':zz},separators=(',',':')),encoding='utf-8')
     if 'verify' in sys.argv:
         minimum=min(bases) if not unsafe else max(bases)
         if i==12:
@@ -105,7 +105,7 @@ def calc(i):
         else:base0=defaultbase
         for z,a in cases:
             if z+base0<=2400*hi(10):
-                rec=json.loads((here/f'atom-{i}-{str(a)[:20]}.json').read_bytes());assert rec['a']==a and set(rec['d'])<=set(names) and all(type(x)==int and x>=0 for x in rec['d'].values());z=max(z,evaldual(rec['d'],a))
+                rec=json.loads((here/f'Atom{i}x{str(a)[:20]}.json').read_bytes());assert rec['a']==a and set(rec['d'])<=set(names) and all(type(x)==int and x>=0 for x in rec['d'].values());z=max(z,evaldual(rec['d'],a))
             minimum=min(z,minimum)
         assert base0+minimum>2400*hi(10),(i,base0,minimum)
         print('VERIFIED_PARTIAL_LEAF',i,base0,minimum,(base0+minimum)/hi(10),flush=True)

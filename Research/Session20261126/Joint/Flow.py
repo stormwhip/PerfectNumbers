@@ -62,7 +62,7 @@ def model(i,external=False):
     return data,rows,rhs,names
 
 def getdual(i,external=False):
-    data,rows,rhs,names=model(i,external);key=Path(__file__).parent/(('external' if external else 'flow')+str(i)+'.json');optmode=sys.argv[2]
+    data,rows,rhs,names=model(i,external);key=Path(__file__).parent/(('DualExternal' if external else 'DualFlow')+str(i)+'.json');optmode=sys.argv[2]
     if optmode=='search':
         import scipy.optimize as so,numpy as np
         from scipy.sparse import coo_matrix

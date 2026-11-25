@@ -40,8 +40,8 @@ def hybrid(i,base,forest=None,search=False):
         for name,row in zip(names,rr):
             if name.startswith('sel'):v+=min(0,min(rc[j] for j in row))
         return v//den
-    ans=[];wits=here/f'hybrid-{i}.json';w=json.loads(wits.read_bytes()) if wits.exists() else {};commons=[]
-    for p in [here/f'flow{i}.json',here/f'external{i}.json']:
+    ans=[];wits=here/f'Hybrid{i}.json';w=json.loads(wits.read_bytes()) if wits.exists() else {};commons=[]
+    for p in [here/f'DualFlow{i}.json',here/f'DualExternal{i}.json']:
         if p.is_file():commons.append(json.loads(p.read_bytes()))
     for z,t in sorted(bad):
         rr=rows.copy();rr[iv]=rr[iv].copy()
