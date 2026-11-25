@@ -1,0 +1,175 @@
+{
+  "exact": [
+    150,
+    156,
+    166,
+    178,
+    180,
+    186,
+    190,
+    208,
+    216,
+    220,
+    246,
+    286,
+    298,
+    336,
+    342,
+    360
+  ],
+  "closed": [
+    "P3_I00037",
+    "P3_I00038",
+    "P3_I00040",
+    "P3_I00042",
+    "P3_I00043",
+    "P3_I00044",
+    "P3_I00069"
+  ],
+  "rows": [
+    {
+      "e": 150,
+      "packet": "Shared150.json.gz",
+      "sha256": "9be2fa388eed5c982e8220aae80b43cb75111f13080403336cffb038d8869c16",
+      "floor": 2409,
+      "roots": 4,
+      "edges": 463,
+      "ecpp": 87
+    },
+    {
+      "e": 156,
+      "packet": "Shared156.json.gz",
+      "sha256": "bcbf47a32f0426eb1f69623b94981f7f6656e5d5d76a48970dc25bb35f5f8565",
+      "floor": 2431,
+      "roots": 4,
+      "edges": 416,
+      "ecpp": 81
+    },
+    {
+      "e": 166,
+      "packet": "Shared166.json.gz",
+      "sha256": "8ddb90dacea6d74348e2d2e5e7644c0f6454a8c1489577d6476e50a05aa38d7c",
+      "floor": 2401,
+      "roots": 5,
+      "edges": 467,
+      "ecpp": 118
+    },
+    {
+      "e": 178,
+      "packet": "Forest178.json.gz",
+      "sha256": "416767f6f53f8c212887d7da4f171221268122b6cf931e4e0a34cfa579e78882",
+      "floor": 2431,
+      "roots": 7,
+      "edges": 228,
+      "ecpp": 36
+    },
+    {
+      "e": 180,
+      "packet": "Shared180.json.gz",
+      "sha256": "c3825d0f3f90eaf80493c1451b81cf694e0700ed976c5d915f84d5f28945d3fd",
+      "floor": 2404,
+      "roots": 3,
+      "edges": 685,
+      "ecpp": 134
+    },
+    {
+      "e": 186,
+      "packet": "Shared186.json.gz",
+      "sha256": "87fdf286dd3638536d3d40b782956274f408756cfdcd394cbe557edc80a4fa70",
+      "floor": 2421,
+      "roots": 8,
+      "edges": 568,
+      "ecpp": 142
+    },
+    {
+      "e": 190,
+      "packet": "Forest190.json.gz",
+      "sha256": "11fb6f2b4ca41bfb8df3a91ec34d61f249c2d0c0eed331306c8b36870f10363f",
+      "floor": 2413,
+      "roots": 4,
+      "edges": 377,
+      "ecpp": 63
+    },
+    {
+      "e": 208,
+      "packet": "Shared208.json.gz",
+      "sha256": "2d8f1e7c97cef3ebeb42505c5d3b6647515755fd04274cf7c8e39d406411b310",
+      "floor": 2499,
+      "roots": 9,
+      "edges": 611,
+      "ecpp": 114
+    },
+    {
+      "e": 216,
+      "packet": "Shared216.json.gz",
+      "sha256": "1c009d7ab0c3837c3f651955674f9c560dc5a730d8cd49fca9ae6e35510ae6c8",
+      "floor": 2451,
+      "roots": 8,
+      "edges": 476,
+      "ecpp": 119
+    },
+    {
+      "e": 220,
+      "packet": "Shared220.json.gz",
+      "sha256": "5ef22636b02a2c79bd0586eb9a045b654648787443a7f4995d1715ebae354ff2",
+      "floor": 2445,
+      "roots": 5,
+      "edges": 556,
+      "ecpp": 151
+    },
+    {
+      "e": 246,
+      "packet": "Shared246.json.gz",
+      "sha256": "4c751c5cc4171ceea49201ffc47203e44fcca68dd9509a4c045fdd79c3a185d2",
+      "floor": 2416,
+      "roots": 7,
+      "edges": 548,
+      "ecpp": 98
+    },
+    {
+      "e": 286,
+      "packet": "Shared286.json.gz",
+      "sha256": "af768f3712d5c56eae59a69a94293cdedb5f13615748ed3032a12b26bd5efb69",
+      "floor": 2407,
+      "roots": 5,
+      "edges": 499,
+      "ecpp": 133
+    },
+    {
+      "e": 298,
+      "packet": "Shared298.json.gz",
+      "sha256": "67add2028cbf842ebb1bee3857f640059bf1471df308347f6d931f853fc535e2",
+      "floor": 2482,
+      "roots": 8,
+      "edges": 666,
+      "ecpp": 165
+    },
+    {
+      "e": 336,
+      "packet": "Shared336.json.gz",
+      "sha256": "55286747daf05116b428a830bf16ecf4ab0080da20c8ba218ae8ad449f01d4a5",
+      "floor": 2415,
+      "roots": 4,
+      "edges": 480,
+      "ecpp": 88
+    },
+    {
+      "e": 342,
+      "packet": "Forest342.json.gz",
+      "sha256": "acdb5208a7fe7ba994ff6ee8dd701dad44e4c2f7b740a1b7ad039694b686d328",
+      "floor": 2449,
+      "roots": 13,
+      "edges": 340,
+      "ecpp": 38
+    },
+    {
+      "e": 360,
+      "packet": "Shared360.json.gz",
+      "sha256": "5b933e14e34614d4b22769674e78f6612cfbe661bcf9784689be81a36ab3f48f",
+      "floor": 2441,
+      "roots": 8,
+      "edges": 669,
+      "ecpp": 108
+    }
+  ]
+}

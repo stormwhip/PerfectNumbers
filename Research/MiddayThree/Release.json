@@ -1,0 +1,205 @@
+{
+  "root": 3,
+  "fixed_baseline_sha256": "6d687d3844c16e6df93a75918ea48249a833a8b308bb059c59e4b15b8332dd19",
+  "covered_actuals": [
+    106,
+    108,
+    126,
+    138,
+    150,
+    156,
+    166,
+    178,
+    180,
+    186,
+    190,
+    208,
+    216,
+    220,
+    246,
+    286,
+    298,
+    336,
+    342,
+    360
+  ],
+  "closed_shards": [
+    "P3_I00029",
+    "P3_I00030",
+    "P3_I00032",
+    "P3_I00035",
+    "P3_I00037",
+    "P3_I00038",
+    "P3_I00040",
+    "P3_I00042",
+    "P3_I00043",
+    "P3_I00044",
+    "P3_I00069"
+  ],
+  "remaining_actuals": [
+    6,
+    10,
+    12,
+    16,
+    18,
+    22,
+    28,
+    30,
+    36,
+    40,
+    42,
+    46,
+    48,
+    52,
+    58,
+    60,
+    66,
+    70,
+    72,
+    76,
+    78,
+    82,
+    88,
+    90,
+    96,
+    100,
+    102,
+    112,
+    118,
+    120,
+    130,
+    132,
+    136,
+    142,
+    148,
+    160,
+    168,
+    856,
+    970,
+    990,
+    1108,
+    1162
+  ],
+  "rows": [
+    {
+      "exponent": 106,
+      "proof": "nested",
+      "file": "Nested106.json.gz",
+      "sha256": "251bfa84f9dcede0a4b7668f308c89a809ff70d59a860c87ee0e69a93f54e002"
+    },
+    {
+      "exponent": 108,
+      "proof": "pivot",
+      "file": "Pivot108.json.gz",
+      "sha256": "e3da2e0b865f8bd839f0acc7086214aad7c715417f1e55e3ee47e67ffbff1ed5"
+    },
+    {
+      "exponent": 126,
+      "proof": "pivot",
+      "file": "Pivot126.json.gz",
+      "sha256": "3fe6a2d9e068e6349f186a4c8a1a4d72ae28435ec3892b3c77a352aaa1cf146e"
+    },
+    {
+      "exponent": 138,
+      "proof": "pivot",
+      "file": "Pivot138.json.gz",
+      "sha256": "db90ac4ff43d67b7b5595e78783eb9c09cada11d1a7529e6f887062c996aa104"
+    },
+    {
+      "exponent": 150,
+      "proof": "forest",
+      "file": "Shared150.json.gz",
+      "sha256": "9be2fa388eed5c982e8220aae80b43cb75111f13080403336cffb038d8869c16"
+    },
+    {
+      "exponent": 156,
+      "proof": "forest",
+      "file": "Shared156.json.gz",
+      "sha256": "bcbf47a32f0426eb1f69623b94981f7f6656e5d5d76a48970dc25bb35f5f8565"
+    },
+    {
+      "exponent": 166,
+      "proof": "forest",
+      "file": "Shared166.json.gz",
+      "sha256": "8ddb90dacea6d74348e2d2e5e7644c0f6454a8c1489577d6476e50a05aa38d7c"
+    },
+    {
+      "exponent": 178,
+      "proof": "forest",
+      "file": "Forest178.json.gz",
+      "sha256": "416767f6f53f8c212887d7da4f171221268122b6cf931e4e0a34cfa579e78882"
+    },
+    {
+      "exponent": 180,
+      "proof": "forest",
+      "file": "Shared180.json.gz",
+      "sha256": "c3825d0f3f90eaf80493c1451b81cf694e0700ed976c5d915f84d5f28945d3fd"
+    },
+    {
+      "exponent": 186,
+      "proof": "forest",
+      "file": "Shared186.json.gz",
+      "sha256": "87fdf286dd3638536d3d40b782956274f408756cfdcd394cbe557edc80a4fa70"
+    },
+    {
+      "exponent": 190,
+      "proof": "forest",
+      "file": "Forest190.json.gz",
+      "sha256": "11fb6f2b4ca41bfb8df3a91ec34d61f249c2d0c0eed331306c8b36870f10363f"
+    },
+    {
+      "exponent": 208,
+      "proof": "forest",
+      "file": "Shared208.json.gz",
+      "sha256": "2d8f1e7c97cef3ebeb42505c5d3b6647515755fd04274cf7c8e39d406411b310"
+    },
+    {
+      "exponent": 216,
+      "proof": "forest",
+      "file": "Shared216.json.gz",
+      "sha256": "1c009d7ab0c3837c3f651955674f9c560dc5a730d8cd49fca9ae6e35510ae6c8"
+    },
+    {
+      "exponent": 220,
+      "proof": "forest",
+      "file": "Shared220.json.gz",
+      "sha256": "5ef22636b02a2c79bd0586eb9a045b654648787443a7f4995d1715ebae354ff2"
+    },
+    {
+      "exponent": 246,
+      "proof": "forest",
+      "file": "Shared246.json.gz",
+      "sha256": "4c751c5cc4171ceea49201ffc47203e44fcca68dd9509a4c045fdd79c3a185d2"
+    },
+    {
+      "exponent": 286,
+      "proof": "forest",
+      "file": "Shared286.json.gz",
+      "sha256": "af768f3712d5c56eae59a69a94293cdedb5f13615748ed3032a12b26bd5efb69"
+    },
+    {
+      "exponent": 298,
+      "proof": "forest",
+      "file": "Shared298.json.gz",
+      "sha256": "67add2028cbf842ebb1bee3857f640059bf1471df308347f6d931f853fc535e2"
+    },
+    {
+      "exponent": 336,
+      "proof": "forest",
+      "file": "Shared336.json.gz",
+      "sha256": "55286747daf05116b428a830bf16ecf4ab0080da20c8ba218ae8ad449f01d4a5"
+    },
+    {
+      "exponent": 342,
+      "proof": "forest",
+      "file": "Forest342.json.gz",
+      "sha256": "acdb5208a7fe7ba994ff6ee8dd701dad44e4c2f7b740a1b7ad039694b686d328"
+    },
+    {
+      "exponent": 360,
+      "proof": "forest",
+      "file": "Shared360.json.gz",
+      "sha256": "5b933e14e34614d4b22769674e78f6612cfbe661bcf9784689be81a36ab3f48f"
+    }
+  ]
+}

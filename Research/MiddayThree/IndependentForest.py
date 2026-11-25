@@ -14,14 +14,18 @@ def ordp(n,r):
  h=0
  while n%r==0:n//=r;h+=1
  return h
+@lru_cache(None)
+def checkprime(z,chain):
+ k=z
+ for n,t,f,a,point in chain:
+  must(k==n,'wrong prime');k=elliptic(n,t,f,a,point)
+ must(mr(k),'wrong terminal')
 def checkfile(path,strict=True):
  return checkdata(json.loads(gzip.decompress(Path(path).read_bytes())),strict=strict)
 def checkdata(data,strict=True,select=None):
  must(set(data)=={'row','ecpp'},'fields');r=data['row'];cs=data['ecpp'];must(set(r)=={'e','head','roots','edges'},'row fields');e=r['e'];a=geom(3,e);K=r['roots'];ed=r['edges'];p=dict(ed);must(e>=2 and e%2==0,'nonordinary root');V=set(p)|set(K);must(len(V)==len(K)+len(ed) and all(q not in p for q in K),'duplicate vertex');must(all(a%z==0 for z in K),'bad forced root');must(all(a%q!=0 and w in V for q,w in ed),'bad owner');must(set(cs)=={str(q) for q in V if q>=2**64},'prime bank');must(1<=r['head']<=64,'head')
  for z in V:
-  must(z>3 and BAN%z!=0,'forbidden');k=z
-  for t in cs.get(str(z),[]):must(k==t[0],'wrong prime');k=elliptic(*t)
-  must(mr(k),'wrong terminal')
+  must(z>3 and BAN%z!=0,'forbidden');checkprime(z,tuple((n,t,f,a,tuple(point)) for n,t,f,a,point in cs.get(str(z),[])))
  kids={q:[] for q in V}
  for q,w in ed:kids[w].append(q)
  levels={q:0 for q in K};order=list(K)

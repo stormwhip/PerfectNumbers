@@ -37,6 +37,9 @@ def ledger(reg,workers):
         elif rel=='Research/MiddayGraph/EcmC13x80d3.json.gz':
             from Release80 import verify
             pair=(13,80)
+        elif rel=='Research/MiddayGraph/Batch4_31x136d4.json.gz':
+            from Release31136 import verify
+            pair=(31,136)
         else:raise ValueError('unsupported prefix proof')
         keys=verify(f);need(keys=={pair} and keys<=ob,'wrong exact tree');proofs.append({'packet':rel,'seed':list(pair),'actuals':[pair[1]]})
     for rel,sha in reg.get('special',{}).items():
@@ -44,8 +47,10 @@ def ledger(reg,workers):
         path=ROOT/rel;need(hashlib.sha256(path.read_bytes()).hexdigest()==sha,'special packet digest')
         if rel=='Research/MiddayFive/Accepted.json.gz':
             es=sorted(e for p,e in ob if p==5);need(len(es)==14,'five domain');cmd=[str(R/'MiddayFive/Replay.py'),'--audit',*map(str,es)];p=5
-        elif rel=='Research/MiddayThree/Pivot138.json.gz':
-            need(json.loads(gzip.decompress(path.read_bytes()))['e']==138,'wrong pivot');p=3;es=[138];cmd=[str(R/'MiddayThree/IndependentPivot.py'),str(path)]
+        elif path.parent==R/'MiddayThree' and path.name.startswith('Pivot') and path.name.endswith('.json.gz'):
+            e=json.loads(gzip.decompress(path.read_bytes()))['e'];need(type(e)==int and (3,e) in ob and path.name==f'Pivot{e}.json.gz','wrong pivot');p=3;es=[e];cmd=[str(R/'MiddayThree/IndependentPivot.py'),str(path)]
+        elif path.parent==R/'MiddayThree' and path.name.startswith('Nested') and path.name.endswith('.json.gz'):
+            pkt=json.loads(gzip.decompress(path.read_bytes()));e=pkt['e'];need(type(e)==int and (3,e) in ob and path.name==f'Nested{e}.json.gz','wrong nested packet');p=3;es=[e];cmd=[str(R/'MiddayThree/NestedReplay.py'),str(path)]
         else:raise ValueError('unsupported special packet')
         subprocess.run([sys.executable,'-I','-S','-B',*cmd],check=True)
         for e in es:proofs.append({'packet':rel,'seed':[p,e],'actuals':[e]})
