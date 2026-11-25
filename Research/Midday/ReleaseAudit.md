@@ -18,6 +18,7 @@ The [registry](Registry.json) pins the SHA-256 of the compressed bytes. The firs
 | `a5cf4a61` | 117 | 86 | 320 | Second aggregate checkout and independent projection |
 | `5d3dec47` | 184 | 137 | 269 | Third complete ledger and independent projection; includes all 14 root-five actuals and 13 root-five shards |
 | `97c2ff21` | 207 | 157 | 249 | Third plus 19 new ordinary forests, one exact prefix tree, and three exact root-three certificates; isolated replay of the difference and independent projection of the entire union |
+| `417ef66e` | 230 | 176 | 230 | 23 additional ordinary forests from three producers; isolated difference replay at `076e4c86`, 12:15:53–12:16:55 UTC+08:00; entire union independently projected |
 
 ## Disjoint credit
 
