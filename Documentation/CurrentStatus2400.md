@@ -22,4 +22,6 @@
 - 支持命中集：若 $N\le10^{2400}$ 且 $\gcd(N,15)=1$，则 $7\cdot11\cdot13\mid N$。见[命中集推导](Proof2400.md#支持命中集)。
 - 条件支持分割：在 11,398 个 $(p,e,H)$ 中，基础筛排除 4,833 个，分割追加 9 个，余 6,556 个。该差量相对于本次基础筛，全部 244 个实际指数仍有开放组合。见[逐项证据](../Research/SupportSplit/Readme.md)。
 
+- 候选 `P3_I00193`：原程序重放通过，联合净成本计价待修补；保守重算最弱叶为 2399.9768082683，新增闭合为 0。[审计](../Research/P3I00193Review/Readme.md)。
+
 [当前账本](../Research/Midday/Delta.json) · [证书登记](../Research/Midday/Registry.json) · [上午基线](../Research/Nov25/Delta.json) · [下一步](NextPlan2400.md)
