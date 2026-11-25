@@ -19,3 +19,6 @@
 设 $N\le 10^{2400}$ 为假想奇完全数。若 $3,5$ 均不整除 $N$，本轮新增的命中集与既有结论共同强迫 $7,11,13$ 同时整除 $N$。[推导](Proof2400.md#支持命中集)
 
 [逐片与逐指数清单](../Research/Midday/Delta.json) · [午间证明与复验](../Research/Midday/README.md) · [10:05 基线](../Research/Nov25/Delta.json) · [总证明](Proof2400.md) · [下一步](NextPlan2400.md)
+
+
+晚间条件性增量：见[支持分割实验](../Research/SupportSplit/Readme.md)。本次筛选相对基础筛再排除 9 个完整支持组合，尚未增加完整实际指数或规范分片；上表不变。
