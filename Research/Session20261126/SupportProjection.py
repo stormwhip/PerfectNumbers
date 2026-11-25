@@ -17,7 +17,7 @@ def projection():
     masks={f'{p}:{e}':sorted(sum(1<<S.ROOTS.index(t) for t in h) for pp,ee,h in left if pp==p and ee==e) for p,e in sorted(survivors)}
     if '--check-masks' in sys.argv:
         companion=json.loads((H/'OpenSupport.json').read_bytes());assert companion['order']==list(S.ROOTS) and companion['rows']==masks and companion['keys']==len(survivors) and companion['triples']==len(left)
-    print(json.dumps(dict(frozen_support=len(universe),support_packets=len(conditional),global_hit=len(hit),new_global_beyond_packets=len(hit-conditional),support_union=len(scope),fully_proved_keys_cover=len(dead),overlap=len(dead&scope),remaining_supported_triples=len(left),remaining_actuals=len(survivors),remaining_triples_by_root=Counter(p for p,e,h in left)),sort_keys=True))
+    print(json.dumps(dict(frozen_support=len(universe),support_packets=len(conditional),global_hit=len(hit),new_global_beyond_packets=len(hit-conditional),support_union=len(scope),fully_proved_keys_cover=len(dead),overlap=len(dead&scope),remaining_supported_triples=len(left),remaining_actuals=len(survivors),additional_no_five_990=sum(p==3 and e==990 and 5 not in h for p,e,h in left),remaining_after_no_five_990=sum(not(p==3 and e==990 and 5 not in h) for p,e,h in left),remaining_triples_by_root=Counter(p for p,e,h in left)),sort_keys=True))
 if __name__=='__main__':
     if not __debug__:raise SystemExit('no -O')
     projection()

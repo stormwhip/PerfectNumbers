@@ -32,12 +32,14 @@ def model(p,e,fixed,K,owners,cap,fixedbudget=False,abundance=False,rock=0,source
  @cache
  def props(z,f):
   n=sigma(z,f)//(1+f%2);return a.val(n,p),peel(n,Z),tuple((q,a.val(n,q)) for q in kids[z] if n%q==0)
- def qfree(n):
+ def qfree(n,limit=16):
   if n<Q:return True
   T0=4*Y;b=(n*pow(Q,-1,T0))%T0 or T0;mx=n//Q
   if b>mx:return True
-  if mx-b>=16*T0:return False
-  return all(n%u for u in range(b,mx+1,T0))
+  if (mx-b)//T0>=limit:return False
+  ok=all(n%u for u in range(b,mx+1,T0))
+  if ok and limit>16 and (mx-b)//T0>=16:print('extended_exact_cofactor',p,e,fixed,'s',s,'first',b,'step',T0,'upper',mx,'count',(mx-b)//T0+1,flush=True)
+  return ok
  small=min([1,*[Fr(z,p**(k*a.val(z+1,p))) for z in kids if z%4==1]])
  def layer(mode):
   mass=mode in ('mass','nomassEuler','mix');weighted=mode=='mix';allow=mode in ('mass','high','one','mix')
@@ -79,7 +81,7 @@ def model(p,e,fixed,K,owners,cap,fixedbudget=False,abundance=False,rock=0,source
  assert vone*base*layer('high')>B*D,'high';assert vplus*base*layer('one')>B,'active Euler';v=vone*base*layer('ordinary');s=next((s for s in range(e+1) if v*max(1,2*p**s-1)<=B*p**(k*s)),e+1)
  if s>e:return 'valuation'
  assert s>0 and p%4==3,'unverified internal A';Y=p**s;Q=2*Y-1;assert all(q%4!=1 or a.val(q+1,p)<s for q in [*[z for z,j in fixed],*kids]);
- if sourceforest is None:assert all(qfree(peel(sigma(z,j),X)) for z,j in fixed),'unverified internal pivot sigma'
+ if sourceforest is None:assert all(qfree(peel(sigma(z,j),X),33) for z,j in fixed),('unverified internal pivot sigma',fixed,s)
  else:
   sys.path.insert(0,str(a.R/'NightMerge'));import LatticeLeaf as ll
   assert len(sourceforest)==len(fixed)
