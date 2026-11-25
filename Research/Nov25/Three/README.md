@@ -27,9 +27,9 @@ From repository root (standard library only):
 
 ```text
 python -I -S -B Research/NightThree/Verify.py Batch1
-python -I -S -B Research/Nov25/three/TestSourceUnit.py
-python -I -S -B Research/Nov25/three/VerifyReceipts.py
-python -I -S -B Research/Nov25/three/SourceUnit.py --only 1162
+python -I -S -B Research/Nov25/Three/TestSourceUnit.py
+python -I -S -B Research/Nov25/Three/VerifyReceipts.py
+python -I -S -B Research/Nov25/Three/SourceUnit.py --only 1162
 ```
 
 The [receipt checker](VerifyReceipts.py) checks ECM input/count/unique seeds/proper divisor evidence from the saved logs and recomputes the small source sample. It reports `192` curves and `8` excluded sampled `(s,tag)` cells; it does not rerun ECM or certify a complete remaining actual.

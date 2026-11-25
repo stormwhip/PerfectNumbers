@@ -26,7 +26,7 @@ python -I -S -B Research/Nov25/Ledger.py --workers 10 --check Research/Nov25/Del
 python -I -S -B Research/Nov25/ValidateLedgerIndependent.py
 python -I -S -B Research/Nov25/ProofManifest.py --check
 python -I -S -B Research/Nov25/RunLedgerChecks.py
-python -I -S -B Research/Nov25/five/Simple520.py
+python -I -S -B Research/Nov25/Five/Simple520.py
 ```
 
 固定基线在另一干净工作树用 `python -I -S -B Research/NightMerge/Checkpoint.py --manifest-only` 恢复原清点；这不是对历史证书的全量验证。全量 `ParallelReplay.py --fresh` 另行限时尝试；不把未完成任务算作通过。其状态与通过任务见[历史基线部分冷验回执](BaselineColdPartial.json)。该回执不进入本轮净增账本。
@@ -35,6 +35,6 @@ python -I -S -B Research/Nov25/five/Simple520.py
 
 优先用本轮验证过的办法攻单指数分片：从最弱的**精确**发射源开始，在该分圆余块做有限分解，重新分配森林所有者；先看 `(7,786)`、`(31,316)`，新因子不足则尽早切换。它使初始共享锚点未能解决的 `(11,646)`、`(19,646)` 都转为完整证明，最后也闭合 `(19,576)`。
 
-另一条小范围路线是 [低指数条件分支](compose/README.md)：`(31,10)` 在含 5、禁 3/13/17 的分支里已排除锚点 `150332843` 的全部合法指数至 20，余尾 `f≥22` 和其他支持模式；`(13,10)` 的 `3²·5` 条件下只排除了部分 `18041` 指数。补全两端不能靠扩张已排的不含 3/5/7 类。根五低指数的精确 LP 叶强，但须覆盖整个树；根三的 192 条 ECM 曲线、单位约束与终局转用均未产生完整新增。
+另一条小范围路线是 [低指数条件分支](Compose/README.md)：`(31,10)` 在含 5、禁 3/13/17 的分支里已排除锚点 `150332843` 的全部合法指数至 20，余尾 `f≥22` 和其他支持模式；`(13,10)` 的 `3²·5` 条件下只排除了部分 `18041` 指数。补全两端不能靠扩张已排的不含 3/5/7 类。根五低指数的精确 LP 叶强，但须覆盖整个树；根三的 192 条 ECM 曲线、单位约束与终局转用均未产生完整新增。
 
 [路线优先级](Forecast.md) · [研究说明与复验入口](README.md) · [证书哈希清单](ProofManifest.json) · [本轮完整剩余清单](Delta.json)

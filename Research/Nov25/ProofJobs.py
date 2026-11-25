@@ -8,13 +8,13 @@ HERE=Path(__file__).resolve().parent
 def verify_job(name):
     sys.path.insert(0,str(HERE))
     if name=='five148':
-        from five.Verify148 import verify
+        from Five.Verify148 import verify
         result=verify()
     elif name=='five520':
-        from five.Verify520 import verify
+        from Five.Verify520 import verify
         result=verify()
-    elif name.startswith('seven/') and name.endswith('.pack.json.gz') and name.count('/')==1:
-        from seven.Verify import verify
+    elif name.startswith('Seven/') and name.endswith('.pack.json.gz') and name.count('/')==1:
+        from Seven.Verify import verify
         result=verify(HERE/name)
     elif name.endswith('.json.gz') and Path(name).name==name:
         from ForestPackets import verify

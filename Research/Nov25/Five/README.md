@@ -3,9 +3,9 @@
 Both commands require only Python's standard library and verify exact exponents against the canonical root-5 forbidden set `{3,7,11,13,19,31}` for hypothetical odd perfect `N <= 10^2400`.
 
 ```text
-python -I -S -B Research/Nov25/five/Verify148.py
-python -I -S -B Research/Nov25/five/Verify520.py
-python -I -S -B Research/Nov25/five/Simple520.py  # alternate source-free replay
+python -I -S -B Research/Nov25/Five/Verify148.py
+python -I -S -B Research/Nov25/Five/Verify520.py
+python -I -S -B Research/Nov25/Five/Simple520.py  # alternate source-free replay
 ```
 
 - **(5,148), P5_I00034.** The 104-digit `q = σ(5^148)` is certified prime and divides `N`. A historical uncounted forest nomination was sanitized into [Forest148.json.gz](Forest148.json.gz), SHA-256 `59342e4bf2a1b4193e45af911feae42f298eac7781f4c8e0220b55bb5e7cdf20`. Exact recursive product and independent rational-coupon [ordinary replay](OrdinaryForest.py) both give an integer log10 floor of 2503 when `q` is not the Euler prime. If `q` is Euler, exact size allows only exponents 1, 5, 9, 13, 17, 21. Exact sigma residues exclude 5, 9, 17; forced divisor size excludes 13, 21; indicator duals checked with independent directed arithmetic exclude 1 with no additional prime hints. [Complete replay](Verify148.py).

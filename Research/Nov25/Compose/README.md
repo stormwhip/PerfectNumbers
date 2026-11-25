@@ -14,7 +14,7 @@ The seed factorization is `σ(13^10)=23·419·859·18041`. Every factor transfer
 | `3,5` present, `v₅(N) ≥ 2` | 2,052,296 | `5` is the Euler prime with exponent 1 |
 | `3,5` present, `v₅(N)=1`, `v₃(N)≥3` | 2,045,072 | `v₃(N)=2` |
 
-At the fixed baseline, the rule applies to `(13,10)`, `(13,54)`, and `(13,76)`; `(13,76)` was separately excluded in the current results. Run `python -I -S -B Research/Nov25/compose/SupportRules.py 10 54 76`.
+At the fixed baseline, the rule applies to `(13,10)`, `(13,54)`, and `(13,76)`; `(13,76)` was separately excluded in the current results. Run `python -I -S -B Research/Nov25/Compose/SupportRules.py 10 54 76`.
 
 ## Positive-support conditional cells
 
@@ -22,24 +22,24 @@ Besides the exact root component and the prior-root absence, assume `3·5 | N` f
 
 | Packet / `v₁₈₀₄₁(N)` | Exact cutoff |
 |---|---:|
-| [6](<branches/F13x10-m3-5x1-3x2-18041x6.json.gz>) | Log floor 2444 |
-| [12](<branches/F13x10-m3-5x1-3x2-18041x12.json.gz>) | Log floor 2427 |
-| [16](<branches/F13x10-m3-5x1-3x2-18041x16.json.gz>) | Log floor 2441 |
-| [24](<branches/F13x10-m3-5x1-3x2-18041x24.json.gz>) | `v₅(S)=2 > v₅(N)=1` |
-| [42](<branches/F13x10-m3-5x1-3x2-18041x42.json.gz>) | Log floor 2609 |
+| [6](<Branches/F13x10M35x13x218041x6.json.gz>) | Log floor 2444 |
+| [12](<Branches/F13x10M35x13x218041x12.json.gz>) | Log floor 2427 |
+| [16](<Branches/F13x10M35x13x218041x16.json.gz>) | Log floor 2441 |
+| [24](<Branches/F13x10M35x13x218041x24.json.gz>) | `v₅(S)=2 > v₅(N)=1` |
+| [42](<Branches/F13x10M35x13x218041x42.json.gz>) | Log floor 2609 |
 
 At root `(31,10)`, assuming `5 | N` and `3,13,17 ∤ N` additionally to the usual `19,7,11` absence, the following forest leaves exclude exact exponents of `150332843`:
 
 | Packet / `v₁₅₀₃₃₂₈₄₃(N)` | Integer floor of lower `log₁₀ N` |
 |---|---:|
-| [2](<branches/F31x10-m2-150332843x2.json.gz>) | 2409 |
-| [4](<branches/F31x10-m2-150332843x4.json.gz>) | 2511 |
-| [6](<branches/F31x10-m2-150332843x6.json.gz>) | 2448 |
-| [12](<branches/F31x10-m2-150332843x12.json.gz>) | 2611 |
-| [14](<branches/F31x10-m2-150332843x14.json.gz>) | 2836 |
-| [16](<branches/F31x10-m2-150332843x16.json.gz>) | 2811 |
-| [18](<branches/F31x10-m2-150332843x18.json.gz>) | 2851 |
-| [20](<branches/F31x10-m2-150332843x20.json.gz>) | 3421 |
+| [2](<Branches/F31x10M2150332843x2.json.gz>) | 2409 |
+| [4](<Branches/F31x10M2150332843x4.json.gz>) | 2511 |
+| [6](<Branches/F31x10M2150332843x6.json.gz>) | 2448 |
+| [12](<Branches/F31x10M2150332843x12.json.gz>) | 2611 |
+| [14](<Branches/F31x10M2150332843x14.json.gz>) | 2836 |
+| [16](<Branches/F31x10M2150332843x16.json.gz>) | 2811 |
+| [18](<Branches/F31x10M2150332843x18.json.gz>) | 2851 |
+| [20](<Branches/F31x10M2150332843x20.json.gz>) | 3421 |
 
 These are all admissible exact exponents through 20 in that mask. The admissible tail `v₁₅₀₃₃₂₈₄₃(N) ≥ 22` was not closed (constructed floor 2246).
 
@@ -51,18 +51,18 @@ All rows assume an odd perfect `N ≤ 10^2400` with the stated **exact** root ex
 
 | Packet | Additional absent primes | Integer floor of lower `log₁₀ N` |
 |---|---|---:|
-| [Terminal 13×10](<branches/T13x10-mask0-f0.json.gz>) | 3, 5, 17 | 2988 |
-| [Terminal 13×22](<branches/T13x22-mask0-f0.json.gz>) | 3, 5 | 2436 |
-| [Terminal 31×6](<branches/T31x6-mask0-f0.json.gz>) | 3, 5, 13 | 2797 |
-| [Terminal 31×10](<branches/T31x10-mask0-f0.json.gz>) | 3, 5, 13 | 2759 |
-| [Weighted forest 31×10](<branches/W31x10-s3-5-13-17-m0-f0-mu4000.json.gz>) | 3, 5, 13, 17 | 2658 (primary replay) |
+| [Terminal 13×10](<Branches/T13x10Mask0F0.json.gz>) | 3, 5, 17 | 2988 |
+| [Terminal 13×22](<Branches/T13x22Mask0F0.json.gz>) | 3, 5 | 2436 |
+| [Terminal 31×6](<Branches/T31x6Mask0F0.json.gz>) | 3, 5, 13 | 2797 |
+| [Terminal 31×10](<Branches/T31x10Mask0F0.json.gz>) | 3, 5, 13 | 2759 |
+| [Weighted forest 31×10](<Branches/W31x10S351317M0F0Mu4000.json.gz>) | 3, 5, 13, 17 | 2658 (primary replay) |
 
 Two cold replay implementations rebuild the four terminal bounds from their packets, without historical trees, factorizations, solver or primality caches. The weighted-forest calibration uses the primary replay only. Both use the repository's projective ECPP verifier; numerical comparisons are independent (fixed-point atanh enclosure versus directed Decimal). The primary CLI rejects a calibration packet if submitted without `--conditional`.
 
 ```text
-python -I -S -B Research/Nov25/compose/Replay.py --conditional Research/Nov25/compose/branches/T13x10-mask0-f0.json.gz
-python -I -S -B Research/Nov25/compose/IndependentTerminal.py Research/Nov25/compose/branches/T13x10-mask0-f0.json.gz
-python -I -S -B Research/Nov25/compose/Tests.py
+python -I -S -B Research/Nov25/Compose/Replay.py --conditional Research/Nov25/Compose/Branches/T13x10Mask0F0.json.gz
+python -I -S -B Research/Nov25/Compose/IndependentTerminal.py Research/Nov25/Compose/Branches/T13x10Mask0F0.json.gz
+python -I -S -B Research/Nov25/Compose/Tests.py
 ```
 
 Substitute any other terminal packet from the table for the two replay commands.

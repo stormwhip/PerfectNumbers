@@ -1,4 +1,4 @@
-"""Bounded ownership refinement, adapted from Nov25/seven/Search.py."""
+"""Bounded ownership refinement, adapted from Nov25/Seven/Search.py."""
 import argparse, json, math, random, sys, time
 from collections import defaultdict
 from functools import lru_cache

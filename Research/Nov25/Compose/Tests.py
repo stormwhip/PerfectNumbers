@@ -19,7 +19,7 @@ def rejected(call,name):
 def main():
     assert rules(10)==rules(54)==rules(76)==(2092943,2052296,2045072)
     rejected(lambda:rules(12),'wrong seed class')
-    P=H/'branches/T13x10-mask0-f0.json.gz'
+    P=H/'Branches/T13x10Mask0F0.json.gz'
     x=json.loads(gzip.decompress(P.read_bytes()))
     rejected(lambda:proof(x),'conditional packet submitted as a complete pair')
     weak={**x,'leaf':{**x['leaf'],'weights':[]}}

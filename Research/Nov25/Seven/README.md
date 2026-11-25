@@ -33,24 +33,24 @@ Use Python with the standard library only. Run each final packet both directly t
 
 | Verified seed | Portable packet | Euler modes | Exact lower-bound floor `floor(log10 L)` | ECPP chains | Affected baseline shards |
 |---|---|---:|---:|---:|---|
-| `(11,220)` | [11x220](best-11x220-1.pack.json.gz) | 6 | 2419 | 121 | `P11_I00004`, `P11_I00005` |
-| `(7,234)` | [7x234](best-7x234-1.pack.json.gz) | 2 | 2400 | 132 | `P7_I00002`, `P7_I00014` |
-| `(11,132)` | [11x132](best-11x132-1.pack.json.gz) | 4 | 2436 | 123 | `P11_I00002`, `P11_I00006` |
-| `(7,252)` | [7x252](best-7x252-1.pack.json.gz) | 2 | 2400 | 288 | `P7_I00004`, `P7_I00008` |
-| `(11,66)` | [11x66](best-11x66-1.pack.json.gz) | 3 | 2414 | 106 | **Closes `P11_I00017`** |
-| `(11,214)` | [11x214](best-11x214-1.pack.json.gz) | 4 | 2428 | 71 | `P11_I00001`, `P11_I00012` |
-| `(7,412)` | [7x412](best-7x412-1.pack.json.gz) | 8 | 2408 | 101 | `P7_I00003`, `P7_I00016` |
-| `(7,162)` | [7x162](best-7x162-1.pack.json.gz) | 5 | 2451 | 47 | **Closes `P7_I00037`** |
-| `(7,108)` | [7x108](best-7x108-1.pack.json.gz) | 2 | 2400 | 116 | **Closes `P7_I00028`** |
-| `(11,46)` | [11x46](best-11x46-1.pack.json.gz) | 4 | 2402 | 348 | **Closes `P11_I00013`** |
-| `(11,646)` | [11x646](best-11x646-1.pack.json.gz) | 2 | 2400 | 176 | **Closes `P11_I00116`** |
+| `(11,220)` | [11x220](Best11x2201.pack.json.gz) | 6 | 2419 | 121 | `P11_I00004`, `P11_I00005` |
+| `(7,234)` | [7x234](Best7x2341.pack.json.gz) | 2 | 2400 | 132 | `P7_I00002`, `P7_I00014` |
+| `(11,132)` | [11x132](Best11x1321.pack.json.gz) | 4 | 2436 | 123 | `P11_I00002`, `P11_I00006` |
+| `(7,252)` | [7x252](Best7x2521.pack.json.gz) | 2 | 2400 | 288 | `P7_I00004`, `P7_I00008` |
+| `(11,66)` | [11x66](Best11x661.pack.json.gz) | 3 | 2414 | 106 | **Closes `P11_I00017`** |
+| `(11,214)` | [11x214](Best11x2141.pack.json.gz) | 4 | 2428 | 71 | `P11_I00001`, `P11_I00012` |
+| `(7,412)` | [7x412](Best7x4121.pack.json.gz) | 8 | 2408 | 101 | `P7_I00003`, `P7_I00016` |
+| `(7,162)` | [7x162](Best7x1621.pack.json.gz) | 5 | 2451 | 47 | **Closes `P7_I00037`** |
+| `(7,108)` | [7x108](Best7x1081.pack.json.gz) | 2 | 2400 | 116 | **Closes `P7_I00028`** |
+| `(11,46)` | [11x46](Best11x461.pack.json.gz) | 4 | 2402 | 348 | **Closes `P11_I00013`** |
+| `(11,646)` | [11x646](Best11x6461.pack.json.gz) | 2 | 2400 | 176 | **Closes `P11_I00116`** |
 
 The 11 rows above verify 11 distinct actual exponents and independently close five baseline shards. Rows with floor 2400 still have `L > 10^2400` by strict integer comparison.
 
 ```powershell
-$packets = Get-ChildItem Research/Nov25/seven -File -Filter '*.pack.json.gz' | ForEach-Object FullName
+$packets = Get-ChildItem Research/Nov25/Seven -File -Filter '*.pack.json.gz' | ForEach-Object FullName
 python -I -S -B Research/NightSevenForest/Release/Replay.py @packets
-python -I -S -B Research/Nov25/seven/Verify.py @packets
+python -I -S -B Research/Nov25/Seven/Verify.py @packets
 ```
 
 For one packet, pass its path rather than `@packets` to either command. The pinned verifier prints seed, mode count, and floor; the adapter prints the exact baseline exponent obligations. The [integrity inventory](Seal.py) prints packet names, SHA-256 hashes, and graph sizes; see the [recorded hashes](PacketManifest.jsonl). This is not a proof check.

@@ -14,12 +14,12 @@ def packet_paths():
     fun=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='verified_batches')
     stmt=next(n for n in fun.body if isinstance(n,ast.Assign) and
               len(n.targets)==1 and isinstance(n.targets[0],ast.Name) and n.targets[0].id=='names')
-    paths={'five148':'five/Forest148.json.gz','five520':'five/Late520Dual.json'}
+    paths={'five148':'Five/Forest148.json.gz','five520':'Five/Late520Dual.json'}
     names=ast.literal_eval(stmt.value)
     if len(names)!=len(set(names)):raise ValueError('duplicate job name')
     for n in names:
         if n in paths:yield H/paths[n]
-        elif n.startswith('seven/') and n.count('/')==1 and n.endswith('.pack.json.gz'):yield H/n
+        elif n.startswith('Seven/') and n.count('/')==1 and n.endswith('.pack.json.gz'):yield H/n
         elif Path(n).name==n and n.endswith('.json.gz'):yield H/'Forests'/n
         else:raise ValueError(f'unknown input job {n}')
 

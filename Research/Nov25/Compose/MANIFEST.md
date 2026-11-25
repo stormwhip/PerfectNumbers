@@ -1,6 +1,6 @@
-# Review / staging manifest
+# Conditional proof packet manifest
 
-**No git reference, index, or push changes were made by this work.** Stage only the named portable subset if accepting the exploratory deliverable. Do not register any of these packets as complete exponents in the Nov25 ledger.
+These packets record conditional results. Complete-exponent counts come from the registered jobs in the Nov25 ledger.
 
 ## Portable source and tests
 
@@ -18,14 +18,14 @@ Stage the 13 positive-support forest/direct packets specifically linked from the
 From the checkout root, in PowerShell:
 
 ```powershell
-python -I -S -B Research/Nov25/compose/SupportRules.py 10 54 76
-python -I -S -B Research/Nov25/compose/Tests.py
-$f = Get-ChildItem Research/Nov25/compose/branches -File -Filter 'F*.gz' | Select-Object -ExpandProperty FullName
-python -I -S -B Research/Nov25/compose/Replay.py --conditional $f
-python -I -S -B Research/Nov25/compose/IndependentForest.py $f
-$t = Get-ChildItem Research/Nov25/compose/branches -File -Filter 'T*.gz' | Select-Object -ExpandProperty FullName
-python -I -S -B Research/Nov25/compose/Replay.py --conditional $t
-python -I -S -B Research/Nov25/compose/IndependentTerminal.py $t
+python -I -S -B Research/Nov25/Compose/SupportRules.py 10 54 76
+python -I -S -B Research/Nov25/Compose/Tests.py
+$f = Get-ChildItem Research/Nov25/Compose/Branches -File -Filter 'F*.gz' | Select-Object -ExpandProperty FullName
+python -I -S -B Research/Nov25/Compose/Replay.py --conditional $f
+python -I -S -B Research/Nov25/Compose/IndependentForest.py $f
+$t = Get-ChildItem Research/Nov25/Compose/Branches -File -Filter 'T*.gz' | Select-Object -ExpandProperty FullName
+python -I -S -B Research/Nov25/Compose/Replay.py --conditional $t
+python -I -S -B Research/Nov25/Compose/IndependentTerminal.py $t
 ```
 
 The optional calibration packet with a `W` prefix replays with the primary `Replay.py --conditional` CLI only.
