@@ -26,3 +26,12 @@ python -B Research/Nov25/RootDiscovery.py --limit 8
 ```
 
 前三条仅需标准库；最后一条仅为发现筛选，需要 SymPy。
+
+## 首个净新增：`(5,148)`，闭合 `P5_I00034`
+
+[证书](five/Forest148.json.gz) 验证 `q=σ(5^148)` 的素性，故 `q∣N`。若 q 为普通素数，两个整数森林递推都给出 `floor(log10 N) ≥ 2503`。若 q 为 Euler 素数，精确尺寸界只允许 `a=1,5,9,13,17,21`；禁素排除 `5,9,17`，精确两来源的强制乘积排除 `13,21`，两个定向赋值/丰度模型排除 `a=1`。森林只用于普通 q 分支，未将此前的条件结果算作完整指数。
+
+```text
+python -I -S -B Research/Nov25/five/Verify148.py
+python -I -S -B Research/Nov25/Ledger.py --check Research/Nov25/Delta.json
+```

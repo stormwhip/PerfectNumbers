@@ -69,7 +69,10 @@ def aggregate(audit, verified_batches):
 
 def verified_batches():
     # Only explicit, fail-closed adapters go here; no discovery results.
-    return ()
+    import sys
+    sys.path.insert(0, str(HERE))
+    from five.Verify148 import verify
+    return (('root 5, exponent 148', verify()),)
 
 
 def main():
