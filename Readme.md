@@ -2,16 +2,16 @@
 
 目标是证明每个奇完全数 $N>10^{2400}$，并让独立程序复核证明。
 
-截至北京时间 2026-11-25，此研究分支有 **2,646 / 3,072** 个规范分片闭合，余 **426** 个。夜间相对 `3b50576` 净增 454 个完整分片、1106 个实际指数。原八根互素类保持 `log10 N >= 4183.209493`；与 3、5、7 均互素时，独立重建的终端证书给出 `log10 N >= 2406.575051`。全局状态为 `INCOMPLETE_FRONTIER`。
+截至北京时间 2026-11-25，累计闭合 **2,666 / 3,072** 个规范分片。本轮新增闭合 20 个，排除 51 个不同实际指数，余 406 个分片、511 个待证实际指数。原八根互素类下界为 `log10 N >= 4183.209493`，三根互素类下界为 `log10 N >= 2406.575051`。全局状态为 `INCOMPLETE_FRONTIER`。
 
 - [总证明](Documentation/Proof2400.md)
-- [当前状态](Documentation/CurrentStatus2400.md)及[逐片待证清单](Research/NightMerge/Audit.json)
+- [当前状态](Documentation/CurrentStatus2400.md)及[逐片待证清单](Research/Nov25/Delta.json)
 - [下一步计划](Documentation/NextPlan2400.md)
 - [仓库目录](Documentation/RepositoryMap.md)和[历史实验](Records/ExperimentLog.md)
 
 ## 复验
 
-单独复验此次合并的新增证书可直接运行下面代码块的最后一条命令。其它命令复验互素类和历史基线。运行环境为仓库根目录及 Python 3.10+ 标准库。
+以下命令从仓库根运行，使用 Python 3.10+ 标准库。复验本轮新增证书时可单独执行最后一条。
 
 ```sh
 mkdir -p Build
@@ -26,8 +26,9 @@ cmp Research/TeichmullerValuation/Audit2400.json Build/AuditTeichmuller2400.json
 python3 Research/TeichmullerValuation/AuditGeminiBatch2400.py --remaining Build/RemainingBeforeGapSupply2400.json
 python3 Research/EveningMerge/VerifyFrontier.py --workers 6
 python3 -B Research/NightMerge/ParallelReplay.py --workers 10 --fresh --receipts ../PerfectNumbersNightReceipts
+python3 -I -S -B Research/Nov25/Ledger.py --workers 10 --check Research/Nov25/Delta.json
 ```
 
-最后一条命令应在干净检出中运行，回执目录位于仓库外。只需重算分片清单时，可运行 `python3 -B Research/NightMerge/Checkpoint.py --manifest-only`。各方法的独立覆盖数与重叠统计见[方法统计](Research/NightMerge/MethodCensus.json)。
+历史夜间证书的 `ParallelReplay.py` 应在干净检出中运行，回执目录放在仓库外。本轮独立清点和证书哈希核对命令见[复验说明](Research/Nov25/Closeout.md#复验范围)。
 
 长时研究搜索使用 [V21](Sources/Cpp/ProofTreeV21.cpp)、[调度器](Sources/Python/Run2400Scheduler.py) 和 [Linux/WSL2 脚本](Scripts/Run72hWSL.sh)。运行产物存放在 `Build/` 或 `Run2400Results/`。工程基准与证明实验见 [实验日志](Records/ExperimentLog.md)，背景论文见 [Ochem–Rao 2012](References/OchemRao2012.pdf)。

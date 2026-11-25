@@ -1,0 +1,227 @@
+[
+ {
+  "e": 1162,
+  "low": 9627315,
+  "square_multiplier": 47743477,
+  "free_lower": 9741289,
+  "free": 39,
+  "prior": 108,
+  "tested": 3,
+  "left": [
+   [
+    1162,
+    1,
+    true,
+    true
+   ],
+   [
+    1162,
+    2,
+    true,
+    true
+   ],
+   [
+    1108,
+    1,
+    true,
+    true
+   ],
+   [
+    1108,
+    2,
+    true,
+    true
+   ],
+   [
+    1055,
+    1,
+    false,
+    true
+   ],
+   [
+    1055,
+    2,
+    false,
+    true
+   ]
+  ],
+  "counters": {},
+  "source_support": {
+   "exterior_only": 0,
+   "interior_only": 2,
+   "both": 4
+  }
+ },
+ {
+  "e": 1108,
+  "low": 9186957,
+  "square_multiplier": 45531105,
+  "free_lower": 9295639,
+  "free": 37,
+  "prior": 180,
+  "tested": 3,
+  "left": [
+   [
+    1108,
+    1,
+    true,
+    true
+   ],
+   [
+    1108,
+    2,
+    true,
+    true
+   ],
+   [
+    1018,
+    1,
+    true,
+    true
+   ],
+   [
+    1018,
+    2,
+    true,
+    true
+   ]
+  ],
+  "counters": {
+   "ordinary_or_square": 2
+  },
+  "source_support": {
+   "exterior_only": 0,
+   "interior_only": 0,
+   "both": 4
+  }
+ },
+ {
+  "e": 990,
+  "low": 8219355,
+  "square_multiplier": 40698389,
+  "free_lower": 8318455,
+  "free": 34,
+  "prior": 204,
+  "tested": 3,
+  "left": [
+   [
+    990,
+    1,
+    true,
+    true
+   ],
+   [
+    990,
+    2,
+    true,
+    true
+   ],
+   [
+    888,
+    1,
+    true,
+    true
+   ],
+   [
+    888,
+    2,
+    true,
+    true
+   ]
+  ],
+  "counters": {
+   "ordinary_or_square": 2
+  },
+  "source_support": {
+   "exterior_only": 0,
+   "interior_only": 0,
+   "both": 4
+  }
+ },
+ {
+  "e": 970,
+  "low": 8055417,
+  "square_multiplier": 39877029,
+  "free_lower": 8150575,
+  "free": 33,
+  "prior": 208,
+  "tested": 3,
+  "left": [
+   [
+    970,
+    1,
+    true,
+    true
+   ],
+   [
+    970,
+    2,
+    true,
+    true
+   ],
+   [
+    866,
+    1,
+    true,
+    true
+   ],
+   [
+    866,
+    2,
+    true,
+    true
+   ]
+  ],
+  "counters": {
+   "ordinary_or_square": 2
+  },
+  "source_support": {
+   "exterior_only": 0,
+   "interior_only": 0,
+   "both": 4
+  }
+ },
+ {
+  "e": 856,
+  "low": 7121671,
+  "square_multiplier": 35205561,
+  "free_lower": 7209085,
+  "free": 29,
+  "prior": 228,
+  "tested": 3,
+  "left": [
+   [
+    856,
+    1,
+    true,
+    true
+   ],
+   [
+    856,
+    2,
+    true,
+    true
+   ],
+   [
+    742,
+    1,
+    true,
+    true
+   ],
+   [
+    742,
+    2,
+    true,
+    true
+   ]
+  ],
+  "counters": {
+   "ordinary_or_square": 2
+  },
+  "source_support": {
+   "exterior_only": 0,
+   "interior_only": 0,
+   "both": 4
+  }
+ }
+]

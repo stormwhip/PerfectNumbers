@@ -1,0 +1,206 @@
+{
+ "Five/Forest148.json.gz": {
+  "bytes": 55931,
+  "sha256": "59342e4bf2a1b4193e45af911feae42f298eac7781f4c8e0220b55bb5e7cdf20"
+ },
+ "Five/Late520Dual.json": {
+  "bytes": 26131,
+  "sha256": "f85bee3f3c41283f91bd72fc43b1691334aa7658039d21b52d8dffbaa18d0656"
+ },
+ "Forests/P13x34CacheD13x34.json.gz": {
+  "bytes": 166441,
+  "sha256": "f3f642a6a4636be6439f858601010221605d4f2bb5758d2574aee8457b865bfc"
+ },
+ "Forests/P13x38NoExtra13x38.json.gz": {
+  "bytes": 62619,
+  "sha256": "d6308691cc3b3ade62474866b4d447dd840cab3120c6c0dfa055015d4bb254ee"
+ },
+ "Forests/P13x418CacheD13x418.json.gz": {
+  "bytes": 121295,
+  "sha256": "9e7e753d7a1dca4bc0541ad1097a620cd92639f995419d30ad63a0b2d895d607"
+ },
+ "Forests/P13x42CacheD13x42.json.gz": {
+  "bytes": 302026,
+  "sha256": "b1396e8983f5bdd7c09f8bdf742861f70ae2a33b57f2cc3a353d6659fbbe1a64"
+ },
+ "Forests/P13x44QFine13x44.json.gz": {
+  "bytes": 170137,
+  "sha256": "7ab281c9ca3f74091bbe63a0e721e7ff4d721b15fa417bb1491fcf95d56d157d"
+ },
+ "Forests/P13x48CacheD13x48.json.gz": {
+  "bytes": 119365,
+  "sha256": "f61c9ea10c2640879faf9895d3473e8c6b9d52d1413748e2bdbb8b8e94a4a787"
+ },
+ "Forests/P13x50NoExtra13x50.json.gz": {
+  "bytes": 197205,
+  "sha256": "7afc588a0a0720e3e6ae5be30a038b3e3fdbfd1052bf0dfd4cf0e199a8197102"
+ },
+ "Forests/P13x54QFine13x54.json.gz": {
+  "bytes": 91785,
+  "sha256": "0349056570d90b69c93177b6dbcdcd391ea4122895b3543cdbab1889137e9db1"
+ },
+ "Forests/P13x56NoExtra13x56.json.gz": {
+  "bytes": 188800,
+  "sha256": "180da0e0a0a0eb40da2b0dac477fd1e0491f0228de7ca7fe3319e0826ddf81fa"
+ },
+ "Forests/P13x68NoExtra13x68.json.gz": {
+  "bytes": 57894,
+  "sha256": "31de59c306cace6df338e88dbb4e6945c2ea45feaad4b49ffa83db7b2979b9f2"
+ },
+ "Forests/P13x74NoExtra13x74.json.gz": {
+  "bytes": 106224,
+  "sha256": "cdf82f9f0e96629e239612ee0b8b5400ddd8a75760cdb95348cab223276d95a3"
+ },
+ "Forests/P13x76QFine13x76.json.gz": {
+  "bytes": 75070,
+  "sha256": "423abec298c4ff8f92d14af805f4658f000c4e79f6c968c63aa64fbfd8472fb1"
+ },
+ "Forests/P13x84QFine13x84.json.gz": {
+  "bytes": 115347,
+  "sha256": "1cebe7edf0c8b55d99dde84703f16c299c98dda8c13f5d100ac69480bf1fb996"
+ },
+ "Forests/P19x102CacheD19x102.json.gz": {
+  "bytes": 77206,
+  "sha256": "d99ded9f46a8a9d8ac34f0680324892a34f35a909854672bae669fee12a34d7c"
+ },
+ "Forests/P19x104QFine19x104.json.gz": {
+  "bytes": 117243,
+  "sha256": "116b6d713e931301245f611b7c3d69a9d34cdbc06bd97968b896444dabc3672e"
+ },
+ "Forests/P19x120QFine19x120.json.gz": {
+  "bytes": 105476,
+  "sha256": "e234e9abbe4e18665999dfd797c33fd225eb3a1943ffefdd57031d4447fb1657"
+ },
+ "Forests/P19x124QFine19x124.json.gz": {
+  "bytes": 97204,
+  "sha256": "bce1c650e8ba588a92bd21a86995f3cda0b0b2f314446876af40b41dc37f7298"
+ },
+ "Forests/P19x274QFine19x274.json.gz": {
+  "bytes": 38465,
+  "sha256": "ad774d8c60c755136daa18c96b2ef18bc46cbcb3220db0f5be33a15ead0de3b8"
+ },
+ "Forests/P19x50CacheD19x50.json.gz": {
+  "bytes": 116248,
+  "sha256": "366e4cebf33e83ac0b2454eb72539f8b7a7d1533df87b087e6d799391c16ea0f"
+ },
+ "Forests/P19x64CacheD19x64.json.gz": {
+  "bytes": 119141,
+  "sha256": "9d26d52e19ebad0fb66840d27be90a79ef18711c75d177ca238f263fde91ebb5"
+ },
+ "Forests/P19x68QFine19x68.json.gz": {
+  "bytes": 101755,
+  "sha256": "895b3d16d565bac44e2345ca25178b3bb874efda414b196d4c1d836089861005"
+ },
+ "Forests/P19x74CacheD19x74.json.gz": {
+  "bytes": 165176,
+  "sha256": "759a524302e4a4ef924df7aeb6d5080382e96fffc83233307f27e0e5273bc97f"
+ },
+ "Forests/P19x84QFine19x84.json.gz": {
+  "bytes": 78072,
+  "sha256": "8de04369316ba7e3336e729f86c6411a784cf1796ff20610d73bbae3a1bc8b08"
+ },
+ "Forests/P19x86HDir19x86.json.gz": {
+  "bytes": 53520,
+  "sha256": "7754b9688589598c8641453b9498280796f282b60a3cc1fc1b2452158506f8b5"
+ },
+ "Forests/P19x98QFine19x98.json.gz": {
+  "bytes": 44421,
+  "sha256": "f5f668e6e4857a0149d1e68b0e40800c36476c3c69a5e7e8aedea73855d83a2e"
+ },
+ "Forests/P31x26CacheD31x26.json.gz": {
+  "bytes": 200607,
+  "sha256": "91ac007f855760e443c15855a0c8c8784322b4f6c907eaed3f63a2c4fea3c657"
+ },
+ "Forests/P31x32Long231x32.json.gz": {
+  "bytes": 318102,
+  "sha256": "64e31e92bffd2f0b314847b8ff9c1a780ad484cb23585a0cca16825418dc9c94"
+ },
+ "Forests/P31x396CacheD31x396.json.gz": {
+  "bytes": 169127,
+  "sha256": "a40ceab09d7e3a0b9d2094d56b747546b2b286080a77c75a3b6eb72d087303ef"
+ },
+ "Forests/Best19x646Finalecm.pack.json.gz": {
+  "bytes": 68414,
+  "sha256": "e3d36b898860626ea8fa5d8930914eea8dc2be9ad2c797746c9431c8d7357af9"
+ },
+ "Forests/Candidate13x100Refine1.pack.json.gz": {
+  "bytes": 100318,
+  "sha256": "44f0db5c6b2db9f1d3fba3bcba618dce3106d3a38b925c2c7049f54de40b697a"
+ },
+ "Forests/Candidate13x58Refine1.pack.json.gz": {
+  "bytes": 253155,
+  "sha256": "b65ef66d9b81b2aa28b84e5c41e0071894ea78fbb7bf3ae7ba0e905d201d563c"
+ },
+ "Forests/Candidate13x690EcmRefine.pack.json.gz": {
+  "bytes": 46908,
+  "sha256": "276b809d025e57e697b3a16bebd41037a871e430410a0ddbccaec08319de89a9"
+ },
+ "Forests/Candidate19x148Refine1.pack.json.gz": {
+  "bytes": 79697,
+  "sha256": "03a0f7855b4a4ef58854f5129c89c6fe41933523d8f92f2d1cb2ac8ef8dae421"
+ },
+ "Forests/Candidate19x360Refine1.pack.json.gz": {
+  "bytes": 201928,
+  "sha256": "9b5126af8e1761d8eeda6e1f04589260ee3f9eb4b56ce2a0e77f1be8c574bd51"
+ },
+ "Forests/Candidate19x576Finalecm2.pack.json.gz": {
+  "bytes": 49099,
+  "sha256": "f5d5af31ba8bba1f3576e5501f9910e8233156d5b714cc0f76da6b1698b7b652"
+ },
+ "Forests/Candidate19x598Refine1.pack.json.gz": {
+  "bytes": 38005,
+  "sha256": "b94ea47e21cea34d76e77577ac8b90bb5a819453f553d0d573a162d833275655"
+ },
+ "Forests/Candidate31x438EcmRefine.pack.json.gz": {
+  "bytes": 28837,
+  "sha256": "697c22c434d0ae2f64cde83f9c57c94a7366ec5b36a6bde280a4298cff40b65b"
+ },
+ "Forests/Candidate31x486Refine1.pack.json.gz": {
+  "bytes": 21128,
+  "sha256": "4055071036f155a34d8e2211fe879cdd40422be1ce305a2953d987f9230f32a6"
+ },
+ "Seven/Best11x1321.pack.json.gz": {
+  "bytes": 51505,
+  "sha256": "17985400135cf2db25c80821430ac1ea771647dd573b78eaab139e40da5dbe8c"
+ },
+ "Seven/Best11x2141.pack.json.gz": {
+  "bytes": 40856,
+  "sha256": "63a536f1030157c8c5bfcdd3eeb0bee342517d31908380cd6b6b3c42e9c3a4e5"
+ },
+ "Seven/Best11x2201.pack.json.gz": {
+  "bytes": 74094,
+  "sha256": "6d9adfd62b6f9439539525e99c29fdd3676a9d03ccf0749afcecc5757a61732e"
+ },
+ "Seven/Best11x461.pack.json.gz": {
+  "bytes": 238164,
+  "sha256": "317ac1278ce99eaf3bcb3a2ccc6515f33ca66d5237e5e47cb7f6f6392547ebf5"
+ },
+ "Seven/Best11x6461.pack.json.gz": {
+  "bytes": 67929,
+  "sha256": "04c728127305b409118defc246fcb419c75fcc088dbb9e8386d414d8e0f6615b"
+ },
+ "Seven/Best11x661.pack.json.gz": {
+  "bytes": 40241,
+  "sha256": "56f05c632ef6381a6441efb97c40472d8269bcde2ce6927d3b1cf7490f23c220"
+ },
+ "Seven/Best7x1081.pack.json.gz": {
+  "bytes": 51077,
+  "sha256": "86a934540d330014f2648828c61a9adc1885feb68ffe1b3eed9a62e9fa872980"
+ },
+ "Seven/Best7x1621.pack.json.gz": {
+  "bytes": 19635,
+  "sha256": "7cd721359e109d32c6bf24c5beca7a651e4adebbd887d377610e59b9cb01eac9"
+ },
+ "Seven/Best7x2341.pack.json.gz": {
+  "bytes": 87731,
+  "sha256": "85e7ba51831f4b2815c197336875899f17a324c7db4a708c201716ecd96bbecf"
+ },
+ "Seven/Best7x2521.pack.json.gz": {
+  "bytes": 126588,
+  "sha256": "307264e95a3c487a89e9c142f677179ce58bd60b34332991c539ee263734f1b3"
+ },
+ "Seven/Best7x4121.pack.json.gz": {
+  "bytes": 39086,
+  "sha256": "4311e4fdef9d8b872429bd47c99cf90ad6c3665f217840597dce835df6e97519"
+ }
+}

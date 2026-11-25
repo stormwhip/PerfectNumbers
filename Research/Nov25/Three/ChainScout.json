@@ -1,0 +1,286 @@
+[
+ {
+  "e": 336,
+  "root": [
+   "8089",
+   "338861091937",
+   "736092762241",
+   "15275089234692457928399830093894547965466024864202146371213243156106285906075894973332186245237882870960420708777842267535014628868137"
+  ],
+  "one": 262,
+  "high": 237,
+  "trials": [
+   {
+    "low": 305,
+    "top": 336,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 7501,
+    "edges": 152
+   },
+   {
+    "low": 273,
+    "top": 304,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 7501,
+    "edges": 163
+   },
+   {
+    "low": 241,
+    "top": 272,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 7501,
+    "edges": 196
+   },
+   {
+    "low": 209,
+    "top": 240,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 7501,
+    "edges": 196
+   },
+   {
+    "low": 177,
+    "top": 208,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 1985,
+    "edges": 101
+   }
+  ]
+ },
+ {
+  "e": 342,
+  "root": [
+   "491",
+   "1093",
+   "4019",
+   "8233",
+   "24697",
+   "51157",
+   "131713",
+   "385540919",
+   "4551588049",
+   "8465728310029191083",
+   "23451446896560788630183",
+   "32312015265609073916797",
+   "675418954880730201146825609892711592084093470945190403"
+  ],
+  "one": 268,
+  "high": 243,
+  "trials": [
+   {
+    "low": 311,
+    "top": 342,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 7501,
+    "edges": 181
+   },
+   {
+    "low": 279,
+    "top": 310,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 7501,
+    "edges": 191
+   },
+   {
+    "low": 247,
+    "top": 278,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 7501,
+    "edges": 147
+   },
+   {
+    "low": 215,
+    "top": 246,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 7501,
+    "edges": 150
+   },
+   {
+    "low": 183,
+    "top": 214,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 5378,
+    "edges": 146
+   }
+  ]
+ },
+ {
+  "e": 360,
+  "root": [
+   "1597",
+   "103969",
+   "363889",
+   "930643561",
+   "1544679802763873663",
+   "212442076518129661950839",
+   "675873510595715629396212612371",
+   "697971097942205936103528761635014959698831304436244414154743826104885908192839"
+  ],
+  "one": 265,
+  "high": 233,
+  "trials": [
+   {
+    "low": 329,
+    "top": 360,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 7501,
+    "edges": 327
+   },
+   {
+    "low": 297,
+    "top": 328,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 7501,
+    "edges": 298
+   },
+   {
+    "low": 265,
+    "top": 296,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 7501,
+    "edges": 165
+   },
+   {
+    "low": 233,
+    "top": 264,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 3424,
+    "edges": 125
+   }
+  ]
+ },
+ {
+  "e": 298,
+  "root": [
+   "47",
+   "599",
+   "797161",
+   "10997221",
+   "1001523179",
+   "2886381073947332989",
+   "8661965714512154562493",
+   "3691818618067089153032376872670263730514071816623029355312994160640382894707"
+  ],
+  "one": 278,
+  "high": 272,
+  "trials": [
+   {
+    "low": 267,
+    "top": 298,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 7501,
+    "edges": 101
+   },
+   {
+    "low": 235,
+    "top": 266,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 7501,
+    "edges": 101
+   },
+   {
+    "low": 203,
+    "top": 234,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 7501,
+    "edges": 101
+   },
+   {
+    "low": 171,
+    "top": 202,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 7501,
+    "edges": 101
+   },
+   {
+    "low": 139,
+    "top": 170,
+    "high": false,
+    "ok": false,
+    "status": "request or elapsed cap",
+    "requests": 3288,
+    "edges": 73
+   }
+  ]
+ },
+ {
+  "e": 286,
+  "root": [
+   "83",
+   "1093",
+   "2526913",
+   "86950696619",
+   "2153815505142676918154751239812514551481357236630129622919758331450476553285988116532295282822690159583410271804001"
+  ],
+  "one": 281,
+  "high": 282,
+  "trials": [],
+  "status": "short cells require generic tree"
+ },
+ {
+  "e": 246,
+  "root": [
+   "1597",
+   "14327",
+   "363889",
+   "797161",
+   "50427403417",
+   "85336889516918333646696709",
+   "123634978316170336137330788562343247835605751304272686452015331"
+  ],
+  "one": 247,
+  "high": 247,
+  "trials": [],
+  "status": "short cells require generic tree"
+ },
+ {
+  "e": 220,
+  "root": [
+   "443",
+   "1871",
+   "34511",
+   "797161",
+   "60923689584342791398642907184808386306560206807547243570697195224906504237067588551869427"
+  ],
+  "one": 221,
+  "high": 221,
+  "trials": [],
+  "status": "short cells require generic tree"
+ }
+]

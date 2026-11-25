@@ -1,0 +1,214 @@
+[
+ {
+  "e": 6,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 21,
+  "nodes": 3002,
+  "edges": 435,
+  "root": [
+   "1093"
+  ]
+ },
+ {
+  "e": 10,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 16,
+  "nodes": 823,
+  "edges": 108,
+  "root": [
+   "23",
+   "3851"
+  ]
+ },
+ {
+  "e": 12,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 15,
+  "nodes": 533,
+  "edges": 339,
+  "root": [
+   "797161"
+  ]
+ },
+ {
+  "e": 16,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 20,
+  "nodes": 661,
+  "edges": 275,
+  "root": [
+   "1871",
+   "34511"
+  ]
+ },
+ {
+  "e": 18,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 15,
+  "nodes": 744,
+  "edges": 143,
+  "root": [
+   "1597",
+   "363889"
+  ]
+ },
+ {
+  "e": 28,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 28,
+  "nodes": 640,
+  "edges": 211,
+  "root": [
+   "59",
+   "28537",
+   "20381027"
+  ]
+ },
+ {
+  "e": 36,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 18,
+  "nodes": 783,
+  "edges": 228,
+  "root": [
+   "13097927",
+   "17189128703"
+  ]
+ },
+ {
+  "e": 42,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 16,
+  "nodes": 661,
+  "edges": 194,
+  "root": [
+   "431",
+   "380808546861411923"
+  ]
+ },
+ {
+  "e": 48,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 26,
+  "nodes": 558,
+  "edges": 241,
+  "root": [
+   "491",
+   "1093",
+   "4019",
+   "8233",
+   "51157",
+   "131713"
+  ]
+ },
+ {
+  "e": 58,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 17,
+  "nodes": 678,
+  "edges": 273,
+  "root": [
+   "14425532687",
+   "489769993189671059"
+  ]
+ },
+ {
+  "e": 90,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 23,
+  "nodes": 660,
+  "edges": 341,
+  "root": [
+   "1093",
+   "797161",
+   "4011586307",
+   "3745603812007166116831643"
+  ]
+ },
+ {
+  "e": 120,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 23,
+  "nodes": 703,
+  "edges": 313,
+  "root": [
+   "23",
+   "3851",
+   "11617",
+   "3981923614021",
+   "657890411545272648205502849240259841"
+  ]
+ },
+ {
+  "e": 148,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 20,
+  "nodes": 808,
+  "edges": 416,
+  "root": [
+   "7451",
+   "177941761",
+   "46509804063632583432467217805311362636553293639540930405531"
+  ]
+ },
+ {
+  "e": 286,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 15,
+  "nodes": 829,
+  "edges": 153,
+  "root": [
+   "83",
+   "1093",
+   "2526913",
+   "86950696619",
+   "2153815505142676918154751239812514551481357236630129622919758331450476553285988116532295282822690159583410271804001"
+  ]
+ },
+ {
+  "e": 246,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 15,
+  "nodes": 856,
+  "edges": 330,
+  "root": [
+   "1597",
+   "14327",
+   "363889",
+   "797161",
+   "50427403417",
+   "85336889516918333646696709",
+   "123634978316170336137330788562343247835605751304272686452015331"
+  ]
+ },
+ {
+  "e": 220,
+  "ok": false,
+  "status": "request or elapsed cap",
+  "depth": 18,
+  "nodes": 738,
+  "edges": 489,
+  "root": [
+   "443",
+   "1871",
+   "34511",
+   "797161",
+   "60923689584342791398642907184808386306560206807547243570697195224906504237067588551869427"
+  ]
+ }
+]
