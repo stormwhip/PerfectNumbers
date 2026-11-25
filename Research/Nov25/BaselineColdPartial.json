@@ -1,0 +1,172 @@
+{
+ "historical_baseline_commit": "e89dffd5a74debad80f695d6177f3d785e6268e8",
+ "replay_input_sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+ "recorded_at_beijing": "2026-11-25T09:59:40+08:00",
+ "expected_jobs": 285,
+ "completed_successfully": 23,
+ "fully_verified": false,
+ "scope": "Partial historical baseline run; not a Nov25 proof registration. None of the other jobs is credited.",
+ "receipts": [
+  {
+   "name": "five-Batch14.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 2553.976,
+   "log": "five-Batch14.json.log"
+  },
+  {
+   "name": "five-Batch15.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 2438.715,
+   "log": "five-Batch15.json.log"
+  },
+  {
+   "name": "five-Batch17.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 2604.04,
+   "log": "five-Batch17.json.log"
+  },
+  {
+   "name": "five-Batch19.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 3019.635,
+   "log": "five-Batch19.json.log"
+  },
+  {
+   "name": "order-Batch01.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 688.021,
+   "log": "order-Batch01.json.log"
+  },
+  {
+   "name": "order-Batch02.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 417.075,
+   "log": "order-Batch02.json.log"
+  },
+  {
+   "name": "order-Batch03.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 1357.625,
+   "log": "order-Batch03.json.log"
+  },
+  {
+   "name": "order-Batch04.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 474.337,
+   "log": "order-Batch04.json.log"
+  },
+  {
+   "name": "order-Batch05.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 655.509,
+   "log": "order-Batch05.json.log"
+  },
+  {
+   "name": "order-Batch06.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 869.811,
+   "log": "order-Batch06.json.log"
+  },
+  {
+   "name": "order-Batch07.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 745.34,
+   "log": "order-Batch07.json.log"
+  },
+  {
+   "name": "order-Batch08.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 2774.777,
+   "log": "order-Batch08.json.log"
+  },
+  {
+   "name": "order-Batch09.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 402.209,
+   "log": "order-Batch09.json.log"
+  },
+  {
+   "name": "order-Batch10.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 374.31,
+   "log": "order-Batch10.json.log"
+  },
+  {
+   "name": "order-Batch11.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 402.308,
+   "log": "order-Batch11.json.log"
+  },
+  {
+   "name": "order-Batch12.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 349.967,
+   "log": "order-Batch12.json.log"
+  },
+  {
+   "name": "order-Batch13.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 473.622,
+   "log": "order-Batch13.json.log"
+  },
+  {
+   "name": "order-Batch14.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 876.506,
+   "log": "order-Batch14.json.log"
+  },
+  {
+   "name": "order-Batch15.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 637.03,
+   "log": "order-Batch15.json.log"
+  },
+  {
+   "name": "order-Batch16.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 522.797,
+   "log": "order-Batch16.json.log"
+  },
+  {
+   "name": "order-Batch21.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 298.18,
+   "log": "order-Batch21.json.log"
+  },
+  {
+   "name": "order-Batch23.json",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 79.052,
+   "log": "order-Batch23.json.log"
+  },
+  {
+   "name": "pilot",
+   "sha256": "b66c42bf222be1344d858d42a779a45c288187ae16ae08c1d2fcea48b80f9edb",
+   "passed": true,
+   "seconds": 9.739,
+   "log": "pilot.log"
+  }
+ ]
+}

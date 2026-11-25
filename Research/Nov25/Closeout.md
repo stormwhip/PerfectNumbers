@@ -29,7 +29,7 @@ python -I -S -B Research/Nov25/RunLedgerChecks.py
 python -I -S -B Research/Nov25/five/Simple520.py
 ```
 
-固定基线在另一干净工作树用 `python -I -S -B Research/NightMerge/Checkpoint.py --manifest-only` 恢复原清点；这不是对历史证书的全量验证。全量 `ParallelReplay.py --fresh` 另行限时尝试；不把未完成任务算作通过。其状态与通过任务见最后检查点记录。
+固定基线在另一干净工作树用 `python -I -S -B Research/NightMerge/Checkpoint.py --manifest-only` 恢复原清点；这不是对历史证书的全量验证。全量 `ParallelReplay.py --fresh` 另行限时尝试；不把未完成任务算作通过。其状态与通过任务见[历史基线部分冷验回执](BaselineColdPartial.json)。该回执不进入本轮净增账本。
 
 ## 下一步
 
