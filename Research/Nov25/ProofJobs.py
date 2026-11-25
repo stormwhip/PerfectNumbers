@@ -13,6 +13,9 @@ def verify_job(name):
     elif name=='five520':
         from five.Verify520 import verify
         result=verify()
+    elif name.startswith('seven/') and name.endswith('.pack.json.gz') and name.count('/')==1:
+        from seven.Verify import verify
+        result=verify(HERE/name)
     elif name.endswith('.json.gz') and Path(name).name==name:
         from ForestPackets import verify
         result=verify(HERE/'Forests'/name)

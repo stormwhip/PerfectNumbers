@@ -70,6 +70,17 @@ python -B Research/Nov25/LatticeScout.py --p 19 --s 172 --s 191 --s 230 --s 270 
 
 格证探测需要 SymPy 和 python-flint；如非标准安装，可用 `--flint-path` 指向已有发行目录。每个候选叶须过原有精确多项式与 Sturm 校验；探测结果不进入账本。另见[支持、Pollard p−1 与根三单位约束试验](PrimeCuts.md)。
 
+## 追加森林批次
+
+十九根、十三根、三十一根的 28 个静态种子分别补齐缺失的素性链，然后逐项复验。能入账的证书显式列在 [Ledger.py](Ledger.py)；[Delta.json](Delta.json) 是去重后的输出，而不是独立的证明输入。
+
+另为七根和十一根的 `(7,234)`、`(11,220)` 试验按首坏来源重新分配森林所有者，并补充新的圆分因子。两个完整森林通过固定 [七／十一根算术](../NightSevenForest/Release/Replay.py)；严格整数阈值分别给 `floor(log10 N) ≥ 2400`（严格超过阈值）和 `≥2419`。两项减少分片的实际指数义务，但不单独关闭分片。
+
+```text
+python -I -S -B Research/Nov25/seven/Verify.py Research/Nov25/seven/best-11x220-1.pack.json.gz Research/Nov25/seven/best-7x234-1.pack.json.gz
+python -I -S -B Research/Nov25/Ledger.py --workers 8 --check Research/Nov25/Delta.json
+```
+
 ## 根五简化交叉复验
 
 `python -I -S -B Research/Nov25/five/Simple520.py` 以相同终端权重将分界前移至 `s=300`。`q∣A` 的内部 Euler 总供给至多 265；外部高幂的 521 个 s 和外部一次幂的前 300 个 s 都直接以指标定价排除。其余外部一次幂给 `q≥2·5^300−1`，两个日志实现仍得到下界 `floor(log10 N) ≥ 2456`。它不调用来源间隙或付费来源分支，不另记一项。
