@@ -12,7 +12,11 @@ def need(c,msg):
     if not c:raise ValueError(msg)
 
 def one(item):
-    rel,sha=item;f=ROOT/rel;d=f.read_bytes();need(hashlib.sha256(d).hexdigest()==sha,'packet digest');packet=json.loads(gzip.decompress(d));r,=packet['rows'];p,e=r['p'],r['e'];den=r.get('den',1);need(p in (3,5,7,11,13,19,31),'unsupported forest adapter')
+    rel,sha=item;f=ROOT/rel;d=f.read_bytes();need(hashlib.sha256(d).hexdigest()==sha,'packet digest');packet=json.loads(gzip.decompress(d));
+    if set(packet)=={'row','ecpp'} and rel.startswith('Research/MiddayThree/'):
+        t=packet['row'];r={'p':3,'e':t['e'],'roots':t['roots'],'owners':t['edges'],'head':t['head']}
+    else:r,=packet['rows']
+    p,e=r['p'],r['e'];den=r.get('den',1);need(p in (3,5,7,11,13,19,31),'unsupported forest adapter')
     if p in (3,5):
         sys.path.insert(0,str(H));from ModeCheck import replay
         replay({'general':r,'special':{},'ecpp':packet['ecpp']});return p,e,10**2400+1,1
@@ -24,6 +28,10 @@ def ledger(reg,workers):
     with ProcessPoolExecutor(workers) as pool:
         for i,((rel,_),(p,e,amount,den)) in enumerate(zip(files,pool.map(one,files))):
             need((p,e) in ob,'seed not open');hits=sorted(f for pp,f in ob if pp==p and (f+1)%(e+1)==0 and f>=e);proofs.append({'packet':rel,'seed':[p,e],'actuals':hits});print('PASS',p,e,'Euler-complete; targets',hits,flush=True)
+    # Exact-prefix trees have no automatic index lift.
+    for rel,sha in reg.get('prefix_trees',{}).items():
+        f=ROOT/rel;need(hashlib.sha256(f.read_bytes()).hexdigest()==sha,'tree digest');need(rel=='Research/MiddayGraph/Batch4_13x136d5.json.gz','unsupported prefix proof');sys.path.insert(0,str(R/'MiddayGraph'));from Release import verify
+        keys=verify(f);need(keys=={(13,136)} and keys<=ob,'wrong exact tree');proofs.append({'packet':rel,'seed':[13,136],'actuals':[136]})
     new={(x['seed'][0],f) for x in proofs for f in x['actuals']};closed=[];left=[]
     for s in sh:
         es=[e for e in s['remaining_actuals'] if (s['root'],e) not in new]
