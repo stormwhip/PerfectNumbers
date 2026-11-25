@@ -3,6 +3,36 @@
  "status": "INCOMPLETE_FRONTIER",
  "proofs": [
   {
+   "packet": "Research/MiddayThree/Shared150.json.gz",
+   "seed": [
+    3,
+    150
+   ],
+   "actuals": [
+    150
+   ]
+  },
+  {
+   "packet": "Research/MiddayThree/Shared156.json.gz",
+   "seed": [
+    3,
+    156
+   ],
+   "actuals": [
+    156
+   ]
+  },
+  {
+   "packet": "Research/MiddayThree/Shared166.json.gz",
+   "seed": [
+    3,
+    166
+   ],
+   "actuals": [
+    166
+   ]
+  },
+  {
    "packet": "Research/MiddayThree/Forest178.json.gz",
    "seed": [
     3,
@@ -13,13 +43,103 @@
    ]
   },
   {
-   "packet": "Research/MiddayThree/Forest190.json.gz",
+   "packet": "Research/MiddayThree/Shared180.json.gz",
+   "seed": [
+    3,
+    180
+   ],
+   "actuals": [
+    180
+   ]
+  },
+  {
+   "packet": "Research/MiddayThree/Shared186.json.gz",
+   "seed": [
+    3,
+    186
+   ],
+   "actuals": [
+    186
+   ]
+  },
+  {
+   "packet": "Research/MiddayThree/Shared190.json.gz",
    "seed": [
     3,
     190
    ],
    "actuals": [
     190
+   ]
+  },
+  {
+   "packet": "Research/MiddayThree/Shared208.json.gz",
+   "seed": [
+    3,
+    208
+   ],
+   "actuals": [
+    208
+   ]
+  },
+  {
+   "packet": "Research/MiddayThree/Shared216.json.gz",
+   "seed": [
+    3,
+    216
+   ],
+   "actuals": [
+    216
+   ]
+  },
+  {
+   "packet": "Research/MiddayThree/Shared220.json.gz",
+   "seed": [
+    3,
+    220
+   ],
+   "actuals": [
+    220
+   ]
+  },
+  {
+   "packet": "Research/MiddayThree/Shared246.json.gz",
+   "seed": [
+    3,
+    246
+   ],
+   "actuals": [
+    246
+   ]
+  },
+  {
+   "packet": "Research/MiddayThree/Shared286.json.gz",
+   "seed": [
+    3,
+    286
+   ],
+   "actuals": [
+    286
+   ]
+  },
+  {
+   "packet": "Research/MiddayThree/Shared298.json.gz",
+   "seed": [
+    3,
+    298
+   ],
+   "actuals": [
+    298
+   ]
+  },
+  {
+   "packet": "Research/MiddayThree/Shared336.json.gz",
+   "seed": [
+    3,
+    336
+   ],
+   "actuals": [
+    336
    ]
   },
   {
@@ -30,6 +150,16 @@
    ],
    "actuals": [
     342
+   ]
+  },
+  {
+   "packet": "Research/MiddayThree/Shared360.json.gz",
+   "seed": [
+    3,
+    360
+   ],
+   "actuals": [
+    360
    ]
   },
   {
@@ -63,6 +193,26 @@
    ]
   },
   {
+   "packet": "Research/MiddayDirected/Directed7x126.json.gz",
+   "seed": [
+    7,
+    126
+   ],
+   "actuals": [
+    126
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest7x132.json.gz",
+   "seed": [
+    7,
+    132
+   ],
+   "actuals": [
+    132
+   ]
+  },
+  {
    "packet": "Research/Midday/Packets/Forest7x136.json.gz",
    "seed": [
     7,
@@ -70,6 +220,16 @@
    ],
    "actuals": [
     136
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed7x142.json.gz",
+   "seed": [
+    7,
+    142
+   ],
+   "actuals": [
+    142
    ]
   },
   {
@@ -140,6 +300,16 @@
    ],
    "actuals": [
     180
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest7x186.json.gz",
+   "seed": [
+    7,
+    186
+   ],
+   "actuals": [
+    186
    ]
   },
   {
@@ -263,6 +433,26 @@
    ]
   },
   {
+   "packet": "Research/Midday/Packets/Forest7x250.json.gz",
+   "seed": [
+    7,
+    250
+   ],
+   "actuals": [
+    250
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed7x256.json.gz",
+   "seed": [
+    7,
+    256
+   ],
+   "actuals": [
+    256
+   ]
+  },
+  {
    "packet": "Research/Midday/Packets/Forest7x258.json.gz",
    "seed": [
     7,
@@ -313,6 +503,16 @@
    ]
   },
   {
+   "packet": "Research/MiddayDirected/Directed7x276.json.gz",
+   "seed": [
+    7,
+    276
+   ],
+   "actuals": [
+    276
+   ]
+  },
+  {
    "packet": "Research/Midday/Packets/Forest7x280.json.gz",
    "seed": [
     7,
@@ -330,6 +530,26 @@
    ],
    "actuals": [
     286
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest7x288.json.gz",
+   "seed": [
+    7,
+    288
+   ],
+   "actuals": [
+    288
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed7x292.json.gz",
+   "seed": [
+    7,
+    292
+   ],
+   "actuals": [
+    292
    ]
   },
   {
@@ -433,6 +653,16 @@
    ]
   },
   {
+   "packet": "Research/Midday/Packets/Forest7x372.json.gz",
+   "seed": [
+    7,
+    372
+   ],
+   "actuals": [
+    372
+   ]
+  },
+  {
    "packet": "Research/Midday/Packets/Forest7x382.json.gz",
    "seed": [
     7,
@@ -493,6 +723,16 @@
    ]
   },
   {
+   "packet": "Research/MiddayDirected/Directed7x502.json.gz",
+   "seed": [
+    7,
+    502
+   ],
+   "actuals": [
+    502
+   ]
+  },
+  {
    "packet": "Research/Midday/Packets/Forest7x504.json.gz",
    "seed": [
     7,
@@ -510,6 +750,16 @@
    ],
    "actuals": [
     508
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed7x520.json.gz",
+   "seed": [
+    7,
+    520
+   ],
+   "actuals": [
+    520
    ]
   },
   {
@@ -533,6 +783,16 @@
    ]
   },
   {
+   "packet": "Research/MiddayDirected/Directed7x562.json.gz",
+   "seed": [
+    7,
+    562
+   ],
+   "actuals": [
+    562
+   ]
+  },
+  {
    "packet": "Research/Midday/Packets/Forest7x592.json.gz",
    "seed": [
     7,
@@ -540,6 +800,16 @@
    ],
    "actuals": [
     592
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed7x598.json.gz",
+   "seed": [
+    7,
+    598
+   ],
+   "actuals": [
+    598
    ]
   },
   {
@@ -663,6 +933,16 @@
    ]
   },
   {
+   "packet": "Research/MiddayDirected/Directed7x810.json.gz",
+   "seed": [
+    7,
+    810
+   ],
+   "actuals": [
+    810
+   ]
+  },
+  {
    "packet": "Research/Midday/Packets/Forest7x876.json.gz",
    "seed": [
     7,
@@ -670,6 +950,16 @@
    ],
    "actuals": [
     876
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest7x910.json.gz",
+   "seed": [
+    7,
+    910
+   ],
+   "actuals": [
+    910
    ]
   },
   {
@@ -683,6 +973,56 @@
    ]
   },
   {
+   "packet": "Research/MiddayDirected/Directed7x970.json.gz",
+   "seed": [
+    7,
+    970
+   ],
+   "actuals": [
+    970
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed7x990.json.gz",
+   "seed": [
+    7,
+    990
+   ],
+   "actuals": [
+    990
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed11x36.json.gz",
+   "seed": [
+    11,
+    36
+   ],
+   "actuals": [
+    36
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed11x40.json.gz",
+   "seed": [
+    11,
+    40
+   ],
+   "actuals": [
+    40
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest11x52.json.gz",
+   "seed": [
+    11,
+    52
+   ],
+   "actuals": [
+    52
+   ]
+  },
+  {
    "packet": "Research/Midday/Packets/Forest11x54.json.gz",
    "seed": [
     11,
@@ -690,6 +1030,16 @@
    ],
    "actuals": [
     54
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest11x58.json.gz",
+   "seed": [
+    11,
+    58
+   ],
+   "actuals": [
+    58
    ]
   },
   {
@@ -703,6 +1053,26 @@
    ]
   },
   {
+   "packet": "Research/Midday/Packets/Forest11x82.json.gz",
+   "seed": [
+    11,
+    82
+   ],
+   "actuals": [
+    82
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest11x84.json.gz",
+   "seed": [
+    11,
+    84
+   ],
+   "actuals": [
+    84
+   ]
+  },
+  {
    "packet": "Research/MiddayDirected/Directed11x88.json.gz",
    "seed": [
     11,
@@ -710,6 +1080,16 @@
    ],
    "actuals": [
     88
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest11x96.json.gz",
+   "seed": [
+    11,
+    96
+   ],
+   "actuals": [
+    96
    ]
   },
   {
@@ -730,6 +1110,16 @@
    ],
    "actuals": [
     106
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed11x112.json.gz",
+   "seed": [
+    11,
+    112
+   ],
+   "actuals": [
+    112
    ]
   },
   {
@@ -833,6 +1223,16 @@
    ]
   },
   {
+   "packet": "Research/MiddayDirected/Directed11x172.json.gz",
+   "seed": [
+    11,
+    172
+   ],
+   "actuals": [
+    172
+   ]
+  },
+  {
    "packet": "Research/Midday/Packets/Forest11x180.json.gz",
    "seed": [
     11,
@@ -923,6 +1323,16 @@
    ]
   },
   {
+   "packet": "Research/MiddayDirected/Directed11x400.json.gz",
+   "seed": [
+    11,
+    400
+   ],
+   "actuals": [
+    400
+   ]
+  },
+  {
    "packet": "Research/MiddayDirected/Directed11x438.json.gz",
    "seed": [
     11,
@@ -930,6 +1340,16 @@
    ],
    "actuals": [
     438
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed11x502.json.gz",
+   "seed": [
+    11,
+    502
+   ],
+   "actuals": [
+    502
    ]
   },
   {
@@ -963,6 +1383,16 @@
    ]
   },
   {
+   "packet": "Research/Midday/Packets/Forest11x592.json.gz",
+   "seed": [
+    11,
+    592
+   ],
+   "actuals": [
+    592
+   ]
+  },
+  {
    "packet": "Research/MiddayDirected/Directed11x612.json.gz",
    "seed": [
     11,
@@ -973,6 +1403,36 @@
    ]
   },
   {
+   "packet": "Research/Midday/Packets/Forest11x616.json.gz",
+   "seed": [
+    11,
+    616
+   ],
+   "actuals": [
+    616
+   ]
+  },
+  {
+   "packet": "Research/Midday/Packets/Forest11x640.json.gz",
+   "seed": [
+    11,
+    640
+   ],
+   "actuals": [
+    640
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed11x652.json.gz",
+   "seed": [
+    11,
+    652
+   ],
+   "actuals": [
+    652
+   ]
+  },
+  {
    "packet": "Research/MiddayForest/Forest13x10.json.gz",
    "seed": [
     13,
@@ -980,6 +1440,26 @@
    ],
    "actuals": [
     10
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed13x20.json.gz",
+   "seed": [
+    13,
+    20
+   ],
+   "actuals": [
+    20
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed13x80.json.gz",
+   "seed": [
+    13,
+    80
+   ],
+   "actuals": [
+    80
    ]
   },
   {
@@ -1010,6 +1490,16 @@
    ],
    "actuals": [
     366
+   ]
+  },
+  {
+   "packet": "Research/MiddayForest/Forest13x462.json.gz",
+   "seed": [
+    13,
+    462
+   ],
+   "actuals": [
+    462
    ]
   },
   {
@@ -1050,6 +1540,16 @@
    ],
    "actuals": [
     256
+   ]
+  },
+  {
+   "packet": "Research/MiddayDirected/Directed19x396.json.gz",
+   "seed": [
+    19,
+    396
+   ],
+   "actuals": [
+    396
    ]
   },
   {
@@ -1123,6 +1623,16 @@
    ]
   },
   {
+   "packet": "Research/Midday/Packets/Forest31x22.json.gz",
+   "seed": [
+    31,
+    22
+   ],
+   "actuals": [
+    22
+   ]
+  },
+  {
    "packet": "Research/MiddayDirected/Directed31x276.json.gz",
    "seed": [
     31,
@@ -1171,12 +1681,206 @@
    "actuals": [
     462
    ]
+  },
+  {
+   "packet": "Research/MiddayGraph/Batch4_13x136d5.json.gz",
+   "seed": [
+    13,
+    136
+   ],
+   "actuals": [
+    136
+   ]
+  },
+  {
+   "packet": "Research/MiddayGraph/EcmC13x80d3.json.gz",
+   "seed": [
+    13,
+    80
+   ],
+   "actuals": [
+    80
+   ]
+  },
+  {
+   "packet": "Research/MiddayThree/Pivot138.json.gz",
+   "seed": [
+    3,
+    138
+   ],
+   "actuals": [
+    138
+   ]
+  },
+  {
+   "packet": "Research/MiddayFive/Accepted.json.gz",
+   "seed": [
+    5,
+    6
+   ],
+   "actuals": [
+    6
+   ]
+  },
+  {
+   "packet": "Research/MiddayFive/Accepted.json.gz",
+   "seed": [
+    5,
+    10
+   ],
+   "actuals": [
+    10
+   ]
+  },
+  {
+   "packet": "Research/MiddayFive/Accepted.json.gz",
+   "seed": [
+    5,
+    12
+   ],
+   "actuals": [
+    12
+   ]
+  },
+  {
+   "packet": "Research/MiddayFive/Accepted.json.gz",
+   "seed": [
+    5,
+    16
+   ],
+   "actuals": [
+    16
+   ]
+  },
+  {
+   "packet": "Research/MiddayFive/Accepted.json.gz",
+   "seed": [
+    5,
+    18
+   ],
+   "actuals": [
+    18
+   ]
+  },
+  {
+   "packet": "Research/MiddayFive/Accepted.json.gz",
+   "seed": [
+    5,
+    22
+   ],
+   "actuals": [
+    22
+   ]
+  },
+  {
+   "packet": "Research/MiddayFive/Accepted.json.gz",
+   "seed": [
+    5,
+    28
+   ],
+   "actuals": [
+    28
+   ]
+  },
+  {
+   "packet": "Research/MiddayFive/Accepted.json.gz",
+   "seed": [
+    5,
+    30
+   ],
+   "actuals": [
+    30
+   ]
+  },
+  {
+   "packet": "Research/MiddayFive/Accepted.json.gz",
+   "seed": [
+    5,
+    40
+   ],
+   "actuals": [
+    40
+   ]
+  },
+  {
+   "packet": "Research/MiddayFive/Accepted.json.gz",
+   "seed": [
+    5,
+    42
+   ],
+   "actuals": [
+    42
+   ]
+  },
+  {
+   "packet": "Research/MiddayFive/Accepted.json.gz",
+   "seed": [
+    5,
+    46
+   ],
+   "actuals": [
+    46
+   ]
+  },
+  {
+   "packet": "Research/MiddayFive/Accepted.json.gz",
+   "seed": [
+    5,
+    48
+   ],
+   "actuals": [
+    48
+   ]
+  },
+  {
+   "packet": "Research/MiddayFive/Accepted.json.gz",
+   "seed": [
+    5,
+    52
+   ],
+   "actuals": [
+    52
+   ]
+  },
+  {
+   "packet": "Research/MiddayFive/Accepted.json.gz",
+   "seed": [
+    5,
+    70
+   ],
+   "actuals": [
+    70
+   ]
   }
  ],
  "new_actuals": [
   [
    3,
+   138
+  ],
+  [
+   3,
+   150
+  ],
+  [
+   3,
+   156
+  ],
+  [
+   3,
+   166
+  ],
+  [
+   3,
    178
+  ],
+  [
+   3,
+   180
+  ],
+  [
+   3,
+   186
   ],
   [
    3,
@@ -1184,7 +1888,95 @@
   ],
   [
    3,
+   208
+  ],
+  [
+   3,
+   216
+  ],
+  [
+   3,
+   220
+  ],
+  [
+   3,
+   246
+  ],
+  [
+   3,
+   286
+  ],
+  [
+   3,
+   298
+  ],
+  [
+   3,
+   336
+  ],
+  [
+   3,
    342
+  ],
+  [
+   3,
+   360
+  ],
+  [
+   5,
+   6
+  ],
+  [
+   5,
+   10
+  ],
+  [
+   5,
+   12
+  ],
+  [
+   5,
+   16
+  ],
+  [
+   5,
+   18
+  ],
+  [
+   5,
+   22
+  ],
+  [
+   5,
+   28
+  ],
+  [
+   5,
+   30
+  ],
+  [
+   5,
+   40
+  ],
+  [
+   5,
+   42
+  ],
+  [
+   5,
+   46
+  ],
+  [
+   5,
+   48
+  ],
+  [
+   5,
+   52
+  ],
+  [
+   5,
+   70
   ],
   [
    7,
@@ -1200,7 +1992,19 @@
   ],
   [
    7,
+   126
+  ],
+  [
+   7,
+   132
+  ],
+  [
+   7,
    136
+  ],
+  [
+   7,
+   142
   ],
   [
    7,
@@ -1229,6 +2033,10 @@
   [
    7,
    180
+  ],
+  [
+   7,
+   186
   ],
   [
    7,
@@ -1280,6 +2088,14 @@
   ],
   [
    7,
+   250
+  ],
+  [
+   7,
+   256
+  ],
+  [
+   7,
    258
   ],
   [
@@ -1300,11 +2116,23 @@
   ],
   [
    7,
+   276
+  ],
+  [
+   7,
    280
   ],
   [
    7,
    286
+  ],
+  [
+   7,
+   288
+  ],
+  [
+   7,
+   292
   ],
   [
    7,
@@ -1348,6 +2176,10 @@
   ],
   [
    7,
+   372
+  ],
+  [
+   7,
    382
   ],
   [
@@ -1372,11 +2204,19 @@
   ],
   [
    7,
+   502
+  ],
+  [
+   7,
    504
   ],
   [
    7,
    508
+  ],
+  [
+   7,
+   520
   ],
   [
    7,
@@ -1388,7 +2228,15 @@
   ],
   [
    7,
+   562
+  ],
+  [
+   7,
    592
+  ],
+  [
+   7,
+   598
   ],
   [
    7,
@@ -1440,11 +2288,39 @@
   ],
   [
    7,
+   810
+  ],
+  [
+   7,
    876
   ],
   [
    7,
+   910
+  ],
+  [
+   7,
    966
+  ],
+  [
+   7,
+   970
+  ],
+  [
+   7,
+   990
+  ],
+  [
+   11,
+   36
+  ],
+  [
+   11,
+   40
+  ],
+  [
+   11,
+   52
   ],
   [
    11,
@@ -1452,11 +2328,27 @@
   ],
   [
    11,
+   58
+  ],
+  [
+   11,
    60
   ],
   [
    11,
+   82
+  ],
+  [
+   11,
+   84
+  ],
+  [
+   11,
    88
+  ],
+  [
+   11,
+   96
   ],
   [
    11,
@@ -1465,6 +2357,10 @@
   [
    11,
    106
+  ],
+  [
+   11,
+   112
   ],
   [
    11,
@@ -1508,6 +2404,10 @@
   ],
   [
    11,
+   172
+  ],
+  [
+   11,
    180
   ],
   [
@@ -1544,7 +2444,15 @@
   ],
   [
    11,
+   400
+  ],
+  [
+   11,
    438
+  ],
+  [
+   11,
+   502
   ],
   [
    11,
@@ -1560,11 +2468,39 @@
   ],
   [
    11,
+   592
+  ],
+  [
+   11,
    612
+  ],
+  [
+   11,
+   616
+  ],
+  [
+   11,
+   640
+  ],
+  [
+   11,
+   652
   ],
   [
    13,
    10
+  ],
+  [
+   13,
+   20
+  ],
+  [
+   13,
+   80
+  ],
+  [
+   13,
+   136
   ],
   [
    13,
@@ -1577,6 +2513,10 @@
   [
    13,
    366
+  ],
+  [
+   13,
+   462
   ],
   [
    13,
@@ -1593,6 +2533,10 @@
   [
    19,
    256
+  ],
+  [
+   19,
+   396
   ],
   [
    19,
@@ -1624,6 +2568,10 @@
   ],
   [
    31,
+   22
+  ],
+  [
+   31,
    276
   ],
   [
@@ -1646,6 +2594,7 @@
  "new_shards": [
   "P19_I00029",
   "P19_I00053",
+  "P19_I00076",
   "P19_I00084",
   "P19_I00086",
   "P19_I00091",
@@ -1655,6 +2604,7 @@
   "P19_I00121",
   "P7_I00020",
   "P7_I00022",
+  "P7_I00030",
   "P7_I00032",
   "P7_I00035",
   "P7_I00038",
@@ -1665,22 +2615,31 @@
   "P7_I00049",
   "P7_I00050",
   "P7_I00051",
+  "P7_I00053",
+  "P7_I00054",
   "P7_I00055",
   "P7_I00056",
   "P7_I00057",
+  "P7_I00058",
   "P7_I00059",
+  "P7_I00061",
   "P7_I00063",
   "P7_I00065",
   "P7_I00066",
   "P7_I00068",
+  "P7_I00073",
   "P7_I00075",
   "P7_I00077",
   "P7_I00079",
   "P7_I00085",
   "P7_I00090",
+  "P7_I00095",
   "P7_I00096",
+  "P7_I00097",
   "P7_I00101",
+  "P7_I00102",
   "P7_I00107",
+  "P7_I00108",
   "P7_I00110",
   "P7_I00111",
   "P7_I00114",
@@ -1691,12 +2650,23 @@
   "P7_I00131",
   "P7_I00133",
   "P7_I00137",
+  "P7_I00140",
   "P7_I00150",
+  "P7_I00155",
   "P7_I00162",
+  "P7_I00163",
+  "P7_I00166",
+  "P11_I00010",
+  "P11_I00011",
+  "P11_I00014",
+  "P11_I00015",
   "P11_I00016",
+  "P11_I00021",
   "P11_I00022",
+  "P11_I00023",
   "P11_I00024",
   "P11_I00026",
+  "P11_I00028",
   "P11_I00029",
   "P11_I00030",
   "P11_I00031",
@@ -1705,6 +2675,7 @@
   "P11_I00034",
   "P11_I00035",
   "P11_I00036",
+  "P11_I00038",
   "P11_I00040",
   "P11_I00041",
   "P11_I00042",
@@ -1713,28 +2684,56 @@
   "P11_I00049",
   "P11_I00055",
   "P11_I00068",
+  "P11_I00077",
   "P11_I00083",
+  "P11_I00094",
   "P11_I00095",
   "P11_I00098",
   "P11_I00100",
+  "P11_I00106",
   "P11_I00110",
+  "P11_I00111",
+  "P11_I00114",
+  "P11_I00117",
+  "P31_I00007",
   "P31_I00057",
   "P31_I00064",
   "P31_I00066",
   "P31_I00078",
   "P31_I00088",
   "P13_I00004",
+  "P13_I00032",
   "P13_I00037",
   "P13_I00068",
   "P13_I00072",
+  "P13_I00089",
   "P13_I00093",
+  "P3_I00035",
+  "P3_I00037",
+  "P3_I00038",
+  "P3_I00040",
   "P3_I00042",
-  "P3_I00044"
+  "P3_I00043",
+  "P3_I00044",
+  "P3_I00069",
+  "P5_I00003",
+  "P5_I00004",
+  "P5_I00005",
+  "P5_I00006",
+  "P5_I00007",
+  "P5_I00008",
+  "P5_I00009",
+  "P5_I00010",
+  "P5_I00012",
+  "P5_I00013",
+  "P5_I00014",
+  "P5_I00015",
+  "P5_I00019"
  ],
- "closed": 2752,
- "open": 320,
- "open_actuals": 394,
- "singletons": 287,
+ "closed": 2803,
+ "open": 269,
+ "open_actuals": 327,
+ "singletons": 241,
  "remaining_shards": [
   {
    "root": 19,
@@ -2166,17 +3165,6 @@
   },
   {
    "root": 19,
-   "index": 76,
-   "count": 287,
-   "exponent": 396,
-   "exact": false,
-   "id": "P19_I00076",
-   "remaining_actuals": [
-    396
-   ]
-  },
-  {
-   "root": 19,
    "index": 77,
    "count": 287,
    "exponent": 400,
@@ -2460,8 +3448,7 @@
     48,
     76,
     90,
-    118,
-    132
+    118
    ]
   },
   {
@@ -2475,9 +3462,7 @@
     10,
     54,
     76,
-    120,
-    142,
-    186
+    120
    ]
   },
   {
@@ -2491,7 +3476,6 @@
     12,
     64,
     90,
-    142,
     168
    ]
   },
@@ -2505,9 +3489,7 @@
    "remaining_actuals": [
     16,
     84,
-    118,
-    186,
-    288
+    118
    ]
   },
   {
@@ -2519,8 +3501,7 @@
    "id": "P7_I00007",
    "remaining_actuals": [
     18,
-    94,
-    132
+    94
    ]
   },
   {
@@ -2735,17 +3716,6 @@
   },
   {
    "root": 7,
-   "index": 30,
-   "count": 412,
-   "exponent": 126,
-   "exact": false,
-   "id": "P7_I00030",
-   "remaining_actuals": [
-    126
-   ]
-  },
-  {
-   "root": 7,
    "index": 31,
    "count": 412,
    "exponent": 130,
@@ -2845,39 +3815,6 @@
   },
   {
    "root": 7,
-   "index": 53,
-   "count": 412,
-   "exponent": 250,
-   "exact": false,
-   "id": "P7_I00053",
-   "remaining_actuals": [
-    250
-   ]
-  },
-  {
-   "root": 7,
-   "index": 54,
-   "count": 412,
-   "exponent": 256,
-   "exact": false,
-   "id": "P7_I00054",
-   "remaining_actuals": [
-    256
-   ]
-  },
-  {
-   "root": 7,
-   "index": 58,
-   "count": 412,
-   "exponent": 276,
-   "exact": false,
-   "id": "P7_I00058",
-   "remaining_actuals": [
-    276
-   ]
-  },
-  {
-   "root": 7,
    "index": 60,
    "count": 412,
    "exponent": 282,
@@ -2889,17 +3826,6 @@
   },
   {
    "root": 7,
-   "index": 61,
-   "count": 412,
-   "exponent": 292,
-   "exact": false,
-   "id": "P7_I00061",
-   "remaining_actuals": [
-    292
-   ]
-  },
-  {
-   "root": 7,
    "index": 70,
    "count": 412,
    "exponent": 352,
@@ -2907,17 +3833,6 @@
    "id": "P7_I00070",
    "remaining_actuals": [
     352
-   ]
-  },
-  {
-   "root": 7,
-   "index": 73,
-   "count": 412,
-   "exponent": 372,
-   "exact": false,
-   "id": "P7_I00073",
-   "remaining_actuals": [
-    372
    ]
   },
   {
@@ -3021,28 +3936,6 @@
   },
   {
    "root": 7,
-   "index": 95,
-   "count": 412,
-   "exponent": 502,
-   "exact": false,
-   "id": "P7_I00095",
-   "remaining_actuals": [
-    502
-   ]
-  },
-  {
-   "root": 7,
-   "index": 97,
-   "count": 412,
-   "exponent": 520,
-   "exact": false,
-   "id": "P7_I00097",
-   "remaining_actuals": [
-    520
-   ]
-  },
-  {
-   "root": 7,
    "index": 98,
    "count": 412,
    "exponent": 522,
@@ -3076,17 +3969,6 @@
   },
   {
    "root": 7,
-   "index": 102,
-   "count": 412,
-   "exponent": 562,
-   "exact": false,
-   "id": "P7_I00102",
-   "remaining_actuals": [
-    562
-   ]
-  },
-  {
-   "root": 7,
    "index": 103,
    "count": 412,
    "exponent": 568,
@@ -3116,17 +3998,6 @@
    "id": "P7_I00106",
    "remaining_actuals": [
     586
-   ]
-  },
-  {
-   "root": 7,
-   "index": 108,
-   "count": 412,
-   "exponent": 598,
-   "exact": false,
-   "id": "P7_I00108",
-   "remaining_actuals": [
-    598
    ]
   },
   {
@@ -3318,17 +4189,6 @@
   },
   {
    "root": 7,
-   "index": 140,
-   "count": 412,
-   "exponent": 810,
-   "exact": false,
-   "id": "P7_I00140",
-   "remaining_actuals": [
-    810
-   ]
-  },
-  {
-   "root": 7,
    "index": 141,
    "count": 412,
    "exponent": 820,
@@ -3439,17 +4299,6 @@
   },
   {
    "root": 7,
-   "index": 155,
-   "count": 412,
-   "exponent": 910,
-   "exact": false,
-   "id": "P7_I00155",
-   "remaining_actuals": [
-    910
-   ]
-  },
-  {
-   "root": 7,
    "index": 156,
    "count": 412,
    "exponent": 918,
@@ -3483,17 +4332,6 @@
   },
   {
    "root": 7,
-   "index": 163,
-   "count": 412,
-   "exponent": 970,
-   "exact": false,
-   "id": "P7_I00163",
-   "remaining_actuals": [
-    970
-   ]
-  },
-  {
-   "root": 7,
    "index": 164,
    "count": 412,
    "exponent": 976,
@@ -3501,17 +4339,6 @@
    "id": "P7_I00164",
    "remaining_actuals": [
     976
-   ]
-  },
-  {
-   "root": 7,
-   "index": 166,
-   "count": 412,
-   "exponent": 990,
-   "exact": false,
-   "id": "P7_I00166",
-   "remaining_actuals": [
-    990
    ]
   },
   {
@@ -3548,7 +4375,6 @@
     24,
     34,
     64,
-    84,
     94,
     124
    ]
@@ -3603,8 +4429,7 @@
    "exact": false,
    "id": "P11_I00005",
    "remaining_actuals": [
-    16,
-    84
+    16
    ]
   },
   {
@@ -3655,28 +4480,6 @@
   },
   {
    "root": 11,
-   "index": 10,
-   "count": 341,
-   "exponent": 36,
-   "exact": false,
-   "id": "P11_I00010",
-   "remaining_actuals": [
-    36
-   ]
-  },
-  {
-   "root": 11,
-   "index": 11,
-   "count": 341,
-   "exponent": 40,
-   "exact": false,
-   "id": "P11_I00011",
-   "remaining_actuals": [
-    40
-   ]
-  },
-  {
-   "root": 11,
    "index": 12,
    "count": 341,
    "exponent": 42,
@@ -3684,28 +4487,6 @@
    "id": "P11_I00012",
    "remaining_actuals": [
     42
-   ]
-  },
-  {
-   "root": 11,
-   "index": 14,
-   "count": 341,
-   "exponent": 52,
-   "exact": false,
-   "id": "P11_I00014",
-   "remaining_actuals": [
-    52
-   ]
-  },
-  {
-   "root": 11,
-   "index": 15,
-   "count": 341,
-   "exponent": 58,
-   "exact": false,
-   "id": "P11_I00015",
-   "remaining_actuals": [
-    58
    ]
   },
   {
@@ -3732,28 +4513,6 @@
   },
   {
    "root": 11,
-   "index": 21,
-   "count": 341,
-   "exponent": 82,
-   "exact": false,
-   "id": "P11_I00021",
-   "remaining_actuals": [
-    82
-   ]
-  },
-  {
-   "root": 11,
-   "index": 23,
-   "count": 341,
-   "exponent": 96,
-   "exact": false,
-   "id": "P11_I00023",
-   "remaining_actuals": [
-    96
-   ]
-  },
-  {
-   "root": 11,
    "index": 27,
    "count": 341,
    "exponent": 108,
@@ -3761,28 +4520,6 @@
    "id": "P11_I00027",
    "remaining_actuals": [
     108
-   ]
-  },
-  {
-   "root": 11,
-   "index": 28,
-   "count": 341,
-   "exponent": 112,
-   "exact": false,
-   "id": "P11_I00028",
-   "remaining_actuals": [
-    112
-   ]
-  },
-  {
-   "root": 11,
-   "index": 38,
-   "count": 341,
-   "exponent": 172,
-   "exact": false,
-   "id": "P11_I00038",
-   "remaining_actuals": [
-    172
    ]
   },
   {
@@ -3838,17 +4575,6 @@
    "id": "P11_I00076",
    "remaining_actuals": [
     396
-   ]
-  },
-  {
-   "root": 11,
-   "index": 77,
-   "count": 341,
-   "exponent": 400,
-   "exact": false,
-   "id": "P11_I00077",
-   "remaining_actuals": [
-    400
    ]
   },
   {
@@ -3941,17 +4667,6 @@
   },
   {
    "root": 11,
-   "index": 94,
-   "count": 341,
-   "exponent": 502,
-   "exact": false,
-   "id": "P11_I00094",
-   "remaining_actuals": [
-    502
-   ]
-  },
-  {
-   "root": 11,
    "index": 96,
    "count": 341,
    "exponent": 520,
@@ -4018,17 +4733,6 @@
   },
   {
    "root": 11,
-   "index": 106,
-   "count": 341,
-   "exponent": 592,
-   "exact": false,
-   "id": "P11_I00106",
-   "remaining_actuals": [
-    592
-   ]
-  },
-  {
-   "root": 11,
    "index": 107,
    "count": 341,
    "exponent": 598,
@@ -4062,17 +4766,6 @@
   },
   {
    "root": 11,
-   "index": 111,
-   "count": 341,
-   "exponent": 616,
-   "exact": false,
-   "id": "P11_I00111",
-   "remaining_actuals": [
-    616
-   ]
-  },
-  {
-   "root": 11,
    "index": 113,
    "count": 341,
    "exponent": 630,
@@ -4080,28 +4773,6 @@
    "id": "P11_I00113",
    "remaining_actuals": [
     630
-   ]
-  },
-  {
-   "root": 11,
-   "index": 114,
-   "count": 341,
-   "exponent": 640,
-   "exact": false,
-   "id": "P11_I00114",
-   "remaining_actuals": [
-    640
-   ]
-  },
-  {
-   "root": 11,
-   "index": 117,
-   "count": 341,
-   "exponent": 652,
-   "exact": false,
-   "id": "P11_I00117",
-   "remaining_actuals": [
-    652
    ]
   },
   {
@@ -4202,17 +4873,6 @@
    "id": "P31_I00005",
    "remaining_actuals": [
     16
-   ]
-  },
-  {
-   "root": 31,
-   "index": 7,
-   "count": 253,
-   "exponent": 22,
-   "exact": false,
-   "id": "P31_I00007",
-   "remaining_actuals": [
-    22
    ]
   },
   {
@@ -4402,9 +5062,7 @@
     2,
     8,
     14,
-    20,
-    26,
-    80
+    26
    ]
   },
   {
@@ -4428,8 +5086,7 @@
    "exact": false,
    "id": "P13_I00003",
    "remaining_actuals": [
-    6,
-    20
+    6
    ]
   },
   {
@@ -4474,17 +5131,6 @@
    "id": "P13_I00008",
    "remaining_actuals": [
     22
-   ]
-  },
-  {
-   "root": 13,
-   "index": 32,
-   "count": 325,
-   "exponent": 136,
-   "exact": false,
-   "id": "P13_I00032",
-   "remaining_actuals": [
-    136
    ]
   },
   {
@@ -4573,17 +5219,6 @@
    "id": "P13_I00087",
    "remaining_actuals": [
     456
-   ]
-  },
-  {
-   "root": 13,
-   "index": 89,
-   "count": 325,
-   "exponent": 462,
-   "exact": false,
-   "id": "P13_I00089",
-   "remaining_actuals": [
-    462
    ]
   },
   {
@@ -4754,9 +5389,7 @@
     90,
     118,
     132,
-    160,
-    216,
-    286
+    160
    ]
   },
   {
@@ -4770,9 +5403,7 @@
     10,
     76,
     120,
-    142,
-    186,
-    208
+    142
    ]
   },
   {
@@ -4786,10 +5417,7 @@
     12,
     90,
     142,
-    168,
-    220,
-    246,
-    298
+    168
    ]
   },
   {
@@ -4801,9 +5429,7 @@
    "id": "P3_I00008",
    "remaining_actuals": [
     16,
-    118,
-    186,
-    220
+    118
    ]
   },
   {
@@ -4815,10 +5441,7 @@
    "id": "P3_I00009",
    "remaining_actuals": [
     18,
-    132,
-    208,
-    246,
-    360
+    132
    ]
   },
   {
@@ -4830,8 +5453,7 @@
    "id": "P3_I00010",
    "remaining_actuals": [
     22,
-    160,
-    298
+    160
    ]
   },
   {
@@ -4853,8 +5475,7 @@
    "exact": false,
    "id": "P3_I00012",
    "remaining_actuals": [
-    30,
-    216
+    30
    ]
   },
   {
@@ -4876,8 +5497,7 @@
    "exact": false,
    "id": "P3_I00014",
    "remaining_actuals": [
-    40,
-    286
+    40
    ]
   },
   {
@@ -5102,17 +5722,6 @@
   },
   {
    "root": 3,
-   "index": 35,
-   "count": 676,
-   "exponent": 138,
-   "exact": false,
-   "id": "P3_I00035",
-   "remaining_actuals": [
-    138
-   ]
-  },
-  {
-   "root": 3,
    "index": 36,
    "count": 676,
    "exponent": 148,
@@ -5120,61 +5729,6 @@
    "id": "P3_I00036",
    "remaining_actuals": [
     148
-   ]
-  },
-  {
-   "root": 3,
-   "index": 37,
-   "count": 676,
-   "exponent": 150,
-   "exact": false,
-   "id": "P3_I00037",
-   "remaining_actuals": [
-    150
-   ]
-  },
-  {
-   "root": 3,
-   "index": 38,
-   "count": 676,
-   "exponent": 156,
-   "exact": false,
-   "id": "P3_I00038",
-   "remaining_actuals": [
-    156
-   ]
-  },
-  {
-   "root": 3,
-   "index": 40,
-   "count": 676,
-   "exponent": 166,
-   "exact": false,
-   "id": "P3_I00040",
-   "remaining_actuals": [
-    166
-   ]
-  },
-  {
-   "root": 3,
-   "index": 43,
-   "count": 676,
-   "exponent": 180,
-   "exact": false,
-   "id": "P3_I00043",
-   "remaining_actuals": [
-    180
-   ]
-  },
-  {
-   "root": 3,
-   "index": 69,
-   "count": 676,
-   "exponent": 336,
-   "exact": false,
-   "id": "P3_I00069",
-   "remaining_actuals": [
-    336
    ]
   },
   {
@@ -5230,150 +5784,6 @@
    "id": "P3_I00193",
    "remaining_actuals": [
     1162
-   ]
-  },
-  {
-   "root": 5,
-   "index": 3,
-   "count": 481,
-   "exponent": 6,
-   "exact": false,
-   "id": "P5_I00003",
-   "remaining_actuals": [
-    6,
-    48
-   ]
-  },
-  {
-   "root": 5,
-   "index": 4,
-   "count": 481,
-   "exponent": 10,
-   "exact": false,
-   "id": "P5_I00004",
-   "remaining_actuals": [
-    10
-   ]
-  },
-  {
-   "root": 5,
-   "index": 5,
-   "count": 481,
-   "exponent": 12,
-   "exact": false,
-   "id": "P5_I00005",
-   "remaining_actuals": [
-    12
-   ]
-  },
-  {
-   "root": 5,
-   "index": 6,
-   "count": 481,
-   "exponent": 16,
-   "exact": false,
-   "id": "P5_I00006",
-   "remaining_actuals": [
-    16
-   ]
-  },
-  {
-   "root": 5,
-   "index": 7,
-   "count": 481,
-   "exponent": 18,
-   "exact": false,
-   "id": "P5_I00007",
-   "remaining_actuals": [
-    18
-   ]
-  },
-  {
-   "root": 5,
-   "index": 8,
-   "count": 481,
-   "exponent": 22,
-   "exact": false,
-   "id": "P5_I00008",
-   "remaining_actuals": [
-    22
-   ]
-  },
-  {
-   "root": 5,
-   "index": 9,
-   "count": 481,
-   "exponent": 28,
-   "exact": false,
-   "id": "P5_I00009",
-   "remaining_actuals": [
-    28
-   ]
-  },
-  {
-   "root": 5,
-   "index": 10,
-   "count": 481,
-   "exponent": 30,
-   "exact": false,
-   "id": "P5_I00010",
-   "remaining_actuals": [
-    30
-   ]
-  },
-  {
-   "root": 5,
-   "index": 12,
-   "count": 481,
-   "exponent": 40,
-   "exact": false,
-   "id": "P5_I00012",
-   "remaining_actuals": [
-    40
-   ]
-  },
-  {
-   "root": 5,
-   "index": 13,
-   "count": 481,
-   "exponent": 42,
-   "exact": false,
-   "id": "P5_I00013",
-   "remaining_actuals": [
-    42
-   ]
-  },
-  {
-   "root": 5,
-   "index": 14,
-   "count": 481,
-   "exponent": 46,
-   "exact": false,
-   "id": "P5_I00014",
-   "remaining_actuals": [
-    46
-   ]
-  },
-  {
-   "root": 5,
-   "index": 15,
-   "count": 481,
-   "exponent": 52,
-   "exact": false,
-   "id": "P5_I00015",
-   "remaining_actuals": [
-    52
-   ]
-  },
-  {
-   "root": 5,
-   "index": 19,
-   "count": 481,
-   "exponent": 70,
-   "exact": false,
-   "id": "P5_I00019",
-   "remaining_actuals": [
-    70
    ]
   }
  ]
