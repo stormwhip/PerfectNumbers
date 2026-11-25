@@ -227,7 +227,9 @@
  "prefix_trees": {
   "Research/MiddayGraph/Batch4_13x136d5.json.gz": "7908bcb078236c1deb77945eb7ddd4c33ba589e64f7a64003e49700e4adb5059",
   "Research/MiddayGraph/EcmC13x80d3.json.gz": "64fe64868f6d7496f67acae0c79009137a14f170afee8f64eaf1558ea2d43316",
-  "Research/MiddayGraph/Batch4_31x136d4.json.gz": "7d46080dfaf9feec2869bb78acb613402a0b2849f742119e7573ade53ae88f18"
+  "Research/MiddayGraph/Batch4_31x136d4.json.gz": "7d46080dfaf9feec2869bb78acb613402a0b2849f742119e7573ade53ae88f18",
+  "Research/MiddayGraph/Next19x40d2.json.gz": "6037341b946912f904badf203d85b328207a0c586081d8ecbe51220ffaa6a0bd",
+  "Research/MiddayGraph/Next31x226d2.json.gz": "ef38ce4641f197d36b9de84eb2ac41ecc30937a1029a13b5fc487a98bff6c4ee"
  },
  "special": {
   "Research/MiddayThree/Pivot138.json.gz": "db90ac4ff43d67b7b5595e78783eb9c09cada11d1a7529e6f887062c996aa104",
@@ -239,6 +241,8 @@
   "Research/Midday/Euler7x172.json.gz": "608629be6ab066d0b9c6cd43e00744e82dfc41fe3076be9b2daf89265f643c1e",
   "Research/Midday/Euler13x562.json.gz": "3e65b29560ce187f38beb6cebf5d634691c9e4babcd906cd831f87f3e30d0f94",
   "Research/Midday/Support11x682.json.gz": "f44fc29b7068cb9abc683041e2082e5727921c1eee7f521457bf332b107b8723",
-  "Research/Midday/Support7x112.json.gz": "fa7dc1d8163b2c706152a75a476e071698597222cdb54ea0ad6e154938556cc6"
+  "Research/Midday/Support7x112.json.gz": "fa7dc1d8163b2c706152a75a476e071698597222cdb54ea0ad6e154938556cc6",
+  "Research/Midday/Support7x1018.json.gz": "d22b770440c6e311f159586e61684a9f68aa6ad107a8f5bbbc462209bf7b41ef",
+  "Research/MiddayThree/Nested96.json.gz": "7dbc8e15ad6ba143bf539843f4840adbc83f5543d1cdc731ac0d9fd66b702a5f"
  }
 }
