@@ -1,0 +1,13 @@
+{
+ "root": 3,
+ "e": 1162,
+ "started": "2026-11-25T08:27:04.933699+08:00",
+ "requested_curves": 64,
+ "b1": 1000000,
+ "seconds": 1200,
+ "completed": 64,
+ "status": 0,
+ "sigma_sha256": "5c91228f541f645d86688c6ed8ca4225ad788338f4d440725e16c898eb3ca669",
+ "output_stream_sha256": "c612c21e1cc478e2c0ff3243a7517b1f9d123a74faf5f56c0e7726aff3b8f58a",
+ "factors": []
+}

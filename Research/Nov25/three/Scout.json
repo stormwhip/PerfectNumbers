@@ -1,0 +1,86 @@
+[
+ {
+  "e": 1162,
+  "root": [],
+  "one": 108,
+  "high": 0,
+  "range_one": [
+   1055,
+   1162
+  ],
+  "range_high": [],
+  "status": "unclosed tree e=1162"
+ },
+ {
+  "e": 1108,
+  "root": [],
+  "one": 180,
+  "high": 0,
+  "range_one": [
+   928,
+   1108
+  ],
+  "range_high": [],
+  "status": "unclosed tree e=1108"
+ },
+ {
+  "e": 990,
+  "root": [],
+  "one": 204,
+  "high": 0,
+  "range_one": [
+   787,
+   990
+  ],
+  "range_high": [],
+  "status": "unclosed tree e=990"
+ },
+ {
+  "e": 970,
+  "root": [],
+  "one": 208,
+  "high": 0,
+  "range_one": [
+   763,
+   970
+  ],
+  "range_high": [],
+  "status": "unclosed tree e=970"
+ },
+ {
+  "e": 856,
+  "root": [],
+  "one": 228,
+  "high": 0,
+  "range_one": [
+   629,
+   856
+  ],
+  "range_high": [],
+  "status": "unclosed tree e=856"
+ },
+ {
+  "e": 360,
+  "root": [
+   "1597",
+   "103969",
+   "363889",
+   "930643561",
+   "1544679802763873663",
+   "212442076518129661950839",
+   "675873510595715629396212612371",
+   "697971097942205936103528761635014959698831304436244414154743826104885908192839"
+  ],
+  "one": 265,
+  "high": 233,
+  "range_one": [
+   96,
+   360
+  ],
+  "range_high": [
+   128,
+   360
+  ],
+  "status": "safety budget"
+ }
+]
