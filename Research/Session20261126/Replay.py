@@ -53,6 +53,10 @@ def projection():
         p,e,stats=ast.literal_eval(check_output([sys.executable,'-I','-S','-B',str(H/'CheckMaskTree.py'),'--repo',str(R.parent),str(path)],text=True).splitlines()[-1]);second=check_output([sys.executable,'-I','-S','-B',str(H/'IndependentMask.py'),'--repo',str(R.parent),str(path)],text=True).splitlines()[-1]
         assert second==f'verified {p} {e} {stats}' and path.name==f'MaskTree{p}x{e}.json.gz' and (p,e) in original
         excluded.add((p,e));proofs.append(dict(packet=path.name,sha256=sha256(path.read_bytes()).hexdigest(),seed=[p,e],forest_leaves=stats[0],split_nodes=stats[1],direct_cases=stats[2],actuals=[e]));print('PASS full S8 support tree',p,e,flush=True)
+    for path in sorted(H.glob('Hybrid*.json.gz')):
+        import ast
+        p,e,stats=ast.literal_eval(check_output([sys.executable,'-I','-S','-B','-X','int_max_str_digits=0',str(H/'HybridCheck.py'),'--repo',str(R.parent),str(path)],text=True).splitlines()[-1]);assert path.name==f'Hybrid{p}x{e}.json.gz' and (p,e) in original
+        excluded.add((p,e));proofs.append(dict(packet=path.name,sha256=sha256(path.read_bytes()).hexdigest(),seed=[p,e],forest_leaves=stats[0],split_nodes=stats[1],direct_cases=stats[2],dual_leaves=stats[3],actuals=[e]));print('PASS hybrid forest/dual tree',p,e,flush=True)
     cut_dir=H/'SupplyForest';packets=sorted(cut_dir.glob('Cut*.json.gz'))
     if packets:
         raw=check_output([sys.executable,'-I','-S','-B','-X','int_max_str_digits=0',str(cut_dir/'VerifyCut.py'),str(R),*map(str,packets)],text=True)
@@ -63,6 +67,10 @@ def projection():
     branch_dir=cut_dir/'Breakpoint'
     for path in sorted(branch_dir.glob('Branch*.json.gz')):
         v=json.loads(check_output([sys.executable,'-I','-S','-B',str(branch_dir/'VerifyBranch.py'),str(R),str(path)],text=True));p,e=v['p'],v['e'];assert (p,e) in original and path.name==f'Branch{p}x{e}.json.gz'
+        excluded.add((p,e));proofs.append(dict(packet=path.relative_to(H).as_posix(),sha256=sha256(path.read_bytes()).hexdigest(),seed=[p,e],actuals=[e],receipt=v))
+    recursive=cut_dir/'Recursive'
+    for path in sorted(recursive.glob('Recursive*.json.gz')):
+        v=json.loads(check_output([sys.executable,'-I','-S','-B',str(recursive/'Domain.py'),str(R),str(path)],text=True));p,e=v['p'],v['e'];assert (p,e) in original and path.name==f'Recursive{p}x{e}.json.gz'
         excluded.add((p,e));proofs.append(dict(packet=path.relative_to(H).as_posix(),sha256=sha256(path.read_bytes()).hexdigest(),seed=[p,e],actuals=[e],receipt=v))
     import JointReplay
     joint=JointReplay.verify();assert joint['seed']==[3,1162] and (3,1162) in original
