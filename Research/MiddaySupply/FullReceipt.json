@@ -1,0 +1,109 @@
+{
+  "baseline": "6732a1a894817457a1bc1b88b7d214ac4d6c9872",
+  "implementation_manifest_sha256": "5edb15d44f329b8efbd190b35adc100047c918c92f92643972a177ed9d371c47",
+  "python": "3.11.9",
+  "collected_at": "2026-11-25T13:02:54.892956+08:00",
+  "strict_replay": [
+    {
+      "p": 7,
+      "e": 1018,
+      "kind": "primary",
+      "domain": [
+        0,
+        1018
+      ],
+      "open": [],
+      "count": 1019,
+      "exit_code": 0,
+      "started": "2026-11-25T11:40:38+08:00",
+      "exit_observed_between": [
+        "2026-11-25T12:39:04+08:00",
+        "2026-11-25T12:46:01+08:00"
+      ],
+      "command": "python -I -S -B Research/MiddaySupply/Release.py 7 0 1018 --kind primary --require-complete"
+    },
+    {
+      "p": 7,
+      "e": 1018,
+      "kind": "independent",
+      "domain": [
+        0,
+        1018
+      ],
+      "open": [],
+      "count": 1019,
+      "exit_code": 0,
+      "started": "2026-11-25T11:42:18+08:00",
+      "exit_observed_between": [
+        "2026-11-25T12:48:48+08:00",
+        "2026-11-25T12:57:37+08:00"
+      ],
+      "command": "python -I -S -B Research/MiddaySupply/Release.py 7 0 1018 --kind independent --require-complete"
+    },
+    {
+      "p": 11,
+      "e": 718,
+      "kind": "primary",
+      "domain": [
+        0,
+        718
+      ],
+      "open": [],
+      "count": 719,
+      "exit_code": 0,
+      "started": "2026-11-25T12:11:07+08:00",
+      "exit_observed_between": [
+        "2026-11-25T12:39:04+08:00",
+        "2026-11-25T12:46:01+08:00"
+      ],
+      "command": "python -I -S -B Research/MiddaySupply/Release.py 11 0 718 --kind primary --require-complete"
+    },
+    {
+      "p": 11,
+      "e": 718,
+      "kind": "independent",
+      "domain": [
+        0,
+        718
+      ],
+      "open": [],
+      "count": 719,
+      "exit_code": 0,
+      "started": "2026-11-25T12:11:16+08:00",
+      "exit_observed_between": [
+        "2026-11-25T12:58:04+08:00",
+        "2026-11-25T13:02:54+08:00"
+      ],
+      "command": "python -I -S -B Research/MiddaySupply/Release.py 11 0 718 --kind independent --require-complete"
+    }
+  ],
+  "environment": {
+    "os": "Windows-10-10.0.26200-SP0",
+    "arch": "AMD64",
+    "executable": "C:\\Users\\hp\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "flags": [
+      "-I",
+      "-S",
+      "-B"
+    ],
+    "zone": "UTC+08:00"
+  },
+  "file_sha256": {
+    "DigitProof.md": "abe365ea8d33749253f782510ec6cd7bb83809e116380478013f9c4714e6a043",
+    "DigitReplay.py": "76910cd0fa093c0fb1f21fb805a6de9f92d1d3a85d9a331908104cf04cad6c7c",
+    "DigitTests.py": "d96435bf040e0f71caeb444b4176a4d649b1206d6654e939383b3239d3818ba1",
+    "Digits.py": "8605477199e8918d0276a88db272151b3acea5472eef709fedd9d64a864a39ba",
+    "EulerPrefix.py": "686a98ae7aa7db38759e79f51dad668549e5675c9519225b5228b780ef4da548",
+    "ExteriorReplay.py": "21a3e8a5978664a2e7ffe847d768efe837f239ff5e4a808962a68f999542731e",
+    "Independent.py": "bdc757dd1554e23e00beadf35c62528418b52887c66fc3c6c278dd0764c0d8db",
+    "Joint.py": "5fbd94806e3ba0dec2eea764bc20183ccd4252e5ceeadeb4b68c05d1d6bdf401",
+    "OrderFloor.py": "cf494e1d6fc55d99d1a8943257f5810f640241e64ffe4e2b9dbb71f20634de75",
+    "OuterDigits.py": "a1d10f4e0d6dcb1d8614889e849c40d28ec1ad0920ba0bddd3e9017d4cb58835",
+    "Release.py": "a423032f510fee4e4fe9778031131d3cc1a3cca3a3c608f2192a683d6f0d976b",
+    "Strip.py": "a9dd98371b601ce5ddc20bf17bb3478148595af34557fad53f99885feb2abb3c"
+  },
+  "end_time_semantics": "Strict exit was observed within the listed wall-clock bracket; OS exit timestamps were not captured. All four had finished before collected_at.",
+  "non_ledger": [
+    "19/660: eight sampled cells empty; full-domain comparison stopped on freeze. No exclusion."
+  ]
+}
