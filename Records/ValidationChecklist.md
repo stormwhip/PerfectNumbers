@@ -6,6 +6,9 @@
 - 用 [CheckLedger.py](../Research/Midday/CheckLedger.py) 重算午间登记包的算术及分支覆盖。原发布的隔离复验范围见 [ReleaseAudit.md](../Research/Midday/ReleaseAudit.md)。
 - 用 [SupportSplit/Verify.py](../Research/SupportSplit/Verify.py) 核验冻结输入与九项条件排除。完整实际指数新增为 0。
 
+- [x] `P3_I00193` 候选原包重放及扩大来源枚举通过。
+- [ ] 修补净成本可加性、余块分配及严格对偶；复验所有叶后再登记。[专项审计](../Research/P3I00193Review/Readme.md)。
+
 **截至 2026-11-24。** 本清单区分**运行成功**与**数学证明成立**。关联数学定义见 [形式化研究难题](../Documentation/ResearchProblems2400.md)，具体证据见 [总证明](../Documentation/Proof2400.md)。
 
 > 当前已新增独立验证器 V2、SQLite 账本与只读 3072 项验收框架。数学验收仍未完成。权威进度见 [CurrentStatus2400.md](../Documentation/CurrentStatus2400.md)。
