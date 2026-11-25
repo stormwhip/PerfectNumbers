@@ -30,7 +30,7 @@ def val(n,p):
 
 def main():
     if not __debug__:raise SystemExit('run without -O')
-    ap=argparse.ArgumentParser();ap.add_argument('packet',type=Path);args=ap.parse_args();D=json.loads(args.packet.read_text());now=time.perf_counter();A=[];proof=D['proof'];sup=set()
+    ap=argparse.ArgumentParser();ap.add_argument('packet',type=Path);ap.add_argument('--output',type=Path,help='write the rebuilt partition here; default: print summary only');args=ap.parse_args();D=json.loads(args.packet.read_text());now=time.perf_counter();A=[];proof=D['proof'];sup=set()
     for lab in ('Original','Replacement'):
         file=T/f'Certificates/Terminal{lab}.json.gz';req(hashlib.sha256(file.read_bytes()).hexdigest()==D['archive_sha256'][lab],'archive');ar=json.load(gzip.open(file,'rt'));verify(ar);A.append(ar);sup.update(q for r,f,q,v in ar['edges'])
     @cache
@@ -223,5 +223,7 @@ def main():
             if z>lim:results[e]=digits[e]
             else:surv.append(e)
         req(top==x['tail'] and original_surv==x['survivors'],'baseline partition mismatch');out.append(dict(forbidden=bad,p=p,tail=top,remaining=len(surv),max_remaining=max(surv,default=0),new=results,survivors=surv,scores=digits,cuts=counts))
-    req(out,'empty');(H/('PairResults.json' if p==7 else f'PairResults{p}.json')).write_text(json.dumps(dict(cases=out),separators=(',',':'))+'\n');print('new',results,'surviving',len(surv),'elapsed',round(time.perf_counter()-now,3))
+    req(out,'empty')
+    if args.output:args.output.write_text(json.dumps(dict(cases=out),separators=(',',':'))+'\n',encoding='utf-8',newline='\n')
+    print('new',results,'surviving',len(surv),'elapsed',round(time.perf_counter()-now,3))
 if __name__=='__main__':main()
