@@ -55,3 +55,7 @@ One additional clean run at the full report commit `0ae79096059cdd68f36897998d64
 ## Runtime
 
 Rolling isolated tests used CPython 3.11.9 (64-bit), Windows build 26200, Intel Core i9-14900HX (32 logical processors), `-I -S -B`, no numerical packages or discovery caches. Run from a release checkout rather than an active discovery tree. Full offline replay may take substantially longer than verifying a single packet. Researchers reusing an earlier completed sub-run must bind both the packet and the verifier plus all data dependencies to the earlier snapshot.
+
+## Publication paths
+
+The publication review normalized 18 certificate filenames. The compressed certificate bytes and digests are identical. The two renamed prefix packets change the reference strings in the registry and delta. The LF digests above describe the cited historical snapshots.

@@ -12,7 +12,7 @@ def main():
  if args!=['--only-new']:subprocess.run([sys.executable,'-I','-S','-B',str(H/'ReleaseFour.py'),*args],check=True)
  def forbidden():raise ValueError('research inputs forbidden')
  Common.dataset=forbidden;sets=[]
- for fn,no,k in [('New-No13.json.gz',[17,19],2407),('New-No13b.json.gz',[17,23],2466),('New-No13c.json.gz',[19,23],2426)]:
+ for fn,no,k in [('NewNo13.json.gz',[17,19],2407),('NewNo13b.json.gz',[17,23],2466),('NewNo13c.json.gz',[19,23],2426)]:
   raw=(H/fn).read_bytes();d=json.loads(gzip.decompress(raw));assert (d['root'],d['e'],d['extra'],d['x'],d['lower'])==(0,0,[3,5,11]+no,[],[[7,1],[13,1]]);u,*_=replay(**d);unit=W*logs(10)[1];assert u>2400*unit and u//unit==k;print(fn,hashlib.sha256(raw).hexdigest(),k,flush=True);sets.append(set(no));split.cache_clear();primeproduct.cache_clear();chunks.cache_clear()
  for b in itertools.product([0,1],repeat=3):
   active={p for p,yes in zip([17,19,23],b) if yes}

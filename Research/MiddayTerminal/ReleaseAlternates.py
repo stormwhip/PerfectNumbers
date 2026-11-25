@@ -9,7 +9,7 @@ def main():
  if a!=['--only-new']:subprocess.run([sys.executable,'-I','-S','-B',str(H/'ReleasePairs.py'),*a],check=True)
  Q=(17,19,23)
  for q,expect in zip(Q,(2436,2408,2409)):
-  d,b=check(f'Pack-New-Big{q}.json.gz');assert d['extra']==[3,5,11,q] and d['x']==[] and d['lower']==[[p,1] for p in (7,13,*[k for k in Q if k!=q])] and b==expect
+  d,b=check(f'PackNewBig{q}.json.gz');assert d['extra']==[3,5,11,q] and d['x']==[] and d['lower']==[[p,1] for p in (7,13,*[k for k in Q if k!=q])] and b==expect
   print('PROVED hitting set',d['extra'],flush=True)
  print('Reason: prior sets imply absent 3,5,11 forces 7,13 and at least two of 17,19,23. If q is absent, the other two are forced, exactly the checked cell. Hence all three and 7,13 are present. No complete canonical exponent or shard is credited.',flush=True)
 if __name__=='__main__':main()

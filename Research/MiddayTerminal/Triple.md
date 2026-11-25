@@ -16,4 +16,4 @@ The final packet uses the ordinary dual model described in `FiveSets.md` without
 python -I -S -B Research/MiddayTerminal/ReleaseTriple.py --baseline
 ```
 
-To verify just the last packet **after** the historical and intervening support premises have been replayed, use `--only-new` instead. Beyond the files in the immediately preceding alternate-four-prime release, the three-prime release requires only `Triple.md`, `ReleaseTriple.py` and `Pack-New-LocalTriple.json.gz`.
+To verify just the last packet **after** the historical and intervening support premises have been replayed, use `--only-new` instead. Beyond the files in the immediately preceding alternate-four-prime release, the three-prime release requires only `Triple.md`, `ReleaseTriple.py` and `PackNewLocalTriple.json.gz`.

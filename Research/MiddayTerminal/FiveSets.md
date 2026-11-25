@@ -44,12 +44,12 @@ FiveSets.md
 ReleaseFive.py
 Audit.py
 Common.py
-Cut-0-0-3-5-11-13-17-19.json.gz
-Cut-0-0-3-5-11-13-17-23.json.gz
-Cut-0-0-3-5-11-13-19-23.json.gz
-New-Drop17.json.gz
-New-Drop19.json.gz
-New-Drop23.json.gz
+Cut0x0x3x5x11x13x17x19.json.gz
+Cut0x0x3x5x11x13x17x23.json.gz
+Cut0x0x3x5x11x13x19x23.json.gz
+NewDrop17.json.gz
+NewDrop19.json.gz
+NewDrop23.json.gz
 ```
 
 Pre-existing repository dependencies: `Research/RootFiveNext/PrimeCheck.py`, `Research/NightUniform/ThreeAvoid.json`, and the two `Research/Session20261122/Certificates/Terminal{Original,Replacement}.json.gz` archives. Full prior replay also uses the already published `Research/NightUniform/ThreeHittingWitness.py` and its repository dependencies. No root-three or root-thirteen private seed pack, MiddayFive directory, discovery script, solver, or factoring service is needed.

@@ -4,9 +4,9 @@
 
 | `(p,e)` | 固定包 | 独立入口 | 森林求界 / 精确分支 / 未闭 |
 |---|---|---|---|
-| (13,136) | [输入](Batch4_13x136d5.json.gz) | [Release](Release.py) | 223 / 11 / 0 |
+| (13,136) | [输入](Batch413x136d5.json.gz) | [Release](Release.py) | 223 / 11 / 0 |
 | (13,80) | [输入](EcmC13x80d3.json.gz) | [Release80](Release80.py) | 79 / 3 / 0 |
-| (31,136) | [输入](Batch4_31x136d4.json.gz) | [Release31136](Release31136.py) | 65 / 4 / 0 |
+| (31,136) | [输入](Batch431x136d4.json.gz) | [Release31136](Release31136.py) | 65 / 4 / 0 |
 | (19,62) | [输入](Whole19x62d1.json.gz) | [Release1962](Release1962.py) | 51 / 1 / 0 |
 | (19,40) | [输入](Next19x40d2.json.gz) | [Release1940](Release1940.py) | 88 / 3 / 0 |
 | (31,226) | [输入](Next31x226d2.json.gz) | [Release31226](Release31226.py) | 24 / 1 / 0 |

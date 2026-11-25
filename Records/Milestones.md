@@ -1,9 +1,10 @@
 # PerfectNumbers 当前里程碑
 
-**状态快照 2026-11-24。** 当前证明状态见 [CurrentStatus2400.md](../Documentation/CurrentStatus2400.md)。全局状态为 `INCOMPLETE_FRONTIER`。
+**更新于 2026-11-25。** 当前证明状态见 [CurrentStatus2400.md](../Documentation/CurrentStatus2400.md)。全局状态为 `INCOMPLETE_FRONTIER`。
 
 | 里程碑 | 当前状态 | 直接证据 | 下一项验收 |
 | --- | --- | --- | --- |
+| 午间证书并集 | 新增 202 片，累计闭合 2,868，开放 204 | [午间证书](../Research/Midday/README.md) | [剩余分片](../Research/Midday/Delta.json) |
 | 两批来源与多根因子链证书 | 新增 165 项，累计闭合 2,192，开放 880 | [总证明](../Documentation/Proof2400.md)及[合并审计](../Research/EveningMerge/Audit.json) | [下一步计划](../Documentation/NextPlan2400.md) |
 | Teichmüller 提升赋值判据 | 新增 146 项，累计闭合 2,015，开放 1,057 | [合并清单](../Research/TeichmullerValuation/Audit2400.json) | 继续证明开放分片 |
 | 指标容量对偶 | 新增 18 项，累计闭合 1,869，开放 1,203 | [基线审计](../Research/IndicatorCapacity/Audit2400.json) | 已纳入最新合并审计 |

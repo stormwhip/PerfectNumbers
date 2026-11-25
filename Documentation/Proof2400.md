@@ -90,22 +90,114 @@ r^cD_1=P(w(r-1)-1)-(q+1)w(r-1),\qquad r^cD_2=P(w+\sigma(r^{c-1}))-w(q+1).
 | 批次或规则 | 复验入口 | 证明数据 |
 | --- | --- | --- |
 | 原根集互素类 | [TerminalCertificate.py](../Research/Session20261122/Python/TerminalCertificate.py) | [原根互素类证书](../Research/Session20261122/Certificates/TerminalOriginal.json.gz) |
-| 历史含根基线 | [仓库复验命令](../Readme.md#复验) | [Teichmüller](../Research/TeichmullerValuation/Audit2400.json)、[Gemini](../Research/TeichmullerValuation/GeminiBatchAudit2400.json) |
+| 历史含根基线 | [历史复验命令](#历史复验命令) | [Teichmüller](../Research/TeichmullerValuation/Audit2400.json)、[Gemini](../Research/TeichmullerValuation/GeminiBatchAudit2400.json) |
 | 根 3 来源与供应，6 项及 3 片 | [CheckShards.py](../Research/GapSupply2400/CheckShards.py)、[Independent.py](../Research/GapSupply2400/Independent.py) | [扫描记录](../Research/GapSupply2400/LiftDeep.json) |
 | 根 3，42 项来源与 87 项多层链，重合 26 项 | [IndependentEvening.py](../Research/EveningRoot3/IndependentEvening.py)、[Replay.py](../Research/ThreeChainNext/Replay.py) | [来源](../Research/EveningRoot3/BothAudit.json)、[链](../Research/ThreeChainNext/Certificates.json) |
 | 根 5，81 项 | [CheckCertificate.py](../Research/RootFiveNext/CheckCertificate.py) | [证书](../Research/RootFiveNext/RootFiveCertificate.json) |
 | 根 7、11、13、19、31，共 346 项 | [VerifyOrderSupply.py](../Research/OrderSupplyNext/VerifyOrderSupply.py)、[IndependentTree.py](../Research/EveningTree/IndependentTree.py) | [341 项](../Research/OrderSupplyNext/Accepted.json)，另五项 \((7,570),(11,318),(13,544),(13,634),(31,362)\) |
 | 规范分片映射 | [VerifyFrontier.py](../Research/EveningMerge/VerifyFrontier.py) | [合并清单](../Research/EveningMerge/Audit.json) |
 
-在仓库根运行 `python -B Research/EveningMerge/VerifyFrontier.py --workers 6` 可复验新增证书及并集，历史基线另按[仓库命令](../Readme.md#复验)重放。从 2,027 个已闭合分片出发，第一批新增 3 个，第二批净排除 530 个实际指数并新增 162 个完整分片。
+在仓库根运行 `python -B Research/EveningMerge/VerifyFrontier.py --workers 6` 可复验新增证书及并集，历史基线另按[历史复验命令](#历史复验命令)重放。从 2,027 个已闭合分片出发，第一批新增 3 个，第二批净排除 530 个实际指数并新增 162 个完整分片。
 
 Euler 来源的分圆指数约简曾在 533 个根 3、5 实际指数上做区间复验，扩大了其中 76 项的覆盖。分支级推导及部分覆盖记录见[历史来源区间报告](https://github.com/stormwhip/PerfectNumbers/blob/ea08da38e38ab3309da4360ea2bb60ecb616a025/Documentation/ResearchReport2400.md)。
 
 两批逐分支推导、发布命令及原始统计保存在 [PR #1 快照](https://github.com/stormwhip/PerfectNumbers/tree/4aad42d895d44782d69e28ed065ca4fda2401b1d/Research/GapSupply2400)和 [PR #2 快照](https://github.com/stormwhip/PerfectNumbers/tree/ea08da38e38ab3309da4360ea2bb60ecb616a025/Research)。[当前状态](CurrentStatus2400.md)与[下一步计划](NextPlan2400.md)使用同一份审计清单。
 
+### 历史复验命令
+
+在仓库根目录运行，夜间回执写到仓库外。
+
+~~~sh
+mkdir -p Build
+python3 -S Research/Session20261122/Python/TerminalCertificate.py verify Research/Session20261122/Certificates/TerminalOriginal.json.gz
+python3 Research/FermatRootValuation/IndependentCheck.py
+python3 Research/IndicatorCapacity/IndicatorCapacityTests.py
+python3 Research/IndicatorCapacity/AuditIndicatorCapacity2400.py --output Build/AuditSummary2400.json
+cmp Research/IndicatorCapacity/Audit2400.json Build/AuditSummary2400.json
+python3 Research/TeichmullerValuation/TeichmullerValuationTests.py
+python3 Research/TeichmullerValuation/AuditTeichmullerValuation2400.py --output Build/AuditTeichmuller2400.json
+cmp Research/TeichmullerValuation/Audit2400.json Build/AuditTeichmuller2400.json
+python3 Research/TeichmullerValuation/AuditGeminiBatch2400.py --remaining Build/RemainingBeforeGapSupply2400.json
+python3 Research/EveningMerge/VerifyFrontier.py --workers 6
+python3 -B Research/NightMerge/ParallelReplay.py --workers 10 --fresh --receipts ../PerfectNumbersNightReceipts
+python3 -I -S -B Research/Nov25/Ledger.py --workers 10 --check Research/Nov25/Delta.json
+~~~
+
+## 5. 11 月 25 日午间证明
+
+本轮以 [PR #4 合并提交](https://github.com/stormwhip/PerfectNumbers/commit/6732a1a894817457a1bc1b88b7d214ac4d6c9872) 为基线，排除 267 个实际指数，闭合 202 个规范分片。逐根统计见[当前状态](CurrentStatus2400.md)，逐包复验见[午间证书](../Research/Midday/README.md)。
+
+设 $N$ 为满足 $N\le 10^{2400}$ 的假想奇完全数。普通森林从经认证的 $\sigma(p^e)$ 素因子出发，按父节点真实指数激活子节点。对登记为可提升的普通森林，若 $e+1\mid f+1$，则 $\sigma(p^e)\mid\sigma(p^f)$，可在保留原剥离支撑及成本的前提下排除指数 $f$。前缀树、Euler 位置分割和支持分割逐个实际指数登记。
+
+根 5 规范类要求 $5\mid N$ 且 $19,7,11,31,13,3$ 均不整除 $N$。整数对偶排除了该类最后 14 个实际指数。指数 6 与 48 同属一个分片，故本轮闭合 13 片，累计闭合该类全部 481 片。最弱证书 $(5,18)$ 给出向下取整界 $\log_{10}N\ge2406$。[根 5 证书](../Research/MiddayFive/README.md)
+
+### 支持命中集
+
+历史命中集 $\{3,5,7\}$ 与本轮的 $\{3,5,11\}$、$\{3,5,13\}$ 联合推出
+\[
+\gcd(N,15)=1\quad\Longrightarrow\quad 7\cdot 11\cdot 13\mid N.
+\]
+两条新证明利用前置命中集确定强制支持，再在各个补侧重建整数对偶。第二条的末支下界取整为 2400，严格不等式由未舍入的整数比较得到。分片仍按全部实际指数记账。[命中集推导](../Research/MiddayTerminal/Triple.md) · [第二条的完整依赖复验](../Research/MiddayTerminal/ReleaseThirteen.py)
+
+根 5 的全部分片闭合后，若 $3,7$ 均不整除 $N$，历史命中集强迫 $5\mid N$，于是 $11,13,19,31$ 中至少有一个整除 $N$。根序中 17 位于 5 之后，允许 17 出现仍在根 5 类的覆盖范围内。
+
+### 根 5 的多源整数对偶
+
+1. 选取一组经认证的显式素数 `V`，包含所有小于阈值 `L` 的允许奇素数。每个底数最多选择一个指数选项：有限精确前缀、普通高幂尾，或合法的 Euler 高幂尾；实际已固定的根指数一定选择。目标是从这些选项和未知素数贡献构造一个**包含每个真实反例**的松弛模型。
+2. 对每个选中的精确素幂 `r_i^f_i || N`，将几何和的奇部写为 `S_i = U_i ∏_{q∈V} q^{a_iq}`，其中 `gcd(U_i,∏V)=1`。不同 `i` 来自不同素幂，所以 `∏ S_i` 整除 `σ(N)` 的奇部 `N`。因此所有 `log U_i` 可以同时计入尺寸；**不需要各 `U_i` 两两互素**。对 `q∈V`，总流入 `∑a_iq` 不超过其实际指数。显式尾若使用下界 `h` 而实际为 `f>h`，可付 `(f−h)log q` 的剩余价。流入约束与“某一来源强迫目标指数至少为 k”的蕴含是两个必要不等式，不是把同一素幂乘两次。
+3. 每个 `U_i` 全部素因子至少为 `L`，它的素支持可以免费获得至多 `⌊log_L U_i⌋ log(L/(L−1))` 的对数丰度。若不同 `U_i` 含同一素数，免费丰度可能重复，方向是放宽而非加强。尚未列入的素数既不在 `V`，又不在任何已计入的余块中：普通素数的指数至少二，故每个至少付 `2log L`，丰度至多 `log(L/(L−1))`。外部 Euler 素数单列一枚折扣，并与显式奇指数选项合并限制为至多一次。
+4. 尺寸系数向下、丰度贡献上界向上。对 `Ax≤b` 与非负整数权重 `w`、固定分母 `W`，任一真实可行点满足 `W C·x ≥ −w·b + (WC+wA)·x`。同底数至多选一项，余项下界可按组取 `min(0,min_j reduced_j)`；无界余量列的约化成本必须非负。若重建的整数右端严格大于 `2400 W` 乘 `log(10)` 的上端，就排除了该反例。浮点求解只负责提议 `w`。第二套验证器用 Decimal 相邻可表示数包围对数，重新生成所有素幂、取整方向、行和稀疏对偶。两套实现对同一紧凑[证书](../Research/MiddayFive/Accepted.json.gz)给出一致的十四项结论。
+
+### Euler 位置分割
+
+For the canonical scenario, `7^700 || N` and `19 ∤ N`, set `A=(7^701−1)/6` and let `E` denote the unique Euler prime. The root itself is ordinary. Partition the problem into five pairwise disjoint cases, the four exact possibilities for `E` below and their complement. This is not the assumption that a forest contains the Euler prime: the last class includes **every prime outside the graph**.
+
+| Euler case | Lower decimal floor |
+|---|---:|
+| All primes other than the four below | 2400 |
+| 11777 | 2404 |
+| 194674901 | 2403 |
+| 3680030201 | 2446 |
+| 4751504889569509596346336866349490924895794713 | 2430 |
+
+The first row is a *strict* full-integer comparison, not acceptance from a decimal floor of 2400. In that case allow the Euler coupon at any other possible emitter; disallow it only at the four listed primes. The directed forest minima include the possibility that no activated emitter spends the coupon. On each of the other four branches the nominated `E=q` is **forced independently of its former parent**: delete its incoming ownership edge, make it a root, and put `q` in the stripped support. If `q` divides `A`, remove its old `q`-power from the base product before replacing it by `q^f` (`f≥v_q(A)`, `f≡1 mod 4`); otherwise the baseline exponent at this new root is one. Every other component is ordinary. Such re-rooting is valid only inside this positive branch. Every final graph is checked for acyclicity, reachability, primality and actual divisibility. The product of stripped outputs is safe by the ordinary forest proof. Together the five integer bounds exclude the canonical exact pair. No tail is skipped: each exponent prefix is followed by its monotone bare-power bound.
+
+Package: [Euler7x700](../Research/Midday/Euler7x700.json.gz), SHA-256 `7f521c8f37aee7fbd52da609ebccb05c2a78e89873b6e36003a6407cb6b7286b`. Both implementations verified the five bounds above. The [primary verifier](../Research/Midday/ModeCheck.py) uses a one-coupon recursion and a separate scalar specialization; the [independent verifier](../Research/Midday/IndependentModes.py) uses sparse per-location costs and a different archived elliptic/Miller–Rabin implementation. They require only Python standard library.
+
+```
+python -I -S -B Research/Midday/ModeCheck.py Research/Midday/Euler7x700.json.gz
+python -I -S -B Research/Midday/IndependentModes.py Research/Midday/Euler7x700.json.gz
+```
+
+Unconditional re-evaluation of the best individual specialized row reached only about 2397 in discovery. Taking the minimum over five separately proved branches, not the minimum of a single graph and not a product of five bounds, is the operative improvement. Register only `(7,700)`; the experiment has not proved an index lift for this new verifier.
+
+### 强制素数的支持分割
+
+A candidate label `q` in an ordinary forest is not necessarily present: activation depends on its parent's *actual* exponent. One can instead take the disjoint, exhaustive partition `q|N` or `q∤N`. Under `q|N`, promote `q` to an independent forest root, delete any old incoming owner edge, remove its support from all external charges, and start its required multiplicity at `max(1,v_q(A))`. It is **not** assumed to be the Euler prime in this split. Under `q∤N`, discard every exact exponent option for which its geometric sum is divisible by `q`. The two resulting graphs may differ. Independently minimize each graph over all ordinary exponents, all possible Euler locations including an external location, and all monotone exponent tails. The `q` primality certificate is checked even when `q` is only mentioned in the binary condition. A proof on one side alone never suffices.
+
+This differs from splitting on a fixed short list of small roots. Among actual activated nodes on a near-minimizing trace, rank labels by multiplicity of incident emitters and by size; try the proposed positive and negative cuts, then regrow missing outgoing edges independently per side. Two candidates which crossed both bounds were `(11,682)` using `q=45894788532144820046483641` and `(7,112)` using `q=1187565393391461169`. Acceptance is only by [the two integer reconstructions](../Research/Midday/SupportCover.py): the first uses the archived exact-prefix forest; the other recomputes the costs with two states and a separate elliptic primality implementation. They share the explicit structural validation of the supplied forest. This method is distinct from the [Euler 位置分割](#euler-位置分割); it makes no assumption on which prime has odd exponent.
+
+The same Euler-location targeting used for `(7,700)` closed `(7,172)` with four branches and `(13,562)` with eleven. The bottleneck of `(13,562)` was `E=233`; the weakest active trace had only four exact components besides the primary root. Local GMP-ECM found the 13-digit divisor `3969957074003` of `Φ_19(184420802865452149)` on the exponent-18 option. This is merely a discovery hint; all retained nodes and σ-divisibilities are verified without ECM. After a local owner update, both DPs proved integer floors `[2401,2410,2402,2411,2424,2420,2401,2429,2474,2404,2494]`. The tail bound and coupon accounting are the same as for the smaller cover.
+
+### 两个完整实际指数的实例
+
+* **低指数 `(31,10)`**：令 `q=150332843`，其素性和对 `σ(31^10)` 的整除均验算。先用缺 7 时的三根命中前提，继而穷尽 3、5 以及 13、17 的合法支持情况；四个子域共 283 个叶。只含 3 不含 5 的最后子域中，原先剩下 `v_q(N)=40,52`，再分发射因子 5659、107 及其后继，覆盖含尾在内的 204 个叶，无例外。它排除的是规范实际指数 10，并非所有含 31 的整数。[完整支持证明](../Research/MiddaySupport/README.md)
+* **高指数 `(11,718)`**：对 `s=v_11(q+1)` 的全部 719 种可能，主、独立路线分别重建已知源、未知内部源和外部源。最后四个棘手窗里 `q | σ_4(r)` 强迫 `ord_q(r)=5`；在 `r²|C`、`r<q` 的分支检查模 `q` 的四个非平凡五次单位根。只有整域输出 `open=[]` 才获证；`(7,1018)` 的相同整域标准要求全 1,019 个 `s`。[赋值与二阶同余证明](../Research/MiddaySupply/DigitProof.md) · [全域回执](../Research/MiddaySupply/FullReceipt.json)
+
+### 证书来源与去重
+
+一份研究结果可能有多种证明。下表是**发布登记表实际选用**的来源；按不同 `(p,e)` 求并集。未注册的替代证明、条件命中集、局部区间及超时均不加分。分片与证明来源不是一一对应，故不把来源各自宣称的分片数相加。
+
+|登记目录|覆盖的不同实际指数|
+|---|---:|
+|[Midday](../Research/Midday)|98|
+|[MiddayDirected](../Research/MiddayDirected)|113|
+|[MiddayFive](../Research/MiddayFive)|14|
+|[MiddayForest](../Research/MiddayForest)|14|
+|[MiddayGraph](../Research/MiddayGraph)|5|
+|[MiddaySupport](../Research/MiddaySupport)|1|
+|[MiddayThree](../Research/MiddayThree)|24|
+|**不同键并集**|**267**|
 
 
-
-### 11 月 25 日午间增量
-
-相对 11 月 25 日 10:05 的 `main`（`6732a1a`），新增排除 **267** 个不同实际指数、闭合 **202** 个规范分片；累计 **2,868 / 3,072**，余 **204** 片、**244** 个不同实际指数，其中 **181** 片只剩一个实际指数。全局状态仍为 `INCOMPLETE_FRONTIER`。 [证书入口](../Research/Midday/README.md)。新方法包含[多源整数对偶](../Research/MiddayFive/README.md)、[Euler 素数精确位置覆盖](../Research/Midday/EulerCover.md)及[由实际发射节点构造的支持分支](../Research/Midday/EndogenousSupports.md)。重数、外部余因子与丰度的完整计费以及所有 Euler 选择均在上述证明中说明。
+按**证明类型**清点，普通森林覆盖 231 个不同 `(p,e)`，精确前缀树覆盖 5 个，专用证明覆盖 32 个；其中 `(13,80)` 同时在森林和前缀树中，因此是 **231 + 5 + 32 − 1 = 267**。森林内部也已去重：例如根 7 的指数 324、624 既有直接证书，也能分别从 64、124 的指标整除关系提升。特殊验证中的 14 个根五实际指数共用一个对偶包。`(7,1018)` 与 `(11,718)` 均有独立的全域赋值证明；前者在登记表中选择了体积较小的支持二分包，不重复计数。

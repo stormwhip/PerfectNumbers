@@ -31,13 +31,13 @@ def ledger(reg,workers):
     # Exact-prefix trees have no automatic index lift.
     for rel,sha in reg.get('prefix_trees',{}).items():
         f=ROOT/rel;need(hashlib.sha256(f.read_bytes()).hexdigest()==sha,'tree digest');sys.path.insert(0,str(R/'MiddayGraph'))
-        if rel=='Research/MiddayGraph/Batch4_13x136d5.json.gz':
+        if rel=='Research/MiddayGraph/Batch413x136d5.json.gz':
             from Release import verify
             pair=(13,136)
         elif rel=='Research/MiddayGraph/EcmC13x80d3.json.gz':
             from Release80 import verify
             pair=(13,80)
-        elif rel=='Research/MiddayGraph/Batch4_31x136d4.json.gz':
+        elif rel=='Research/MiddayGraph/Batch431x136d4.json.gz':
             from Release31136 import verify
             pair=(31,136)
         elif rel=='Research/MiddayGraph/Next19x40d2.json.gz':

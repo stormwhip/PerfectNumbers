@@ -10,8 +10,8 @@ from Common import bank
 def cases():
  common=[3,5,11,13];Q=[17,19,23]
  for a,b in itertools.combinations(Q,2):
-  no=common+[a,b];yield 'Cut-0-0-'+'-'.join(map(str,no))+'.json.gz',no,[],{(17,19):2524,(17,23):2457,(19,23):2438}[a,b]
- for a in Q:yield f'New-Drop{a}.json.gz',common+[a],[7,*[b for b in Q if b!=a]],{17:2459,19:2462,23:2426}[a]
+  no=common+[a,b];yield 'Cut0x0x'+'x'.join(map(str,no))+'.json.gz',no,[],{(17,19):2524,(17,23):2457,(19,23):2438}[a,b]
+ for a in Q:yield f'NewDrop{a}.json.gz',common+[a],[7,*[b for b in Q if b!=a]],{17:2459,19:2462,23:2426}[a]
 
 def main():
  if not __debug__:raise SystemExit('Do not use -O')
