@@ -230,7 +230,8 @@
   "Research/MiddayDirected/Directed7x826.json.gz": "bd9df880bc62e557b40bd58de840269cb1d2d4054aa12c42ed1334ebc75819ed",
   "Research/MiddayDirected/Directed7x124.json.gz": "9f74ba497abf0b2ed17468f36ffa908796e681b76f169ce9cc93b9064f42c575",
   "Research/MiddayDirected/Directed7x94.json.gz": "5fbfb28730259a14987f2ee2714f29145df6bb963f1971489428ffa92393980b",
-  "Research/MiddayDirected/Directed7x64.json.gz": "c9e691a2ddfc907baed0e7b43b87caabf60c7ef19b1a43c2d0453b308628cb94"
+  "Research/MiddayDirected/Directed7x64.json.gz": "c9e691a2ddfc907baed0e7b43b87caabf60c7ef19b1a43c2d0453b308628cb94",
+  "Research/MiddayForest/Forest13x16.json.gz": "c4492fc9358f8ca483f52d049962d281113adb61fa7e8221e9b0a455f1afd505"
  },
  "prefix_trees": {
   "Research/MiddayGraph/Batch4_13x136d5.json.gz": "7908bcb078236c1deb77945eb7ddd4c33ba589e64f7a64003e49700e4adb5059",
@@ -255,6 +256,7 @@
   "Research/MiddayThree/Complement148.json.gz": "2739eeb17201a67edc628e081ee793a532c4719da22f5f901fbeff9d7bd2bb5b",
   "Research/Midday/Support11x30.json.gz": "ae1f0a95a04df52a10863a37a62ff5665df5176ffaaf28b9eef13adc66554250",
   "Research/Midday/Support7x60.json.gz": "264d6ce1eed6b58ec2c68e19ea8d81c0940def02dc729b27943cc12e61adc4ce",
-  "Research/MiddayThree/Complement88.json.gz": "a946a4dd8aa42d53be1e8811dd125898b835db5eb014000d03f095cbd856895b"
+  "Research/MiddayThree/Complement88.json.gz": "a946a4dd8aa42d53be1e8811dd125898b835db5eb014000d03f095cbd856895b",
+  "Research/MiddayThree/Complement112.json.gz": "881eb8f3d7450926858cb9597de4d4b84e17663099c710b22afae8ad001a5891"
  }
 }

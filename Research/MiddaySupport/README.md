@@ -1,10 +1,10 @@
 # Support cells and dyadic residual prices
 
-Baseline `6732a1a`. All results below are necessary conditions on a hypothetical odd perfect `N <= 10^2400`; none of the conditional exclusions is an additional complete actual exponent in the global ledger.
+Baseline `6732a1a`. This directory closes **one complete actual exponent `(31,10)` and its singleton canonical shard `P31_I00003`**. The other support statements and individual conditional packets are not extra actual exponents.
 
 ## Root 31, exact exponent 10
 
-Assume `19,7,11` are absent (canonical prior roots) and `31^10 || N`. Then **3 divides N, 5 does not divide N, and `v_150332843(N)` belongs to `{40,52}`**. These conclusions rely on the baseline three-root hitting theorem (not a new proof that 3 or 5 must be present). The two remaining anchor exponents are open; this does not exclude the entire canonical root exponent.
+Assume `19,7,11` are absent (canonical prior roots) and `31^10 || N`. Then **3 divides N, 5 does not divide N, and `v_150332843(N)` belongs to `{40,52}`**. These conclusions rely on the baseline three-root hitting theorem (not a new proof that 3 or 5 must be present). These are the intermediate restrictions. [The final 3-present tree](Refined31.json.gz) excludes both remaining exponents, so the exact root exponent 10 is impossible. The proof uses only the canonical prior-root assumptions, not any condition on support outside the exhaustive cases.
 
 * In addition to the two cases below, [Support513](Support513.json.gz) excludes 5 and 13 present, 3 absent (83 forest leaves, minimum floor 2400 with strict integer comparison); [Support517](Support517.json.gz) excludes 5 and 17 present, 3 and 13 absent (97 forest leaves, minimum floor 2401). Both use a full split at q through 100; its cells 40,52 split on 13 or 17 through 65, each with an unbounded tail. This exhausts the case 5 present and 3 absent.
 * [Only3](Only3.json.gz) checks the remaining 3 present, 5 absent cell: 38 exact anchor exponents and the uniform tail after 100 are ruled out. Only exact exponents 40 and 52 are omitted, explicitly. Minimum floor 2401, tail floor 2831. Run `IndependentOnly3.py` and `IndependentRemaining.py 513` / `517` with the same isolated flags below. Both positive-five packets also replay using `Research/Nov25/Compose/Replay.py --conditional` followed by the packet path.
@@ -13,7 +13,14 @@ Assume `19,7,11` are absent (canonical prior roots) and `31^10 || N`. Then **3 d
 * [Both31](Both31.json.gz) rules out 3 and 5 both present. First [Transfer](Transfer.py) proves (without the size bound) that 13,17,29,37 are absent and `5^1 || N`. For each excluded prime or higher exponent, minimize the forced-support abundancy over every possible Euler position and compare strict rational products with 2. Having fixed 5, all other primes have even exponents. The bound for all candidate `q` exponents but 40 comes from 39 finite cells and one tail (floor 3103). At 40 another 21 exact choices of `v3(N)` plus a tail (floor 2402) cover the remaining possibilities. All 62 leaves exceed `10^2400` **strictly**, including the leaf whose floor is exactly 2400.
 * The exclusion of primes and fixing 5 in the preceding step applies to every even exponent E with `11 | E+1`; all this step uses is `sigma(31^10) | sigma(31^E)` and monotonic abundancy. The full conditional forest uses the exact exponent 10. In the analogous root-13 class (prior 19,7,11,31 absent), the same transfer proves that 3 and 5 together force `3² || N`, `5 || N`, and absence of 17,29,37,41,43,47,53,59,61. Do not transfer an exact exponent's outgoing sigma directly to a larger arbitrary exponent.
 
-Reproduce from repo root (stdlib only, no online hints):
+At exact `q^40`, `5659 | sigma(q^40)` and 5659 can have only exponents 2 or 6 after the individual full-coverage forests through 100 and unbounded tail. The first option forces 967, the other forces 32848452483811177815421. Split those certified primes through 95 and 42 respectively and append their individual uniform tails. At exact `q^52`, 107 divides its sigma; the split through 130 and uniform tail leaves only 4. This forces 627091; all its legal exponents through 70 and the uniform tail are ruled out. The final 3-present/5-absent tree has 6 exponent splits and 204 forest leaves, minimum floor 2401; the six tail floors in depth-first order are 2468, 3906, 2580, 2908, 2539, 2831. All four other trees total 283 finite-or-tail forest leaves; the neither-3-nor-5 case uses the baseline 3,5,7 exclusion with 7 absent by the root order. The [complete replay](Complete31.py) regenerates all scope and coverage predicates and the baseline terminal bound. The [alternate recurrence](RefinedOnly3.py) independently checked the final tree with no exceptions.
+
+```
+python -I -S -B -X int_max_str_digits=0 Research/MiddaySupport/Complete31.py
+python -I -S -B -X int_max_str_digits=0 Research/MiddaySupport/RefinedOnly3.py check
+```
+
+Reproduce the intermediate stages from repo root (stdlib only, no online hints):
 
 ```
 python -I -S -B -X int_max_str_digits=0 Research/MiddaySupport/VerifyTransferForest.py
