@@ -112,6 +112,8 @@ PerfectNumbers/
 | 历史 LP 与候选搜索 | [Requirements.txt](../Requirements.txt) 列出 NumPy、SciPy、SymPy、mpmath；个别发现器另用 python-flint 或 PARI。 |
 | 全库长时搜索 | [data-v1](https://github.com/stormwhip/PerfectNumbers/releases/tag/data-v1) 提供历史因子库；[运行脚本](../Scripts/Run72hWSL.sh)校验输入摘要。 |
 
+历史发现器的可选依赖按调用分支区分。`Midday/SeedScan.py`、`Nov25/Boost/Search.py` 与 `Nov25/Seven/Search.py` 读取本地 `NightCache` 的 `facts` 模块。`NightThree/Joint.py` 的可选分支调用 `SourcePhi` 与 `Finance`，`MiddaySupply/Joint.py` 的可选平方核分支调用 `SquareWitness`。`IntervalCertificate61.py` 的实验性 `return_euler_options` 分支调用 `EulerDualBounds`。这些模块未随当前 Git 树分发。登记证书使用下文的标准库复验入口。
+
 按职责读取对应入口。[午间证书](../Research/Midday/README.md)说明证书登记、独立投影及全量重放。[SupportSplit](../Research/SupportSplit/Readme.md)绑定同一账本，单独验证条件证据。
 
 ## 可重复检查
