@@ -14,6 +14,9 @@
 - [SupplierBatch](../Research/SupplierBatch/PerfectNumbers2400BatchReport.md)集中存放上一批验证器、证明程序、证书、审计清单和扫描工具。
 - [旧外部结果评审](../Records/ExternalReviews/GeminiProgressReviewV5.md)归档于 `Records/ExternalReviews/`。
 
+
+- [P3I00193Review](../Research/P3I00193Review/Readme.md) 保存外部候选证书的输入摘要、独立重放、来源枚举修补及净成本缺口；未登记为有效证书。
+
 ## 目录结构
 
 ```text
@@ -25,6 +28,7 @@ PerfectNumbers/
 ├── Research/
 │   ├── Midday/                         # 证书登记、核验入口与待证账本
 │   ├── SupportSplit/                   # 条件支持排除与标准库复验
+│   ├── P3I00193Review/                  # 待修补的候选证书审计
 │   ├── Midday*/                        # 根五、来源供给、森林及支持证明包
 │   ├── Nov25/、NightMerge/              # 上午及夜间历史复验
 │   ├── EveningMerge/                   # 晚间历史复验
