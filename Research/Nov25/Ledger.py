@@ -71,10 +71,13 @@ def verified_batches():
     # Only explicit, fail-closed adapters go here; no discovery results.
     import sys
     sys.path.insert(0, str(HERE))
-    from five.Verify148 import verify
+    from five.Verify148 import verify as five148
+    from five.Verify520 import verify as five520
     from ForestPackets import verify as forest
-    names = ('19x274-QFine19_274.json.gz', '19x86-HDir19_86.json.gz', '13x76-QFine13_76.json.gz')
-    return (('root 5, exponent 148', verify()),
+    names = ('19x274-QFine19_274.json.gz', '19x86-HDir19_86.json.gz', '13x76-QFine13_76.json.gz',
+             '19x102-CacheD19_102.json.gz', '13x418-CacheD13_418.json.gz',
+             '31x396-CacheD31_396.json.gz', '13x42-CacheD13_42.json.gz')
+    return (('root 5, exponent 148', five148()), ('root 5, exponent 520', five520()),
             *((name, forest(HERE / 'Forests' / name)) for name in names))
 
 
