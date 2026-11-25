@@ -9,7 +9,7 @@ python -I -S -B -X int_max_str_digits=0 Research/Midday/CheckLedger.py --workers
 python -I -S -B -X int_max_str_digits=0 Research/Midday/LedgerTests.py
 ```
 
-The [registry](Registry.json) pins the SHA-256 of the compressed bytes. The first command evaluates ordinary seed forests, including their permitted odd-index-divisibility lifts. It also checks exact prefix, pivot, nested and root-five certificates **without** applying such a lift. The [independent projection](LedgerTests.py) decodes each registered certificate to check its claimed root and exponent, then recomputes the many-to-many projection against [the previous frontier](../Nov25/Delta.json). A pair may occur in multiple accepted proofs but is counted once. SHA-256 match alone is not a mathematical check. The aggregate remains explicitly incomplete.
+The [registry](Registry.json) pins SHA-256 over the original compressed bytes, or over LF-normalized UTF-8 bytes for the single plain JSON Supply-domain descriptor. The latter is a scope declaration, not a proof on its own: the verifier recomputes every window. The first command evaluates ordinary seed forests, including their permitted odd-index-divisibility lifts. It also checks exact prefix, pivot, nested and root-five certificates **without** applying such a lift. The [independent projection](LedgerTests.py) decodes each registered certificate to check its claimed root and exponent, then recomputes the many-to-many projection against [the previous frontier](../Nov25/Delta.json). A pair may occur in multiple accepted proofs but is counted once. SHA-256 match alone is not a mathematical check. The aggregate remains explicitly incomplete.
 
 ## Rolling checkpoints
 
@@ -25,6 +25,10 @@ The [registry](Registry.json) pins the SHA-256 of the compressed bytes. The firs
 | `c2986e29` | 259 | 196 | 210 | More frozen forests, exact binary supports and complete Three join |
 | `28ccde92` | 262 | 197 | 209 | Directed lifts reconciled without double counting, plus complete Three 88 |
 | `16b17796` | 265 | 200 | 206 | Intake control: final group of 14 Forest packets and Three's 24 complete actuals |
+| `21cf568d` | 266 | 201 | 205 | Complete support partition for `(31,10)`, including the final 204 leaves |
+| **`6ab50f57`** | **267** | **202** | **204** | Strict full-domain `(11,718)` adds its singleton; final independent projection, 2,868/3,072 closed, 244 distinct open actuals and 181 singleton shards |
+
+The final registry contains **255** packets: 231 ordinary seeds, five exact prefix trees and nineteen special entries. All baseline proof-code directories remained unchanged. No unconditional credit was given to sampling, a conditional subcell, or a second proof of the same key.
 
 ## Disjoint credit
 
@@ -38,7 +42,13 @@ At clean commit `076e4c86`, all 217 non-five packets in the fifth checkpoint (21
 
 The [three-prime hitting theorem](../MiddayTerminal/Triple.md) is a global support restriction, **not** an additional canonical actual or shard. The initial chain including the historical `{3,5,7}` witness, its pair refinements, all three alternate cases, and the final triple each passed from isolated clean commits. The alternate exact Graph certificate for `(19,62)` also passed; this key is already registered through its ordinary forest and was not counted twice.
 
+The exact pair `(31,10)` was admitted only after the separate [closed-world verifier](../MiddaySupport/Complete31.py) rechecked the `{3,5,7}` hitting prerequisite, four support partitions and the zero-exception final 204-leaf partition (13:02:54 UTC+08:00, 1,948.11 s). The independent final-tree replay passed in 950.25 s, floor 2401. For `(11,718)` the central isolated independent source replay covered 0 through 718 and required zero open windows; it passed at 13:05:56 in 2,548.41 s. The [Supply group's four separate receipts](../MiddaySupply/FullReceipt.json) cover both primary and independent implementations for `(11,718)` and `(7,1018)`. The latter exact pair was admitted through a separately verified binary support partition, not counted again as a Supply proof. The duplicate central Supply run for seven was stopped after those passes and is not reported as successful. At `6ab50f57` the entire final ledger and all 255 packet digests were reconciled from the isolated release tree at 13:06:53.
+
 See [timed clean-run receipts](ReleaseReceipts.json) for UTC offsets, commit IDs, commands, exit codes, log digests, and the lack of uncommitted files before and after each reported run. These metadata aid reproducibility; the certificate replay itself remains authoritative.
+
+## Final clean block reconciliation
+
+The final union was reconstructed again from **four disjoint packet sets**, not by summing claims. The largest block (`16b17796`, 252 packets: 231 forests, 5 prefixes, 16 specials) finished on 2026-11-25 at 13:12:04 UTC+08:00 after 715.05 s; it produced 251 actuals and 187 new shards. The other three packets were the unchanged root-five unit (14/13), full `(31,10)` (1/1), and full `(11,718)` (1/1). All four individual projections passed; the independently recombined ledger matched the published `6ab50f57` delta **byte for byte** (LF SHA-256 `0da39e5f1346ac62f897d1ec6d6fce04466c914a79f453a31d6392ef57b2d39b`). Corresponding Registry LF SHA-256: `f3c4e0a46d83c5fb09bd6162397b5993d88407ff2d6ea5e93f455cfe3a74026f`. This is a cold block replay with explicitly reused immutable evidence, not a claim that all historical 3,072 proofs were rerun. Separately, the lead's full `ReleaseTriple.py --baseline` chain at clean `24766599` exited 0 at 13:08:37 UTC+08:00, log SHA-256 `8568400b4369172ed72dacdd2ead5826c764cdd9a022c8716175909aa0709b49`, final floor 2511. The latter does not change the numerical ledger.
 
 ## Runtime
 
