@@ -1,6 +1,6 @@
 # 奇完全数 \(10^{2400}\) 下界的合并证明
 
-令 \(B=10^{2400}\)。本文件汇总已验收的排除结论及其证明规则。固定根序为 \((19,7,11,31,13,3,5,17)\)。取第一个整除 \(N\) 的根 \(p\)，其前面的根构成禁素数集合。与八个根均互素的情形由[原根集独立证书](../Research/Session20261122/Python/TerminalCertificate.py)排除，所得下界为 \(\log_{10}N\ge4183.209493\)。含根的 3,072 个规范分片已闭合 **2,862** 个，余 **210** 个。目标定理的当前状态为 INCOMPLETE_FRONTIER。
+令 \(B=10^{2400}\)。本文件汇总已验收的排除结论及其证明规则。固定根序为 \((19,7,11,31,13,3,5,17)\)。取第一个整除 \(N\) 的根 \(p\)，其前面的根构成禁素数集合。与八个根均互素的情形由[原根集独立证书](../Research/Session20261122/Python/TerminalCertificate.py)排除，所得下界为 \(\log_{10}N\ge4183.209493\)。含根的 3,072 个规范分片已闭合 **2,868** 个，余 **204** 个。目标定理的当前状态为 INCOMPLETE_FRONTIER。
 
 <!-- night-state:begin -->
 **夜间快照（相对 `3b50576`）：** 净排除 **1106** 个实际指数，新增闭合 **454** 个完整分片。支持-only 的统一结论、部分区间和已由其它路线排除的指数均不重复计数。[总注册表](../Research/NightMerge/Batches.json) · [完整在证/待证映射](../Research/NightMerge/Audit.json)。
@@ -105,6 +105,7 @@ Euler 来源的分圆指数约简曾在 533 个根 3、5 实际指数上做区�
 
 
 
+
 ### 11 月 25 日午间增量
 
-相对 11 月 25 日 10:05 的 `main`（`6732a1a`），新增排除 **259** 个不同实际指数、闭合 **196** 个规范分片；累计 **2,862 / 3,072**，余 **210** 片、**252** 个不同实际指数，其中 **186** 片只剩一个实际指数。全局状态仍为 `INCOMPLETE_FRONTIER`。 [证书入口](../Research/Midday/README.md)。新方法包含[多源整数对偶](../Research/MiddayFive/README.md)、[Euler 素数精确位置覆盖](../Research/Midday/EulerCover.md)及[由实际发射节点构造的支持分支](../Research/Midday/EndogenousSupports.md)。重数、外部余因子与丰度的完整计费以及所有 Euler 选择均在上述证明中说明。
+相对 11 月 25 日 10:05 的 `main`（`6732a1a`），新增排除 **267** 个不同实际指数、闭合 **202** 个规范分片；累计 **2,868 / 3,072**，余 **204** 片、**244** 个不同实际指数，其中 **181** 片只剩一个实际指数。全局状态仍为 `INCOMPLETE_FRONTIER`。 [证书入口](../Research/Midday/README.md)。新方法包含[多源整数对偶](../Research/MiddayFive/README.md)、[Euler 素数精确位置覆盖](../Research/Midday/EulerCover.md)及[由实际发射节点构造的支持分支](../Research/Midday/EndogenousSupports.md)。重数、外部余因子与丰度的完整计费以及所有 Euler 选择均在上述证明中说明。
