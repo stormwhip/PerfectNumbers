@@ -2305,6 +2305,16 @@
    ]
   },
   {
+   "packet": "Research/MiddayForest/Forest13x12.json.gz",
+   "seed": [
+    13,
+    12
+   ],
+   "actuals": [
+    12
+   ]
+  },
+  {
    "packet": "Research/MiddayGraph/Batch4_13x136d5.json.gz",
    "seed": [
     13,
@@ -3550,6 +3560,10 @@
   ],
   [
    13,
+   12
+  ],
+  [
+   13,
    14
   ],
   [
@@ -3874,6 +3888,7 @@
   "P31_I00078",
   "P31_I00088",
   "P13_I00004",
+  "P13_I00005",
   "P13_I00006",
   "P13_I00007",
   "P13_I00008",
@@ -3914,10 +3929,10 @@
   "P5_I00015",
   "P5_I00019"
  ],
- "closed": 2865,
- "open": 207,
- "open_actuals": 247,
- "singletons": 184,
+ "closed": 2866,
+ "open": 206,
+ "open_actuals": 246,
+ "singletons": 183,
  "remaining_shards": [
   {
    "root": 19,
@@ -5691,17 +5706,6 @@
    "id": "P13_I00003",
    "remaining_actuals": [
     6
-   ]
-  },
-  {
-   "root": 13,
-   "index": 5,
-   "count": 325,
-   "exponent": 12,
-   "exact": false,
-   "id": "P13_I00005",
-   "remaining_actuals": [
-    12
    ]
   },
   {
