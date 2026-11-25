@@ -4,6 +4,10 @@
 
 This log separates **imported historical claims**, **directly observed experiments**, and **proof-checked results**. Dates use YYYY-MM-DD.
 
+## 2026-11-26 森林前缀深化
+
+基线 `2889e47f`，因子候选来自 data-v1（SHA-256 `ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119`）及精确分圆余项。244 个指数的首轮搜寻取每种奇偶模式 36 个合法精确指数；超过候选下界 1600 的分支扩大到 128 项，以薄弱模式的真实几何和重新选择子节点。全域第一次扫描只有 (3,46) 的浮点分数超过 2400。经深化后 11 个不同种子获两套整数复验；其它搜寻结果不作为排除证据。[逐包 SHA-256、整数下界和剩余清单](../Research/Session20261126/Delta.json)。
+
 ## 2026-11-25 根 3 指数 1162 候选审计
 
 - 原包标准库重放 39.11 s：166 个素性证书、1,276 个显式辅助素数及 42 个叶节点通过，程序报告 2400.93。
