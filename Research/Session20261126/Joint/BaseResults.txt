@@ -1,0 +1,5 @@
+﻿{"e": 1162, "R": 100000000000, "surviving_progression_checks": 3393723, "base_nanonats": [5052805597654, 5000477672899], "base_decimal_floors": [2194, 2171], "arg": [[1137, 25], [1135, 24]]}
+{"e": 1108, "R": 100000000000, "surviving_progression_checks": 3558801, "base_nanonats": [4817702567880, 4767571867710], "base_decimal_floors": [2092, 2070], "arg": [[1084, 24], [1085, 23]]}
+{"e": 990, "R": 100000000000, "surviving_progression_checks": 3983063, "base_nanonats": [4305749241360, 4262210214887], "base_decimal_floors": [1869, 1851], "arg": [[969, 21], [957, 20]]}
+{"e": 970, "R": 100000000000, "surviving_progression_checks": 4065257, "base_nanonats": [4217860258267, 4174321231820], "base_decimal_floors": [1831, 1812], "arg": [[949, 21], [947, 20]]}
+{"e": 856, "R": 100000000000, "surviving_progression_checks": 4606141, "base_nanonats": [3723484728366, 3686537375611], "base_decimal_floors": [1617, 1601], "arg": [[838, 18], [821, 17]]}

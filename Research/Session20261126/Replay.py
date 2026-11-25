@@ -34,8 +34,20 @@ def projection():
     for path in sorted(H.glob('Pivot*.json.gz')):
         p,e,floor,n=PivotCheck.verify(path)
         assert path.name==f'Pivot{p}x{e}.json.gz' and (p,e) in original
-        excluded.add((p,e));proofs.append(dict(packet=path.name,sha256=sha256(path.read_bytes()).hexdigest(),seed=[p,e],floor=floor,forest_leaves=n,actuals=[e]))
+        excluded.add((p,e));proofs.append(dict(packet=path.name,sha256=sha256(path.read_bytes()).hexdigest(),seed=[p,e],forest_leaf_min_floor=floor,forest_leaves=n,actuals=[e]))
         print('PASS exact pivot',p,e,floor,n,flush=True)
+    import TreeCheck
+    for path in sorted(H.glob('Tree*.json.gz')):
+        p,e,stats=TreeCheck.verify(path);assert path.name==f'Tree{p}x{e}.json.gz' and (p,e) in original
+        excluded.add((p,e));proofs.append(dict(packet=path.name,sha256=sha256(path.read_bytes()).hexdigest(),seed=[p,e],forest_leaves=stats[0],split_nodes=stats[1],direct_cases=stats[2],actuals=[e]));print('PASS exact tree',p,e,stats,flush=True)
+    from subprocess import check_output
+    cut_dir=H/'SupplyForest';packets=sorted(cut_dir.glob('Cut*.json.gz'))
+    if packets:
+        raw=check_output([sys.executable,'-I','-S','-B','-X','int_max_str_digits=0',str(cut_dir/'VerifyCut.py'),str(R),*map(str,packets)],text=True)
+        answers=[json.loads(line) for line in raw.splitlines()];assert len(answers)==len(packets)
+        for path,answer in zip(packets,answers):
+            p,e=answer['actual'];assert path.name==f'Cut{p}x{e}.json.gz' and (p,e) in original
+            excluded.add((p,e));proofs.append(dict(packet='SupplyForest/'+path.name,sha256=sha256(path.read_bytes()).hexdigest(),seed=[p,e],actuals=[e],receipt=answer));print('PASS exact supply cut',p,e,flush=True)
     remaining=[];closed=[]
     for s in sh:
         left=[e for e in s['remaining_actuals'] if (s['root'],e) not in excluded]

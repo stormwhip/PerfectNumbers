@@ -7,8 +7,12 @@ R=Path(__file__).resolve().parents[1];sys.path.insert(0,str(R/'Nov25/Compose'));
 B=10**2400
 
 def independent(p,e,q,f,roots,owners,head):
-    ban=prod(C.ORDER[:C.ORDER.index(p)]);X=p**e*q**f
-    S=(p**(e+1)-1)//(p-1)*((q**(f+1)-1)//(q-1))//(1+f%2)
+    return exact_leaf([(p,e),(q,f)],roots,owners,head)
+
+def exact_leaf(parts,roots,owners,head):
+    p=parts[0][0];f=sum(h%2 for z,h in parts);assert f<=1
+    ban=prod(C.ORDER[:C.ORDER.index(p)]);X=prod(z**h for z,h in parts)
+    S=prod((z**(h+1)-1)//(z-1)//(1+h%2) for z,h in parts)
     D=S//gcd(X,S);assert gcd(X,D)==1 and gcd(D,ban)==1
     pool=X*D*prod(z for z,_ in owners);kids={z:[] for z in [*roots,*(z for z,_ in owners)]}
     for z,t in owners:kids[t].append(z)
@@ -38,6 +42,13 @@ def independent(p,e,q,f,roots,owners,head):
     hs=[val(D,z) for z in roots];assert all(hs);pairs=[cell(z,h) for z,h in zip(roots,hs)];v=X*(D//prod(z**h for z,h in zip(roots,hs)))*prod(a for a,b in pairs)
     ans=min([v]+[v//a*b for a,b in pairs]);cell.cache_clear();return ans
 
+def floor10(n):
+    # Report without int->str limits. Both correction directions are exact.
+    k=max(0,(n.bit_length()-1)*30103//100000)
+    while 10**k>n:k-=1
+    while 10**(k+1)<=n:k+=1
+    return k
+
 def verify(path):
     d=json.loads(gzip.decompress(path.read_bytes()));assert set(d)=={'p','e','q','cases','ecpp'};p,e,q=d['p'],d['e'],d['q'];assert type(p)==type(e)==int and p in C.ORDER and 2<=e<=7000 and e%2==0
     seen=set()
@@ -53,7 +64,7 @@ def verify(path):
         if f%2==0 or q%4==f%4==1:
             s=C.State([(p,e),(q,f)]);S=A*C.sigma(q,f)
             if not s.conflict and S<=2*s.X and s.base<=B:
-                row=d['cases'][str(f)];assert set(row)=={'roots','owners','head'};k,o,h=row['roots'],row['owners'],row['head'];C.validate_forest(s,k,o,h,prime);a=C.Forest(s,k,o,h).lower()[0];b=independent(p,e,q,f,k,o,h);assert min(a,b)>B,(p,e,q,f);used.add(str(f));floors.append(len(str(min(a,b)))-1)
+                row=d['cases'][str(f)];assert set(row)=={'roots','owners','head'};k,o,h=row['roots'],row['owners'],row['head'];C.validate_forest(s,k,o,h,prime);a=C.Forest(s,k,o,h).lower()[0];b=independent(p,e,q,f,k,o,h);assert min(a,b)>B,(p,e,q,f);used.add(str(f));floors.append(floor10(min(a,b)))
         f+=1
     assert used==set(d['cases']) and seen==set(d['ecpp']);return p,e,min(floors,default=2400),len(used)
 if __name__=='__main__':

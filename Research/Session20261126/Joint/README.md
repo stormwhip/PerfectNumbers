@@ -1,0 +1,32 @@
+# Root 3 joint certificate (snapshot 2889e47f6db49c8a9bc8dda2c9153829c18a70ca)
+
+Assume odd perfect N≤10^2400, 3^e||N, gcd(N,7·11·13·19·31)=1. E0,E1,E2 are covered by the frozen `Research/P3I00193Review/VerifyPartial.py`. In E3 take q^1||N, q∤A=σ(3^e), s=v3(q+1)>0; choose a source r^f with q|σ(r^f), r ordinary. Use the supplied theorem that every such source has b=v3(σ(r^f))=0 (this package does not reprove the theorem). Write E3a for r∤A and E3b for r|A. No complete new exponent is credited. For 1162 we exclude **all E3b** and the E3a leaves in the verifier's final `excluded[0]` list. Leaves are zero-indexed in `cell10 + cell11`, regardless of duplicated labels.
+
+## Replay
+
+Place this directory at `Research/Session20261126/Joint/`, or give the fixed checkout as the first argument. The input certificate is read from the checkout, not duplicated. Stdlib only:
+
+```
+python -I -S -B Research/Session20261126/Joint/Verify.py .
+python -I -S -B Research/Session20261126/Joint/Base.py .
+```
+
+`Verified.txt` and `BaseResults.txt` record the two outputs. Dual search (optional) uses SciPy HiGHS; verification does not use SciPy or trust solver status. Input SHA-256 is checked in `Joint.py`. Compare the original paper's D1,D2 proof at `Documentation/Proof2400.md`, §3.3. Outputs refer only to these support subdomains; the frozen ledger is not modified.
+
+## Shared root volume
+
+Put R=10^11, Y=3^s, P=3^(e+1), Q=2Y−1. Since e+1 is prime and e+1≠3, any prime t|A has order e+1 mod t (t=e+1 is impossible by Fermat). A positive 3-supplier is t≡1 (mod 3), hence t≡1 (mod 6(e+1)). `Base.py` checks that every such prime exceeds R for all five e. The small-prime sieve discards provably composite candidates only. Denote by i the total ordinary 3-supply from t|A other than r. Each unit requires two exponents, so their total value is at least R^(2i). Ordinary primes outside A other than r,q supply U=e−s−i; subtract 4 ln3 per unit from their logs, giving nonnegative net costs C. The prepaid scalar is 3^e A Q 81^U, besides the disjoint net auxiliary parts.
+
+For E3a the additional paid amount in logs is at least E + max(0,d), E=ln(2Q/3), d=2i ln R−ln A. Here r^f>2Q/3 and r is outside A. For E3b write c=v_r(A), t=r^(f−c). The cited balanced lemma gives ln t ≥ I=max(0,ln(YQ/[P(P/Y+4)])). The additional amount is at least max(I,d+max(E,I)): retain t, or multiply the source r^f and the internal supplier values R^(2i), then divide by A. This prevents lending the same A volume to the source and the suppliers. The resulting base is *minimized* over all (s,i); auxiliary bounds are separately uniform. `Verify.py` also proves s≥1020 for e=1162, using r^f>2Q/3, b=0 and the all-ordinary 3-supply discount at R=10000.
+
+## Counting residuals without a source disjointness conjecture
+
+Every ordinary factor has true exponent h even and net cost h ln u−4 ln3 v3(σ(u^h)). For u=1 mod3 this is at least h(ln u−2 ln3), since h≥2v3; for u=2 mod3 use h ln u. Every selected row emits its full cleaned odd residue; sum of its u-valuations across *all distinct rows* ≤v_u(N), by σ(N)=2N. Linear costs per occurrence are therefore safe even when different rows share factors. No odd-exponent square uplift is used. Check gcd(res,A)=1 and res<Q on each counted row, excluding A,q. Check the finite ordinary pool is source-free. For a candidate source t∤A the condition 3^e A t^f σ(t^f)≤B **is necessary when b=0**: Aσ(t^f)|N by multiplicativity and oddness; both factors are coprime to 3t. For fixed t enumerate even f under this monotone bound and use σ(t^f)=qw, with w≡−σ(t^f) mod 3^1020. This is stronger than the erroneous general-b shortcut and makes no assumption on gcd(A,σ(t^f)).
+
+In E3b the gcd with A excludes the source everywhere. In E3a the forest only credits certified source-free small factors and builds a *pairwise coprime support basis* for the remaining factors. At most one basis member contains r. For each possible exceptional member (or no member), remove its whole supported part from every row, then repeat the lower-bound DP. The minimum covers all actual sources, including unproved composite bases and all repeated factors. The computed basis is explicitly checked pairwise coprime and each original number reconstructed by stripping. The tree uses any subset of mandatory edges, unique nodes, root presence, and min over every lawful finite option plus a tail; derivatives of h ln r−4 ln(h+1) are positive for r≥5,h≥2. The internal and external forest bounds do not use abundance or LP.
+
+## Strengthened flow dual
+
+One finite choice family per prime includes the entire named pool plus all permitted p<3000; inactive nodes still contribute abundance through their own choice, as do all tails. All finite inputs into a prime t yield individually necessary edges x_j≤Σ_{h≥v}x_th and the additional *common* inequality Σ_j v_t(S_j)x_j≤Σ_h h x_th, using a global maximum exponent for the tail on the RHS. All external demands aggregate into one volume **V**, the net of ordinary primes outside the finite pool, A, q, r; objective Σ C_j x_j+V. E3a discards unproven large residual factors rather than assuming r is absent; E3b may use the whole residue. No forest term is added to this LP: final values take a maximum of two independent lower bounds.
+
+The finite and unknown ordinary components must give ≥ln(4/3)−0.00005 abundance: the root contribution is <ln(3/2); the ≤70 distinct primes of A each exceed 10^8 (checked), the source base exceeds 50000 (or is internal), and q≥2·3^1020−1. For unknown auxiliary primes ≥L, abundance/net ratio ≤ln(L/(L−1))/(2(ln L−2ln3)). The paid identity 81^U removes the 3-supply cost of all named and unknown ordinary components exactly once. All logs are enclosed by adjacent correctly rounded Decimal numbers, converted to lower/upper integers at scale 10^9. Each dual multiplier is a nonnegative integer divided by 10^7; any roundoff in a bounded column is fully debited. If the external volume column is negative, scale the whole dual by a checked rational to restore zero reduced cost. The resulting lower certificate uses integer arithmetic only thereafter.
