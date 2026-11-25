@@ -1193,6 +1193,20 @@
    "split_nodes": 16
   },
   {
+   "actuals": [
+    38
+   ],
+   "direct_cases": 110,
+   "forest_leaves": 109,
+   "packet": "Tree19x38.json.gz",
+   "seed": [
+    19,
+    38
+   ],
+   "sha256": "b5f6c152bbd12fab6a5ce7ce116ebbc9370fcaf5f10991eba53d63464db0ec24",
+   "split_nodes": 2
+  },
+  {
    "packet": "Tree19x400.json.gz",
    "sha256": "485ca8ed3f45c92d10e7297cf2ebcfcc176bc23a32c48ad0a63491acbcf6b66e",
    "seed": [
@@ -1205,6 +1219,20 @@
    "forest_leaves": 174,
    "split_nodes": 8,
    "direct_cases": 183
+  },
+  {
+   "actuals": [
+    56
+   ],
+   "direct_cases": 61,
+   "forest_leaves": 60,
+   "packet": "Tree19x56.json.gz",
+   "seed": [
+    19,
+    56
+   ],
+   "sha256": "2ef99b4f06f2979ecc6231de5c6b2ed9f7bbb02631c0969dd73a2034787b6282",
+   "split_nodes": 2
   },
   {
    "packet": "Tree19x92.json.gz",
@@ -2048,6 +2076,27 @@
    }
   },
   {
+   "actuals": [
+    408
+   ],
+   "packet": "SupplyForest/Recursive/Recursive19x408.json.gz",
+   "receipt": {
+    "e": 408,
+    "max_depth": 3,
+    "p": 19,
+    "rules": {
+     "mass": 48,
+     "split": 3
+    },
+    "states": 51
+   },
+   "seed": [
+    19,
+    408
+   ],
+   "sha256": "de3cee5ebd85098db5c25051371368e49ac76d743c6098b59d395220e3eb1b75"
+  },
+  {
    "packet": "SupplyForest/Recursive/Recursive19x540.json.gz",
    "sha256": "35f486acc70c41ba14f3dd5c03d668f764d95aca95f795ef342ead2a9b4ab5ac",
    "seed": [
@@ -2114,6 +2163,30 @@
     432
    ],
    "sha256": "7af41daf94df26121c498c8bb940c122abc2eaf60076cf29954f6c87d5432d32"
+  },
+  {
+   "actuals": [
+    838
+   ],
+   "packet": "SupplyForest/Recursive/Recursive7x838.json.gz",
+   "receipt": {
+    "e": 838,
+    "max_depth": 14,
+    "p": 7,
+    "rules": {
+     "abundance": 1,
+     "mass": 2807,
+     "mixed": 1413,
+     "pivot-Euler": 657,
+     "split": 452
+    },
+    "states": 5330
+   },
+   "seed": [
+    7,
+    838
+   ],
+   "sha256": "e33e2cc931c4fb61a4332ff8cfd6c823ecaeca126bdebdcfb4c20a0797d2ee75"
   },
   {
    "packet": "SupplyForest/Recursive/Recursive7x856.json.gz",
@@ -2442,6 +2515,10 @@
   ],
   [
    7,
+   838
+  ],
+  [
+   7,
    856
   ],
   [
@@ -2610,11 +2687,19 @@
   ],
   [
    19,
+   38
+  ],
+  [
+   19,
    42
   ],
   [
    19,
    44
+  ],
+  [
+   19,
+   56
   ],
   [
    19,
@@ -2643,6 +2728,10 @@
   [
    19,
    400
+  ],
+  [
+   19,
+   408
   ],
   [
    19,
@@ -2719,6 +2808,7 @@
   "P19_I00026",
   "P19_I00073",
   "P19_I00077",
+  "P19_I00078",
   "P19_I00083",
   "P19_I00087",
   "P19_I00093",
@@ -2751,6 +2841,7 @@
   "P7_I00136",
   "P7_I00138",
   "P7_I00141",
+  "P7_I00145",
   "P7_I00147",
   "P7_I00149",
   "P7_I00157",
@@ -2813,9 +2904,9 @@
   "P3_I00187",
   "P3_I00193"
  ],
- "closed": 2966,
- "open": 106,
- "open_actuals": 123,
+ "closed": 2968,
+ "open": 104,
+ "open_actuals": 119,
  "remaining_shards": [
   {
    "root": 19,
@@ -2830,9 +2921,7 @@
     14,
     20,
     26,
-    32,
-    38,
-    56
+    32
    ]
   },
   {
@@ -2883,8 +2972,7 @@
    "exact": false,
    "id": "P19_I00004",
    "remaining_actuals": [
-    12,
-    38
+    12
    ]
   },
   {
@@ -2906,8 +2994,7 @@
    "exact": false,
    "id": "P19_I00006",
    "remaining_actuals": [
-    18,
-    56
+    18
    ]
   },
   {
@@ -3161,17 +3248,6 @@
    "id": "P19_I00072",
    "remaining_actuals": [
     372
-   ]
-  },
-  {
-   "root": 19,
-   "index": 78,
-   "count": 287,
-   "exponent": 408,
-   "exact": false,
-   "id": "P19_I00078",
-   "remaining_actuals": [
-    408
    ]
   },
   {
@@ -3520,17 +3596,6 @@
    "id": "P7_I00139",
    "remaining_actuals": [
     808
-   ]
-  },
-  {
-   "root": 7,
-   "index": 145,
-   "count": 412,
-   "exponent": 838,
-   "exact": false,
-   "id": "P7_I00145",
-   "remaining_actuals": [
-    838
    ]
   },
   {
