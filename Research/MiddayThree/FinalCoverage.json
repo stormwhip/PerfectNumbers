@@ -1,0 +1,18 @@
+{
+  "root": 3,
+  "basis": "../Nov25/Delta.json",
+  "base_manifest": "Release.json",
+  "base_replay": "Release.py --replay",
+  "base_actual_count": 20,
+  "supplements": [
+    {"e": 88, "shard": "P3_I00025", "replay": "Join88.py", "files": {"Complement88.json.gz":"a946a4dd8aa42d53be1e8811dd125898b835db5eb014000d03f095cbd856895b", "../MiddayTerminal/Leaves88x30x36.json.gz":"6ca1bab8e1407820e7492de6694c647c98594555760911d5b4175221e4df970d"}},
+    {"e": 96, "shard": "P3_I00026", "replay": "NestedReplay.py Nested96.json.gz", "files": {"Nested96.json.gz":"7dbc8e15ad6ba143bf539843f4840adbc83f5543d1cdc731ac0d9fd66b702a5f"}},
+    {"e": 112, "shard": "P3_I00031", "replay": "Join112.py", "files": {"Complement112.json.gz":"881eb8f3d7450926858cb9597de4d4b84e17663099c710b22afae8ad001a5891", "../MiddayTerminal/Leaves112x12x16.json.gz":"018c449c70cd7b771206883feb339d27cbabb4db7c550d7422ec2b30e38094f2"}},
+    {"e": 148, "shard": "P3_I00036", "replay": "Join148.py", "files": {"Complement148.json.gz":"2739eeb17201a67edc628e081ee793a532c4719da22f5f901fbeff9d7bd2bb5b", "../MiddayTerminal/Leaf148x6.json.gz":"a306f11dc4c273714d14384bd5bcd5bc7f73869653f1ab76ae6fe821f50080ed"}}
+  ],
+  "covered_actuals": [88,96,106,108,112,126,138,148,150,156,166,178,180,186,190,208,216,220,246,286,298,336,342,360],
+  "closed_shards": ["P3_I00025","P3_I00026","P3_I00029","P3_I00030","P3_I00031","P3_I00032","P3_I00035","P3_I00036","P3_I00037","P3_I00038","P3_I00040","P3_I00042","P3_I00043","P3_I00044","P3_I00069"],
+  "remaining_actual_count": 38,
+  "remaining_shard_count": 29,
+  "scope_note": "Package-level union only. Root-three 82 and any other separately witnessed exacts must be unioned by (3,e) by the global ledger; source-cell counts provide no extra complete actuals."
+}
