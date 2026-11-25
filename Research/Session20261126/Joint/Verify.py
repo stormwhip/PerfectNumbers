@@ -27,15 +27,26 @@ def window():
     assert all(2*pe*(2*3**s-1)**2*K**(e-s)*d.denominator>3*B*d.numerator for s in range(1,1020))
 
 def main():
-    assert __debug__;sys.argv[2:] = ['verify'];window();cover();check_range(e,10**11);base,_=envelope(e,10**11);assert base==[5052805597654,5000477672899]
-    approved=[[],[]];missing=[]
+    assert __debug__;euler2219='--conditional-2219' in sys.argv[2:];sys.argv[2:] = ['verify'];window();cover();check_range(e,10**11);base,_=envelope(e,10**11);assert base==[5052805597654,5000477672899]
+    from Prefix import prefix
+    from Hybrid import hybrid
+    from LegacySingle import calc
+    base[0],arg=prefix();assert base[0]>=5067135038412
+    if euler2219:base[0]=2219*lo(10) # deliberately downward; certified by independent Range + Euler verifiers
+    print('bases',base,'minimum external window',arg,'requires_parity_2219',euler2219,flush=True)
+    approved=[[],[]]
     for i in range(42):
-        r=leaf(i);vals=[r['forest_external'],r['forest_internal']]
-        for k,prefix in [(0,'external'),(1,'flow')]:
-            if (Path(__file__).parent/(prefix+str(i)+'.json')).exists():vals[k]=max(vals[k],getdual(i,k==0)['net_nanonats'])
+        clean,by=leaf(i,True);vals=[min([clean]+list(by.values())),clean]
+        for k,tag in [(0,'external'),(1,'flow')]:
+            if (Path(__file__).parent/(tag+str(i)+'.json')).exists():vals[k]=max(vals[k],getdual(i,k==0)['net_nanonats'])
+        if base[0]+vals[0]<=2400*hi(10):
+            if i in (0,1,5,6,12):vals[0]=max(vals[0],calc(i))
+            elif clean+base[0]>2400*hi(10):vals[0]=max(vals[0],hybrid(i,base[0],(clean,by))[0])
         tot=[(z+b)//hi(10) for z,b in zip(vals,base)]
         for k,z in enumerate(tot):
             if z>2400 or (z==2400 and vals[k]+base[k]>2400*hi(10)):approved[k].append(i)
         print(json.dumps(dict(leaf=i,scaled_aux=vals,decimal_floors=tot)),flush=True)
-    print(json.dumps(dict(excluded=approved,complete=(len(approved[0])==len(approved[1])==42),accepted_actuals=[1162] if len(approved[0])==len(approved[1])==42 else [])),flush=True)
+    both=len(approved[0])==len(approved[1])==42
+    print(json.dumps(dict(excluded=approved,all_joint_subdomains=both,conditional_on_parity_2219=euler2219,also_requires='b=0 source theorem and E0/E1/E2'),separators=(',',':')),flush=True)
+    if euler2219:assert both
 if __name__=='__main__':main()

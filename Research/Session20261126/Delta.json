@@ -27,6 +27,18 @@
    "floor": 2402
   },
   {
+   "packet": "Forest11x330.json.gz",
+   "sha256": "879ed39d4170c034f35815b23f257a4915fa4bb1636543661ca4d9639cc0a897",
+   "seed": [
+    11,
+    330
+   ],
+   "actuals": [
+    330
+   ],
+   "floor": 2400
+  },
+  {
    "packet": "Forest11x360.json.gz",
    "sha256": "9b51650fad984a5dfdbef31dc498745417c06ee73483711b309a3e2dd5857e7c",
    "seed": [
@@ -99,6 +111,18 @@
    "floor": 2400
   },
   {
+   "packet": "Forest13x330.json.gz",
+   "sha256": "859c522c5496547ba3b7c0e8d89d7a3458f640870d2d43d5e125b88fc80c63fe",
+   "seed": [
+    13,
+    330
+   ],
+   "actuals": [
+    330
+   ],
+   "floor": 2402
+  },
+  {
    "packet": "Forest13x486.json.gz",
    "sha256": "a45a1ee14eee421e7b3951aa6310d1703513db824634f5c1f035752c5bd4c8b4",
    "seed": [
@@ -109,6 +133,18 @@
     486
    ],
    "floor": 2400
+  },
+  {
+   "packet": "Forest19x28.json.gz",
+   "sha256": "d0a65a0387ee391a0d61f08beeb91216e28373d69be67601b7516e500183d5c9",
+   "seed": [
+    19,
+    28
+   ],
+   "actuals": [
+    28
+   ],
+   "floor": 2402
   },
   {
    "packet": "Forest19x438.json.gz",
@@ -133,6 +169,18 @@
     498
    ],
    "floor": 2401
+  },
+  {
+   "packet": "Forest19x76.json.gz",
+   "sha256": "4834c348a0770fd8d23622cadf438405cf1f0420ce9f4d2cff94bcb3ec4dbe48",
+   "seed": [
+    19,
+    76
+   ],
+   "actuals": [
+    76
+   ],
+   "floor": 2405
   },
   {
    "packet": "Forest19x80.json.gz",
@@ -447,6 +495,18 @@
    "floor": 2417
   },
   {
+   "packet": "Forest7x100.json.gz",
+   "sha256": "44b2d6cf030bacc205f1ad20ea6a56a0bf7617dc3e6921e5106279487fcbf445",
+   "seed": [
+    7,
+    100
+   ],
+   "actuals": [
+    100
+   ],
+   "floor": 2401
+  },
+  {
    "packet": "Forest7x40.json.gz",
    "sha256": "516e6f38f52f6e810e8213f028155acc3b90d1e90b164a84bad5707d78a526f1",
    "seed": [
@@ -483,6 +543,18 @@
    "floor": 2415
   },
   {
+   "packet": "Forest7x540.json.gz",
+   "sha256": "6aa0ede8a5fa4f70d802d48fee931173120f273da8e84c7262e9753682d8b614",
+   "seed": [
+    7,
+    540
+   ],
+   "actuals": [
+    540
+   ],
+   "floor": 2401
+  },
+  {
    "packet": "Forest7x546.json.gz",
    "sha256": "b64a828c80ce3378b2f55c7c85cdfcc20b10974a74a1e2f34d06f2f69ce6a844",
    "seed": [
@@ -491,6 +563,18 @@
    ],
    "actuals": [
     546
+   ],
+   "floor": 2400
+  },
+  {
+   "packet": "Forest7x568.json.gz",
+   "sha256": "a06e7662d7a1301a51f1827146fe91652f504e88632c7fee0d6259019e380b7c",
+   "seed": [
+    7,
+    568
+   ],
+   "actuals": [
+    568
    ],
    "floor": 2400
   },
@@ -531,6 +615,18 @@
    "floor": 2400
   },
   {
+   "packet": "Forest7x856.json.gz",
+   "sha256": "51ac0d2ba946020e1c57c80e48d4f44afd1785d5affab53cb0be7b417c5ee21e",
+   "seed": [
+    7,
+    856
+   ],
+   "actuals": [
+    856
+   ],
+   "floor": 2400
+  },
+  {
    "packet": "Forest7x96.json.gz",
    "sha256": "36062e85435091345f4d9fd7d843448559c2e2343d199f3f616d517c29e48e2b",
    "seed": [
@@ -541,6 +637,30 @@
     96
    ],
    "floor": 2400
+  },
+  {
+   "packet": "Price13x438.json.gz",
+   "sha256": "fe14287cad6c9709034536a1069ec05bcb3b705dbf0e70f52dfc2f68f0084a25",
+   "seed": [
+    13,
+    438
+   ],
+   "actuals": [
+    438
+   ],
+   "floor": 2400
+  },
+  {
+   "packet": "Price19x34.json.gz",
+   "sha256": "394348726677201d3cf5747ac603821f087775c304d10e1dec46756ca77bc535",
+   "seed": [
+    19,
+    34
+   ],
+   "actuals": [
+    34
+   ],
+   "floor": 2414
   },
   {
    "packet": "Pivot11x28.json.gz",
@@ -554,6 +674,19 @@
    ],
    "forest_leaf_min_floor": 2400,
    "forest_leaves": 16
+  },
+  {
+   "packet": "Pivot11x34.json.gz",
+   "sha256": "ce8526958962742c80bc75e14d306659ae8ebaafabf7d7356dce61cd51749041",
+   "seed": [
+    11,
+    34
+   ],
+   "actuals": [
+    34
+   ],
+   "forest_leaf_min_floor": 2403,
+   "forest_leaves": 21
   },
   {
    "packet": "Pivot11x378.json.gz",
@@ -595,6 +728,32 @@
    "forest_leaves": 9
   },
   {
+   "packet": "Pivot13x330.json.gz",
+   "sha256": "b5ef81a7263c768fad29cdaa6087fc539b37e695d47cdd27981c0032d04a43e4",
+   "seed": [
+    13,
+    330
+   ],
+   "actuals": [
+    330
+   ],
+   "forest_leaf_min_floor": 2401,
+   "forest_leaves": 88
+  },
+  {
+   "packet": "Pivot13x556.json.gz",
+   "sha256": "880505de66e2334def513698d23f428a0b430c04b1fb984127fcd6b4dc41248f",
+   "seed": [
+    13,
+    556
+   ],
+   "actuals": [
+    556
+   ],
+   "forest_leaf_min_floor": 2400,
+   "forest_leaves": 23
+  },
+  {
    "packet": "Pivot13x570.json.gz",
    "sha256": "934b19eccb229e44cef20a9194aa1cba6f75eeae658e294d03159986f82093c4",
    "seed": [
@@ -608,6 +767,32 @@
    "forest_leaves": 16
   },
   {
+   "packet": "Pivot13x598.json.gz",
+   "sha256": "9fee9c60365666a8c0d8d118f00b102ee7bfc08f5d51c6c7cbe001a5e991bbff",
+   "seed": [
+    13,
+    598
+   ],
+   "actuals": [
+    598
+   ],
+   "forest_leaf_min_floor": 2400,
+   "forest_leaves": 28
+  },
+  {
+   "packet": "Pivot13x640.json.gz",
+   "sha256": "af61f38651302a2365ed23ef4a2d78af074d274d61170f3ab818e2bf33bc1cbc",
+   "seed": [
+    13,
+    640
+   ],
+   "actuals": [
+    640
+   ],
+   "forest_leaf_min_floor": 2400,
+   "forest_leaves": 52
+  },
+  {
    "packet": "Pivot13x646.json.gz",
    "sha256": "aab9d067ba7b953d52701b158f81483d5b65bd1413ee74db5425b482b6e76dff",
    "seed": [
@@ -619,6 +804,45 @@
    ],
    "forest_leaf_min_floor": 2400,
    "forest_leaves": 11
+  },
+  {
+   "packet": "Pivot13x700.json.gz",
+   "sha256": "1255cd7135db001d2b6a3d6ce4c505ee691b9aa1d7297ea7397fdae12d66c206",
+   "seed": [
+    13,
+    700
+   ],
+   "actuals": [
+    700
+   ],
+   "forest_leaf_min_floor": 2401,
+   "forest_leaves": 41
+  },
+  {
+   "packet": "Pivot19x28.json.gz",
+   "sha256": "be744892b68d67f22884bd99cb7eeba587fc18cfaeddaa8c162cda32bb4906dc",
+   "seed": [
+    19,
+    28
+   ],
+   "actuals": [
+    28
+   ],
+   "forest_leaf_min_floor": 2400,
+   "forest_leaves": 34
+  },
+  {
+   "packet": "Pivot19x378.json.gz",
+   "sha256": "5e0b0deaf0f54bf3f0429ac5a52b5919a9b1a810a6a9d410b3c4bcb4b535e228",
+   "seed": [
+    19,
+    378
+   ],
+   "actuals": [
+    378
+   ],
+   "forest_leaf_min_floor": 2401,
+   "forest_leaves": 24
   },
   {
    "packet": "Pivot3x42.json.gz",
@@ -660,6 +884,19 @@
    "forest_leaves": 12
   },
   {
+   "packet": "Pivot7x30.json.gz",
+   "sha256": "dc8866f53e5f8930c8b00c1db4af678c143ac81076f673540f2e839f8f4d2386",
+   "seed": [
+    7,
+    30
+   ],
+   "actuals": [
+    30
+   ],
+   "forest_leaf_min_floor": 2400,
+   "forest_leaves": 45
+  },
+  {
    "packet": "Pivot7x40.json.gz",
    "sha256": "c93aa0fa4c116d057d745e7ce91d10dbeb4df6b2d81f808258b1c76e7b1b5bce",
    "seed": [
@@ -671,6 +908,20 @@
    ],
    "forest_leaf_min_floor": 2401,
    "forest_leaves": 20
+  },
+  {
+   "packet": "Tree3x78.json.gz",
+   "sha256": "513955ce5123718772a93af7674631a08bdff235b8dcf77509bcdd989e53a66a",
+   "seed": [
+    3,
+    78
+   ],
+   "actuals": [
+    78
+   ],
+   "forest_leaves": 140,
+   "split_nodes": 12,
+   "direct_cases": 159
   },
   {
    "packet": "Tree7x42.json.gz",
@@ -699,6 +950,42 @@
    "forest_leaves": 24,
    "split_nodes": 1,
    "direct_cases": 24
+  },
+  {
+   "packet": "MaskTree3x52.json.gz",
+   "sha256": "10b1929d39c410ce6f4443d1c238c5b958493d89211c3a92f6a7d78b51be1772",
+   "seed": [
+    3,
+    52
+   ],
+   "forest_leaves": 208,
+   "split_nodes": 7,
+   "direct_cases": 216,
+   "actuals": [
+    52
+   ]
+  },
+  {
+   "packet": "SupplyForest/Cut11x330.json.gz",
+   "sha256": "d22e08f78ab42642674809ac0361bd36b764c14db3f0d04ce1a21371333dd1c1",
+   "seed": [
+    11,
+    330
+   ],
+   "actuals": [
+    330
+   ],
+   "receipt": {
+    "actual": [
+     11,
+     330
+    ],
+    "labels": 1050,
+    "lower_log10_floor_large_s": 2859,
+    "s0": 3,
+    "cut": 267,
+    "internal_bins": 0
+   }
   },
   {
    "packet": "SupplyForest/Cut11x378.json.gz",
@@ -833,6 +1120,28 @@
    }
   },
   {
+   "packet": "SupplyForest/Cut11x576.json.gz",
+   "sha256": "0cf31d63ec3878fbbf13325a42bc70364604c5e3c08203d1c9f8f7d26d074dc4",
+   "seed": [
+    11,
+    576
+   ],
+   "actuals": [
+    576
+   ],
+   "receipt": {
+    "actual": [
+     11,
+     576
+    ],
+    "labels": 1820,
+    "lower_log10_floor_large_s": 2407,
+    "s0": 295,
+    "cut": 344,
+    "internal_bins": 0
+   }
+  },
+  {
    "packet": "SupplyForest/Cut11x600.json.gz",
    "sha256": "54055b274ac62c7d21bf45d7a8dda7486e03ba92bb1c3769f809de464e2b0350",
    "seed": [
@@ -899,6 +1208,28 @@
    }
   },
   {
+   "packet": "SupplyForest/Cut13x640.json.gz",
+   "sha256": "b452e89f505bfc355e85d31efda2e9b30b904108981c3469bfce2176ca5c6f5e",
+   "seed": [
+    13,
+    640
+   ],
+   "actuals": [
+    640
+   ],
+   "receipt": {
+    "actual": [
+     13,
+     640
+    ],
+    "labels": 1989,
+    "lower_log10_floor_large_s": 2426,
+    "s0": 122,
+    "cut": 169,
+    "internal_bins": 92
+   }
+  },
+  {
    "packet": "SupplyForest/Cut13x646.json.gz",
    "sha256": "26b5ad1a9cbe8aa5a14b956bbf2de606fe4d9e5f4879079058f64dd8055d6a61",
    "seed": [
@@ -962,6 +1293,72 @@
     "s0": 295,
     "cut": 322,
     "internal_bins": 166
+   }
+  },
+  {
+   "packet": "SupplyForest/Cut19x498.json.gz",
+   "sha256": "ac8cd9c213f6236bc0939ef3775e14233a2c7095f731f23702fa72fe8781178f",
+   "seed": [
+    19,
+    498
+   ],
+   "actuals": [
+    498
+   ],
+   "receipt": {
+    "actual": [
+     19,
+     498
+    ],
+    "labels": 2114,
+    "lower_log10_floor_large_s": 2405,
+    "s0": 3,
+    "cut": 85,
+    "internal_bins": 0
+   }
+  },
+  {
+   "packet": "SupplyForest/Cut19x586.json.gz",
+   "sha256": "05a99cbb3eb6683582d8e026d0318585c725e8fc2e176fc146da380361fc7eff",
+   "seed": [
+    19,
+    586
+   ],
+   "actuals": [
+    586
+   ],
+   "receipt": {
+    "actual": [
+     19,
+     586
+    ],
+    "labels": 1450,
+    "lower_log10_floor_large_s": 2434,
+    "s0": 88,
+    "cut": 182,
+    "internal_bins": 0
+   }
+  },
+  {
+   "packet": "SupplyForest/Cut19x592.json.gz",
+   "sha256": "45aef55de533d8f6324f71f797e9e0d65e88b19482628743e7854dd0a7c5ec73",
+   "seed": [
+    19,
+    592
+   ],
+   "actuals": [
+    592
+   ],
+   "receipt": {
+    "actual": [
+     19,
+     592
+    ],
+    "labels": 1337,
+    "lower_log10_floor_large_s": 2435,
+    "s0": 95,
+    "cut": 191,
+    "internal_bins": 0
    }
   },
   {
@@ -1073,6 +1470,69 @@
     "cut": 397,
     "internal_bins": 0
    }
+  },
+  {
+   "packet": "SupplyForest/Breakpoint/Branch19x568.json.gz",
+   "sha256": "d6dc8a103452c92f77af004b08065354a94a356cc0ef71cc044e84148a6885b2",
+   "seed": [
+    19,
+    568
+   ],
+   "actuals": [
+    568
+   ],
+   "receipt": {
+    "p": 19,
+    "e": 568,
+    "pivot": 716480853909040777,
+    "leaves": 20,
+    "tail": 55,
+    "rules": {
+     "pivot-Euler": 1,
+     "mass": 16,
+     "mixed": 3
+    }
+   }
+  },
+  {
+   "packet": "SupplyForest/Breakpoint/Branch7x928.json.gz",
+   "sha256": "68909b42bebd492f65f3b0d86ed08e257065960f08fa313e5bacff93635760b0",
+   "seed": [
+    7,
+    928
+   ],
+   "actuals": [
+    928
+   ],
+   "receipt": {
+    "p": 7,
+    "e": 928,
+    "pivot": 574551199,
+    "leaves": 23,
+    "tail": 96,
+    "rules": {
+     "mixed": 11,
+     "mass": 12
+    }
+   }
+  },
+  {
+   "actuals": [
+    1162
+   ],
+   "joint_files_sha256_lf": "e481fc444901ebc1beaba523fafab862f0e750c3d65e64946d9449db0052ef3b",
+   "packet": "Joint/Complete.py",
+   "range_bound": 10670571520001,
+   "range_survivors_tested": 208445632,
+   "seed": [
+    3,
+    1162
+   ],
+   "sha256": "8aec1764c659686f266545402860c7027ea19b31643153df5e6e425f0e784b73",
+   "source_leaves": [
+    42,
+    42
+   ]
   }
  ],
  "new_actuals": [
@@ -1106,6 +1566,10 @@
   ],
   [
    3,
+   52
+  ],
+  [
+   3,
    58
   ],
   [
@@ -1123,6 +1587,10 @@
   [
    3,
    76
+  ],
+  [
+   3,
+   78
   ],
   [
    3,
@@ -1169,6 +1637,14 @@
    168
   ],
   [
+   3,
+   1162
+  ],
+  [
+   7,
+   30
+  ],
+  [
    7,
    40
   ],
@@ -1198,7 +1674,19 @@
   ],
   [
    7,
+   100
+  ],
+  [
+   7,
+   540
+  ],
+  [
+   7,
    546
+  ],
+  [
+   7,
+   568
   ],
   [
    7,
@@ -1207,6 +1695,14 @@
   [
    7,
    820
+  ],
+  [
+   7,
+   856
+  ],
+  [
+   7,
+   928
   ],
   [
    7,
@@ -1226,7 +1722,15 @@
   ],
   [
    11,
+   34
+  ],
+  [
+   11,
    72
+  ],
+  [
+   11,
+   330
   ],
   [
    11,
@@ -1258,6 +1762,10 @@
   ],
   [
    11,
+   576
+  ],
+  [
+   11,
    600
   ],
   [
@@ -1274,11 +1782,31 @@
   ],
   [
    13,
+   330
+  ],
+  [
+   13,
+   438
+  ],
+  [
+   13,
    486
   ],
   [
    13,
+   556
+  ],
+  [
+   13,
    570
+  ],
+  [
+   13,
+   598
+  ],
+  [
+   13,
+   640
   ],
   [
    13,
@@ -1294,6 +1822,18 @@
   ],
   [
    19,
+   28
+  ],
+  [
+   19,
+   34
+  ],
+  [
+   19,
+   76
+  ],
+  [
+   19,
    80
   ],
   [
@@ -1302,11 +1842,27 @@
   ],
   [
    19,
+   378
+  ],
+  [
+   19,
    438
   ],
   [
    19,
    498
+  ],
+  [
+   19,
+   568
+  ],
+  [
+   19,
+   586
+  ],
+  [
+   19,
+   592
   ],
   [
    19,
@@ -1334,36 +1890,54 @@
   ]
  ],
  "new_shards": [
+  "P19_I00008",
+  "P19_I00073",
   "P19_I00083",
   "P19_I00093",
+  "P19_I00102",
+  "P19_I00105",
+  "P19_I00106",
   "P19_I00113",
   "P19_I00115",
   "P19_I00119",
+  "P7_I00010",
   "P7_I00012",
   "P7_I00013",
   "P7_I00016",
   "P7_I00018",
   "P7_I00024",
+  "P7_I00025",
+  "P7_I00099",
   "P7_I00100",
+  "P7_I00103",
   "P7_I00118",
   "P7_I00141",
+  "P7_I00147",
+  "P7_I00157",
   "P7_I00164",
   "P11_I00007",
   "P11_I00008",
   "P11_I00019",
+  "P11_I00065",
   "P11_I00073",
   "P11_I00078",
   "P11_I00090",
   "P11_I00096",
   "P11_I00101",
   "P11_I00103",
+  "P11_I00104",
   "P11_I00108",
   "P11_I00120",
   "P11_I00121",
   "P31_I00043",
   "P31_I00053",
+  "P13_I00066",
+  "P13_I00084",
   "P13_I00092",
+  "P13_I00101",
   "P13_I00104",
+  "P13_I00108",
+  "P13_I00115",
   "P13_I00117",
   "P13_I00125",
   "P13_I00130",
@@ -1373,18 +1947,21 @@
   "P3_I00014",
   "P3_I00015",
   "P3_I00016",
+  "P3_I00017",
   "P3_I00018",
   "P3_I00020",
   "P3_I00021",
   "P3_I00022",
+  "P3_I00023",
   "P3_I00027",
   "P3_I00028",
   "P3_I00033",
-  "P3_I00034"
+  "P3_I00034",
+  "P3_I00193"
  ],
- "closed": 2915,
- "open": 157,
- "open_actuals": 180,
+ "closed": 2936,
+ "open": 136,
+ "open_actuals": 156,
  "remaining_shards": [
   {
    "root": 19,
@@ -1417,7 +1994,6 @@
     4,
     14,
     24,
-    34,
     44,
     54
    ]
@@ -1432,9 +2008,7 @@
    "remaining_actuals": [
     6,
     20,
-    34,
-    48,
-    76
+    48
    ]
   },
   {
@@ -1447,8 +2021,7 @@
    "remaining_actuals": [
     10,
     32,
-    54,
-    76
+    54
    ]
   },
   {
@@ -1495,17 +2068,6 @@
    "id": "P19_I00007",
    "remaining_actuals": [
     22
-   ]
-  },
-  {
-   "root": 19,
-   "index": 8,
-   "count": 287,
-   "exponent": 28,
-   "exact": false,
-   "id": "P19_I00008",
-   "remaining_actuals": [
-    28
    ]
   },
   {
@@ -1775,17 +2337,6 @@
   },
   {
    "root": 19,
-   "index": 73,
-   "count": 287,
-   "exponent": 378,
-   "exact": false,
-   "id": "P19_I00073",
-   "remaining_actuals": [
-    378
-   ]
-  },
-  {
-   "root": 19,
    "index": 77,
    "count": 287,
    "exponent": 400,
@@ -1896,17 +2447,6 @@
   },
   {
    "root": 19,
-   "index": 102,
-   "count": 287,
-   "exponent": 568,
-   "exact": false,
-   "id": "P19_I00102",
-   "remaining_actuals": [
-    568
-   ]
-  },
-  {
-   "root": 19,
    "index": 103,
    "count": 287,
    "exponent": 570,
@@ -1914,28 +2454,6 @@
    "id": "P19_I00103",
    "remaining_actuals": [
     570
-   ]
-  },
-  {
-   "root": 19,
-   "index": 105,
-   "count": 287,
-   "exponent": 586,
-   "exact": false,
-   "id": "P19_I00105",
-   "remaining_actuals": [
-    586
-   ]
-  },
-  {
-   "root": 19,
-   "index": 106,
-   "count": 287,
-   "exponent": 592,
-   "exact": false,
-   "id": "P19_I00106",
-   "remaining_actuals": [
-    592
    ]
   },
   {
@@ -2046,17 +2564,6 @@
   },
   {
    "root": 7,
-   "index": 10,
-   "count": 412,
-   "exponent": 30,
-   "exact": false,
-   "id": "P7_I00010",
-   "remaining_actuals": [
-    30
-   ]
-  },
-  {
-   "root": 7,
    "index": 11,
    "count": 412,
    "exponent": 36,
@@ -2086,17 +2593,6 @@
    "id": "P7_I00019",
    "remaining_actuals": [
     70
-   ]
-  },
-  {
-   "root": 7,
-   "index": 25,
-   "count": 412,
-   "exponent": 100,
-   "exact": false,
-   "id": "P7_I00025",
-   "remaining_actuals": [
-    100
    ]
   },
   {
@@ -2233,28 +2729,6 @@
   },
   {
    "root": 7,
-   "index": 99,
-   "count": 412,
-   "exponent": 540,
-   "exact": false,
-   "id": "P7_I00099",
-   "remaining_actuals": [
-    540
-   ]
-  },
-  {
-   "root": 7,
-   "index": 103,
-   "count": 412,
-   "exponent": 568,
-   "exact": false,
-   "id": "P7_I00103",
-   "remaining_actuals": [
-    568
-   ]
-  },
-  {
-   "root": 7,
    "index": 106,
    "count": 412,
    "exponent": 586,
@@ -2376,17 +2850,6 @@
   },
   {
    "root": 7,
-   "index": 147,
-   "count": 412,
-   "exponent": 856,
-   "exact": false,
-   "id": "P7_I00147",
-   "remaining_actuals": [
-    856
-   ]
-  },
-  {
-   "root": 7,
    "index": 149,
    "count": 412,
    "exponent": 862,
@@ -2419,17 +2882,6 @@
    ]
   },
   {
-   "root": 7,
-   "index": 157,
-   "count": 412,
-   "exponent": 928,
-   "exact": false,
-   "id": "P7_I00157",
-   "remaining_actuals": [
-    928
-   ]
-  },
-  {
    "root": 11,
    "index": 1,
    "count": 341,
@@ -2437,8 +2889,7 @@
    "exact": false,
    "id": "P11_I00001",
    "remaining_actuals": [
-    4,
-    34
+    4
    ]
   },
   {
@@ -2450,7 +2901,6 @@
    "id": "P11_I00002",
    "remaining_actuals": [
     6,
-    34,
     48
    ]
   },
@@ -2533,17 +2983,6 @@
   },
   {
    "root": 11,
-   "index": 65,
-   "count": 341,
-   "exponent": 330,
-   "exact": false,
-   "id": "P11_I00065",
-   "remaining_actuals": [
-    330
-   ]
-  },
-  {
-   "root": 11,
    "index": 70,
    "count": 341,
    "exponent": 358,
@@ -2606,17 +3045,6 @@
    "id": "P11_I00097",
    "remaining_actuals": [
     522
-   ]
-  },
-  {
-   "root": 11,
-   "index": 104,
-   "count": 341,
-   "exponent": 576,
-   "exact": false,
-   "id": "P11_I00104",
-   "remaining_actuals": [
-    576
    ]
   },
   {
@@ -2843,17 +3271,6 @@
   },
   {
    "root": 13,
-   "index": 66,
-   "count": 325,
-   "exponent": 330,
-   "exact": false,
-   "id": "P13_I00066",
-   "remaining_actuals": [
-    330
-   ]
-  },
-  {
-   "root": 13,
    "index": 73,
    "count": 325,
    "exponent": 372,
@@ -2887,17 +3304,6 @@
   },
   {
    "root": 13,
-   "index": 84,
-   "count": 325,
-   "exponent": 438,
-   "exact": false,
-   "id": "P13_I00084",
-   "remaining_actuals": [
-    438
-   ]
-  },
-  {
-   "root": 13,
    "index": 87,
    "count": 325,
    "exponent": 456,
@@ -2916,17 +3322,6 @@
    "id": "P13_I00096",
    "remaining_actuals": [
     508
-   ]
-  },
-  {
-   "root": 13,
-   "index": 101,
-   "count": 325,
-   "exponent": 556,
-   "exact": false,
-   "id": "P13_I00101",
-   "remaining_actuals": [
-    556
    ]
   },
   {
@@ -2953,17 +3348,6 @@
   },
   {
    "root": 13,
-   "index": 108,
-   "count": 325,
-   "exponent": 598,
-   "exact": false,
-   "id": "P13_I00108",
-   "remaining_actuals": [
-    598
-   ]
-  },
-  {
-   "root": 13,
    "index": 111,
    "count": 325,
    "exponent": 612,
@@ -2982,17 +3366,6 @@
    "id": "P13_I00113",
    "remaining_actuals": [
     618
-   ]
-  },
-  {
-   "root": 13,
-   "index": 115,
-   "count": 325,
-   "exponent": 640,
-   "exact": false,
-   "id": "P13_I00115",
-   "remaining_actuals": [
-    640
    ]
   },
   {
@@ -3063,17 +3436,6 @@
   },
   {
    "root": 3,
-   "index": 17,
-   "count": 676,
-   "exponent": 52,
-   "exact": false,
-   "id": "P3_I00017",
-   "remaining_actuals": [
-    52
-   ]
-  },
-  {
-   "root": 3,
    "index": 19,
    "count": 676,
    "exponent": 60,
@@ -3081,17 +3443,6 @@
    "id": "P3_I00019",
    "remaining_actuals": [
     60
-   ]
-  },
-  {
-   "root": 3,
-   "index": 23,
-   "count": 676,
-   "exponent": 78,
-   "exact": false,
-   "id": "P3_I00023",
-   "remaining_actuals": [
-    78
    ]
   },
   {
@@ -3136,17 +3487,6 @@
    "id": "P3_I00187",
    "remaining_actuals": [
     1108
-   ]
-  },
-  {
-   "root": 3,
-   "index": 193,
-   "count": 676,
-   "exponent": 1162,
-   "exact": false,
-   "id": "P3_I00193",
-   "remaining_actuals": [
-    1162
    ]
   }
  ]

@@ -1,17 +1,18 @@
 # Root 3 joint certificate (snapshot 2889e47f6db49c8a9bc8dda2c9153829c18a70ca)
 
-Assume odd perfect N≤10^2400, 3^e||N, gcd(N,7·11·13·19·31)=1. E0,E1,E2 are covered by the frozen `Research/P3I00193Review/VerifyPartial.py`. In E3 take q^1||N, q∤A=σ(3^e), s=v3(q+1)>0; choose a source r^f with q|σ(r^f), r ordinary. Use the supplied theorem that every such source has b=v3(σ(r^f))=0 (this package does not reprove the theorem). Write E3a for r∤A and E3b for r|A. No complete new exponent is credited. For 1162 we exclude **all E3b** and the E3a leaves in the verifier's final `excluded[0]` list. Leaves are zero-indexed in `cell10 + cell11`, regardless of duplicated labels.
+Assume odd perfect N≤10^2400, 3^e||N, gcd(N,7·11·13·19·31)=1. E0,E1,E2 are covered by the frozen `Research/P3I00193Review/VerifyPartial.py`. In E3 take q^1||N, q∤A=σ(3^e), s=v3(q+1)>0; choose a source r^f with q|σ(r^f), r ordinary. Use the supplied theorem that every such source has b=v3(σ(r^f))=0 (this package does not reprove the theorem). Write E3a for r∤A and E3b for r|A. For 1162 the strong external base ≥2219 and the exact joint witnesses exclude **all E3a and E3b leaves**. Together with the b=0 theorem and the frozen E0/E1/E2 exclusions this completes (3,1162), but not the other four high exponents. No ledger file is modified by this package. Leaves are zero-indexed in `cell10 + cell11`, regardless of duplicated labels.
 
 ## Replay
 
-Place this directory at `Research/Session20261126/Joint/`, or give the fixed checkout as the first argument. The input certificate is read from the checkout, not duplicated. Stdlib only:
+Place this directory at `Research/Session20261126/Joint/`, or give the fixed checkout as the first argument. The input certificate is read from the checkout, not duplicated. Run the following independent parts (C++17 compiler with unsigned __int128 and Python stdlib):
 
 ```
-python -I -S -B Research/Session20261126/Joint/Verify.py .
+g++ -std=c++17 -O3 Research/Session20261126/Joint/Trial.cpp -o /tmp/root3-trial && /tmp/root3-trial
+python -I -S -B Research/Session20261126/Joint/Complete.py .
 python -I -S -B Research/Session20261126/Joint/Base.py .
 ```
 
-`Verified.txt` and `BaseResults.txt` record the two outputs. Dual search (optional) uses SciPy HiGHS; verification does not use SciPy or trust solver status. Input SHA-256 is checked in `Joint.py`. Compare the original paper's D1,D2 proof at `Documentation/Proof2400.md`, §3.3. Outputs refer only to these support subdomains; the frozen ledger is not modified.
+The first two commands suffice for 1162; the third checks the five weaker shared-base bounds. `Complete.py` executes the supplied primitive-source numerical inequalities, frozen E0/E1/E2 with an in-memory output sink, exact 2219 prefix witness, partition, and joint certificates. `CompleteResults.txt` logs the Python run. `Verified.txt` is an earlier partial run, not the final count. The standalone option `Verify.py . --conditional-2219` checks just the two joint partitions, not the independently necessary range, source and prefix premises. Dual search (optional) uses SciPy HiGHS; verification does not use SciPy or trust solver status. Input SHA-256 is checked in `Joint.py`. Compare the original paper's D1,D2 proof at `Documentation/Proof2400.md`, §3.3. Outputs refer only to these support subdomains; the frozen ledger is not modified.
 
 ## Shared root volume
 

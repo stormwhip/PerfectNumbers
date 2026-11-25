@@ -80,41 +80,62 @@ def verify(path):
   if v>M:return False
   if M-v<16*t:return any(rem%h==0 for h in range(v,M+1,t))
   return True
+ mn=min([F(1),*[F(z,p**(k*val(z+1,p))) for z in V if z%4==1]])
  def combine(pairs,lost=None):
   a=math.prod(x for x,y in pairs);w=min([F(1),*[F(y,x) for x,y in pairs],*([lost] if lost else [])]);return a,a*w
  @cache
- def solve(z,h,mass):
+ def solve(z,h,mass,role=0):
   # Pair: ordinary; with zero or one allowed exceptional location. No separate choice of location is assumed in the same subtree twice.
   o=T.multiplicative_order(z,p);t=val(z**o-1,p) if o>1 else 0;res=[None,None]
   for odd in ([False,True] if not mass and z%4==1 and all((z+1)%b for b in ban) else [False]):
    f=h+((1-h)%4 if odd else h%2);step=4 if odd else 2;n=0
+   if odd and role==1 and f==1:f=5
    while True:
+    if odd and role==2 and f>1:break
     low=z**f if mass else F(z**f,p**(k*t)*(f+1)**k)
     mono=z**step*(f+1)**k>=(f+step+1)**k
     if mass and weighted:low=(z**f)**wt*max(1,F(z**f,p**(k*t)*(f+1)**k))
     if mass and n>=cap and (not weighted or mono):
      res=[min(v,low) if v is not None else low for v in res];break
     relevant=res[1:] if odd else res
-    if not (odd and f==1) and all(v is not None and low>=v for v in relevant) and ((mass and not weighted) or mono):break
+    if not (odd and f==1) and all(v is not None and low*(mn if role==2 else 1)>=v for v in relevant) and ((mass and not weighted) or mono):break
     if all(((f+1)%b if z%b==1 else pow(z,f+1,b)!=1) for b in ban):
      b,rem,sub=options(z,f,mass);n+=1
      if mass:
        unit=(z**f*rem)**wt*(max(1,F(z**f,p**(k*b))) if weighted else 1)
        ref=(rem*pow(Q,-1,4*Y)%(4*Y) or 4*Y) if weighted else 1
        loss=F(ref,rem)**wt if emitter(rem) else None
-     else:unit=1 if odd and f==1 else max(1,F(z**f,p**(k*b)));loss=None
-     a,w=combine([solve(y,h1,mass) for y,h1 in sub],loss)
+     else:unit=(F(z,p**(k*b)) if role==2 else 1) if odd and f==1 else max(1,F(z**f,p**(k*b)));loss=None
+     a,w=combine([solve(y,h1,mass,role) for y,h1 in sub],loss)
      if odd:res[1]=unit*a if res[1] is None else min(res[1],unit*a)
      else:
       for j,v in enumerate((a,w)):res[j]=unit*v if res[j] is None else min(res[j],unit*v)
     f+=step
   return tuple(res)
- v,vv=combine([solve(z,c[z],False) for z in K]);assert budget*vv>B*U*D,'high Euler'
+ split=r.get('roles',False);assert type(split)==bool
+ v,vv=combine([solve(z,c[z],False,1 if split else 0) for z in K]);assert budget*vv>B*U*D,'high Euler'
+ if split:
+  active_extra=1
+  if 'rough' in r:
+   L=r['rough'];n=e+1;assert type(L)==int and L>=3 and PC.prime64(n) and math.gcd(C,n)==1 and C>1 and all(C%d for d in range(2*n+1,L,2*n))
+   oddpart=(p-1)//((p-1)&(1-p))
+   if pow(C,oddpart,p)!=1:active_extra=L**2 # active Euler belongs to V, so cannot divide C
+  _,internal_min=combine([solve(z,c[z],False,2) for z in K]);assert budget*internal_min*active_extra>B*U,'Euler-one active label'
  for s in range(cut):
-  w=vv if s<s0 else v;assert budget*w*max(1,2*p**s-1)>B*U*p**(k*s),('small exponent',s)
+  w=vv if not split and s<s0 else v;assert budget*w*max(1,2*p**s-1)>B*U*p**(k*s),('small exponent',s)
  assert all(z%4!=1 or val(z+1,p)<s0 for z in V),'Euler possibly inside active tree'
  bins=0
- if 'leaves' in r:
+ if 'bands' in r:
+  sys.path.insert(0,str(R/'NightMerge'));import LatticeLeaf
+  n=e+1;s=cut;assert p%4==1 and PC.prime64(n) and math.gcd(C,4*p*n)==1 and math.gcd(n,4*p)==1
+  for s1,s2,leaves in r['bands']:
+   assert s1==s and s1<=s2<=e;mod=4*p**s1;z0=2*p**s1-1;z=z0+mod*((1-z0)*pow(mod,-1,n)%n);mod*=n
+   lo=z;hi=min(C//(C*pow(z,-1,mod)%mod),int(F(B*U*p**(k*s2),budget*v)))
+   for l,h,w in leaves:
+    assert lo==l and l<=h<=hi and LatticeLeaf.verify(C,1,z,mod,l,h,w),'bad band leaf';lo=h+1;bins+=1
+   assert lo>hi,'incomplete interval';s=s2+1
+  assert s==e+1,'incomplete valuation bands'
+ elif 'leaves' in r:
   sys.path.insert(0,str(R/'NightMerge'));import LatticeLeaf
   n=e+1;assert p%4==1 and PC.prime64(n) and math.gcd(C,4*Y*n)==1 and math.gcd(n,4*Y)==1
   mod=4*Y*n;z=Q+4*Y*((1-Q)*pow(4*Y,-1,n)%n);lo=z;hi=C//(C*pow(z,-1,mod)%mod)

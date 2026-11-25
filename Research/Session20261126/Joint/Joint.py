@@ -98,7 +98,15 @@ def small_parts(n):
     if n>1 and n<50000:b.append((n,1));n=1
     return b,n
 
-def leaf(i):
+@cache
+def extra_info():
+    fp=Path(__file__).with_name('Hints.json')
+    if not fp.is_file():return [],set()
+    sys.path.insert(0,str(fp.parent));from EC import ecprime
+    h=json.loads(fp.read_bytes());ec={int(t) for t,chain in h['certs'].items() if ecprime(int(t),chain,prime64)}
+    assert len(ec)==len(h['certs']) and all(t>=2 for t in h['factors']);return h['factors'],ec
+
+def leaf(i, detail=False):
     l=(cert['cell10']+cert['cell11'])[i];F=l['forest'];L=l['lp'];absent=BAN|set(l['absent_extra']);u=set(map(int,F['cut_even'])) if F else set();p=set(L['P']) if L else set();pool=u|p;assert all(prime(t) and A%t and t<Q and nosource(t) for t in pool)
     assert set(l['present'])==set(F['roots'] if F else []) and not(u&p) and not(absent&pool)
     child={int(k):v for k,v in F['edges'].items()} if F else {};seen=set();roots=l['present'];stack=roots[:]
@@ -122,8 +130,10 @@ def leaf(i):
             opts.append((f,z,f*lo(r)-4*hi(3)*b,v,left));
         data[r]=(stop,opts)
     bs=basis(rema);unsafe=[]
+    extra=extra_info();divs,ec=extra
+    if divs:bs=basis(list(bs)+divs)
     for t in sorted(bs):
-        if not(prime(t) and nosource(t)):unsafe.append(t)
+        if not((prime(t) or t in ec) and nosource(t)):unsafe.append(t)
     for n in set(rema)|{1}:
         x=n;units={}
         for t in bs:
@@ -146,10 +156,11 @@ def leaf(i):
             return best
         return sum(dp(r,2) for r in roots)
     # E3a worst-case removal; E3b safe to charge every cleaned block.
-    internal=solve(None);ext=internal;worst=None
+    internal=solve(None);ext=internal;worst=None;by={}
     for t in unsafe:
-        v=solve(t)
+        v=solve(t);by[t]=v
         if v<ext:ext=v;worst=t
+    if detail:return internal,by
     return dict(i=i,forest_internal=internal,forest_external=ext,unsafe=len(unsafe),worst_basis=worst)
 
 if __name__=='__main__':

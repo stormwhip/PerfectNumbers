@@ -29,6 +29,13 @@ def projection():
         excluded.update((p,f) for f in hits)
         proofs.append(dict(packet=path.name,sha256=digest,seed=[p,e],floor=floor,actuals=hits))
         print('PASS',p,e,floor,hits,flush=True)
+    sys.path.insert(0,str(R/'NightLowRoute/Release'))
+    import ForestReplay
+    for path in sorted(H.glob('Price*.json.gz')):
+        p,e,floor,digest=verify(path);data=json.loads(gzip.decompress(path.read_bytes()));r,=data['rows']
+        assert p in (13,19,31) and path.name==f'Price{p}x{e}.json.gz' and (p,e) in original
+        assert min(ForestReplay.proof(r,data['ecpp']).values())>10**(2400*r['den'])
+        excluded.add((p,e));proofs.append(dict(packet=path.name,sha256=digest,seed=[p,e],floor=floor,actuals=[e]));print('PASS exact priced forest',p,e,flush=True)
     sys.path.insert(0,str(H))
     import PivotCheck
     for path in sorted(H.glob('Pivot*.json.gz')):
@@ -41,6 +48,11 @@ def projection():
         p,e,stats=TreeCheck.verify(path);assert path.name==f'Tree{p}x{e}.json.gz' and (p,e) in original
         excluded.add((p,e));proofs.append(dict(packet=path.name,sha256=sha256(path.read_bytes()).hexdigest(),seed=[p,e],forest_leaves=stats[0],split_nodes=stats[1],direct_cases=stats[2],actuals=[e]));print('PASS exact tree',p,e,stats,flush=True)
     from subprocess import check_output
+    for path in sorted(H.glob('MaskTree*.json.gz')):
+        import ast
+        p,e,stats=ast.literal_eval(check_output([sys.executable,'-I','-S','-B',str(H/'CheckMaskTree.py'),'--repo',str(R.parent),str(path)],text=True).splitlines()[-1]);second=check_output([sys.executable,'-I','-S','-B',str(H/'IndependentMask.py'),'--repo',str(R.parent),str(path)],text=True).splitlines()[-1]
+        assert second==f'verified {p} {e} {stats}' and path.name==f'MaskTree{p}x{e}.json.gz' and (p,e) in original
+        excluded.add((p,e));proofs.append(dict(packet=path.name,sha256=sha256(path.read_bytes()).hexdigest(),seed=[p,e],forest_leaves=stats[0],split_nodes=stats[1],direct_cases=stats[2],actuals=[e]));print('PASS full S8 support tree',p,e,flush=True)
     cut_dir=H/'SupplyForest';packets=sorted(cut_dir.glob('Cut*.json.gz'))
     if packets:
         raw=check_output([sys.executable,'-I','-S','-B','-X','int_max_str_digits=0',str(cut_dir/'VerifyCut.py'),str(R),*map(str,packets)],text=True)
@@ -48,6 +60,13 @@ def projection():
         for path,answer in zip(packets,answers):
             p,e=answer['actual'];assert path.name==f'Cut{p}x{e}.json.gz' and (p,e) in original
             excluded.add((p,e));proofs.append(dict(packet='SupplyForest/'+path.name,sha256=sha256(path.read_bytes()).hexdigest(),seed=[p,e],actuals=[e],receipt=answer));print('PASS exact supply cut',p,e,flush=True)
+    branch_dir=cut_dir/'Breakpoint'
+    for path in sorted(branch_dir.glob('Branch*.json.gz')):
+        v=json.loads(check_output([sys.executable,'-I','-S','-B',str(branch_dir/'VerifyBranch.py'),str(R),str(path)],text=True));p,e=v['p'],v['e'];assert (p,e) in original and path.name==f'Branch{p}x{e}.json.gz'
+        excluded.add((p,e));proofs.append(dict(packet=path.relative_to(H).as_posix(),sha256=sha256(path.read_bytes()).hexdigest(),seed=[p,e],actuals=[e],receipt=v))
+    import JointReplay
+    joint=JointReplay.verify();assert joint['seed']==[3,1162] and (3,1162) in original
+    excluded.add((3,1162));proofs.append(joint);print('PASS complete E0/E1/E2/E3 and range sieve: 3 1162',flush=True)
     remaining=[];closed=[]
     for s in sh:
         left=[e for e in s['remaining_actuals'] if (s['root'],e) not in excluded]
