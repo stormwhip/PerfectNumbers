@@ -1,0 +1,5 @@
+﻿{'p': 7, 'e': 906, 'U': 579125, 'D': 1, 'ordinary_A_primes_max': 10, 'all_A_primes_max_if_Euler_in_A': 11}
+{'p': 7, 'e': 738, 'U': 28426, 'D': 1, 'ordinary_A_primes_max': 53, 'all_A_primes_max_if_Euler_in_A': 54}
+{'p': 7, 'e': 456, 'U': 28426, 'D': 1, 'ordinary_A_primes_max': 124, 'all_A_primes_max_if_Euler_in_A': 125}
+{'p': 13, 'e': 612, 'U': 2771, 'D': 1, 'ordinary_A_primes_max': 35, 'all_A_primes_max_if_Euler_in_A': 36}
+{'p': 13, 'e': 618, 'U': 2771, 'D': 1, 'ordinary_A_primes_max': 33, 'all_A_primes_max_if_Euler_in_A': 34}

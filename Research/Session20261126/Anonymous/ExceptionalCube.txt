@@ -1,0 +1,5 @@
+﻿{'p': 7, 'e': 906, 'C': 100000, 'progressions_tested': 85077, 'gcd_hits': []}
+{'p': 7, 'e': 738, 'C': 100000, 'progressions_tested': 84931, 'gcd_hits': []}
+{'p': 7, 'e': 456, 'C': 100000, 'progressions_tested': 84452, 'gcd_hits': []}
+{'p': 13, 'e': 612, 'C': 100000, 'progressions_tested': 91478, 'gcd_hits': []}
+{'p': 13, 'e': 618, 'C': 100000, 'progressions_tested': 91467, 'gcd_hits': []}

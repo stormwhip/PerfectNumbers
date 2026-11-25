@@ -1,0 +1,10 @@
+﻿7 906 modp 2 depth 183 boxes 33
+7 906 modp 4 depth 183 boxes 33
+7 738 modp 2 depth 150 boxes 27
+7 738 modp 4 depth 150 boxes 27
+7 456 modp 2 depth 94 boxes 16
+7 456 modp 4 depth 94 boxes 16
+13 612 modp 3 depth 124 boxes 29
+13 612 modp 9 depth 124 boxes 29
+13 618 modp 3 depth 125 boxes 29
+13 618 modp 9 depth 125 boxes 29

@@ -1125,6 +1125,20 @@
    "forest_leaves": 12
   },
   {
+   "packet": "Tree11x210.json.gz",
+   "sha256": "8afb3125c8b92d9174f47f735fc2adc281b84742296cc5f410f36c47b9439618",
+   "seed": [
+    11,
+    210
+   ],
+   "actuals": [
+    210
+   ],
+   "forest_leaves": 120,
+   "split_nodes": 7,
+   "direct_cases": 132
+  },
+  {
    "packet": "Tree13x400.json.gz",
    "sha256": "c13eb0e29535c04b935ff1e2321d8a51b37244630e3e0462cdd9c208160432cb",
    "seed": [
@@ -1873,6 +1887,29 @@
    }
   },
   {
+   "packet": "SupplyForest/Recursive/Recursive11x522.json.gz",
+   "sha256": "a2557ea6ed98e8705c2d326283b7f1c15813af08c255db6a732ae785b74ac584",
+   "seed": [
+    11,
+    522
+   ],
+   "actuals": [
+    522
+   ],
+   "receipt": {
+    "p": 11,
+    "e": 522,
+    "states": 16708,
+    "max_depth": 12,
+    "rules": {
+     "split": 973,
+     "mass": 9012,
+     "pivot-Euler": 900,
+     "mixed": 5823
+    }
+   }
+  },
+  {
    "packet": "SupplyForest/Recursive/Recursive11x598.json.gz",
    "sha256": "c18a6cc10a0c1b319659fc1387636e9d789bdd9da38e6ff141fa04a19ef10033",
    "seed": [
@@ -2004,6 +2041,27 @@
     42,
     42
    ]
+  },
+  {
+   "packet": "Joint1108/Proof.zip",
+   "sha256": "8a58ee47bbeb50c597205f88426800464a9ee04fb3c1e29385a45f958bb5a753",
+   "seed": [
+    3,
+    1108
+   ],
+   "actuals": [
+    1108
+   ],
+   "source_leaves": [
+    42,
+    42
+   ],
+   "base_digits": [
+    2122,
+    2089
+   ],
+   "range_bound": 10175119360001,
+   "range_survivors_tested": 208340693
   }
  ],
  "new_actuals": [
@@ -2114,6 +2172,10 @@
   [
    3,
    168
+  ],
+  [
+   3,
+   1108
   ],
   [
    3,
@@ -2233,6 +2295,10 @@
   ],
   [
    11,
+   210
+  ],
+  [
+   11,
    330
   ],
   [
@@ -2254,6 +2320,10 @@
   [
    11,
    520
+  ],
+  [
+   11,
+   522
   ],
   [
    11,
@@ -2484,11 +2554,13 @@
   "P11_I00007",
   "P11_I00008",
   "P11_I00019",
+  "P11_I00045",
   "P11_I00065",
   "P11_I00073",
   "P11_I00078",
   "P11_I00090",
   "P11_I00096",
+  "P11_I00097",
   "P11_I00101",
   "P11_I00103",
   "P11_I00104",
@@ -2531,11 +2603,12 @@
   "P3_I00028",
   "P3_I00033",
   "P3_I00034",
+  "P3_I00187",
   "P3_I00193"
  ],
- "closed": 2955,
- "open": 117,
- "open_actuals": 135,
+ "closed": 2958,
+ "open": 114,
+ "open_actuals": 132,
  "remaining_shards": [
   {
    "root": 19,
@@ -3421,17 +3494,6 @@
   },
   {
    "root": 11,
-   "index": 45,
-   "count": 341,
-   "exponent": 210,
-   "exact": false,
-   "id": "P11_I00045",
-   "remaining_actuals": [
-    210
-   ]
-  },
-  {
-   "root": 11,
    "index": 70,
    "count": 341,
    "exponent": 358,
@@ -3483,17 +3545,6 @@
    "id": "P11_I00088",
    "remaining_actuals": [
     462
-   ]
-  },
-  {
-   "root": 11,
-   "index": 97,
-   "count": 341,
-   "exponent": 522,
-   "exact": false,
-   "id": "P11_I00097",
-   "remaining_actuals": [
-    522
    ]
   },
   {
@@ -3837,17 +3888,6 @@
    "id": "P3_I00168",
    "remaining_actuals": [
     990
-   ]
-  },
-  {
-   "root": 3,
-   "index": 187,
-   "count": 676,
-   "exponent": 1108,
-   "exact": false,
-   "id": "P3_I00187",
-   "remaining_actuals": [
-    1108
    ]
   }
  ]
