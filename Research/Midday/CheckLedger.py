@@ -57,6 +57,8 @@ def ledger(reg,workers):
             e=json.loads(gzip.decompress(path.read_bytes()))['e'];need(type(e)==int and (3,e) in ob and path.name==f'Pivot{e}.json.gz','wrong pivot');p=3;es=[e];cmd=[str(R/'MiddayThree/IndependentPivot.py'),str(path)]
         elif path.parent==R/'MiddayThree' and path.name.startswith('Nested') and path.name.endswith('.json.gz'):
             pkt=json.loads(gzip.decompress(path.read_bytes()));e=pkt['e'];need(type(e)==int and (3,e) in ob and path.name==f'Nested{e}.json.gz','wrong nested packet');p=3;es=[e];cmd=[str(R/'MiddayThree/NestedReplay.py'),str(path)]
+        elif rel=='Research/MiddayThree/Complement148.json.gz':
+            p,e=3,148;es=[e];need((p,e) in ob,'join scope');cmd=[str(R/'MiddayThree/Join148.py')]
         elif rel=='Research/MiddaySupport/Refined31.json.gz':
             pkt=json.loads(gzip.decompress(raw));p,e=31,10;es=[e];need(pkt['exceptions']==[] and (p,e) in ob,'outstanding exception');cmd=[str(R/'MiddaySupport/Complete31.py')]
         elif rel in ('Research/Midday/ReleaseSupply7x1018.json','Research/Midday/ReleaseSupply11x718.json'):
