@@ -2673,6 +2673,16 @@
    "actuals": [
     10
    ]
+  },
+  {
+   "packet": "Research/Midday/ReleaseSupply11x718.json",
+   "seed": [
+    11,
+    718
+   ],
+   "actuals": [
+    718
+   ]
   }
  ],
  "new_actuals": [
@@ -3565,6 +3575,10 @@
    682
   ],
   [
+   11,
+   718
+  ],
+  [
    13,
    10
   ],
@@ -3892,6 +3906,7 @@
   "P11_I00117",
   "P11_I00118",
   "P11_I00122",
+  "P11_I00126",
   "P31_I00003",
   "P31_I00007",
   "P31_I00031",
@@ -3944,10 +3959,10 @@
   "P5_I00015",
   "P5_I00019"
  ],
- "closed": 2867,
- "open": 205,
- "open_actuals": 245,
- "singletons": 182,
+ "closed": 2868,
+ "open": 204,
+ "open_actuals": 244,
+ "singletons": 181,
  "remaining_shards": [
   {
    "root": 19,
@@ -5486,17 +5501,6 @@
    "id": "P11_I00121",
    "remaining_actuals": [
     676
-   ]
-  },
-  {
-   "root": 11,
-   "index": 126,
-   "count": 341,
-   "exponent": 718,
-   "exact": false,
-   "id": "P11_I00126",
-   "remaining_actuals": [
-    718
    ]
   },
   {
