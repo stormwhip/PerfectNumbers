@@ -72,7 +72,10 @@ def verified_batches():
     import sys
     sys.path.insert(0, str(HERE))
     from five.Verify148 import verify
-    return (('root 5, exponent 148', verify()),)
+    from ForestPackets import verify as forest
+    names = ('19x274-QFine19_274.json.gz', '19x86-HDir19_86.json.gz', '13x76-QFine13_76.json.gz')
+    return (('root 5, exponent 148', verify()),
+            *((name, forest(HERE / 'Forests' / name)) for name in names))
 
 
 def main():

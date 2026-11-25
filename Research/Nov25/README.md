@@ -35,3 +35,11 @@ python -B Research/Nov25/RootDiscovery.py --limit 8
 python -I -S -B Research/Nov25/five/Verify148.py
 python -I -S -B Research/Nov25/Ledger.py --check Research/Nov25/Delta.json
 ```
+
+## 三个普通静态森林：`(13,76)`、`(19,86)`、`(19,274)`
+
+历史发现数据只有候选图；初次丢弃无证节点后的 9 项先导均未过界。对三个候选补齐 149 条 ECPP 链，再由固定仓库的整数复验器检查全部节点素性、合法幂和单一 Euler 优惠，得到 `floor(log10 N)` 分别至少 2463、2430、2418。每条图覆盖所有适用 Euler 模式（分别 3、6、9 种）。这三项共影响原分片的部分义务，但单独不闭合新分片；与 `(5,148)` 合计净排除 4 项、闭合 1 片。在最终复验中不读取历史缓存或运行 PARI。
+
+```text
+python -I -S -B Research/Nov25/ForestPackets.py Research/Nov25/Forests/13x76-QFine13_76.json.gz Research/Nov25/Forests/19x86-HDir19_86.json.gz Research/Nov25/Forests/19x274-QFine19_274.json.gz
+```
