@@ -1,8 +1,8 @@
 """Extend ReleaseFive by one cold-replayed numerical premise. No discovery files."""
 from pathlib import Path
 import sys,subprocess,gzip,json,hashlib
-H=Path(__file__).resolve().parent;sys.path.insert(0,str(H));import Common
-from Audit import replay,W,logs
+H=Path(__file__).resolve().parent;sys.path.insert(0,str(H));from Audit import replay,W,logs
+import Common
 
 def main():
  if not __debug__:raise SystemExit('Do not run with -O')
