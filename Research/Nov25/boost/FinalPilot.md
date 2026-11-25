@@ -16,4 +16,11 @@ python -B Research/Nov25/boost/Search.py 19x576 --start <historical-cache>/Intra
 python -B Research/Nov25/boost/Search.py 19x646 --start <historical-cache>/Intra19_646.json --seconds 330 --label finalpilot
 ```
 
-Do not rerun the same long bank scan unchanged: final increases slowed to about four decimal orders per minute at `(19,576)`. Select an exact minimizing emitter and obtain a new certified factor or improved independent lower bound before expanding substantially.
+The blind increases slowed to about four decimal orders per minute at `(19,576)`, so we switched to ECM only on residuals of the minimizing exact emitter options. The first factor pass produced the [576 hints](19x576-finalecm.json) and [646 hints](19x646-finalecm.json), and then a 250-second ownership run moved `(19,576)` to a nominal 2394.093 and `(19,646)` to 2401.107. The latter has a [verified two-mode packet](../Forests/best-19x646-finalecm.pack.json.gz), exact floor 2401. The [second 576 hint pass](19x576-finalecm2.json) exposed three useful cyclotomic splits including `6956771765889793 | Φ_7(2910950775467019154235883439668838067692289)`; the 576 candidate reached nominal 2402.985 and its [verified three-mode packet](../Forests/candidate-19x576-finalecm2.pack.json.gz) strictly exceeds `10^2400` (integer floor 2400). Both are singleton closures in the frozen snapshot. All factor hints are conditional on the emitting component's actual exponent; proof replay activates only genuine sigma valuations and verifies every prime chain.
+
+Further cold verification requires only the compressed final packet. Discovery reproduction (optional, GMP-ECM path specified in the script):
+
+```text
+python -B Research/Nov25/boost/ECM.py Research/Nov25/boost/best-19x646-finalpilot.json --seconds 165 --b1 22000 --curves 120 --label finalecm
+python -B Research/Nov25/boost/Search.py 19x646 --start Research/Nov25/boost/best-19x646-finalpilot.json --hints Research/Nov25/boost/19x646-finalecm.json --seconds 250 --label finalecm
+```
