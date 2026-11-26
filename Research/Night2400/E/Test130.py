@@ -20,7 +20,7 @@ def reject(d, mutation):
 
 
 def main():
-    x = json.loads(gzip.decompress((H/'Conditional7x130-128910.json.gz').read_bytes()))
+    x = json.loads(gzip.decompress((H/'Conditional7x130Fibers128910.json.gz').read_bytes()))
     r = replay(x)
     assert r['scope']=='CONDITIONAL_ONLY' and r['closed_fibers']==[1,2,8,9,10]
     assert r['open_paths']==[[(PIVOT,4)],[(PIVOT,6)]]

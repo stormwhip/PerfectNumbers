@@ -42,7 +42,7 @@ This packet does not close the shard and must not be included in exclusion total
 
 ## Refined conditional cover
 
-[Conditional7x130-refined.json.gz](Conditional7x130-refined.json.gz), SHA-256
+[Conditional7x130Refined.json.gz](Conditional7x130Refined.json.gz), SHA-256
 `c3215e5a7456cee4ba8c266b0103c1316cbc18aa369813429f112e396161b8f6`, keeps the
 same five fully closed first fibers and refines both open first fibers. It
 replays 17 splits, 122 exclusion leaves, 44 open paths and 626 ECPP chains.
@@ -55,7 +55,7 @@ The `splits` member gives all children, direct rejections, infeasible exponents,
 and the first exponent of the proven monotone tail at every internal node.
 
 ```powershell
-python -B -I -S Research/Night2400/E/Verify130.py Research/Night2400/E/Conditional7x130-refined.json.gz
+python -B -I -S Research/Night2400/E/Verify130.py Research/Night2400/E/Conditional7x130Refined.json.gz
 python -B -I -S Research/Night2400/E/Test130.py
 ```
 
