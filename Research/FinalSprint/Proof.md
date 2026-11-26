@@ -35,3 +35,5 @@ For [13,456](Tree13x456.json.gz), all 865 exact forest leaves, 38 split nodes an
 ```
 python -I -S -B -X int_max_str_digits=0 Research/FinalSprint/Verify.py
 ```
+
+**19,232:** The [complete packet](JointTree19x232.json.gz) verifies 364 forests, 14 splits and 386 direct/abundance contradictions. At the special leaf the compulsory divisors 3,7,13,31,79,20333 force exponents one at 13 and two at 3 by strict abundancy. The new emission sigma(3²)=13 contradicts the 13 already owed by the fixed components. All other paths pass exact checks. This closes P19_I00049.

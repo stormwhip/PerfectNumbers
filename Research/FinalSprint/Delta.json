@@ -1,10 +1,10 @@
 {
  "baseline": "2b53c830dd903b460a315df04fa3a4a410fb8357",
  "total": 3072,
- "closed": 2989,
- "open": 83,
- "open_actuals": 93,
- "singleton_shards": 75,
+ "closed": 2990,
+ "open": 82,
+ "open_actuals": 92,
+ "singleton_shards": 74,
  "new_actuals": [
   [
    3,
@@ -48,6 +48,10 @@
   ],
   [
    19,
+   232
+  ],
+  [
+   19,
    268
   ],
   [
@@ -76,6 +80,7 @@
   ]
  ],
  "new_shards": [
+  "P19_I00049",
   "P19_I00055",
   "P19_I00068",
   "P19_I00069",
@@ -426,6 +431,19 @@
   },
   {
    "actual": [
+    19,
+    232
+   ],
+   "packet": "JointTree19x232.json.gz",
+   "sha256": "913df1ffdefa63e0336ba9743044140213d0999d944dd5df1317b5a180bc1004",
+   "forest_leaves": 364,
+   "split_nodes": 14,
+   "direct_cases": 386,
+   "price_leaves": 0,
+   "prices": []
+  },
+  {
+   "actual": [
     31,
     388
    ],
@@ -631,17 +649,6 @@
    "id": "P19_I00046",
    "remaining_actuals": [
     222
-   ]
-  },
-  {
-   "root": 19,
-   "index": 49,
-   "count": 287,
-   "exponent": 232,
-   "exact": false,
-   "id": "P19_I00049",
-   "remaining_actuals": [
-    232
    ]
   },
   {

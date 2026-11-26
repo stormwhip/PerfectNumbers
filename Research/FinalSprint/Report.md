@@ -1,12 +1,12 @@
 # Sprint result: current exact frontier
 
-On the research branch, **2989/3,072** canonical shards are closed, **83** are open, with **93 distinct unresolved (root, exponent) pairs**. 75 open shards contain just one remaining exponent. The global theorem is not established.
+On the research branch, **2990/3,072** canonical shards are closed, **82** are open, with **92 distinct unresolved (root, exponent) pairs**. 74 open shards contain just one remaining exponent. The global theorem is not established.
 
-Relative to [main at 2b53c830](https://github.com/stormwhip/PerfectNumbers/commit/2b53c830dd903b460a315df04fa3a4a410fb8357): 17 newly excluded actuals; 15 newly closed shards. [Full ledger, including every shard’s exact remaining membership](Delta.json).
+Relative to [main at 2b53c830](https://github.com/stormwhip/PerfectNumbers/commit/2b53c830dd903b460a315df04fa3a4a410fb8357): 18 newly excluded actuals; 16 newly closed shards. [Full ledger, including every shard’s exact remaining membership](Delta.json).
 
 | Canonical root | Closed / total | Open | New exact exclusions | Remaining exact exponents |
 |---:|---:|---:|---|---|
-|19|258 / 287|29|268, 348, 352, 448, 478|2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 30, 32, 46, 48, 58, 82, 162, 222, 232, 238, 270, 276, 280, 282, 292, 312, 316, 330, 358, 372, 420, 432, 502, 618|
+|19|259 / 287|28|232, 268, 348, 352, 448, 478|2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 30, 32, 46, 48, 58, 82, 162, 222, 238, 270, 276, 280, 282, 292, 312, 316, 330, 358, 372, 420, 432, 502, 618|
 |7|389 / 412|23|46, 70, 90, 168|4, 6, 10, 12, 16, 18, 24, 28, 34, 36, 48, 130, 420, 430, 438, 456, 486, 490, 586, 600, 682, 732, 738, 808, 882, 906|
 |11|332 / 341|9|10, 42, 108|4, 6, 12, 16, 18, 48, 358, 396, 456, 462|
 |31|244 / 253|9|348, 388|2, 6, 16, 240, 268, 310, 352, 456, 466|
@@ -15,7 +15,7 @@ Relative to [main at 2b53c830](https://github.com/stormwhip/PerfectNumbers/commi
 |5|481 / 481|0|—|—|
 |17|297 / 297|0|—|—|
 
-**Newly closed IDs:** `P19_I00055`, `P19_I00068`, `P19_I00069`, `P19_I00085`, `P19_I00090`, `P7_I00014`, `P7_I00019`, `P11_I00003`, `P11_I00012`, `P11_I00027`, `P31_I00068`, `P31_I00075`, `P13_I00087`, `P3_I00165`, `P3_I00168`.
+**Newly closed IDs:** `P19_I00049`, `P19_I00055`, `P19_I00068`, `P19_I00069`, `P19_I00085`, `P19_I00090`, `P7_I00014`, `P7_I00019`, `P11_I00003`, `P11_I00012`, `P11_I00027`, `P31_I00068`, `P31_I00075`, `P13_I00087`, `P3_I00165`, `P3_I00168`.
 
 The eight-root coprime terminal is separate; its independently replayed lower log is 4183.209493. Root 5 and root 17 were fully closed before this sprint. Conditional supports and fixed-pivot fibers do not enter the counts above.
 
