@@ -28,6 +28,8 @@ The [19,478 packet](Tree19x478.json.gz) exhausts 795 forest leaves, 36 splits an
 
 The [11,10 packet](JointTree11x10.json.gz) has 5,109 forest leaves, 366 splits, 5,663 direct contradictions and two fixed-Euler price leaves. The [19,268 packet](Tree19x268.json.gz) has 3,283 forest leaves, 188 splits and 3,569 direct contradictions. The same complete-domain arguments above apply, closing `P11_I00003` and `P19_I00055`. See the [end-of-sprint exact table](Report.md) and [new support theorems](Support/README.md).
 
+For [13,456](Tree13x456.json.gz), all 865 exact forest leaves, 38 split nodes and 927 direct contradictions passed the same whole-tree test; `P13_I00087` closes.
+
 **Coverage.** The $(7,168)$ packet shortens `P7_I00005`; it does not alone close it. The [current projection](Delta.json) gives every open shard ID with all its remaining exponents. The [verifier](Verify.py) rebuilds that projection after rechecking the new arithmetic. Historical certificates and their ledgers are unchanged. From the repository root:
 
 ```

@@ -1,10 +1,10 @@
 {
  "baseline": "2b53c830dd903b460a315df04fa3a4a410fb8357",
  "total": 3072,
- "closed": 2988,
- "open": 84,
- "open_actuals": 94,
- "singleton_shards": 76,
+ "closed": 2989,
+ "open": 83,
+ "open_actuals": 93,
+ "singleton_shards": 75,
  "new_actuals": [
   [
    3,
@@ -41,6 +41,10 @@
   [
    11,
    108
+  ],
+  [
+   13,
+   456
   ],
   [
    19,
@@ -84,10 +88,22 @@
   "P11_I00027",
   "P31_I00068",
   "P31_I00075",
+  "P13_I00087",
   "P3_I00165",
   "P3_I00168"
  ],
  "proofs": [
+  {
+   "actual": [
+    13,
+    456
+   ],
+   "packet": "Tree13x456.json.gz",
+   "sha256": "81d4b7f25071013e98cfa2990f29ef4015e5f7bcc177c02727d73e4390fff9ac",
+   "forest_leaves": 865,
+   "split_nodes": 38,
+   "direct_cases": 927
+  },
   {
    "actual": [
     19,
@@ -1325,17 +1341,6 @@
    "id": "P13_I00076",
    "remaining_actuals": [
     388
-   ]
-  },
-  {
-   "root": 13,
-   "index": 87,
-   "count": 325,
-   "exponent": 456,
-   "exact": false,
-   "id": "P13_I00087",
-   "remaining_actuals": [
-    456
    ]
   },
   {
