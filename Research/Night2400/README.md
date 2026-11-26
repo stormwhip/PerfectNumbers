@@ -23,9 +23,10 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 * `(3,12)`, `P3_I00007`: new first-pivot exclusion **2** at 797161, leaving **1,66,96** after the inherited 96. [Baseline replay](B/BaselineReplay.md), [packet](B/Fiber2.json.gz), [non-author cold receipt](Receipts/Review3x12V2.md).
 * `(7,430)`, `P7_I00082`: first-pivot values 14 and 16 excluded; 2–12 even remain. [Proof and checker](C3/README.md), [cold receipt](Receipts/Review7x430.md).
 * `(19,238)`, `P19_I00050`: eight of nine first-pivot values excluded, only **6** remains. [First packet receipt](Receipts/Review19x238.md), [latest independent receipt](Receipts/Review19x238Eight.md).
-* `(7,438)`, `P7_I00084`: six of twelve first-pivot values excluded. [Packet](Fibers7x438.json.gz), [cold receipt](Receipts/Review7x438.md).
+* `(7,438)`, `P7_I00084`: eight of twelve first-pivot values excluded; **10,12,18,22** remain. [Initial cold receipt](Receipts/Review7x438.md), [additional exact 2/16 receipt](Receipts/Review7x438Additional.md).
 * `(19,432)`, `P19_I00082`: 11 complete first-pivot values and six complete projected support masks excluded. [Scoped certificate](G2/Readme.md), [cold receipt](Receipts/Review19x432.md).
 * `(31,352)`, `P31_I00069`: 17 of 31 first-pivot values excluded, including value 2 under all 16 masks and seven values by the LCM supply refinement. [Scoped certificate](C8/README.md), [cold receipt](Receipts/Review31x352.md).
+* `(11,12)`, `P11_I00004`: first-pivot values 4 and 5 excluded across all 32 canonical masks; values 1, 2 and 8 have additional scoped exclusions. [Proof](C9/README.md), [cold receipt](Receipts/Review11x12.md).
 * `(11,358)`, `P11_I00070`: nine complete first-pivot fibers and 213 compatible mask/valuation cells excluded. **91 raw cells** remain under 25 masks. [Proof and checker](G/Readme.md), [cold receipt](Receipts/Review11x358.md).
 * `(13,310)`, `P13_I00063`: 14 of 22 first-pivot values excluded, eight open. [Proof and checker](C6/README.md), [cold receipt](Receipts/Review13x310.md).
 
