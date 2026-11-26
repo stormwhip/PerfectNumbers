@@ -21,12 +21,13 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 
 * `(7,12)`, `P7_I00005`: 78 of 83 live first-pivot values excluded; **1,2,4,12,42** remain. One exact descendant of value 1 is separately excluded across 64 support masks, not the whole fiber. [Packet and checker](A/README.md), [latest receipt](Receipts/Review7x12Latest.md), [independent quadratic-price audit](Receipts/Review7x12Full77.md).
 * `(19,46)`, `P19_I00013`: ten of 14 live first-pivot values excluded; **4,6,10,12** remain at the cold snapshot. [Packet](Fibers19x46.json.gz), [receipt](Receipts/Review19x46.md).
-* `(19,58)`, `P19_I00015`: ten of eleven first-pivot values excluded, only **1** remains. [Packet](Fibers19x58.json.gz), [cold receipt](Receipts/Review19x58.md).
+* `(19,58)`, `P19_I00015`: ten of eleven first-pivot values excluded, only **1** remains with 11 explicit deep gaps. [Initial receipt](Receipts/Review19x58.md), [low-Euler subtree](C10/README.md), [low-Euler receipt](Receipts/Review19x58Low.md).
 * `(19,82)`, `P19_I00021`: 2, 4, 8 and 10 excluded; first-pivot value **6** still has 84 of 128 support masks open. [Packet and checker](C4/README.md), [cold receipt](Receipts/Review19x82.md).
 * `(3,12)`, `P3_I00007`: new first-pivot exclusion **2** at 797161, leaving **1,66,96** after the inherited 96. [Baseline replay](B/BaselineReplay.md), [packet](B/Fiber2.json.gz), [non-author cold receipt](Receipts/Review3x12V2.md).
 * `(7,430)`, `P7_I00082`: first-pivot values 14 and 16 excluded; 2–12 even remain. [Proof and checker](C3/README.md), [cold receipt](Receipts/Review7x430.md).
 * `(19,238)`, `P19_I00050`: eight of nine first-pivot values excluded, only **6** remains. [First packet receipt](Receipts/Review19x238.md), [latest independent receipt](Receipts/Review19x238Eight.md).
 * `(7,438)`, `P7_I00084`: eight of twelve first-pivot values excluded; **10,12,18,22** remain. [Initial cold receipt](Receipts/Review7x438.md), [additional exact 2/16 receipt](Receipts/Review7x438Additional.md).
+* `(19,270)`, `P19_I00056`: seven of eleven first-pivot values excluded, **4,10,12,16** remain. [Packet](Fibers19x270.json.gz), [cold receipt](Receipts/Review19x270.md).
 * `(19,372)`, `P19_I00072`: ten of 15 first-pivot values excluded; additionally, three support masks exhaust all their remaining exact descendants. [Proof](G4/Readme.md), [cold receipt](Receipts/Review19x372.md).
 * `(19,432)`, `P19_I00082`: 11 complete first-pivot values and six complete projected support masks excluded. [Scoped certificate](G2/Readme.md), [cold receipt](Receipts/Review19x432.md).
 * `(31,352)`, `P31_I00069`: 17 of 31 first-pivot values excluded, including value 2 under all 16 masks and seven values by the LCM supply refinement. [Scoped certificate](C8/README.md), [cold receipt](Receipts/Review31x352.md).
