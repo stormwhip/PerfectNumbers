@@ -97,10 +97,10 @@ def tree(path, expected):
     return set(domain),covered
 
 
-def support(path):
-    d=json.loads(gzip.decompress(path.read_bytes())); assert set(d)=={'pivot','cases','ecpp','f'} and d['pivot']==Q and d['f']==16
-    prime,used=book_reader(d['ecpp']);P=[KEY,(Q,16)];assert all(prime(q) for q in [Q,*C.ORDER]); assert set(d['cases'])==set(map(str,MASKS))
-    for mask in MASKS:
+def support(path,f,masks):
+    d=json.loads(gzip.decompress(path.read_bytes())); assert set(d)=={'pivot','cases','ecpp','f'} and d['pivot']==Q and d['f']==f
+    prime,used=book_reader(d['ecpp']);P=[KEY,(Q,f)];assert all(prime(q) for q in [Q,*C.ORDER]); assert set(d['cases'])==set(map(str,masks))
+    for mask in masks:
         yes=tuple(q for i,q in enumerate(C.ORDER[5:],5) if mask>>i&1); no=tuple(q for q in C.ORDER[5:] if q not in yes)
         s=C.State(P,yes,no);node=d['cases'][str(mask)]
         if node['type']=='direct':assert set(node)=={'type'} and dead(s); lb='direct'
@@ -109,7 +109,7 @@ def support(path):
             assert all(prime(q) and q not in s.rows and q not in s.bad and (q in yes or s.D%q==0) for q in roots)
             assert abundance(s,roots)>2;lb='abundance'
         else:lb=forest(P,node,prime,yes,no,d['ecpp'])
-        print('PASS 16 mask',mask,lb,flush=True)
+        print('PASS',f,'mask',mask,lb,flush=True)
     assert used==set(d['ecpp'])
 
 
@@ -118,5 +118,9 @@ if __name__=='__main__':
     domain,covered=tree(H/'Fibers13x372.json.gz',('1','4','6'))
     domain8,covered8=tree(H/'Fiber8.json.gz',('8',)); assert domain8==domain
     covered |= covered8
-    support(H/'Support16.json.gz');covered.add('16')
+    assert '16' in domain and '2' in domain
+    support(H/'Support16.json.gz',16,MASKS);covered.add('16')
+    partial=(16,80,144,208,240)
+    support(H/'Support2.json.gz',2,partial)
+    print('PARTIAL 2:',list(partial),'OPEN MASKS:',sorted(set(MASKS)-set(partial)),flush=True)
     print('COVERED',sorted(map(int,covered)),'OUTSIDE THIS PACKET',sorted(map(int,domain-covered)),flush=True)
