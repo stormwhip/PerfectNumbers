@@ -24,12 +24,12 @@ remaining fibers are `1,2,4,6,8,9,10`.
 | 9 | Closed by exact forest, floor 2514 |
 | 10 | Closed by simultaneous incoming-valuation pricing with target `[q]`, zero blanket exceptions, Euler windows `[8,0,2]` |
 
-The packet is [Conditional7x130-128910.json.gz](Conditional7x130-128910.json.gz),
+The packet is [Conditional7x130V128910.json.gz](Conditional7x130V128910.json.gz),
 SHA-256 `0c77d6471930aeff690e7d01891b556c244eadf3adf28db0919ca734915330e6`.
 To replay offline from the checkout root (Python standard library only):
 
 ```powershell
-python -B -I Research/Night2400/E/Verify130.py Research/Night2400/E/Conditional7x130-128910.json.gz
+python -B -I Research/Night2400/E/Verify130.py Research/Night2400/E/Conditional7x130V128910.json.gz
 ```
 
 [Verify130.py](Verify130.py) checks all 150 ECPP chains used by the packet,

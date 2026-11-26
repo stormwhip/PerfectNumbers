@@ -12,6 +12,7 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 * `(19,420)`, `P19_I00080`: first-pivot values 8, 10 and 12 excluded; **2,4,6** remain. [Proof and checker](C/README.md); cold candidate `1f20e3d284b8c8a329f6412c35a58b711b9829ef`, 124.720 s.
 
 * `(7,12)`, `P7_I00005`: 51 of 83 live first-pivot values excluded; **32** remain. [Packet and checker](A/README.md), [cold receipt](Receipts/Review7x12.md).
+* `(7,130)`, `P7_I00031`: first-pivot values 1, 2, 8, 9 and 10 excluded; **4,6** remain. [Packet and checker](E/README.md), [cold receipt](Receipts/Review7x130.md).
 
 These do not enter the full-key ledger. [Mainline regression receipt](Receipts/Mainline.md) lists independent scope and does not claim a full-history cold replay. Independent receipts for [(19,316)](Receipts/Review19x316.md), [(19,162)](Receipts/Review19x162.md) and [(19,420)](Receipts/Review19x420.md) include the endpoint audits.
 
