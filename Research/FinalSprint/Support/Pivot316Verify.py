@@ -3,7 +3,7 @@ from pathlib import Path
 from functools import cache
 from math import gcd,prod
 import sys,json,gzip,argparse
-assert __debug__;H=Path(__file__).resolve().parent;ap=argparse.ArgumentParser();ap.add_argument('--repo',type=Path,default=H.parent/'sprint');ns=ap.parse_args();R=ns.repo.resolve()/'Research';sys.path.insert(0,str(R/'Session20261126'));import PivotCheck as PC
+assert __debug__;H=Path(__file__).resolve().parent;ap=argparse.ArgumentParser();ap.add_argument('--repo',type=Path,default=H.parents[2]);ns=ap.parse_args();R=ns.repo.resolve()/'Research';sys.path.insert(0,str(R/'Session20261126'));import PivotCheck as PC
 O=(19,7,11,31,13,3,5,17);B=10**2400;p,e=19,316;q=1255900817071954721881883552067931;d=json.load(gzip.open(H/'Pivot316.json.gz'));A=PC.C.sigma(p,e);c=PC.C.valuation(A,q);assert c>0
 @cache
 def prime(z):

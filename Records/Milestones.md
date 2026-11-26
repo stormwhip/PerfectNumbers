@@ -4,8 +4,10 @@
 
 | 里程碑 | 当前状态 | 直接证据 | 下一项验收 |
 | --- | --- | --- | --- |
-| 11 月 26 日证明批次 | 新增 106 片，累计 2,974 片；剩余 98 片、110 个实际指数 | [增量账本](../Research/Session20261126/Delta.json) | 完成 89 个单指数分片及其余 9 片 |
-| 根 3 指数 1,108、1,162 | 两项全域证书均已登记 | [1,108](../Research/Session20261126/Joint1108/Readme.md) · [1,162](../Research/Session20261126/Joint/README.md) | 根 3 剩余 6、12、856、970、990 |
+| 11 月 26 日晚间批次 | 净排 18 个实际指数，新增 16 个闭片；累计 2,990 闭、82 开，余 92 个实际指数 | [逐片账本](../Research/FinalSprint/Delta.json) · [证明](../Research/FinalSprint/Proof.md) | 覆盖 74 个单指数分片及其余 8 片 |
+| 根 3 指数 970、990 | 两项全域证明均已登记 | [970](../Research/FinalSprint/Full970.md) · [990](../Research/FinalSprint/Proof990.md) | 根 3 剩余 6、12、856 |
+| 11 月 26 日晚间前的基线 | 新增 106 片，累计 2,974 片；当时剩余 98 片、110 个实际指数 | [冻结账本](../Research/Session20261126/Delta.json) | 作为晚间批次的投影输入 |
+| 根 3 指数 1,108、1,162 | 两项全域证书均已登记 | [1,108](../Research/Session20261126/Joint1108/Readme.md) · [1,162](../Research/Session20261126/Joint/README.md) | 保留历史回归 |
 | 八根支持分割 | 复现 9 项新增条件排除，完整实际指数新增为 0 | [条件证据](../Research/SupportSplit/Readme.md) | 穷尽同一实际指数的剩余支持 |
 | 午间证书并集 | 新增 202 片，累计闭合 2,868，开放 204 | [午间证书](../Research/Midday/README.md) | [剩余分片](../Research/Midday/Delta.json) |
 | 两批来源与多根因子链证书 | 新增 165 项，累计闭合 2,192，开放 880 | [总证明](../Documentation/Proof2400.md)及[合并审计](../Research/EveningMerge/Audit.json) | [下一步计划](../Documentation/NextPlan2400.md) |

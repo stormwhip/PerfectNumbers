@@ -2,8 +2,15 @@
 
 The canonical hypotheses are odd perfect N<=10^2400, with all of 19,7,11,31,13 absent and v3(N)=6. Then v1093(N) cannot be 162, 198, or 228. All forests are checked against two exact integer implementations. No paired leaf is used in this wave. The complete frozen packet is 425,889 bytes, SHA256 `aa9afe7863e8ba7b38006645914c683f6d8df732058c78a408af2086ec77dc59`.
 
+From the repository root:
+
+```sh
+python -I -S -B Research/FinalSprint/LowBranches/Wave4/Verify.py . Research/FinalSprint/LowBranches/Wave4/Branches.json.gz
 ```
-python -I -S -B Wave4/Verify.py PATH_TO_REPO Wave4/Branches.json.gz
+
+Expected output:
+
+```text
 PASS 6 1093 162 [20, 4, 2400]
 PASS 6 1093 198 [119, 12, 2400]
 PASS 6 1093 228 [69, 7, 2401]

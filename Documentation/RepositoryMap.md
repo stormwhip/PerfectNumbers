@@ -4,7 +4,7 @@
 
 ## 合并证明与文档归档
 
-- [总证明](Proof2400.md)汇总数学推导和复验入口。[本批证明包](../Research/Session20261126/Readme.md)、[增量账本](../Research/Session20261126/Delta.json)及[开放前沿](../Research/Session20261126/OpenFrontier.tsv)记录当前进度。[Midday](../Research/Midday/README.md)、[EveningMerge](../Research/EveningMerge/VerifyFrontier.py)及[夜间合并](../Research/NightMerge/ParallelReplay.py)保存历史批次。
+- [总证明](Proof2400.md)汇总数学推导和复验入口。[晚间证明](../Research/FinalSprint/Proof.md)、[当前逐片账本](../Research/FinalSprint/Delta.json)及[逐根报告](../Research/FinalSprint/Report.md)记录当前进度。[前一批证明包](../Research/Session20261126/Readme.md)及其[冻结账本](../Research/Session20261126/Delta.json)是晚间投影的输入。[Midday](../Research/Midday/README.md)、[EveningMerge](../Research/EveningMerge/VerifyFrontier.py)及[夜间合并](../Research/NightMerge/ParallelReplay.py)保存历史批次。
 
 - [EulerSourceIntervals](../Research/EulerSourceIntervals/VerifyEulerSourceIntervals2400.py) 保存根 3、5 的来源区间实验复验器，输入由已签入的审计重建。
 
@@ -26,7 +26,8 @@ PerfectNumbers/
 ├── Records/                            # 里程碑、历史实验、验收清单
 ├── References/                         # 原始论文及参考资料
 ├── Research/
-│   ├── Session20261126/                 # 本批证书、复验入口、增量账本及开放前沿
+│   ├── FinalSprint/                     # 当前逐片账本、晚间完整指数证明及条件结果
+│   ├── Session20261126/                 # 晚间前的冻结基线及其独立复验入口
 │   ├── Midday/                          # 午间历史基线与证书账本
 │   ├── SupportSplit/                   # 条件支持排除与标准库复验
 │   ├── P3I00193Review/                  # 待修补的候选证书审计
@@ -112,7 +113,7 @@ PerfectNumbers/
 
 | 用途 | 依赖与输入 |
 |---|---|
-| 当前证书复验 | Python 3.11 或更高版本及标准库。按登记表读取版本库内的 JSON 与 gzip 证书。 |
+| 晚间完整指数复验 | Python 3.11+、标准库及支持 `unsigned __int128` 的 C++17 编译器。运行[增量验证器](../Research/FinalSprint/Verify.py)重建森林、范围筛、来源分支与逐片投影。 |
 | V21 原生搜索 | C++17、GMP/GMPXX、OpenMP。索引构建另需 zlib。 |
 | 历史 LP 与候选搜索 | [Requirements.txt](../Requirements.txt) 列出 NumPy、SciPy、SymPy、mpmath；个别发现器另用 python-flint 或 PARI。 |
 | 全库长时搜索 | [data-v1](https://github.com/stormwhip/PerfectNumbers/releases/tag/data-v1) 提供历史因子库；[运行脚本](../Scripts/Run72hWSL.sh)校验输入摘要。 |

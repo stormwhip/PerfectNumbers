@@ -20,6 +20,9 @@ def pinned():
 
 
 def project():
+    for name in ('Root3x990.zip', 'Root3x970Full.zip'):
+        if not (HERE / name).is_file():
+            raise FileNotFoundError(f'required sprint proof archive missing: {name}')
     old = pinned()
     rows = old['remaining_shards']
     live = {(s['root'], e) for s in rows for e in s['remaining_actuals']}
@@ -40,14 +43,12 @@ def project():
         proofs.append(dict(actual=[p,e], packet=path.name, sha256=sha256(path.read_bytes()).hexdigest(),
                            forest_leaves=stats[0], split_nodes=stats[1], direct_cases=stats[2],
                            price_leaves=stats[3], prices=json.loads(json.dumps(prices))))
-    if (HERE/'Root3x990.zip').is_file():
-        from RootThree import verify990
-        receipt=verify990(); assert tuple(receipt['actual'])==(3,990) and (3,990) in live-hits
-        hits.add((3,990));proofs.append(receipt)
-    if (HERE/'Root3x970-FULL.zip').is_file():
-        from Root970 import verify as verify970
-        receipt=verify970();assert tuple(receipt['actual'])==(3,970) and (3,970) in live-hits
-        hits.add((3,970));proofs.append(receipt)
+    from RootThree import verify990
+    receipt=verify990(); assert tuple(receipt['actual'])==(3,990) and (3,990) in live-hits
+    hits.add((3,990));proofs.append(receipt)
+    from Root970 import verify as verify970
+    receipt=verify970();assert tuple(receipt['actual'])==(3,970) and (3,970) in live-hits
+    hits.add((3,970));proofs.append(receipt)
     remaining = []; closed = []
     for s in rows:
         left = [e for e in s['remaining_actuals'] if (s['root'], e) not in hits]

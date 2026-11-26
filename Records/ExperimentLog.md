@@ -4,6 +4,10 @@
 
 This log separates **imported historical claims**, **directly observed experiments**, and **proof-checked results**. Dates use YYYY-MM-DD.
 
+## 2026-11-26 晚间：18 个完整指数，16 个新增闭片
+
+以 `2b53c830` 的 98 个开放分片、110 个实际指数为输入。逐包验收后按整片投影，得到 2,990 闭、82 开、92 个开放实际指数。规范根 3 的 970 与 990 均覆盖全部来源分支；根 7 的 90 和 168 虽被排除，`P7_I00005` 仍需排除指数 12。五个新增全局命中集及 23 个低根三枢轴分支不计入闭片数。[逐包摘要与哈希](../Research/FinalSprint/Delta.json) · [证明与复验](../Research/FinalSprint/Proof.md) · [PR #7](https://github.com/stormwhip/PerfectNumbers/pull/7)。
+
 ## 2026-11-26 森林前缀深化
 
 基线 `2889e47f`，因子候选来自 data-v1（SHA-256 `ff1e84b119949ffcce57b29616d57ed5d03793ad3e4f74f1b203ad0e809f4119`）及精确分圆余项。244 个指数的首轮搜寻取每种奇偶模式 36 个合法精确指数；超过候选下界 1600 的分支扩大到 128 项，以薄弱模式的真实几何和重新选择子节点。全域第一次扫描只有 (3,46) 的浮点分数超过 2400。经深化后 11 个不同种子获两套整数复验；其它搜寻结果不作为排除证据。[逐包 SHA-256、整数下界和剩余清单](../Research/Session20261126/Delta.json)。

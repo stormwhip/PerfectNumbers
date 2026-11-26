@@ -6,16 +6,16 @@
 
 Let N be an odd perfect number at most 10^2400 with canonical root 3 (none of 19,7,11,31,13 divides N). At v3(N)=6, sigma(3^6)=1093; at v3(N)=12, sigma(3^12)=797161. Both are prime. The following exact valuations of the corresponding forced prime are impossible:
 
-|v3(N)|compelled prime|newly excluded exact valuations|historical exclusions|combined exclusions|remaining|
-|---:|---:|---|---:|---:|---:|
-|6|1093|21,30,33,36,46,52,60,120,150,222|142|152/182|30|
-|12|797161|46,106|90|92/100|8|
+| v3(N) | compelled prime | newly excluded exact valuations | historical exclusions | combined exclusions | remaining |
+| ---: | ---: | --- | ---: | ---: | ---: |
+| 6 | 1093 | 21,30,33,36,46,52,60,120,150,222 | 142 | 152/182 | 30 |
+| 12 | 797161 | 46,106 | 90 | 92/100 | 8 |
 
 **Neither root exponent nor canonical shard is closed.** All cases are disjoint from the pinned historical LowBranches packet. The domain is all size/Euler/admissibility-compatible exponents after the original initial contradiction tests; the exclusion numbers are not the numbers of raw integers up to a size limit.
 
 Run the two standard-library checks from the repository root:
 
-```
+```sh
 python -I -S -B Research/FinalSprint/LowBranches/Verify.py . Research/FinalSprint/LowBranches/Branches.json.gz
 python -I -S -B Research/FinalSprint/LowBranches/Delta.py .
 ```

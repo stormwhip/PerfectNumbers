@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,gzip,json,argparse,gc
 from math import inf
-assert __debug__;H=Path(__file__).resolve().parent;ap=argparse.ArgumentParser();ap.add_argument('--repo',type=Path,default=H.parent/'sprint');ap.add_argument('--only',nargs='+',default=[]);a=ap.parse_args();R=a.repo.resolve()/'Research';sys.path.insert(0,str(R/'MiddayTerminal'));import Audit,Common
+assert __debug__;H=Path(__file__).resolve().parent;ap=argparse.ArgumentParser();ap.add_argument('--repo',type=Path,default=H.parents[2]);ap.add_argument('--only',nargs='+',default=[]);a=ap.parse_args();R=a.repo.resolve()/'Research';sys.path.insert(0,str(R/'MiddayTerminal'));import Audit,Common
 assert Path(Audit.__file__).resolve()==R/'MiddayTerminal/Audit.py';base=json.load(gzip.open(R/'MiddayTerminal/PackNewTriple3513.json.gz'));Common.dataset=lambda:{'ecpp':base['ecpp'],'rows':{}}
 
 def premises(bad,need):
@@ -20,7 +20,7 @@ def direct(f,bad,need,fl):
  u=Audit.replay(**make(bad,need,L,cut,ext,d['w']))[0];den=Audit.W*Audit.logs(10)[1];assert u>2400*den and u//den==fl;print('GLOBAL PASS',bad,'floor',fl,flush=True)
 
 def filter47():
- row=json.loads((H/'side1931.json').read_bytes());bad,need,L,cut,add,w,old=row;assert bad==[3,5,19,31] and need==[7,11,13,17];required=sorted([*need,23,29]);forbid=sorted([*bad,47]);premises(forbid,required);ext={q:c for q,c in base['args']['extend'] if q not in bad};ext.update({q:max(c,ext.get(q,0)) for q,c in add});_,V,pr=Common.init(0,0,bad,True);ps=sorted((set(Audit.primes(L))|V|set(pr)|set(ext)|set(need))-set(bad));stop=2+len(ps)+len(need);w=[(i,a) for i,a in w if i<2 or i>=stop];u,r,G,_=Audit.replay(**make(bad,need,L,cut,ext,w));assert list(G)==ps;den=Audit.W*Audit.logs(10)[1];disc=0
+ row=json.loads((H/'Side1931.json').read_bytes());bad,need,L,cut,add,w,old=row;assert bad==[3,5,19,31] and need==[7,11,13,17];required=sorted([*need,23,29]);forbid=sorted([*bad,47]);premises(forbid,required);ext={q:c for q,c in base['args']['extend'] if q not in bad};ext.update({q:max(c,ext.get(q,0)) for q,c in add});_,V,pr=Common.init(0,0,bad,True);ps=sorted((set(Audit.primes(L))|V|set(pr)|set(ext)|set(need))-set(bad));stop=2+len(ps)+len(need);w=[(i,a) for i,a in w if i<2 or i>=stop];u,r,G,_=Audit.replay(**make(bad,need,L,cut,ext,w));assert list(G)==ps;den=Audit.W*Audit.logs(10)[1];disc=0
  # Refund original groupwise minima (including absence). Re-minimize with presence constraints, q!=47, legal parity, extra sigma obstruction only for exact columns; tail Euler columns may only be discarded if 47 | q+1.
  for q,g in G.items():
   oldmin=min([0]+[r[i] for i,e,x in g]);evens=[] if q in required else [0];odd=[]

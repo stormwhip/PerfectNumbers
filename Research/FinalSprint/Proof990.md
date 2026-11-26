@@ -20,12 +20,12 @@ One verified prime t|σ(5^d) forces t^{v_t(σ(5^d))}|N. Simple rows add 5^d plus
 
 ## Reproduction
 
-From this package (no paid APIs, network or solver), use Python 3.11+, assertion-enabled, and GCC/Clang w/ unsigned __int128:
+From the repository root, run `python -I -S -B Research/FinalSprint/RootThree.py` to replay the [sealed archive](Root3x990.zip). For manual replay, set `REPO` to the absolute path of your checkout and run the following inside the unpacked archive. Use Python 3.11+ with assertions enabled and GCC/Clang with `unsigned __int128`; no paid APIs, network or solver are needed:
 
-```
+```sh
 g++ -O3 -std=c++17 Partial/Base/Trial990.cpp -o Trial990
 ./Trial990
-python -I -S -B prereq.py /path/to/sprint
+python -I -S -B prereq.py "$REPO"
 python -I -S -B check990.py
 ```
 

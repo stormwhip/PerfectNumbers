@@ -15,10 +15,13 @@
 | 11 月 25 日午间 | 2,868 | 204 | [账本](../Research/Midday/Delta.json) |
 | 11 月 25 日 SupportSplit | 2,868 | 204 | [九项条件排除](../Research/SupportSplit/Readme.md) |
 | 11 月 25 日 P3_I00193 | 2,868 | 204 | [候选重放及净成本缺口](../Research/P3I00193Review/Readme.md) |
-| 11 月 26 日增量 | 2,974 | 98 | [账本](../Research/Session20261126/Delta.json) · [验收](../Research/Session20261126/Validation.md) |
+| 11 月 26 日晚间前（冻结基线） | 2,974 | 98 | [账本](../Research/Session20261126/Delta.json) · [验收](../Research/Session20261126/Validation.md) |
+| **11 月 26 日晚间（现行）** | **2,990** | **82** | [逐片账本](../Research/FinalSprint/Delta.json) · [证明与复验入口](../Research/FinalSprint/Proof.md) |
 
 原八根互素类的认证下界为 $\log_{10}N\ge4183.209493$。将根 $19$ 换为 $23$ 后，替换根集的互素类下界为 $\log_{10}N\ge3954.197016$，作为独立的历史实验保留。
 
 历史进展报告的工程细节、性能试验和快照引用见[整理前报告](https://github.com/stormwhip/PerfectNumbers/blob/9d74c34dda8908a19542b855c78ef2feb8844b66/Documentation/ProgressReport2400.md)。
 
-11 月 26 日批次净排除 134 个实际指数，新增闭合 106 个分片。规范根 3 的实际指数 1,108 和 1,162 已由各自的全域证书排除。剩余 110 个实际指数分布在 98 个分片中。见[本批报告](../Research/Session20261126/Report.md)。
+11 月 26 日晚间前，[上一批](../Research/Session20261126/Report.md)净排除 134 个实际指数（含根 3 的 1,108 和 1,162），新增闭合 106 片。当时有 98 片、110 个不同的待证键。
+
+[晚间批次](../Research/FinalSprint/Report.md)在此基础上又排除 18 个实际指数（含根 3 的 970 和 990），新增闭合 16 片。**现余 82 片、92 个不同的待证键**；其中 74 片各仅余一个指数。支持条件与固定枢轴的局部排除不计入 16 片。目标定理尚未证明；本批复验不等于从头重放全部历史证书。

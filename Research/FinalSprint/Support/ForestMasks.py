@@ -2,8 +2,8 @@
 from pathlib import Path
 import sys,math,gzip,json,hashlib,os,time,itertools
 from functools import cache,lru_cache
-H=Path(__file__).resolve().parent;repo=Path(os.environ.get('OPN_REPO',H.parent/'sprint')).resolve();R=repo/'Research';sys.path.insert(0,str(R/'RootFiveNext'));import PrimeCheck as pc
-O=(19,7,11,31,13,3,5,17);B=10**2400;lib=H.parent/'lab';front=json.load(open(R/'Session20261126/OpenSupport.json'));assert front['order']==list(O)
+H=Path(__file__).resolve().parent;repo=Path(os.environ.get('OPN_REPO',H.parents[2])).resolve();R=repo/'Research';sys.path.insert(0,str(R/'RootFiveNext'));import PrimeCheck as pc
+O=(19,7,11,31,13,3,5,17);B=10**2400;front=json.load(open(R/'Session20261126/OpenSupport.json'));assert front['order']==list(O)
 @lru_cache(40000)
 def sigma(p,f):return (p**(f+1)-1)//(p-1)
 def val(t,q):
@@ -106,7 +106,9 @@ def verify(f):
  print('VERIFIED',f.name,len(seen),flush=True);sigma.cache_clear();return seen
 if __name__=='__main__':
  assert __debug__
- if sys.argv[1]=='discover':discover()
+ if sys.argv[1]=='discover':
+  if len(sys.argv)!=3:raise SystemExit('usage: ForestMasks.py discover DISCOVERY_INPUT_DIR')
+  lib=Path(sys.argv[2]).resolve(strict=True);discover()
  else:
   hits=set();fs=map(Path,sys.argv[2:]) if len(sys.argv)>2 else sorted((H/'Forest').glob('*.gz'))
   for f in fs:hits.update(verify(f))
