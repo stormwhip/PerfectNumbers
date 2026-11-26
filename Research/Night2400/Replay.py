@@ -24,6 +24,7 @@ MECHANISMS = {
     (7, 586): ('VerifyFibers.py', ('E5/Fibers7x586Complete.json.gz',), 'fibers'),
     (13, 372): ('Verify13x372.py', (), 'merged'),
     (19, 162): ('VerifyFibers.py', ('E2/Fibers19x162Complete.json.gz',), 'fibers'),
+    (19, 238): ('../FinalSprint/JointTree.py', ('F2/JointTree19x238.json.gz',), 'joint_tree'),
     (19, 316): ('D/Verify.py', (), 'VERIFIED (19, 316)'),
     (19, 502): ('../Session20261126/TreeCheck.py', ('F/Tree19x502.json.gz',), 'stock_tree'),
 }
@@ -56,6 +57,9 @@ def main():
             elif expected=='merged':
                 status=json.loads(final)
                 assert tuple(status['key'])==key and status['scope']=='EXACT_COMPLETE' and not status['open']
+            elif expected=='joint_tree':
+                p,e,stats,prices=literal_eval(final)
+                assert (p,e)==key and len(stats)==4 and stats[1]>=1 and len(prices)==stats[3]
             elif expected=='stock_tree':
                 p,e,stats=literal_eval(final)
                 assert (p,e)==key and len(stats)==3 and stats[1]>=1

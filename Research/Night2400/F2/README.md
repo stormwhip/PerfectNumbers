@@ -1,6 +1,19 @@
 # P19_I00050 — exact key (19,238)
 
-This packet is an addition to the main Night2400 candidate, not a divisibility-lifted or total proof. It covers first-pivot exponents `2,4,10,12` of `q = 606492758240679674698864343145363724798136175178043`. The compatible first domain is the nine even exponents `2..18`. The previously sealed main candidate covers `8,14,16,18`, so the union still leaves only `6` open. The 9 even values `20..36` exceed the exact-state base bound. Odd values are inadmissible since `q ≡ 3 (mod 4)`. The monotone size tail begins at `37`.
+The [complete tree](JointTree19x238.json.gz) covers all nine live first-pivot
+values. SHA-256 `cf38a926adfcfdf75674b4e8c524d89cf8d6661da908893ff9df9bbbe475fd2d`.
+The frozen hybrid verifier and independent branch audit checked 10,385
+forests, 354 splits, 11,062 direct contradictions and one stock joint-price
+leaf (first value 18), with zero unresolved branches. See the [whole-key cold
+receipt](../Receipts/Review19x238Complete.md).
+
+```text
+python -I -S -B -X int_max_str_digits=0 Research/FinalSprint/JointTree.py Research/Night2400/F2/JointTree19x238.json.gz
+```
+
+## Historical conditional packet
+
+The earlier packet was an addition to the original Night2400 candidate, not a divisibility-lifted or total proof. It covers first-pivot exponents `2,4,10,12` of `q = 606492758240679674698864343145363724798136175178043`. The compatible first domain is the nine even exponents `2..18`. The previously sealed main candidate covers `8,14,16,18`, so the union still leaves only `6` open. The 9 even values `20..36` exceed the exact-state base bound. Odd values are inadmissible since `q ≡ 3 (mod 4)`. The monotone size tail begins at `37`.
 
 - Packet: [Fibers19x238.json.gz](Fibers19x238.json.gz)
 - SHA-256: `28f84ea1c75a5116e318cceba2720d231121157303ddc78bd64b02029b200a45`
