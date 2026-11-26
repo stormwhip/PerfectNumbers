@@ -18,7 +18,9 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 * `(7,12)`, `P7_I00005`: 68 of 83 live first-pivot values excluded; **15** remain at the recorded cold snapshot. [Packet and checker](A/README.md), [cold receipt](Receipts/Review7x12Expanded.md).
 * `(19,82)`, `P19_I00021`: 2, 4, 8 and 10 excluded; first-pivot value **6** still has 84 of 128 support masks open. [Packet and checker](C4/README.md), [cold receipt](Receipts/Review19x82.md).
 * `(3,12)`, `P3_I00007`: new first-pivot exclusion **2** at 797161, leaving **1,66,96** after the inherited 96. [Baseline replay](B/BaselineReplay.md), [packet](B/Fiber2.json.gz), [non-author cold receipt](Receipts/Review3x12V2.md).
-* `(13,372)`, `P13_I00073`: two disjoint cold-replayed packages cover **23 of 25** live pivot fibers; **2,12** remain. [18-fiber packet](Fibers13x372.json.gz), [receipt](Receipts/Review13x372.md); [five-fiber packet and proof](C5/README.md), [receipt](Receipts/Review13x372C5.md).
+* `(13,372)`, `P13_I00073`: independent replay covers **24 of 25** live pivot fibers; only **12** remains. [18-fiber receipt](Receipts/Review13x372.md), [five-fiber receipt](Receipts/Review13x372C5.md), [full eight-mask coverage of pivot value 2](Receipts/Review13x372V2.md).
+* `(7,430)`, `P7_I00082`: first-pivot values 14 and 16 excluded; 2–12 even remain. [Proof and checker](C3/README.md), [cold receipt](Receipts/Review7x430.md).
+* `(19,238)`, `P19_I00050`: first-pivot values 8, 14, 16 and 18 excluded at the recorded cold snapshot. [Packet](Fibers19x238.json.gz), [cold receipt](Receipts/Review19x238.md).
 
 These do not enter the full-key ledger. [Mainline regression receipt](Receipts/Mainline.md) lists independent scope and does not claim a full-history cold replay. Independent receipts for [(19,316)](Receipts/Review19x316.md), [(19,162)](Receipts/Review19x162.md) and [(19,420)](Receipts/Review19x420.md) include the endpoint audits.
 
