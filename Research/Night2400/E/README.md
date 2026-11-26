@@ -1,4 +1,4 @@
-# P7_I00031 / (7,130): conditional exact-pivot exclusion
+# P7_I00031 / (7,130): complete exact-pivot exclusion
 
 Base commit: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. Scope: odd perfect
 numbers `N ≤ 10^2400` in canonical root 7 and `7^130 || N`. No lift from
@@ -59,7 +59,33 @@ python -B -I -S Research/Night2400/E/Verify130.py Research/Night2400/E/Condition
 python -B -I -S Research/Night2400/E/Test130.py
 ```
 
-## Latest small-scope packet: six complete first fibers
+## Complete seven-fiber certificate
+
+[Tree7x130.json.gz](Tree7x130.json.gz), SHA-256
+`73b84393b60962ccde065b46f30abaf2be5394862956c51537bb694bd9510ea6`, excludes
+all seven fibers. It has 61 splits, 769 forest leaves, 9 joint price leaves,
+1,407 ECPP chains, and **no open paths**. The `f=4` tree has 536 exclusion
+leaves; the `f=6` tree has 237. The other five fibers each have one leaf.
+The second-level domains are:
+
+| Outer `f` | Second pivot | Remaining second-pivot valuations | Monotone size tail |
+|---:|:---|:---|:---|
+| 4 | `7481175918118854604306003061` | `1,2,4,5,6,8,9,10,12,13,14,16,18,20,21,22,24,25` | `≥52`, floor 2410 |
+| 6 | `106258661887872521572511` | `2,4,6,8,10,12,14,16,18,20` | `≥44`, floor 2418 |
+
+Both second pivots are forced to valuation at least one. All other
+siblings before those tails are rejected by parity, forbidden emissions,
+or a direct exact-state bound. Every deeper split is reconstructed by the
+same partition and reported in the machine-readable `splits` receipt.
+It is a complete proof for `(7,130)`, the sole residual actual exponent
+for `P7_I00031` in the pinned base; the ledger was not modified here.
+
+```powershell
+python -B -I -S Research/Night2400/E/Verify130.py Research/Night2400/E/Tree7x130.json.gz
+python -B -I -S Research/Night2400/E/Test130.py --full
+```
+
+## Small-scope fallback: six complete first fibers
 
 [Conditional7x130Fibers1268910.json.gz](Conditional7x130Fibers1268910.json.gz),
 SHA-256 `a9963da2b06a9ac462306ac449843be0826f28b76a13ffb609dac18154c1ddd8`,
