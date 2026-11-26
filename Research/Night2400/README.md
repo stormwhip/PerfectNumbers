@@ -43,7 +43,7 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 * `(7,882)`, `P7_I00152`: 64 of 70 first-pivot values excluded; **1,2,4,8,12,72** remain. One projected support mask and 21 other masks excluded in full. [Proof](G7/Readme.md), [cold receipt](Receipts/Review7x882.md).
 * `(11,12)`, `P11_I00004`: first-pivot values 4 and 5 excluded across all 32 canonical masks; values 1, 2 and 8 have additional scoped exclusions. [Proof](C9/README.md), [cold receipt](Receipts/Review11x12.md).
 * `(11,358)`, `P11_I00070`: nine complete first-pivot fibers and 213 compatible mask/valuation cells excluded. **91 raw cells** remain under 25 masks. [Proof and checker](G/Readme.md), [cold receipt](Receipts/Review11x358.md).
-* `(13,508)`, `P13_I00096`: 44 of 46 first-pivot values excluded. Value 6 has four open mask cells at one exact child; value 108 has eight open mask cells. [Certificate](G8/Readme.md), [cold receipt](Receipts/Review13x508.md).
+* `(13,508)`, `P13_I00096`: 45 of 46 first-pivot values excluded; only **108** remains, in all eight canonical support masks. [Certificate](G8/Readme.md), [initial receipt](Receipts/Review13x508.md), [complete f6 follow-up receipt](Receipts/Review13x508Resume.md).
 * `(13,310)`, `P13_I00063`: 14 of 22 first-pivot values excluded, eight open. [Proof and checker](C6/README.md), [cold receipt](Receipts/Review13x310.md).
 
 These do not enter the full-key ledger. [Mainline regression receipt](Receipts/Mainline.md) lists independent scope and does not claim a full-history cold replay. Independent receipts for [(19,316)](Receipts/Review19x316.md), [(19,162)](Receipts/Review19x162.md) and [(19,420)](Receipts/Review19x420.md) include the endpoint audits.
