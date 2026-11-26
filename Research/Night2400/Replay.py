@@ -26,6 +26,7 @@ MECHANISMS = {
     (13, 372): ('Verify13x372.py', (), 'merged'),
     (19, 162): ('VerifyFibers.py', ('E2/Fibers19x162Complete.json.gz',), 'fibers'),
     (19, 238): ('../FinalSprint/JointTree.py', ('F2/JointTree19x238.json.gz',), 'joint_tree'),
+    (19, 270): ('../FinalSprint/JointTree.py', ('F3/JointTree19x270.json.gz',), 'joint_tree'),
     (19, 316): ('D/Verify.py', (), 'VERIFIED (19, 316)'),
     (19, 502): ('../Session20261126/TreeCheck.py', ('F/Tree19x502.json.gz',), 'stock_tree'),
 }
