@@ -21,7 +21,7 @@ def vals(t):
         for z in t['cases'].values(): yield from vals(z)
     elif t['type']=='forest':
         yield from t['roots']; yield from (q for q,_ in t['owners'])
-    elif t['type']!='price': raise ValueError(t['type'])
+    elif t['type'] not in ('price','prefix_price','open'): raise ValueError(t['type'])
 
 
 def load(f):
