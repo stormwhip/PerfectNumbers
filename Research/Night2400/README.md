@@ -29,6 +29,7 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 * `(7,430)`, `P7_I00082`: independently confirmed first-pivot values **6,8,10,14,16** excluded; **2,4,12** remain. [Initial receipt](Receipts/Review7x430.md), [masked increment](G5/Readme.md), [cold receipt](Receipts/Review7x430Additional.md).
 * `(7,438)`, `P7_I00084`: eight of twelve first-pivot values excluded; **10,12,18,22** remain. [Initial cold receipt](Receipts/Review7x438.md), [additional exact 2/16 receipt](Receipts/Review7x438Additional.md).
 * `(19,270)`, `P19_I00056`: seven of eleven first-pivot values excluded, **4,10,12,16** remain. [Packet](Fibers19x270.json.gz), [cold receipt](Receipts/Review19x270.md).
+* `(19,280)`, `P19_I00058`: 25 of 29 first-pivot values excluded at the lead snapshot; **2,16,18,22** remain at that snapshot. [Packet](Fibers19x280.json.gz), [cold receipt](Receipts/Review19x280.md).
 * `(19,372)`, `P19_I00072`: ten of 15 first-pivot values excluded; additionally, three support masks exhaust all their remaining exact descendants. [Proof](G4/Readme.md), [cold receipt](Receipts/Review19x372.md).
 * `(19,432)`, `P19_I00082`: 11 complete first-pivot values and six complete projected support masks excluded. [Scoped certificate](G2/Readme.md), [cold receipt](Receipts/Review19x432.md).
 * `(13,262)`, `P13_I00055`: 22 of 29 first-pivot values excluded. [Packet](Fibers13x262.json.gz), [cold receipt](Receipts/Review13x262And31x310.md).
