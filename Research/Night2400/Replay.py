@@ -21,6 +21,7 @@ MECHANISMS = {
     (7, 130): ('E/Verify130.py', ('E/Tree7x130.json.gz',), 'tree'),
     (7, 420): ('VerifyFibers.py', ('E4/Fibers7x420Complete.json.gz',), 'fibers'),
     (7, 490): ('VerifyFibers.py', ('E3/Fibers7x490Complete.json.gz',), 'fibers'),
+    (7, 586): ('VerifyFibers.py', ('E5/Fibers7x586Complete.json.gz',), 'fibers'),
     (13, 372): ('Verify13x372.py', (), 'merged'),
     (19, 162): ('VerifyFibers.py', ('E2/Fibers19x162Complete.json.gz',), 'fibers'),
     (19, 316): ('D/Verify.py', (), 'VERIFIED (19, 316)'),
