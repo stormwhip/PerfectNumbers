@@ -17,6 +17,7 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 * `(7,12)`, `P7_I00005`: 68 of 83 live first-pivot values excluded; **15** remain at the recorded cold snapshot. [Packet and checker](A/README.md), [cold receipt](Receipts/Review7x12Expanded.md).
 * `(19,502)`, `P19_I00094`: 14 of 17 first-pivot values excluded; **2,4,16** remain. [Packet and checker](F/README.md), [cold receipt](Receipts/Review19x502.md).
 * `(19,82)`, `P19_I00021`: 2, 4, 8 and 10 excluded; first-pivot value **6** still has 84 of 128 support masks open. [Packet and checker](C4/README.md), [cold receipt](Receipts/Review19x82.md).
+* `(3,12)`, `P3_I00007`: new first-pivot exclusion **2** at 797161, leaving **1,66,96** after the inherited 96. [Baseline replay](B/BaselineReplay.md), [packet](B/Fiber2.json.gz), [non-author cold receipt](Receipts/Review3x12V2.md).
 
 These do not enter the full-key ledger. [Mainline regression receipt](Receipts/Mainline.md) lists independent scope and does not claim a full-history cold replay. Independent receipts for [(19,316)](Receipts/Review19x316.md), [(19,162)](Receipts/Review19x162.md) and [(19,420)](Receipts/Review19x420.md) include the endpoint audits.
 
@@ -31,6 +32,7 @@ python -I -S -B -X int_max_str_digits=0 Research/Night2400/VerifyFibers.py Resea
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/C/Verify.py
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/C2/Verify.py
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/C4/Verify.py
+python -I -S -B -X int_max_str_digits=0 Research/Night2400/B/DomainAudit.py Research/Night2400/B/Fiber2.json.gz
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/A/Verify.py
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/E/Verify130.py Research/Night2400/E/Tree7x130.json.gz
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/VerifyFibers.py Research/Night2400/F/P19I00094x502.json.gz
