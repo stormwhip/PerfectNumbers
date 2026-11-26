@@ -1,10 +1,10 @@
 # P19_I00050 — exact key (19,238)
 
-This packet is an addition to the main Night2400 candidate, not a divisibility-lifted or total proof. It covers first-pivot exponents `10,12` of `q = 606492758240679674698864343145363724798136175178043`. The compatible first domain is the nine even exponents `2..18`. The previously sealed main candidate covers `8,14,16,18`, so the union still leaves `2,4,6` open. The 9 even values `20..36` exceed the exact-state base bound. Odd values are inadmissible since `q ≡ 3 (mod 4)`. The monotone size tail begins at `37`.
+This packet is an addition to the main Night2400 candidate, not a divisibility-lifted or total proof. It covers first-pivot exponents `4,10,12` of `q = 606492758240679674698864343145363724798136175178043`. The compatible first domain is the nine even exponents `2..18`. The previously sealed main candidate covers `8,14,16,18`, so the union still leaves `2,6` open. The 9 even values `20..36` exceed the exact-state base bound. Odd values are inadmissible since `q ≡ 3 (mod 4)`. The monotone size tail begins at `37`.
 
 - Packet: [Fibers19x238.json.gz](Fibers19x238.json.gz)
-- SHA-256: `932d32a214b99f93fcb776d8b32312ea67b36ae9a1e60c5f985871e8a0bc6e2f`
-- Independent receipt: `counts_forest_split_direct_price = [805,38,1020,0]`.
+- SHA-256: `b6eccf864b4209dfd8e938758cf7575775b45bc5f2ab4e0f00baf46332092bb7`
+- Independent receipt: `counts_forest_split_direct_price = [1279,52,1514,0]`.
 
 ```text
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/VerifyFibers.py Research/Night2400/F2/Fibers19x238.json.gz
