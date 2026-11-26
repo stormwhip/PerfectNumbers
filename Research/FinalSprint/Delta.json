@@ -1,11 +1,15 @@
 {
  "baseline": "2b53c830dd903b460a315df04fa3a4a410fb8357",
  "total": 3072,
- "closed": 2985,
- "open": 87,
- "open_actuals": 97,
- "singleton_shards": 79,
+ "closed": 2988,
+ "open": 84,
+ "open_actuals": 94,
+ "singleton_shards": 76,
  "new_actuals": [
+  [
+   3,
+   970
+  ],
   [
    3,
    990
@@ -28,11 +32,19 @@
   ],
   [
    11,
+   10
+  ],
+  [
+   11,
    42
   ],
   [
    11,
    108
+  ],
+  [
+   19,
+   268
   ],
   [
    19,
@@ -60,19 +72,33 @@
   ]
  ],
  "new_shards": [
+  "P19_I00055",
   "P19_I00068",
   "P19_I00069",
   "P19_I00085",
   "P19_I00090",
   "P7_I00014",
   "P7_I00019",
+  "P11_I00003",
   "P11_I00012",
   "P11_I00027",
   "P31_I00068",
   "P31_I00075",
+  "P3_I00165",
   "P3_I00168"
  ],
  "proofs": [
+  {
+   "actual": [
+    19,
+    268
+   ],
+   "packet": "Tree19x268.json.gz",
+   "sha256": "fca39af490f555cda3e46171a74dac14ebb951b41dc4ed85c9999b183822421a",
+   "forest_leaves": 3283,
+   "split_nodes": 188,
+   "direct_cases": 3569
+  },
   {
    "actual": [
     19,
@@ -171,6 +197,84 @@
    "forest_leaves": 454,
    "split_nodes": 16,
    "direct_cases": 469
+  },
+  {
+   "actual": [
+    11,
+    10
+   ],
+   "packet": "JointTree11x10.json.gz",
+   "sha256": "fb84b5fa0dd23c10f16d522e390887340d539e67d2e84a1141eee91d225e7fb6",
+   "forest_leaves": 5109,
+   "split_nodes": 366,
+   "direct_cases": 5663,
+   "price_leaves": 2,
+   "prices": [
+    [
+     [
+      [
+       11,
+       10
+      ],
+      [
+       1806113,
+       72
+      ],
+      [
+       8677042788454321,
+       16
+      ],
+      [
+       15797,
+       1
+      ],
+      [
+       2633,
+       108
+      ]
+     ],
+     [
+      0,
+      [
+       0,
+       0,
+       0
+      ]
+     ]
+    ],
+    [
+     [
+      [
+       11,
+       10
+      ],
+      [
+       1806113,
+       72
+      ],
+      [
+       8677042788454321,
+       22
+      ],
+      [
+       15797,
+       1
+      ],
+      [
+       2633,
+       108
+      ]
+     ],
+     [
+      0,
+      [
+       0,
+       0,
+       0
+      ]
+     ]
+    ]
+   ]
   },
   {
    "actual": [
@@ -349,6 +453,16 @@
    "range_candidates": 208105567,
    "external_exponents": 64,
    "internal_exponents": 98
+  },
+  {
+   "actual": [
+    3,
+    970
+   ],
+   "packet": "Root3x970-FULL.zip",
+   "sha256": "c7fb0f0f1b9ce799a0b11782a882585c185252a5d59a9a12fa860b743e7760bc",
+   "external_supports": 42,
+   "internal_supports": 42
   }
  ],
  "remaining_shards": [
@@ -523,17 +637,6 @@
    "id": "P19_I00050",
    "remaining_actuals": [
     238
-   ]
-  },
-  {
-   "root": 19,
-   "index": 55,
-   "count": 287,
-   "exponent": 268,
-   "exact": false,
-   "id": "P19_I00055",
-   "remaining_actuals": [
-    268
    ]
   },
   {
@@ -972,17 +1075,6 @@
   },
   {
    "root": 11,
-   "index": 3,
-   "count": 341,
-   "exponent": 10,
-   "exact": false,
-   "id": "P11_I00003",
-   "remaining_actuals": [
-    10
-   ]
-  },
-  {
-   "root": 11,
    "index": 4,
    "count": 341,
    "exponent": 12,
@@ -1310,17 +1402,6 @@
    "id": "P3_I00149",
    "remaining_actuals": [
     856
-   ]
-  },
-  {
-   "root": 3,
-   "index": 165,
-   "count": 676,
-   "exponent": 970,
-   "exact": false,
-   "id": "P3_I00165",
-   "remaining_actuals": [
-    970
    ]
   }
  ]

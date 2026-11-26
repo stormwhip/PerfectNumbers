@@ -24,6 +24,10 @@ The [7,90 certificate](Tree7x90.json.gz) likewise excludes that exact exponent b
 
 The [19,478 packet](Tree19x478.json.gz) exhausts 795 forest leaves, 36 splits and 838 direct contradictions using the exact-tree theorem. Thus `P19_I00090` closes. For [19,448](Tree19x448.json.gz) the identical theorem has 3,026 forest leaves, 222 splits and 3,312 direct contradictions; `P19_I00085` closes. Partial results at root three's *low* exponents are [accounted separately](LowBranches/README.md).
 
+**Final high-root-three theorem.** At 970 the positive-five domain and the entire internal-source side are excluded by the [first-stage argument](Proof970.md). The [final two external cases](Full970.md) raise this to a complete proof: all 6,475 and 6,811 source atoms are covered, respectively, and both directed bounds are strict (floors 2444 and 2401). See the [full archive](Root3x970-FULL.zip) and [replay entry point](Root970.py). This replaces—not adds to—the earlier conditional claim. `P3_I00165` closes.
+
+The [11,10 packet](JointTree11x10.json.gz) has 5,109 forest leaves, 366 splits, 5,663 direct contradictions and two fixed-Euler price leaves. The [19,268 packet](Tree19x268.json.gz) has 3,283 forest leaves, 188 splits and 3,569 direct contradictions. The same complete-domain arguments above apply, closing `P11_I00003` and `P19_I00055`. See the [end-of-sprint exact table](Report.md) and [new support theorems](Support/README.md).
+
 **Coverage.** The $(7,168)$ packet shortens `P7_I00005`; it does not alone close it. The [current projection](Delta.json) gives every open shard ID with all its remaining exponents. The [verifier](Verify.py) rebuilds that projection after rechecking the new arithmetic. Historical certificates and their ledgers are unchanged. From the repository root:
 
 ```

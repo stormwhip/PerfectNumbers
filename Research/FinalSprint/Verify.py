@@ -44,6 +44,10 @@ def project():
         from RootThree import verify990
         receipt=verify990(); assert tuple(receipt['actual'])==(3,990) and (3,990) in live-hits
         hits.add((3,990));proofs.append(receipt)
+    if (HERE/'Root3x970-FULL.zip').is_file():
+        from Root970 import verify as verify970
+        receipt=verify970();assert tuple(receipt['actual'])==(3,970) and (3,970) in live-hits
+        hits.add((3,970));proofs.append(receipt)
     remaining = []; closed = []
     for s in rows:
         left = [e for e in s['remaining_actuals'] if (s['root'], e) not in hits]
