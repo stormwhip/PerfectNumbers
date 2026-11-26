@@ -5,9 +5,9 @@ import sys
 
 H=Path(__file__).resolve().parent
 sys.path[:0]=[str(H),str(H/'C5')]
-from VerifyFibers import verify
 from Verify import KEY, Q, MASKS, verify_all
 from Masked13x372 import replay as masks
+from VerifyFibers import verify
 from FrontierTree import replay as deep
 
 
