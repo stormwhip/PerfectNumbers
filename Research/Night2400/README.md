@@ -31,6 +31,8 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 * `(19,270)`, `P19_I00056`: seven of eleven first-pivot values excluded, **4,10,12,16** remain. [Packet](Fibers19x270.json.gz), [cold receipt](Receipts/Review19x270.md).
 * `(19,372)`, `P19_I00072`: ten of 15 first-pivot values excluded; additionally, three support masks exhaust all their remaining exact descendants. [Proof](G4/Readme.md), [cold receipt](Receipts/Review19x372.md).
 * `(19,432)`, `P19_I00082`: 11 complete first-pivot values and six complete projected support masks excluded. [Scoped certificate](G2/Readme.md), [cold receipt](Receipts/Review19x432.md).
+* `(13,262)`, `P13_I00055`: 22 of 29 first-pivot values excluded. [Packet](Fibers13x262.json.gz), [cold receipt](Receipts/Review13x262And31x310.md).
+* `(31,310)`, `P31_I00062`: 21 of 26 first-pivot values excluded at the lead snapshot. [Packet](Fibers31x310.json.gz), [cold receipt](Receipts/Review13x262And31x310.md).
 * `(31,352)`, `P31_I00069`: 17 of 31 first-pivot values excluded, including value 2 under all 16 masks and seven values by the LCM supply refinement. [Scoped certificate](C8/README.md), [cold receipt](Receipts/Review31x352.md).
 * `(11,12)`, `P11_I00004`: first-pivot values 4 and 5 excluded across all 32 canonical masks; values 1, 2 and 8 have additional scoped exclusions. [Proof](C9/README.md), [cold receipt](Receipts/Review11x12.md).
 * `(11,358)`, `P11_I00070`: nine complete first-pivot fibers and 213 compatible mask/valuation cells excluded. **91 raw cells** remain under 25 masks. [Proof and checker](G/Readme.md), [cold receipt](Receipts/Review11x358.md).
