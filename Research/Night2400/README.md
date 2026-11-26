@@ -1,11 +1,12 @@
 # Overnight exact-exponent overlay (2026-11-26/27, UTC+08)
 
-Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research branch, the frozen 2,990/3,072 closures increase to **2,992/3,072**; **80** shards and **90** distinct exact keys remain. The global lower bound is **not** established. [Ledger increment](Delta.json), [key → shards](KeyToShards.json), [shard → remainder](ShardToKeys.json).
+Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research branch, the frozen 2,990/3,072 closures increase to **2,993/3,072**; **79** shards and **89** distinct exact keys remain. The global lower bound is **not** established. [Ledger increment](Delta.json), [key → shards](KeyToShards.json), [shard → remainder](ShardToKeys.json).
 
 ## Complete key after non-author cold replay
 
 * `(19,316)` / `P19_I00064`: [argument and certificate](D/README.md). Replays both exact forest recurrences, checks all 128 support masks with 19 present, and excludes the full pivot tail from 50. This closes the shard because `[316]` was its entire frozen remainder. The 21 additional support cases are not counted as 21 shards. Candidate `700d089093a20dca10d30eab5a97bc7aa4a22523`; cold arithmetic 230.913 s.
 * `(7,28)` / `P7_I00009`: [argument and certificate](D2/Readme.md), [cold receipt](Receipts/Review7x28.md). All 64 support masks consistent with canonical root 7 were replayed: 13 old forests, 27 new forests, 24 strict abundancy contradictions, with no unresolved exponent tails. The frozen remainder was `[28]`. Candidate `2fcb9397f1410e8fac959fcb0f90fece8770d527`; cold arithmetic 230.074 s.
+* `(7,130)` / `P7_I00031`: [exact tree and proof](E/README.md), [cold receipt](Receipts/Review7x130Complete.md). All seven live first-pivot values closed: 61 splits including the root, 769 forests, nine price leaves and zero open paths. The frozen remainder was `[130]`. Candidate `8ebfc3058ac351c68c9bcbee5191fe9c37bb303a`; clean replay 47.040 s.
 
 ## Separate conditional results
 
@@ -13,8 +14,9 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 * `(19,420)`, `P19_I00080`: first-pivot values 8, 10 and 12 excluded; **2,4,6** remain. [Proof and checker](C/README.md); cold candidate `1f20e3d284b8c8a329f6412c35a58b711b9829ef`, 124.720 s.
 * `(19,330)`, `P19_I00065`: first-pivot values 8, 10 and 12 excluded; **2,4,6** remain. [Proof and checker](C2/README.md), [cold receipt](Receipts/Review19x330.md).
 
-* `(7,12)`, `P7_I00005`: 51 of 83 live first-pivot values excluded; **32** remain. [Packet and checker](A/README.md), [cold receipt](Receipts/Review7x12.md).
-* `(7,130)`, `P7_I00031`: first-pivot values 1, 2, 8, 9 and 10 excluded; **4,6** remain, with 22 independently audited open descendant paths under each. [Packets and checker](E/README.md), [five-fiber cold receipt](Receipts/Review7x130.md), [refined cold receipt](Receipts/Review7x130Refined.md).
+* `(7,12)`, `P7_I00005`: 68 of 83 live first-pivot values excluded; **15** remain at the recorded cold snapshot. [Packet and checker](A/README.md), [cold receipt](Receipts/Review7x12Expanded.md).
+* `(19,502)`, `P19_I00094`: 14 of 17 first-pivot values excluded; **2,4,16** remain. [Packet and checker](F/README.md), [cold receipt](Receipts/Review19x502.md).
+* `(19,82)`, `P19_I00021`: 2, 4, 8 and 10 excluded; first-pivot value **6** still has 84 of 128 support masks open. [Packet and checker](C4/README.md), [cold receipt](Receipts/Review19x82.md).
 
 These do not enter the full-key ledger. [Mainline regression receipt](Receipts/Mainline.md) lists independent scope and does not claim a full-history cold replay. Independent receipts for [(19,316)](Receipts/Review19x316.md), [(19,162)](Receipts/Review19x162.md) and [(19,420)](Receipts/Review19x420.md) include the endpoint audits.
 
@@ -28,8 +30,10 @@ python -I -S -B -X int_max_str_digits=0 Research/Night2400/D2/Verify.py
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/VerifyFibers.py Research/Night2400/Fibers19x162.json.gz
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/C/Verify.py
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/C2/Verify.py
+python -I -S -B -X int_max_str_digits=0 Research/Night2400/C4/Verify.py
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/A/Verify.py
-python -I -S -B -X int_max_str_digits=0 Research/Night2400/E/Verify130.py Research/Night2400/E/Conditional7x130Fibers128910.json.gz
+python -I -S -B -X int_max_str_digits=0 Research/Night2400/E/Verify130.py Research/Night2400/E/Tree7x130.json.gz
+python -I -S -B -X int_max_str_digits=0 Research/Night2400/VerifyFibers.py Research/Night2400/F/P19I00094x502.json.gz
 python -I -S -B Research/Night2400/Project.py Research/FinalSprint/Delta.json --verified Research/Night2400/VerifiedKeys.json --out Build/Night2400/Reproject
 ```
 
