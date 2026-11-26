@@ -52,11 +52,12 @@ def main():
     for q in labels:
         if q<2**64 and not C.pc.prime64(q):raise ValueError(f'nonprime small label {q}')
     labels=sorted(q for q in labels if q>=2**64)
+    label_ids={str(q) for q in labels}
     book=load(R/'OrderSupplyNext/OrderPrimeProofs.json.gz')
     for d in (R/'Session20261126',R/'FinalSprint'):
         for f in (*d.glob('Tree*.json.gz'),*d.glob('JointTree*.json.gz')):
             for q,rows in load(f)['ecpp'].items():
-                if q in {str(z) for z in labels}:book.setdefault(q,rows)
+                if q in label_ids:book.setdefault(q,rows)
     a.cache.mkdir(parents=True,exist_ok=True)
     cmd=(['wsl','-d',a.wsl,'--'] if a.wsl else [])+[a.gp,'-fq']
 
@@ -71,9 +72,13 @@ def main():
                 if f.is_file():
                     rows=load(f)
                     if valid(q,rows):return str(q),rows
-        data=f'default(parisizemax,1000000000); default(nbthreads,1); print(primecert({q}));\n'
-        out=subprocess.run(cmd,input=data,text=True,encoding='utf-8',errors='replace',capture_output=True,timeout=a.timeout,check=True)
-        rows=json.loads(out.stdout)
+        data=f'default(parisizemax,1000000000); default(nbthreads,1);\nprint(primecert({q}));\n'
+        out=subprocess.run(cmd,input=data.encode('ascii'),capture_output=True,timeout=a.timeout,check=True)
+        try:
+            rows=json.loads(out.stdout)
+        except ValueError as ex:
+            detail=out.stderr.replace(b'\0',b'').decode('utf-8','replace').strip()
+            raise ValueError(f'PARI did not export a certificate for {q}: {detail[-900:]}') from ex
         if not valid(q,rows):raise ValueError(f'could not certify {q}')
         (a.cache/(h+'.json')).write_text(json.dumps(rows,separators=(',',':')),encoding='utf-8')
         return str(q),rows
