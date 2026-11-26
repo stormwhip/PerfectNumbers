@@ -1,18 +1,50 @@
 {
  "baseline": "2b53c830dd903b460a315df04fa3a4a410fb8357",
  "total": 3072,
- "closed": 2974,
- "open": 98,
- "open_actuals": 109,
- "singleton_shards": 89,
+ "closed": 2978,
+ "open": 94,
+ "open_actuals": 105,
+ "singleton_shards": 85,
  "new_actuals": [
   [
    7,
+   70
+  ],
+  [
+   7,
    168
+  ],
+  [
+   11,
+   108
+  ],
+  [
+   19,
+   352
+  ],
+  [
+   31,
+   388
   ]
  ],
- "new_shards": [],
+ "new_shards": [
+  "P19_I00069",
+  "P7_I00019",
+  "P11_I00027",
+  "P31_I00075"
+ ],
  "proofs": [
+  {
+   "actual": [
+    19,
+    352
+   ],
+   "packet": "Tree19x352.json.gz",
+   "sha256": "949a15b2f4d95b3fbd0ccda3dc7e2fcb50e87c9eb44a7a1823d147b8c20f6a25",
+   "forest_leaves": 282,
+   "split_nodes": 13,
+   "direct_cases": 297
+  },
   {
    "actual": [
     7,
@@ -23,6 +55,89 @@
    "forest_leaves": 6,
    "split_nodes": 1,
    "direct_cases": 7
+  },
+  {
+   "actual": [
+    7,
+    70
+   ],
+   "packet": "Tree7x70.json.gz",
+   "sha256": "09e9b870ac968a512e6a5a1a82786014268ab404cdc7f48c7a5b4d278920abfe",
+   "forest_leaves": 568,
+   "split_nodes": 40,
+   "direct_cases": 618
+  },
+  {
+   "actual": [
+    11,
+    108
+   ],
+   "packet": "JointTree11x108.json.gz",
+   "sha256": "f2a3035aa98110d818edd735c0e0ead7441916d5ede41cc68b1fb4c7f4672875",
+   "forest_leaves": 1162,
+   "split_nodes": 54,
+   "direct_cases": 1294,
+   "price_leaves": 1,
+   "prices": [
+    [
+     [
+      [
+       11,
+       108
+      ],
+      [
+       903344592651066639838492820709976987862568330541660232234109502106802059231851745003701,
+       6
+      ],
+      [
+       35970728459102446279558069,
+       16
+      ]
+     ],
+     [
+      1,
+      [
+       5978,
+       4114,
+       372
+      ]
+     ]
+    ]
+   ]
+  },
+  {
+   "actual": [
+    31,
+    388
+   ],
+   "packet": "JointTree31x388.json.gz",
+   "sha256": "22dc9002106a5d57298a37af581d0832882fafb23293610840bf6e5dadec640b",
+   "forest_leaves": 7,
+   "split_nodes": 1,
+   "direct_cases": 8,
+   "price_leaves": 1,
+   "prices": [
+    [
+     [
+      [
+       31,
+       388
+      ],
+      [
+       29941246365965400246754591,
+       18
+      ]
+     ],
+     [
+      17,
+      [
+       5138,
+       1864,
+       0
+      ]
+     ]
+    ]
+   ]
   }
  ],
  "remaining_shards": [
@@ -311,17 +426,6 @@
   },
   {
    "root": 19,
-   "index": 69,
-   "count": 287,
-   "exponent": 352,
-   "exact": false,
-   "id": "P19_I00069",
-   "remaining_actuals": [
-    352
-   ]
-  },
-  {
-   "root": 19,
    "index": 70,
    "count": 287,
    "exponent": 358,
@@ -511,17 +615,6 @@
    "id": "P7_I00014",
    "remaining_actuals": [
     46
-   ]
-  },
-  {
-   "root": 7,
-   "index": 19,
-   "count": 412,
-   "exponent": 70,
-   "exact": false,
-   "id": "P7_I00019",
-   "remaining_actuals": [
-    70
    ]
   },
   {
@@ -769,17 +862,6 @@
   },
   {
    "root": 11,
-   "index": 27,
-   "count": 341,
-   "exponent": 108,
-   "exact": false,
-   "id": "P11_I00027",
-   "remaining_actuals": [
-    108
-   ]
-  },
-  {
-   "root": 11,
    "index": 70,
    "count": 341,
    "exponent": 358,
@@ -908,17 +990,6 @@
    "id": "P31_I00069",
    "remaining_actuals": [
     352
-   ]
-  },
-  {
-   "root": 31,
-   "index": 75,
-   "count": 253,
-   "exponent": 388,
-   "exact": false,
-   "id": "P31_I00075",
-   "remaining_actuals": [
-    388
    ]
   },
   {

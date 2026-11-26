@@ -4,11 +4,11 @@ Run with -I -S -B; does not replay the inherited proofs. No third-party imports.
 from hashlib import sha256
 from pathlib import Path
 import argparse, json, sys
-from collections import Counter
+
 
 HERE = Path(__file__).resolve().parent
 OLD = HERE.parent / 'Session20261126'
-sys.path.insert(0, str(OLD))
+sys.path[:0] = [str(HERE), str(OLD)]
 import TreeCheck
 
 
@@ -32,6 +32,14 @@ def project():
         hits.add((p, e))  # exact only: no lifting to a multiple of e+1
         proofs.append(dict(actual=[p, e], packet=path.name, sha256=sha256(path.read_bytes()).hexdigest(),
                            forest_leaves=stats[0], split_nodes=stats[1], direct_cases=stats[2]))
+    from JointTree import verify as joint_verify
+    for path in sorted(HERE.glob('JointTree*.json.gz')):
+        p, e, stats, prices = joint_verify(path)
+        assert (p, e) in live - hits and path.name == f'JointTree{p}x{e}.json.gz'
+        hits.add((p, e))
+        proofs.append(dict(actual=[p,e], packet=path.name, sha256=sha256(path.read_bytes()).hexdigest(),
+                           forest_leaves=stats[0], split_nodes=stats[1], direct_cases=stats[2],
+                           price_leaves=stats[3], prices=json.loads(json.dumps(prices))))
     remaining = []; closed = []
     for s in rows:
         left = [e for e in s['remaining_actuals'] if (s['root'], e) not in hits]

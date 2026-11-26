@@ -1,6 +1,6 @@
 # 下一步计划
 
-晚间以[最新逐片账本](../Research/FinalSprint/Delta.json)派工；勿重复 $(7,168)$，`P7_I00005` 尚需指数 12、90。优先检查单缺叶，并将每个候选的完整尾段纳入独立算术复验。
+晚间以[最新逐片账本](../Research/FinalSprint/Delta.json)派工；勿重复 $(7,168)$，`P7_I00005` 尚需指数 12、90。单缺叶优先用[多目标同时赋值定价](../Research/FinalSprint/JointValuation.md)，再重建全树；即使赋值叶过线，也不要跳过同枢轴的其它指数及其完整尾段。
 
 以下为晚间前的计划。以[更新后的待证账本](../Research/Session20261126/Delta.json)中的 98 个规范分片、110 个不同实际指数为任务全集。单指数任务从 `remaining_shards` 中筛选 `len(remaining_actuals)==1`；不要从历史示例重新创建已结任务。
 
