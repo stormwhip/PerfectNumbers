@@ -40,10 +40,10 @@ The decisive change was the complete factorization of `σ(Q^4)`:
 × 255153692787972397812167227080247511906799034201829146831207531709920886827180456213124673685864777790858521
 ```
 
-A bounded [ECM run](ecm-f4.sh) extracted the 68-bit prime of the unresolved 425-bit cofactor; the other factor has 357 bits. Its two prime certificates are stored in [ECMF4.json](ECMF4.json) as discovery inputs and are included in the sealed packet. The extra two forced roots and witness-based forest refinement closed all `f=4` subcases; separate witness refinement closed the four `f=2` forest cases. No joint valuation pricing was needed. With the same fixed worktree and optional discovery DB:
+A bounded [ECM run](EcmF4.sh) extracted the 68-bit prime of the unresolved 425-bit cofactor; the other factor has 357 bits. Its two prime certificates are stored in [ECMF4.json](ECMF4.json) as discovery inputs and are included in the sealed packet. The extra two forced roots and witness-based forest refinement closed all `f=4` subcases; separate witness refinement closed the four `f=2` forest cases. No joint valuation pricing was needed. With the same fixed worktree and optional discovery DB:
 
 ```powershell
-wsl --exec sh /mnt/e/PerfectNumbers-Night2400-d/Research/Night2400/D/ecm-f4.sh
+wsl --exec sh /mnt/e/PerfectNumbers/Research/Night2400/D/EcmF4.sh
 $env:PYTHONPATH='E:/PerfectNumbers/Build/Night2400/Python'
 python -B Research/Night2400/D/Search.py --index E:/PerfectNumbers/Build/Night2400/FactorData --mask 77 79 205 207 69 71 197 199 85 87 93 95 213 215 221 223 --rounds 25 --smooth 24
 python -B Research/Night2400/D/Search.py --index E:/PerfectNumbers/Build/Night2400/FactorData --mask 35 43 51 163 --rounds 20 --smooth 26
