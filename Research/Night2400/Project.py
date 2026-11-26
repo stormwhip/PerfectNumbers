@@ -1,8 +1,12 @@
 """Project distinct independently verified exact keys onto the frozen open frontier."""
 import argparse
 from collections import Counter, defaultdict
+from hashlib import sha256
 import json
 from pathlib import Path
+
+BASELINE_SHA = '49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec'
+LEDGER_SHA256 = 'ba1775dc1848c11b06395247d9d09a3c121f126514d552ea9dd3582bc1cd40dc'
 
 
 def encode(mapping):
@@ -15,7 +19,12 @@ def main():
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--verified', type=Path, help='JSON array of [root, exponent] pairs, after independent acceptance')
     args = parser.parse_args()
-    base = json.loads(args.baseline.read_text(encoding='utf-8'))
+    if not __debug__:
+        raise RuntimeError('assertions required')
+    raw = args.baseline.read_bytes().replace(b'\r\n', b'\n')
+    if sha256(raw).hexdigest() != LEDGER_SHA256:
+        raise ValueError('input is not the frozen FinalSprint ledger')
+    base = json.loads(raw)
     before, after = {}, {}
     keys = defaultdict(list)
     for row in base['remaining_shards']:
@@ -41,7 +50,15 @@ def main():
     args.out.mkdir(parents=True, exist_ok=True)
     args.out.joinpath('KeyToShards.json').write_text(encode({f'{p},{e}': [s for s in rows if s in after] for (p,e),rows in sorted(keys.items()) if (p,e) not in verified}), encoding='utf-8')
     args.out.joinpath('ShardToKeys.json').write_text(encode(after), encoding='utf-8')
-    summary = dict(closed=base['closed']+len(new_closed), open=len(after), distinct_keys=len(keys)-len(verified), singleton_shards=sum(len(v)==1 for v in after.values()), new_closed=new_closed, new_keys=sorted(verified), open_by_root=dict(roots))
+    assert {key for values in after.values() for key in values} == keys.keys() - verified
+    by_root_keys = Counter({p: 0 for p in roots})
+    by_root_keys.update(p for p,e in keys.keys() - verified)
+    summary = dict(baseline_sha=BASELINE_SHA, baseline_ledger_sha256=LEDGER_SHA256,
+                   total=base['total'], closed=base['closed']+len(new_closed), open=len(after),
+                   distinct_keys=len(keys)-len(verified), singleton_shards=sum(len(v)==1 for v in after.values()),
+                   new_closed=new_closed, new_keys=sorted(verified), open_by_root=dict(roots),
+                   distinct_keys_by_root=dict(by_root_keys))
+    args.out.joinpath('Delta.json').write_text(encode(summary), encoding='utf-8')
     print(encode(summary), end='')
 
 
