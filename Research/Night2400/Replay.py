@@ -23,6 +23,7 @@ MECHANISMS = {
     (7, 490): ('VerifyFibers.py', ('E3/Fibers7x490Complete.json.gz',), 'fibers'),
     (7, 586): ('VerifyFibers.py', ('E5/Fibers7x586Complete.json.gz',), 'fibers'),
     (7, 682): ('VerifyFibers.py', ('E6/Fibers7x682Complete.json.gz',), 'fibers'),
+    (7, 732): ('VerifyFibers.py', ('E7/Fibers7x732Complete.json.gz',), 'fibers'),
     (13, 372): ('Verify13x372.py', (), 'merged'),
     (19, 162): ('VerifyFibers.py', ('E2/Fibers19x162Complete.json.gz',), 'fibers'),
     (19, 238): ('../FinalSprint/JointTree.py', ('F2/JointTree19x238.json.gz',), 'joint_tree'),
