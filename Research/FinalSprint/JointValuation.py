@@ -52,7 +52,7 @@ def less(x, f, limit):
 
 
 def excludes(P, banned, targets=None):
-    assert __debug__ and len(P) in (2,3,4) and all(f > 0 for _,f in P)
+    assert __debug__ and 2 <= len(P) <= 12 and all(f > 0 for _,f in P)
     fixed = dict(P); assert len(fixed) == len(P) and not (set(fixed) & set(banned))
     assert all(not f%2 or p%4 == f%4 == 1 for p,f in P) and sum(f%2 for _,f in P) <= 1
     X = prod(p**f for p,f in P)

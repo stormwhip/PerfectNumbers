@@ -40,6 +40,10 @@ def project():
         proofs.append(dict(actual=[p,e], packet=path.name, sha256=sha256(path.read_bytes()).hexdigest(),
                            forest_leaves=stats[0], split_nodes=stats[1], direct_cases=stats[2],
                            price_leaves=stats[3], prices=json.loads(json.dumps(prices))))
+    if (HERE/'Root3x990.zip').is_file():
+        from RootThree import verify990
+        receipt=verify990(); assert tuple(receipt['actual'])==(3,990) and (3,990) in live-hits
+        hits.add((3,990));proofs.append(receipt)
     remaining = []; closed = []
     for s in rows:
         left = [e for e in s['remaining_actuals'] if (s['root'], e) not in hits]

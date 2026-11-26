@@ -1,11 +1,15 @@
 {
  "baseline": "2b53c830dd903b460a315df04fa3a4a410fb8357",
  "total": 3072,
- "closed": 2982,
- "open": 90,
- "open_actuals": 100,
- "singleton_shards": 82,
+ "closed": 2985,
+ "open": 87,
+ "open_actuals": 97,
+ "singleton_shards": 79,
  "new_actuals": [
+  [
+   3,
+   990
+  ],
   [
    7,
    46
@@ -39,6 +43,14 @@
    352
   ],
   [
+   19,
+   448
+  ],
+  [
+   19,
+   478
+  ],
+  [
    31,
    348
   ],
@@ -50,12 +62,15 @@
  "new_shards": [
   "P19_I00068",
   "P19_I00069",
+  "P19_I00085",
+  "P19_I00090",
   "P7_I00014",
   "P7_I00019",
   "P11_I00012",
   "P11_I00027",
   "P31_I00068",
-  "P31_I00075"
+  "P31_I00075",
+  "P3_I00168"
  ],
  "proofs": [
   {
@@ -79,6 +94,28 @@
    "forest_leaves": 282,
    "split_nodes": 13,
    "direct_cases": 297
+  },
+  {
+   "actual": [
+    19,
+    448
+   ],
+   "packet": "Tree19x448.json.gz",
+   "sha256": "0ece6d1ca8d95f42bcc73f85eb05be847997cb443cdc34455cd5751a61f6c58d",
+   "forest_leaves": 3026,
+   "split_nodes": 222,
+   "direct_cases": 3312
+  },
+  {
+   "actual": [
+    19,
+    478
+   ],
+   "packet": "Tree19x478.json.gz",
+   "sha256": "4a0b6a472940856f3fd677049570ed90be4959f1838f630ae612a9288e738299",
+   "forest_leaves": 795,
+   "split_nodes": 36,
+   "direct_cases": 838
   },
   {
    "actual": [
@@ -300,6 +337,18 @@
      ]
     ]
    ]
+  },
+  {
+   "actual": [
+    3,
+    990
+   ],
+   "packet": "Root3x990.zip",
+   "sha256": "42df59e33c0d82ae6d876034322ce967bba410321c7746b8396b454bc9ac6f71",
+   "range_bound": 9092464640001,
+   "range_candidates": 208105567,
+   "external_exponents": 64,
+   "internal_exponents": 98
   }
  ],
  "remaining_shards": [
@@ -617,28 +666,6 @@
    "id": "P19_I00082",
    "remaining_actuals": [
     432
-   ]
-  },
-  {
-   "root": 19,
-   "index": 85,
-   "count": 287,
-   "exponent": 448,
-   "exact": false,
-   "id": "P19_I00085",
-   "remaining_actuals": [
-    448
-   ]
-  },
-  {
-   "root": 19,
-   "index": 90,
-   "count": 287,
-   "exponent": 478,
-   "exact": false,
-   "id": "P19_I00090",
-   "remaining_actuals": [
-    478
    ]
   },
   {
@@ -1294,17 +1321,6 @@
    "id": "P3_I00165",
    "remaining_actuals": [
     970
-   ]
-  },
-  {
-   "root": 3,
-   "index": 168,
-   "count": 676,
-   "exponent": 990,
-   "exact": false,
-   "id": "P3_I00168",
-   "remaining_actuals": [
-    990
    ]
   }
  ]

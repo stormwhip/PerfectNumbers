@@ -20,6 +20,10 @@ and exact division into \(A\); denote this prime by \(t\). Thus \(t\mid N\). For
 
 The [7,90 certificate](Tree7x90.json.gz) likewise excludes that exact exponent by 454 forest leaves, 16 splits and 469 direct cases. It removes a membership in each of `P7_I00003` and `P7_I00005`; neither closes. The latter now requires only 12.
 
+**Root three at 990.** The [complete proof](Proof990.md) combines the frozen no-five and Euler-location theorems with the newly proved five-present complement. All 64 external-source and 98 internal-source admissible five-exponents cross the strict threshold; the two minimum integer lower bounds are 5,526,917,319 and 5,526,842,626 against 5,526,208,800. The independently compiled native range sieve tested 208,105,567 candidates. The [sealed package](Root3x990.zip) and its [all-domain replay](RootThree.py) include the exact prerequisites; the fresh 162-case replay alone does not establish the frozen no-five complement. `P3_I00168` closes. Full release replay now also needs a C++17 compiler with `unsigned __int128`.
+
+The [19,478 packet](Tree19x478.json.gz) exhausts 795 forest leaves, 36 splits and 838 direct contradictions using the exact-tree theorem. Thus `P19_I00090` closes. For [19,448](Tree19x448.json.gz) the identical theorem has 3,026 forest leaves, 222 splits and 3,312 direct contradictions; `P19_I00085` closes. Partial results at root three's *low* exponents are [accounted separately](LowBranches/README.md).
+
 **Coverage.** The $(7,168)$ packet shortens `P7_I00005`; it does not alone close it. The [current projection](Delta.json) gives every open shard ID with all its remaining exponents. The [verifier](Verify.py) rebuilds that projection after rechecking the new arithmetic. Historical certificates and their ledgers are unchanged. From the repository root:
 
 ```
