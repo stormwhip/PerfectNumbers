@@ -9,7 +9,10 @@ H=Path(__file__).resolve().parent
 sys.path.insert(0,str(H))
 from Verify import C,B,floor10
 
-P=((7,12),(16148168401,1),(110563,2),(226741,2))
+PREFIXES=(
+    ((7,12),(16148168401,1),(110563,2),(226741,2)),
+    ((7,12),(16148168401,2),(200741603328100897,1)),
+)
 U=(3,5,11,13,17,31)
 
 
@@ -58,11 +61,12 @@ def independent(s,roots,owners,head):
 def verify(path):
     assert __debug__
     d=json.loads(gzip.decompress(path.read_bytes()))
-    assert set(d)=={'prefix','masks','ecpp'} and tuple(map(tuple,d['prefix']))==P
+    assert set(d)=={'prefix','masks','ecpp'}
+    P=tuple(map(tuple,d['prefix']));assert P in PREFIXES
     assert C.ORDER[:C.ORDER.index(7)]==(19,)
     assert set(U).isdisjoint(dict(P))
     assert C.sigma(7,12)==P[1][0]
-    assert C.sigma(*P[1])%P[2][0]==C.sigma(*P[2])%P[3][0]==0
+    assert all(C.sigma(*left)%right[0]==0 for left,right in zip(P,P[1:]))
     assert sum(f%2 for q,f in P)==1
     seen=set()
     @cache
@@ -107,6 +111,7 @@ def verify(path):
     assert covered==set(d['masks']) and seen==set(d['ecpp'])
     assert direct==32 and abundance==23 and len(covered)==9
     print('SUPPORT LEAF',P,'direct',direct,'abundance',abundance,'forests',len(covered),'ECPP',len(seen),flush=True)
+    return P
 
 if __name__=='__main__':
     verify(Path(sys.argv[1]) if len(sys.argv)>1 else H/'SupportLeaf12.json.gz')

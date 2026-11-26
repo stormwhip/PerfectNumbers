@@ -121,6 +121,21 @@ def verify(path):
                         assert lower>2
             abundance+=1
             return 2400
+        if node['type']=='exact-packet':
+            assert set(node)=={'type','name'} and not absent and node['name']=='Exact1x2'
+            assert tuple(parts)==(PAIR,(Q,1),(110563,2))
+            assert verify(H/'Exact1x2.json.gz')==tuple(parts)
+            return 2400
+        if node['type']=='support-packet':
+            assert set(node)=={'type','name'} and not absent
+            known={
+                'SupportLeaf12':((7,12),(Q,1),(110563,2),(226741,2)),
+                'SupportLeaf2':((7,12),(Q,2),(200741603328100897,1)),
+            }
+            key=node['name'];assert tuple(parts)==known[key]
+            from SupportLeaf12 import verify as verify_support
+            assert verify_support(H/(key+'.json.gz'))==tuple(parts)
+            return 2400
         if node['type']=='price':
             assert set(node)=={'type'} and len(parts)==2 and parts[0]==PAIR and parts[1][0]==Q and s.bad==BANNED
             enough(parts[1][1])
@@ -140,8 +155,13 @@ def verify(path):
     if 'prefix' in d:
         parts=[tuple(x) for x in d['prefix']]
         assert parts in [
+            [PAIR,(Q,1),(110563,2)],
             [PAIR,(Q,4),(222942691488419051165955167217344876341,18)],
             [PAIR,(Q,4),(222942691488419051165955167217344876341,10),(6818005862120741597,22)],
+            [PAIR,(Q,42),(173,1)],
+            [PAIR,(Q,42),(173,4)],
+            [PAIR,(Q,42),(173,6)],
+            [PAIR,(Q,42),(173,48)],
         ]
         assert parts[:2]==live[str(parts[1][1])]
         for j,(q,f) in enumerate(parts[2:],2):
@@ -150,7 +170,7 @@ def verify(path):
         floor=walk(parts,d['tree'])
         assert used==set(d['ecpp'])
         print('PASS EXACT PREFIX',parts,'floor',floor,'forests',forests,'splits',splits,'direct',direct,'prices',prices,'abundance',abundance,'ECPP',len(used),flush=True)
-        return None
+        return tuple(parts)
     claims=d['cases']
     assert claims and claims.keys()<=live.keys()
     for f in sorted(claims,key=int):
