@@ -10,6 +10,7 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 
 * `(19,162)`, `P19_I00036`: first-pivot values 2 and 6 excluded; **4** remains. [Packet](Fibers19x162.json.gz) and [checker](VerifyFibers.py); cold candidate `ee67b04926df3346cf7443d4c5e2467d3335a24a`, 8.536 s.
 * `(19,420)`, `P19_I00080`: first-pivot values 8, 10 and 12 excluded; **2,4,6** remain. [Proof and checker](C/README.md); cold candidate `1f20e3d284b8c8a329f6412c35a58b711b9829ef`, 124.720 s.
+* `(19,330)`, `P19_I00065`: first-pivot values 8, 10 and 12 excluded; **2,4,6** remain. [Proof and checker](C2/README.md), [cold receipt](Receipts/Review19x330.md).
 
 * `(7,12)`, `P7_I00005`: 51 of 83 live first-pivot values excluded; **32** remain. [Packet and checker](A/README.md), [cold receipt](Receipts/Review7x12.md).
 * `(7,130)`, `P7_I00031`: first-pivot values 1, 2, 8, 9 and 10 excluded; **4,6** remain. [Packet and checker](E/README.md), [cold receipt](Receipts/Review7x130.md).
@@ -24,7 +25,9 @@ From the repository root, with normal Python assertions enabled and no discovery
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/D/Verify.py
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/VerifyFibers.py Research/Night2400/Fibers19x162.json.gz
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/C/Verify.py
+python -I -S -B -X int_max_str_digits=0 Research/Night2400/C2/Verify.py
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/A/Verify.py
+python -I -S -B -X int_max_str_digits=0 Research/Night2400/E/Verify130.py Research/Night2400/E/Conditional7x130Fibers128910.json.gz
 python -I -S -B Research/Night2400/Project.py Research/FinalSprint/Delta.json --verified Research/Night2400/VerifiedKeys.json --out Build/Night2400/Reproject
 ```
 
