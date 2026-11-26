@@ -3,10 +3,10 @@
 This additive packet covers only exact root `(19,282)` against baseline `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. It is not a full-key closure and is not lifted to any other exponent.
 
 - First pivot `q = 1735317810514627`, `v_q(D)=1`, `q ≡ 3 (mod 4)`. The 27 live exponents are even `2..54`.
-- This packet covers `4,8,16,28,30,36`; the lead's disjoint remit covers `6,12,14,18,20,22,24,26,32,34,38,40,42,44,46,48,50,52,54`. The union leaves `2,10` open.
+- This packet covers `2,4,8,16,28,30,36`; the lead's disjoint remit covers `6,12,14,18,20,22,24,26,32,34,38,40,42,44,46,48,50,52,54`. The union covers 26 of 27 live exponents and leaves only `10` open.
 - Odd `1..111` fail Euler parity, even `56..110` fail the exact-state base bound (decimal floor 2412 already at `56`), and the monotone size tail begins at `112`.
-- Packet: [Fibers19x282.json.gz](Fibers19x282.json.gz) — SHA-256 `4cde99ecee143874fa6609c5858bb9c5f83673ee213c619c452ddd433beeefde`.
-- Cold receipt: `[3554,130,3903,0]` (forest, inner split, direct child exclusion, price). No joint-price leaves appear in this additive packet.
+- Packet: [Fibers19x282.json.gz](Fibers19x282.json.gz) — SHA-256 `0a1561392e8142d0d178322e5422d61646bffb7494904d153e90bd8269d91d8b`.
+- Cold receipt: `[5513,197,5964,0]` (forest, inner split, direct child exclusion, price). No joint-price leaves appear in this additive packet.
 
 ```text
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/VerifyFibers.py Research/Night2400/F4/Fibers19x282.json.gz
