@@ -1,6 +1,6 @@
 # 当前证明状态
 
-`INCOMPLETE_FRONTIER`。固定 [11 月 25 日主线](https://github.com/stormwhip/PerfectNumbers/commit/2889e47f6db49c8a9bc8dda2c9153829c18a70ca)的 2,868 闭片、204 开片、244 个开放实际指数。本分支按实际指数去重、再按整片投影；下表增量均相对此基线。当前 98 个开放分片中 89 个只剩一个指数。
+`INCOMPLETE_FRONTIER`。固定 [11 月 25 日主线](https://github.com/stormwhip/PerfectNumbers/commit/2889e47f6db49c8a9bc8dda2c9153829c18a70ca)的 2,868 闭片、204 开片、244 个开放实际指数。本批以不同实际指数为单位，再按整片投影。下表增量均相对此基线。当前 98 个开放分片中 89 个只剩一个指数。
 
 |根|总片数|已闭合|仍开|新增闭片|净排指数|待证指数|
 |---:|---:|---:|---:|---:|---:|---:|

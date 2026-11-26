@@ -1,6 +1,6 @@
 # 11 月 26 日证明包
 
-本目录是对主线 `2889e47f6db49c8a9bc8dda2c9153829c18a70ca` 的增量，不是完整的奇完全数下界证明。请以[当前状态](../../Documentation/CurrentStatus2400.md)和[全量开放清单](Delta.json)为准。账本中每一项 `proofs` 都指向一个可重放的完整排除；条件支持包、部分来源窗口和失败实验不登记在该列表中。
+本目录是对主线 `2889e47f6db49c8a9bc8dda2c9153829c18a70ca` 的增量。全局状态为 `INCOMPLETE_FRONTIER`。请以[当前状态](../../Documentation/CurrentStatus2400.md)和[全量开放清单](Delta.json)为准。账本中每一项 `proofs` 都指向一个可重放的完整排除；条件支持包、部分来源窗口和失败实验不登记在该列表中。
 
 ## 从干净检出重放
 
@@ -11,7 +11,8 @@ python -I -S -B -X int_max_str_digits=0 Research/Session20261126/Replay.py
 python -I -S -B Research/Session20261126/PacketTests.py
 python -I -S -B Research/Session20261126/Support/Verify.py
 python -I -S -B Research/Session20261126/GlobalSupport/Verify.py --integer-logs
-python -I -S -B Research/Session20261126/SupportProjection.py
+python -I -S -B Research/Session20261126/CheckFrontier.py
+python -I -S -B Research/Session20261126/SupportProjection.py --check-masks
 ```
 
 第一条重新计算全部新增实际指数及其分片投影，要求结果等于版本中的账本。`--write` 供研究分支重新生成账本用；并非普通验收所需。后一组支持命中结论依赖既有三个命中定理，其历史完整重放入口是 `Research/MiddayTerminal/ReleaseThirteen.py --baseline`。尚未闭合处不可用时间预算、未发现因子或未得到反例作否定。

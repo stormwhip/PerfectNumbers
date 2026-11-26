@@ -1,10 +1,10 @@
 # PerfectNumbers 仓库目录与文件职责
 
-**更新于 2026-11-25；当前数学状态见 [CurrentStatus2400.md](CurrentStatus2400.md)。** 主线为冻结 V21，新的独立验证器与 Frontier 搜索器仍是候选系统。全量证明未完成。
+**更新于 2026-11-26；当前数学状态见 [CurrentStatus2400.md](CurrentStatus2400.md)。** 主线为冻结 V21，新的独立验证器与 Frontier 搜索器仍是候选系统。全量证明未完成。
 
 ## 合并证明与文档归档
 
-- [总证明](Proof2400.md)汇总各批推导和证书入口。[午间证书](../Research/Midday/README.md)及[待证账本](../Research/Midday/Delta.json)用于当前进度。[EveningMerge](../Research/EveningMerge/VerifyFrontier.py)和[夜间并集](../Research/NightMerge/ParallelReplay.py)用于历史复验。
+- [总证明](Proof2400.md)汇总数学推导和复验入口。[本批证明包](../Research/Session20261126/Readme.md)、[增量账本](../Research/Session20261126/Delta.json)及[开放前沿](../Research/Session20261126/OpenFrontier.tsv)记录当前进度。[Midday](../Research/Midday/README.md)、[EveningMerge](../Research/EveningMerge/VerifyFrontier.py)及[夜间合并](../Research/NightMerge/ParallelReplay.py)保存历史批次。
 
 - [EulerSourceIntervals](../Research/EulerSourceIntervals/VerifyEulerSourceIntervals2400.py) 保存根 3、5 的来源区间实验复验器，输入由已签入的审计重建。
 
@@ -15,7 +15,7 @@
 - [旧外部结果评审](../Records/ExternalReviews/GeminiProgressReviewV5.md)归档于 `Records/ExternalReviews/`。
 
 
-- [P3I00193Review](../Research/P3I00193Review/Readme.md) 保存原始输入、独立整数部分证明、严格有理对偶、42 叶及余块审计、共同素数池实验；完整实际指数新增为 0。[最新推导](../Research/P3I00193Review/Progress.md)。
+- [P3I00193Review](../Research/P3I00193Review/Readme.md)保存根 3 实际指数 1,162 的早期部分证明。当前全域证书见[联合来源证明](../Research/Session20261126/Joint/README.md)。
 
 ## 目录结构
 
@@ -26,7 +26,8 @@ PerfectNumbers/
 ├── Records/                            # 里程碑、历史实验、验收清单
 ├── References/                         # 原始论文及参考资料
 ├── Research/
-│   ├── Midday/                         # 证书登记、核验入口与待证账本
+│   ├── Session20261126/                 # 本批证书、复验入口、增量账本及开放前沿
+│   ├── Midday/                          # 午间历史基线与证书账本
 │   ├── SupportSplit/                   # 条件支持排除与标准库复验
 │   ├── P3I00193Review/                  # 待修补的候选证书审计
 │   ├── Midday*/                        # 根五、来源供给、森林及支持证明包
