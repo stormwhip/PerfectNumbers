@@ -22,7 +22,10 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 * `(13,372)`, `P13_I00073`: independent replay covers **24 of 25** live pivot fibers; only **12** remains. [18-fiber receipt](Receipts/Review13x372.md), [five-fiber receipt](Receipts/Review13x372C5.md), [full eight-mask coverage of pivot value 2](Receipts/Review13x372V2.md). An [independently replayed LCM supply-budget refinement](Receipts/ReviewPrefixPrice.md) excludes one exact descendant of pivot 12, not its other siblings.
 * `(7,420)`, `P7_I00081`: nine of ten first-pivot values excluded; only **6** remains. [Proof and checker](E4/README.md), [cold receipt](Receipts/Review7x420.md).
 * `(7,430)`, `P7_I00082`: first-pivot values 14 and 16 excluded; 2–12 even remain. [Proof and checker](C3/README.md), [cold receipt](Receipts/Review7x430.md).
-* `(19,238)`, `P19_I00050`: seven of nine first-pivot values excluded, **2,6** remain. [First packet and receipt](Receipts/Review19x238.md), [additional packet and receipt](Receipts/Review19x238F2.md).
+* `(19,238)`, `P19_I00050`: eight of nine first-pivot values excluded, only **6** remains. [First packet receipt](Receipts/Review19x238.md), [latest independent receipt](Receipts/Review19x238Eight.md).
+* `(7,438)`, `P7_I00084`: six of twelve first-pivot values excluded. [Packet](Fibers7x438.json.gz), [cold receipt](Receipts/Review7x438.md).
+* `(19,432)`, `P19_I00082`: 11 complete first-pivot values and six complete projected support masks excluded. [Scoped certificate](G2/Readme.md), [cold receipt](Receipts/Review19x432.md).
+* `(31,352)`, `P31_I00069`: 17 of 31 first-pivot values excluded, including value 2 under all 16 masks and seven values by the LCM supply refinement. [Scoped certificate](C8/README.md), [cold receipt](Receipts/Review31x352.md).
 * `(11,358)`, `P11_I00070`: nine complete first-pivot fibers and 213 compatible mask/valuation cells excluded. **91 raw cells** remain under 25 masks. [Proof and checker](G/Readme.md), [cold receipt](Receipts/Review11x358.md).
 * `(13,310)`, `P13_I00063`: 14 of 22 first-pivot values excluded, eight open. [Proof and checker](C6/README.md), [cold receipt](Receipts/Review13x310.md).
 
