@@ -20,6 +20,7 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 * `(19,330)`, `P19_I00065`: first-pivot values 8, 10 and 12 excluded; **2,4,6** remain. [Proof and checker](C2/README.md), [cold receipt](Receipts/Review19x330.md).
 
 * `(7,12)`, `P7_I00005`: 78 of 83 live first-pivot values excluded; **1,2,4,12,42** remain. One exact descendant of value 1 is separately excluded across 64 support masks, not the whole fiber. [Packet and checker](A/README.md), [latest receipt](Receipts/Review7x12Latest.md), [independent quadratic-price audit](Receipts/Review7x12Full77.md).
+* `(19,58)`, `P19_I00015`: ten of eleven first-pivot values excluded, only **1** remains. [Packet](Fibers19x58.json.gz), [cold receipt](Receipts/Review19x58.md).
 * `(19,82)`, `P19_I00021`: 2, 4, 8 and 10 excluded; first-pivot value **6** still has 84 of 128 support masks open. [Packet and checker](C4/README.md), [cold receipt](Receipts/Review19x82.md).
 * `(3,12)`, `P3_I00007`: new first-pivot exclusion **2** at 797161, leaving **1,66,96** after the inherited 96. [Baseline replay](B/BaselineReplay.md), [packet](B/Fiber2.json.gz), [non-author cold receipt](Receipts/Review3x12V2.md).
 * `(7,430)`, `P7_I00082`: first-pivot values 14 and 16 excluded; 2–12 even remain. [Proof and checker](C3/README.md), [cold receipt](Receipts/Review7x430.md).
