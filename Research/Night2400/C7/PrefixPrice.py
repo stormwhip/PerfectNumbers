@@ -52,7 +52,7 @@ def less(x, f, limit):
     return (x.bit_length()-1)*f < limit.bit_length() and x**f < limit
 
 
-def excludes(P, banned, targets=None):
+def excludes(P, banned, targets=None, *, interior=None):
     assert __debug__ and 2 <= len(P) <= 12 and all(f > 0 for _,f in P)
     fixed = dict(P); assert len(fixed) == len(P) and not (set(fixed) & set(banned))
     assert all(not f%2 or p%4 == f%4 == 1 for p,f in P) and sum(f%2 for _,f in P) <= 1
@@ -137,9 +137,13 @@ def excludes(P, banned, targets=None):
         if V*lo > B*m*m: counts[0] += 1; continue
         assert X*C*lo > B, ('exterior Euler window',P,levels)
         if lo > max(blocks): counts[1] += 1; continue
-        for (p,_),block in zip(P,blocks):
+        for j,((p,e),block) in enumerate(zip(P,blocks)):
             if block < lo or (p%4 == 3 and m%p == 0): continue
-            mod = 4*m; u = (block*pow(lo,-1,mod))%mod or mod; hi = block//lo
-            assert u > hi or ((hi-u)//mod <= 128 and all(block%k for k in range(u,hi+1,mod))), ('interior Euler window',P,levels)
+            if interior is not None:
+                upper=(B*m*m*V.denominator)//V.numerator
+                assert interior(j,p,e,block,m,lo,upper,levels), ('interior Euler window',P,levels)
+            else:
+                mod = 4*m; u = (block*pow(lo,-1,mod))%mod or mod; hi = block//lo
+                assert u > hi or ((hi-u)//mod <= 128 and all(block%k for k in range(u,hi+1,mod))), ('interior Euler window',P,levels)
         counts[2] += 1
     return len(exceptions),counts

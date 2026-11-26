@@ -113,7 +113,7 @@ def support(path,f,masks):
     assert used==set(d['ecpp'])
 
 
-if __name__=='__main__':
+def verify_all():
     assert __debug__
     domain,covered=tree(H/'Fibers13x372.json.gz',('1','4','6'))
     domain8,covered8=tree(H/'Fiber8.json.gz',('8',)); assert domain8==domain
@@ -124,3 +124,8 @@ if __name__=='__main__':
     support(H/'Support2.json.gz',2,partial)
     print('PARTIAL 2:',list(partial),'OPEN MASKS:',sorted(set(MASKS)-set(partial)),flush=True)
     print('COVERED',sorted(map(int,covered)),'OUTSIDE THIS PACKET',sorted(map(int,domain-covered)),flush=True)
+    return set(map(int,domain)),set(map(int,covered)),set(partial)
+
+
+if __name__=='__main__':
+    verify_all()

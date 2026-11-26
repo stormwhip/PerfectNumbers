@@ -12,6 +12,7 @@ sys.path[:0]=[str(H),str(H/'C7')]
 from VerifyFibers import C,B,live,exact_leaf
 from JointValuation import excludes as stock_price
 from PrefixPrice import excludes as prefix_price
+from InteriorPrice import check as interior_price
 
 
 def replay(path):
@@ -55,6 +56,10 @@ def replay(path):
             assert set(node)=={'type','roots','owners','head'}
             k,o,h=(node[x] for x in ('roots','owners','head'));C.validate_forest(s,k,o,h,prime)
             assert C.Forest(s,k,o,h).lower()[0]>B and exact_leaf(P,k,o,h)>B
+        elif t=='interior_price':
+            assert set(node)=={'type','targets','witnesses'} and all(prime(z) for z,_ in P)
+            price, detail=interior_price(P,s.bad,node['targets'],node['witnesses'])
+            print('INTERIOR PRICE',[(z,f) for z,f in P],price,detail,flush=True)
         else:
             assert t in ('price','prefix_price') and set(node)=={'type','targets'}
             assert all(prime(z) for z,_ in P)
