@@ -21,7 +21,8 @@ def main():
         z,e,d,u=task
         for q in sorted(set(F.factors(z,e))|set(current.get(f'{z}:{e}',[]))):
             while u%q==0:u//=q
-        if u==1 or fmpz(u).is_probable_prime():return z,e,[u] if u>1 else []
+        if u==1 or fmpz(u).is_probable_prime():return z,e,[u] if u>2 else []
+        if u.bit_length()<=90:return z,e,[int(q) for q,_ in fmpz(u).factor() if q>2]
         cmd=['wsl','-d','Ubuntu','--','timeout','--kill-after=4',str(a.seconds),'env',
              f'LD_LIBRARY_PATH={a.prefix}/lib/x86_64-linux-gnu',f'{a.prefix}/bin/ecm','-maxmem','64','-q','-one','-c',str(a.curves),str(a.b1)]
         try:
@@ -29,7 +30,7 @@ def main():
             vals={int(x) for x in re.findall(rb'\b[0-9]{2,1300}\b',r.stdout.replace(b'\0',b''))}; out=[]
             for q in vals:
                 if 1<q<u and u%q==0:
-                    out += [k for k in (q,u//q) if fmpz(k).is_probable_prime()]
+                    out += [k for k in (q,u//q) if k>2 and fmpz(k).is_probable_prime()]
             print(z.bit_length(),e,d,u.bit_length(),r.returncode,sorted(set(out)),flush=True)
             return z,e,out
         except subprocess.TimeoutExpired:

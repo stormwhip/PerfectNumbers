@@ -59,6 +59,23 @@ python -B -I -S Research/Night2400/E/Verify130.py Research/Night2400/E/Condition
 python -B -I -S Research/Night2400/E/Test130.py
 ```
 
+## Latest small-scope packet: six complete first fibers
+
+[Conditional7x130Fibers1268910.json.gz](Conditional7x130Fibers1268910.json.gz),
+SHA-256 `a9963da2b06a9ac462306ac449843be0826f28b76a13ffb609dac18154c1ddd8`,
+completely covers `f=1,2,6,8,9,10`; its **only open first fiber is `f=4`**.
+It deliberately leaves that entire first fiber open: its separate refined
+packet can be used if the deeper conditional exclusions at `f=4` are needed.
+Under `f=6`, the second pivot is `106258661887872521572511`; every exact
+admissible valuation and its monotone tail is checked. The last three
+subbranches were closed by the two forest evaluations with floors 2448,
+2418, and 2426. The complete packet has 242 exclusion leaves and 467 ECPP
+chains; it is still not a complete shard exclusion.
+
+```powershell
+python -B -I -S Research/Night2400/E/Verify130.py Research/Night2400/E/Conditional7x130Fibers1268910.json.gz
+```
+
 ## Discovery notes
 
 Optional discovery used depth zero with head 100 and six rounds, then a

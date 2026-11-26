@@ -30,7 +30,7 @@ class Hunt:
     def factors(self,z,f):
         if z.bit_length()*(f+1)<=self.a.max_bits:
             qs=set(self.finder.factors(z,f))|set(self.hints.get(f'{z}:{f}',[]))
-            return [q for q in sorted(qs) if q.bit_length()<=self.a.prime_bits and C.sigma(z,f)%q==0]
+            return [q for q in sorted(qs) if 2<q and q.bit_length()<=self.a.prime_bits and C.sigma(z,f)%q==0]
         return []
 
     def grow(self,s,roots,deadline):
