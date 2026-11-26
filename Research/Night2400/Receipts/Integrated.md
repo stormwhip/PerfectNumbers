@@ -45,4 +45,6 @@ A clean detached checkout of `5a8c2db3b28fdf0af4dc3d8292b5ae12a4c1eefd` then rep
 
 At detached `1df3994e2c80d8cd801331043153134723bcd8bf`, all ten accepted keys and exact projection completed cleanly (exit 0). The new `(19,238)` arithmetic replay took 728.729 seconds in this run. Local log `Build/Night2400/IntegratedReplayTen.log` ends with `PASS projection 3000 72 82 with accepted-key arithmetic`.
 
+At detached `ebd75735f9394ee176dde0ac63d65864e068084a`, all twelve accepted keys and exact projection completed cleanly (exit 0). The new `(7,682)` and `(19,270)` took 589.726 and 240.440 seconds. Local log `Build/Night2400/IntegratedReplayTwelve.log` ends with `PASS projection 3002 70 80 with accepted-key arithmetic`.
+
 Supplemental regression: `python -S -B -X int_max_str_digits=0 Research/Night2400/E/Test130.py --full` passed conditional accounting and six negative mutations, then rejected removal of a live deep sibling from the complete certificate. `python -S -B -X int_max_str_digits=0 Research/NightMerge/LatticeTests.py` verified the Sturm endpoints and 609 planted-divisor invariants; the C7 known-leaf regression continued to pass after the refined interior proof was added.
