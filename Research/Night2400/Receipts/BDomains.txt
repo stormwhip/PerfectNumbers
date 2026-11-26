@@ -1,0 +1,30 @@
+﻿FIRST 100 tail 406 exclusions {'Euler': 101, 'forbidden': 104, 'size': 100} uncovered [1, 2, 66, 96]
+SPLIT ((3, 12), (797161, 1), (398581, 52)) pivot 175978950877903 live 31 tail 128 excluded {'Euler': 64, 'size': 32}
+SPLIT ((3, 12), (797161, 1), (398581, 52), (175978950877903, 4)) pivot 23391552145003689371127836459460688013949193748177314681 live 5 tail 32 excluded {'Euler': 16, 'forbidden': 3, 'size': 7}
+SPLIT ((3, 12), (797161, 1), (398581, 52), (175978950877903, 42)) pivot 1291 live 40 tail 202 excluded {'Euler': 101, 'forbidden': 20, 'size': 40}
+SPLIT ((3, 12), (797161, 1), (398581, 70)) pivot 727032419288111 live 17 tail 109 excluded {'Euler': 54, 'forbidden': 19, 'size': 18}
+SPLIT ((3, 12), (797161, 1), (398581, 70), (727032419288111, 18)) pivot 244444544651 live 23 tail 97 excluded {'Euler': 48, 'forbidden': 3, 'size': 22}
+SPLIT ((3, 12), (797161, 1), (398581, 100)) pivot 9350177 live 27 tail 183 excluded {'Euler': 91, 'forbidden': 36, 'size': 28}
+SPLIT ((3, 12), (797161, 1), (398581, 112)) pivot 88397641 live 23 tail 144 excluded {'Euler': 72, 'forbidden': 24, 'size': 24}
+SPLIT ((3, 12), (797161, 1), (398581, 112), (88397641, 18)) pivot 227 live 85 tail 365 excluded {'Euler': 182, 'forbidden': 12, 'size': 85}
+SPLIT ((3, 12), (797161, 1), (398581, 112), (88397641, 18), (227, 4)) pivot 2666986681 live 13 tail 91 excluded {'Euler': 45, 'forbidden': 16, 'size': 16}
+SPLIT ((3, 12), (797161, 1), (398581, 138)) pivot 557 live 50 tail 308 excluded {'Euler': 154, 'forbidden': 51, 'size': 52}
+SPLIT ((3, 12), (797161, 1), (398581, 148)) pivot 17292143994023 live 14 tail 57 excluded {'Euler': 28, 'size': 14}
+SECONDARY 1 398581 live 79 covered 77 raw_open [102, 108] tail 427 pruned {'Euler': 213, 'forbidden': 56, 'size': 78} counts {'forest': 381, 'split': 11, 'joint-valuation': 13} ecpp 4884
+SPLIT ((3, 12), (797161, 2), (22996651, 58)) pivot 61 live 142 tail 855 excluded {'forbidden': 357, 'Euler': 213, 'size': 142}
+SPLIT ((3, 12), (797161, 2), (22996651, 78)) pivot 61 live 114 tail 690 excluded {'forbidden': 288, 'Euler': 172, 'size': 115}
+SECONDARY 2 22996651 live 71 covered 71 raw_open [] tail 324 pruned {'Euler': 162, 'forbidden': 19, 'size': 71} counts {'forest': 325, 'split': 2} ecpp 2585
+SPLIT ((3, 12), (797161, 66), (5897, 1)) pivot 983 live 107 tail 540 excluded {'Euler': 270, 'forbidden': 54, 'size': 108}
+SPLIT ((3, 12), (797161, 66), (5897, 1), (983, 96)) pivot 735067 live 23 tail 179 excluded {'Euler': 89, 'forbidden': 42, 'size': 24}
+SPLIT ((3, 12), (797161, 66), (5897, 70)) pivot 1279 live 62 tail 353 excluded {'Euler': 176, 'forbidden': 51, 'size': 63}
+SPLIT ((3, 12), (797161, 66), (5897, 82)) pivot 688507524732893 live 15 tail 69 excluded {'forbidden': 21, 'Euler': 17, 'size': 15}
+SPLIT ((3, 12), (797161, 66), (5897, 82), (688507524732893, 4)) pivot 1993 live 75 tail 273 excluded {'Euler': 68, 'forbidden': 53, 'size': 76}
+SPLIT ((3, 12), (797161, 66), (5897, 82), (688507524732893, 4), (1993, 2)) pivot 1324681 live 38 tail 146 excluded {'Euler': 36, 'forbidden': 30, 'size': 41}
+SPLIT ((3, 12), (797161, 66), (5897, 82), (688507524732893, 4), (1993, 108)) pivot 45446769357802931613045963569217749851175135393 live 2 tail 6 excluded {'Euler': 1, 'size': 1, 'forbidden': 1}
+SPLIT ((3, 12), (797161, 66), (5897, 100)) pivot 305191503879673427753197 live 8 tail 38 excluded {'forbidden': 11, 'Euler': 9, 'size': 9}
+SPLIT ((3, 12), (797161, 66), (5897, 100), (305191503879673427753197, 2)) pivot 2473 live 46 tail 236 excluded {'forbidden': 83, 'Euler': 59, 'size': 47}
+SPLIT ((3, 12), (797161, 66), (5897, 100), (305191503879673427753197, 2), (2473, 1)) pivot 1237 live 51 tail 258 excluded {'Euler': 129, 'forbidden': 26, 'size': 51}
+SPLIT ((3, 12), (797161, 66), (5897, 100), (305191503879673427753197, 4)) pivot 41 live 101 tail 436 excluded {'forbidden': 124, 'Euler': 109, 'size': 101}
+SPLIT ((3, 12), (797161, 66), (5897, 100), (305191503879673427753197, 10)) pivot 7208917 live 11 tail 63 excluded {'forbidden': 21, 'Euler': 15, 'size': 15}
+SPLIT ((3, 12), (797161, 66), (5897, 100), (305191503879673427753197, 12)) pivot 313 live 28 tail 132 excluded {'Euler': 33, 'forbidden': 39, 'size': 31}
+SECONDARY 66 5897 live 97 covered 96 raw_open [6] tail 430 pruned {'forbidden': 128, 'Euler': 107, 'size': 97} counts {'split': 13, 'supplier-split': 1, 'forest': 644, 'order-budget': 8, 'joint-valuation': 1} ecpp 5338

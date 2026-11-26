@@ -74,6 +74,43 @@ def verify(path):
             for h, child in children.items():
                 walk(child, row['cases'][h])
             return
+        if row['type'] == 'joint-valuation':
+            assert row == {'type': 'joint-valuation'}
+            known = {
+                ((3,12),(797161,66),(5897,198)): ([1,2], (0,[12651,417,0])),
+                ((3,12),(797161,1),(398581,148),(17292143994023,22)): ([2], (1,[0,0,0])),
+                ((3,12),(797161,1),(398581,150)): ([2], (1,[0,0,0])),
+                ((3,12),(797161,1),(398581,138),(557,150)): ([2,3], (1,[0,0,0])),
+                **{((3,12),(797161,1),(398581,100),(9350177,h)): ([2,3], (1,[0,0,0])) for h in (42,66,78,88)},
+                **{((3,12),(797161,1),(398581,70),(727032419288111,h)): ([2,3], (1,[0,0,0])) for h in (42,46)},
+                ((3,12),(797161,1),(398581,52),(175978950877903,46)): ([2,3], (4,[0,0,0])),
+                ((3,12),(797161,1),(398581,112),(88397641,18),(227,4),(2666986681,36)): ([2,5], (10,[0,0,0])),
+                ((3,12),(797161,1),(398581,52),(175978950877903,4),(23391552145003689371127836459460688013949193748177314681,10)): ([2,3,4], (6,[0,0,0])),
+                ((3,12),(797161,1),(398581,70),(727032419288111,18),(244444544651,30)): ([2,3,4], (1,[0,0,0])),
+            }
+            targets, expected = known[tuple(prefix)]
+            sys.path.insert(0, str(RESEARCH / 'FinalSprint'))
+            import JointValuation
+            assert JointValuation.excludes(prefix, [19,7,11,31,13], targets) == expected
+            stats['joint_valuation'] += 1
+            return
+        if row['type'] in ('order-budget', 'supplier-split'):
+            sys.path.insert(0, str(HERE))
+            import OrderBudget
+            assert row['q'] in dict(prefix)
+            if row['type'] == 'order-budget':
+                assert set(row) == {'type', 'q', 'bound'}
+                assert OrderBudget.excludes(prefix, row['q'], row['bound']) > 0
+                stats['order_budget'] += 1
+                return
+            assert set(row) == {'type', 'q', 'bound', 'cases'}
+            cell = {(str(q)+':'+str(h)):(q,h) for q,h in OrderBudget.supplier_options(prefix,row['q'],row['bound'])}
+            assert set(cell) == set(row['cases'])
+            stats['supplier_splits'] += 1
+            for key, (q,h) in cell.items():
+                assert prime(q)
+                walk(prefix+[(q,h)],row['cases'][key])
+            return
         assert row['type'] == 'forest' and set(row) == {'type', 'roots', 'owners', 'head'}
         state = C.State(prefix)
         k, o, h = row['roots'], row['owners'], row['head']
