@@ -1,6 +1,12 @@
 # \(10^{2400}\) 证明发布验收清单
 
-## 2026-11-25 当前证据验收
+## 2026-11-26 晚间增量验收
+
+- 以[冻结账本](../Research/Session20261126/Delta.json)为输入；用[晚间验证器](../Research/FinalSprint/Verify.py)复验 18 个完整指数的证明，再重算[当前逐片账本](../Research/FinalSprint/Delta.json)。验收口径为新增 16 个闭片，而非 18 个闭片。
+- [条件支持](../Research/FinalSprint/Support/README.md)及[低指数枢轴](../Research/FinalSprint/LowBranches/README.md)分别复验，不作为完整指数登记。
+- 全历史端到端复验和剩余 82 个分片的证明未完成。以下各日期保留当时的验收范围。
+
+## 2026-11-25 历史证据验收
 
 - 用 [LedgerTests.py](../Research/Midday/LedgerTests.py) 独立核验登记摘要和去重后的分片投影：2,868 闭合、204 开放。
 - 用 [CheckLedger.py](../Research/Midday/CheckLedger.py) 重算午间登记包的算术及分支覆盖。原发布的隔离复验范围见 [ReleaseAudit.md](../Research/Midday/ReleaseAudit.md)。

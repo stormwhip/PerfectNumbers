@@ -2,15 +2,17 @@
 
 令 $B=10^{2400}$，设 $N$ 为满足 $\sigma(N)=2N$ 且 $N\le B$ 的奇数。记规范根序为 $(19,7,11,31,13,3,5,17)$，$p$ 为其中首个整除 $N$ 的素数，$e=v_p(N)$。记 $H$ 为这八个素数中整除 $N$ 的集合。完整定义与已证引理见[总证明](Proof2400.md#1-覆盖规则)。
 
-## 问题 1　穷尽冻结前沿
+## 问题 1　穷尽现行前沿
 
-**已知。** 八根互素类已排除。令 $A_s$ 为[当前账本](../Research/Session20261126/Delta.json)中分片 $s$ 的剩余指数集合。共有 98 个分片满足 $A_s\ne\varnothing$，逐根去重后得到 110 个 $(p,e)$。以下 6,556 个支持组合的统计仍以原始 244 个实际指数为母集。
+**已知。** 八根互素类已排除。令 $A_s$ 为[现行逐片账本](../Research/FinalSprint/Delta.json)中分片 $s$ 的剩余指数集合。3,072 片中已有 **2,990** 片闭合，**82** 片满足 $A_s\ne\varnothing$；按根去重后有 **92** 个 $(p,e)$。晚间前[冻结账本](../Research/Session20261126/Delta.json)的 98 片、110 键是比较基线，不是当前任务。
 
 **求证。** 对每个上述 $(p,e)$，在规范根 $p$ 及 $p^e\parallel N$ 的条件下推出矛盾。整除型分片对 $e+1$ 的条件是 $d+1\mid e+1$，精确型要求 $e=d$。证明可以共享，但每个分片须覆盖其整个 $A_s$。
 
 ## 问题 2　支持分割与拼接
 
-**已知。** 在历史的 244 个实际指数上，SupportSplit 筛后余 6,556 个 $(p,e,H)$。合并本批完整指数、389 个条件证书及命中集 $\{3,5,17,19\}$ 后，[当前支持位图](../Research/Session20261126/OpenSupport.json)余 3,259 个组合。再应用[根三指数 990 的必要条件](../Research/Session20261126/NoFive990/Readme.md)，去掉两个缺 5 的组合，实际待证支持数为 3,257。
+**历史统计。** 在当时的 244 个实际指数上，SupportSplit 筛后余 6,556 个 $(p,e,H)$。合并晚间前已排除的完整指数、389 个条件证书及命中集 $\{3,5,17,19\}$ 后，[冻结支持位图](../Research/Session20261126/OpenSupport.json)余 3,259 个组合。再应用[990 的无五引理](../Research/Session20261126/NoFive990/Readme.md)，当时余 3,257 个。这些不是现行支持数。
+
+**现行范围。** 仅对问题 1 的 92 个待证键研究支持分割。[晚间支持证书](../Research/FinalSprint/Support/README.md)在 $(19,316)$、$(7,28)$ 上分别排除 36、13 个支持组合，两个键仍开放。不能将这些条件排除数从开放分片数直接扣减。
 
 **求证。** 对某个 $(p,e)$ 的每个剩余 $H$，在 $q\mid N$（$q\in H$）与 $q\nmid N$（$q\in S_8\setminus H$）下给出矛盾证书，其中 $S_8=\{19,7,11,31,13,3,5,17\}$。分支若取 $v_q(N)$ 的有限精确前缀，须覆盖所有相容指数及其完整尾段。
 
@@ -26,7 +28,9 @@
 
 **求证。** 对待证实际指数穷尽所有相容的 Euler 赋值窗口与普通来源。显式因子须认证素性和整除。未分解块以整数整除、试除下界或平方核证据处理，按互斥分支或不相交因子支持组合各项费用。
 
-**专项。** 对仍开的 $(3,990),(3,970),(3,856)$ 的外部 Euler 一次幂，分开处理来源在 $A=\sigma(3^e)$ 内、外两类。来源与余块可能共用素数，不能直接把费用相加。1162 已获[完整覆盖](../Research/Session20261126/Joint/Additional.md)；[旧候选审计](../Research/P3I00193Review/Readme.md)是其回归反例。1108 另有[完整独立验收](../Research/Session20261126/Joint1108/Readme.md)；它同样不能迁移到其余三项。
+**根三专项。** 根三只余 6、12、856。对 856 的外部 Euler 一次幂，须分别处理来源在 $A=\sigma(3^{856})$ 内、外两类。来源与余块可能共用素数，不能直接把费用相加。对低指数 6、12，已有[局部枢轴排除](../Research/FinalSprint/LowBranches/README.md)，均未闭片。
+
+**回归对照。** 1162 的[完整覆盖](../Research/Session20261126/Joint/Additional.md)与[旧候选审计](../Research/P3I00193Review/Readme.md)说明共用因子为何必须核账；1108 有[完整独立验收](../Research/Session20261126/Joint1108/Readme.md)。晚间完成的 [970](../Research/FinalSprint/Full970.md)、[990](../Research/FinalSprint/Proof990.md)也仅覆盖各自的精确指数，不能移用到 856。
 
 ## 问题 5　最终独立验收
 
@@ -34,4 +38,4 @@
 
 [任务顺序](NextPlan2400.md) · [发布验收](../Records/ValidationChecklist.md) · [早期研究纲领](https://github.com/stormwhip/PerfectNumbers/blob/9d74c34dda8908a19542b855c78ef2feb8844b66/Documentation/ResearchProblems2400.md)
 
-联合模型新增待证条件：未激活森林节点的丰度必须进入同一素数池；森林与 LP 的余块需求须按 $v_u(N)=\sum_vv_u(\sigma(v^{h_v}))$ 共同分配，未知余因子与 Euler 来源共享时须单独处理。[实验与明确缺口](../Research/P3I00193Review/Progress.md)。
+联合模型的验收条件：未激活森林节点的丰度必须进入同一素数池；森林与 LP 的余块需求须按 $v_u(N)=\sum_vv_u(\sigma(v^{h_v}))$ 共同分配，未知余因子与 Euler 来源共享时须单独处理。[实验与明确缺口](../Research/P3I00193Review/Progress.md)。
