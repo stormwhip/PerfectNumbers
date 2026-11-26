@@ -48,9 +48,8 @@ def abundance(s,roots):
     return min(vals)
 
 
-def verify():
-    assert __debug__ and C.ORDER==ORDER and Q.bit_length()==43
-    raw=(H/'Support13x310.json.gz').read_bytes(); d=json.loads(gzip.decompress(raw))
+def verify_support(path, exponents):
+    raw=path.read_bytes(); d=json.loads(gzip.decompress(raw))
     assert set(d)=={'p','e','pivot','cases','ecpp'} and (d['p'],d['e'])==KEY and d['pivot']==Q
     pairs=d['cases']; book=d['ecpp']; used=set()
 
@@ -67,12 +66,10 @@ def verify():
         return True
 
     assert all(prime(q) for q in (*ORDER,Q))
-    live,direct,illegal,tail=domain()
-    print('DOMAIN',live,'DIRECT',direct,'INCOMPATIBLE',len(illegal),'TAIL >=',tail,flush=True)
-    assert set(pairs)=={'6','10','12'}
-    for f in (6,10,12):
+    assert set(pairs)==set(map(str,exponents))
+    for f in exponents:
         rows=pairs[str(f)]; p=[KEY,(Q,f)]
-        assert set(rows)==set(map(str,MASKS)) and f in live
+        assert set(rows)==set(map(str,MASKS)) and f in DOMAIN
         for m in MASKS:
             yes=tuple(q for i,q in enumerate(ORDER[5:],5) if m>>i&1)
             no=tuple(q for q in ORDER[5:] if q not in yes)
@@ -92,8 +89,25 @@ def verify():
                 receipt=min(floor10(x),y)
             print('PASS',f,'mask',m,receipt,flush=True)
     assert used==set(book)
-    covered=set(map(int,pairs))
-    print('COVERED',sorted(covered),'OPEN',sorted(set(live)-covered),'SHA256',sha256(raw).hexdigest(),flush=True)
+    print('SUPPORT SHA256',path.name,sha256(raw).hexdigest(),flush=True)
+    return set(exponents)
+
+
+def verify():
+    assert __debug__ and C.ORDER==ORDER and Q.bit_length()==43 and C.pc.prime64(Q)
+    live,direct,illegal,tail=domain()
+    print('DOMAIN',live,'DIRECT',direct,'INCOMPATIBLE',len(illegal),'TAIL >=',tail,flush=True)
+    covered=verify_support(H/'Support13x310.json.gz',(6,10,12))
+    covered|=verify_support(H/'SupportNext.json.gz',(20,22,32))
+    covered|=verify_support(H/'SupportMiddle.json.gz',(38,48))
+    prices={50:(3,[8616,4069,2865]),52:(3,[10482,4069,1621]),56:(3,[14152,3264,0]),58:(3,[15775,2263,0]),60:(3,[17215,1445,0]),66:(3,[20439,87,0])}
+    assert not (covered & set(prices)) and set(prices)<=set(live)
+    for f,expected in prices.items():
+        p=[KEY,(Q,f)]
+        value=excludes(p,C.State(p).bad,[0,1]); assert value==expected
+        print('PASS PRICE',f,value,flush=True)
+    covered.update(prices)
+    print('COVERED',sorted(covered),'OPEN',sorted(set(live)-covered),flush=True)
 
 
 if __name__=='__main__': verify()
