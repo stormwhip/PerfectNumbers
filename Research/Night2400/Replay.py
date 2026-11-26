@@ -19,7 +19,9 @@ ROOT = HERE.parents[1]
 MECHANISMS = {
     (7, 28): ('D2/Verify.py', (), 'VERIFIED (7, 28)'),
     (7, 130): ('E/Verify130.py', ('E/Tree7x130.json.gz',), 'tree'),
+    (7, 420): ('VerifyFibers.py', ('E4/Fibers7x420Complete.json.gz',), 'fibers'),
     (7, 490): ('VerifyFibers.py', ('E3/Fibers7x490Complete.json.gz',), 'fibers'),
+    (13, 372): ('Verify13x372.py', (), 'merged'),
     (19, 162): ('VerifyFibers.py', ('E2/Fibers19x162Complete.json.gz',), 'fibers'),
     (19, 316): ('D/Verify.py', (), 'VERIFIED (19, 316)'),
     (19, 502): ('../Session20261126/TreeCheck.py', ('F/Tree19x502.json.gz',), 'stock_tree'),
@@ -50,6 +52,9 @@ def main():
             elif expected=='fibers':
                 status=json.loads(final)
                 assert tuple(status['key'])==key and not status['open'] and status['covered']==status['domain']
+            elif expected=='merged':
+                status=json.loads(final)
+                assert tuple(status['key'])==key and status['scope']=='EXACT_COMPLETE' and not status['open']
             elif expected=='stock_tree':
                 p,e,stats=literal_eval(final)
                 assert (p,e)==key and len(stats)==3 and stats[1]>=1
