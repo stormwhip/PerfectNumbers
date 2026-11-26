@@ -1,6 +1,7 @@
 """Offline replay of partial first-pivot fibers, not necessarily of the root pair."""
 from pathlib import Path
 from functools import cache
+from fractions import Fraction
 from math import prod
 import gzip,json,sys
 
@@ -19,7 +20,7 @@ def verify(path):
     d=json.loads(gzip.decompress(path.read_bytes()))
     assert set(d)=={'pair','pivot','ecpp','cases'} and tuple(d['pair'])==PAIR and d['pivot']==Q
     used=set()
-    forests=splits=direct=prices=0
+    forests=splits=direct=prices=abundance=0
     @cache
     def prime(q):
         assert type(q)==int and q>2
@@ -48,7 +49,7 @@ def verify(path):
             f+=1
             n*=q
     def walk(parts,node):
-        nonlocal forests,splits,prices
+        nonlocal forests,splits,prices,abundance
         s=C.State(parts)
         assert not dead(parts,s)
         if node['type']=='forest':
@@ -59,6 +60,17 @@ def verify(path):
             assert v>B,parts
             forests+=1
             return floor10(v)
+        if node['type']=='abundance':
+            assert set(node)=={'type','forced'} and s.fixed_euler
+            forced=node['forced']
+            assert forced and len(forced)==len(set(forced))
+            assert all(prime(q) and q not in s.rows and q not in s.bad and s.D%q==0 for q in forced)
+            # A fixed Euler component makes every other compulsory exponent at least two.
+            lower=prod(Fraction(C.sigma(q,f),q**f) for q,f in parts)
+            lower*=prod(Fraction(C.sigma(q,2),q*q) for q in forced)
+            assert lower>2
+            abundance+=1
+            return 2400
         if node['type']=='price':
             assert set(node)=={'type'} and len(parts)==2 and parts[0]==PAIR and parts[1][0]==Q and s.bad==BANNED
             enough(parts[1][1])
@@ -81,7 +93,7 @@ def verify(path):
         floor=walk(live[f],claims[f]);print('PASS',int(f),floor,flush=True)
     assert used==set(d['ecpp'])
     pending=sorted(map(int,live.keys()-claims.keys()))
-    print('PARTITION live',len(live),'covered',len(claims),'uncovered',len(pending),'forests',forests,'splits',splits,'direct',direct,'prices',prices,'ECPP',len(used),flush=True)
+    print('PARTITION live',len(live),'covered',len(claims),'uncovered',len(pending),'forests',forests,'splits',splits,'direct',direct,'prices',prices,'abundance',abundance,'ECPP',len(used),flush=True)
     print('UNCOVERED',pending,flush=True)
     return pending
 
