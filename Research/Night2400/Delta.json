@@ -2,14 +2,19 @@
   "baseline_sha": "49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec",
   "baseline_ledger_sha256": "ba1775dc1848c11b06395247d9d09a3c121f126514d552ea9dd3582bc1cd40dc",
   "total": 3072,
-  "closed": 2991,
-  "open": 81,
-  "distinct_keys": 91,
-  "singleton_shards": 73,
+  "closed": 2992,
+  "open": 80,
+  "distinct_keys": 90,
+  "singleton_shards": 72,
   "new_closed": [
-    "P19_I00064"
+    "P19_I00064",
+    "P7_I00009"
   ],
   "new_keys": [
+    [
+      7,
+      28
+    ],
     [
       19,
       316
@@ -17,7 +22,7 @@
   ],
   "open_by_root": {
     "19": 27,
-    "7": 23,
+    "7": 22,
     "11": 9,
     "31": 9,
     "13": 10,
@@ -27,7 +32,7 @@
   },
   "distinct_keys_by_root": {
     "19": 32,
-    "7": 26,
+    "7": 25,
     "11": 10,
     "31": 9,
     "13": 11,

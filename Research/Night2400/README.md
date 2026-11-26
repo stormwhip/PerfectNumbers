@@ -1,10 +1,11 @@
 # Overnight exact-exponent overlay (2026-11-26/27, UTC+08)
 
-Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research branch, the frozen 2,990/3,072 closures increase to **2,991/3,072**; **81** shards and **91** distinct exact keys remain. The global lower bound is **not** established. [Ledger increment](Delta.json), [key → shards](KeyToShards.json), [shard → remainder](ShardToKeys.json).
+Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research branch, the frozen 2,990/3,072 closures increase to **2,992/3,072**; **80** shards and **90** distinct exact keys remain. The global lower bound is **not** established. [Ledger increment](Delta.json), [key → shards](KeyToShards.json), [shard → remainder](ShardToKeys.json).
 
 ## Complete key after non-author cold replay
 
 * `(19,316)` / `P19_I00064`: [argument and certificate](D/README.md). Replays both exact forest recurrences, checks all 128 support masks with 19 present, and excludes the full pivot tail from 50. This closes the shard because `[316]` was its entire frozen remainder. The 21 additional support cases are not counted as 21 shards. Candidate `700d089093a20dca10d30eab5a97bc7aa4a22523`; cold arithmetic 230.913 s.
+* `(7,28)` / `P7_I00009`: [argument and certificate](D2/Readme.md), [cold receipt](Receipts/Review7x28.md). All 64 support masks consistent with canonical root 7 were replayed: 13 old forests, 27 new forests, 24 strict abundancy contradictions, with no unresolved exponent tails. The frozen remainder was `[28]`. Candidate `2fcb9397f1410e8fac959fcb0f90fece8770d527`; cold arithmetic 230.074 s.
 
 ## Separate conditional results
 
@@ -13,7 +14,7 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 * `(19,330)`, `P19_I00065`: first-pivot values 8, 10 and 12 excluded; **2,4,6** remain. [Proof and checker](C2/README.md), [cold receipt](Receipts/Review19x330.md).
 
 * `(7,12)`, `P7_I00005`: 51 of 83 live first-pivot values excluded; **32** remain. [Packet and checker](A/README.md), [cold receipt](Receipts/Review7x12.md).
-* `(7,130)`, `P7_I00031`: first-pivot values 1, 2, 8, 9 and 10 excluded; **4,6** remain. [Packet and checker](E/README.md), [cold receipt](Receipts/Review7x130.md).
+* `(7,130)`, `P7_I00031`: first-pivot values 1, 2, 8, 9 and 10 excluded; **4,6** remain, with 22 independently audited open descendant paths under each. [Packets and checker](E/README.md), [five-fiber cold receipt](Receipts/Review7x130.md), [refined cold receipt](Receipts/Review7x130Refined.md).
 
 These do not enter the full-key ledger. [Mainline regression receipt](Receipts/Mainline.md) lists independent scope and does not claim a full-history cold replay. Independent receipts for [(19,316)](Receipts/Review19x316.md), [(19,162)](Receipts/Review19x162.md) and [(19,420)](Receipts/Review19x420.md) include the endpoint audits.
 
@@ -23,6 +24,7 @@ From the repository root, with normal Python assertions enabled and no discovery
 
 ```sh
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/D/Verify.py
+python -I -S -B -X int_max_str_digits=0 Research/Night2400/D2/Verify.py
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/VerifyFibers.py Research/Night2400/Fibers19x162.json.gz
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/C/Verify.py
 python -I -S -B -X int_max_str_digits=0 Research/Night2400/C2/Verify.py
