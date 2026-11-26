@@ -62,6 +62,9 @@ def main():
             else:
                 assert final.startswith(expected),final
             print('PASS complete',key,f'{sec:.3f} s',flush=True)
+    current=list(map(tuple,json.loads((HERE/'VerifiedKeys.json').read_bytes())))
+    if current != keys:
+        raise RuntimeError('accepted key list changed during replay; run from a fixed checkout')
     with TemporaryDirectory(prefix='opn-night-projection-') as d:
         work=Path(d)
         run('Project.py',(ROOT/'Research/FinalSprint/Delta.json','--verified',HERE/'VerifiedKeys.json','--out',work))
