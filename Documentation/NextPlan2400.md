@@ -1,6 +1,8 @@
 # 下一步计划
 
-以[更新后的待证账本](../Research/Session20261126/Delta.json)中的 98 个规范分片、110 个不同实际指数为任务全集。单指数任务从 `remaining_shards` 中筛选 `len(remaining_actuals)==1`；不要从历史示例重新创建已结任务。
+晚间以[最新逐片账本](../Research/FinalSprint/Delta.json)派工；勿重复 $(7,168)$，`P7_I00005` 尚需指数 12、90。优先检查单缺叶，并将每个候选的完整尾段纳入独立算术复验。
+
+以下为晚间前的计划。以[更新后的待证账本](../Research/Session20261126/Delta.json)中的 98 个规范分片、110 个不同实际指数为任务全集。单指数任务从 `remaining_shards` 中筛选 `len(remaining_actuals)==1`；不要从历史示例重新创建已结任务。
 
 1. **根三高指数。** [1162 联合计价](../Research/Session20261126/Joint/README.md)的 E3a/E3b 两组均已有 42/42 叶；保留其回归测试。1108 已经[逐组件完成全域复验](../Research/Session20261126/Joint1108/Readme.md)：包括提高到 2122 的外部基础、2089 的内部基础以及单独的最后 13 号叶。下一阶段对 990、970、856 分别重建内部来源能承担的实际供应量和全部叶；对 990 可先用[已证的必要条件](../Research/Session20261126/NoFive990/Readme.md) $5^6\mid N$ 缩小支持和赋值窗口。每个显式计价的新素因子必须从所有匿名流入中剥净。
 2. **联合供给与尺寸。** 对冻结前沿各根重新计算 [供给森林](../Research/Session20261126/SupplyForest/Proof.md) 的高 Euler 界、外部一次幂窗口和内部 Euler 素数窗口；仅两侧窗口实际重叠或相接且全域通过才签发完整指数。
