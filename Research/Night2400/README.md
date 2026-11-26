@@ -30,9 +30,9 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 * `(7,430)`, `P7_I00082`: independently confirmed first-pivot values **6,8,10,14,16** excluded; **2,4,12** remain. [Initial receipt](Receipts/Review7x430.md), [masked increment](G5/Readme.md), [cold receipt](Receipts/Review7x430Additional.md).
 * `(7,438)`, `P7_I00084`: eight of twelve first-pivot values excluded; **10,12,18,22** remain. [Initial cold receipt](Receipts/Review7x438.md), [additional exact 2/16 receipt](Receipts/Review7x438Additional.md).
 * `(19,280)`, `P19_I00058`: 26 of 29 first-pivot values excluded; **2,16,18** remain, including 15 remaining paths under value 2 after the scoped supplement. [Initial receipt](Receipts/Review19x280.md), [additional cold receipt](Receipts/Review19x280Additional.md).
-* `(19,282)`, `P19_I00059`: 19 of 27 first-pivot values excluded in the cold lead packet. [Packet](Fibers19x282.json.gz), [cold receipt](Receipts/ShortFiberReceipt.md).
+* `(19,282)`, `P19_I00059`: 24 of 27 first-pivot values excluded, **2,10,16** remain. [Initial receipt](Receipts/ShortFiberReceipt.md), [additional receipt](Receipts/Review19x282Additional.md).
 * `(31,16)`, `P31_I00005`: 14 of 16 first-pivot values excluded; **16,22** remain. [Packet](Fibers31x16.json.gz), [cold receipt](Receipts/ShortFiberReceipt.md).
-* `(19,312)`, `P19_I00063`: 32 of 40 live first-pivot values excluded. [Packet](Fibers19x312.json.gz), [cold receipt](Receipts/Review19x312.md).
+* `(19,312)`, `P19_I00063`: 33 of 40 live first-pivot values excluded. [Initial cold receipt](Receipts/Review19x312.md), [additional f10 receipt](Receipts/Review19x312Ten.md).
 * `(19,372)`, `P19_I00072`: ten of 15 first-pivot values excluded; additionally, three support masks exhaust all their remaining exact descendants. [Proof](G4/Readme.md), [cold receipt](Receipts/Review19x372.md).
 * `(19,432)`, `P19_I00082`: 11 complete first-pivot values and six complete projected support masks excluded. [Scoped certificate](G2/Readme.md), [cold receipt](Receipts/Review19x432.md).
 * `(13,262)`, `P13_I00055`: 23 of 29 first-pivot values excluded; **12,16,28,42,46,60** remain with ten exact paths. Two canonical supports are excluded completely by the union. [Initial receipt](Receipts/Review13x262And31x310.md), [additional cold receipt](Receipts/Review13x262Additional.md).
