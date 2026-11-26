@@ -1,0 +1,8 @@
+# Lead — canonical (11,462) and (13,388), two conditional trees
+
+Detached clean tracked `20083aedc5d26fd64d9b779f55f04c26d891ef11`, CPython 3.11.9. For each packet, run `python -I -S -B -X int_max_str_digits=0 Research/Night2400/FrontierTree.py PACKET` and independently `python -I -S -B -X int_max_str_digits=0 Research/Night2400/Receipts/FiberPartition.py PACKET`.
+
+- **(11,462) PASS 49/58, OPEN `[1,4,6,22,36,42,46,70,72]`.** `Research/Night2400/Fibers11x462.json.gz` SHA-256 `2e58bd6b8142157eb3b1972f600863ffe194264f5310f89b099e2919f6196c65`. Cold 2026-11-27 05:02:55.725–05:05:38.969 +08:00, 163.3926845 s, exit 0. First pivot 879701 compelled with valuation 1, strict tail 243. All eight split sets including root independently matched, 100 forests, 124 direct, 314 incompatible, three C7 prefix prices, 752 ECPP. Canonical excludes 19,7.
+- **(13,388) PASS 31/40, OPEN `[2,6,36,40,42,52,66,72,78]`.** Cold 2026-11-27 05:05:59.811–05:08:26.309 +08:00, 146.6407404 s, exit 0. Input `Research/Night2400/Fibers13x388.json.gz` SHA-256 `bf4f3e408645075c7b8e8445e2832ecc53c2dadd5b6da67b48d4b888ff958a69`. Exact data-only re-enumeration confirms 40 first live at pivot 3543791 compelled valuation one, strict raw tail 236, all seven split domains including root, 116 forest, 137 direct, 357 incompatible, two C7 prefix prices, 858 ECPP. Packet claims 31/40, leaves `[2,6,36,40,42,52,66,72,78]` open. Canonical excludes 19,7,11,31.
+
+Both independent domain audits exit 0. All tested internal sibling sets equal, first strict budget overflow bounds each tail, proof bounds require strict inequality, and no absence premise beyond the relevant canonical class is transferred. No exact-key or shard closure.
