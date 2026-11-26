@@ -65,7 +65,7 @@ This log separates **imported historical claims**, **directly observed experimen
 
 - 基线提交：[`9d74c34d`](https://github.com/stormwhip/PerfectNumbers/commit/9d74c34dda8908a19542b855c78ef2feb8844b66)。冻结账本 Git blob 为 `3a7b6812aafed3dddd228c34ed9575324d242887`。
 - 用 `python3 -I -S -B Research/SupportSplit/Verify.py` 从固定提交的程序和账本复验。结果为 11,398 个组合、4,833 个基础排除、9 个新增条件排除、6,556 个开放组合，完整实际指数新增为 0。[证据表与命令](../Research/SupportSplit/Readme.md)。
-- 主证明合并支持分割推导，版本进度表索引各批冻结账本。上午批次的候选排序见[历史快照](https://github.com/stormwhip/PerfectNumbers/blob/9d74c34dda8908a19542b855c78ef2feb8844b66/Research/Nov25/Forecast.md)。当前闭合分片为 2,868，开放分片为 204。
+- 主证明合并支持分割推导，版本进度表索引各批冻结账本。上午批次的候选排序见[历史快照](https://github.com/stormwhip/PerfectNumbers/blob/9d74c34dda8908a19542b855c78ef2feb8844b66/Research/Nov25/Forecast.md)。该检查点闭合 2,868 个分片，开放 204 个分片。
 - [本次整理的 GitHub Actions](https://github.com/stormwhip/PerfectNumbers/actions/runs/45618993851)已通过。干净检出验证了 255 个登记证书的摘要与分片投影、SupportSplit 条件排除、历史精确审计及 Python、C++ 回归。
 - PR #5 的已验收隔离重放与原始摘要见[发布审计](../Research/Midday/ReleaseAudit.md)。
 
