@@ -6,9 +6,9 @@ import gzip,json,sys
 
 H=Path(__file__).resolve().parent
 R=H.parents[1]
-sys.path[:0]=[str(R/'Session20261126'),str(R/'FinalSprint')]
+sys.path[:0]=[str(H),str(R/'Session20261126')]
 from PivotCheck import C,B,exact_leaf,floor10
-from JointValuation import excludes
+from Price12 import enough
 
 Q=16148168401
 PAIR=(7,12)
@@ -60,8 +60,8 @@ def verify(path):
             forests+=1
             return floor10(v)
         if node['type']=='price':
-            assert set(node)=={'type','targets'}
-            excludes(parts,s.bad,node['targets'])
+            assert set(node)=={'type'} and len(parts)==2 and parts[0]==PAIR and parts[1][0]==Q and s.bad==BANNED
+            enough(parts[1][1])
             prices+=1
             return 2400
         assert node['type']=='split' and set(node)=={'type','q','cases'}

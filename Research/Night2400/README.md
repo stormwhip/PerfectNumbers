@@ -16,7 +16,7 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 * `(19,420)`, `P19_I00080`: first-pivot values 8, 10 and 12 excluded; **2,4,6** remain. [Proof and checker](C/README.md); cold candidate `1f20e3d284b8c8a329f6412c35a58b711b9829ef`, 124.720 s.
 * `(19,330)`, `P19_I00065`: first-pivot values 8, 10 and 12 excluded; **2,4,6** remain. [Proof and checker](C2/README.md), [cold receipt](Receipts/Review19x330.md).
 
-* `(7,12)`, `P7_I00005`: 68 of 83 live first-pivot values excluded; **15** remain at the recorded cold snapshot. [Packet and checker](A/README.md), [cold receipt](Receipts/Review7x12Expanded.md).
+* `(7,12)`, `P7_I00005`: 77 of 83 live first-pivot values excluded; **1,2,4,12,28,42** remain at the recorded cold snapshot. [Packet and checker](A/README.md), [cold receipt and independent price audit](Receipts/Review7x12Full77.md).
 * `(19,82)`, `P19_I00021`: 2, 4, 8 and 10 excluded; first-pivot value **6** still has 84 of 128 support masks open. [Packet and checker](C4/README.md), [cold receipt](Receipts/Review19x82.md).
 * `(3,12)`, `P3_I00007`: new first-pivot exclusion **2** at 797161, leaving **1,66,96** after the inherited 96. [Baseline replay](B/BaselineReplay.md), [packet](B/Fiber2.json.gz), [non-author cold receipt](Receipts/Review3x12V2.md).
 * `(13,372)`, `P13_I00073`: independent replay covers **24 of 25** live pivot fibers; only **12** remains. [18-fiber receipt](Receipts/Review13x372.md), [five-fiber receipt](Receipts/Review13x372C5.md), [full eight-mask coverage of pivot value 2](Receipts/Review13x372V2.md).
