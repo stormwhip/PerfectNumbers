@@ -8,8 +8,9 @@ from pathlib import Path
 import sys
 
 H=Path(__file__).resolve().parent; R=H.parents[1]
-sys.path.insert(0,str(R/'Session20261126'))
+sys.path[:0]=[str(H),str(R/'Session20261126')]
 from PivotCheck import C,B,exact_leaf,floor10
+from PrefixPrice import excludes
 
 KEY=(19,46); Q=70169234660105574400577005075855017842743056666917902427141
 ORDER=(19,7,11,31,13,3,5,17)
@@ -96,4 +97,30 @@ def verify():
     assert stats[0]==4 and stats[2]==47
     print('FULL EXACT FIBER 4, splits/direct/forests',stats,'minimum floor',min(floors),'SHA256',sha256(raw).hexdigest(),flush=True)
 
-if __name__=='__main__':verify()
+def deep():
+    assert __debug__ and C.ORDER==ORDER
+    raw=(H/'DeepLeaves.json.gz').read_bytes();d=json.loads(gzip.decompress(raw));prime,used=prime_book(d['ecpp'])
+    assert set(d)=={'p','e','pivot','paths','ecpp'} and (d['p'],d['e'],d['pivot'])==(*KEY,Q)
+    assert all(prime(q) for q in (*ORDER,Q)); seen=set(); counts={6:[0,0],10:[0,0]}
+    for key,r in d['paths'].items():
+        p=list(map(tuple,r['parts'])); tag=tuple(f for q,f in p)
+        assert key==','.join(map(str,tag)) and tag not in seen and p[0]==KEY and p[1][0]==Q and tag[1] in counts
+        seen.add(tag); s=C.State(p); assert not dead(s) and all(prime(q) for q,_ in p)
+        for j in range(1,len(p)):
+            q,f=p[j]; live,*_=split(p[:j],q); assert live[str(f)]==p[:j+1]
+        if r['type']=='support':
+            assert set(r)=={'parts','type','masks'}; ct,ppm=check_support(p,r['masks'],prime); assert sum(ct)==128
+            counts[tag[1]][0]+=1; receipt=(ct,ppm)
+        else:
+            assert r['type']=='price' and set(r)=={'parts','type','targets','receipt'}
+            v=excludes(p,s.bad,r['targets']);assert list(v)==r['receipt'];counts[tag[1]][1]+=1;receipt=v
+        print('PASS conditional path',tag,receipt,flush=True)
+    assert used==set(d['ecpp']) and counts=={6:[6,8],10:[10,0]}
+    print('CONDITIONAL deep leaf counts',counts,'SHA256',sha256(raw).hexdigest(),flush=True)
+
+
+if __name__=='__main__':
+    if sys.argv[1:]==['--deep']:deep()
+    else:
+        assert not sys.argv[1:]
+        verify()
