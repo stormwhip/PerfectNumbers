@@ -1,0 +1,4 @@
+﻿e=2 mod 3 (3, 7, 13, 19, 31) surviving Euler prime and source exponents [({19: 2, 13: 1, 3: 2}, {})]
+e=2 mod 3 (3, 5, 19, 31) surviving Euler prime and source exponents [({19: 2, 5: 1, 3: 6}, {}), ({19: 2, 5: 1, 3: 12}, {}), ({19: 2, 5: 1}, {3: 13})]
+e=2 mod 3 (3, 5, 13, 19) surviving Euler prime and source exponents [({19: 2, 5: 1, 3: 2}, {})]
+{"frozen_open_masks": 6556, "known_conditional_exclusions": 413, "new_complete_mask_exclusions": 0, "sharpened_mask_cells": 14, "full_actuals": 100, "surviving_sharpened_cells": [[19, 2, [3, 5, 13, 19]], [19, 2, [3, 5, 19, 31]], [19, 2, [3, 7, 13, 19, 31]], [19, 8, [3, 5, 19, 31]], [19, 8, [3, 7, 13, 19, 31]], [19, 20, [3, 5, 19, 31]], [19, 20, [3, 7, 13, 19, 31]], [19, 26, [3, 5, 19, 31]], [19, 56, [3, 5, 19, 31]], [19, 56, [3, 7, 13, 19, 31]]], "open_triples": 4156, "open_actuals": 144, "delta_sha256": "4254072ed803cbf6fcd015ccc3732394a1f7b2d6dc4f53af44ce041af4aaf598"}

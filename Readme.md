@@ -2,9 +2,7 @@
 
 目标定理为：对每个奇完全数 $N$，均有 $N>10^{2400}$。
 
-当前为 `INCOMPLETE_FRONTIER`。八根互素类已排除。3,072 个含根规范分片中，2,868 个闭合，204 个开放，涉及 244 个不同实际指数。SupportSplit 新排除 9 个条件支持组合，各实际指数仍有开放组合。
-
-根 3 五个高指数的 E0/E1/E2 已获独立整数分支证明；1162 新对偶已核验，联合丰度分配待完成。完整闭合增量为 0。见[续研证据](Research/P3I00193Review/Progress.md)。
+当前状态为 `INCOMPLETE_FRONTIER`。3,072 个规范分片中已有 **2,974 个闭合**，剩余 **98 个分片、110 个不同的实际指数**，其中 89 个分片只剩一个指数。本批净排除 134 个实际指数，新增闭合 106 个分片。见[增量账本](Research/Session20261126/Delta.json)和[复验说明](Research/Session20261126/Readme.md)。
 
 | 文档 | 内容 |
 |---|---|
@@ -16,13 +14,12 @@
 
 ## 独立复验
 
-在仓库根目录用 Python 3.11 或更高版本运行，保留断言。
+在仓库根目录使用 Python 3.11+，保留断言。完整增量复验需要支持 `unsigned __int128` 的 C++17 编译器及 `python-flint==0.9.0`。依赖设置见[复验说明](Research/Session20261126/Readme.md)。
 
 ```sh
-python3 Sources/Python/RepositoryStructureChecks.py
-python3 -I -S -B Research/SupportSplit/Verify.py
-python3 -I -S -B -X int_max_str_digits=0 Research/Midday/LedgerTests.py
-python3 -I -S -B -X int_max_str_digits=0 Research/Midday/CheckLedger.py --workers 4 --check Research/Midday/Delta.json
+python Sources/Python/RepositoryStructureChecks.py
+python -I -S -B Research/Session20261126/CheckFrontier.py
+python -I -S -B -X int_max_str_digits=0 Research/Session20261126/Replay.py
 ```
 
-四条命令分别检查仓库路径与相对链接、条件支持排除、证书摘要与分片投影、午间登记证书的算术及覆盖。完整的历史复验入口见[总证明](Documentation/Proof2400.md#历史复验命令)。V21 长时实验使用 [Linux/WSL2 脚本](Scripts/Run72hWSL.sh)。
+三条命令依次检查仓库与链接、核对开放前沿表、重放本批证明并重新计算分片账本。历史复验入口见[总证明](Documentation/Proof2400.md#历史复验命令)。V21 计时实验使用 [Linux/WSL2 脚本](Scripts/Run72hWSL.sh)。

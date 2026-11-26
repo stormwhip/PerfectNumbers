@@ -1,0 +1,13 @@
+{
+  "status": "CONDITIONAL_ONLY",
+  "baseline_s": 1020,
+  "source_input_sha256": "54652cb67d6f807170248c00eb0c9004a200cd7b9027a73e923b7ea1a46cb30b",
+  "rows": 34972,
+  "distinct": 8771,
+  "source_free_rows": 7452,
+  "source_free_distinct": 1258,
+  "unresolved_rows": 27520,
+  "distinct_tested_bases": 2453,
+  "sieve_survivors": [],
+  "accepted_actuals": []
+}

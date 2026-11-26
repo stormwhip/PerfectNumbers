@@ -1,0 +1,5 @@
+﻿{"p": 7, "e": 906, "s": 453, "i": 453, "m": 2293, "q_prime_norm1_D": 2, "abstract_mass_floor": 2317, "abstract_generic_floor": 2304, "shortfall": 83, "source_b": 0, "scope": "numeric envelope only"}
+{"p": 7, "e": 738, "s": 369, "i": 369, "m": 375, "q_prime_norm1_D": 3, "abstract_mass_floor": 1889, "abstract_generic_floor": 1876, "shortfall": 511, "source_b": 0, "scope": "numeric envelope only"}
+{"p": 7, "e": 456, "s": 228, "i": 228, "m": 187, "q_prime_norm1_D": 2, "abstract_mass_floor": 1174, "abstract_generic_floor": 1161, "shortfall": 1226, "source_b": 0, "scope": "numeric envelope only"}
+{"p": 13, "e": 612, "s": 306, "i": 306, "m": 225, "q_prime_norm1_D": 3, "abstract_mass_floor": 2063, "abstract_generic_floor": 2050, "shortfall": 337, "source_b": 0, "scope": "numeric envelope only"}
+{"p": 13, "e": 618, "s": 309, "i": 309, "m": 1153, "q_prime_norm1_D": 5, "abstract_mass_floor": 2084, "abstract_generic_floor": 2071, "shortfall": 316, "source_b": 0, "scope": "numeric envelope only"}
