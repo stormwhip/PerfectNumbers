@@ -16,6 +16,10 @@ and exact division into \(A\); denote this prime by \(t\). Thus \(t\mid N\). For
 
 **Two further singleton forest proofs.** For $(7,70)$ and $(19,352)$ the [root-seven tree](Tree7x70.json.gz) and [root-nineteen tree](Tree19x352.json.gz) use the same exact splitting, valuation, Euler and disjoint-charging proof as above. Every split selects a proved prime dividing the compulsory part $D$, and enumerates every feasible actual exponent; both integer lower bounds must pass on every remaining leaf. The respective counts (forest leaves, splits, direct contradictions) are (568,40,618) and (282,13,297). The integer tail is part of every forest test. This exhausts `P7_I00019` and `P19_I00069`. ∎
 
+**Additional complete trees.** The same exact forest theorem applied to the [7,46](Tree7x46.json.gz), [19,348](Tree19x348.json.gz), and [31,348](Tree31x348.json.gz) packets contradicts $N\le B$ on every compatible branch. Their respective (forest, split, direct) counts are (754,24,786), (1516,107,1669), and (861,53,1157). For [11,42](JointTree11x42.json.gz) the partition requires three additional price leaves: the second and third fixed primes alone suffice as valuation targets, keeping all fixed components in the mass. The first two paths fix their exponents at (16,28) and a fourth at 30 or 36, and the third fixes them at (16,46). The three window counts are 448, 448 and 736; none survives. Another 443 forest leaves, 27 splits and 491 direct cases finish the domain. All four previously singleton obligations close. ∎
+
+The [7,90 certificate](Tree7x90.json.gz) likewise excludes that exact exponent by 454 forest leaves, 16 splits and 469 direct cases. It removes a membership in each of `P7_I00003` and `P7_I00005`; neither closes. The latter now requires only 12.
+
 **Coverage.** The $(7,168)$ packet shortens `P7_I00005`; it does not alone close it. The [current projection](Delta.json) gives every open shard ID with all its remaining exponents. The [verifier](Verify.py) rebuilds that projection after rechecking the new arithmetic. Historical certificates and their ledgers are unchanged. From the repository root:
 
 ```

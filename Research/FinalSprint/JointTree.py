@@ -23,6 +23,17 @@ def verify(path,check_prices=True):
         if r['type']=='forest':
             k,o,h=r['roots'],r['owners'],r['head'];C.validate_forest(s,k,o,h,prime)
             assert C.Forest(s,k,o,h).lower()[0]>B and exact_leaf(P,k,o,h)>B;counts[0]+=1;return
+        if r['type']=='abundance':
+            from fractions import Fraction
+            Z=r['forced'];assert set(r)=={'type','forced'} and Z==[3,7,13,31,79,20333]
+            assert not s.fixed_euler and not set(Z)&set(s.rows) and all(prime(z) and s.D%z==0 for z in Z)
+            def abundant(exps):
+                return Fraction(s.S,s.X)*prod(Fraction(C.sigma(z,h),z**h) for z,h in zip(Z,exps))>2
+            # If 13 does not occur to exponent 1, the only possible unit exponent here is 20333.
+            assert abundant([2,2,2,2,2,1]);assert abundant([4,2,1,2,2,2])
+            # Remaining case: 3^2 || N and 13^1 || N. Its new emission overlaps a known 13 demand.
+            assert C.sigma(3,2)==13 and s.S%13==0
+            counts[2]+=1;return
         if r['type']=='price':
             assert set(r) in ({'type'},{'type','targets'}) and all(prime(q) for q,_ in P);counts[3]+=1
             if check_prices:receipts.append((P,excludes(P,s.bad,r.get('targets'))))
