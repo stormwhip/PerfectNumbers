@@ -1,4 +1,8 @@
-# Twelve additional first-pivot exclusions (wave 1)
+# Low root-three exact-pivot exclusions
+
+**Final union across four disjoint packets:** 23 newly excluded first-pivot branches, zero new entire root exponents or shards. At $v_3(N)=6$, 159 of 182 compatible first-pivot exponents at 1093 are now excluded. At $v_3(N)=12$, 96 of 100 at 797161 are excluded; **only 1, 2, 66, 96 remain**. Wave 2 includes the [two-target valuation argument](Wave2/PairedProof.md) at the fixed Euler leaf. For each of `Wave2`, `Wave3`, `Wave4`, run its `Verify.py` with the repository root and its own `Branches.json.gz` as arguments. Run `AllDelta.py` with the repository root and the four packet paths in wave order to check disjointness and print the exact remaining lists.
+
+## Twelve additional first-pivot exclusions (wave 1)
 
 Let N be an odd perfect number at most 10^2400 with canonical root 3 (none of 19,7,11,31,13 divides N). At v3(N)=6, sigma(3^6)=1093; at v3(N)=12, sigma(3^12)=797161. Both are prime. The following exact valuations of the corresponding forced prime are impossible:
 
