@@ -19,6 +19,7 @@ ROOT = HERE.parents[1]
 MECHANISMS = {
     (7, 28): ('D2/Verify.py', (), 'VERIFIED (7, 28)'),
     (7, 130): ('E/Verify130.py', ('E/Tree7x130.json.gz',), 'tree'),
+    (7, 490): ('VerifyFibers.py', ('E3/Fibers7x490Complete.json.gz',), 'fibers'),
     (19, 162): ('VerifyFibers.py', ('E2/Fibers19x162Complete.json.gz',), 'fibers'),
     (19, 316): ('D/Verify.py', (), 'VERIFIED (19, 316)'),
     (19, 502): ('../Session20261126/TreeCheck.py', ('F/Tree19x502.json.gz',), 'stock_tree'),
