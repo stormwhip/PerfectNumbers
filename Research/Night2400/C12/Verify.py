@@ -34,6 +34,8 @@ def packet(name,expected):
     assert (d['p'],d['e'],d['pivot'])==(*KEY,Q)
     if expected:
         assert set(d)=={'p','e','pivot','cases','ecpp'} and set(d['cases'])==set(map(str,expected))
+    elif name=='Paths4.json.gz':
+        assert set(d)=={'p','e','pivot','paths','ecpp'}
     else:
         assert set(d)=={'p','e','pivot','complete','partial','ecpp'}
     @cache
@@ -93,6 +95,20 @@ def packet(name,expected):
             assert t=={'type':'price','targets':[1]} and p==[KEY,(Q,58)]
             ans=excludes(p,s.bad,[1]);assert ans==(0,[21,0,37]);stat[3]+=1
             print('PRICE 58',ans,flush=True)
+    if name=='Paths4.json.gz':
+        tags=set(); a=512738348529648177663331017165682915269207241; b=66399631; c=2047121
+        for key,r in d['paths'].items():
+            p=list(map(tuple,r['parts'])); es=tuple(e for q,e in p); assert es not in tags
+            assert set(r)=={'parts','targets','receipt'} and key==','.join(map(str,es))
+            assert p[:3]==[KEY,(Q,4),(a,4)] and all(prime(q) for q,_ in p)
+            if len(p)==4:assert p[-1][0]==b and r['targets']==[0,3]
+            else:assert len(p)==5 and p[3]==(b,30) and p[-1][0]==c and r['targets']==[0,4]
+            for j in range(1,len(p)):
+                live,*_=split(p[:j],p[j][0]);assert live[str(p[j][1])]==p[:j+1]
+            v=excludes(p,C.State(p).bad,r['targets']);assert list(v)==r['receipt'];tags.add(es)
+            print('PASS 4 CONDITIONAL',es,v,flush=True)
+        assert tags=={(310,4,4,j) for j in (52,58,60,64,66)}|{(310,4,4,30,j) for j in (42,46,48)}
+        assert used==set(book);print('CONDITIONAL 4 SHA256',sha256(raw).hexdigest(),flush=True);return
     if not expected:
         a,h=d['complete'],d['partial'];assert set(a)=={'parts','forest'} and set(h)=={'parts','masks'}
         for x,ef in [(a,10),(h,16)]:
@@ -113,6 +129,8 @@ if __name__=='__main__':
     assert __debug__
     if sys.argv[1:]==['--deep']:
         packet('Paths18.json.gz',())
+    elif sys.argv[1:]==['--deep4']:
+        packet('Paths4.json.gz',())
     else:
         assert not sys.argv[1:]
         packet('Minimum31x310.json.gz',(6,58))
