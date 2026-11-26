@@ -40,3 +40,5 @@ PASS projection 2996 76 86 with accepted-key arithmetic
 ```
 
 The next run started at the eight-key checkout `37da4f5d`, so it replayed exactly eight proofs (including `(7,420)` and `(13,372)`). Before its projection, the integration checkout advanced to `87fc66be`, so the printed projection is the nine-key ledger. Both steps passed, but this is **not** a nine-key arithmetic receipt. The entry point now refuses a changed accepted-key list; later integrated arithmetic is run from a fixed snapshot. Local stdout: `Build/Night2400/IntegratedReplayEight.log`.
+
+A clean detached checkout of `5a8c2db3b28fdf0af4dc3d8292b5ae12a4c1eefd` then replayed all nine accepted keys and the unchanged projection (exit 0). Local stdout: `Build/Night2400/IntegratedReplayNine.log`; it ended with `PASS projection 2999 73 83 with accepted-key arithmetic`. The final arithmetic replay is independent of the original discovery tools.
