@@ -95,10 +95,14 @@ def replay(x):
 
     walk([(7, 130)], tree)
     assert used == set(x['ecpp']) and terminals
-    closed_fibers = sorted(FIBERS - {path[0][1] for path in open_paths})
+    partial_fibers = sorted({path[0][1] for path in open_paths})
+    closed_fibers = sorted(FIBERS - set(partial_fibers))
+    partial = {f: dict(open_paths=[p for p in open_paths if p[0][1]==f],
+                       excluded_leaves=[p for p,_,_ in terminals if p[0][1]==f])
+               for f in partial_fibers}
     return dict(scope='EXACT_COMPLETE' if not open_paths else 'CONDITIONAL_ONLY',
-                closed_fibers=closed_fibers, open_paths=open_paths, terminals=terminals,
-                splits=splits, ecpp=len(used))
+                closed_fibers=closed_fibers, partial_fibers=partial,
+                open_paths=open_paths, terminals=terminals, splits=splits, ecpp=len(used))
 
 
 def verify(path):
