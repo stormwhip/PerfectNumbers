@@ -17,7 +17,8 @@ ROOT = HERE.parents[1]
 # A newly accepted key requires an explicit candidate-specific status check.
 MECHANISMS = {
     (7, 28): ('D2/Verify.py', (), 'VERIFIED (7, 28)'),
-    (7, 130): ('E/Verify130.py', ('E/Tree7x130.json.gz',), None),
+    (7, 130): ('E/Verify130.py', ('E/Tree7x130.json.gz',), 'tree'),
+    (19, 162): ('VerifyFibers.py', ('E2/Fibers19x162Complete.json.gz',), 'fibers'),
     (19, 316): ('D/Verify.py', (), 'VERIFIED (19, 316)'),
 }
 
@@ -40,9 +41,12 @@ def main():
         for key in keys:
             script,data,expected=MECHANISMS[key]
             log,sec=run(script,[HERE/p for p in data]); final=log.rstrip().splitlines()[-1]
-            if expected is None:
+            if expected=='tree':
                 status=json.loads(final)
                 assert status['scope']=='EXACT_COMPLETE' and not status['open_paths'] and not status['partial_fibers']
+            elif expected=='fibers':
+                status=json.loads(final)
+                assert tuple(status['key'])==key and not status['open'] and status['covered']==status['domain']
             else:
                 assert final.startswith(expected),final
             print('PASS complete',key,f'{sec:.3f} s',flush=True)
