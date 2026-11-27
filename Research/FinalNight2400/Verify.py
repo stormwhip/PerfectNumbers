@@ -167,6 +167,7 @@ Nineteen/Verify906Class.py
 Nineteen/Sparse906.py
 Nineteen/SparseWindows.py
 AuditNext/SparseAudit.py
+SevenNext/Verify438New.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

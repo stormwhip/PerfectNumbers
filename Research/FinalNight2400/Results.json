@@ -2403,5 +2403,32 @@
       "Research/Session20261126/Anonymous/AnonymousGuard.md"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      438
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "canonical root 7 at exact exponent 438"
+    ],
+    "ExcludedDomain": [
+      "at first t^10 exact even v67 in {148,172,190,200,212,214,216,218,220,222,226,294,296,298,300}",
+      "at t^12 exact even v27431 in 30..72"
+    ],
+    "RemainingDomain": [
+      "at t^10, 102/150 directly viable assignments remain",
+      "at t^12, v27431 in {2,4,...,28}, 14/55 remain"
+    ],
+    "Method": "external fixed linear Euler, disjoint (2,4) weights for t^12; one-target priced ordinary rows for t^10",
+    "ProofReference": "SevenNext/New438.md",
+    "CertificateReference": "SevenNext/Verify438New.py",
+    "VerificationStatus": "ShortSeven/Review438.md; all 37 fibers independently reviewed",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
