@@ -87,6 +87,8 @@ Batch/Low.py
 Nineteen/VerifySmallSix.py
 AuditNext/Lattice.py
 AuditNext/CheckSmall.py Solved6.json
+Others/FullLast.py
+AuditNext/Check388.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

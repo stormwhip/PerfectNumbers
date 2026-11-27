@@ -1350,5 +1350,32 @@
       "Research/RootFiveNext/PrimeCheck.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      13,
+      388
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "N odd perfect <=10^2400",
+      "19,7,11,31 absent",
+      "13^388 || N"
+    ],
+    "ExcludedDomain": [
+      "all 40 first exponents, raw tail 236"
+    ],
+    "RemainingDomain": [],
+    "Method": "31+2+6+1, triple disjoint weights and ordinary-only forest",
+    "ProofReference": "Others/VertexNote.md and SixReview.md",
+    "CertificateReference": "Others/FullLast.py",
+    "VerificationStatus": "AuditNext/Full388.md: independent full replay 307.375 s",
+    "Dependencies": [
+      "Research/Night2400/Fibers13x388.json.gz",
+      "Disjoint/Verify.py",
+      "Others/CheckSix.py",
+      "Others/Vertex388.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
