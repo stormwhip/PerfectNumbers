@@ -864,5 +864,56 @@
       "Others/ThirtyOne352Thirteen.json.gz"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      31,
+      16
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "canonical 31 (19,7,11 absent), 31^16 || N"
+    ],
+    "ExcludedDomain": [
+      "v_751670559138758105956097(N)=16"
+    ],
+    "RemainingDomain": [
+      "first pivot exponent 22"
+    ],
+    "Method": "Euler on/outside certified forest vertices and lossless order-13 price",
+    "ProofReference": "ThirtyOne/First16.md",
+    "CertificateReference": "ThirtyOne/Verify16.py",
+    "VerificationStatus": "Audit/SixteenReceipt.md",
+    "Dependencies": [
+      "historical arithmetic and prime certificate dependencies specified in proof"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      358
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^358 || N, s=38518547, t=1491133067, i=v_s(N), j=v_t(N)"
+    ],
+    "ExcludedDomain": [
+      "539 of 968 live (i,j), exact list from Triple/Verify.py:check()[1]",
+      "includes all i>=66 and all j>=54"
+    ],
+    "RemainingDomain": [
+      "429 pairs returned by check()[2]; always v_t(q+1)=j-1"
+    ],
+    "Method": "mandatory Euler source at t plus disjoint-order p,s window cap",
+    "ProofReference": "Triple/Proof.md",
+    "CertificateReference": "Triple/Verify.py",
+    "VerificationStatus": "TenNext/TripleReview.md",
+    "Dependencies": [
+      "historical arithmetic and prime certificate dependencies specified in proof"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

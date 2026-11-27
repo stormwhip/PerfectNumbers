@@ -1,0 +1,7 @@
+# Conditional (31,16) first 16 audit
+
+**Accept first 16, not a complete key**: within canonical 31^16 (19,7,11 absent), vₜ(N)≠16 for t=751670559138758105956097. Historical 14/16 union reaches 15/16; first 22 still open under this packet.
+
+[Candidate proof](../ThirtyOne/First16.md) and [offline arithmetic](../ThirtyOne/Verify16.py) ran 16.016 s, exit 0, 1855 distinct vertices, 540 ECPP chains. If Euler q occurs anywhere on this finite vertex set, t never divides q+1, including vertices inactive in a given realization. Hence all 15 missing units are supplied via even-index atoms and X·t^180 has floor 4703. Euler's remaining composite square atom was included by checking both prime and square as possible labels; no high-Euler gap. Otherwise all active vertices are ordinary; the even-only forest gives floor 2402, strictly >10^2400. No assumption that Euler is exterior to the anonymous cofactor is needed, since q is not charged separately in this case.
+
+[Independent checker](CheckSixteen.py), 3.540 s: uses explicit even-only dynamic programming with geometric-sum divisibility instead of modifying an Euler flag; recomputes all proposed losing single-target roots using the Newton digit rather than the original exponentiation lifting method. No candidate arithmetic imports. Recovered exact display floor 2402 and zero t-price deficits. The 540 supplied primality chains were checked by the candidate's historical validation library. Run both with standard flags -I -S -B -X int_max_str_digits=0. Scope: no closure at first 22 or any other canonical root.
