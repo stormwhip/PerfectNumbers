@@ -4,13 +4,15 @@
 
 |Measure|Baseline|Accepted overlay|
 |---|---:|---:|
-|Canonical shards closed|3004|3010|
-|Shards open|68|62|
-|Distinct exact keys open|78|72|
-|Singleton shards open|60|54|
+|Canonical shards closed|3004|3012|
+|Shards open|68|60|
+|Distinct exact keys open|78|70|
+|Singleton shards open|60|52|
 
 |Exact key|Singleton closed|Independent full-dependency replay|
 |---|---|---|
+|(11,358)|P11_I00070|[252.947 s](AuditNext/Full358.md)|
+|(11,462)|P11_I00088|[254.255 s](AuditNext/Full462.md)|
 |(19,58)|P19_I00015|[384.095 s](Audit/TenReceipt.md)|
 |(31,310)|P31_I00062|[63.005 s](Audit/ThirtyOneReceipt.md)|
 |(13,262)|P13_I00055|[220.073 s](Audit/ThirteenReceipt.md)|
@@ -18,7 +20,7 @@
 |(31,16)|P31_I00005|[259.891 s](AuditNext/Full31Receipt.md)|
 |(31,352)|P31_I00069|[240.628 s](Audit/MoreReceipt.md)|
 
-The first key has no preceding root; the 31 keys assume 19,7,11 absent and the 13 keys assume 19,7,11,31 absent. The [independent frozen projection](Audit/BatchOne.md) checks disjoint incidence deletion for the first five; the sixth is checked against both maps in its own receipt. For all other domains see the [conditional ledger](Results.json): a higher-level closure can supersede older partial rows, which are not counted again.
+The 19 key has no preceding root; the 11 keys assume 19 and 7 absent; the 31 keys assume 19,7,11 absent and the 13 keys assume 19,7,11,31 absent. The [independent frozen projection](Audit/BatchOne.md) checks disjoint incidence deletion for the first five; all later additions are checked against both maps in their own receipts. For all other domains see the [conditional ledger](Results.json): a higher-level closure can supersede older partial rows, which are not counted again.
 
 ## Known–to prove
 
@@ -28,7 +30,7 @@ Assume positive odd N≤10^2400, sigma(N)=2N. Exclude the first dividing prime i
 |---:|---:|---|
 |19|22|2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 30, 32, 46, 48, 82, 222, 276, 280, 282, 292, 312, 330, 358, 372, 420, 432, 618|
 |7|16|4, 6, 10, 12, 16, 18, 24, 34, 36, 48, 430, 438, 456, 486, 600, 738, 808, 882, 906|
-|11|9|4, 6, 12, 16, 18, 48, 358, 396, 456, 462|
+|11|7|4, 6, 12, 16, 18, 48, 396, 456|
 |31|6|2, 6, 240, 268, 456, 466|
 |13|6|2, 4, 6, 8, 388, 612, 618|
 |3|3|6, 12, 856|

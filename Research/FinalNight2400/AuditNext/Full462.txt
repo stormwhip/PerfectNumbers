@@ -1,0 +1,44 @@
+replay FrontierTree.py Fibers11x462.json.gz
+{"key": [11, 462], "pivot": "879701", "tail": 243, "domain": [1, 4, 6, 9, 10, 12, 13, 16, 21, 22, 24, 25, 28, 30, 33, 34, 36, 40, 42, 45, 46, 48, 49, 52, 54, 57, 58, 60, 61, 64, 66, 69, 70, 72, 73, 76, 78, 81, 82, 84, 85, 88, 90, 93, 96, 97, 100, 102, 105, 106, 108, 109, 112, 114, 117, 118, 120, 121], "covered": [9, 10, 12, 13, 16, 21, 24, 25, 28, 30, 33, 34, 40, 45, 48, 49, 52, 54, 57, 58, 60, 61, 64, 66, 69, 73, 76, 78, 81, 82, 84, 85, 88, 90, 93, 96, 97, 100, 102, 105, 106, 108, 109, 112, 114, 117, 118, 120, 121], "open": [1, 4, 6, 22, 36, 42, 46, 70, 72], "open_paths": [], "stats": {"direct": 124, "forest": 100, "split": 7, "prefix_price": 3}, "ecpp": 752, "sha256": "2e58bd6b8142157eb3b1972f600863ffe194264f5310f89b099e2919f6196c65"}
+replay FiberPartition.py Fibers11x462.json.gz
+key (11, 462) pivot 879701 compelled valuation 1 root live [1, 4, 6, 9, 10, 12, 13, 16, 21, 22, 24, 25, 28, 30, 33, 34, 36, 40, 42, 45, 46, 48, 49, 52, 54, 57, 58, 60, 61, 64, 66, 69, 70, 72, 73, 76, 78, 81, 82, 84, 85, 88, 90, 93, 96, 97, 100, 102, 105, 106, 108, 109, 112, 114, 117, 118, 120, 121] root direct [124, 126, 129, 130, 133, 136, 138, 141, 142, 144, 145, 148, 150, 153, 154, 156, 157, 160, 162, 165, 166, 168, 169, 172, 174, 177, 178, 180, 181, 184, 186, 190, 192, 193, 196, 198, 201, 202, 204, 205, 210, 213, 214, 216, 217, 220, 222, 225, 226, 228, 229, 232, 234, 237, 238, 240, 241] root illegal [2, 3, 5, 7, 8, 11, 14, 15, 17, 18, 19, 20, 23, 26, 27, 29, 31, 32, 35, 37, 38, 39, 41, 43, 44, 47, 50, 51, 53, 55, 56, 59, 62, 63, 65, 67, 68, 71, 74, 75, 77, 79, 80, 83, 86, 87, 89, 91, 92, 94, 95, 98, 99, 101, 103, 104, 107, 110, 111, 113, 115, 116, 119, 122, 123, 125, 127, 128, 131, 132, 134, 135, 137, 139, 140, 143, 146, 147, 149, 151, 152, 155, 158, 159, 161, 163, 164, 167, 170, 171, 173, 175, 176, 179, 182, 183, 185, 187, 188, 189, 191, 194, 195, 197, 199, 200, 203, 206, 207, 208, 209, 211, 212, 215, 218, 219, 221, 223, 224, 227, 230, 231, 233, 235, 236, 239, 242]
+PASS data-only domain audit; counts {'split': 8, 'direct': 124, 'illegal': 314, 'forest': 100, 'prefix_price': 3} tails [243, 28, 18, 68, 34, 101, 32, 41] open per first {1: 1, 4: 1, 6: 1, 22: 1, 36: 1, 42: 1, 46: 1, 70: 1, 72: 1} ECPP entries 752
+replay Verify.py 70 72
+f 70 exceptions 27 0 window bound True
+f 72 exceptions 27 0 window bound True
+replay One.py
+PASS f=1; price 79/20; base losses 8 R rows 2/4/6/8 and >=10 covered
+replay FortySix.py
+node 186573765099366387558103 size tail 72 buckets {'pending': 2, 'banned': 8, 'simple': 5, 'mandatory': 20} recursive [2, 4]
+node 15829818018805614866849809679719065959794687 size tail 38 buckets {'pending': 1, 'supplier': 1, 'simple': 3, 'mandatory': 13} recursive [2]
+node 193882521011 size tail 138 buckets {'banned': 23, 'pending': 1, 'supplier': 2, 'simple': 7, 'mandatory': 35} recursive [4]
+node 2150985008682894323231 size tail 72 buckets {'supplier': 2, 'simple': 5, 'mandatory': 28} recursive []
+node 13584009104671777218460029405269012416436766343 size tail 34 buckets {'banned': 6, 'simple': 2, 'mandatory': 8} recursive []
+PASS exact first valuation 46 at (11,462)
+replay FortyTwo.py
+forced R, raw size tail 124 direct live [4, 6, 10, 12]
+PASS f42 requires v_R(N)=6; labels 19 tree counts {'pending': 24, 'banned': 250, 'supplier': 83, 'simple': 346, 'mandatory': 697, 'raw': 1294}
+replay Six42.py
+PASS f42/R6 excluded; forced labels [445781254602760137919549783164067, 2994389444585561163574775461704890739751087] buckets {'pending': 2, 'supplier': 2, 'simple': 3, 'banned': 5, 'mandatory': 11, 'raw': 19}
+replay ThirtySix.py
+U size tail 102 first live [4, 6, 10, 12, 16, 30]
+u exponent 4 r tail 200 r live [2, 4, 8, 10, 12, 14, 16, 18, 22, 24]
+u exponent 6 r tail 196 r live [2, 4, 8, 10, 12, 14, 16, 18]
+u exponent 10 r tail 186 r live [2, 4, 8, 10, 12]
+u exponent 12 r tail 182 r live [2, 4, 8]
+u exponent 16 r tail 174 r live []
+u exponent 30 r tail 146 r live []
+PASS exact conditional reduction, 26 live pairs
+replay ForceSix36.py
+U 4 certified tree size 16 leaf buckets {'pending': 16, 'banned': 70, 'supplier': 18, 'simple': 96, 'mandatory': 223, 'raw': 366}
+U 10 certified tree size 95 leaf buckets {'pending': 95, 'banned': 2191, 'supplier': 318, 'simple': 1978, 'mandatory': 4804, 'raw': 8071}
+U 12 certified tree size 10 leaf buckets {'pending': 10, 'supplier': 29, 'simple': 173, 'banned': 293, 'mandatory': 426, 'raw': 799}
+PASS f36 requires exponent 6 at 93156840075306751
+replay Complete36.py
+U 6 certified tree size 12 leaf buckets {'pending': 12, 'banned': 273, 'simple': 171, 'mandatory': 428, 'raw': 725, 'supplier': 28}
+PASS f36 final U^6 excluded
+replay ForestSeal.py 4 6 22
+PASS 4 vertex count 836 ECPP 155 ordinary forest floor 2406
+PASS 6 vertex count 504 ECPP 97 ordinary forest floor 2402
+PASS 22 vertex count 1990 ECPP 495 ordinary forest floor 2403
+PASS complete (11,462) P11_I00088: all 58/58; first raw tail 243

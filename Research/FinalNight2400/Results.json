@@ -1248,5 +1248,56 @@
       "Others/ElevenPrice.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      11,
+      462
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19 and 7 absent",
+      "11^462 || N"
+    ],
+    "ExcludedDomain": [
+      "entire first-pivot domain 58/58, strict tail 243"
+    ],
+    "RemainingDomain": [],
+    "Method": "49 historical fibers plus exact nine-fiber cover, final Euler-on-vertex mixed pricing and ordinary-only forest",
+    "ProofReference": "Eleven/FullKey.md",
+    "CertificateReference": "Eleven/FullKey.py",
+    "VerificationStatus": "AuditNext/Full462.md; targeted full replay 254.255 s; independent f22 price/forest 12.236 s",
+    "Dependencies": [
+      "Research/Night2400/Fibers11x462.json.gz",
+      "Eleven/ForestSeal.py",
+      "prior conditional checkers enumerated by FullKey.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      3,
+      12
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "canonical 3, v_3=12 and N odd perfect <=10^2400"
+    ],
+    "ExcludedDomain": [
+      "v_797161(N)=66 complete: old 96/97 plus complete 5897^6 subtree, no missing sibling"
+    ],
+    "RemainingDomain": [
+      "v_797161=1 (398581^102 or 108), or v_797161=96"
+    ],
+    "Method": "exhaustive new tertiary tree with 7916 forests, three special terminals and exact historical union",
+    "ProofReference": "Three/ProofR.md",
+    "CertificateReference": "Three/Complete66.py --replay-old",
+    "VerificationStatus": "AuditNext/First66.md; 533.584 s with historical dependency, separately reconstructed all 294 splits",
+    "Dependencies": [
+      "Research/Night2400/B/HardAtomRoute.md",
+      "Research/Night2400/B/EulerRoute.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

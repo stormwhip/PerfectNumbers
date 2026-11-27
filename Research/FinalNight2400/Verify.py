@@ -79,6 +79,10 @@ AuditNext/CheckSmall.py Solved8.json
 SevenNext/VerifyTwo.py
 Others/FullEleven.py
 AuditNext/CheckEleven358.py
+Eleven/FullKey.py
+AuditNext/Check462.py
+Three/Complete66.py --replay-old
+AuditNext/Check66.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
