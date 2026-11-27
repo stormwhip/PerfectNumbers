@@ -2375,5 +2375,33 @@
       "complete dependency union in the cited checker"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      906
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400, 19 absent, 7^906 || N",
+      "A=(7^907-1)/6; s=v_7(q+1), q is the Euler prime"
+    ],
+    "ExcludedDomain": [
+      "s>=711, all Euler exponents; at s>=206 all a>=5; at s>=514 any exterior ordinary q-emitter",
+      "if A has at most two distinct prime divisors, no high A-supplier of 144 or more units; previous scalar midpoint s=453 ruled out",
+      "if A squarefree at most four factors impossible; if a>=5 or s=0 at most 3 distinct factors impossible even without squarefreeness"
+    ],
+    "RemainingDomain": [
+      "key open. When omega(A)<=2: s=482..665 and at least one of its two factors supplies 82..143 units (5735 necessary pairs, not realizability); omega(A)>2 not excluded"
+    ],
+    "Method": "balanced internal emitter, prime-power roughness gains, complete inverse-CRT bands with polynomial size/gcd certificates; no LLL oracle used on replay",
+    "ProofReference": "AuditNext/Seven906.md, DeepMid906.md, FourFactors906.md; Nineteen/ProofSparse906.md",
+    "CertificateReference": "AuditNext/Divisor906.py, Repeated906.py, Gain906.py; Nineteen/Sparse906.py and SparseWindows.py",
+    "VerificationStatus": "Nineteen/Audit906.md + AuditNext/SparseReceipt.md; independent alternative polynomial arithmetic",
+    "Dependencies": [
+      "Research/Night2400/B/HardAtomRoute.md",
+      "Research/Session20261126/Anonymous/AnonymousGuard.md"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

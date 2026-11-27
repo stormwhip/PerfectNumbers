@@ -152,6 +152,21 @@ SevenNext/VerifyNest40.py
 SevenNext/VerifyAnchorPlus.py
 Nineteen/VerifyAll282.py
 Nineteen292/Full292.py
+AuditNext/Seven906.py
+AuditNext/Divisor906.py
+AuditNext/Repeated906.py
+AuditNext/Gain906.py
+AuditNext/Squarefree906.py
+AuditNext/Supply906.py
+AuditNext/FourFactors906.py
+AuditNext/TwoPrimes906.py
+AuditNext/Mid906.py
+AuditNext/DeepMid906.py
+Nineteen/Independent906.py
+Nineteen/Verify906Class.py
+Nineteen/Sparse906.py
+Nineteen/SparseWindows.py
+AuditNext/SparseAudit.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
