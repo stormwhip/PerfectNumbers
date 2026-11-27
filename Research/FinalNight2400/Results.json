@@ -1505,5 +1505,54 @@
       "all new files listed by Seven430/Inventory.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      372
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "positive odd perfect N<=10^2400",
+      "19^372 || N"
+    ],
+    "ExcludedDomain": [
+      "all 15 live first powers in the canonical class"
+    ],
+    "RemainingDomain": [],
+    "Method": "historical G4 masked 10 plus 5 unrestricted exhaustive fibers; strict forests and 296 new ECPP chains",
+    "ProofReference": "More312/ProofNext.md",
+    "CertificateReference": "More312/FullNext.py",
+    "VerificationStatus": "AuditNext/Full372.md, full targeted replay 8.309 s",
+    "Dependencies": [
+      "Research/Night2400/G4/Nineteen372.json.gz",
+      "More312/Nineteen372Five.json.gz"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      11,
+      396
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "11^396 || N, 19 and 7 absent"
+    ],
+    "ExcludedDomain": [
+      "complete firsts 96,106,126,138"
+    ],
+    "RemainingDomain": [
+      "2,4,6,8,12,22,24,26"
+    ],
+    "Method": "complete exact tree plus credit for mandatory mass and priced incoming valuations on each prefix",
+    "ProofReference": "Batch/Hybrid.md",
+    "CertificateReference": "Batch/Hybrid.py",
+    "VerificationStatus": "TenNext/HybridReview.md, 12 splits, 141 forests, 64 price leaves and 1458 ECPP entries",
+    "Dependencies": [
+      "historical references in proof; frozen baseline commit as stated"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

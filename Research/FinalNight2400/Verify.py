@@ -95,6 +95,8 @@ AuditNext/CheckSmall.py Solved4.json
 More312/Full.py
 Seven430/Full430.py
 AuditNext/Check430.py
+More312/FullNext.py
+Batch/Hybrid.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
