@@ -1,0 +1,17 @@
+#!/bin/sh
+set -eu
+base=/mnt/e/PerfectNumbers/Build/Night2400/LinuxTools/usr
+export LD_LIBRARY_PATH="$base/lib/x86_64-linux-gnu"
+case "$1" in
+alpha) n=535940677705231968446980033868157253816182476884822315023200714766313349844971195748781;;
+beta) n=1499591840773348162010277233471;;
+gamma) n=4961875266854567094287439936050727868984513603641284694929310607926600695677418245034742669705564580909;;
+delta) n=414300178787220916417462739793042544001926953491417161;;
+epsilon) n=4090042568596957407337048513243718501585221223831286256009;;
+*) exit 2;;
+esac
+for sigma in $(seq 509001 509018); do
+ code=0
+ d=$(printf '%s\n' "$n" | timeout 20 "$base/bin/ecm" -q -param 0 -sigma "$sigma" 220000 26000000) || code=$?
+ if [ "$code" -gt 1 ] && [ "$code" -ne 124 ]; then printf 'curve=%s status=%s\n%s\n' "$sigma" "$code" "$d"; break; fi
+done

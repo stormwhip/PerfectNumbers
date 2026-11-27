@@ -1,10 +1,16 @@
 # \(10^{2400}\) 证明发布验收清单
 
+## 2026-11-27 夜间增量验收
+
+- 使用[夜间重放入口](../Research/Night2400/Replay.py)复验 13 个完整指数并重建投影。预期输出为 3,003 片闭合、69 片开放、79 个不同的待证键。
+- [冻结晚间账本](../Research/FinalSprint/Delta.json)是投影输入，[逐片余集](../Research/Night2400/ShardToKeys.json)是本批输出。条件子域的证书留在[证明索引](../Research/Night2400/README.md)。
+- 完成其余 69 个分片及全历史端到端重放后验收目标定理。
+
 ## 2026-11-26 晚间增量验收
 
-- 以[冻结账本](../Research/Session20261126/Delta.json)为输入；用[晚间验证器](../Research/FinalSprint/Verify.py)复验 18 个完整指数的证明，再重算[当前逐片账本](../Research/FinalSprint/Delta.json)。验收口径为新增 16 个闭片，而非 18 个闭片。
+- 以[冻结账本](../Research/Session20261126/Delta.json)为输入；用[晚间验证器](../Research/FinalSprint/Verify.py)复验 18 个完整指数的证明，再重算[晚间逐片账本](../Research/FinalSprint/Delta.json)。验收口径为新增 16 个闭片，而非 18 个闭片。
 - [条件支持](../Research/FinalSprint/Support/README.md)及[低指数枢轴](../Research/FinalSprint/LowBranches/README.md)分别复验，不作为完整指数登记。
-- 全历史端到端复验和剩余 82 个分片的证明未完成。以下各日期保留当时的验收范围。
+- 该批次验收后有 82 个开放分片。各日期保留当时的验收范围。
 
 ## 2026-11-25 历史证据验收
 

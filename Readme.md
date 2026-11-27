@@ -2,7 +2,7 @@
 
 目标定理为：对每个奇完全数 $N$，均有 $N>10^{2400}$。
 
-当前状态为 `INCOMPLETE_FRONTIER`，目标定理尚未证完。3,072 个规范分片中已有 **2,990 个闭合**；剩余 **82 个开放分片、92 个不同的实际指数**，其中 74 个分片只剩一个指数。11 月 26 日晚间相对[冻结基线](Research/Session20261126/Delta.json)净排除 18 个实际指数，新增闭合 16 个分片。见[当前逐片账本](Research/FinalSprint/Delta.json)和[逐根结果](Research/FinalSprint/Report.md)。
+当前状态为 `INCOMPLETE_FRONTIER`。3,072 个规范分片中已有 **3,003 个闭合**，余 **69 个开放分片、79 个不同的 $(p,e)$**，其中 61 个分片只剩一个指数。11 月 27 日批次排除 13 个完整指数，新增闭合 13 片。$N>10^{2400}$ 仍待证明。[逐片余集](Research/Night2400/ShardToKeys.json) · [证明与复验](Research/Night2400/README.md)。
 
 | 文档 | 内容 |
 |---|---|
@@ -14,12 +14,12 @@
 
 ## 独立复验
 
-在仓库根目录使用 Python 3.11+，保留断言。晚间[增量验证器](Research/FinalSprint/Verify.py)重放新增的完整指数证书，并将其投影到冻结的基线账本；根 3 范围筛需要支持 `unsigned __int128` 的 C++17 编译器（默认 `g++`，仅安装 Clang 时设置 `CXX=clang++`）。历史批次有单独的[依赖与复验说明](Research/Session20261126/Readme.md)。
+在仓库根目录使用 Python 3.11+，保留断言。依次检查目录和链接、晚间冻结账本、夜间增量的精确算术及逐片投影。
 
 ```sh
 python Sources/Python/RepositoryStructureChecks.py
 python -I -S -B Sources/Python/FinalSprintLedgerChecks.py
-python -I -S -B -X int_max_str_digits=0 Research/FinalSprint/Verify.py
+python -I -S -B -X int_max_str_digits=0 Research/Night2400/Replay.py
 ```
 
-前两条命令分别检查命名与链接、证书哈希与逐片投影，均不验证全部数学推理。第三条重放本批完整指数的证明并重算账本，不重放全部历史证明。[条件支持](Research/FinalSprint/Support/README.md)与[低指数枢轴](Research/FinalSprint/LowBranches/README.md)另行复验，不计作新增闭片。历史复验入口见[总证明](Documentation/Proof2400.md#历史复验命令)。V21 计时实验使用 [Linux/WSL2 脚本](Scripts/Run72hWSL.sh)。
+最后一条命令重放 13 个完整指数的证书并重算现行账本。仅核对投影时可附加 `--projection-only`。[晚间 18 个指数的复验](Research/FinalSprint/Proof.md)及[历史复验顺序](Documentation/Proof2400.md#历史复验命令)另列。V21 长时实验使用 [Linux/WSL2 脚本](Scripts/Run72hWSL.sh)。

@@ -1,0 +1,16 @@
+# Lowest Euler fiber and strict additions at canonical (13,262)
+
+Assume an odd perfect `N ≤ 10^2400` with `19,7,11,31 ∤ N` and `13^262 ∥ N` (`P13_I00055`). The [tree packet](Thirteen262.json.gz) closes `v_Q(N)=1` without any further support assumption and certifies additional exact leaves. It does not duplicate the already-complete first values from the handoff, and it does not close the entire key. The certified pivot is `Q=231050784610489`.
+
+```powershell
+python -I -S -B Research/Night2400/G6/Verify.py
+python -I -S -B Research/Night2400/G6/MaskCover.py
+```
+
+The [tree verifier](Verify.py) regenerates the exact domain, all represented split children and all their size tails using the standard library and the public proof recurrences. It checks all included prime labels. Both forest recurrences must give a strict integer lower bound above `10^2400`; a printed decimal floor of 2400 alone is never accepted. The first raw size tail is 128. This bundle includes only `v_Q=1,12,16,28,42,46,60`, the actual seven first values with nonempty missing paths in the frozen discovery handoff. The other 22 live first values are intentionally omitted from this packet.
+
+The low Euler case originally had 40 explicit gaps, 35 of which had no floor from the depth-limited handoff. All 40 now have strict unmasked forest proofs. A cheap continuation closed 33; witness-factor reuse plus short deterministic ECM closed the last seven. Main gain came from factors of `σ(7553426653081^2)`, `σ(1000619^12)` and the recurrent fourth-power witnesses. A composite trial label was removed before proof admission, and a strict proven forest remained. The final fiber has 73 forest leaves, including the 40 newly closed holes, and four exact splits. Its minimum forest floor is 2401. Tree SHA-256: `3b5ad35e1f8bc10658e8e978ecd8fefc9334370e709312dd65b0bce3605deab5`. The final unmasked tree leaves ongoing first values `12,16,28,42,46,60` with `2,3,1,2,1,1` explicit inner holes, respectively. An open marker is never considered a proof.
+
+The [mask verifier](MaskCover.py) first replays the exact same tree. The [mask addendum](Masks262.json.gz) certifies direct, rational abundance or two-recurrence forest contradictions for specific open paths under exact S8 masks, using order `(19,7,11,31,13,3,5,17)`. All remaining holes in these seven first values are covered on masks `80,208`; the addendum proves 44 distinct mask–path exclusions in total. Mask SHA-256: `c19a181481036af2af79465b61e5c5d1c494b00da7d91dacc4ed04139710cd33`. Coverage from this command is only for the seven represented first values. It must be combined with independent certificates for all omitted first values before calling any mask globally closed. An exterior Euler component is allowed in abundance tests, or the Euler slot is already fixed by the path.
+
+The optional [domain diagnostic](Domain.py), [forest discovery](Search.py), [tree sealer](Seal.py) and [mask sealer](SealConditional.py) use the authorized read-only handoff and factor index. The short deterministic discovery ECM programs are [source-level](Ecm.sh), [shared low witnesses](EcmLow.sh), [second pass](EcmMore.sh) and [remaining low witnesses](EcmThird.sh). The offline replays use none of those discovery resources. No total ledger is modified.

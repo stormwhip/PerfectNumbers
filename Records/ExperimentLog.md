@@ -4,6 +4,10 @@
 
 This log separates **imported historical claims**, **directly observed experiments**, and **proof-checked results**. Dates use YYYY-MM-DD.
 
+## 2026-11-27 夜间增量
+
+基线 `49b19bbd`。根 7、13、19 分别排除 7、1、5 个不同的 $(p,e)$，各自清空对应的单指数分片。累计 3,003 闭、69 开，余 79 个待证键。[逐片余集](../Research/Night2400/ShardToKeys.json) · [证书与冷复验](../Research/Night2400/README.md) · [PR #8](https://github.com/stormwhip/PerfectNumbers/pull/8)。
+
 ## 2026-11-26 晚间：18 个完整指数，16 个新增闭片
 
 以 `2b53c830` 的 98 个开放分片、110 个实际指数为输入。逐包验收后按整片投影，得到 2,990 闭、82 开、92 个开放实际指数。规范根 3 的 970 与 990 均覆盖全部来源分支；根 7 的 90 和 168 虽被排除，`P7_I00005` 仍需排除指数 12。五个新增全局命中集及 23 个低根三枢轴分支不计入闭片数。[逐包摘要与哈希](../Research/FinalSprint/Delta.json) · [证明与复验](../Research/FinalSprint/Proof.md) · [PR #7](https://github.com/stormwhip/PerfectNumbers/pull/7)。
