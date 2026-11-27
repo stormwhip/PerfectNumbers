@@ -1579,5 +1579,55 @@
       "historical references in proof; frozen baseline commit as stated"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      420
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400, exact 19^420"
+    ],
+    "ExcludedDomain": [
+      "complete first f2 and f6"
+    ],
+    "RemainingDomain": [
+      "only first f4; no shard closure"
+    ],
+    "Method": "Euler-on-vertex dichotomy, exact second domain, complete authenticated ordinary forest",
+    "ProofReference": "ShortNineteen/DeepProof.md and FirstSix420.md",
+    "CertificateReference": "ShortNineteen/CheckDeep.py and Verify.py",
+    "VerificationStatus": "TenNext/ShortDeepReview.md and Short420Review.md",
+    "Dependencies": [
+      "Research/Night2400/C and C2, historical pivot books",
+      "Ten/Weighted.py exact root lifts"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      330
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400, exact 19^330"
+    ],
+    "ExcludedDomain": [
+      "complete first f6; at f2 the secondary values 1,5,8"
+    ],
+    "RemainingDomain": [
+      "first f2 (secondary 2,4,6) or f4"
+    ],
+    "Method": "Euler-on-vertex dichotomy, exact second domain, complete authenticated ordinary forest",
+    "ProofReference": "ShortNineteen/DeepProof.md and FirstSix420.md",
+    "CertificateReference": "ShortNineteen/CheckDeep.py and Verify.py",
+    "VerificationStatus": "TenNext/ShortDeepReview.md and Short420Review.md",
+    "Dependencies": [
+      "Research/Night2400/C and C2, historical pivot books",
+      "Ten/Weighted.py exact root lifts"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

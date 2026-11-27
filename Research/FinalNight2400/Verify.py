@@ -98,6 +98,8 @@ AuditNext/Check430.py
 More312/FullNext.py
 Batch/Hybrid.py
 Batch/HybridLow.py
+ShortNineteen/Verify.py
+ShortNineteen/CheckDeep.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
