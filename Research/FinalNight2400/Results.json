@@ -324,5 +324,161 @@
       "Others/Root31x310F4.json.gz"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      13,
+      388
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "canonical root 13 at exact exponent 388"
+    ],
+    "ExcludedDomain": [
+      "v_3543791(N) in {72,78}"
+    ],
+    "RemainingDomain": [
+      "first pivot 2,6,36,40,42,52,66"
+    ],
+    "Method": "coprime index lengths, weights 2 and 4, exact prime/square-aware loss",
+    "ProofReference": "Disjoint/Proof.md",
+    "CertificateReference": "Disjoint/Verify.py",
+    "VerificationStatus": "Seven/DisjointReview.md",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      12
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "canonical root 7 at exact exponent 12",
+      "v_16148168401(N)=12"
+    ],
+    "ExcludedDomain": [
+      "T=G(16148168401,12)/13, v_T(N) in {1,4,5,8,9}"
+    ],
+    "RemainingDomain": [
+      "v_T(N)=2 or 6"
+    ],
+    "Method": "forests, cyclotomic block pricing, compulsory order-89 supplier impossibility",
+    "ProofReference": "Seven/Proof.md and Seven/LowOne.md",
+    "CertificateReference": "Seven/Verify12.py and Seven/LowOne.py",
+    "VerificationStatus": "Nineteen/AuditSeven.md",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      12
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "canonical root 7 at exact exponent 12",
+      "v_16148168401(N)=42"
+    ],
+    "ExcludedDomain": [
+      "122 surviving-before-pricing values at pivot 173, exact complement of remaining among 247 live"
+    ],
+    "RemainingDomain": [
+      "v_173(N) even 2..228 or 232; or odd in {1,5,9,13,21,25,29,33,37,41}"
+    ],
+    "Method": "weight 20 at odd order 43; full Euler square and tail cover",
+    "ProofReference": "Seven/Proof.md",
+    "CertificateReference": "Seven/Verify42.py",
+    "VerificationStatus": "Nineteen/AuditSeven.md",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      438
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "canonical root 7 at exact exponent 438"
+    ],
+    "ExcludedDomain": [
+      "t=572749682520506652634407616247, v_t=10: even v_67=228..292",
+      "v_t=12: even v_27431=74..110"
+    ],
+    "RemainingDomain": [
+      "v_t=10: even v_67=2..226 or 294..300",
+      "v_t=12: even v_27431=2..72"
+    ],
+    "Method": "forced Euler residue and external supplier split",
+    "ProofReference": "Seven/Proof.md",
+    "CertificateReference": "Seven/Verify438.py",
+    "VerificationStatus": "Nineteen/AuditSeven.md",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      11,
+      462
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "canonical root 11 at exact exponent 462"
+    ],
+    "ExcludedDomain": [
+      "v_879701(N)=46"
+    ],
+    "RemainingDomain": [
+      "first pivot 4,6,22,36,42"
+    ],
+    "Method": "five forced-component splits with common fifth-order joint price",
+    "ProofReference": "Eleven/FortySix.md",
+    "CertificateReference": "Eleven/FortySix.py",
+    "VerificationStatus": "Others/Eleven46Review.md",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      882
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd N, sigma(N)=2N, N<=10^2400",
+      "7^882 || N"
+    ],
+    "ExcludedDomain": [
+      "canonical root 7, S8 masks 54 and 186, all v_21193; 4 new cells at h=2,8 plus previously accepted h=72"
+    ],
+    "RemainingDomain": [
+      "at each first exponent 2 or 8: masks 50,58,178",
+      "all other first exponents outside those masks retain their own historical restrictions"
+    ],
+    "Method": "cap contradiction at 13 or 3 followed by strict abundant divisor",
+    "ProofReference": "Audit/SevenEight/Proof.md",
+    "CertificateReference": "Audit/SevenEight/Verify.py",
+    "VerificationStatus": "Root7Joint/MaskReceipt.md",
+    "Dependencies": [
+      "Research/Night2400/G7/Seven882.json.gz",
+      "Root7Joint/Proof.md"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
