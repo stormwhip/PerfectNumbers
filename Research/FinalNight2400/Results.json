@@ -2555,5 +2555,55 @@
       "Root7Joint/Verify.py (root lifts only)"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      12
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "N odd perfect <=10^2400,19 absent",
+      "7^12,Q^12,T^2 exact"
+    ],
+    "ExcludedDomain": [
+      "v_3453283=60 complete"
+    ],
+    "RemainingDomain": [
+      "30/68 exact values of 3453283 remain; no T² fiber closure"
+    ],
+    "Method": "complete large-anchor exponent split with disjoint compulsory credits",
+    "ProofReference": "SevenNext/L60.md",
+    "CertificateReference": "SevenNext/VerifyL60.py",
+    "VerificationStatus": "ShortSeven/ReviewL60.md",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      438
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "N odd perfect <=10^2400,19 absent",
+      "7^438 exact; v_572749682520506652634407616247=12"
+    ],
+    "ExcludedDomain": [
+      "v_27431=28 complete"
+    ],
+    "RemainingDomain": [
+      "even v_27431=2..26; 13 possible values at this prefix"
+    ],
+    "Method": "complete large-anchor exponent split with disjoint compulsory credits",
+    "ProofReference": "SevenNext/Last28.md",
+    "CertificateReference": "SevenNext/Verify438Last28.py",
+    "VerificationStatus": "ShortSeven/ReviewLast28.md",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
