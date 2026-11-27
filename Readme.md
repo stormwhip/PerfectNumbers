@@ -10,7 +10,7 @@
 | [CurrentStatus2400](Documentation/CurrentStatus2400.md) | 当前逐根统计与证据等级 |
 | [ResearchProblems2400](Documentation/ResearchProblems2400.md) · [NextPlan2400](Documentation/NextPlan2400.md) | 待证命题与工作顺序 |
 | [RepositoryMap](Documentation/RepositoryMap.md) | 目录、依赖与复验入口 |
-| [ProgressReport2400](Documentation/ProgressReport2400.md) · [ExperimentLog](Records/ExperimentLog.md) | 版本进度与实验记录 |
+| [Milestones](Records/Milestones.md) · [ExperimentLog](Records/ExperimentLog.md) | 版本进度与实验记录 |
 
 ## 独立复验
 

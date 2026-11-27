@@ -68,10 +68,9 @@ PerfectNumbers/
 | [CurrentStatus2400.md](CurrentStatus2400.md) | **唯一当前状态摘要**与完整剩余任务 |
 | [Proof2400.md](Proof2400.md) | 总证明、覆盖范围与复验 |
 | [NextPlan2400.md](NextPlan2400.md) | 下一步研究与验收顺序 |
-| [ProgressReport2400.md](ProgressReport2400.md) | 历史过程、对照实验和新模块进展 |
 | [ResearchProblems2400.md](ResearchProblems2400.md) | 数学定义、所有待证条件及不可省略的证明义务 |
 | [ValidationChecklist.md](../Records/ValidationChecklist.md) | 发布前逐项验收要求 |
-| [Milestones.md](../Records/Milestones.md) | 每一阶段的证据等级及下一道门槛 |
+| [Milestones.md](../Records/Milestones.md) | 历史证明时间线、阶段证据及验收要求 |
 | [ExperimentLog.md](../Records/ExperimentLog.md) | 不可篡改的历史实验记录 |
 | [独立验证集成报告](../Research/Session20261122/Reports/IndependentProofIntegration2400.md) | V2 工程规格、复现命令、缺口 |
 

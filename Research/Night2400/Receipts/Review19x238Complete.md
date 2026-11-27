@@ -1,4 +1,8 @@
-# F2 — complete exact (19,238), P19_I00050
+# Independent replay of $(19,238)$
+
+The complete replay certifies exclusion of the canonical exact pair $(19,238)$. The frozen ledger assigns this pair as the sole remaining member of `P19_I00050`.
+
+## Complete replay
 
 Detached clean tracked candidate `18d1aad0ae80a4d474c9cfa1dc8a938e3d025dbf`, CPython 3.11.9; gzip SHA-256 `cf38a926adfcfdf75674b4e8c524d89cf8d6661da908893ff9df9bbbe475fd2d`. No author data, caches, or discovery tools. Frozen source identities for JointTree, JointValuation, PivotCheck, Compose, ForestReplay and PrimeCheck all match base `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`.
 
@@ -12,3 +16,19 @@ python -I -S -B -X int_max_str_digits=0 Research/Night2400/Receipts/FiberPartiti
 Independent integer audit exit 0, elapsed 8.2056861 s. First pivot `606492758240679674698864343145363724798136175178043`, compelled valuation 1, `3 mod 4`; all nine even first exponents 2–18 present. Before raw monotone tail 37, the 18 odds fail Euler parity and the nine evens 20–36 fail exact-state arithmetic. All 354 split domains and first strict overflow endpoints were rebuilt with equality at B retained; exact live child sets match everywhere. Audit counts 10,385 forest, 11,062 direct, 18,156 incompatible, one price, zero OPEN; 15,598 embedded ECPP labels.
 
 The sole price is the exactly fixed prefix `[(19,238),(606492758240679674698864343145363724798136175178043,18)]`, targets `[0,1]`. Frozen `JointTree.py` executes `JointValuation.excludes` by default; no structural-only mode was used. Forest leaves require both independent integer recurrences strictly above B. The mathematical result exhausts the frozen `P19_I00050` residual singleton `[238]`, not a blanket divisibility lift to another actual exponent.
+
+## Earlier replay stages
+
+The following stages all use the canonical root and exact exponent of the complete replay. Their conditional exclusions are included in the corresponding first-pivot domain above.
+
+### Lead packet
+
+The compulsory pivot is $606492758240679674698864343145363724798136175178043$, with incoming valuation one and a strict size tail from 37. The admissible first-pivot domain is $\{2,4,6,8,10,12,14,16,18\}$. The first replay excludes $\{8,14,16,18\}$, including the joint valuation price at 18. It took 9.450 s. [Original replay record](https://github.com/stormwhip/PerfectNumbers/blob/b4b2a30601ef5e3f135c47c846c1e9801af57b3f/Research/Night2400/Receipts/Review19x238.md).
+
+### Complementary packet
+
+The replay excludes $\{4,10,12\}$ in the same domain. This raises combined coverage to $7/9$, leaving $\{2,6\}$. All 52 internal split domains were independently reproduced. The replay took 77.981 s. [Original replay record](https://github.com/stormwhip/PerfectNumbers/blob/b4b2a30601ef5e3f135c47c846c1e9801af57b3f/Research/Night2400/Receipts/Review19x238F2.md).
+
+### Extension at valuation two
+
+The additional subtree excludes first-pivot valuation 2. Its eight admissible second-pivot valuations precede a strict size tail from 23. The combined coverage becomes $8/9$, leaving first-pivot valuation 6. The replay took 147.440 s. [Original replay record](https://github.com/stormwhip/PerfectNumbers/blob/b4b2a30601ef5e3f135c47c846c1e9801af57b3f/Research/Night2400/Receipts/Review19x238Eight.md).

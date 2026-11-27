@@ -1,8 +1,8 @@
 # Overnight exact-exponent overlay (2026-11-26/27, UTC+08)
 
-Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research branch, the frozen 2,990/3,072 closures increase to **3,003/3,072**; **69** shards and **79** distinct exact keys remain. The global lower bound is **not** established. [Ledger increment](Delta.json), [key → shards](KeyToShards.json), [shard → remainder](ShardToKeys.json).
+The 26 November [frozen ledger](../FinalSprint/Delta.json) at [`49b19bbd`](https://github.com/stormwhip/PerfectNumbers/commit/49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec) contains 2,990 closed shards. This batch excludes 13 exact pairs, each the sole remaining member of its shard. Its ledger has 3,003 of 3,072 shards closed, with 69 open shards and 79 distinct remaining pairs. See the [ledger increment](Delta.json), [index of shards by pair](KeyToShards.json), and [remaining pairs by shard](ShardToKeys.json).
 
-## Complete key after non-author cold replay
+## Complete exact-pair exclusions
 
 * `(19,238)` / `P19_I00050`: [complete hybrid tree and proof](F2/README.md), [cold receipt](Receipts/Review19x238Complete.md). All nine first-pivot values closed. Frozen remainder `[238]`. Candidate `18d1aad0ae80a4d474c9cfa1dc8a938e3d025dbf`; clean replay 748.712 s, including the sole stock price leaf.
 * `(19,270)` / `P19_I00056`: [complete hybrid proof](F3/README.md), [cold receipt](Receipts/Review19x270Complete.md); all 11 live first-pivot values closed. Frozen remainder `[270]`. Candidate `5b9bd25c67d3b0862ade41b75a9b3a3674417df7`; clean replay 199.474 s.
@@ -18,7 +18,7 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 * `(19,162)` / `P19_I00036`: [complete packet and proof](E2/README.md), [cold receipt](Receipts/Review19x162Complete.md). The complete first-pivot domain `[2,4,6]` is closed. In the genuinely new valuation-four part, the second pivot has the complete live domain `[2,4,6,8]` and strict tail from 19; all four double-checked forests pass. Frozen remainder `[162]`. Candidate `d18dd5ea26b674525a4a842d37a3c8d98619ab5b`; cold arithmetic 9.262 s.
 * `(19,502)` / `P19_I00094`: [standard tree and proof](F/README.md), [cold receipt](Receipts/Review19x502Complete.md). All 17 live first-pivot values are covered, with 1,843 forests, 103 splits, 2,038 direct contradictions and no open branches. Frozen remainder `[502]`. Candidate `b5667687e63b16aebd8b1faf9cd141415e5615df`; cold arithmetic 49.738 s.
 
-## Separate conditional results
+## Conditional exclusions
 
 * `(19,420)`, `P19_I00080`: first-pivot values 8, 10 and 12 excluded; **2,4,6** remain. [Proof and checker](C/README.md); cold candidate `1f20e3d284b8c8a329f6412c35a58b711b9829ef`, 124.720 s.
 * `(19,330)`, `P19_I00065`: first-pivot values 8, 10 and 12 excluded; **2,4,6** remain. [Proof and checker](C2/README.md), [cold receipt](Receipts/Review19x330.md).
@@ -49,7 +49,7 @@ Frozen GitHub main: `49b19bbdf6c46ac3cdd4cb0da2b6b08e1360fdec`. On this research
 * `(13,508)`, `P13_I00096`: 45 of 46 first-pivot values excluded; only **108** remains, in all eight canonical support masks. [Certificate](G8/Readme.md), [initial receipt](Receipts/Review13x508.md), [complete f6 follow-up receipt](Receipts/Review13x508Resume.md).
 * `(13,310)`, `P13_I00063`: 14 of 22 first-pivot values excluded, eight open. [Proof and checker](C6/README.md), [cold receipt](Receipts/Review13x310.md).
 
-These do not enter the full-key ledger. [Mainline regression receipt](Receipts/Mainline.md) lists independent scope and does not claim a full-history cold replay. Independent receipts for [(19,316)](Receipts/Review19x316.md), [(19,162)](Receipts/Review19x162.md) and [(19,420)](Receipts/Review19x420.md) include the endpoint audits.
+These do not enter the full-key ledger. [Mainline regression receipt](Receipts/Mainline.md) lists independent scope and does not claim a full-history cold replay. The independent receipts for [(19,316)](Receipts/Review19x316.md), [(19,162)](Receipts/Review19x162Complete.md) and [(19,420)](Receipts/Review19x420.md) include the endpoint audits.
 
 ## Offline replay
 

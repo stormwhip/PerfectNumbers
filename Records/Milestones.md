@@ -1,21 +1,38 @@
-# PerfectNumbers 当前里程碑
+# 完全数证明里程碑
 
-**更新于 2026-11-26。** 当前证明状态见 [CurrentStatus2400.md](../Documentation/CurrentStatus2400.md)。全局状态为 `INCOMPLETE_FRONTIER`。
+[当前状态](../Documentation/CurrentStatus2400.md)给出逐根统计和待证集合。[总证明](../Documentation/Proof2400.md)汇总数学推导，[实验日志](ExperimentLog.md)记录运行参数与结果。
+
+## 分片证明时间线
+
+| 批次 | 闭合 / 3,072 | 开放 | 冻结证据 |
+|---|---:|---:|---|
+| 根 3、5 赋值与来源 | 1,805 | 1,267 | [复验报告](../Research/FermatRootValuation/FermatRootValuationReport.md) |
+| 批量来源与扩大因子链 | 1,851 | 1,221 | [审计](../Research/SupplierBatch/BatchAudit2400.json) |
+| 指标容量 | 1,869 | 1,203 | [审计](../Research/IndicatorCapacity/Audit2400.json) |
+| Teichmüller 提升 | 2,015 | 1,057 | [审计](../Research/TeichmullerValuation/Audit2400.json) |
+| Gemini 批次并集 | 2,027 | 1,045 | [审计](../Research/TeichmullerValuation/GeminiBatchAudit2400.json) |
+| 来源间隙与多根因子链并集 | 2,192 | 880 | [审计](../Research/EveningMerge/Audit.json) |
+| 夜间并集 | 2,646 | 426 | [审计](../Research/NightMerge/Audit.json) |
+| 11 月 25 日上午 | 2,666 | 406 | [账本](../Research/Nov25/Delta.json) |
+| 11 月 25 日午间 | 2,868 | 204 | [账本](../Research/Midday/Delta.json) |
+| 11 月 25 日 SupportSplit | 2,868 | 204 | [九项条件排除](../Research/SupportSplit/Readme.md) |
+| 11 月 25 日 P3_I00193 | 2,868 | 204 | [候选重放及净成本缺口](../Research/P3I00193Review/Readme.md) |
+| 11 月 26 日晚间前（冻结基线） | 2,974 | 98 | [账本](../Research/Session20261126/Delta.json) · [验收](../Research/Session20261126/Validation.md) |
+| 11 月 26 日晚间 | 2,990 | 82 | [逐片账本](../Research/FinalSprint/Delta.json) · [证明与复验](../Research/FinalSprint/Proof.md) |
+| **11 月 27 日夜间** | **3,003** | **69** | [增量账本](../Research/Night2400/Delta.json) · [证书索引](../Research/Night2400/README.md) |
+
+11 月 26 日晚间前排除 134 个不同的 $(p,e)$ 并新增闭合 106 片，晚间批次分别再增 18 和 16。11 月 27 日夜间批次又排除 13 个不同的 $(p,e)$，各清空一个单指数分片。截至本批次，69 个开放分片包含 79 个不同的 $(p,e)$，其中 61 个分片各余一个指数。剩余分片构成 $N>10^{2400}$ 的待证情形。
+
+对与原八根全部互素的情形，已认证的下界为 $\log_{10}N\ge4183.209493$。将根 19 替换为 23 后，相应互素类的下界为 $\log_{10}N\ge3954.197016$。这两项均为指定根集的互素类结果。
+
+历史工程细节和性能试验见[早期完整报告](https://github.com/stormwhip/PerfectNumbers/blob/9d74c34dda8908a19542b855c78ef2feb8844b66/Documentation/ProgressReport2400.md)。
+
+## 数学证书与程序验证
 
 | 里程碑 | 当前状态 | 直接证据 | 下一项验收 |
 | --- | --- | --- | --- |
-| 11 月 27 日夜间批次 | 排除 13 个完整指数，新增闭合 13 片；累计 3,003 闭、69 开，余 79 个待证键 | [增量账本](../Research/Night2400/Delta.json) · [证明与复验](../Research/Night2400/README.md) | 余 61 个单指数分片及 8 个多指数分片 |
-| 11 月 26 日晚间批次 | 净排 18 个实际指数，新增 16 个闭片；累计 2,990 闭、82 开，余 92 个实际指数 | [逐片账本](../Research/FinalSprint/Delta.json) · [证明](../Research/FinalSprint/Proof.md) | 覆盖 74 个单指数分片及其余 8 片 |
 | 根 3 指数 970、990 | 两项全域证明均已登记 | [970](../Research/FinalSprint/Full970.md) · [990](../Research/FinalSprint/Proof990.md) | 根 3 剩余 6、12、856 |
-| 11 月 26 日晚间前的基线 | 新增 106 片，累计 2,974 片；当时剩余 98 片、110 个实际指数 | [冻结账本](../Research/Session20261126/Delta.json) | 作为晚间批次的投影输入 |
 | 根 3 指数 1,108、1,162 | 两项全域证书均已登记 | [1,108](../Research/Session20261126/Joint1108/Readme.md) · [1,162](../Research/Session20261126/Joint/README.md) | 保留历史回归 |
-| 八根支持分割 | 复现 9 项新增条件排除，完整实际指数新增为 0 | [条件证据](../Research/SupportSplit/Readme.md) | 穷尽同一实际指数的剩余支持 |
-| 午间证书并集 | 新增 202 片，累计闭合 2,868，开放 204 | [午间证书](../Research/Midday/README.md) | [剩余分片](../Research/Midday/Delta.json) |
-| 两批来源与多根因子链证书 | 新增 165 项，累计闭合 2,192，开放 880 | [总证明](../Documentation/Proof2400.md)及[合并审计](../Research/EveningMerge/Audit.json) | [下一步计划](../Documentation/NextPlan2400.md) |
-| Teichmüller 提升赋值判据 | 新增 146 项，累计闭合 2,015，开放 1,057 | [合并清单](../Research/TeichmullerValuation/Audit2400.json) | 继续证明开放分片 |
-| 指标容量对偶 | 新增 18 项，累计闭合 1,869，开放 1,203 | [基线审计](../Research/IndicatorCapacity/Audit2400.json) | 已纳入最新合并审计 |
-| 批量来源判据与扩大因子链 | 新增 46 项，累计闭合 1,851，开放 1,221 | [合并清单](../Research/SupplierBatch/BatchAudit2400.json) | 继续证明开放分片 |
-| 根 3、5 的赋值和特殊素数来源证明 | 独立核验 241 项，与历史审计去重后净增 176 项。合计 1,805 项闭合，1,267 项开放 | [数学证明与核验](../Research/FermatRootValuation/FermatRootValuationReport.md) | 按合并审计清单继续求证 |
 | 前人 \(10^{1500}\) 下界 | 已发表的参考结果 | [Ochem–Rao 2012](../References/OchemRao2012.pdf) | 用作独立回归比较 |
 | \(S_8\)-互素终局 LP | 旧阶段 LP 数值输出 2400.822998；最新互素类证书见上方 | [45001172416](https://github.com/stormwhip/PerfectNumbers/actions/runs/45001172416) | LP 模型涵盖性证明 + 独立导出对偶 |
 | 256 个前缀区间表 | 生成成功 | [45004245214](https://github.com/stormwhip/PerfectNumbers/actions/runs/45004245214) | 独立核查系数、增益与调用条件 |
@@ -33,6 +50,5 @@
 | V23 素性测试去重 | 两个完成分片加速约 25%–30% | [45012354324](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012354324) | 独立审计后考虑主线集成 |
 | V24 合数乘积 GCD | 4,000 组差分通过；性能结果混合 | [45012698021](https://github.com/stormwhip/PerfectNumbers/actions/runs/45012698021) | 扩大已完成分片样本 |
 | 72 小时运行框架 | 顶层分片支持重启 | [Run2400Scheduler.py](../Sources/Python/Run2400Scheduler.py) | 深层断点及全树实测 |
-| 无条件 \(N>10^{2400}\) | **未完成** | [数学研究纲领](../Documentation/ResearchProblems2400.md) | 九类候选证书全部独立验收 |
 
 历史 V1–V20 和更低目标的实验里程碑记录仍可通过[整理前版本](https://github.com/stormwhip/PerfectNumbers/blob/90100f4447f9196835951fdb7e9dcdd3ab23723f/Records/Milestones.md)访问；完整历史实验继续保存在 [ExperimentLog.md](ExperimentLog.md)。
