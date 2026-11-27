@@ -1675,5 +1675,53 @@
       "Research/Session20261126/PivotCheck.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      420
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^420 || N"
+    ],
+    "ExcludedDomain": [
+      "complete canonical key, all first valuations, unique singleton P19_I00080"
+    ],
+    "RemainingDomain": [],
+    "Method": "complete firsts 2,4,6,8,10,12 through Euler-location partitions and exact nested forest/price unions",
+    "ProofReference": "ShortNineteen/Full420.md",
+    "CertificateReference": "ShortNineteen/Full420.py",
+    "VerificationStatus": "AuditNext/Full420.md: targeted full replay 1570.141 s; all 6 firsts exhaustively verified",
+    "Dependencies": [
+      "Research/Night2400/C/Verify.py",
+      "earlier verified conditional packets listed in proof"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      618
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^618 || N"
+    ],
+    "ExcludedDomain": [
+      "complete canonical key, all first valuations, unique singleton P19_I00112"
+    ],
+    "RemainingDomain": [],
+    "Method": "15-stage disjoint 91-value cover; Euler source, exact polynomial divisor bounds and exhaustive fixed-anchor recursions",
+    "ProofReference": "Nineteen/Full618.md",
+    "CertificateReference": "Nineteen/VerifyAll618.py",
+    "VerificationStatus": "AuditNext/Full618.md: independent 15-stage full replay 2458.340 s; original, unoptimized final fiber independently verified in 1305.714 s",
+    "Dependencies": [
+      "Research/GeminiFrontier/SubmittedVerify.py",
+      "earlier verified conditional packets listed in proof"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

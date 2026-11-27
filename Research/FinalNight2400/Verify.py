@@ -106,6 +106,10 @@ Nineteen/VerifyHigh.py
 Nineteen/VerifyHighThree.py
 Nineteen/VerifyLowPair.py
 Nineteen/VerifyAbundance.py
+ShortNineteen/Full420.py
+AuditNext/Check420.py
+Nineteen/VerifyAll618.py
+AuditNext/Union618.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

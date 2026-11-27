@@ -1,0 +1,45 @@
+[PASS] INDEPENDENT PARTIAL (19, 618) t=2477: closed 30 odd (5..121) + 26 even (70..120) + tail>=243 (44.94s)
+PASS historical 56/91 live excluded, canonical even 122..242 direct, size tail 243, residual 35
+STAGE VerifyHistory.py ok; covered 56
+19^618, 2477 exponent exclusions: [48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68] supplier-split s counts: {48: 47, 50: 23, 52: 0, 54: 0, 56: 0, 58: 0, 60: 0, 62: 0, 64: 0, 66: 0, 68: 0}
+STAGE Verify618.py ok; covered 67
+PASS 19^618 square-supplier f= 36
+PASS 19^618 square-supplier f= 38
+PASS 19^618 square-supplier f= 40
+PASS 19^618 square-supplier f= 42
+PASS 19^618 square-supplier f= 44
+PASS 19^618 square-supplier f= 46
+STAGE Verify618Square.py ok; covered 73
+PASS 19^618 compelled-credit f= 26 roots 5 max supply 1
+PASS 19^618 compelled-credit f= 30 roots 2 max supply 2
+PASS 19^618 compelled-credit f= 32 roots 7 max supply 2
+PASS 19^618 compelled-credit f= 34 roots 8 max supply 2
+STAGE Verify618Credit.py ok; covered 77
+PASS 19^618 compelled-credit f= 22 roots 4 max supply 2
+PASS 19^618 compelled-credit f= 24 roots 6 max supply 2
+PASS 19^618 compelled-credit f= 28 roots 3 max supply 3
+STAGE Verify618Factored.py ok; covered 80
+PASS 19^618 Euler 2477^1; visited / priced / abundant [149, 99, 10]
+STAGE VerifyOne.py ok; covered 81
+anchor 19^618 18 direct [2, 4, 6, 8, 10, 12, 14] remaining []
+anchor 19^618 20 direct [2, 4, 6, 8, 10] remaining []
+STAGE VerifyAnchor.py ok; covered 83
+anchor 19^618 16 direct [2, 4, 6, 8] remaining []
+anchor 19^618 14 direct [2, 4, 6, 8, 10, 12, 14, 16, 18, 20] remaining [2]
+anchor 19^618 12 direct [2, 4, 6, 8, 10] remaining [4]
+STAGE VerifyAnchorMore.py ok; covered 84
+PASS complete 618 f= 14 cumulative visited 32
+STAGE VerifyNested.py ok; covered 85
+PASS complete 618 f= 12 cumulative visited 37
+STAGE VerifyTwelve.py ok; covered 86
+PASS complete 618 f= 10 cumulative visited 26
+STAGE VerifySmallTen.py ok; covered 87
+PASS complete 618 f= 8 cumulative visited 1384
+STAGE VerifySmallEight.py ok; covered 88
+PASS complete 618 f= 6 cumulative visited 835
+STAGE VerifySmallSix.py ok; covered 89
+PASS complete 618 f= 4 cumulative visited 2575
+STAGE VerifySmallFour.py ok; covered 90
+PASS complete 618 f= 2 cumulative visited 6937
+STAGE VerifySmallTwo.py ok; covered 91
+FULL KEY (19,618): all 91 live assignments excluded, direct checks and entire infinite size tail replayed. seconds 2458.11
