@@ -2531,5 +2531,29 @@
       "ShortSeven/Seven36Two.json.gz, Seven36Twelve.json.gz, Seven36Sixteen.json.gz"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      486
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "canonical 7^486,19 absent,N odd perfect <=10^2400; s=349667,t=1229048719"
+    ],
+    "ExcludedDomain": [
+      "905 of the 1517 live joint exponents; superset of earlier 755"
+    ],
+    "RemainingDomain": [
+      "612 pairs from PairSeven/Emitter.py:check()[2]; no i>=84 or j>=58"
+    ],
+    "Method": "same common cubic joint price plus size bound for the ordinary source emitting the exterior Euler prime",
+    "ProofReference": "PairSeven/Emitter.md",
+    "CertificateReference": "PairSeven/Emitter.py",
+    "VerificationStatus": "ThirtyOne268/Emitter486Review.md, 519.411 s independent implementation and 753.371 s stock",
+    "Dependencies": [
+      "Root7Joint/Verify.py (root lifts only)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

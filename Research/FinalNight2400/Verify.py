@@ -175,6 +175,8 @@ SparseSeven/VerifyThreeFactors.py
 AuditNext/SparsePatterns.py
 ShortSeven/Full36.py
 AuditNext/Check36.py
+PairSeven/Emitter.py
+ThirtyOne268/AuditEmitter486.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
