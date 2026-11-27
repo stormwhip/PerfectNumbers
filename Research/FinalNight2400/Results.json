@@ -567,5 +567,74 @@
       "Others/Verify46.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      618
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^618 || N"
+    ],
+    "ExcludedDomain": [
+      {
+        "Pivot": 2477,
+        "Valuations": [
+          26,
+          30,
+          32,
+          34,
+          36,
+          38,
+          40,
+          42,
+          44,
+          46,
+          48,
+          50,
+          52,
+          54,
+          56,
+          58,
+          60,
+          62,
+          64,
+          66,
+          68
+        ]
+      }
+    ],
+    "RemainingDomain": [
+      {
+        "Pivot": 2477,
+        "Valuations": [
+          1,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          28
+        ]
+      }
+    ],
+    "Method": "unique Euler quadratic source, inverse-square reimbursement and compulsory even-row net credits",
+    "ProofReference": "Nineteen/Proof618.md, Proof618Square.md and Proof618Credit.md",
+    "CertificateReference": "Nineteen/Verify618.py, Verify618Square.py and Verify618Credit.py",
+    "VerificationStatus": "SevenNext/Receipt618.md (340888 supplier allocations); Three/CreditReview.md",
+    "Dependencies": [
+      "Research/GeminiFrontier/Review.md (prior complement)",
+      "Research/RootFiveNext/PrimeCheck.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
