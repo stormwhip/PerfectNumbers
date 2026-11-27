@@ -208,5 +208,69 @@
       "Research/Session20261126/PivotCheck.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      13,
+      262
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "canonical root 13, exact exponent 262",
+      "N odd perfect <=10^2400"
+    ],
+    "ExcludedDomain": [
+      {
+        "Pivot": "231050784610489",
+        "Valuations": [
+          12,
+          28,
+          42,
+          60
+        ]
+      }
+    ],
+    "RemainingDomain": [
+      "16 (only v_6021499041499502533249=18 under 16)",
+      "46"
+    ],
+    "Method": "certified nested exact forests with strict exponent tails",
+    "ProofReference": "Others/STATUS.md",
+    "CertificateReference": "Others/Thirteen262.json.gz",
+    "VerificationStatus": "Audit/OtherReceipt.md",
+    "Dependencies": [
+      "Research/Night2400/README.md; historical complementary fibers"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      31,
+      310
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "canonical root 31, exact exponent 310",
+      "N odd perfect <=10^2400"
+    ],
+    "ExcludedDomain": [
+      {
+        "Pivot": "5691933643219",
+        "Valuations": [
+          18
+        ]
+      }
+    ],
+    "RemainingDomain": [
+      "4"
+    ],
+    "Method": "certified nested exact forests with strict exponent tails",
+    "ProofReference": "Others/STATUS.md",
+    "CertificateReference": "Others/Root31x310F18.json.gz",
+    "VerificationStatus": "Audit/OtherReceipt.md",
+    "Dependencies": [
+      "Research/Night2400/README.md; historical complementary fibers"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
