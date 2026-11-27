@@ -2430,5 +2430,29 @@
       "Research/Night2400/README.md (historical complement)"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      31,
+      240
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19,7,11 absent",
+      "31^240 || N"
+    ],
+    "ExcludedDomain": [
+      "all 62 first exponents, raw tail 465"
+    ],
+    "RemainingDomain": [],
+    "Method": "62-way finite cover with 148 exhaustive splits, 3491 forest leaves, 11 joint prices, two parity leaves and one high-order source exclusion",
+    "ProofReference": "ThirtyOne268/Root240/Proof.md",
+    "CertificateReference": "ThirtyOne268/Root240/Full240.py",
+    "VerificationStatus": "AuditNext/Full240.md; independent targeted cold 1349.598 s",
+    "Dependencies": [
+      "ThirtyOne268/Root240/Inventory.py; original historical arithmetic primitives"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

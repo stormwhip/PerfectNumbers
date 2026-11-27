@@ -168,6 +168,8 @@ Nineteen/Sparse906.py
 Nineteen/SparseWindows.py
 AuditNext/SparseAudit.py
 SevenNext/Verify438New.py
+ThirtyOne268/Root240/Full240.py
+AuditNext/Check240.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
