@@ -48,3 +48,31 @@ At detached `1df3994e2c80d8cd801331043153134723bcd8bf`, all ten accepted keys an
 At detached `ebd75735f9394ee176dde0ac63d65864e068084a`, all twelve accepted keys and exact projection completed cleanly (exit 0). The new `(7,682)` and `(19,270)` took 589.726 and 240.440 seconds. Local log `Build/Night2400/IntegratedReplayTwelve.log` ends with `PASS projection 3002 70 80 with accepted-key arithmetic`.
 
 Supplemental regression: `python -S -B -X int_max_str_digits=0 Research/Night2400/E/Test130.py --full` passed conditional accounting and six negative mutations, then rejected removal of a live deep sibling from the complete certificate. `python -S -B -X int_max_str_digits=0 Research/NightMerge/LatticeTests.py` verified the Sturm endpoints and 609 planted-divisor invariants; the C7 known-leaf regression continued to pass after the refined interior proof was added.
+
+## PR #8 integration replay
+
+The tracked snapshot at `48b58d97fcf5dff01097078f14721e9f9d1b392a` was replayed on Windows using Python 3.11.9. The thirteen case executions ran in parallel, with each running the corresponding verifier and status validation from [Replay.py](../Replay.py). The command below runs the same thirteen checks sequentially and then verifies the three projected JSON files.
+
+```sh
+python -I -S -B -X int_max_str_digits=0 Research/Night2400/Replay.py
+```
+
+| Complete key | Observed replay seconds |
+|---|---:|
+| `(7,28)` | 388.237 |
+| `(7,130)` | 141.253 |
+| `(7,420)` | 419.037 |
+| `(7,490)` | 40.221 |
+| `(7,586)` | 40.353 |
+| `(7,682)` | 877.361 |
+| `(7,732)` | 1050.695 |
+| `(13,372)` | 405.846 |
+| `(19,162)` | 9.211 |
+| `(19,238)` | 1062.964 |
+| `(19,270)` | 321.484 |
+| `(19,316)` | 250.367 |
+| `(19,502)` | 90.221 |
+
+All thirteen checks passed. Independent reconstruction from the frozen FinalSprint ledger matched all residual shard rows and the reverse index. The thirteen exclusions clear thirteen singleton shards, giving 3,003 closed, 69 open and 79 distinct open keys. Repository naming and relative Markdown links were checked on the integration snapshot. The FinalSprint ledger, Midday overlap and SupportSplit regressions also passed.
+
+The four newly recorded first-pivot values at `(19,432)` passed the [prefix-price replay](../FrontierTree.py) on the [packet](../Fibers19x432Price.json.gz). This scoped result is recorded in the [proof index](../README.md). Full-history arithmetic replay remains pending.
