@@ -297,5 +297,32 @@
       "Research/GeminiFrontier/VerifyT10.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      31,
+      310
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "N odd perfect <=10^2400",
+      "19,7,11 do not divide N",
+      "31^310 || N"
+    ],
+    "ExcludedDomain": [
+      "entire canonical key: all 26 live first-pivot exponents and every tail"
+    ],
+    "RemainingDomain": [],
+    "Method": "complete disjoint union of 21+3+1+1 pivot fibers; nested forests",
+    "ProofReference": "Others/Proof31.md",
+    "CertificateReference": "Others/Full31.py",
+    "VerificationStatus": "Audit/ThirtyOneReceipt.md; independent full-key replay 63.005 s",
+    "Dependencies": [
+      "Research/Night2400/Fibers31x310.json.gz",
+      "Research/Night2400/C12/Verify.py",
+      "Others/Root31x310F18.json.gz",
+      "Others/Root31x310F4.json.gz"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
