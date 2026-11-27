@@ -4,6 +4,10 @@
 
 This log separates **imported historical claims**, **directly observed experiments**, and **proof-checked results**. Dates use YYYY-MM-DD.
 
+## 2026-11-27 Gemini 增量审阅
+
+冻结主线 `2d39840d`；原始三件提交逐字节保存。复跑 16 个素性证书及五个算术入口；数学审阅补齐 $(19,618)$ 的 26 个高偶枢轴赋值的高次 Euler 域，重新枚举 91 个活赋值。$(13,508)$ 与历史 45/46 的已验收证书求并，新增完整键 1、闭片 1；现行 3,004 闭、68 开、78 键。接受 $(7,438)$ 与 $(19,618)$ 两组条件证书，另两组候选不计覆盖。 [审阅与复验](../Research/GeminiFrontier/Review.md) · [账本](../Research/GeminiFrontier/Delta.json)。
+
 ## 2026-11-27 夜间增量
 
 基线 `49b19bbd`。根 7、13、19 分别排除 7、1、5 个不同的 $(p,e)$，各自清空对应的单指数分片。累计 3,003 闭、69 开，余 79 个待证键。[逐片余集](../Research/Night2400/ShardToKeys.json) · [证书与冷复验](../Research/Night2400/README.md) · [PR #8](https://github.com/stormwhip/PerfectNumbers/pull/8)。
