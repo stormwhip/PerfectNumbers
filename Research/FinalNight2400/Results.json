@@ -662,5 +662,102 @@
       "Others/NextPrice42.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      618
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^618 || N"
+    ],
+    "ExcludedDomain": [
+      {
+        "Pivot": 2477,
+        "Valuations": [
+          1,
+          18,
+          20,
+          22,
+          24,
+          28
+        ]
+      }
+    ],
+    "RemainingDomain": [
+      {
+        "Pivot": 2477,
+        "Valuations": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16
+        ]
+      }
+    ],
+    "Method": "complete factors, anchored net-cost splits, and fixed Euler price tree",
+    "ProofReference": "Nineteen/Proof618Factored.md, ProofOne.md and ProofAnchor.md",
+    "CertificateReference": "Nineteen/Verify618Factored.py, VerifyOne.py and VerifyAnchor.py",
+    "VerificationStatus": "SevenNext/ReceiptFactored.md, ReceiptAnchor.md; Sieve/OneReview.md",
+    "Dependencies": [
+      "historical references in proof; frozen baseline commit as stated"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      11,
+      396
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "11^396 || N, 19 and 7 absent"
+    ],
+    "ExcludedDomain": [
+      "v_2383(N) even 150..232, all 42 fibers"
+    ],
+    "RemainingDomain": [
+      "v_2383(N) even 2..148: 74 values"
+    ],
+    "Method": "batch two-target cap and exact exterior-source maximization",
+    "ProofReference": "Batch/Proof.md",
+    "CertificateReference": "Batch/Verify.py",
+    "VerificationStatus": "TenNext/BatchReview.md",
+    "Dependencies": [
+      "historical references in proof; frozen baseline commit as stated"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      11,
+      462
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "11^462 || N, 19 and 7 absent"
+    ],
+    "ExcludedDomain": [
+      "v_879701(N)=42"
+    ],
+    "RemainingDomain": [
+      "v_879701(N) in {4,6,22,36}"
+    ],
+    "Method": "local factor hint with verified Lucas chains and complete low-power subtree",
+    "ProofReference": "Eleven/FortyTwo.md + Six42.md",
+    "CertificateReference": "Eleven/FortyTwo.py and Six42.py",
+    "VerificationStatus": "TenNext/Eleven42Review.md",
+    "Dependencies": [
+      "historical references in proof; frozen baseline commit as stated"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

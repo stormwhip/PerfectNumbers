@@ -55,6 +55,9 @@ def main():
   # Since 99*(w+50)=99*w+99*50, each full period is rationally scaled by 19^99.
   init=[root(((scale*B)**50*a)//(b*p**(99*w)),50) for w in range(50)];thresholds[scale]=[init[w%50]//p**(99*(w//50)) for w in range(619)]
  Qlim,Slim=thresholds[1],thresholds[3];tot=0
+ if '--anchor' in sys.argv:
+  sys.path.insert(0,str(Path(__file__).resolve().parent));from AnchorIndependent import run_anchor
+  run_anchor(Qlim,Slim,A);return
  if '--credit' in sys.argv:
   run_credit(Qlim,Slim,A);return
  for f in range(36,69,2):
