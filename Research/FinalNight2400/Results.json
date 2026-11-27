@@ -539,5 +539,33 @@
       "Research/Night2400/B/EulerRoute.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      13,
+      262
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "N odd perfect <=10^2400",
+      "19,7,11,31 do not divide N",
+      "13^262 || N"
+    ],
+    "ExcludedDomain": [
+      "all 29 live first pivot valuations with complete tails and all canonical supports"
+    ],
+    "RemainingDomain": [],
+    "Method": "disjoint historical union, forest at 16, joint critical cubic deficit and source cancellation at 46",
+    "ProofReference": "Others/Proof13.md",
+    "CertificateReference": "Others/Full13.py",
+    "VerificationStatus": "Audit/ThirteenReceipt.md: corrected full dependency replay 220.073 s; independent price grid 19.168 s",
+    "Dependencies": [
+      "Research/Night2400/Fibers13x262.json.gz",
+      "Research/Night2400/G6/Thirteen262.json.gz",
+      "Others/Thirteen262.json.gz",
+      "Others/Thirteen262Direct16.json.gz",
+      "Others/Verify46.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

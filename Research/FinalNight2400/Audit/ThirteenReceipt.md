@@ -1,0 +1,16 @@
+# Independent full-key audit: canonical (13,262)
+
+**Accepted.** Under canonical root 13 (19,7,11,31 absent), v₁₃(N)=262 is impossible for an odd perfect N≤10^2400. Independently matched both frozen mappings: true singleton P13_I00055, unique incidence. No lift to noncanonical 13 or other exponents.
+
+The corrected [full checker](../Others/Full13.py), SHA-256 a0af39718f3fad8204fbef62091510559b1cd2e046bc7dc85d90084d707f9815, ran in **220.073 s**, exit 0. [Transcript](FullThirteenFixed.txt). Earlier revision failed after 4.718 s at a same-name Python module collision; this correction explicitly loads the historical G6 verifier by its file path. Historical 22 first fibers, G6 first 1, new four firsts (12,28,42,60), new first 16, and first 46 form the disjoint union 22+1+4+1+1=29, exact first raw tail 128. Separate data-only reconstruction of first-16 packet (hash 81885a1ec74ac13fd07323c0fb475b5ec4774d551487cb45b45637f8d3eb375d) found 8 splits, 91 forests, 1020 ECPP entries, no open path under first 16; tails 128,64,29,19,120,103,79,62. Its forests and primes were checked in the default full run. Four-fiber packet independently replayed [earlier](OtherReceipt.md).
+
+**New last-fiber soundness.** Audited [argument](../Others/Proof13.md) (SHA-256 48ab6fd789c342da9f0a4ace31d6933cd09c93bbac592ee9948cd05b1d150f84). The Euler prime has a single linear contribution and a distinct square-base geometric atom; the base square's exponent budget corresponds to powers actually dividing N. For every feasible atom and every reserved subexponent h', X·lcm(D,r^h') divides N: gcd(r,X)=1 even when r is the Euler square, and calling this test on a subset does not assert that D is disjoint from that subset. The separate divisibility test for the square root retains every eligible square. For high order o at t, the (o−3) reserved powers, two for cubic supply, and the length-dependent (13^v−1) fit because 13∤o. All odd t-orders and 13-orders are exhausted. Distinct prime bases cannot equal the one Euler square. The largest loss per base is therefore used only once.
+
+When q is external, some *ordinary* unfixed component supplies it, since q divides neither fixed block nor its own sigma. Its overlap with D is bounded by max(A,C) because gcd(A,C)=1 and it is a single prime power. Price all other atoms (including the square Euler atom) with the same uniform loss allowance. The two lower bounds for the emitter use separate copies of N—multiplication proves a bound on N², not N. No Euler contribution is discarded. Every inverse congruence uses q≡2m−1 mod 4m and the size bound on the complementary divisor.
+
+[Independent arithmetic](CheckThirteen.py) in **19.168 s**, no candidate imports: alternate Frobenius lifts, opposite CRT, direct integer lcm, explicit enumeration of all prime factors of the order divisor, deterministic trial division of the fixed 48-bit prime, and exact rational (unrounded) window tests. Result 23 positive cubic exceptional bases, zero high-order exceptions, ceil(U)=2247129787084402954, and the same 4984+5320+1794=12098 disjoint Euler allocations, all strict. No arithmetic-only substitution for the full dependency run.
+
+~~~sh
+python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/Others/Full13.py
+python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/Audit/CheckThirteen.py
+~~~
