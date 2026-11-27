@@ -1479,5 +1479,31 @@
       "More312/FiveFibers.json.gz"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      430
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19 absent",
+      "7^430 || N"
+    ],
+    "ExcludedDomain": [
+      "all eight first-pivot exponents under all 64 canonical masks"
+    ],
+    "RemainingDomain": [],
+    "Method": "historical masked union + Euler vertex partitions + joint pricing and exact parity of six coprime nonsquare blocks",
+    "ProofReference": "Seven430/FullReceipt.md, Proof2.md, Proof4.md, Proof12.md",
+    "CertificateReference": "Seven430/Full430.py",
+    "VerificationStatus": "AuditNext/Full430.md; full dependency replay 1415.677 s",
+    "Dependencies": [
+      "Research/Night2400/C3/Verify.py",
+      "Research/Night2400/G5/Seven430.json.gz",
+      "all new files listed by Seven430/Inventory.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
