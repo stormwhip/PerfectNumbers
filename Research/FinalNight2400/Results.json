@@ -2680,5 +2680,42 @@
       "Research/Night2400/README.md (historical complement)"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      276
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "positive odd perfect N<=10^2400",
+      "19^276 || N; first pivot t=1176672733 (not 1109)"
+    ],
+    "ExcludedDomain": [
+      "64 of 70 verified complete first fibers; exact complement in RemainingDomain"
+    ],
+    "RemainingDomain": [
+      {
+        "Pivot": 1176672733,
+        "Valuations": [
+          1,
+          2,
+          8,
+          16,
+          18,
+          28
+        ]
+      }
+    ],
+    "Method": "verified previous-case inclusion plus exact new forest, parity/abundance, weight-96 fixed-Euler source and inert-prime cuts",
+    "ProofReference": "Ten276/Result276.md",
+    "CertificateReference": "Ten276/Final276.py 64",
+    "VerificationStatus": "Root222/Ten276Review.md, earlier whole 62 plus exact additional deltas; not a full-key claim",
+    "Dependencies": [
+      "Ten276/Cases64.json.gz",
+      "Ten276/Book64.json.gz",
+      "historical deterministic arithmetic specified in proof"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
