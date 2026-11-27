@@ -1966,5 +1966,55 @@
       "Research/FinalSprint/LowBranches/Wave4/README.md"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      3,
+      6
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400, canonical root 3 at v_3=6"
+    ],
+    "ExcludedDomain": [
+      "complete 1093 exponents 5,102,106,130,148,180,190,192,196,226,240,250"
+    ],
+    "RemainingDomain": [
+      "2,8,156,166,256 (five possible firsts at this checkpoint)"
+    ],
+    "Method": "twelve complete split trees and surplus-bounded two-target terminal prices, fixed and free Euler separately",
+    "ProofReference": "Three/ProofNext.md",
+    "CertificateReference": "Three/Full.py 5 102 106 130 148 180 190 192 196 226 240 250",
+    "VerificationStatus": "ShortSeven/ReviewThreeNext.md; 279 splits, 8227 strict forests, 50 pair leaves",
+    "Dependencies": [
+      "Research/FinalSprint/LowBranches/Wave4/README.md"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      282
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "N odd perfect <=10^2400",
+      "19^282 || N",
+      "1735317810514627^10 || N"
+    ],
+    "ExcludedDomain": [
+      "complete v_8383027=4 and 12 under first t^10"
+    ],
+    "RemainingDomain": [
+      "only v_8383027=22"
+    ],
+    "Method": "exact mandatory-mass splits, checked conditional abundance and masked/unmasked forests",
+    "ProofReference": "Nineteen/ProofFourth.md and ProofTwelfth282.md",
+    "CertificateReference": "Nineteen/VerifyFourth.py and VerifyTwelfth282.py",
+    "VerificationStatus": "AuditNext/TwoMore282.md; 234 split domains audited",
+    "Dependencies": [
+      "Research/Session20261126/PivotCheck.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
