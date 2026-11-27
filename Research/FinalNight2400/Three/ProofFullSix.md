@@ -1,16 +1,17 @@
 # Complete first-pivot exclusions under canonical (3,6)
 
-Let N be odd perfect, N≤B=10^2400, v_3(N)=6, and assume primes 19,7,11,31,13 absent. Then v_1093(N) is none of **16, 18, 22**. This is an exact conditional result on the forced prime 1093=σ(3^6), not the elimination of all possible v_1093 and not a shard closure. (Any increment to this list is documented separately.)
+Let N be odd perfect, N≤B=10^2400, v_3(N)=6, and assume primes 19,7,11,31,13 absent. Then v_1093(N) is none of **16, 18, 22, 96**. This is an exact conditional result on the forced prime 1093=σ(3^6), not the elimination of all possible v_1093 and not a shard closure. (Any increment to this list is documented separately.)
 
 | f=v_1093 | First forced pivot | First size tail | live | split nodes | forests | min floor log10 | ECPP |
 |---:|---:|---:|---:|---:|---:|---:|---:|
 |16|6042930800724062515917926174853823357|64|14|8|141|2400|439|
 |18|701028891746359469869552194901|78|11|2|31|2403|202|
 |22|17744134618167358492231724850912425660517933349980087120403|40|7|8|116|2400|176|
+|96|3460722931524936293|99|24|3|81|2403|319|
 
-At f=18, only secondary exponent 1 needs an additional split, and 7076597938951485524293843 has all 21 of its live valuations before its first size tail 92 covered. At f=22, the secondary exponent 10 needs the deep split on 513835279. The verifier checks every sibling and both independently computed size bounds strictly exceed B; rounded floor 2400 never suffices by itself. At f=16 the last split, along the difficult chain through 27047963938568517989…, 26448850911781, and 687183137093, is on 137 and covers all 50 live children before tail 263. Earlier archives left all three first exponents open. Run
+At f=18, only secondary exponent 1 needs an additional split, and 7076597938951485524293843 has all 21 of its live valuations before its first size tail 92 covered. At f=22, the secondary exponent 10 needs the deep split on 513835279. The verifier checks every sibling and both independently computed size bounds strictly exceed B; rounded floor 2400 never suffices by itself. At f=16 the last split, along the difficult chain through 27047963938568517989…, 26448850911781, and 687183137093, is on 137 and covers all 50 live children before tail 263. At f=96, valuations 10 and 22 on the compulsory 19-digit prime split again; their pivots 1192911611 and 7696369 respectively have raw tails 163,149 and 36,23 live children. The other 22 secondary valuations are forest leaves. Earlier archives left all four first exponents open. Run
 
-    python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/Three/Full.py 16 18 22
+    python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/Three/Full.py 16 18 22 96
 
 **Proof of finite cover and leaves.** At an exact prefix X=∏p^h let S=∏σ(p^h)/2^ε where ε is the number of odd exponents (0 or 1), and remove from S all fixed-prime factors to get D. Then XD|N; the fixed valuation test rejects any p-adic overflow. When a prime q|D is selected, c=v_q(D)≥1; the verifier scans all h starting at c with XD/q^c·q^h≤B and stops only at the strict monotone tail. It keeps every exact valuation consistent with Euler form, absent factors, prefix overflow, σ(X)≤2X and XD≤B. Equality is included. Children in the packet coincide exactly with this reconstructed set.
 

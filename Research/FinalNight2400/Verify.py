@@ -47,7 +47,7 @@ SevenNext/Audit618.py --anchor
 Three/Hard66.py
 Three/Six.py
 Three/VerifyForests.py
-Three/Full.py 16 18 22
+Three/Full.py 16 18 22 96
 SevenNext/VerifyTertiary.py
 SevenNext/VerifyFour.py
 SevenNext/Abundance.py
@@ -56,6 +56,8 @@ Audit/CheckMore.py
 Triple/Verify.py
 ThirtyOne/Verify16.py
 Audit/CheckSixteen.py
+Nineteen/VerifyAnchorMore.py
+Nineteen/VerifyNested.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

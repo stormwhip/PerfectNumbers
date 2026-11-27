@@ -915,5 +915,55 @@
       "historical arithmetic and prime certificate dependencies specified in proof"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      618
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^618 || N"
+    ],
+    "ExcludedDomain": [
+      "v_2477(N)=14,16, all further cases; at v_2477=12 all initial anchor exponents other than 4"
+    ],
+    "RemainingDomain": [
+      "first 2,4,6,8,10,12; at 12 only stated anchor^4 remains in this increment"
+    ],
+    "Method": "exhaustive ordinary anchor trees with cube-root cofactor exclusion and combined credits",
+    "ProofReference": "Nineteen/ProofAnchorMore.md and ProofNested.md",
+    "CertificateReference": "Nineteen/VerifyAnchorMore.py and VerifyNested.py",
+    "VerificationStatus": "Three/NestedReview.md",
+    "Dependencies": [
+      "Research/GeminiFrontier/Review.md (prior complement)",
+      "Research/RootFiveNext/PrimeCheck.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      3,
+      6
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400, canonical root 3 at v_3=6"
+    ],
+    "ExcludedDomain": [
+      "v_1093(N)=96 in full"
+    ],
+    "RemainingDomain": [
+      "1,2,5,8,102,106,126,130,148,156,166,180,190,192,196,226,240,250,256"
+    ],
+    "Method": "fixed Euler valuation price, exact split forests and complete monotone tails",
+    "ProofReference": "Three/ProofFullSix.md",
+    "CertificateReference": "Three/Full.py 96",
+    "VerificationStatus": "lead repeated: tail 99 and 24 exact children; three splits, 81 strict forests, 319 ECPP, min floor 2403",
+    "Dependencies": [
+      "Research/FinalSprint/LowBranches/Wave4/README.md"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
