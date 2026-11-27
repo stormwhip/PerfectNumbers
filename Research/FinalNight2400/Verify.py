@@ -135,6 +135,13 @@ Ten276/Release280/Full280.py
 AuditNext/Check280.py
 Nineteen292/CloseFour.py
 ShortSeven/Full82.py
+SevenNext/VerifyOdd42.py
+SevenNext/VerifyJointEven.py
+SevenNext/Knapsack13.py
+SevenNext/QuickNine.py
+SevenNext/CompleteFive.py
+SevenNext/VerifyCap42.py
+SevenNext/VerifyAnchorQ42.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

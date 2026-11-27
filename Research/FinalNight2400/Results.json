@@ -2139,5 +2139,69 @@
       "ShortSeven/Nineteen82Six.json.gz"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      12
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "canonical 7^12 exact; 19 absent; v_16148168401=42"
+    ],
+    "ExcludedDomain": [
+      {
+        "Pivot": 173,
+        "Valuations": [
+          5,
+          9,
+          13,
+          21,
+          25,
+          29,
+          33,
+          37,
+          41,
+          130,
+          136,
+          138,
+          156,
+          172,
+          176,
+          180,
+          182,
+          192,
+          196,
+          198,
+          200,
+          202,
+          204,
+          206,
+          208,
+          210,
+          212,
+          214,
+          216,
+          218,
+          220,
+          222,
+          224,
+          226,
+          228,
+          232
+        ]
+      }
+    ],
+    "RemainingDomain": [
+      "only odd 1 and 88 evens: all even 2..210 except 130,136,138,156,172,176,180,182,192,196,198,200,202,204,206,208,210"
+    ],
+    "Method": "joint order loss, 173-unit knapsack, compulsory Euler source, 45-child f5 forest, source cap and six exact anchor sweeps",
+    "ProofReference": "SevenNext/CompleteFive.md, Cap42.md, Knapsack13.md, JointEven.md, AnchorQ42.md",
+    "CertificateReference": "SevenNext/VerifyOdd42.py, VerifyJointEven.py, VerifyCap42.py, Knapsack13.py, CompleteFive.py, QuickNine.py, VerifyAnchorQ42.py",
+    "VerificationStatus": "Nineteen/AuditSevenUpper.md and AuditKnapsack.md; ShortSeven/ReviewFive.md, ReviewCap42.md and ReviewAnchor.md",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
