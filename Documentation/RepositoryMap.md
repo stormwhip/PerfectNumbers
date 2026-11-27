@@ -140,3 +140,5 @@ python3 Sources/Python/RepositoryStructureChecks.py
 2. 成功编译、搜索器输出 `PROVEN`、独立验证器返回 `TREE_ACCEPTED` 和最终 `UNCONDITIONALLY_VERIFIED` 必须分开记录。
 3. 历史报告保留当时数据和结论，上方统一增加当前状态入口。
 4. 没有显式许可不运行付费 API 或启动长时间付费云资源。
+
+`Research/GeminiFrontier/` 内的 `FollowupProof.md`、`FollowupResults.json`、`FollowupSubmitted.py` 是后续原件；`VerifyT10.py` 是经补齐的条件证书，默认由现行 `Verify.py` 调用，原件中的全键统计仅为历史候选，不重复登记。

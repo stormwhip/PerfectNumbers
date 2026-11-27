@@ -53,3 +53,5 @@
 | 72 小时运行框架 | 顶层分片支持重启 | [Run2400Scheduler.py](../Sources/Python/Run2400Scheduler.py) | 深层断点及全树实测 |
 
 历史 V1–V20 和更低目标的实验里程碑记录仍可通过[整理前版本](https://github.com/stormwhip/PerfectNumbers/blob/90100f4447f9196835951fdb7e9dcdd3ab23723f/Records/Milestones.md)访问；完整历史实验继续保存在 [ExperimentLog.md](ExperimentLog.md)。
+
+11 月 27 日后续增量补齐 $(19,58)$ 的 $T^{10}$ 子域；C10 历史开放路径 11→10，仍为 3,004 闭片、68 开片、78 键。

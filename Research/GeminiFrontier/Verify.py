@@ -84,3 +84,8 @@ assert (d["closed"],d["open"],d["distinct_keys"],d["singleton_shards"])==(3004,6
 assert d["new_keys"]==[[13,508]] and d["new_closed"]==closed
 print("PASS registered projection: 3004/3072 closed, 68 shards, 78 keys, 60 singletons")
 print("Unaccepted submissions (7,882) f=72 and (19,432) f=22 are not replayed or credited.")
+
+# Follow-up: conditional T^10 certificate, independently repaired.
+subprocess.run([sys.executable,"-I","-S","-B","-X","int_max_str_digits=0",str(HERE/"VerifyT10.py")]+(["--arithmetic-only"] if "--arithmetic-only" in sys.argv else []),cwd=ROOT,check=True)
+assert any(x["key"]==[19,58] and x["closed"]==[10] and x["remaining_historical_paths"]==10 for x in d["accepted_conditional"])
+print("PASS registered conditional T^10; no additional full-key credit")

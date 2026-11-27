@@ -15,3 +15,5 @@
 **历史回归，不再派工。** [晚间前账本](../Research/Session20261126/Delta.json)中的 98 片、110 个实际指数是冻结基线。根 3 的 [1162](../Research/Session20261126/Joint/Additional.md)、[1108](../Research/Session20261126/Joint1108/Readme.md)在此前已排除；[970](../Research/FinalSprint/Full970.md)、[990](../Research/FinalSprint/Proof990.md)在晚间补齐，不再是开放任务。
 
 **最终验收。** 即使现行余集全部清空，还需在固定快照独立重放八根互素类、历史基线与新增证明的整套依赖，实测时间、内存和中断恢复。目前没有全历史冷重放结论。见[形式化研究问题](ResearchProblems2400.md)。
+
+**后续分支任务。** $(19,58)$ 的第二枢轴 $T$ 仅余赋值 2、6；在历史 C10 的已验收覆盖上尚有 10 条路径，优先对这两组做更深因子链和联合定价。[复验](../Research/GeminiFrontier/VerifyT10.py)。

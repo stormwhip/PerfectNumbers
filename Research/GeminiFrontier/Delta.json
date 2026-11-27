@@ -153,6 +153,24 @@
         68
       ],
       "raw_tail": 243
+    },
+    {
+      "key": [
+        19,
+        58
+      ],
+      "pivot": "25884435655444338111701468741774202150863007840007588427052927353500170637",
+      "scope": "historical_union_branch; first Euler pivot 155306613932666028670208812450645212905178047040045530562317564121001023821 at exponent 1",
+      "closed": [
+        10
+      ],
+      "remaining": [
+        2,
+        6
+      ],
+      "remaining_historical_paths": 10,
+      "proof": "VerifyT10.py",
+      "historical_receipt": "../Night2400/Receipts/Review19x58Low.md"
     }
   ],
   "pending": [

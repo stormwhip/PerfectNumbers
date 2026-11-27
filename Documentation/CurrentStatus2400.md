@@ -25,3 +25,5 @@
 - 固定赋值、支持集合及 Euler 窗口上的局部排除记入[夜间证明索引](../Research/Night2400/README.md)。完整指数须穷尽该键的全部分支，才进入逐片投影。
 
 [夜间重放](../Research/Night2400/Replay.py)覆盖历史 13 个完整指数；[现行增量复验](../Research/GeminiFrontier/Verify.py)覆盖新完整指数的历史并集及已接受条件证明。完整历史证书的端到端重放仍待完成。[复验记录](../Research/Night2400/Receipts/Integrated.md) · [下一步计划](NextPlan2400.md)。
+
+**后续条件增量。** $(19,58)$ 的 Euler 首枢轴赋值 1 下，第二枢轴 $T$ 的赋值 10 已排除；历史 C10 的 11 条开放路径减为 10 条（$T^2$ 两条、$T^6$ 八条）。完整键仍开放，逐片账本及统计保持不变。[证明与审阅](../Research/GeminiFrontier/Review.md#6-11-月-27-日后续增量1958-的第二枢轴-10) · [复验](../Research/GeminiFrontier/VerifyT10.py)。

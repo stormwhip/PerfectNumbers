@@ -41,3 +41,5 @@ Gemini 增量已排除 $(13,508)$ 的最后枢轴赋值。条件证明及未接�
 [任务顺序](NextPlan2400.md) · [发布验收](../Records/ValidationChecklist.md) · [早期研究纲领](https://github.com/stormwhip/PerfectNumbers/blob/9d74c34dda8908a19542b855c78ef2feb8844b66/Documentation/ResearchProblems2400.md)
 
 联合模型的验收条件：未激活森林节点的丰度必须进入同一素数池；森林与 LP 的余块需求须按 $v_u(N)=\sum_vv_u(\sigma(v^{h_v}))$ 共同分配，未知余因子与 Euler 来源共享时须单独处理。[实验与明确缺口](../Research/P3I00193Review/Progress.md)。
+
+$(19,58)$ 的 C10 子域余 $T^2$ 两条、$T^6$ 八条历史开放路径；$T^{10}$ 已由[后续条件证书](../Research/GeminiFrontier/VerifyT10.py)排除。
