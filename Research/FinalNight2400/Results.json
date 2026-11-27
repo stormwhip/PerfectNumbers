@@ -2016,5 +2016,29 @@
       "Research/Session20261126/PivotCheck.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      330
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "positive odd perfect N<=10^2400",
+      "19^330 || N"
+    ],
+    "ExcludedDomain": [
+      "all six compatible firsts, including last fixed 33-digit pivot at exponent 6"
+    ],
+    "RemainingDomain": [],
+    "Method": "complete historical union, exact compulsory subtree and local absences; Euler on/off vertex checks",
+    "ProofReference": "ShortNineteen/Full330.md",
+    "CertificateReference": "ShortNineteen/Full330.py",
+    "VerificationStatus": "AuditNext/Full330.md; complete independent replay 307.111 seconds",
+    "Dependencies": [
+      "Research/Night2400/C2/Verify.py",
+      "all exact subtree/checker dependencies of Full330.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

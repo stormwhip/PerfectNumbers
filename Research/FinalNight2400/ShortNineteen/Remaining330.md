@@ -1,0 +1,7 @@
+# Remaining two exact quadruples under (19,330)
+
+The outstanding first t² and second r², as shown by [previous direct](DeepProof.md) and [abundancy branches](Ab330.md), force a=541060314202200985634836209806257 as a divisor of sigma(t²). Using exact incoming valuation, Euler parity, sigma overfill, partial abundancy and mandatory budget gives precisely j=1,2,4,5,6,8,9,10,12,13,14,16,17, with first raw size overflow at 35. The [checker](Remaining330.py) and [forest book](Remaining330.json.gz) exclude every one except exact j=1,6. It also consumes the [one-leaf exact case](Ab330Case5.json) at j=4, checking its compulsory primes, all Euler placements and iterative local-ban derivations. The other ten are authenticated forest lower bounds; at j=10 and 12, the strict abundancy implication is reconstructed, testing each absent label individually before using it as a local ban. It cannot conflict with fixed or required forest nodes. At most one compulsory prime can use Euler; the all-even case accounts for Euler elsewhere, so neither quantity is overcounted. Exact abundancy increases in the exponent, and the fixed-point code accounts for the initial incoming valuation, rather than assuming exponent two. All claims use exact integer forest lower bounds, not stored discovery floors.
+
+    python -I -S -B Research/FinalNight2400/ShortNineteen/Remaining330.py
+
+Only two paths remain: (19^330,t²,r²,a¹) and (19^330,t²,r²,a⁶). Neither is excluded here. 669 authenticated elliptic chains in the forest book in addition to the prior exact case and baseline certs.
