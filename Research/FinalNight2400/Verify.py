@@ -116,6 +116,9 @@ Nineteen/VerifyMasked58.py
 Nineteen/VerifyMasked24.py
 Nineteen/VerifyMaskedMore.py
 Nineteen/VerifyFiveMore.py
+Seven882/Full882.py
+ShortSeven/Audit882.py
+Nineteen292/Forests.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

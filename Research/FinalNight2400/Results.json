@@ -1823,5 +1823,83 @@
       "Research/Session20261126/PivotCheck.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      882
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19 absent",
+      "7^882 || N"
+    ],
+    "ExcludedDomain": [
+      "all 70 first values, all 64 masks, strict size tail 212"
+    ],
+    "RemainingDomain": [],
+    "Method": "historical G7 cover, common-cubic price at 72, complete low vertex partitions and five newly sealed packets",
+    "ProofReference": "Seven882/Proof.md and FullReceipt.md",
+    "CertificateReference": "Seven882/Full882.py",
+    "VerificationStatus": "ShortSeven/Review882.md: independent 816.964 s full cold; author 670.623 s",
+    "Dependencies": [
+      "Research/Night2400/G7/Seven882.json.gz",
+      "Root7Joint/Proof.md",
+      "Audit/SevenEight/Verify.py",
+      "Seven882/Inventory.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      292
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^292 || N"
+    ],
+    "ExcludedDomain": [
+      "38 complete first exponents of 10018843 per Forests292"
+    ],
+    "RemainingDomain": [
+      {
+        "Pivot": 10018843,
+        "Valuations": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          28,
+          30,
+          32,
+          36,
+          40,
+          52,
+          58,
+          88
+        ]
+      }
+    ],
+    "Method": "certified forest trees, explicit next-pivot domains and all raw tails",
+    "ProofReference": "Ten276/Review292.md",
+    "CertificateReference": "Nineteen292/Forests292.json.gz",
+    "VerificationStatus": "independent stock and child-domain recurrences 54.035 s; raw tail 238, 286 forests, 1047 ECPP",
+    "Dependencies": [
+      "Research/Night2400/FrontierTree.py",
+      "Research/Night2400/Receipts/FiberPartition.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
