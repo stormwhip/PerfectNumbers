@@ -2743,5 +2743,117 @@
       "Research/Session20261126/Anonymous/AnonymousGuard.md"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      16
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19 absent",
+      "7^16 || N"
+    ],
+    "ExcludedDomain": [
+      {
+        "Pivot": 2767631689,
+        "CompleteFirstValuations": "44 of 91, exactly the keys of packet.cases"
+      }
+    ],
+    "RemainingDomain": [
+      "47 exact values, independently emitted by LowSeven/TreeAudit.py on Seven16.json.gz"
+    ],
+    "Method": "direct compelled-prime exact integer forests with one Euler saving",
+    "ProofReference": "LowSeven/Summary.md",
+    "CertificateReference": "LowSeven/Seven16.json.gz",
+    "VerificationStatus": "separate stock cold and independent first-domain enumeration; lead repeated all three",
+    "Dependencies": [
+      "Research/Night2400/VerifyFibers.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      18
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19 absent",
+      "7^18 || N"
+    ],
+    "ExcludedDomain": [
+      {
+        "Pivot": 4534166740403,
+        "CompleteFirstValuations": "30 of 44, exactly the keys of packet.cases"
+      }
+    ],
+    "RemainingDomain": [
+      "14 exact values, independently emitted by LowSeven/TreeAudit.py on Low18.json.gz"
+    ],
+    "Method": "direct compelled-prime exact integer forests with one Euler saving",
+    "ProofReference": "LowSeven/Summary.md",
+    "CertificateReference": "LowSeven/Low18.json.gz",
+    "VerificationStatus": "separate stock cold and independent first-domain enumeration; lead repeated all three",
+    "Dependencies": [
+      "Research/Night2400/VerifyFibers.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      48
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19 absent",
+      "7^48 || N"
+    ],
+    "ExcludedDomain": [
+      {
+        "Pivot": "6106505825833677713",
+        "CompleteFirstValuations": "27 of 31, exactly the keys of packet.cases"
+      }
+    ],
+    "RemainingDomain": [
+      "4 exact values, independently emitted by LowSeven/TreeAudit.py on Seven48.json.gz"
+    ],
+    "Method": "direct compelled-prime exact integer forests with one Euler saving",
+    "ProofReference": "LowSeven/Summary.md",
+    "CertificateReference": "LowSeven/Seven48.json.gz",
+    "VerificationStatus": "separate stock cold and independent first-domain enumeration; lead repeated all three",
+    "Dependencies": [
+      "Research/Night2400/VerifyFibers.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      222
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^222 || N"
+    ],
+    "ExcludedDomain": [
+      "50 of 53 complete firsts at 7579985624053, with additional scoped secondary restrictions"
+    ],
+    "RemainingDomain": [
+      "first 1,2,18; each has residual second/third levels explicitly printed by the respective verifier"
+    ],
+    "Method": "canonical first forests and complete (first,second,third) sibling unions; 53 live first values, tail 144",
+    "ProofReference": "Root222/Firsts.md, Two.md, Thirds.md, Twelve.md, TwentyEight.md, TwentyTwo.md and Sixteen.md",
+    "CertificateReference": "Root222 seven offline checkers invoked by integrated entrypoint",
+    "VerificationStatus": "LowSeven/Review222.md: independent exact scope/sibling reconstruction and method audit, complemented by the original cold arithmetic replays",
+    "Dependencies": [
+      "Research/Session20261126/PivotCheck.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

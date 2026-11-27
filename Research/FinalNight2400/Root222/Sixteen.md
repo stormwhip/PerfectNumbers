@@ -1,0 +1,9 @@
+# Complete first 16 at canonical root (19,222)
+
+The earlier [third-stage proof](Thirds.md) reduces t^16 to g=2 with third exponent 1 or 12, or g=16 with third exponent 2,6,8,12,18,28. At g=2 the pivot is 371183958661; at g=16 it is 12463483. The [checker](Sixteen.py) validates all 8 remaining exact configurations from their fixed rows and discharges them by the [witness trees](Sixteen.json.gz). Nonterminal branches split at previously paid but unassigned primes 7397067664513 or 7614097, whose membership and positive exact incoming valuation are checked at each actual prefix. Enumerate all admissible positive exponents up to the first strict monotone size tail; no sparse case is interpreted as an exclusion. Across all levels the final packet has 103 strict leaves and 1192 ECPP chains.
+
+Only one final forest uses an extra local absence: at t^16,r^16,12463483²,7397067664513^18,7614097^6, prime 5 is strictly excluded by abundancy before invoking the forest. For distinct forced roots K compute the exact geometric ratios at conservative minimum legal powers: the least even exponent at least the incoming demand when the base cannot be Euler, and the incoming demand itself otherwise. This latter choice might permit multiple provisional Euler exponents but lowers the estimate and is therefore safe. Multiplying this lower estimate with the minimal ratio 6/5 exceeds 2 strictly; 5 is not among any previously counted rows or K. All required roots and forest ownership edges are explicitly prime-certified and no banned vertex survives. This yields strict integer overflow at every leaf without needing the exploratory four-target pricing code. No external arithmetic package on replay.
+
+    python -I -S -B Research/FinalNight2400/Root222/Sixteen.py
+
+Combined first coverage is **50/53**; the remaining complete first values are **1,2,18**, with their additional verified conditional children as in [Thirds](Thirds.md). No whole-key or shard claim for (19,222).

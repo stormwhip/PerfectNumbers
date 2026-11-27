@@ -188,6 +188,14 @@ SevenNext/VerifyMixed67.py
 SevenNext/VerifyMixed67More.py
 Ten276/Final276.py 64
 SparseSeven/SieveUpper.py
+LowSeven/Replay.py
+Root222/Firsts.py
+Root222/Two.py
+Root222/Thirds.py
+Root222/Twelve.py
+Root222/TwentyEight.py
+Root222/TwentyTwo.py
+Root222/Sixteen.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

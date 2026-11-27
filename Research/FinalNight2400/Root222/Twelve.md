@@ -1,0 +1,5 @@
+# Complete first 12 at (19,222)
+
+The [first-stage proof](Firsts.md), [two-pivot proof](Two.md), [third-stage proof](Thirds.md) force secondary r=3705121363 exponent 2,16,22 if first t=7579985624053 has exact exponent 12, and each of those three forces z=50935324949359682417 of exponent exactly six. The [final checker](Twelve.py) splits those cases at a different compulsory prime, authenticates all prefixes and rederives the child domains. At r² split on 371183958661, 42 children before raw tail 113; at r^16 and r^22 split on 4873207, respectively 38 before tail 154 and 34 before tail 137. Every one of the resulting 114 complete child rows has a validated general-Euler forest strictly above B. The [packet](Twelve.json.gz) supplies only factor labels and tree edges, with 629 elliptic chains and no trusted floor. No skipped Euler position or descendant row. Thus first 12 is excluded, taking the combined first coverage to 47 of 53. Remaining 1,2,16,18,22,28.
+
+    python -I -S -B Research/FinalNight2400/Root222/Twelve.py
