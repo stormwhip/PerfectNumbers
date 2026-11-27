@@ -965,5 +965,83 @@
       "Research/FinalSprint/LowBranches/Wave4/README.md"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      618
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^618 || N"
+    ],
+    "ExcludedDomain": [
+      "all v_2477=10 and 12, including every nested compulsory source"
+    ],
+    "RemainingDomain": [
+      "v_2477=2,4,6,8"
+    ],
+    "Method": "nested compulsory-prime finite cover, with square-aware supplier pricing",
+    "ProofReference": "Nineteen/ProofTwelve.md, ProofSmallTen.md",
+    "CertificateReference": "Nineteen/VerifyTwelve.py, VerifySmallTen.py",
+    "VerificationStatus": "Three/NestedReview.md",
+    "Dependencies": [
+      "Research/GeminiFrontier/Review.md (prior complement)",
+      "Research/RootFiveNext/PrimeCheck.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      12
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "canonical root 7 at exact exponent 12",
+      "v_16148168401(N)=12"
+    ],
+    "ExcludedDomain": [
+      "under Q^12, all v_T=6 via disjoint 14-child union"
+    ],
+    "RemainingDomain": [
+      "under Q^12 only v_T=2 remains; primary Q^42 separate"
+    ],
+    "Method": "exhaustive roots and tails; fourteen exact tertiary assignments",
+    "ProofReference": "SevenNext/CompleteSix.md",
+    "CertificateReference": "SevenNext/CompleteSix.py",
+    "VerificationStatus": "Audit/SecondaryReceipt.md",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      282
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "N odd perfect <=10^2400",
+      "19^282 || N",
+      "1735317810514627^10 || N"
+    ],
+    "ExcludedDomain": [
+      "under t^10, r=8383027^28: 193-digit Q forced at 2, excludes 35/37 exponents at 23773"
+    ],
+    "RemainingDomain": [
+      "under r^28, v_23773=1 or 4; no claim for other r levels"
+    ],
+    "Method": "nested independent integer forests and certified 193-digit prime",
+    "ProofReference": "Nineteen/ProofInner.md",
+    "CertificateReference": "Nineteen/VerifyInner.py",
+    "VerificationStatus": "AuditNext/InnerReceipt.md",
+    "Dependencies": [
+      "Research/Session20261126/PivotCheck.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
