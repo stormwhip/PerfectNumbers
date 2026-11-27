@@ -134,6 +134,7 @@ Ten276/Release280/CheckEquivalence.py
 Ten276/Release280/Full280.py
 AuditNext/Check280.py
 Nineteen292/CloseFour.py
+ShortSeven/Full82.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

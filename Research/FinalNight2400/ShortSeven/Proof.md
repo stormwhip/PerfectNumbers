@@ -1,0 +1,6 @@
+# Exact short-key work: (7,36), then (19,82)
+
+These are two separate canonical families. No complete key is claimed by a successful discovery run or by any incomplete subtree.
+
+* For (7,36), canonical 19 absent, historical Fibers7x36.json.gz covers 24/31. E8/Fibers7x36ComplementFour.json.gz adds 1,4,6,18. The missing firsts are 2,12,16 under q=4805345109492315767981401, root tail 96. The current discovery files under this directory are not independent proof.
+* For (19,82), there is no inherited banned support prime; historical C4 admits just firsts 2,4,6,8,10. It proves all 128 masks at 2,4,8 and the unconditional price at 10. At first 6 its 44 strictly abundant masks do not imply the other 84 masks. The new Nineteen82Six.json.gz (SHA-256 4cfbd8c2890b8990f9456465aa78351f077bb6e04951f6bfec075767bdb90f93; 1514 ECPP chains) supplies the entire missing first 6. At this exact prefix, 461874284924809 is forced and all 27 compatible exponents are excluded by standard validated forests with strict lower bounds, not by projecting the 44 old masks. The independent partition reproduced 34 direct and 29 illegal siblings including the primary split, and raw tails 23,74. Run `python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/ShortSeven/Full82.py` to replay all C4 inputs and the new complete fiber. The frozen shard P19_I00021 contains only [[19,82]].

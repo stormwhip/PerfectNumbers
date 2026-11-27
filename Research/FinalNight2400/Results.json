@@ -2115,5 +2115,29 @@
       "Research/Night2400/Receipts/FiberPartition.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      82
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "N odd perfect <=10^2400",
+      "19^82 || N"
+    ],
+    "ExcludedDomain": [
+      "all exact first exponents 2,4,6,8,10; raw tail 23"
+    ],
+    "RemainingDomain": [],
+    "Method": "historical C4 four complete fibers; 27 unmasked complementary forest checks replace open projected masks under first 6",
+    "ProofReference": "ShortSeven/Proof.md",
+    "CertificateReference": "ShortSeven/Full82.py",
+    "VerificationStatus": "AuditNext/Full82.md; independent full cold 357.584 s, 1514 ECPP entries in new supplement",
+    "Dependencies": [
+      "Research/Night2400/C4/Verify.py",
+      "ShortSeven/Nineteen82Six.json.gz"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
