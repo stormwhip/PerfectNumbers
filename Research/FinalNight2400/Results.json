@@ -1790,5 +1790,38 @@
       "Research/Session20261126/PivotCheck.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      282
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "N odd perfect <=10^2400",
+      "19^282 || N",
+      "1735317810514627^10 || N"
+    ],
+    "ExcludedDomain": [
+      "complete v_8383027=18,24,60 followed by 6,36,40,42,52"
+    ],
+    "RemainingDomain": [
+      {
+        "Pivot": 8383027,
+        "Valuations": [
+          4,
+          12,
+          22
+        ]
+      }
+    ],
+    "Method": "exhaustive certified forests with prefix-specific absence hypotheses proven by exact abundance",
+    "ProofReference": "Nineteen/ProofMaskedMore.md and ProofFiveMore.md",
+    "CertificateReference": "Nineteen/VerifyMasked24.py, VerifyMaskedMore.py and VerifyFiveMore.py",
+    "VerificationStatus": "AuditNext/MaskedMore.md and FiveMore282.md; exact 47/50 second values excluded",
+    "Dependencies": [
+      "Research/Session20261126/PivotCheck.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

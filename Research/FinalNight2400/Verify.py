@@ -113,6 +113,9 @@ AuditNext/Union618.py
 Batch/Full396.py
 Nineteen/VerifyMidThree.py
 Nineteen/VerifyMasked58.py
+Nineteen/VerifyMasked24.py
+Nineteen/VerifyMaskedMore.py
+Nineteen/VerifyFiveMore.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
