@@ -1121,5 +1121,132 @@
       "new packets listed in ThirtyOne/AuditInventory.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      358
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^358 || N, s=38518547, t=1491133067, i=v_s(N), j=v_t(N)"
+    ],
+    "ExcludedDomain": [
+      "645/968 simultaneous exponent pairs, including all i>=56 and j>=48; exact returned array 2 of Triple/Discrete.py"
+    ],
+    "RemainingDomain": [
+      "323 exact coordinates returned by check()[2] (zero-based); the previous 539 exclusions are a subset"
+    ],
+    "Method": "mandatory Euler t-supply plus exterior source, maximum discrete P*S^9 on capped rectangle",
+    "ProofReference": "Triple/SourceProof.md",
+    "CertificateReference": "Triple/Discrete.py",
+    "VerificationStatus": "TenNext/TripleReview.md, discrete supplement",
+    "Dependencies": [
+      "historical arithmetic and prime certificate dependencies specified in proof"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      618
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^618 || N"
+    ],
+    "ExcludedDomain": [
+      "v_2477=8 on entire first fiber (1384 nodes)"
+    ],
+    "RemainingDomain": [
+      "v_2477=2,4,6"
+    ],
+    "Method": "exhaustive anchored subtrees with ordinary-power child domains",
+    "ProofReference": "Nineteen/ProofSmallEight.md",
+    "CertificateReference": "Nineteen/VerifySmallEight.py",
+    "VerificationStatus": "AuditNext/SmallEight.md",
+    "Dependencies": [
+      "Research/GeminiFrontier/Review.md (prior complement)",
+      "Research/RootFiveNext/PrimeCheck.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      3,
+      6
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400, canonical root 3 at v_3=6"
+    ],
+    "ExcludedDomain": [
+      "complete v_1093=126, all 42 viable second exponents"
+    ],
+    "RemainingDomain": [
+      "1,2,5,8,102,106,130,148,156,166,180,190,192,196,226,240,250,256"
+    ],
+    "Method": "fixed Euler valuation price, exact split forests and complete monotone tails",
+    "ProofReference": "Three/ProofFullSix.md",
+    "CertificateReference": "Three/Full.py 126",
+    "VerificationStatus": "Lead independently reviewed positive-exponent scan and exceptions; cold replay 28 splits, 396 forests, 3 target-price leaves, 635 ECPP, tail 220",
+    "Dependencies": [
+      "Research/FinalSprint/LowBranches/Wave4/README.md"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      12
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "canonical root 7, odd perfect N<=10^2400",
+      "7^12, Q^12, T^2 exactly; Q=16148168401, T=G(Q,12)/13"
+    ],
+    "ExcludedDomain": [
+      "5 and 11 cannot occur anywhere on this prefix",
+      "5 new L=3453283 exact powers: 68,76,90,92,110"
+    ],
+    "RemainingDomain": [
+      "41 of 68 exact L exponents; no whole T² exclusion"
+    ],
+    "Method": "forced overflow at 13 followed by masked exact forests",
+    "ProofReference": "SevenNext/TwoMasked.md",
+    "CertificateReference": "SevenNext/VerifyTwo.py",
+    "VerificationStatus": "Nineteen/AuditSevenTwo.md",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      11,
+      358
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19 and 7 absent",
+      "11^358 || N"
+    ],
+    "ExcludedDomain": [
+      "16/16 first exponents of 2471107084783904470093 including all 32 masks"
+    ],
+    "RemainingDomain": [],
+    "Method": "disjoint union 9 historical masked, 5 complete new trees, 2 joint prices",
+    "ProofReference": "Others/ElevenProof.md",
+    "CertificateReference": "Others/FullEleven.py",
+    "VerificationStatus": "AuditNext/Full358.md; full targeted replay 252.947 s",
+    "Dependencies": [
+      "Research/Night2400/G/Verify.py",
+      "Others/Eleven358Five.json.gz",
+      "Others/ElevenPrice.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

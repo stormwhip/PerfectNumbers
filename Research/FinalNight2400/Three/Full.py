@@ -20,6 +20,9 @@ def verify(f):
   assert C.pc.prime64(t);return True
  def visit(P,n):
   s=C.State(P);assert viable(s)
+  if n['type']=='pair126':
+   sys.path.insert(0,str(H));import GeneralPair as G
+   assert f==126 and P[2][0]==30228287 and P[2][1] in (42,58,60) and P[-2:]==[(11939,66),(485816396265547,6)] and G.score(P,1093,30228287)==('result',0,0,0,None);return
   if n['type']=='forest':
    k,o,h=n['roots'],n['owners'],n['head'];C.validate_forest(s,k,o,h,prime);a=C.Forest(s,k,o,h).lower()[0];b=PC.exact_leaf(P,k,o,h);assert min(a,b)>B;floors.append(PC.floor10(min(a,b)));return
   assert n['type']=='split';q=n['q'];assert prime(q) and q not in s.rows and q not in s.bad and s.D%q==0;c=C.valuation(s.D,q);h=c;live=[];size=s.base//q**c

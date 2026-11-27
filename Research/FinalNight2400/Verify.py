@@ -47,7 +47,7 @@ SevenNext/Audit618.py --anchor
 Three/Hard66.py
 Three/Six.py
 Three/VerifyForests.py
-Three/Full.py 16 18 22 96
+Three/Full.py 16 18 22 96 126
 SevenNext/VerifyTertiary.py
 SevenNext/VerifyFour.py
 SevenNext/Abundance.py
@@ -73,6 +73,12 @@ TenNext/VerifyDOne.py
 Audit/CheckDOne.py
 ThirtyOne/Full31x16.py
 AuditNext/Check31Partitions.py
+Triple/Discrete.py
+Nineteen/VerifySmallEight.py
+AuditNext/CheckSmall.py Solved8.json
+SevenNext/VerifyTwo.py
+Others/FullEleven.py
+AuditNext/CheckEleven358.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

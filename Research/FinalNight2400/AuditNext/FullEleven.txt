@@ -1,0 +1,36 @@
+MASK 4 branches 10 proved 6 remaining [4, 10, 18, 30]
+MASK 12 branches 10 proved 8 remaining [10, 18]
+MASK 20 branches 10 proved 8 remaining [10, 18]
+MASK 28 branches 10 proved 8 remaining [10, 18]
+MASK 36 branches 16 proved 10 remaining [2, 4, 10, 18, 28, 30]
+MASK 44 branches 16 proved 13 remaining [2, 10, 30]
+MASK 52 branches 16 proved 12 remaining [2, 10, 28, 30]
+MASK 60 branches 16 proved 13 remaining [2, 10, 30]
+MASK 68 branches 10 proved 6 remaining [4, 10, 18, 30]
+MASK 76 branches 10 proved 7 remaining [10, 18, 30]
+MASK 84 branches 10 proved 7 remaining [10, 18, 30]
+MASK 92 branches 10 proved 8 remaining [10, 18]
+MASK 100 branches 16 proved 12 remaining [2, 18, 28, 30]
+MASK 108 ROOT ABUNDANCE 2037511
+MASK 116 ROOT ABUNDANCE 2064615
+MASK 124 ROOT ABUNDANCE 2133364
+MASK 132 branches 10 proved 7 remaining [10, 18, 30]
+MASK 140 branches 10 proved 7 remaining [4, 10, 18]
+MASK 148 branches 10 proved 7 remaining [4, 10, 18]
+MASK 156 branches 10 proved 7 remaining [4, 10, 18]
+MASK 164 branches 16 proved 10 remaining [2, 4, 10, 18, 28, 30]
+MASK 172 branches 16 proved 12 remaining [2, 4, 10, 30]
+MASK 180 branches 16 proved 10 remaining [2, 4, 10, 18, 28, 30]
+MASK 188 branches 16 proved 10 remaining [2, 4, 10, 18, 22, 30]
+MASK 196 branches 10 proved 6 remaining [4, 10, 18, 30]
+MASK 204 branches 10 proved 6 remaining [4, 10, 18, 30]
+MASK 212 branches 10 proved 7 remaining [4, 10, 18]
+MASK 220 branches 10 proved 6 remaining [4, 10, 18, 30]
+MASK 228 ROOT ABUNDANCE 2094666
+MASK 236 ROOT ABUNDANCE 2164415
+MASK 244 ROOT ABUNDANCE 2193207
+MASK 252 ROOT ABUNDANCE 2266238
+VERIFIED (11, 358) full fibers [8, 12, 14, 16, 24, 26, 32, 36, 38] closed masks [108, 116, 124, 228, 236, 244, 252] projected closed [] individual leaves {12: 25, 16: 25, 22: 24, 24: 25, 28: 20, 36: 25, 30: 8, 4: 11, 14: 9, 26: 9, 32: 9, 38: 9, 8: 9, 18: 4, 10: 1} forest count/min (205, 2400) abundance count/min ppm (15, 2000015) remaining 25 masks 91 cells; projected 69 SHA256 0b4c763e6680587d1136852e538f08ccd66809331de0cdd0929439915cb94f7e
+PASS (11,358), first 28 loss 404 labels 2 0 Euler counts [4941, 4987, 124]
+PASS (11,358), first 30 loss 404 labels 2 0 Euler counts [7095, 3675, 0]
+FULL canonical exact key (11,358), 16/16; P11_I00070.
