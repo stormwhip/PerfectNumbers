@@ -187,6 +187,7 @@ LowSeven/AuditSmallEleven.py
 SevenNext/VerifyMixed67.py
 SevenNext/VerifyMixed67More.py
 Ten276/Final276.py 64
+SparseSeven/SieveUpper.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
