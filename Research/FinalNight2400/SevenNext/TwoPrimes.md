@@ -1,0 +1,7 @@
+# A two-prime certificate for L^130, requiring no source tree
+
+Use the canonical (7,12), Q^12,T²,L^130 exact prefix; see TwoMasked.md for the preceding prime labels. No support condition beyond original 19 absence is needed here. Let X be the fixed prime-power mass, D the odd fixed sigma product with all fixed-prime factors stripped. Direct integer divisibility proves a=209676169384343 and b=315434173696972219 divide D exactly once each. Both are deterministically prime <2^64 and congruent 3 mod4, hence both actual exponents are even and at least two. For y=a,b put W_y equal to σ(y²) stripped of all primes dividing XD. If v_y=2, charge y²W_y; if v_y>=4 charge just y⁴. These charges for a and b are independent: the stripped emission product divides the odd part of the total σ(N) and is coprime to XD, whereas a,b were originally each charged once in D. Consequently
+
+    N >= (XD/(a*b)) * min(a^4, a² W_a) * min(b^4, b² W_b) > 10^2400.
+
+The checked decimal floor is 2406. The verifier implements exactly this bound by a monotone per-root search; it examines exponent two and stops at four in both instances. It needs only the frozen integer state/prime kernel for already-authenticated prefix. Run: `python -I -S -B Research/FinalNight2400/SevenNext/TwoPrimes.py`. This extra L assignment reduces the residual from 41 to 40; it is not a whole-key or shard exclusion.

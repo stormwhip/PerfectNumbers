@@ -143,6 +143,13 @@ SevenNext/CompleteFive.py
 SevenNext/VerifyCap42.py
 SevenNext/VerifyAnchorQ42.py
 Nineteen292/Masked.py
+PairSeven/Verify.py
+AuditNext/Check486.py
+SevenNext/VerifyTwoPlus.py
+SevenNext/TwoPrimes.py
+SevenNext/VerifyTwoMore.py
+SevenNext/VerifyNest40.py
+SevenNext/VerifyAnchorPlus.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

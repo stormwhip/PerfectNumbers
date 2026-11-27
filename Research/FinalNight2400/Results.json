@@ -2229,5 +2229,103 @@
       "Research/Night2400/Receipts/FiberPartition.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      292
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^292 || N"
+    ],
+    "ExcludedDomain": [
+      "full 10018843 valuations 40,58,26,28"
+    ],
+    "RemainingDomain": [
+      "v_10018843 in {2,8,36}"
+    ],
+    "Method": "certified next-pivot forest partitions and prefix-specific abundance exclusions",
+    "ProofReference": "Ten276/Review292.md",
+    "CertificateReference": "Nineteen292/Forests.py and Masked.py",
+    "VerificationStatus": "Ten276/Review292.md; all 4 entire first fibers",
+    "Dependencies": [
+      "Research/Night2400/FrontierTree.py",
+      "Research/Night2400/Receipts/FiberPartition.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      12
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "canonical 7^12, first 16148168401 at 42"
+    ],
+    "ExcludedDomain": [
+      "additional v_173 values 126,158,184 via anchored source prices"
+    ],
+    "RemainingDomain": [
+      "v_173=1 or one of the 85 remaining even values (exact historical cut list, minus 126,158,184)"
+    ],
+    "Method": "compulsory anchor valuations and remaining source caps",
+    "ProofReference": "SevenNext/AnchorPlus.md",
+    "CertificateReference": "SevenNext/VerifyAnchorPlus.py",
+    "VerificationStatus": "ShortSeven/ReviewAnchorPlus.md",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      12
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "canonical 7^12,Q^12,T² as in Proof.md of Seven"
+    ],
+    "ExcludedDomain": [
+      "10 more v_3453283: 42,56,80,86,130,32,38,40,50,62"
+    ],
+    "RemainingDomain": [
+      "31 of 68 directly viable L values; T² not closed"
+    ],
+    "Method": "certified locally masked forests, two disjoint compulsory prime costs, complete singleton-anchor domain",
+    "ProofReference": "SevenNext/TwoMasked.md and TwoMore.md",
+    "CertificateReference": "SevenNext/VerifyTwoPlus.py, TwoPrimes.py, VerifyTwoMore.py, VerifyNest40.py",
+    "VerificationStatus": "ShortSeven/ReviewTwoPlus.md and ReviewTwoMore.md",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      486
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "canonical 7^486,19 absent,N odd perfect <=10^2400; s=349667,t=1229048719"
+    ],
+    "ExcludedDomain": [
+      "755 of 1517 joint (v_s,v_t) values; v_s(q+1) always v_s(N)-1"
+    ],
+    "RemainingDomain": [
+      "762 ordered pairs returned by PairSeven/Verify.py:check()[2]; individual projections even i<100,j<62"
+    ],
+    "Method": "high-order source exclusion by distinct geometric divisors, joint rational cubic price",
+    "ProofReference": "PairSeven/Proof.md",
+    "CertificateReference": "PairSeven/Verify.py",
+    "VerificationStatus": "AuditNext/Seven486.md, 41.018 s independent no-import arithmetic",
+    "Dependencies": [
+      "Root7Joint/Verify.py (root lifts only)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

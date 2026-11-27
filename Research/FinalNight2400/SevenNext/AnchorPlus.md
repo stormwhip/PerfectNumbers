@@ -1,0 +1,7 @@
+# Three more Q^42 upper-even values by certified child-emission credits
+
+This is a direct application of the fully reviewed anchored theorem in AnchorQ42.md. Add h=126,158,184 at fixed 7^12 Q^42 173^h. At the largest pre-existing confirmed prime a in σ(173^h), respectively 661,339,149 bits, all exact f=v_a are enumerated. The three full domains are respectively [2], [2,4], and [1,2,4,5,6,8]; their monotone first size tails are 6,10,17. Relative to AnchorQ42.md the only change is explicit extra certified mandatory prime labels dividing σ(a^f) in the credit set, not limited to tiny primes. The validator checks each extra label prime by deterministic 64-bit or sealed ECPP, and rechecks it divides both that exact anchor emission and the updated D; never reuse a fixed prime as a credit. Odd anchor f is Euler; even f uses the entire free-Euler square, residue and ordinary source partition including the audited mixed-source cap. All nine subdomains pass. No hypothesis of complete factorization of any sigma block is needed. No pricing theorem, ordering, scope, or weight is altered.
+
+    python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/SevenNext/VerifyAnchorPlus.py
+
+After union with the six accepted AnchorQ42 fibers, these three would leave 85 even 173 values and the sole odd 1, total 86. No root or shard closure.
