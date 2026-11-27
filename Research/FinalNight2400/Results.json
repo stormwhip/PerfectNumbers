@@ -1299,5 +1299,56 @@
       "Research/Night2400/B/EulerRoute.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      11,
+      396
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "11^396 || N, 19 and 7 absent"
+    ],
+    "ExcludedDomain": [
+      "56 complete exact t-exponents below 150, 50 unrestricted and 6 Euler-position forests"
+    ],
+    "RemainingDomain": [
+      "18 first values 2,4,6,8,12,22,24,26,36,70,78,82,96,106,112,126,136,138"
+    ],
+    "Method": "two exact forest recurrences, disjoint Euler-on/off-vertex pricing",
+    "ProofReference": "Batch/Low.md",
+    "CertificateReference": "Batch/Low.py",
+    "VerificationStatus": "TenNext/BatchLowReview.md",
+    "Dependencies": [
+      "historical references in proof; frozen baseline commit as stated"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      618
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^618 || N"
+    ],
+    "ExcludedDomain": [
+      "complete exact valuation v_2477=6"
+    ],
+    "RemainingDomain": [
+      "v_2477=2 or 4"
+    ],
+    "Method": "two finite polynomial gcd exclusion certificates for prepaid overlap, and exhaustive nested tree",
+    "ProofReference": "Nineteen/ProofSmallSix.md",
+    "CertificateReference": "Nineteen/VerifySmallSix.py",
+    "VerificationStatus": "AuditNext/SmallSix.md and LatticeReceipt.md",
+    "Dependencies": [
+      "Research/GeminiFrontier/Review.md (prior complement)",
+      "Research/RootFiveNext/PrimeCheck.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
