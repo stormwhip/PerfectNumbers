@@ -1043,5 +1043,58 @@
       "Research/Session20261126/PivotCheck.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      11,
+      462
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd N, sigma(N)=2N, N<=10^2400",
+      "11^462 || N"
+    ],
+    "ExcludedDomain": [
+      "v_879701(N)=36, complete union"
+    ],
+    "RemainingDomain": [
+      "v_879701=4,6,22"
+    ],
+    "Method": "two forced prime projections, 26-pair cover and final sixth-power tree",
+    "ProofReference": "Eleven/ThirtySix.md, ForceSix36.md and Complete36.md",
+    "CertificateReference": "Eleven/ThirtySix.py, ForceSix36.py and Complete36.py",
+    "VerificationStatus": "TenNext/Eleven36Review.md",
+    "Dependencies": [
+      "Research/Night2400/Receipts/Review11x462And13x388.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      46
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400, v_19=46, q=sigma(19^46)"
+    ],
+    "ExcludedDomain": [
+      "v_q=6: five complete A6 values 30..38 even; also alternate D=1252106774386973 reduced from 41 to 17 viable values, not additive with A6",
+      "v_q=10: eight A10 values 22..36 even",
+      "v_q=12: high Euler or any interior Euler excluded"
+    ],
+    "RemainingDomain": [
+      "first values 6,10,12 all still open",
+      "6: v_A6 even 2..28 and v_D even 2..34; 10: v_A10 even 2..20",
+      "12: 222 necessary exterior linear Euler allocations, 141 force ordinary emitter inside C (see exact table)"
+    ],
+    "Method": "weighted incoming price, balanced internal emitter, disjoint-order and Euler-fixed gain tree",
+    "ProofReference": "TenNext/Proof46.md and Alternate.md",
+    "CertificateReference": "TenNext/Verify46.py, VerifyAlternate.py and VerifyDOne.py",
+    "VerificationStatus": "Eleven/TenReview46.md and Audit/AlternateReceipt.md",
+    "Dependencies": [
+      "Research/Night2400/C11/DeepLeaves.json.gz"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

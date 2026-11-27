@@ -64,6 +64,13 @@ Nineteen/VerifyInner.py
 AuditNext/Inner282.py
 SevenNext/CompleteSix.py
 Audit/CheckSecondary.py
+Eleven/ThirtySix.py
+Eleven/ForceSix36.py
+Eleven/Complete36.py
+TenNext/Verify46.py
+TenNext/VerifyAlternate.py
+TenNext/VerifyDOne.py
+Audit/CheckDOne.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
