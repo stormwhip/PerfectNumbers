@@ -71,4 +71,4 @@ python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/Verify.py
 python -I -S -B Research/FinalNight2400/Project.py
 ~~~
 
-The projection alone is **not** a proof. Key-specific cold runs listed above include their historical dependencies. The baseline five-command regression passed; the Night2400 run took 3807.369 s. No full-repository historical cold replay or 72-hour global benchmark is claimed. [Research log](ResearchLog.md) · [draft PR](https://github.com/stormwhip/PerfectNumbers/pull/10).
+The projection alone is **not** a proof. Key-specific cold runs listed above include their historical dependencies. The baseline five-command regression passed; the Night2400 run took 3807.369 s. No full-repository historical cold replay or 72-hour global benchmark is claimed. [Validation status, including partial replays](Validation.md) · [Chinese final report](Report.md) · [Research log](ResearchLog.md) · [draft PR](https://github.com/stormwhip/PerfectNumbers/pull/10).
