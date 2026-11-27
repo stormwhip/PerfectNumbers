@@ -128,6 +128,8 @@ Nineteen/VerifyTwelfth282.py
 AuditNext/CheckTwo282.py
 ShortNineteen/Full330.py
 AuditNext/Check330.py
+Eleven456/Full456.py
+ShortSeven/Audit456.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
