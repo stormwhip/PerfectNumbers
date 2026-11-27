@@ -272,5 +272,30 @@
       "Research/Night2400/README.md; historical complementary fibers"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      58
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "N odd perfect <=10^2400",
+      "19^58 || N"
+    ],
+    "ExcludedDomain": [
+      "all supports, all first-pivot valuations including Euler exponent one"
+    ],
+    "RemainingDomain": [],
+    "Method": "complete historic fiber union, abundant common prefix, asymmetric multiple-target net gains",
+    "ProofReference": "Ten/ProofFull.md",
+    "CertificateReference": "Ten/VerifyFull.py",
+    "VerificationStatus": "Audit/TenReceipt.md (default full-dependency cold replay and independent gain/spectrum checks)",
+    "Dependencies": [
+      "Research/Night2400/Fibers19x58.json.gz",
+      "Research/Night2400/C10/EulerF1.json.gz",
+      "Research/GeminiFrontier/VerifyT10.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

@@ -1,0 +1,20 @@
+{"key": [19, 58], "pivot": "155306613932666028670208812450645212905178047040045530562317564121001023821", "tail": 32, "domain": [1, 2, 4, 5, 6, 8, 9, 10, 12, 13, 14], "covered": [2, 4, 5, 6, 8, 9, 10, 12, 13, 14], "open": [1], "open_paths": [], "stats": {"direct": 112, "forest": 98, "split": 6, "prefix_price": 2}, "ecpp": 291, "sha256": "adff8cd3fa4651ab8816924b6ca5d2d747edcfcdb76382f7e1b45b4bc9f4dce8"}
+key (19, 58) pivot 155306613932666028670208812450645212905178047040045530562317564121001023821 compelled valuation 1 root live [1, 2, 4, 5, 6, 8, 9, 10, 12, 13, 14] root direct [16, 17, 18, 20, 21, 22, 24, 25, 26, 28, 29, 30] root illegal [3, 7, 11, 15, 19, 23, 27, 31]
+PASS data-only domain audit; counts {'split': 7, 'direct': 112, 'illegal': 195, 'forest': 98, 'prefix_price': 2} tails [32, 40, 23, 15, 94, 102, 115] open per first {1: 1} ECPP entries 291
+FIRST LIVE ['1', '2', '4', '5', '6', '8', '9', '10', '12', '13', '14'] direct [16, 17, 18, 20, 21, 22, 24, 25, 26, 28, 29, 30] incompatible [3, 7, 11, 15, 19, 23, 27, 31] tail 32
+SECOND LIVE ['2', '4', '6', '8', '10', '12', '14'] direct [16, 18, 20, 22, 24, 26, 28, 30] incompatible 15 tail 31
+SECOND FULL [4, 8, 12, 14] price leaves 32 dual forests 71 forest minimum floor 2400 SHA256 f52b0f8b3fd0f8e869e0e38f7d6ac34cf0254a1082dce5c2ad8df3f2ca7f5c90
+OPEN EXACT PATH EXPONENTS [(58, 1, 2, 2, 2), (58, 1, 2, 2, 4), (58, 1, 6, 6, 6), (58, 1, 6, 6, 12), (58, 1, 6, 10), (58, 1, 6, 12, 6), (58, 1, 6, 12, 10), (58, 1, 6, 12, 12), (58, 1, 6, 16, 2), (58, 1, 6, 16, 4), (58, 1, 10)]
+NOTE: C10 historical arithmetic not replayed by this invocation
+PASS complete mixed-order deficit enumeration: 12 candidates
+[PASS] CONDITIONAL (19, 58) T^10 [P19_I00015]: two-target w=99/50, 12/12 leaves closed (0.52s)
+PASS T^2: 2/2 historical open leaves, shared A^2 prefix; exact excess numerator 7088250350624187477714863874621281538522135945090998738793737635781730949984325451 denominator 367228457796277100623801613320969689244392740095149518570866058095672177349393940921
+PASS 4 [58, 1, 6, 12, 10] terminal/split/tail [6, 4, 4] minimum floor 2404
+PASS 5 [58, 1, 6, 12, 12] terminal/split/tail [1, 0, 0] minimum floor 2411
+PASS 6 [58, 1, 6, 12, 6] terminal/split/tail [3, 3, 3] minimum floor 2402
+PASS 7 [58, 1, 6, 16, 2] terminal/split/tail [3, 2, 2] minimum floor 2408
+PASS 8 [58, 1, 6, 16, 4] terminal/split/tail [1, 0, 0] minimum floor 2418
+PASS 3 [58, 1, 6, 10] terminal/split/tail [1, 0, 0] minimum floor 2675
+PASS 9 [58, 1, 6, 6, 12] terminal/split/tail [1, 0, 0] minimum floor 2576
+PASS 10 [58, 1, 6, 6, 6] terminal/split/tail [29, 15, 15] minimum floor 2400
+PASS full exact key (19,58); singleton P19_I00015; mode: full dependency replay
