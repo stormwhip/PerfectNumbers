@@ -1,0 +1,33 @@
+Historical first-pivot covered [6, 12, 14, 18, 20, 22, 24, 26, 32, 34, 38, 40, 42, 44, 46, 48, 50, 52, 54]
+Historical first-pivot covered [2, 4, 8, 16, 28, 30, 36]
+19^282, t^10: r=8383027; original secondary domain [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100] size tail 202 closed [20, 32, 34, 38, 44, 46, 48, 50, 54, 56, 62, 64, 68, 74, 76, 80, 84, 86, 90, 92, 94, 96, 98, 100] remaining [2, 4, 6, 8, 10, 12, 14, 16, 18, 22, 24, 26, 28, 30, 36, 40, 42, 52, 58, 60, 66, 70, 72, 78, 82, 88] min decimal floor 2400 ECPP 61
+complete r-values 24 of 50
+PASS 282 r^28 fixes Q^2, 23773 residual {1,4}; excluded 35 tails 7 100 split/forest [25, 532] ECPP 158
+PASS 282 secondary 28, 23773^1 forbidden; exact three-target exceptions: 122
+PASS r28 23773^4; 3 full splits,58 strict forests,1 exact 3-target price
+complete r-values 25 of 50
+PASS roots 19,282 t^10; r^82 and r^88 exact exclusions [1, 16] chains 20
+complete r-values 27 of 50
+PASS roots 19,282 t^10; r^66, r^70 and r^78 exact exclusions [20, 402] chains 93
+complete r-values 30 of 50
+PASS roots 19,282 t^10; r^14 and r^16 exact exclusions [2, 18] chains 39
+complete r-values 32 of 50
+PASS no h == 2 mod 3 (all even live h==2 mod6); lower abundance x1e6 floor 2009427 whole progression [2, 8, 14, 20, 26, 32, 38, 44, 50, 56, 62, 68, 74, 80, 86, 92, 98]
+complete r-values 35 of 50
+PASS roots 19,282 t^10; r^10,r^30,r^72 exact exclusions [26, 380] chains 296
+complete r-values 38 of 50
+PASS roots 19,282 t^10; r^58 exact exclusions [11, 157] chains 25
+complete r-values 39 of 50
+PASS roots 19,282 t^10; r^18,60 exact exclusions [42, 364] chains 171
+complete r-values 41 of 50
+PASS roots 19,282 t^10; r^24 exact exclusions [8, 87] chains 76
+complete r-values 42 of 50
+PASS roots 19,282 t^10; r^6,36,40,42,52 exact exclusions [163, 2236] chains 891
+complete r-values 47 of 50
+PASS roots 19,282 t^10; r^4 exact exclusions [97, 825] chains 899
+complete r-values 48 of 50
+PASS roots 19,282 t^10; r^12 exact exclusions [137, 1381] chains 222
+complete r-values 49 of 50
+PASS roots 19,282 t^10; r22: all 94 exact 23773 exponents excluded [1523, 6990] chains 3963
+complete r-values 50 of 50
+FULL KEY (19,282): all 27 first-pivot values and strict tail; all 50 second pivot values under first 10. seconds 3326.906

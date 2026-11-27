@@ -1,0 +1,5 @@
+# Partial tertiary snapshot within the final r^22 region
+
+Under (19,282), t=1735317810514627 to exponent 10 and r=8383027 to exponent 22, the next compelled prime 23773 has 94 directly live exact exponents. The sealed checkpoint replays 84 of them in full, leaving exactly 1,2,4,6,16,36,46,52,60,70. This does **not** exclude r^22. Exact live domain, internal splits and every monotone exponent tail are independently computed by the standalone program, rather than copied from the search. The 113 interior splits have complete domains and their own descendants are all closed. The 765 standard forest leaves and 474 locally masked forest leaves meet both strict integer tests under the same [proved mask inequality](ProofMasked58.md); 194 other leaves are direct overabundance contradictions. There are 641 ECPP chains. Missing compatible exponents are allowed *only* at the explicit partial top level with the pinned missing set above.
+
+    python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/Nineteen/VerifyR22Checkpoint.py

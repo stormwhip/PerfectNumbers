@@ -1,0 +1,13 @@
+# Canonical 19^292: complete candidate
+
+Assume an odd perfect N≤B=10^2400 with v_19(N)=292. There is no preceding canonical root. The certified prime t=10018843 divides G(19,292) exactly once. Since t≡3 mod 4, v_t must be a positive even integer. Enumerate the exponents using the mandatory lower bound 19^292·(G(19,292)/t)·t^f and its increasing tail; keep every nonconflicting state passing exact abundance and the updated fixed-output lcm bound (equality retained). This yields exactly the 59 values 2,4,...,118, raw cutoff 238. An early failure in a factor hunt is never an exclusion.
+
+The [full entrypoint](Full292.py) verifies a disjoint set union and the singleton incidence P19_I00060. The first 38 and the next ten use the frozen FrontierTree exact recurrences. Another two, 40 and 58, use the same verifier. Four further values (4,6,52,88) require the [mixed-order price](ProofFour.md) on just one nested terminal. Two additional values 26 and 28, then the three last values 2,8,36, use [masked trees](Masked.py). Every branch tests all exact children including the full exponent tail; no vertices are assumed active unless compelled, directly or by the true exponent on an active parent.
+
+**Local absence and abundance rules.** In a prefix with fixed mass X and stripped odd output D, each named distinct authenticated prime z|D not already in X is mandatory; e=v_z(D) is a lower bound, not necessarily the exact exponent. Raise e to the next even number only when Euler is already fixed or z≡3 mod4. The product of the exact prefix and these minimal powers divides N; therefore its abundancy cannot exceed 2. To infer absence of another prime y outside that list, append y² if it must be ordinary, y¹ otherwise, and require a strict abundance excess. This tests each forbidden y separately. The integer forest is then evaluated twice with the independently justified absence list. Separating roots and residual blocks before multiplication and permitting the Euler slot in at most one subtree avoid double counting. Both recurrences must strictly exceed B, never just reach decimal floor 2400. All labels in the large prime books are checked through elliptic certificates terminating below 2^64; only discovery used online hints, local GP, and the historical factor index. No primality of the anonymous first block is assumed.
+
+~~~sh
+python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/Nineteen292/Full292.py
+~~~
+
+A successful assembled default replay and independent audit are required for full-key credit. Component-level evidence through the earlier four-fiber packet is recorded in [the independent incremental review](../Ten276/Review292.md). This key, if accepted, removes one exact exponent, not 59 keys.

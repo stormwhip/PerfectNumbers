@@ -2327,5 +2327,53 @@
       "Root7Joint/Verify.py (root lifts only)"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      282
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^282 || N"
+    ],
+    "ExcludedDomain": [
+      "all 27 firsts; 50/50 secondary children under first 10; last r22 94/94"
+    ],
+    "RemainingDomain": [],
+    "Method": "two historical first-pivot covers with final comprehensive nested 50-value tree and mixed source bounds",
+    "ProofReference": "Nineteen/Full282.md",
+    "CertificateReference": "Nineteen/VerifyAll282.py",
+    "VerificationStatus": "AuditNext/Full282.md; independent full cold 3327.483 s",
+    "Dependencies": [
+      "Research/Night2400/F4/Fibers19x282.json.gz",
+      "complete dependency union in the cited checker"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      292
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^292 || N"
+    ],
+    "ExcludedDomain": [
+      "all 59 exact first exponents, raw tail 238"
+    ],
+    "RemainingDomain": [],
+    "Method": "disjoint 38+10+2+4+1+1+3 cover; individual forest/price/abundance predicates certified",
+    "ProofReference": "Nineteen292/FullProof.md",
+    "CertificateReference": "Nineteen292/Full292.py",
+    "VerificationStatus": "Ten276/Review292.md independent full cold 1368.139 s; AuditNext/Domain292.md independent domain audit",
+    "Dependencies": [
+      "Nineteen292/LastThree.json.gz",
+      "complete dependency union in the cited checker"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

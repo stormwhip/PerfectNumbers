@@ -150,6 +150,8 @@ SevenNext/TwoPrimes.py
 SevenNext/VerifyTwoMore.py
 SevenNext/VerifyNest40.py
 SevenNext/VerifyAnchorPlus.py
+Nineteen/VerifyAll282.py
+Nineteen292/Full292.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
