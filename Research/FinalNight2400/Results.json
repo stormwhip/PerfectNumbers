@@ -2203,5 +2203,31 @@
       "Research/Night2400/README.md (historical complement)"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      292
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^292 || N"
+    ],
+    "ExcludedDomain": [
+      "complete firsts 26 and 28"
+    ],
+    "RemainingDomain": [
+      "only 2,8,36 at pivot 10018843"
+    ],
+    "Method": "two independent exact recurrences with arithmetically proved local absences and abundancy terminals",
+    "ProofReference": "Ten276/Review292.md",
+    "CertificateReference": "Nineteen292/Masked.py",
+    "VerificationStatus": "independent; 1636 and 2038 ECPP, all tails and mask inequalities verified",
+    "Dependencies": [
+      "Research/Night2400/FrontierTree.py",
+      "Research/Night2400/Receipts/FiberPartition.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

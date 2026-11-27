@@ -142,6 +142,7 @@ SevenNext/QuickNine.py
 SevenNext/CompleteFive.py
 SevenNext/VerifyCap42.py
 SevenNext/VerifyAnchorQ42.py
+Nineteen292/Masked.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
