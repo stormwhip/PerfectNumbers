@@ -119,6 +119,8 @@ Nineteen/VerifyFiveMore.py
 Seven882/Full882.py
 ShortSeven/Audit882.py
 Nineteen292/Forests.py
+Three/JoinOne.py OneComplete.json.gz
+ShortSeven/AuditThreeOne.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

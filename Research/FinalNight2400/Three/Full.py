@@ -20,6 +20,12 @@ def verify(f):
   assert C.pc.prime64(t);return True
  def visit(P,n):
   s=C.State(P);assert viable(s)
+  if n['type']=='weighted':
+   sys.path.insert(0,str(H));from FastEvenPrice import prove as EP
+   q,r,a,b,w,v=n['args'];assert q!=r and q in s.rows and r in s.rows and s.fixed_euler and 2<=w<=8 and 2<=v<=8 and EP(P,q,r,a,b,w,v);return
+  if n['type']=='fastpair':
+   sys.path.insert(0,str(H));from FastPair import prove
+   q,r,a,b=n['args'];assert q!=r and q in s.rows and r in s.rows and prove(P,q,r,a,b);return
   if n['type']=='pair126':
    sys.path.insert(0,str(H));import GeneralPair as G
    assert f==126 and P[2][0]==30228287 and P[2][1] in (42,58,60) and P[-2:]==[(11939,66),(485816396265547,6)] and G.score(P,1093,30228287)==('result',0,0,0,None);return

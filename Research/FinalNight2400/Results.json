@@ -1942,5 +1942,29 @@
       "Research/Night2400/Receipts/FiberPartition.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      3,
+      6
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400, canonical root 3 at v_3=6"
+    ],
+    "ExcludedDomain": [
+      "complete first v_1093=1; all 160 possible v_547"
+    ],
+    "RemainingDomain": [
+      "previous first frontier less 1; subsequent verified complete firsts apply separately"
+    ],
+    "Method": "fixed-Euler forest, scarcity of 3-incoming valuations, coupled pairs/triple and complete raw tails",
+    "ProofReference": "Three/FirstOne.md",
+    "CertificateReference": "Three/JoinOne.py OneComplete.json.gz",
+    "VerificationStatus": "ShortSeven/ReviewThreeOne.md, independent cold 4878.282 s, zero gaps",
+    "Dependencies": [
+      "Research/FinalSprint/LowBranches/Wave4/README.md"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
