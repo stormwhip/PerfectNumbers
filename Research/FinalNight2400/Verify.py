@@ -51,6 +51,8 @@ Three/Full.py 16 18 22
 SevenNext/VerifyTertiary.py
 SevenNext/VerifyFour.py
 SevenNext/Abundance.py
+Others/FullMore.py
+Audit/CheckMore.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

@@ -2,10 +2,10 @@
   "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388",
   "GlobalStatus": "INCOMPLETE_FRONTIER",
   "TotalShards": 3072,
-  "ClosedShards": 3008,
-  "OpenShards": 64,
-  "DistinctKeys": 74,
-  "SingletonShards": 56,
+  "ClosedShards": 3009,
+  "OpenShards": 63,
+  "DistinctKeys": 73,
+  "SingletonShards": 55,
   "ExcludedCanonicalRoots": [
     5,
     17
@@ -80,7 +80,6 @@
       16,
       240,
       268,
-      352,
       456,
       466
     ],
@@ -469,12 +468,6 @@
       [
         31,
         268
-      ]
-    ],
-    "P31_I00069": [
-      [
-        31,
-        352
       ]
     ],
     "P31_I00086": [

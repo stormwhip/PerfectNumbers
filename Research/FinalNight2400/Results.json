@@ -838,5 +838,31 @@
       "Research/Night2400/README.md (historical complement)"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      31,
+      352
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19,7,11 absent",
+      "31^352 || N"
+    ],
+    "ExcludedDomain": [
+      "all 31 compatible first valuations and all canonical masks"
+    ],
+    "RemainingDomain": [],
+    "Method": "historical 17 plus 13 direct forests plus a complete fixed-Euler fiber (23 forests, 1 price)",
+    "ProofReference": "Others/MoreProof.md",
+    "CertificateReference": "Others/FullMore.py",
+    "VerificationStatus": "Audit/MoreReceipt.md; full dependency replay 240.628 s; strict rational price reimplemented",
+    "Dependencies": [
+      "Research/Night2400/C8/Verify.py",
+      "Others/ThirtyOne352One.json.gz",
+      "Others/ThirtyOne352Thirteen.json.gz"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
