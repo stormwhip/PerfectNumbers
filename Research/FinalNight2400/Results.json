@@ -1629,5 +1629,51 @@
       "Ten/Weighted.py exact root lifts"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      282
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "N odd perfect <=10^2400",
+      "19^282 || N",
+      "1735317810514627^10 || N"
+    ],
+    "ExcludedDomain": [
+      "complete v_8383027=14,16,28,66,70,78,82,88",
+      "entire progression v_8383027=2 mod 6, overlap removed"
+    ],
+    "RemainingDomain": [
+      {
+        "Pivot": 8383027,
+        "Valuations": [
+          4,
+          6,
+          10,
+          12,
+          18,
+          22,
+          24,
+          30,
+          36,
+          40,
+          42,
+          52,
+          58,
+          60,
+          72
+        ]
+      }
+    ],
+    "Method": "complete complementary Euler term and multi-target leaves plus exact multiplicity progression",
+    "ProofReference": "Nineteen/ProofInnerFour.md, ProofHigh.md, ProofHighThree.md, ProofLowPair.md and ProofAbundance.md",
+    "CertificateReference": "see integrated entry and Root7Joint/Review282More.md",
+    "VerificationStatus": "Lead domain review, exact abundant divisor and all six direct cold replays",
+    "Dependencies": [
+      "Research/Session20261126/PivotCheck.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

@@ -1,0 +1,7 @@
+# Closing the last 23773 fiber below (19,282), t^10, r^28
+
+The certified h28 reduction [ProofInner.md](ProofInner.md) forces the 193-digit prime Q² and leaves only 23773^1, 23773^4; [ProofInnerOne.md](ProofInnerOne.md) disposes of the former. Under 23773^4 use the same exact forest split algorithm. There are 3 interior exhaustions, 58 forest terminal nodes (confirmed by both strict integer lower bounds), and one terminal joint-price node. Every prime used by the tree has a complete primality proof. At the price leaf the additional exact components are 319414207966840061^4, 491² and 6529¹; here 6529 is the Euler prime, so every remaining incoming component is ordinary. Using the same three-target theorem for 19,8383027,Q as in the exponent-1 proof suffices. The verifier reruns the entire ordinary joint price calculation on this **exact** prefix; although the packet tag is 'transfer', the executable does not actually transfer a certificate or use the earlier strict inequality as a black box. Strict B refusal is checked by the frozen kernel. No other kinds of leaves or assumptions.
+
+    python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/Nineteen/VerifyInnerFour.py
+
+Thus both residual 23773 powers are excluded. In union with the earlier 35 powers and direct Q-split, **r^28 is completely excluded**. It is the 25th of the 50 initially viable exact second-pivot values of r=8383027 under t^10. Root (19,282) and its first-pivot value 10 remain open; the other 25 live second-pivot values are untouched by this addition.

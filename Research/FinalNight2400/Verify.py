@@ -100,6 +100,12 @@ Batch/Hybrid.py
 Batch/HybridLow.py
 ShortNineteen/Verify.py
 ShortNineteen/CheckDeep.py
+Nineteen/VerifyInnerOne.py
+Nineteen/VerifyInnerFour.py
+Nineteen/VerifyHigh.py
+Nineteen/VerifyHighThree.py
+Nineteen/VerifyLowPair.py
+Nineteen/VerifyAbundance.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
