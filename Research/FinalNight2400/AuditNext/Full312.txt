@@ -1,0 +1,5 @@
+SUPPORT EXACT (312, 8, 6, 2, 2) [96, 26, 6] minimum forest 2400
+COMPLETE 8 splits/direct/forests/price/support [3, 57, 53, 0, 1] forest min 2400 SHA256 3a0ea6297c7ad999eafb5ca4cb2f302e380fd3189e49ef64852ce21d6eef5b75
+PRICE DEEP 36 (10, [7476, 3792, 0])
+COMPLETE 36 splits/direct/forests/price/support [1, 25, 24, 1, 0] forest min 2400 SHA256 0cf4fadc039684f114af89d36cdd181393ad1aa30a8d09eee7acfed9de9c128d
+FULL (19,312) 40/40, singleton P19_I00063.

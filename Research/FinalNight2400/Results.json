@@ -1453,5 +1453,31 @@
       "historical references in proof; frozen baseline commit as stated"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      312
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "N odd perfect <=10^2400",
+      "19^312 || N"
+    ],
+    "ExcludedDomain": [
+      "all 40 first valuations of 1481866508237449, strict tail 107"
+    ],
+    "RemainingDomain": [],
+    "Method": "complete disjoint first-fiber union 32+1+2+5; final 28 second exponents under first 2",
+    "ProofReference": "More312/Proof.md",
+    "CertificateReference": "More312/Full.py",
+    "VerificationStatus": "AuditNext/Full312.md; independent full cold 144.258 s",
+    "Dependencies": [
+      "Research/Night2400/Fibers19x312.json.gz",
+      "Research/Night2400/Fiber19x312Ten.json.gz",
+      "Research/Night2400/C14/Verify.py",
+      "More312/FiveFibers.json.gz"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
