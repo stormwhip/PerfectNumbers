@@ -179,6 +179,9 @@ PairSeven/Emitter.py
 ThirtyOne268/AuditEmitter486.py
 SevenNext/VerifyL60.py
 SevenNext/Verify438Last28.py
+SparseSeven/AllSupport.py
+SparseSeven/PrimitiveSupport.py
+AuditNext/Primitive906.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
