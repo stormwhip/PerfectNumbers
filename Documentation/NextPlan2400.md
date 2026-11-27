@@ -1,5 +1,7 @@
 # 下一步计划
 
+**当前研究分支接续入口：** 见[最新已知—待证表](../Research/FinalNight2400/Report.md)和[完整逐片余集](../Research/FinalNight2400/OpenFrontier.json)。下文为 11 月 27 日 main 的历史派工快照，保留以便对照，不是当前计数。
+
 按[逐片余集](../Research/GeminiFrontier/ShardToKeys.json)派工。3,072 片已闭合 **3,004** 片，余 **68** 片、**78** 个不同的 $(p,e)$，其中 60 片各余一个指数。按键研究，按分片余集验收。
 
 | 优先任务 | 当前缺口 | 验收条件 |
