@@ -2505,5 +2505,31 @@
       "Research/Session20261126/Anonymous/AnonymousGuard.md"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      36
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19 absent",
+      "7^36 || N"
+    ],
+    "ExcludedDomain": [
+      "all 31 live firsts, strict raw tail 96"
+    ],
+    "RemainingDomain": [],
+    "Method": "24+4 historical and three complete low-first trees; final forest under 2887^2 excludes endpoint strictly",
+    "ProofReference": "ShortSeven/FullProof.md",
+    "CertificateReference": "ShortSeven/Full36.py",
+    "VerificationStatus": "AuditNext/Full36.md, independent cold 2034.900 s; final 9449-edge leaf recomputed in 82.312 s",
+    "Dependencies": [
+      "Research/Night2400/Fibers7x36.json.gz",
+      "Research/Night2400/E8/Fibers7x36ComplementFour.json.gz",
+      "ShortSeven/Seven36Two.json.gz, Seven36Twelve.json.gz, Seven36Sixteen.json.gz"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

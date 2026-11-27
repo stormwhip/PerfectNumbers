@@ -173,6 +173,8 @@ AuditNext/Check240.py
 Triple/CellForests.py
 SparseSeven/VerifyThreeFactors.py
 AuditNext/SparsePatterns.py
+ShortSeven/Full36.py
+AuditNext/Check36.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

@@ -4,10 +4,10 @@
 
 |Measure|Baseline|Accepted overlay|
 |---|---:|---:|
-|Canonical shards closed|3004|3027|
-|Shards open|68|45|
-|Distinct exact keys open|78|55|
-|Singleton shards open|60|37|
+|Canonical shards closed|3004|3028|
+|Shards open|68|44|
+|Distinct exact keys open|78|54|
+|Singleton shards open|60|36|
 
 |Exact key|Singleton closed|Independent full-dependency replay|
 |---|---|---|
@@ -17,6 +17,7 @@
 |(11,462)|P11_I00088|[254.255 s](AuditNext/Full462.md)|
 |(19,312)|P19_I00063|[144.258 s](AuditNext/Full312.md)|
 |(7,882)|P7_I00152|[816.964 s](ShortSeven/Review882.md)|
+|(7,36)|P7_I00011|[2034.900 s](AuditNext/Full36.md)|
 |(7,430)|P7_I00082|[1415.677 s](AuditNext/Full430.md)|
 |(19,372)|P19_I00072|[8.309 s](AuditNext/Full372.md)|
 |(19,420)|P19_I00080|[1570.141 s](AuditNext/Full420.md)|
@@ -44,7 +45,7 @@ Assume positive odd N≤10^2400, sigma(N)=2N. Exclude the first dividing prime i
 |Root|Open shards|Remaining exact exponents|
 |---:|---:|---|
 |19|13|2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 30, 32, 46, 48, 222, 276, 358, 432|
-|7|14|4, 6, 10, 12, 16, 18, 24, 34, 36, 48, 438, 456, 486, 600, 738, 808, 906|
+|7|13|4, 6, 10, 12, 16, 18, 24, 34, 48, 438, 456, 486, 600, 738, 808, 906|
 |11|5|4, 6, 12, 16, 18, 48|
 |31|5|2, 6, 268, 456, 466|
 |13|5|2, 4, 6, 8, 612, 618|
