@@ -196,6 +196,10 @@ Root222/Twelve.py
 Root222/TwentyEight.py
 Root222/TwentyTwo.py
 Root222/Sixteen.py
+Three/Full.py 8 166
+Root7Joint/ReviewThreeLast.py
+Three/Partial156.py
+AuditNext/Check156.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

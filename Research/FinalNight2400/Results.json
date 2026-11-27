@@ -2855,5 +2855,29 @@
       "Research/Session20261126/PivotCheck.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      3,
+      6
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400, canonical root 3 at v_3=6"
+    ],
+    "ExcludedDomain": [
+      "complete firsts 8,166 at 1093"
+    ],
+    "RemainingDomain": [
+      "only first exponents 2,156,256 of 1093; 179/182 complete"
+    ],
+    "Method": "complete fixed-Euler weighted trees and free-Euler paired price with exact order-first index bound",
+    "ProofReference": "Three/ProofNext.md",
+    "CertificateReference": "Three/Full.py 8 166",
+    "VerificationStatus": "Root7Joint/ReviewThreeLast.md: independent proof review and all 450 split-domain checks, plus original complete stock arithmetic; no full key",
+    "Dependencies": [
+      "Research/FinalSprint/LowBranches/Wave4/README.md"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
