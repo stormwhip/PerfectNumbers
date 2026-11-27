@@ -2454,5 +2454,30 @@
       "ThirtyOne268/Root240/Inventory.py; original historical arithmetic primitives"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      358
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^358 || N, s=38518547, t=1491133067, i=v_s(N), j=v_t(N)"
+    ],
+    "ExcludedDomain": [
+      "232 additional exact pairs, verified distinct from 645 earlier price exclusions"
+    ],
+    "RemainingDomain": [
+      "91 of 968 exact pairs, explicit list returned by CellForests.verify()"
+    ],
+    "Method": "unrestricted ordinary/Euler forests with bounded exact emitters; membership required in previous 323-cell complement",
+    "ProofReference": "Triple/ForestSupplement.md",
+    "CertificateReference": "Triple/CellForests.py",
+    "VerificationStatus": "Ten276/Review358.md, 1104 ECPP entries, 139.944 s",
+    "Dependencies": [
+      "historical arithmetic and prime certificate dependencies specified in proof"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
