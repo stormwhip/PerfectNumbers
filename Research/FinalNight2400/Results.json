@@ -759,5 +759,84 @@
       "historical references in proof; frozen baseline commit as stated"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      3,
+      12
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "canonical root 3, odd perfect N<=10^2400",
+      "exact components 3^12, Q^66, 5897^6, 42059143035592870990447^2, P^12",
+      "Q=797161; P=589657170962820100934139512775879733212083419"
+    ],
+    "ExcludedDomain": [
+      "all Euler positions and allocations on this exact deep prefix; 184 final windows all rejected"
+    ],
+    "RemainingDomain": [
+      "this exact prefix empty; siblings under 5897^6, 797161^66 still open"
+    ],
+    "Method": "cancel designated emitter supply between two lower bounds on N to bound N²",
+    "ProofReference": "Three/ProofHard66.md",
+    "CertificateReference": "Three/Hard66.py",
+    "VerificationStatus": "Root7Joint/DeepReview.md",
+    "Dependencies": [
+      "Research/Night2400/B/HardAtomRoute.md",
+      "Research/Night2400/B/EulerRoute.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      3,
+      6
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400, canonical root 3 at v_3=6"
+    ],
+    "ExcludedDomain": [
+      "full v_1093=16,18,22; at other exact firsts 1,102,192 only the enumerated 89/160,2/9,2/10 secondary cuts respectively"
+    ],
+    "RemainingDomain": [
+      "first pivot 1,2,5,8,96,102,106,126,130,148,156,166,180,190,192,196,226,240,250,256; partial secondary complements given by Six and VerifyForests"
+    ],
+    "Method": "fixed Euler valuation price, exact split forests and complete monotone tails",
+    "ProofReference": "Three/ProofSix.md and ProofFullSix.md",
+    "CertificateReference": "Three/Six.py, VerifyForests.py and Full.py 16 18 22",
+    "VerificationStatus": "Root7Joint/DeepReview.md",
+    "Dependencies": [
+      "Research/FinalSprint/LowBranches/Wave4/README.md"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      12
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "canonical root 7 at exact exponent 12",
+      "v_16148168401(N)=12"
+    ],
+    "ExcludedDomain": [
+      "at T²: 22 of 68 v_3453283 values (Tertiary list union h=4 mod 10)",
+      "at T⁶: 9 of 14 v_62936242392988051361 values including h=4 and all four live odds"
+    ],
+    "RemainingDomain": [
+      "T²: 46/68 tertiary values (explicit predicates and lists in proof)",
+      "T⁶: 2,6,8,10,12"
+    ],
+    "Method": "partial exact forests, Euler-sensitive abundance and a Lucas-certified forced label",
+    "ProofReference": "SevenNext/Tertiary.md, Four.md, Abundance.md",
+    "CertificateReference": "SevenNext/VerifyTertiary.py, VerifyFour.py, Abundance.py",
+    "VerificationStatus": "Root7Joint/DeepReview.md and Nineteen/AuditSevenFour.md",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

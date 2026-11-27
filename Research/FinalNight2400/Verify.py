@@ -44,6 +44,13 @@ Sieve/OneAudit.py
 Nineteen/VerifyAnchor.py
 SevenNext/Audit618.py --credit
 SevenNext/Audit618.py --anchor
+Three/Hard66.py
+Three/Six.py
+Three/VerifyForests.py
+Three/Full.py 16 18 22
+SevenNext/VerifyTertiary.py
+SevenNext/VerifyFour.py
+SevenNext/Abundance.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
