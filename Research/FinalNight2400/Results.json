@@ -480,5 +480,64 @@
       "Root7Joint/Proof.md"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      3,
+      12
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "canonical root 3, odd perfect N<=10^2400",
+      "exact components 3^12, Q^66, 5897^6, 42059143035592870990447^2, P^12",
+      "Q=797161; P=589657170962820100934139512775879733212083419",
+      "historically surviving external Euler e, index pair (v_Q((e+1)/2),v_P((e+1)/2))"
+    ],
+    "ExcludedDomain": [
+      [
+        4,
+        9
+      ],
+      [
+        25,
+        7
+      ],
+      [
+        32,
+        6
+      ],
+      [
+        40,
+        5
+      ],
+      [
+        47,
+        4
+      ],
+      [
+        55,
+        3
+      ],
+      [
+        62,
+        2
+      ],
+      [
+        63,
+        2
+      ]
+    ],
+    "RemainingDomain": [
+      "145 of 153 historical windows on this exact path; run Three/Abundance.py:run() for the complement"
+    ],
+    "Method": "disjoint external ordinary-prime abundance mass",
+    "ProofReference": "Three/Proof12.md",
+    "CertificateReference": "Three/Abundance.py",
+    "VerificationStatus": "Root7Joint/ReviewThree.md",
+    "Dependencies": [
+      "Research/Night2400/B/HardAtomRoute.md",
+      "Research/Night2400/B/EulerRoute.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
