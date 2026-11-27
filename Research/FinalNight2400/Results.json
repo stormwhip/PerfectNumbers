@@ -1,0 +1,27 @@
+[
+  {
+    "Key": [
+      7,
+      882
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd N, sigma(N)=2N, N<=10^2400",
+      "7^882 || N"
+    ],
+    "ExcludedDomain": [
+      "v_21193(N)=72"
+    ],
+    "RemainingDomain": [
+      "historical first pivot: 1,2,4,8,12"
+    ],
+    "Method": "square-base Euler atom and complete joint cubic CRT pricing",
+    "ProofReference": "Root7Joint/Proof.md",
+    "CertificateReference": "Root7Joint/Verify.py",
+    "VerificationStatus": "independent proof review and exact CRT replay: Audit/SevenReceipt.md",
+    "Dependencies": [
+      "Research/Night2400/G7/Readme.md (historical complement only)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  }
+]
