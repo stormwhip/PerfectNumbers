@@ -2479,5 +2479,31 @@
       "historical arithmetic and prime certificate dependencies specified in proof"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      906
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400, 19 absent, 7^906 || N",
+      "A=(7^907-1)/6; s=v_7(q+1), q is the Euler prime"
+    ],
+    "ExcludedDomain": [
+      "omega(Phi_907(7))<=2 under all Euler allocations and all possible prime multiplicities"
+    ],
+    "RemainingDomain": [
+      "any candidate requires at least three distinct prime divisors of this 766-digit block; nonlinear Euler/zero-supply and squarefree conditional bounds unchanged"
+    ],
+    "Method": "finite correlated two-prime exponent enumeration; signed scalar emitter identity and positive modular square identity",
+    "ProofReference": "SparseSeven/ThreeFactors.md",
+    "CertificateReference": "SparseSeven/VerifyThreeFactors.py",
+    "VerificationStatus": "AuditNext/SparseFullReview.md; independent all 1490 candidate patterns eliminated, no full-key credit",
+    "Dependencies": [
+      "Research/Night2400/B/HardAtomRoute.md",
+      "Research/Session20261126/Anonymous/AnonymousGuard.md"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

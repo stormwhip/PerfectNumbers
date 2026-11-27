@@ -171,6 +171,8 @@ SevenNext/Verify438New.py
 ThirtyOne268/Root240/Full240.py
 AuditNext/Check240.py
 Triple/CellForests.py
+SparseSeven/VerifyThreeFactors.py
+AuditNext/SparsePatterns.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
