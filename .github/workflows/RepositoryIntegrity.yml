@@ -9,6 +9,7 @@ on:
       - 'Readme.md'
       - 'Research/FinalSprint/**'
       - 'Research/Night2400/**'
+      - 'Research/GeminiFrontier/**'
       - 'Sources/Python/FinalSprintLedgerChecks.py'
       - 'Research/Midday*/**'
       - 'Research/SupportSplit/**'
@@ -37,6 +38,8 @@ jobs:
         run: python3 -I -S -B Sources/Python/FinalSprintLedgerChecks.py
       - name: Check Night2400 shard projection
         run: python3 -I -S -B Research/Night2400/Replay.py --projection-only
+      - name: Check reviewed Gemini arithmetic and exact shard projection
+        run: python3 -I -S -B -X int_max_str_digits=0 Research/GeminiFrontier/Verify.py --arithmetic-only
       - name: Check the frozen Midday ledger and conditional support exclusions
         run: |
           python3 -I -S -B -X int_max_str_digits=0 Research/Midday/LedgerTests.py
