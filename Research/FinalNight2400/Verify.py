@@ -200,6 +200,7 @@ Three/Full.py 8 166
 Root7Joint/ReviewThreeLast.py
 Three/Partial156.py
 AuditNext/Check156.py
+AuditCoverage.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
