@@ -202,7 +202,7 @@
     ],
     "Method": "exact compulsory forest and independent recurrence",
     "ProofReference": "Nineteen/Proof282.md",
-    "CertificateReference": "Nineteen/282packet.json.gz",
+    "CertificateReference": "Nineteen/Packet282.json.gz",
     "VerificationStatus": "Root7Joint/Review282.md",
     "Dependencies": [
       "Research/Session20261126/PivotCheck.py"

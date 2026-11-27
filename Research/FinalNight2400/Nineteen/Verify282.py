@@ -9,7 +9,7 @@ from PivotCheck import B,C,exact_leaf,floor10
 
 def main():
     assert __debug__;p,e,t,r=19,282,1735317810514627,8383027
-    pack=json.loads(gzip.decompress((P/'282packet.json.gz').read_bytes()));assert set(pack)=={'cases','ecpp'}
+    pack=json.loads(gzip.decompress((P/'Packet282.json.gz').read_bytes()));assert set(pack)=={'cases','ecpp'}
     used=set()
     @cache
     def prime(z):
