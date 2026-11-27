@@ -48,5 +48,30 @@
       "Research/Night2400/README.md (historical complement only)"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      11,
+      462
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd N, sigma(N)=2N, N<=10^2400",
+      "11^462 || N"
+    ],
+    "ExcludedDomain": [
+      "v_879701(N) in {70,72}"
+    ],
+    "RemainingDomain": [
+      "historical first pivot: 1,4,6,22,36,42,46"
+    ],
+    "Method": "common fifth-order CRT with square-aware sieve and high-order split",
+    "ProofReference": "Fifth/Proof.md",
+    "CertificateReference": "Fifth/Verify.py",
+    "VerificationStatus": "Dual/AuditFifth.md",
+    "Dependencies": [
+      "Research/Night2400/Receipts/Review11x462And13x388.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
