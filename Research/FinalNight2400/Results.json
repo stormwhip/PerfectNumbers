@@ -1377,5 +1377,30 @@
       "Others/Vertex388.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      11,
+      396
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "11^396 || N, 19 and 7 absent"
+    ],
+    "ExcludedDomain": [
+      "v_2383=112 and 136 complete"
+    ],
+    "RemainingDomain": [
+      "2,4,6,8,12,22,24,26,36,70,78,82,96,106,126,138"
+    ],
+    "Method": "complete next-prime domains with 49 strict forests",
+    "ProofReference": "TenNext/BatchLowReview.md",
+    "CertificateReference": "Batch/Trees112And136.json.gz",
+    "VerificationStatus": "two stock replays and independent review; 413 ECPP entries",
+    "Dependencies": [
+      "historical references in proof; frozen baseline commit as stated"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
