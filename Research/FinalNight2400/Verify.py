@@ -130,6 +130,10 @@ ShortNineteen/Full330.py
 AuditNext/Check330.py
 Eleven456/Full456.py
 ShortSeven/Audit456.py
+Ten276/Release280/CheckEquivalence.py
+Ten276/Release280/Full280.py
+AuditNext/Check280.py
+Nineteen292/CloseFour.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

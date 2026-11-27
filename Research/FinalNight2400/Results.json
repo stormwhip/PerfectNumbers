@@ -2064,5 +2064,56 @@
       "Eleven456/Inventory.py release files including 6054 ECPP chains"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      280
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^280 || N"
+    ],
+    "ExcludedDomain": [
+      "all 29 compatible first valuations, strict raw tail 117"
+    ],
+    "RemainingDomain": [],
+    "Method": "disjoint 25+1+3 cover; complete low first branch rebuilt from exact child sets, all 59 high first/second cells",
+    "ProofReference": "Ten276/Release280/Full280.md",
+    "CertificateReference": "Ten276/Release280/Full280.py",
+    "VerificationStatus": "AuditNext/Full280.md: independent original 4569.877 s; Release280.md verifies byte reconstruction after pathname changes",
+    "Dependencies": [
+      "Research/Night2400/Fibers19x280.json.gz",
+      "Research/Night2400/C13/Verify.py",
+      "161 release inputs in Ten276/Release280/Manifest280.txt"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      292
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^292 || N"
+    ],
+    "ExcludedDomain": [
+      "complete first 4,6,52,88"
+    ],
+    "RemainingDomain": [
+      "firsts 2,8,26,28,36,40,58"
+    ],
+    "Method": "joint order 3/9, square-aware loss, net mandatory budget, strict subtree forests",
+    "ProofReference": "Nineteen292/ProofFour.md",
+    "CertificateReference": "Nineteen292/CloseFour.py",
+    "VerificationStatus": "Ten276/Review292.md; 48 splits,894 forests,1 price,2635 ECPP",
+    "Dependencies": [
+      "Research/Night2400/FrontierTree.py",
+      "Research/Night2400/Receipts/FiberPartition.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
