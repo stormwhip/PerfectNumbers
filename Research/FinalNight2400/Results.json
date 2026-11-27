@@ -1901,5 +1901,46 @@
       "Research/Night2400/Receipts/FiberPartition.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      292
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^292 || N"
+    ],
+    "ExcludedDomain": [
+      "ten further complete first exponents 10,12,14,16,18,20,22,24,30,32"
+    ],
+    "RemainingDomain": [
+      {
+        "Pivot": 10018843,
+        "Valuations": [
+          2,
+          4,
+          6,
+          8,
+          26,
+          28,
+          36,
+          40,
+          52,
+          58,
+          88
+        ]
+      }
+    ],
+    "Method": "certified forest trees, explicit next-pivot domains and all raw tails",
+    "ProofReference": "Ten276/Review292.md",
+    "CertificateReference": "Nineteen292/Ten292.json.gz",
+    "VerificationStatus": "Ten276/Review292.md; 275 forests, 1663 ECPP, both replays passed",
+    "Dependencies": [
+      "Research/Night2400/FrontierTree.py",
+      "Research/Night2400/Receipts/FiberPartition.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
