@@ -23,5 +23,30 @@
       "Research/Night2400/G7/Readme.md (historical complement only)"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      432
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd N, sigma(N)=2N, N<=10^2400",
+      "19^432 || N"
+    ],
+    "ExcludedDomain": [
+      "v_11842464881317660217(N) in {20,22}"
+    ],
+    "RemainingDomain": [
+      "historical first pivot: 1,6,12,14,16,18"
+    ],
+    "Method": "coprime index lengths, Euler square and cofactor overlap cuts",
+    "ProofReference": "Dual/Proof.md",
+    "CertificateReference": "Dual/Verify.py",
+    "VerificationStatus": "independent mathematical and exhaustive endpoint audit: Seven/DualReceipt.md",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement only)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
