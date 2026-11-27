@@ -636,5 +636,31 @@
       "Research/RootFiveNext/PrimeCheck.py"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      13,
+      310
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19,7,11,31 absent",
+      "13^310 || N"
+    ],
+    "ExcludedDomain": [
+      "all 22 first valuations of 5424477432443 in all canonical masks"
+    ],
+    "RemainingDomain": [],
+    "Method": "historical 14-fiber cover, 7 strict forests and mixed weights 2,10 at first 42",
+    "ProofReference": "Others/NextProof.md",
+    "CertificateReference": "Others/FullNext.py",
+    "VerificationStatus": "Audit/NextReceipt.md; full dependency replay 440.350 s; independent CRT 7.941 s",
+    "Dependencies": [
+      "Research/Night2400/C6/Verify.py",
+      "Others/Thirteen310Seven.json.gz",
+      "Others/NextPrice42.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
