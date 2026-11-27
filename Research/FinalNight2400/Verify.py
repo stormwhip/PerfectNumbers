@@ -201,6 +201,10 @@ Root7Joint/ReviewThreeLast.py
 Three/Partial156.py
 AuditNext/Check156.py
 AuditCoverage.py
+Three/JoinTwo.py SecondaryTwo.json.gz
+Three/JoinTwo.py DeltaTwo.json.gz
+Three/JoinTwo.py LateTwo.json.gz
+Root7Joint/ThreeTwoScope.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

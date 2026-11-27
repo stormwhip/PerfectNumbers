@@ -2879,5 +2879,30 @@
       "Research/FinalSprint/LowBranches/Wave4/README.md"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      3,
+      6
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "canonical 3^6, earlier roots absent, N odd perfect <=10^2400",
+      "1093^2 || N"
+    ],
+    "ExcludedDomain": [
+      "76 of 79 first exponents at 398581, disjoint 70+4+2"
+    ],
+    "RemainingDomain": [
+      "only 398581 exponents 102,108,150 under this prefix, not a complete 1093 first"
+    ],
+    "Method": "fully reconstructed subtrees with square Euler atoms, two-target price and two three-target price leaves",
+    "ProofReference": "Three/ProofFirstTwo.md",
+    "CertificateReference": "Three/JoinTwo.py with SecondaryTwo, DeltaTwo and LateTwo .json.gz",
+    "VerificationStatus": "three original stock arithmetic passes; separate union and endpoint/method review, Root7Joint/ThreeTwoScope.py; no second all-leaf cold replay claimed",
+    "Dependencies": [
+      "Research/FinalSprint/LowBranches/Wave4/README.md"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
