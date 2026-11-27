@@ -2631,5 +2631,30 @@
       "Research/Session20261126/Anonymous/AnonymousGuard.md"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      11,
+      12
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19,7 absent",
+      "11^12 || N"
+    ],
+    "ExcludedDomain": [
+      "all 77 firsts, exact raw tail 252"
+    ],
+    "RemainingDomain": [],
+    "Method": "41 complete splits, 1131 strictly impossible forests and one fully replayed historical C9 first (no surviving mask)",
+    "ProofReference": "ThirtyOne268/SmallEleven/Proof.md",
+    "CertificateReference": "ThirtyOne268/SmallEleven/Verifier.py",
+    "VerificationStatus": "LowSeven/ReviewSmallEleven.md: independent full cold 2262.747 s; 3967 elliptic certificates",
+    "Dependencies": [
+      "Research/Night2400/C9/Verify.py",
+      "ThirtyOne268/SmallEleven/Forest.json.gz and Primes.json.gz"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

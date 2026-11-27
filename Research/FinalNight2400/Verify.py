@@ -182,6 +182,8 @@ SevenNext/Verify438Last28.py
 SparseSeven/AllSupport.py
 SparseSeven/PrimitiveSupport.py
 AuditNext/Primitive906.py
+ThirtyOne268/SmallEleven/Verifier.py
+LowSeven/AuditSmallEleven.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
