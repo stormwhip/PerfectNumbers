@@ -4,7 +4,7 @@
 
 ## 合并证明与文档归档
 
-- [总证明](Proof2400.md)汇总数学推导和复验入口。[夜间证书索引](../Research/Night2400/README.md)和[逐片余集](../Research/Night2400/ShardToKeys.json)记录当前进度。[晚间证明](../Research/FinalSprint/Proof.md)和[冻结账本](../Research/FinalSprint/Delta.json)给出本批的输入。[Session20261126](../Research/Session20261126/Readme.md)、[Midday](../Research/Midday/README.md)、[EveningMerge](../Research/EveningMerge/VerifyFrontier.py)及[NightMerge](../Research/NightMerge/ParallelReplay.py)保存历史批次。
+- [总证明](Proof2400.md)汇总数学推导和复验入口。[Gemini 增量](../Research/GeminiFrontier/Review.md)和[逐片余集](../Research/GeminiFrontier/ShardToKeys.json)记录当前进度；[夜间证书索引](../Research/Night2400/README.md)保留历史快照。[晚间证明](../Research/FinalSprint/Proof.md)和[冻结账本](../Research/FinalSprint/Delta.json)给出本批的输入。[Session20261126](../Research/Session20261126/Readme.md)、[Midday](../Research/Midday/README.md)、[EveningMerge](../Research/EveningMerge/VerifyFrontier.py)及[NightMerge](../Research/NightMerge/ParallelReplay.py)保存历史批次。
 
 - [EulerSourceIntervals](../Research/EulerSourceIntervals/VerifyEulerSourceIntervals2400.py) 保存根 3、5 的来源区间实验复验器，输入由已签入的审计重建。
 
@@ -26,7 +26,8 @@ PerfectNumbers/
 ├── Records/                            # 里程碑、历史实验、验收清单
 ├── References/                         # 原始论文及参考资料
 ├── Research/
-│   ├── Night2400/                      # 现行逐片余集、夜间证书与复验
+│   ├── GeminiFrontier/                 # 现行逐片余集、审阅及复验
+│   ├── Night2400/                      # 冻结夜间证书、历史账本与复验
 │   ├── FinalSprint/                    # 冻结晚间账本及增量证书
 │   ├── Session20261126/                 # 晚间前的冻结基线及其独立复验入口
 │   ├── Midday/                          # 午间历史基线与证书账本
