@@ -110,6 +110,9 @@ ShortNineteen/Full420.py
 AuditNext/Check420.py
 Nineteen/VerifyAll618.py
 AuditNext/Union618.py
+Batch/Full396.py
+Nineteen/VerifyMidThree.py
+Nineteen/VerifyMasked58.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':

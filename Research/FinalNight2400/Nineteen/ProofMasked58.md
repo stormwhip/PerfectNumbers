@@ -1,0 +1,7 @@
+# Complete r^58 at (19,282) by locally proved absence masks
+
+Retain the exact hypotheses of [Proof282.md](Proof282.md). Besides the unmasked forest and mandatory-divisor overabundance arguments in [ProofMidThree.md](ProofMidThree.md), permit an additional local rule: build a compulsory divisor F from the already fixed exact rows and each distinct tested prime divisor of D to its minimal guaranteed power (at least its forced valuation, rounded up to even when ordinary). For each proposed extra absent prime b outside F, infer b∤N **only** when (σ(F)/F)·(σ(b^k)/b^k)>2, where k=2 if it would have to be ordinary and k=1 otherwise. Each absent prime is proved one at a time without borrowing absence of any other. All labels are certified and σ(F)/F itself uses only distinct compulsory bases. Now in that leaf evaluate the same exact outgoing forests with these additional impossible primes banned: any N realizing the prefix and a forbidden emission is already excluded. No masks are inherited by unrelated siblings. Both the ordinary masked forest implementation and the independent masked integer engine strictly exceed B on each such leaf; the denominator/tail argument is unchanged.
+
+    python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/Nineteen/VerifyMasked58.py
+
+The complete second-pivot r^58 replay passed: 11 exhaustive splits, 157 ordinary forests, 17 new locally masked forests and 3 direct overabundance leaves, 25 embedded ECPP chains. Only that second fiber is removed; this is the 39th of 50 in union with earlier packets, not a whole key.

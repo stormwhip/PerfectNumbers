@@ -2,7 +2,7 @@
 
 目标定理为：对每个奇完全数 $N$，均有 $N>10^{2400}$。
 
-夜间研究分支最新已验收状态为 **`INCOMPLETE_FRONTIER`**。相对 11 月 27 日主线的 3004/3072，本轮新增完整排除十四个规范精确键，现为 **3018/3072**；仍有 **54 个开放分片、64 个精确键、46 个单指数分片**。全局下界尚未证明。[本轮报告及逐根余集](Research/FinalNight2400/Proof.md) · [机器可读投影](Research/FinalNight2400/OpenFrontier.json) · [历史 Gemini 基线](Research/GeminiFrontier/Review.md)。
+夜间研究分支最新已验收状态为 **`INCOMPLETE_FRONTIER`**。相对 11 月 27 日主线的 3004/3072，本轮新增完整排除十五个规范精确键，现为 **3019/3072**；仍有 **53 个开放分片、63 个精确键、45 个单指数分片**。全局下界尚未证明。[本轮报告及逐根余集](Research/FinalNight2400/Proof.md) · [机器可读投影](Research/FinalNight2400/OpenFrontier.json) · [历史 Gemini 基线](Research/GeminiFrontier/Review.md)。
 
 | 文档 | 内容 |
 |---|---|

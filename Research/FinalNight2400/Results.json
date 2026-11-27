@@ -1723,5 +1723,72 @@
       "earlier verified conditional packets listed in proof"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      11,
+      396
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19 and 7 absent",
+      "11^396 || N"
+    ],
+    "ExcludedDomain": [
+      "all 116 first powers of 2383, raw tail 468"
+    ],
+    "RemainingDomain": [],
+    "Method": "ten mutually disjoint sets: high batch, free/ordinary-only forests, exact secondary trees and dual-price prefix DAGs",
+    "ProofReference": "Batch/FullProof.md",
+    "CertificateReference": "Batch/Full396.py",
+    "VerificationStatus": "TenNext/Full396Review.md; independent full cold 1920.787 s, including final firsts 2 and 8",
+    "Dependencies": [
+      "Batch/HybridTwo.json.gz",
+      "Batch/HybridEight.json.gz",
+      "earlier reviewed Batch/Verify.py, Low.py, TwoTrees.py, Hybrid.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      282
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "N odd perfect <=10^2400",
+      "19^282 || N",
+      "1735317810514627^10 || N"
+    ],
+    "ExcludedDomain": [
+      "complete v_8383027=10,30,72,58"
+    ],
+    "RemainingDomain": [
+      {
+        "Pivot": 8383027,
+        "Valuations": [
+          4,
+          6,
+          12,
+          18,
+          22,
+          24,
+          36,
+          40,
+          42,
+          52,
+          60
+        ]
+      }
+    ],
+    "Method": "local absence proofs and complete fixed-state forests; 39 of 50 second values now excluded",
+    "ProofReference": "Nineteen/ProofMidThree.md and ProofMasked58.md",
+    "CertificateReference": "Nineteen/VerifyMidThree.py and VerifyMasked58.py",
+    "VerificationStatus": "AuditNext/Mid282.md and Local58.md",
+    "Dependencies": [
+      "Research/Session20261126/PivotCheck.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
