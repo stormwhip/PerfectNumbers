@@ -1554,5 +1554,30 @@
       "historical references in proof; frozen baseline commit as stated"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      11,
+      396
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "11^396 || N, 19 and 7 absent"
+    ],
+    "ExcludedDomain": [
+      "all f=4,6,12,22,24,26 at t=2383"
+    ],
+    "RemainingDomain": [
+      "only f=2 or f=8"
+    ],
+    "Method": "complete multi-pivot trees using disjoint-order subprefix pricing, including exact lcm overlap",
+    "ProofReference": "Batch/Hybrid.md",
+    "CertificateReference": "Batch/HybridLow.py and Batch/LastTwentyTwo.json.gz",
+    "VerificationStatus": "TenNext/HybridReview.md; 401 price terminals, 392 forest terminals, 3026+107 ECPP entries in new packets",
+    "Dependencies": [
+      "historical references in proof; frozen baseline commit as stated"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
