@@ -1402,5 +1402,31 @@
       "historical references in proof; frozen baseline commit as stated"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      618
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19^618 || N"
+    ],
+    "ExcludedDomain": [
+      "complete first f=4 at 2477"
+    ],
+    "RemainingDomain": [
+      "only v_2477(N)=2"
+    ],
+    "Method": "complete nested source tree with separately certified lattice caps 98/185",
+    "ProofReference": "Nineteen/ProofSmallFour.md",
+    "CertificateReference": "Nineteen/VerifySmallFour.py",
+    "VerificationStatus": "AuditNext/SmallFour.md; full cold tree 684.073 s, 2575 visited states",
+    "Dependencies": [
+      "Research/GeminiFrontier/Review.md (prior complement)",
+      "Research/RootFiveNext/PrimeCheck.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

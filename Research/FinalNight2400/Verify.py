@@ -90,6 +90,8 @@ AuditNext/CheckSmall.py Solved6.json
 Others/FullLast.py
 AuditNext/Check388.py
 Batch/TwoTrees.py
+Nineteen/VerifySmallFour.py
+AuditNext/CheckSmall.py Solved4.json
 Project.py
 '''.splitlines()
 if __name__=='__main__':
