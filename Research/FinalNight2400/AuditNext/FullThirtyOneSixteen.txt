@@ -1,0 +1,3 @@
+PASS 31^16 exact t^16. Euler-on-vertex restricted via t-price; absent via ordinary forest. 1855 vertices 540 ECPP, floor 2402 price floor 4703
+Final 37 domain 112 [109, 1, 2] left {}
+FULL checked canonical exact 31^16: 14 historical + firsts 16 and 22. P31_I00005.

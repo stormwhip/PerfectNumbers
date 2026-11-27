@@ -1096,5 +1096,30 @@
       "Research/Night2400/C11/DeepLeaves.json.gz"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      31,
+      16
+    ],
+    "Status": "VERIFIED_FULL",
+    "Assumptions": [
+      "odd perfect N<=10^2400",
+      "19,7,11 absent",
+      "31^16 || N"
+    ],
+    "ExcludedDomain": [
+      "all 16 compatible first valuations, entire canonical class"
+    ],
+    "RemainingDomain": [],
+    "Method": "14+1+1; Euler on/off forest, 140 outer exponents with sole survivor split into 112 children, zero uncovered",
+    "ProofReference": "ThirtyOne/FullReceipt.md, First16.md and First22.md",
+    "CertificateReference": "ThirtyOne/Full31x16.py",
+    "VerificationStatus": "AuditNext/Full31Receipt.md; independent full dependency run 259.891 s",
+    "Dependencies": [
+      "Research/Night2400/Fibers31x16.json.gz",
+      "new packets listed in ThirtyOne/AuditInventory.py"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]

@@ -4,10 +4,10 @@
 
 |Measure|Baseline|Accepted overlay|
 |---|---:|---:|
-|Canonical shards closed|3004|3009|
-|Shards open|68|63|
-|Distinct exact keys open|78|73|
-|Singleton shards open|60|55|
+|Canonical shards closed|3004|3010|
+|Shards open|68|62|
+|Distinct exact keys open|78|72|
+|Singleton shards open|60|54|
 
 |Exact key|Singleton closed|Independent full-dependency replay|
 |---|---|---|
@@ -15,9 +15,10 @@
 |(31,310)|P31_I00062|[63.005 s](Audit/ThirtyOneReceipt.md)|
 |(13,262)|P13_I00055|[220.073 s](Audit/ThirteenReceipt.md)|
 |(13,310)|P13_I00063|[440.350 s](Audit/NextReceipt.md)|
+|(31,16)|P31_I00005|[259.891 s](AuditNext/Full31Receipt.md)|
 |(31,352)|P31_I00069|[240.628 s](Audit/MoreReceipt.md)|
 
-The first key has no preceding root; the 31 keys assume 19,7,11 absent and the 13 keys assume 19,7,11,31 absent. The [independent frozen projection](Audit/BatchOne.md) checks disjoint incidence deletion. For all other domains see the [conditional ledger](Results.json): a higher-level closure can supersede older partial rows, which are not counted again.
+The first key has no preceding root; the 31 keys assume 19,7,11 absent and the 13 keys assume 19,7,11,31 absent. The [independent frozen projection](Audit/BatchOne.md) checks disjoint incidence deletion for the first five; the sixth is checked against both maps in its own receipt. For all other domains see the [conditional ledger](Results.json): a higher-level closure can supersede older partial rows, which are not counted again.
 
 ## Known–to prove
 
@@ -28,7 +29,7 @@ Assume positive odd N≤10^2400, sigma(N)=2N. Exclude the first dividing prime i
 |19|22|2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 30, 32, 46, 48, 82, 222, 276, 280, 282, 292, 312, 330, 358, 372, 420, 432, 618|
 |7|16|4, 6, 10, 12, 16, 18, 24, 34, 36, 48, 430, 438, 456, 486, 600, 738, 808, 882, 906|
 |11|9|4, 6, 12, 16, 18, 48, 358, 396, 456, 462|
-|31|7|2, 6, 16, 240, 268, 456, 466|
+|31|6|2, 6, 240, 268, 456, 466|
 |13|6|2, 4, 6, 8, 388, 612, 618|
 |3|3|6, 12, 856|
 |5|0|—|

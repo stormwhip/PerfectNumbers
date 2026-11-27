@@ -71,6 +71,8 @@ TenNext/Verify46.py
 TenNext/VerifyAlternate.py
 TenNext/VerifyDOne.py
 Audit/CheckDOne.py
+ThirtyOne/Full31x16.py
+AuditNext/Check31Partitions.py
 Project.py
 '''.splitlines()
 if __name__=='__main__':
