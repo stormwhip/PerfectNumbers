@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "E:\PerfectNumbers\Research\GeminiFrontier\Verify.py", line 20, in <module>
+    assert hashlib.sha256((HERE / name).read_bytes()).hexdigest() == digest
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

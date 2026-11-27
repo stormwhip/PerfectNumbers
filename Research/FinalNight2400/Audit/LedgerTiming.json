@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\Users\\hp\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "Sources/Python/FinalSprintLedgerChecks.py"
+  ],
+  "start": "2026-11-27T14:17:51.254738+00:00",
+  "seconds": 0.12,
+  "exit": 0
+}

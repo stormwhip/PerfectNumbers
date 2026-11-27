@@ -1,0 +1,13 @@
+{
+  "exit": 0,
+  "seconds": 460.308,
+  "cmd": [
+    "C:\\Users\\hp\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-X",
+    "int_max_str_digits=0",
+    "Research/GeminiFrontier/Verify.py"
+  ]
+}

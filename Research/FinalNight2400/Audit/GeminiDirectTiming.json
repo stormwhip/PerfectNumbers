@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Users\\hp\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-X",
+    "int_max_str_digits=0",
+    "Research/GeminiFrontier/Verify.py"
+  ],
+  "exit": 0,
+  "seconds": 472.642,
+  "sampled_tree_rss_bytes": 216113152,
+  "poll_seconds": 0.5
+}
