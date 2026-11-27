@@ -2656,5 +2656,29 @@
       "ThirtyOne268/SmallEleven/Forest.json.gz and Primes.json.gz"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      7,
+      438
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "canonical 7^438; exact first-pivot t^10"
+    ],
+    "ExcludedDomain": [
+      "24 more disjoint exact v67 specified in VerifyMixed67.py and VerifyMixed67More.py"
+    ],
+    "RemainingDomain": [
+      "78 possible v67: even 2..158 except 148. At the separate t^12 fiber, v27431 even 2..26 (13 possibilities)."
+    ],
+    "Method": "mixed cubic CRT at both targets, complete high-order terms and disjoint source credits",
+    "ProofReference": "SevenNext/Mixed67Proof.md",
+    "CertificateReference": "SevenNext/VerifyMixed67.py and VerifyMixed67More.py",
+    "VerificationStatus": "LowSeven/ReviewMixed67.md; 535.240 s and 817.840 s independently validated",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
 ]
