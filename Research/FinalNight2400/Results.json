@@ -38,7 +38,7 @@
       "v_11842464881317660217(N) in {20,22}"
     ],
     "RemainingDomain": [
-      "historical first pivot: 1,6,12,14,16,18"
+      "after this record, prior to f18 supplement: 1,6,12,14,16,18"
     ],
     "Method": "coprime index lengths, Euler square and cofactor overlap cuts",
     "ProofReference": "Dual/Proof.md",
@@ -71,6 +71,31 @@
     "VerificationStatus": "Dual/AuditFifth.md",
     "Dependencies": [
       "Research/Night2400/Receipts/Review11x462And13x388.md (historical complement)"
+    ],
+    "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
+  },
+  {
+    "Key": [
+      19,
+      432
+    ],
+    "Status": "VERIFIED_CONDITIONAL",
+    "Assumptions": [
+      "odd N, sigma(N)=2N, N<=10^2400",
+      "19^432 || N"
+    ],
+    "ExcludedDomain": [
+      "v_11842464881317660217(N)=18"
+    ],
+    "RemainingDomain": [
+      "1,6,12,14,16"
+    ],
+    "Method": "reserve cyclotomic C=Phi_19(t) after paying its root supply",
+    "ProofReference": "Dual/Proof18.md",
+    "CertificateReference": "Dual/Explore.py",
+    "VerificationStatus": "Others/F18Review.md",
+    "Dependencies": [
+      "Research/Night2400/README.md (historical complement only)"
     ],
     "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388"
   }
