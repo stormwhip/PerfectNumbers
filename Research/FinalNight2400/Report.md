@@ -9,7 +9,7 @@
 |不同待证 (p,e)|78|53|
 |单键开放分片|60|35|
 
-基线 main 为 [1447d41b](https://github.com/stormwhip/PerfectNumbers/commit/1447d41b806f43ec5775e0cef7eaa7739ab67388)；研究分支 research/final-night-20261127，[PR #10](https://github.com/stormwhip/PerfectNumbers/pull/10)，未合并。[25 键独立投影回执](AuditNext/Projection25.md)从两个原始映射检查：删除的是 25 个真正的单元素余集，条件证书没有清零任何整片。全局状态 **INCOMPLETE_FRONTIER**。
+基线 main 为 [1447d41b](https://github.com/stormwhip/PerfectNumbers/commit/1447d41b806f43ec5775e0cef7eaa7739ab67388)；研究分支 research/final-night-20261127，[PR #10](https://github.com/stormwhip/PerfectNumbers/pull/10)，未合并。[25 键独立投影回执](AuditNext/Projection25.md)和[中英文表格复算入口](ReportChecks.py)分别从原始映射检查：删除的是 25 个真正的单元素余集，条件证书没有清零任何整片。全局状态 **INCOMPLETE_FRONTIER**。
 
 ## 精确结论和接续命题
 
