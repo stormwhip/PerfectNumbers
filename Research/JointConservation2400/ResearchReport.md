@@ -2,6 +2,8 @@
 
 **没有证明所有奇完全数大于 $10^{2400}$。** 本轮新增完整键 0、闭合分片 0、仅待算术重放的完整键 0。开始时重查 GitHub：主线为 [`facd7f1`](https://github.com/stormwhip/PerfectNumbers/commit/facd7f1c3d2713e8c8d9579e29a8972211d56a3a)，唯一开放的相关 [PR #13](https://github.com/stormwhip/PerfectNumbers/pull/13) 为其上的 [`8417891`](https://github.com/stormwhip/PerfectNumbers/commit/84178919ccab96cb2d9ddee10269d2a0a46d7a11)。本分支叠在该提交之上，未修改其证明或主线。以[已核检查点](../AstraFinalAfternoon2400/Checkpoint.md#L3-L16)为准：3072 个规范分片，3031 闭合，41 开放，50 个不同开放精确键。没有重放历史算术、编写证明程序、做枚举或更新 dashboard。
 
+**合并后更新。** 两轮已进入 main；根 19 五前缀的数值表、2677 四项条件排除与第五行指数界已独立复算通过。详见[合并审阅](MergeReview.md)。以下保留原提交时的证据状态，不增加完整键或闭片。
+
 ## 能改变哪些数学判断？
 
 |对象|本轮的严格增益|证据、边界|
