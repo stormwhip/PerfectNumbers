@@ -1,6 +1,6 @@
 # 下一步计划
 
-**PR #10 研究分支前沿：3029/3072 闭合，43 片开放，53 个精确键，35 个单指数片。** 全局状态 `INCOMPLETE_FRONTIER`。按[逐片余集](../Research/FinalNight2400/OpenFrontier.json)派工，按[逐键回执](../Research/FinalNight2400/Proof.md)验收；前序根均不整除的假设须保留。
+**main 当前前沿（PR #10 已合并）：3029/3072 闭合，43 片开放，53 个精确键，35 个单指数片。** 全局状态 `INCOMPLETE_FRONTIER`。按[逐片余集](../Research/FinalNight2400/OpenFrontier.json)派工，按[逐键回执](../Research/FinalNight2400/Proof.md)验收；前序根均不整除的假设须保留。
 
 ## 当前优先任务
 
