@@ -1,0 +1,41 @@
+# Canonical root 7: exact-prefix factor forests
+
+Work against frozen main `495c59f55456a70994ce7848487e0c4e262c1984`. Assume an odd perfect number \(N\le B=10^{2400}\), with \(19\nmid N\). All component exponents below are exact. No result in these packets is a whole key or shard. No Hensel calculation or prime-order price is used. In particular the new forest cuts at `(7,438)` do **not** assume the inherited Euler-prime location or exponent, both of which remain unrestricted in the checker.
+
+## Covered exact prefixes
+
+Let \(t=572749682520506652634407616247\), \(Q=16148168401\), and \(T=(1+Q+\dots+Q^{12})/13\). New results are relative to the [frozen root-seven report](../../FinalNight2400/Report.md) and its [exact ledger](../../FinalNight2400/Results.json).
+
+| Sealed packet | Required exact components | Newly excluded exponents |
+|---|---|---|
+| [438a](Forest438a.json.gz) | \(7^{438},t^{10}\) | \(v_{67}\in\{130,132,134,136,138,140,142,144,146,150,152,154,156,158\}\) |
+| [438b](Forest438b.json.gz) | \(7^{438},t^{10}\) | \(v_{67}\in\{36,38,42,50,52,54,58,64,66,68,70,72,74,76,78,84,86,88,90,92,94,96,98,100,102,104,106,108,110,112,114,116,118,120,122,126,128\}\) |
+| [438c](Forest438c.json.gz) | \(7^{438},t^{10}\) | \(v_{67}\in\{12,16,22,28,30,34\}\) |
+| [12a](Forest12a.json.gz) | \(7^{12},Q^{12},T^2\) | \(v_{3453283}\in\{10,16,22\}\) |
+| [12a](Forest12a.json.gz) | \(7^{12},Q^{42}\) | \(v_{173}\in\{160,162,164,168,170,174,178,186,188,194\}\) |
+
+The two 438 packets are disjoint. Together they leave 27 of the frozen 78 live exact 67-exponents on the \(t^{10}\) sibling; the \(t^{12}\) sibling is not touched by these packets. The two disjoint 12 prefixes leave 27 of 30 exact \(3453283\)-exponents and 76 of 86 exact 173-exponents, respectively. None of the four still-live first-pivot values at `(7,48)` is credited here.
+
+## Integer certificate
+
+For a prefix of distinct exact odd prime powers \(p^h\Vert N\), form \(X=\prod p^h\), the product \(S\) of the odd parts of their geometric sums, and \(D\), the part of \(S\) prime to \(X\). Then \(XD\mid N\): \(D\mid N\) follows from \(\sigma(N)=2N\), and \(\gcd(X,D)=1\). A proposed next pivot \(r\) must be certified prime, outside the prefix and not forbidden, with \(a=v_r(D)>0\). Its exact exponent \(k\) is at least \(a\), and \(X(D/r^a)r^k\mid N\). Enumerate **every** \(k\) from \(a\) through the last value for which this increasing expression is ≤B. On smaller values the checker discards only Euler-form incompatibility, a forbidden dividing prime or sigma factor, oversupply at a fixed prime, strict updated mass, or strict partial abundancy. Both size and abundance equality are retained. The checker allows at most one exact prefix exponent odd, and any odd row must have both base and exponent 1 mod 4; Euler's form for odd perfect numbers then gives precisely one factor 2 in that row's sigma. The only additional split in 438a is in exact \(v_{67}=156\): the actual split label and all three live exponents are recovered from its packet and compared with this integer domain, not trusted as a transversal supplied by discovery. The first raw exclusive tail is 23.
+
+Each terminal stores a validated forest with selected roots dividing \(D\), and at most one owner for each non-root certified prime outside the support of \(XD\). These directed edges are acyclic and reachable strictly from the selected roots. For a possible exponent \(k\) at an activated prime \(z\), charge \(z^k\) and the odd part of \(\sigma(z^k)\) outside all bases already paid by \(X,D\) or tracked forest vertices. Activate each owned child \(r\) only if \(r\mid \sigma(z^k)\), with demand \(v_r(\sigma(z^k))\); ignore other potential inflows, which can only increase its true exponent. Each root's original part of \(D\) is removed before charging its actual power. Other stripped emissions from distinct active primes may overlap each other: their **product** divides the odd part of \(\sigma(N)\), and their collective support is disjoint from every separately paid basis. This is why neither repeated incidences nor anonymous residuals lead to double charges.
+
+Each recursion minimizes the terminal product over all legal parity/exponent possibilities, including at most **one** special exponent at any forest vertex and the possibility that the actual Euler prime is outside the forest. If the prefix already has an Euler row, all descendants are ordinary. In the finite scan each rejected exponent would emit a forbidden prime, and the remaining monotone exact tail is bounded by \(z^k\) alone, without requiring a factorization of its emission. The [Compose evaluator](../../Nov25/Compose/Compose.py#L54) uses distinct ordinary/optional/special/below states; the [second evaluator](../../Night2400/A/MaskedForest.py#L6) computes a pair of minima and independently reconstructs geometric sums, stripping, valuations, and the tail. Both must return a strict integer lower bound >B per terminal; printed integer ratios are diagnostics only.
+
+The 12a left prefix uses two absences, re-proved inside the verifier. \(3,13\) are forced from the listed geometric sums. Since \(3\equiv3\pmod4\), it has at least exponent 2, and adding \(5\) would already make the product of abundancies of \(7^{12},3^2,5\) exceed 2. If 11 occurs it is ordinary, so its exponent is ≥2. The strict abundancy tests for \(7^{12},11^2,3^4,13\) and for \(7^{12},11^2,3^2,13^2\) force \(v_3=2,v_{13}=1\), but both \(\sigma(3^2)\) and \(\sigma(Q^{12})\) contribute a 13. Thus 5 and 11 are absent only on this exact prefix. This argument does not presume the exponent of \(3453283\).
+
+## Replay
+
+~~~powershell
+python -I -S -B -X int_max_str_digits=0 Research/AstraFinalAfternoon2400/Seven/VerifyForest.py Research/AstraFinalAfternoon2400/Seven/Forest438a.json.gz Research/AstraFinalAfternoon2400/Seven/Forest438b.json.gz Research/AstraFinalAfternoon2400/Seven/Forest12a.json.gz
+~~~
+
+The [verifier](VerifyForest.py) requires every ECPP chain to be used and every large label verified as prime; small labels use the frozen deterministic 64-bit primality routine. The factor index, local ECM and PARI are discovery/sealing tools only, with no proof-time dependency. Private explorations with missing leaves are not included. Proof packets and author cold verification:
+
+| Packet | SHA-256 | ECPP | Split / terminals | Minimum \(\lfloor10^6\,\mathrm{LB}/B\rfloor\) |
+|---|---|---:|---:|---:|
+| 438a | `ed862b6cc0f6a3a13fd4b7740825d3bed0f41861eb88a88353aae1d12a3f5b6d` | 125 | 1 / 16 | 199604667 |
+| 438b | `84283ffbe0884a019647faa7ddb0746a1623e50a200b5d625ddfbd1e1dc40777` | 515 | 0 / 37 | 3227368 |
+| 12a | `393ed361ee148eb28cd618271ba3adb7ff21833c4704818fbd3eda375bbfe675` | 253 | 0 / 13 | 2475189206 |

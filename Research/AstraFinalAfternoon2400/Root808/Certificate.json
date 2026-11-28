@@ -1,0 +1,14 @@
+{
+  "BaselineCommit": "495c59f55456a70994ce7848487e0c4e262c1984",
+  "CanonicalKey": [7, 808],
+  "Absent": [19],
+  "BoundPower10": 2400,
+  "CyclotomicLength": 809,
+  "FactorCongruenceModulus": 1618,
+  "AllFactorsStrictlyAbove": 10000000,
+  "ExcludedEulerLinearValuationWindow": [708, 808],
+  "AdjacentWindowNotExcluded": 707,
+  "AdjacentRemainingEmitterExponentMultiplicityPairs": [[8, 3], [10, 5], [12, 7]],
+  "PrimaryVerifier": "Explore.py",
+  "IndependentVerifier": "../Audit/Check7x808.py"
+}
