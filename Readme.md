@@ -2,7 +2,7 @@
 
 目标定理为：对每个奇完全数 $N$，均有 $N>10^{2400}$。
 
-main 当前状态（PR #10 已合并，逐键冷重放回执及独立账本复核已验收）为 **`INCOMPLETE_FRONTIER`**。相对 11 月 27 日主线的 3004/3072，本轮新增完整排除二十五个规范精确键，现为 **3029/3072**；仍有 **43 个开放分片、53 个精确键、35 个单指数分片**。全局下界尚未证明。[中文研究报告](Research/FinalNight2400/Report.md) · [完整键回执及逐根余集](Research/FinalNight2400/Proof.md) · [机器可读投影](Research/FinalNight2400/OpenFrontier.json) · [历史 Gemini 基线](Research/GeminiFrontier/Review.md)。
+main 当前状态（PR #11、#12 已合并）为 **`INCOMPLETE_FRONTIER`**。相对冻结基线 3029/3072，新增完整精确键 $(7,438)$、$(31,6)$、$(7,48)$，闭合两个分片；现为 **3031/3072**，仍有 **41 个开放分片、50 个精确键、33 个单指数分片**。全局下界尚未证明。[证明索引](Research/AstraFinalAfternoon2400/Proof.md) · [研究检查点](Research/AstraFinalAfternoon2400/Checkpoint.md) · [机器可读投影](Research/AstraFinalAfternoon2400/OpenFrontier.json) · [验收范围](Research/AstraFinalAfternoon2400/Validation.md)。PR #11 仅合并[撤回记录](Research/KimiFrontier/November28/Retraction.md)，不计新增证明。
 
 | 文档 | 内容 |
 |---|---|
@@ -23,6 +23,8 @@ python -I -S -B -X int_max_str_digits=0 Research/Night2400/Replay.py
 python -I -S -B -X int_max_str_digits=0 Research/GeminiFrontier/Verify.py
 python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/Verify.py
 python -I -S -B Research/FinalNight2400/Project.py
+python -I -S -B -X int_max_str_digits=0 Research/AstraFinalAfternoon2400/Verify.py
+python -I -S -B Research/AstraFinalAfternoon2400/Audit/ProjectionAudit.py --accepted-full 7,438 --accepted-full 31,6 --accepted-full 7,48
 ```
 
-夜间命令重放历史 13 个完整指数；仅核对其投影可附加 `--projection-only`。Gemini 默认入口重放 Gemini 已验收的算术、历史 45/46 枢轴证书、C10 条件证书及现行投影。FinalNight2400/Verify.py 重放本轮依赖，Project.py 仅复算投影。完整算术冷重放与全局验收的区别见[验证说明](Research/FinalNight2400/Validation.md)。两项旧候选条件证明未登记。11 月 28 日 Gemini 补充包经数学审阅与联合阶补证，接受 143 个局部子域排除，未新增完整键或闭片：[审阅](Research/GeminiFrontier/November28/Review.md) · [条件账本](Research/GeminiFrontier/November28/Results.json)。局部复验：`python -I -S -B -X int_max_str_digits=0 Research/GeminiFrontier/November28/ReviewVerify.py`。[晚间 18 个指数的复验](Research/FinalSprint/Proof.md)及[历史复验顺序](Documentation/Proof2400.md#历史复验命令)另列。V21 长时实验使用 [Linux/WSL2 脚本](Scripts/Run72hWSL.sh)。
+夜间命令重放历史 13 个完整指数；仅核对其投影可附加 `--projection-only`。Gemini 默认入口重放 Gemini 已验收的算术、历史 45/46 枢轴证书、C10 条件证书及现行投影。FinalNight2400/Verify.py 重放本轮依赖，Project.py 仅复算投影。Astra 入口按清单复验本轮证书，独立投影入口只认证逐片集合差；完整算术冷重放与全局验收的区别见[验证说明](Research/FinalNight2400/Validation.md)。两项旧候选条件证明未登记。11 月 28 日 Gemini 补充包经数学审阅与联合阶补证，接受 143 个局部子域排除，未新增完整键或闭片：[审阅](Research/GeminiFrontier/November28/Review.md) · [条件账本](Research/GeminiFrontier/November28/Results.json)。局部复验：`python -I -S -B -X int_max_str_digits=0 Research/GeminiFrontier/November28/ReviewVerify.py`。[晚间 18 个指数的复验](Research/FinalSprint/Proof.md)及[历史复验顺序](Documentation/Proof2400.md#历史复验命令)另列。V21 长时实验使用 [Linux/WSL2 脚本](Scripts/Run72hWSL.sh)。
