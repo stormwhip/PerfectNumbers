@@ -1,0 +1,13 @@
+# Six additional first-pivot exclusions: square reimbursement
+
+Under the exact assumptions of [the companion proof](Proof618.md), all six even f=36,38,40,42,44,46 are also impossible. In union with its 11 fibers, the historical 35 open values drop to 18 (1 and evens 2 through 34). No full key closure. Run:
+
+    python -I -S -B Research/FinalNight2400/Nineteen/Verify618Square.py
+
+The accompanying verifier repeats the previous zero-t and price verifications, and rechecks q∤C, high Euler and s=0, separately at each new f. It uses the same X,A,C,D,c,T,Q,Q_s notation. For a=1 and s>0 the Euler prime q is external, enabling the same three initial bounds as in the companion proof. The following strengthens the size bound for the supplier r^h of q when u=v_19(σ(r^h))≥206.
+
+**Lemma.** For this even source, r²∤A. Suppose otherwise. Since r|A|Φ_619(19) and 619∤A, the order of 19 mod r is exactly 619 (order 1 would force r|619). In particular r≡1 mod 1238. In the reverse direction r cannot have order 1 mod 19: then h+1≥19^u exceeds the exponent budget. The only possible nontrivial orders o are 3 and 9. LTE gives u=u0+j for u0=v_19(r^o−1), j=v_19(h+1). As 3^(19³−1)>B, j≤2. If j=2 and u≥206, u0≥204 implies r^9≥19^204+1, so r>1000; h≥3·19²−1 would imply r^h>B. Hence u0≥205 and r belongs to one of the eight nontrivial ninth-root classes modulo M=19^205. The verifier enumerates their unique Hensel lifts. Set K=1238M and let R be the least positive representative of that class with R≡1 mod 1238. If r²|A then A/r² is a positive integer in the residue class of A/R² modulo K. In all eight classes its positive representative J satisfies R²J>A, whereas r≥R and A/r²≥J. Contradiction.
+
+**Improved net factor.** Let H=2Q_s·19^u/3, so r^h>H. If r|A its compulsory power in D is at most 1 by the lemma and gcd(A,C)=1. Then the unpaid multiplier in N beyond XDq is at least r^(h−1)≥sqrt(r^h)>sqrt(H), because h is even and ≥2. If r∤A its paid part is at most C, so the unpaid factor exceeds H/C. Thus for u≥206 use min(sqrt(H),H/C) in addition to the previous H/max(A,C). No presumption on factorization of C, or on the primality of any unknown divisor of A. Pricing the *other* sources is unchanged.
+
+Monotonicity: the initial price (XQ_s)^d·19^(n(c−s)) decreases with s, as Q_(s+1)/Q_s<2·19<(19^n)^(1/d); the size XDQ_s increases. At each remaining s the two size tests are monotone in u (the improved one switches on at 206), so binary search finds their last failure. Only at that largest uncovered u does the decreasing supplier price need checking. The integer square comparison avoids square roots. All six f must pass separately.

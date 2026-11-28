@@ -1,0 +1,13 @@
+# Stronger upper Euler supply bound without a factor-count hypothesis
+
+In the canonical v_7(N)=906 problem under N≤10^2400, **s=v_7(q+1)≤698**, with no assumption on squarefreeness or the number of factors of A=Φ_907(7). Furthermore, if 685≤s≤698, *each* q-emitter z must satisfy v_z(N)=6 and v_z(A)=4. This improves the earlier arbitrary-factor upper bound 710. No root-key closure. Thresholds are necessary, not constructions.
+
+Use the audited s≤710, and when s≥685, a=1, q∤A and all q-emitters are internal. At least one exists. Set Y=7^s, Q=2Y−1≤q, W=7^907, X=W/7, A=(W−1)/6. For an arbitrary internal emitter z let m=v_z(A), h=v_z(N), D=(W−1)/z^m, T=floor(B/(XAQ)), e=h−m. z is ordinary and z>10^7. By [the new all-Euler support theorem](ThreeFactors.md) there are at least two other A-primes, each >10^7. Thus bound m by (10^7)^(m+2)≤A, h even with h≥m, XQ(10^7)^h≤B and (10^7)^(h−m)≤T. Initial integer interval for z follows from z^m≤A/(10^7)^2, z^h≥ceil(2Q/3), and z^e≤T. The last follows because XAq includes z^m but not the remaining z^e. If m=h=2 the [square-emitter congruence](../AuditNext/SquareEmitter.md) rules it out in the whole s range here (w=A/z² need not be prime).
+
+**Apply the second balanced identity without discarding z.** For w=σ(z^h)/q, define B0=D(w+σ(z^(m−1)))−σ(z^e). Then z^m B0=W(w+σ(z^(m−1)))−(q+1)w is divisible by Y; B0 is nonzero, since equality would imply W|(q+1)w but v_7((q+1)w)≤906, from the distinct Euler and z rows. When B0>0, B0<(3/2)(W/Q)T+W/(z−1); when negative, −B0<(3/2)T. If 3WT<YQ and 3T<2Y, then z>2W/Y+1 would force |B0|<Y. Thus impose the verified cap z≤2W/Y+1 whenever this test applies.
+
+**Then the first balanced identity.** Compute A0=Dw(z−1)−z^(h+1−m)−D. It is a nonzero multiple of Y, nonzero even modulo any of the other primes dividing A. Write d=h+1−m. With lower/upper bounds l≤z≤H and D≤Dmax=6 floor(A/l^m), its sign alternatives give A0<(W−1)H^d/Q and −A0≤H^d+(1+1/Q)Dmax from its exact normalized identity. All A-primes are 1 mod1814, so A0≡−1−6A mod1814. Therefore A0/Y belongs to the fixed residue (−1−6A)Y^(−1) mod1814. The executable compares the least positive/negative representative magnitudes against the appropriate conservative floor bounds. If neither fits, reject. No two lower bounds for overlapping emitters are multiplied. The two identities apply to *one and the same selected source*, which is why retaining its h,m,l,H across both tests is valid. Enumerate the whole resulting finite (m,h) domain per integer s. Empty domain rules out s since the emitter exists.
+
+    python -I -S -B Research/FinalNight2400/SparseSeven/AllSupport.py
+
+Output is pinned to {(6,4)} for every s=685..698, empty for 699..710. Together with the earlier >710 proof this is an all-support bound.

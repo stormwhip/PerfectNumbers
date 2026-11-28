@@ -1,0 +1,10 @@
+# Independent conditional review: (7,12), Q^42, exact 173 exponents
+
+PASS for the eleven listed h: 172,180,192,196,198,200,202,204,206,208,210. This is neither all exponents at 173 nor a whole (7,12) key. No credit at other Q exponents. Original isolated run of VerifyCap42.py exited 0, 336.886 s; CapEvidence.json.gz SHA-256 090fec09e6444b8f7c4360676155961281e0fe7a98d4491bcc651374e8f538ea, 18 ECPP labels. The independent no-project-import AuditCap42.py also exited 0.
+
+Q=16148168401, R=173. For an ordinary source supplying Q and R, positive Q-supply at least five implies an odd nontrivial order o mod Q, and y^o≡1 mod Q^5: its length cannot be a multiple of Q. Positive R-supply requires length divisible by 173 or by an order 43; tested separately with their required R congruences. Independent cap check regenerated the full possible set at lcm(o,173)−1 or lcm(o,43)−1 using the conservative common X0. Across 38 viable order/length combinations, 30 were small enough for exact <5000 scans and 8 required primitive Teichmuller lifts independently of the author's Newton method. X0(Q^5)^g>B proved no larger representative is missed. None of the surviving size and congruence candidates could be an odd prime. Thus u≤4 when v>0 on this **ordinary simultaneous emitter**, not an uncapped single-target source, the Euler square, or the global outstanding Q demand. The original terminal test correctly retains the entire residual Q demand in its discounted price and applies the cap only to the tested emitter's u interval. The credit transition is handled by separate monotone intervals; before Euler exteriority the congruence properly filters potentially coincident labels and after exteriority the reserve is conditional on the emitter being distinct. Independently checked exact positive valuations/compulsory divisibility of every listed explicit credit at the stated rows. No missing fixed-power or Euler restriction found.
+
+~~~powershell
+python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/SevenNext/VerifyCap42.py
+python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/ShortSeven/AuditCap42.py
+~~~

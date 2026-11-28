@@ -1,0 +1,21 @@
+DOMAIN [1, 2, 4, 6, 10, 12, 13, 14, 16, 18, 20, 21, 22, 24, 25, 28, 30, 32, 33, 34, 36, 37, 38, 40, 42, 45, 46, 48, 50, 52, 54] direct [56, 57, 58, 60, 61, 64, 66, 68, 70, 72, 73, 74, 76, 78, 81, 82, 84, 85, 86, 88, 90, 92, 93, 94, 96, 97, 100, 102, 104, 105, 106, 108, 110] incompatible 47 tail >= 112
+PASS 2 support [8, 2, 6] min forest floor 2401 SHA256 d6c193bcb9dbdcb751cf3b8a17a736f95b8973238fbab4e51199f542bfe1a185
+PASS 4 split ([4, 6, 10, 12, 16, 18], [22, 24, 28, 30, 34, 36, 40, 42], 43) min forest floor 2401
+PASS 6 split ([1, 2, 5, 10, 12], [16, 18, 21, 22, 25, 28], 29) min forest floor 2402
+PASS 10 split ([1, 4], [6, 9], 12) min forest floor 2402
+PASS 30 split ([], [2], 3) min forest floor None
+PASS 33 split ([2], [4], 5) min forest floor 2496
+PASS 45 split ([6], [10, 12], 14) min forest floor 2465
+PASS 48 split ([1, 2], [5], 6) min forest floor 2668
+PASS 50 split ([], [], 2) min forest floor None
+PASS 54 split ([], [1], 2) min forest floor None
+TREE SHA256 bd5b58aeafe8101f3f63f27d4254980c867e392022a7f16600c65a5d0e07339d
+PASS 25 price (24, [0, 0, 0])
+PASS 37 price (16, [0, 0, 0])
+PASS 38 price (15, [7816, 5598, 0])
+PASS 40 price (13, [9678, 4442, 0])
+PASS 42 price (12, [11480, 3346, 0])
+PASS 46 price (9, [14520, 1718, 0])
+PASS 52 price (6, [18087, 269, 0])
+COVERED [2, 4, 6, 10, 25, 30, 33, 37, 38, 40, 42, 45, 46, 48, 50, 52, 54] OPEN [1, 12, 13, 14, 16, 18, 20, 21, 22, 24, 28, 32, 34, 36]
+FULL canonical exact 31^352: all 31 first exponents; singleton shard P31_I00069.

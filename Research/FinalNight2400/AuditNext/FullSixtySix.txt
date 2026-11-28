@@ -1,0 +1,5 @@
+old 96/97 exact, raw tail 430, sole hole 6
+PASS {"root": [3, 12], "primary": [797161, 66], "secondary": 5897, "covered": 96, "domain": 97, "tail": 430, "unresolved": [6], "full_fiber": false, "stats": {"splits": 13, "supplier_splits": 1, "forests": 644, "order_budget": 8, "joint_valuation": 1}, "minimum_floor": 2400, "ecpp": 5338, "sha256": "caa7837039a620cd4451dc9344f1455d6c9956550e55c014a9aa7321dcae186c"}
+direct product exclusions 184 of 184 min joint lower N^2 floor 4844
+PASS partial 66/6 {'split': 294, 'forest': 7916, 'hard': 1, 'pair': 1, 'four-parity': 1} whole R exponents [2, 4, 8, 10, 12, 16, 22, 24, 26, 28, 30, 32] open terminals 0 minfloor 2400 ECPP 3578
+PASS completed first-pivot v797161=66 under canonical v3=12. Not the whole key.

@@ -4,17 +4,17 @@
 
 ## 问题 1　穷尽现行前沿
 
-**已知。** 八根互素类已排除。令 $A_s$ 为[逐片余集](../Research/GeminiFrontier/ShardToKeys.json)中分片 $s$ 的剩余指数集合。3,072 片中已有 **3,004** 片闭合，**68** 片满足 $A_s\ne\varnothing$；[按根去重](../Research/GeminiFrontier/KeyToShards.json)后有 **78** 个 $(p,e)$。
+**已知。** 八根互素类已排除。令 $A_s$ 为[逐片余集](../Research/FinalNight2400/OpenFrontier.json) 的 `ShardRemainders` 中分片 $s$ 的剩余指数集合。PR #10 研究分支的 3,072 片中已有 **3,029** 片闭合，**43** 片满足 $A_s\ne\varnothing$；去重后有 **53** 个 $(p,e)$。
 
 **求证。** 对每个上述 $(p,e)$，在规范根 $p$ 及 $p^e\parallel N$ 的条件下推出矛盾。整除型分片对 $e+1$ 的条件是 $d+1\mid e+1$，精确型要求 $e=d$。证明可以共享，但每个分片须覆盖其整个 $A_s$。
 
-Gemini 增量已排除 $(13,508)$ 的最后枢轴赋值。条件证明及未接受的联合定价候选见[审阅](../Research/GeminiFrontier/Review.md)。
+最新 25 个完整排除键及剩余指数按根列于[证明索引](../Research/FinalNight2400/Proof.md)。条件结果及精确子域见[研究报告](../Research/FinalNight2400/Report.md)。
 
 ## 问题 2　支持分割与拼接
 
 **历史统计。** 在当时的 244 个实际指数上，SupportSplit 筛后余 6,556 个 $(p,e,H)$。合并晚间前已排除的完整指数、389 个条件证书及命中集 $\{3,5,17,19\}$ 后，[冻结支持位图](../Research/Session20261126/OpenSupport.json)余 3,259 个组合。再应用[990 的无五引理](../Research/Session20261126/NoFive990/Readme.md)，当时余 3,257 个。这些不是现行支持数。
 
-**现行范围。** 对问题 1 的 78 个待证键研究支持分割。$(19,316)$ 与 $(7,28)$ 已由[夜间证书](../Research/Night2400/README.md)覆盖所有合法支持和分支，可用作拼接的复验实例。
+**现行范围。** 对问题 1 的 53 个待证键研究支持分割。$(19,316)$ 与 $(7,28)$ 已由[夜间证书](../Research/Night2400/README.md)覆盖所有合法支持和分支，可用作拼接的复验实例。
 
 **求证。** 对某个 $(p,e)$ 的每个剩余 $H$，在 $q\mid N$（$q\in H$）与 $q\nmid N$（$q\in S_8\setminus H$）下给出矛盾证书，其中 $S_8=\{19,7,11,31,13,3,5,17\}$。分支若取 $v_q(N)$ 的有限精确前缀，须覆盖所有相容指数及其完整尾段。
 
@@ -30,7 +30,7 @@ Gemini 增量已排除 $(13,508)$ 的最后枢轴赋值。条件证明及未接�
 
 **求证。** 对待证实际指数穷尽所有相容的 Euler 赋值窗口与普通来源。显式因子须认证素性和整除。未分解块以整数整除、试除下界或平方核证据处理，按互斥分支或不相交因子支持组合各项费用。
 
-**根三专项。** 根三只余 6、12、856。对 856 的外部 Euler 一次幂，分别处理来源在 $A=\sigma(3^{856})$ 内、外两类，单独核算来源与余块的共享素数。指数 6 的局部结果见[晚间枢轴记录](../Research/FinalSprint/LowBranches/README.md)，指数 12 的现行三种第一枢轴赋值见[夜间索引](../Research/Night2400/README.md)。
+**根三专项。** 根三只余 6、12、856。对 856 的外部 Euler 一次幂，分别处理来源在 $A=\sigma(3^{856})$ 内、外两类，单独核算来源与余块的共享素数。指数 6 的首枢轴 1093 余 2、156、256，指数 12 的首枢轴 797161 余 1、96；见[现行精确子域](../Research/FinalNight2400/Report.md)。
 
 **回归对照。** 1162 的[完整覆盖](../Research/Session20261126/Joint/Additional.md)与[旧候选审计](../Research/P3I00193Review/Readme.md)说明共用因子为何必须核账；1108 有[完整独立验收](../Research/Session20261126/Joint1108/Readme.md)。晚间完成的 [970](../Research/FinalSprint/Full970.md)、[990](../Research/FinalSprint/Proof990.md)也仅覆盖各自的精确指数，不能移用到 856。
 
@@ -42,4 +42,4 @@ Gemini 增量已排除 $(13,508)$ 的最后枢轴赋值。条件证明及未接�
 
 联合模型的验收条件：未激活森林节点的丰度必须进入同一素数池；森林与 LP 的余块需求须按 $v_u(N)=\sum_vv_u(\sigma(v^{h_v}))$ 共同分配，未知余因子与 Euler 来源共享时须单独处理。[实验与明确缺口](../Research/P3I00193Review/Progress.md)。
 
-$(19,58)$ 的 C10 子域余 $T^2$ 两条、$T^6$ 八条历史开放路径；$T^{10}$ 已由[后续条件证书](../Research/GeminiFrontier/VerifyT10.py)排除。
+历史 $(19,58)$ 的 C10 子域已由[完整键回执](../Research/FinalNight2400/Audit/TenReceipt.md)覆盖，不再列作待证问题。

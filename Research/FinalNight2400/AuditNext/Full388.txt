@@ -1,0 +1,15 @@
+price 13 388 exceptions 6 loss bits 11
+price 3543791 71 exceptions 6 loss bits 37
+72 pass [19951, 5348, 2709] 0 [] []
+price 3543791 77 exceptions 6 loss bits 37
+78 pass [23841, 6252, 249] 0 [] []
+price 13 388 exceptions 6 loss bits 11
+price 3543791 41 exceptions 6 loss bits 37
+42 1113708120497983331 12 counts [10283, 6055, 0] holes 0 []
+price 3543791 65 exceptions 6 loss bits 37
+66 459911137111 10 counts [18370, 6730, 574] holes 0 []
+PASS six complete first exponents at (13,388): 2,36,40,42,52,66. No first-6 closure inferred.
+price 13 388 exceptions 6 loss bits 11
+price 3543791 5 exceptions 2 loss bits 23
+PASS first6/12 all Euler vertices 414 ordinary floor 2681 r-loss 1
+FULL canonical (13,388) all 40 firsts, singleton P13_I00076.

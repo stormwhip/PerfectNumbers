@@ -1,0 +1,9 @@
+# Complete first-pivot f=6: 835 exact nested-prefix states
+
+Under the precise root assumptions of [the nested-anchor proof](ProofNested.md), v_2477(N)=6 is impossible. Solved6.json starts at the exact root (19^618,2477^6), and contains the certified σ emissions of the active extra bases, plus the proposed next prime at each nonterminal split. Its first compelled ordinary pivot is 564854977327481. Optional unused hints do not supply any arithmetic credit until certified divisible at an actual fixed component. The stock verifier checks every prime (including ECPP chains where necessary) and every split and size tail. No finite bound on unknown exponents is assumed outside the proved monotone cutoff.
+
+The **only** changes from the nested leaf theorem are two proven thresholds: if the q-supplying y^h contributes at least u=98 powers of 19 then y²∤A by [ProofSquareLattice.md](ProofSquareLattice.md), and if u≥185 then y∤A by [ProofLattice.md](ProofLattice.md). Both independent polynomial certificates are rechecked at the start of the standalone entrypoint. In the first case the extra root factor outside D is bounded from below by min(sqrt(H_source),H_source/H) on the existing gcd(A,H)=1 test. In the second case payment in D cannot exceed H even if coprimality fails. Larger u only strengthens these valid conditional bounds. The same disjointness/credit arguments and all-Euler decomposition then hold. No additional use of the lattice data or reliance on discovery-time numbers.
+
+    python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/Nineteen/VerifySmallSix.py
+
+Expected success: 835 node visits, all live children exhausted. Solved6.json SHA-256 c6c6272d10c164e8c3eec9de7d97d10a64b714a07d272a03f793463187b00489. In union with the other accepted/proposed packets, only first f=2,4 remain.

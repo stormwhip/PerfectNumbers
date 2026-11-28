@@ -1,0 +1,5 @@
+# Conditional (19,282), t^10, 8383027^28: independent audit
+
+**Accept Q² as compulsory and 35/37 full children at 23773. The only remaining exponents of 23773 are 1,4; no enclosing fiber or key closes.** [Candidate proof](../Nineteen/ProofInner.md), [packet](../Nineteen/Packet28Inner.json.gz), SHA-256 c431b779d53a6acea0bb3a3d61cad44834d1d8998529d7116fd00f20215f595f. Cold ran [candidate verifier](../Nineteen/VerifyInner.py), 4.288 s exit 0; 158 ECPP chains, 25 complete interior splits, 532 forest leaves each strict by both integer recurrences.
+
+[Independent reader](Inner282.py), no candidate imports, checked the exact formula 59Q=σ(8383027^28), independently removed previously assigned factors from exact emissions, regenerated every live sibling at every interior split, and distinguished Euler parity, abundance, oversupply, and mandatory size before testing coverage. The Q size tail is 7 and only exponent 2 survives. After appending Q², the 23773 size tail is 100, 37 viable exponents; two absent roots are exactly 1,4 and each of the represented 35 has zero open descendants. Unconditional only inside this narrowly stated exact prefix.

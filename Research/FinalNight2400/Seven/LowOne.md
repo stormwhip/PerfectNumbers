@@ -1,0 +1,7 @@
+# A fifth excluded T-power at (7,12), v_Q=12
+
+Under the same canonical scope as Proof.md, let Q=16148168401, T=σ(Q^12)/13, suppose v_T=1. T is then the Euler prime; all other exponents are even. The certified prime J=154168831365557905586436420483382101694649586851016856543013171742854124357951185973714712196987 occurs exactly once in the fixed odd sigma product σ(7^12)σ(Q^12)(T+1)/2. It therefore divides N, but v_J must be even, so some nonfixed ordinary y^g must supply one more J. For even g, y=J gives no J. If y≡1 mod J then J|g+1, impossible because 3^5100>B and J>5101. Otherwise ord_J(y)>1 is odd and divides both J−1 and g+1<=5100. Testing the entire interval leaves only order 89. Take one generator of order 89 modulo J and list its 88 nontrivial powers. These are every possible least positive residue of y, by cyclicity. Their minimum is 2675881044349885330923301317236726228744627684487700123097687139834724497308215536229236333267, whose 88th power exceeds 10^2400. But g>=88; hence y^g>B, impossible. This proves v_T≠1 without extrapolating any depth-limited tree. Together with the other four excluded h, only **2 and 6** remain of the seven live T-powers. This still does not close v_Q=12 or its shard.
+
+    python -I -S -B Research/FinalNight2400/Seven/LowOne.py
+
+Only local standard library, sealed ECPP chains for T,J and frozen certificate arithmetic used. No history/factor database used for replay.

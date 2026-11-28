@@ -1,0 +1,7 @@
+DOMAIN [2, 4, 6, 10, 12, 14, 16, 18, 20, 22, 24, 28, 30, 32, 34, 36, 38, 40, 42, 46, 48, 50, 52, 54, 56, 58] direct 25 incompatible 65 tail 117
+PRICE 58 (0, [21, 0, 37])
+COMPLETE FIBERS [6, 58] splits/direct/forests/price [1, 4, 2, 1] forest minimum 2401 SHA256 c62dc8982aef05f8034b8b68c7734d03bb55ecd49ef719bbe0ef9df1b3d9f908
+DOMAIN [2, 4, 6, 10, 12, 14, 16, 18, 20, 22, 24, 28, 30, 32, 34, 36, 38, 40, 42, 46, 48, 50, 52, 54, 56, 58] direct 25 incompatible 65 tail 117
+ALL SUPPORT [(31, 310), (5691933643219, 16), (529565762067945563089, 4)] [0, 2, 14] min forest 2400
+COMPLETE FIBERS [16] splits/direct/forests/price [1, 15, 14, 0] forest minimum 2400 SHA256 ac84dd662ff3c391578743c3d0dc081d642214f221396613c7fc8d9fb4a53997
+FULL canonical exact key 31^310, no other root or exponent lift. All 26 siblings.

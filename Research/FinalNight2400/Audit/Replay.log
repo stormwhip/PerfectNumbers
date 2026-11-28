@@ -1,0 +1,14 @@
+PASS complete (7, 28) 234.829 s
+PASS complete (7, 130) 111.164 s
+PASS complete (7, 420) 395.389 s
+PASS complete (7, 490) 41.501 s
+PASS complete (7, 586) 38.259 s
+PASS complete (7, 682) 818.552 s
+PASS complete (7, 732) 477.523 s
+PASS complete (13, 372) 308.800 s
+PASS complete (19, 162) 7.244 s
+PASS complete (19, 238) 775.285 s
+PASS complete (19, 270) 318.615 s
+PASS complete (19, 316) 229.913 s
+PASS complete (19, 502) 49.968 s
+PASS projection 3003 69 79 with accepted-key arithmetic

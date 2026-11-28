@@ -1,0 +1,20 @@
+# Independent full-key acceptance: (19,58)
+
+**Accepted** for odd perfect N ≤ 10^2400 with v₁₉(N)=58. The canonical root is 19 (no banned preceding root); this closes exactly the singleton P19_I00015 in the frozen Gemini frontier. Not a global bound or any neighboring exponent. Reviewed [full proof](../Ten/ProofFull.md), [LF-normalized proof and packet identities](TenIdentities.json).
+
+Cold execution (CPython 3.11, stdlib, assertions on) of the [default full checker](../Ten/VerifyFull.py) from the checkout root took **384.095 s**, exit 0. [Complete stdout](FullTen.txt). The default itself runs the historical C10 tree first and calls T10 in arithmetic-only mode to avoid a duplicate C10 replay. As a further check, the historical T10 default including C10 passed independently in 153.124 s on canonical LF bytes. No search cache required, no complete-history replay claimed.
+
+**Coverage.** Historical first split has 11 live exponents, 12 direct, 8 parity failures, strict tail 32. An independent data-only partition check also gave exactly first 1 missing after the historical ten complete fibers, with 98 forests, 2 price terminals and 291 ECPP entries. At first 1, the exact Euler slot is fixed. C10's second split has 7 live exponents 2,4,...,14 and tail 31, with 4,8,12,14 already complete. The eleven historical null paths were independently reconstructed from the pinned packet, as tuples *including numeric prime bases*. The two at T² share A², followed by L² or L⁴; the eight at T⁶ match eight distinct new paths; the sole T¹⁰ null is exactly the prefix reviewed historically. No assumption that a missing branch is closed.
+
+**New arithmetic.** At T², the three incoming factors at 3 enforce an even exponent ≥4. The smaller dividing product using 19² instead of 19⁵⁸ already has exact abundancy 1490599/738283 = 2 + 14033/738283. T⁶: [independent gain checker](CheckTen.py), 76.419 s, independently recomputed full geometric sums and capped gcds instead of modular LTE for the gains, read the split children's explicit exponent keys instead of choosing the candidate's stopping index, reconstructed the ledger of paid/pending bases at each node, and independently proved *every* remaining exponent tail. It shares the initial exact exception table routine with the submitted verifier. All eight accepted, including the strict >B tree with reported decimal floor 2400.
+
+**Completeness of base pricing (reviewed analytically).** The non-Euler components have even index. For small even f all positive target levels and primitive orders dividing gcd(p−1,f+1) are enumerated with the LTE shift; they and the order-one/absent options exhaust the candidate progressions. These are scanned to the joint weighted product cutoff. At large f, let H=Σw. If each individual p^(H v_p)≤r^f, the weighted geometric mean with weights w_p/H gives the *joint* inequality. Thus the union of H-weighted single-target searches suffices (no symmetry of weights needed); all exceptional r^f obey the lcm size and cap filters, and Fermat failure eliminates only composites. Distinct forced bases each correct their own exception charge once. In the exhaustive lower envelope, once r^f/M_w meets the current minimum, further f cannot improve it. Every exact or terminal value in the tree uses rational comparisons, and extra required outgoing divisors must be distinct, previously uncharged and prime. Hence neither Euler double counting nor a missing exponent window affects this result.
+
+**Independent price enumeration.** [Second implementation](CheckPrices.py) rebuilt low-index CRT using the symmetric CRT sum and exponentiation lifts, high-index progression cutoffs, geometric sums and all per-base maximum deficits; compared every rational exception, not only aggregate sizes. It matched the eight maps (5,5,5,5,12,23,49,38 entries respectively) in 198.178 s. Run with the same interpreter flags as below.
+
+Reproduce from repository root:
+
+~~~sh
+python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/Ten/VerifyFull.py
+python -I -S -B -X int_max_str_digits=0 Research/FinalNight2400/Audit/CheckTen.py
+~~~

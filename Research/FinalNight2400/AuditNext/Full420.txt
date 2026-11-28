@@ -1,0 +1,22 @@
+REPLAY Verify.py
+DOMAIN P19_I00080 (19, 420) 28174642921954703272833689609691232580811241064837460583 [2, 4, 6, 8, 10, 12]
+DIRECT [14, 16, 18, 20, 22, 24] TAIL even >= 26
+PASS conditional fiber 8 (16, [2549, 819, 0])
+PASS conditional fiber 10 (17, [3490, 720, 0])
+PASS conditional fiber 12 (17, [4985, 67, 0])
+OPEN in this packet [2, 4, 6]
+PASS f2 secondary 420 6 direct domain [2, 4, 6] tail 13 all-Euler floor 2408
+PASS 420 2 secondary 2 floor 2407 vertices 108 ECPP 6
+PASS 420 2 secondary 4 floor 2441 vertices 350 ECPP 27
+PASS complete first 2
+REPLAY Verify.py
+PASS exact 420 6 forest floor 2401 vertices 2415 ECPP 451
+REPLAY Four420.py
+PASS 420 first 4, secondary 72688845161 raw tail 88 remaining [1,2,4]; full second rows 29 checked ECPP 1077
+REPLAY One420.py
+PASS 420 first 4 second 1, 23 fourth-component possibilities at 12114807527 tail 93
+REPLAY SecondaryFour.py
+PASS (19,420) first 4, secondary 4 fully excluded; tertiary raw tail 26 complete 6 cases; ECPP 302
+REPLAY SecondaryTwo.py
+PASS (19,420) first 4, secondary 2 fully excluded; tertiary raw tail 82 complete 20 cases; ECPP 559
+PASS COMPLETE (19,420), P19_I00080, firsts 2,4,6,8,10,12; all 6.

@@ -1,0 +1,4 @@
+inverse cuts at h 66 52 77
+failwindows 66 []
+66 Vfloor 4290 exc 3 interior 0 exterior 707 fail 0 []
+PASS 156 exact remaining only 2035349^46 {'split': 118, 'forest': 3408, 'fastpair': 28, 'inverse': 1} ECPP 7400 min floor 2400

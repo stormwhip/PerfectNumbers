@@ -1,0 +1,7 @@
+# (19,420), first 4 second 4 fully excluded
+
+Assume the exact prefix 19^420,t^4,r^4 with t=28174642921954703272833689609691232580811241064837460583, r=72688845161. The certified 35-digit prime a=54138880391625933029911659199743811 divides sigma(r^4); since a=3 mod4, its positive exponent is even. Exhaustive structural/mandatory budget enumeration in the [verifier](SecondaryFour.py) gives 2,4,6,8,10,12, strict raw tail 26. The [six forests and prime book](SecondaryFour.json.gz) are fully revalidated. At a-exponents 2,8,10,12 the free-Euler standard forests strictly exceed B. At 4 and 6, use the same Euler membership proof as in [first-six](FirstSix420.md), pricing fixed targets 19,t,a with weights 2,2,2 (ignore r's residual demand). All high Euler placements exceed B by V. For every possible Euler-one forest label q, check Vq>B*gcd(M,q+1)^2. When q is exterior to the vertex set, the ordinary forest has decimal floor 2551 or 2467, respectively. This deals with every Euler placement, with no requirement that q be exterior to anonymous composite remainders. The packet uses 302 ECPP labels; every integer and tail check is exact. Run:
+
+    python -I -S -B Research/FinalNight2400/ShortNineteen/SecondaryFour.py
+
+Combined with [29 direct exclusions](Four420.md) and [the second-one argument](One420.md), first 4 now forces **r² exactly**. The whole first 4 is not claimed closed in this packet.

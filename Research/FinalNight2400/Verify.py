@@ -1,0 +1,214 @@
+"""Offline research overlay with full targeted dependencies. This is not the entire project history."""
+import subprocess,sys
+from pathlib import Path
+here=Path(__file__).resolve().parent
+CHECKS='''
+Root7Joint/Verify.py
+Audit/CheckSeven.py
+Dual/Verify.py
+Seven/DualSweep.py
+Fifth/Verify.py
+Dual/Explore.py
+Others/Audit18.py
+Eleven/One.py
+Nineteen/Verify282.py
+VerifyOtherForests.py
+Ten/VerifyFull.py
+Audit/CheckTen.py
+Audit/CheckPrices.py
+Others/Full31.py
+Seven/Verify12.py
+Seven/LowOne.py
+Seven/Verify42.py
+Seven/Verify438.py
+Disjoint/Verify.py
+Eleven/FortySix.py
+Others/AuditEleven46.py
+Audit/SevenEight/Verify.py
+Three/Abundance.py
+Support/Verify.py
+Others/Full13.py
+Audit/CheckThirteen.py
+Nineteen/Verify618.py
+Nineteen/Verify618Square.py
+Nineteen/Verify618Credit.py
+SevenNext/Audit618.py
+Others/FullNext.py
+Audit/CheckNext.py
+Batch/Verify.py
+Eleven/FortyTwo.py
+Eleven/Six42.py
+Nineteen/Verify618Factored.py
+Nineteen/VerifyOne.py
+Sieve/OneAudit.py
+Nineteen/VerifyAnchor.py
+SevenNext/Audit618.py --credit
+SevenNext/Audit618.py --anchor
+Three/Hard66.py
+Three/Six.py
+Three/VerifyForests.py
+Three/Full.py 16 18 22 96 126
+SevenNext/VerifyTertiary.py
+SevenNext/VerifyFour.py
+SevenNext/Abundance.py
+Others/FullMore.py
+Audit/CheckMore.py
+Triple/Verify.py
+ThirtyOne/Verify16.py
+Audit/CheckSixteen.py
+Nineteen/VerifyAnchorMore.py
+Nineteen/VerifyNested.py
+Nineteen/VerifyTwelve.py
+Nineteen/VerifySmallTen.py
+Nineteen/VerifyInner.py
+AuditNext/Inner282.py
+SevenNext/CompleteSix.py
+Audit/CheckSecondary.py
+Eleven/ThirtySix.py
+Eleven/ForceSix36.py
+Eleven/Complete36.py
+TenNext/Verify46.py
+TenNext/VerifyAlternate.py
+TenNext/VerifyDOne.py
+Audit/CheckDOne.py
+ThirtyOne/Full31x16.py
+AuditNext/Check31Partitions.py
+Triple/Discrete.py
+Nineteen/VerifySmallEight.py
+AuditNext/CheckSmall.py Solved8.json
+SevenNext/VerifyTwo.py
+Others/FullEleven.py
+AuditNext/CheckEleven358.py
+Eleven/FullKey.py
+AuditNext/Check462.py
+Three/Complete66.py --replay-old
+AuditNext/Check66.py
+Batch/Low.py
+Nineteen/VerifySmallSix.py
+AuditNext/Lattice.py
+AuditNext/CheckSmall.py Solved6.json
+Others/FullLast.py
+AuditNext/Check388.py
+Batch/TwoTrees.py
+Nineteen/VerifySmallFour.py
+AuditNext/CheckSmall.py Solved4.json
+More312/Full.py
+Seven430/Full430.py
+AuditNext/Check430.py
+More312/FullNext.py
+Batch/Hybrid.py
+Batch/HybridLow.py
+ShortNineteen/Verify.py
+ShortNineteen/CheckDeep.py
+Nineteen/VerifyInnerOne.py
+Nineteen/VerifyInnerFour.py
+Nineteen/VerifyHigh.py
+Nineteen/VerifyHighThree.py
+Nineteen/VerifyLowPair.py
+Nineteen/VerifyAbundance.py
+ShortNineteen/Full420.py
+AuditNext/Check420.py
+Nineteen/VerifyAll618.py
+AuditNext/Union618.py
+Batch/Full396.py
+Nineteen/VerifyMidThree.py
+Nineteen/VerifyMasked58.py
+Nineteen/VerifyMasked24.py
+Nineteen/VerifyMaskedMore.py
+Nineteen/VerifyFiveMore.py
+Seven882/Full882.py
+ShortSeven/Audit882.py
+Nineteen292/Forests.py
+Three/JoinOne.py OneComplete.json.gz
+ShortSeven/AuditThreeOne.py
+Three/Full.py 5 102 106 130 148 180 190 192 196 226 240 250
+ShortSeven/AuditThreeNext.py
+Nineteen/VerifyFourth.py
+Nineteen/VerifyTwelfth282.py
+AuditNext/CheckTwo282.py
+ShortNineteen/Full330.py
+AuditNext/Check330.py
+Eleven456/Full456.py
+ShortSeven/Audit456.py
+Ten276/Release280/CheckEquivalence.py
+Ten276/Release280/Full280.py
+AuditNext/Check280.py
+Nineteen292/CloseFour.py
+ShortSeven/Full82.py
+SevenNext/VerifyOdd42.py
+SevenNext/VerifyJointEven.py
+SevenNext/Knapsack13.py
+SevenNext/QuickNine.py
+SevenNext/CompleteFive.py
+SevenNext/VerifyCap42.py
+SevenNext/VerifyAnchorQ42.py
+Nineteen292/Masked.py
+PairSeven/Verify.py
+AuditNext/Check486.py
+SevenNext/VerifyTwoPlus.py
+SevenNext/TwoPrimes.py
+SevenNext/VerifyTwoMore.py
+SevenNext/VerifyNest40.py
+SevenNext/VerifyAnchorPlus.py
+Nineteen/VerifyAll282.py
+Nineteen292/Full292.py
+AuditNext/Seven906.py
+AuditNext/Divisor906.py
+AuditNext/Repeated906.py
+AuditNext/Gain906.py
+AuditNext/Squarefree906.py
+AuditNext/Supply906.py
+AuditNext/FourFactors906.py
+AuditNext/TwoPrimes906.py
+AuditNext/Mid906.py
+AuditNext/DeepMid906.py
+Nineteen/Independent906.py
+Nineteen/Verify906Class.py
+Nineteen/Sparse906.py
+Nineteen/SparseWindows.py
+AuditNext/SparseAudit.py
+SevenNext/Verify438New.py
+ThirtyOne268/Root240/Full240.py
+AuditNext/Check240.py
+Triple/CellForests.py
+SparseSeven/VerifyThreeFactors.py
+AuditNext/SparsePatterns.py
+ShortSeven/Full36.py
+AuditNext/Check36.py
+PairSeven/Emitter.py
+ThirtyOne268/AuditEmitter486.py
+SevenNext/VerifyL60.py
+SevenNext/Verify438Last28.py
+SparseSeven/AllSupport.py
+SparseSeven/PrimitiveSupport.py
+AuditNext/Primitive906.py
+ThirtyOne268/SmallEleven/Verifier.py
+LowSeven/AuditSmallEleven.py
+SevenNext/VerifyMixed67.py
+SevenNext/VerifyMixed67More.py
+Ten276/Final276.py 64
+SparseSeven/SieveUpper.py
+LowSeven/Replay.py
+Root222/Firsts.py
+Root222/Two.py
+Root222/Thirds.py
+Root222/Twelve.py
+Root222/TwentyEight.py
+Root222/TwentyTwo.py
+Root222/Sixteen.py
+Three/Full.py 8 166
+Root7Joint/ReviewThreeLast.py
+Three/Partial156.py
+AuditNext/Check156.py
+AuditCoverage.py
+Three/JoinTwo.py SecondaryTwo.json.gz
+Three/JoinTwo.py DeltaTwo.json.gz
+Three/JoinTwo.py LateTwo.json.gz
+Root7Joint/ThreeTwoScope.py
+Project.py
+ReportChecks.py
+'''.splitlines()
+if __name__=='__main__':
+    for item in filter(None,CHECKS):
+        script,*args=item.split()
+        subprocess.run([sys.executable,'-I','-S','-B','-X','int_max_str_digits=0',str(here/script),*args],check=True)

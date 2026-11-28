@@ -1,0 +1,39 @@
+{
+  "BaselineCommit": "1447d41b806f43ec5775e0cef7eaa7739ab67388",
+  "Status": "VERIFIED_CONDITIONAL",
+  "Assumptions": [
+    "odd perfect N<=10^2400",
+    "3,5,19,31 do not divide N"
+  ],
+  "ForbiddenSimultaneousAbsences": [
+    [
+      53,
+      59
+    ],
+    [
+      53,
+      41,
+      73
+    ],
+    [
+      53,
+      41,
+      137
+    ],
+    [
+      53,
+      73,
+      137
+    ]
+  ],
+  "CertifiedFloors": [
+    2403,
+    2411,
+    2412,
+    2410
+  ],
+  "ProofReference": "Support/Proof.md",
+  "VerificationStatus": "Three/SupportReview.md",
+  "Dependency": "Research/FinalSprint/Support/GlobalVerify.py",
+  "CountsAsFullKey": false
+}

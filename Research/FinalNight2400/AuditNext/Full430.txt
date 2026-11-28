@@ -1,0 +1,12 @@
+DOMAIN P7_I00082 [2, 4, 6, 8, 10, 12, 14, 16] DIRECT [18, 20, 22, 24, 26, 28, 30, 32, 34] TAIL >= 36
+PASS 14: dual forest floors 2404 2404
+PASS 16: (19, [6378, 518, 0]) OPEN: 2, 4, 6, 8, 10, 12
+VERIFIED (7, 430) new full fibers [6, 8, 10] masks closed assuming 14/16 [62, 98, 102, 106, 110, 114, 118, 122, 126, 166, 174, 182, 190, 226, 230, 234, 238, 242, 246, 250, 254] remaining mask counts {2: 3, 4: 43, 12: 39} stats {'forest': 52, 'abundance': 117, 'split': 9, 'shared': 70} forest min 2410 SHA256 8d8cd83e60e94f01cea543a1ed2ff7b04b49996c264c065343b20f303cb4f6de
+PASS (50, 2, 35, 26)
+PASS (58, 2, 38, 17)
+PASS (178, 2, 41, 12)
+PASS (50, 6, 26, 17)
+PASS (58, 6, 23, 14)
+PASS (7,430) exact Q^12, weighted cubic joint price, all eight child exponents [1, 2, 4, 5, 6, 8, 9, 10]
+Q4 partition {'split': 30, 'forest': 529, 'price': 1, 'square': 1, 'open': 0} open 0
+FULL canonical exact 7^430, P7_I00082, every first Q valuation 2,4,6,8,10,12,14,16; no mask holes.
