@@ -2,8 +2,10 @@
 
 ## 2026-11-28 研究分支收束
 
-- [x] 验收 25 个新增规范精确键的分片归属和完整依赖：见[研究报告](../Research/FinalNight2400/Report.md)、[逐键复验计时](../Research/FinalNight2400/Proof.md)和[25 键独立集合重算](../Research/FinalNight2400/AuditNext/Projection25.md)。
+- [x] 原研究批次记录 25 个新增规范精确键的完整依赖冷重放：见[研究报告](../Research/FinalNight2400/Report.md)、[逐键复验计时](../Research/FinalNight2400/Proof.md)和[25 键独立集合重算](../Research/FinalNight2400/AuditNext/Projection25.md)。
 - [x] 指定的五项历史入口均重放成功，含原始字节恢复后的两个默认 Gemini 入口：[实际回执](../Research/FinalNight2400/Audit/Baseline.md)。
+- [x] 后续独立审阅：冻结正反映射、25 个完整键、逐片集合差、最终 102 条记录及 3029/43/53/35 统计一致。
+- [ ] 后续审阅环境重新运行全部新增算术入口；目前沿用原研究批次逐键回执。
 - [ ] 排尽仍开放的 43 个分片与 53 个不同精确键。
 - [ ] 全部历史原始输入至最终断言的一体冷重放和 72 小时验收；局部成功和本轮运行时间不得代替。
 
