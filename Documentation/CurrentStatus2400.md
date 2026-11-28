@@ -1,6 +1,6 @@
 # 当前证明状态
 
-## 2026-11-28：PR #10 研究分支
+## 2026-11-28：main（PR #10 已合并）
 
 全局状态 `INCOMPLETE_FRONTIER`。以主线 `1447d41b` 为冻结基线；PR #10 的 25 个完整精确键各自清空一个单指数分片。独立集合差与正反映射核验通过；逐键完整算术重放以原批次回执为证据，后续审阅未重新执行全部算术。
 
@@ -16,7 +16,7 @@
 |17|297|297|0|0|0|
 |**合计**|**3072**|**3029**|**43**|**53**|**25**|
 
-35 个开放分片为单指数片。当前余集以 [OpenFrontier.json](../Research/FinalNight2400/OpenFrontier.json) 为准；[完整键证明与回执](../Research/FinalNight2400/Proof.md)、[接续任务](NextPlan2400.md)、[验证边界](../Research/FinalNight2400/Validation.md)。以下为历史主线基线，保留原回执。
+35 个开放分片为单指数片。当前余集以 [OpenFrontier.json](../Research/FinalNight2400/OpenFrontier.json) 为准；[完整键证明与回执](../Research/FinalNight2400/Proof.md)、[接续任务](NextPlan2400.md)、[验证边界](../Research/FinalNight2400/Validation.md)。合并提交 `bc05f4d`。以下为历史主线基线，保留原回执。
 
 ## 11 月 27 日主线基线：逐根覆盖
 
