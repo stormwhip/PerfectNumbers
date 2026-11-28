@@ -16,7 +16,7 @@ If q is internal to one block, the other is coprime to it and nonsquare, so it n
 f1d8f7827ba215ec0e90635f678237b6f977aa1005a3e26c3fc81205a2eb5d55
 ```
 
-For 102 no exterior Euler survives at `α≥5`; for 210 no survivor mask consists of only the exterior position (some masks still allow that position among others). All three exact firsts remain open. Do not count each location mask as a separate full-first exclusion.
+**2026-11-28 correction (PR #14, independently checked).** The default non-price test for `f=102,(i,j,α)=(0,0,5)` uses `Q=5` and retains the exterior bit: both `XAC(10^8+1)^2 5^5≤B` and `2X·5^6≤3B` hold by exact integer evaluation. The earlier statement that every exterior high-index Euler position was excluded for 102 is withdrawn; this does not imply a realizable prime or counterexample. For 210 the original observation concerning masks consisting only of the exterior position is retained as a historical observation. These are local tests, not full-first exclusions. The current frontier is given by [the checkpoint](../Checkpoint.md); only 102 remains for (31,268). See [the new theory](../../JointConservation2400/Root31x268.md).
 
 ## `(31,456)` and `(31,466)`
 
