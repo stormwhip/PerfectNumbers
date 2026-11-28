@@ -4,12 +4,8 @@ This ledger is an exact-scope summary, not a whole-key claim. Baseline `495c59f5
 
 | f | g | Frozen third pivot if previously split | Remaining exact third exponents |
 |---:|---:|---:|---|
-| 1 | 4 | — | whole second window still unrefined |
-| 1 | 16 | 3789992812027 | 2,4,8,12,16,18,36 |
-| 1 | 22 | 3789992812027 | 2,4,16,18 |
-| 1 | 46 | — | whole second window still unrefined |
-| 18 | 2 | 108501737266216818637411 | 6,10 |
-| 18 | 16 | 108501737266216818637411 | 2,4,6,10,12,16 |
-| 18 | 22 | 108501737266216818637411 | 2,6,10,12 |
+| 1 | 22 | 3789992812027 | 2,16 |
+| 18 | 2 | 108501737266216818637411 | 10 |
+| 18 | 22 | 108501737266216818637411 | 6,10 |
 
-After the [final f=1,g=2 terminal](Root222F1G2.md), [three additional full second windows](More222.md), the [empty f=1,g=42 pivot](Root222F1G42.md), and the [first-18 addendum](Extra18x222.md), there are seven open second prefixes. This counts a remaining second prefix once even when multiple exact tertiary values survive. Whole second prefixes newly completed by the disjoint overlay union are `(f,g)=(2,2),(2,16),(2,22),(2,46)`, all completing first `f=2`. None of these statements modifies the global shard counts.
+After the [final f=1,g=2 terminal](Root222F1G2.md), [three additional full second windows](More222.md), the [empty f=1,g=42 pivot](Root222F1G42.md), the [first-18 addendum](Extra18x222.md), and [first-1 second exponents 4 and 46](First1Minor222.md), there were five open second prefixes. The [twelve-cut overlay](Last18And1222.md) reduced those exact third sets; [first 1, second 16](Finish116x222.md) and [first 18, second 16](Finish1816x222.md) then completed both of their remaining sets. Three second prefixes (five exact tertiary values) are open as displayed. This counts a remaining second prefix once even when multiple exact tertiary values survive. Whole second prefixes newly completed by the disjoint overlay union are `(f,g)=(2,2),(2,16),(2,22),(2,46)`, all completing first `f=2`. None of these statements modifies the global shard counts.

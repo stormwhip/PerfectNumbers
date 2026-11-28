@@ -364,5 +364,26 @@
   ],
   "root19-222-minor-first1-independent": [
     "Audit/CheckFirst1Minor222.py"
+  ],
+  "root34-masks": [
+    "Propagation/Verify34Masks.py"
+  ],
+  "root34-late-independent": [
+    "Audit/CheckRoot34Late.py"
+  ],
+  "root19-last222": [
+    "Nineteen/VerifyLast18And1222.py"
+  ],
+  "root19-last222-independent": [
+    "Audit/CheckLast18And1222.py"
+  ],
+  "root19-finish116": [
+    "Nineteen/Verify222Finish116.py"
+  ],
+  "root19-finish1816": [
+    "Nineteen/Verify222Finish1816.py"
+  ],
+  "root19-finish16-both-independent": [
+    "Audit/Check222Finish16.py"
   ]
 }
