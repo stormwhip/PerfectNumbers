@@ -1,0 +1,27 @@
+{
+  "baselineCommit": "495c59f55456a70994ce7848487e0c4e262c1984",
+  "bound": {"base": 10, "exponent": 2400},
+  "canonicalKey": [19, 276],
+  "status": "EXCLUDED_CONDITIONAL_EXACT_PREFIX",
+  "exactPrefix": [[19, 276], [1176672733, 1], [1109, 4]],
+  "fixedEulerPrime": 1176672733,
+  "maximumOrdinaryLength": 5031,
+  "remainingDemands": [[19, 276], [1109, 3]],
+  "primaryWeight": 2,
+  "primaryLossBound": 1000000,
+  "rareSupplier": {
+    "target": 1109,
+    "onlyFeasibleOrder": 277,
+    "maximumValuationPerSupplier": 1,
+    "lengthParameter": "L=277*m; reserve 276*m exponent units while leaving m-1 to the coprime 19 effective length",
+    "strictProductCapK": 63700,
+    "capComparison": "V*(K-1)^276 <= B*1000000 < V*K^276, where V=X*19^(2*c19)",
+    "smallestThreePossibleBases": [13, 29, 53],
+    "forcedSupplierExponent": 276,
+    "completeSortedBaseTriples": [[13, 29, 53], [13, 29, 67], [13, 29, 83], [13, 29, 103], [13, 29, 131], [13, 29, 139], [13, 29, 167], [13, 53, 67], [13, 53, 83]]
+  },
+  "terminal": "Each triple extends the exact prefix by (b,276) for its three bases; X' * odd(prod(sigma(q^a))) > B * gcd(X',odd(prod(sigma(q^a)))).",
+  "proof": "Proof276.md",
+  "standaloneVerifier": "Verify276.py",
+  "notes": "This receipt is derived output, not verifier input. No complete key, t^1 fiber, or shard closure is claimed. The sibling exact 1109^2 remains open in this packet."
+}

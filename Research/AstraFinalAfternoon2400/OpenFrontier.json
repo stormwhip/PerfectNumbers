@@ -8,7 +8,7 @@
   "SingletonShards": 35,
   "NewFullKeys": [],
   "NewClosedShards": [],
-  "RegisteredConditionalEntries": 0,
+  "RegisteredConditionalEntries": 3,
   "ByRoot": {
     "19": {
       "Closed": 274,
