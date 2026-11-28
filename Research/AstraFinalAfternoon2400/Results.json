@@ -6421,14 +6421,14 @@
       "Conditions": {
         "EulerPlusOneValuation": {
           "Prime": 13,
-          "Min": 537,
+          "Min": 535,
           "Max": 618
         }
       },
-      "Proof": "ElevenThirteen/HighLinear.md",
-      "Certificate": "ElevenThirteen/HighLinear.py",
-      "Verifier": "ElevenThirteen/HighLinear.py",
-      "IndependentReview": "Audit/Root13HighLinearReceipt.md"
+      "Proof": "ElevenThirteen/Thin618.md",
+      "Certificate": "ElevenThirteen/CertificateThin618.json",
+      "Verifier": "ElevenThirteen/Thin618.py",
+      "IndependentReview": "Audit/Root13ThinReceipt.md"
     },
     {
       "Id": "13-618-euler-position-exponent",
@@ -6483,14 +6483,14 @@
         "EulerPlusOneValuation": {
           "Prime": 3,
           "Min": 1,
-          "Max": 695
+          "Max": 697
         },
         "EmitterLocation": "outside-root-sigma"
       },
-      "Proof": "Three/Proof856.md",
+      "Proof": "Three/Proof856Prefix.md",
       "Certificate": "Three/Certificate856.json",
       "Verifier": "Three/Root856.py",
-      "IndependentReview": "Audit/Root3x856Receipt.md"
+      "IndependentReview": "Audit/RootThreeAdditional.md"
     },
     {
       "Id": "3-856-source-inside-root-sigma",
@@ -6505,14 +6505,14 @@
         "EulerPlusOneValuation": {
           "Prime": 3,
           "Min": 1,
-          "Max": 677
+          "Max": 679
         },
         "EmitterLocation": "inside-root-sigma"
       },
-      "Proof": "Three/Proof856.md",
+      "Proof": "Three/Proof856Prefix.md",
       "Certificate": "Three/Certificate856.json",
       "Verifier": "Three/Root856.py",
-      "IndependentReview": "Audit/Root3x856Receipt.md"
+      "IndependentReview": "Audit/RootThreeAdditional.md"
     },
     {
       "Id": "31-268-6-forest",
@@ -11558,6 +11558,138 @@
       "Certificate": "ElevenThirteen/Second-11-16-25.json.gz",
       "Verifier": "ElevenThirteen/SecondTree.py",
       "IndependentReview": "Audit/Root11x16Seal25Receipt.md"
+    },
+    {
+      "Id": "3-6-2-150-euler-high",
+      "Key": [
+        3,
+        6
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1093,
+            2
+          ],
+          [
+            398581,
+            150
+          ]
+        ],
+        "EulerExponentMin": 5
+      },
+      "Proof": "Three/NoteLow.md",
+      "Certificate": "Three/LocalWindowCertificate.json",
+      "Verifier": "Three/Audit150.py",
+      "IndependentReview": "Audit/RootThreeAdditional.md"
+    },
+    {
+      "Id": "3-6-2-150-euler-linear-cells",
+      "Key": [
+        3,
+        6
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1093,
+            2
+          ],
+          [
+            398581,
+            150
+          ]
+        ],
+        "EulerExponent": 1,
+        "RegionSource": "Three/Audit150.py: rejected 779 cells"
+      },
+      "Proof": "Three/NoteLow.md",
+      "Certificate": "Three/LocalWindowCertificate.json",
+      "Verifier": "Three/Audit150.py",
+      "IndependentReview": "Audit/RootThreeAdditional.md"
+    },
+    {
+      "Id": "3-6-156-46-linear-cells",
+      "Key": [
+        3,
+        6
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1093,
+            156
+          ],
+          [
+            2035349,
+            46
+          ]
+        ],
+        "RegionSource": "Three/Audit156.py: rejected 1510 linear-supply cells"
+      },
+      "Proof": "Three/Proof156.md",
+      "Certificate": "Three/LocalWindowCertificate.json",
+      "Verifier": "Three/Audit156.py",
+      "IndependentReview": "Audit/RootThreeAdditional.md"
+    },
+    {
+      "Id": "19-222-2-22-2-forest",
+      "Key": [
+        19,
+        222
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            7579985624053,
+            2
+          ],
+          [
+            3705121363,
+            22
+          ],
+          [
+            2032322226061,
+            2
+          ]
+        ]
+      },
+      "Proof": "Nineteen/Plain222J2.md",
+      "Certificate": "Nineteen/Plain222J2.json.gz",
+      "Verifier": "Nineteen/VerifyPlain222J2.py",
+      "IndependentReview": "Audit/Root19LastTwosReceipt.md"
+    },
+    {
+      "Id": "19-222-2-22-4-forest",
+      "Key": [
+        19,
+        222
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            7579985624053,
+            2
+          ],
+          [
+            3705121363,
+            22
+          ],
+          [
+            2032322226061,
+            4
+          ]
+        ]
+      },
+      "Proof": "Nineteen/Mask222J4.md",
+      "Certificate": "Nineteen/Mask222J4.json.gz",
+      "Verifier": "Nineteen/VerifyMask222J4.py",
+      "IndependentReview": "Audit/Root19LastTwosReceipt.md"
     }
   ]
 }

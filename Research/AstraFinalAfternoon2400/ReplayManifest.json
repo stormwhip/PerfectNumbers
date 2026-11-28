@@ -192,5 +192,26 @@
   ],
   "11x16f25-independent": [
     "Audit/Check11x16Seal25.py"
+  ],
+  "root-three-150-independent": [
+    "Three/Audit150.py"
+  ],
+  "root-three-156-independent": [
+    "Three/Audit156.py"
+  ],
+  "root13-thin": [
+    "ElevenThirteen/Thin618.py"
+  ],
+  "root13-thin-independent": [
+    "Audit/CheckThin618.py"
+  ],
+  "forest222-j2": [
+    "Nineteen/VerifyPlain222J2.py"
+  ],
+  "forest222-j4": [
+    "Nineteen/VerifyMask222J4.py"
+  ],
+  "forest222-final-pair-independent": [
+    "Audit/Check222LastTwos.py"
   ]
 }

@@ -1,13 +1,43 @@
 {
   "BaselineCommit": "495c59f55456a70994ce7848487e0c4e262c1984",
-  "CanonicalKey": [3, 856],
-  "CanonicalBans": [19, 7, 11, 31, 13],
+  "CanonicalKey": [
+    3,
+    856
+  ],
+  "CanonicalBans": [
+    19,
+    7,
+    11,
+    31,
+    13
+  ],
   "Scope": "Euler q^1, exterior to A=sigma(3^856), s=v3(q+1)>0",
   "CertifiedRoughnessLowerBound": 100097600002,
-  "RemainingOutsideSourceWindows": {"s": [696, 856], "m_mod_3": [1, 2], "count": 322},
-  "RemainingInsideSourceWindows": {"s": [678, 856], "m_mod_3": [1, 2], "count": 358},
+  "RemainingOutsideSourceWindows": {
+    "s": [
+      698,
+      856
+    ],
+    "m_mod_3": [
+      1,
+      2
+    ],
+    "count": 318
+  },
+  "RemainingInsideSourceWindows": {
+    "s": [
+      680,
+      856
+    ],
+    "m_mod_3": [
+      1,
+      2
+    ],
+    "count": 354
+  },
   "EulerSourcePrimitivityCells": 5915,
   "Verifier": "Root856.py",
   "RangeSource": "Range.cpp",
-  "SourceRolesCanOverlap": true
+  "SourceRolesCanOverlap": true,
+  "PrefixAddendum": "Proof856Prefix.md"
 }

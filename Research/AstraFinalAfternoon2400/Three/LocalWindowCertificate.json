@@ -1,0 +1,49 @@
+{
+  "BaselineCommit": "495c59f55456a70994ce7848487e0c4e262c1984",
+  "Key": [
+    3,
+    6
+  ],
+  "CanonicalBans": [
+    19,
+    7,
+    11,
+    31,
+    13
+  ],
+  "Entries": [
+    {
+      "Exact": [
+        [
+          1093,
+          2
+        ],
+        [
+          398581,
+          150
+        ]
+      ],
+      "EulerHighExcluded": true,
+      "LinearCells": 1800,
+      "LinearRejected": 779,
+      "LinearRemaining": 1021,
+      "Digest": "7918cc639dfd359b96d3f604e08b42d4a630492b2b78068b07f08318f6ac30ae"
+    },
+    {
+      "Exact": [
+        [
+          1093,
+          156
+        ],
+        [
+          2035349,
+          46
+        ]
+      ],
+      "LinearSupplyCells": 7176,
+      "Rejected": 1510,
+      "Remaining": 5666,
+      "Digest": "667992a751f962deea97e7010a1ca7d7485d7628d51c8cac61fbdea7295e5fdc"
+    }
+  ]
+}
