@@ -4,17 +4,17 @@
 
 ## 问题 1　穷尽现行前沿
 
-**已知。** 八根互素类已排除。令 $A_s$ 为[逐片余集](../Research/FinalNight2400/OpenFrontier.json) 的 `ShardRemainders` 中分片 $s$ 的剩余指数集合。PR #10 研究分支的 3,072 片中已有 **3,029** 片闭合，**43** 片满足 $A_s\ne\varnothing$；去重后有 **53** 个 $(p,e)$。
+**已知。** 八根互素类已排除。令 $A_s$ 为[逐片余集](../Research/AstraFinalAfternoon2400/OpenFrontier.json) 的 `ShardRemainders` 中分片 $s$ 的剩余指数集合。main 的 3,072 片中已有 **3,031** 片闭合，**41** 片满足 $A_s\ne\varnothing$；去重后有 **50** 个 $(p,e)$。
 
 **求证。** 对每个上述 $(p,e)$，在规范根 $p$ 及 $p^e\parallel N$ 的条件下推出矛盾。整除型分片对 $e+1$ 的条件是 $d+1\mid e+1$，精确型要求 $e=d$。证明可以共享，但每个分片须覆盖其整个 $A_s$。
 
-最新 25 个完整排除键及剩余指数按根列于[证明索引](../Research/FinalNight2400/Proof.md)。条件结果及精确子域见[研究报告](../Research/FinalNight2400/Report.md)。
+最新三个完整排除键见[证明索引](../Research/AstraFinalAfternoon2400/Proof.md)。条件结果及精确子域见[检查点](../Research/AstraFinalAfternoon2400/Checkpoint.md)和[活动账本](../Research/AstraFinalAfternoon2400/Results.json)。
 
 ## 问题 2　支持分割与拼接
 
 **历史统计。** 在当时的 244 个实际指数上，SupportSplit 筛后余 6,556 个 $(p,e,H)$。合并晚间前已排除的完整指数、389 个条件证书及命中集 $\{3,5,17,19\}$ 后，[冻结支持位图](../Research/Session20261126/OpenSupport.json)余 3,259 个组合。再应用[990 的无五引理](../Research/Session20261126/NoFive990/Readme.md)，当时余 3,257 个。这些不是现行支持数。
 
-**现行范围。** 对问题 1 的 53 个待证键研究支持分割。$(19,316)$ 与 $(7,28)$ 已由[夜间证书](../Research/Night2400/README.md)覆盖所有合法支持和分支，可用作拼接的复验实例。
+**现行范围。** 对问题 1 的 50 个待证键研究支持分割。$(19,316)$ 与 $(7,28)$ 已由[夜间证书](../Research/Night2400/README.md)覆盖所有合法支持和分支，可用作拼接的复验实例。
 
 **求证。** 对某个 $(p,e)$ 的每个剩余 $H$，在 $q\mid N$（$q\in H$）与 $q\nmid N$（$q\in S_8\setminus H$）下给出矛盾证书，其中 $S_8=\{19,7,11,31,13,3,5,17\}$。分支若取 $v_q(N)$ 的有限精确前缀，须覆盖所有相容指数及其完整尾段。
 
@@ -44,4 +44,4 @@
 
 历史 $(19,58)$ 的 C10 子域已由[完整键回执](../Research/FinalNight2400/Audit/TenReceipt.md)覆盖，不再列作待证问题。
 
-**11 月 28 日接续域。** [条件补证](../Research/GeminiFrontier/November28/Review.md)已经覆盖十九阶 9 的联合供给及高阶指数预算，且排除了 (19,276) 的首枢轴 1 下 1109 的全部合法指数 h>=6。后续须排除 h=2、4，并继续其余首枢轴及 B、G、H 剩余域；探索性 A、F 诊断仍未验收。
+**11 月 28 日接续域。** 最新接受域见[检查点](../Research/AstraFinalAfternoon2400/Checkpoint.md)。$(19,276)$ 首值 1、18 已由 PR #12 的新证明排除，仍余 2、8、16、28。PR #11 的[撤回候选](../Research/KimiFrontier/November28/Retraction.md)不作为依据。$(19,222)$ 剩余五个第三值及其他最新缺口见[下一步计划](NextPlan2400.md)。
