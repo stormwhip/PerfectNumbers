@@ -1,0 +1,18 @@
+{
+  "baselineCommit":"495c59f55456a70994ce7848487e0c4e262c1984",
+  "bound":{"base":10,"exponent":2400},
+  "exactPrefix":[[19,276],[1176672733,28]],
+  "forcedPrime":"244980869729503357305949",
+  "forcedKnownValuation":1,
+  "strictRawTail":53,
+  "rawLiveEulerExponents":[1,5,9,13,17,21,25],
+  "rawLiveOrdinaryExponents":[2,4,6,8,10,12,14,16,18,20,22,24,26],
+  "excludedByAbundance":[5,17],
+  "excludedByDirectTripleCubicPrice":[13,21,25],
+  "excludedByRareSupplierAndTripleCubic":[1,9],
+  "excludedBySizeWithOrdinary1109":[26],
+  "openOrdinaryExponents":[2,4,6,8,10,12,14,16,18,20,22,24],
+  "status":"PARTIAL_CONDITIONAL_EXACT_PREFIX",
+  "verifier":"VerifyT28U.py",
+  "proof":"T28U.md"
+}

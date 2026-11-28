@@ -1,0 +1,16 @@
+{
+  "baselineCommit":"495c59f55456a70994ce7848487e0c4e262c1984",
+  "bound":{"base":10,"exponent":2400},
+  "exactPrefix":[[19,276],[1176672733,28],["244980869729503357305949",12]],
+  "compulsoryOrdinaryPrime":1109,
+  "strictRawTail":217,
+  "rawLiveExponents":{"from":2,"through":108,"step":2,"count":54},
+  "excluded":{"from":24,"through":108,"step":2,"count":43},
+  "remaining":{"from":2,"through":22,"step":2,"count":11},
+  "jointTargets":["19","1176672733","244980869729503357305949","1109"],
+  "simultaneous277OrderCandidateIntegers":[19,361,6859,130321],
+  "simultaneous831OrderCandidateIntegers":[],
+  "status":"PARTIAL_CONDITIONAL_EXACT_CHILDREN",
+  "verifier":"U12SHigh.py",
+  "proof":"U12SHigh.md"
+}

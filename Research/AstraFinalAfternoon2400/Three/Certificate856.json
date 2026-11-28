@@ -15,14 +15,14 @@
   "CertifiedRoughnessLowerBound": 100097600002,
   "RemainingOutsideSourceWindows": {
     "s": [
-      698,
+      699,
       856
     ],
     "m_mod_3": [
       1,
       2
     ],
-    "count": 318
+    "count": 316
   },
   "RemainingInsideSourceWindows": {
     "s": [

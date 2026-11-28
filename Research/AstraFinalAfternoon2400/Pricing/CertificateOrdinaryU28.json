@@ -1,0 +1,15 @@
+{
+  "baselineCommit":"495c59f55456a70994ce7848487e0c4e262c1984",
+  "bound":{"base":10,"exponent":2400},
+  "exactPrefix":[[19,276],[1176672733,28]],
+  "forcedPrime":"244980869729503357305949",
+  "additionalClosedOrdinaryExponents":[14,16,18,20,22,24],
+  "weight":{"exponent14":{"numerator":39,"denominator":20},"exponents16Through24":{"numerator":19,"denominator":10}},
+  "retainedDeficitBases":{"exponent14":10,"exponents16Through24":4},
+  "exponent14EulerAllocationCells":{"total":108584,"directPrice":19591,"sameSourceAndInterior":88993,"remaining":0},
+  "method":"Complete triple cubic and higher-order Hensel losses, with ordinary primes plus an optional Euler square atom. Uniform Euler caps, same-emitter exterior cancellation and exact interior cofactor tests.",
+  "remainingOrdinaryExponentsAfterCombiningEulerUPacket":[2,4,6,8,10,12],
+  "verifier":"OrdinaryU28.py",
+  "proof":"UniformEuler.md",
+  "status":"PARTIAL_CONDITIONAL_EXACT_PREFIX"
+}

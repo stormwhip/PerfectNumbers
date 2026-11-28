@@ -6399,14 +6399,14 @@
         "EulerPlusOneValuation": {
           "Prime": 3,
           "Min": 1,
-          "Max": 697
+          "Max": 698
         },
         "EmitterLocation": "outside-root-sigma"
       },
       "Proof": "Three/Proof856Prefix.md",
       "Certificate": "Three/Certificate856.json",
       "Verifier": "Three/Root856.py",
-      "IndependentReview": "Audit/RootThreeAdditional.md"
+      "IndependentReview": "Audit/Root3Native698Receipt.md"
     },
     {
       "Id": "3-856-source-inside-root-sigma",
@@ -10243,12 +10243,12 @@
           ]
         ],
         "EulerExponent": 1,
-        "RegionSource": "Three/Audit150.py: rejected 779 cells"
+        "RegionSource": "Three/Audit150.py (779) plus disjoint AuxiliaryTriple150.py (16)"
       },
-      "Proof": "Three/NoteLow.md",
+      "Proof": "Three/Auxiliary150.md",
       "Certificate": "Three/LocalWindowCertificate.json",
       "Verifier": "Three/Audit150.py",
-      "IndependentReview": "Audit/RootThreeAdditional.md"
+      "IndependentReview": "Audit/RootThreeFinalShort.md"
     },
     {
       "Id": "3-6-156-46-linear-cells",
@@ -15897,6 +15897,2526 @@
       "Certificate": "Seven/Forest12LowHigh3.json.gz",
       "Verifier": "Seven/VerifyQ42Masks.py",
       "IndependentReview": "Audit/Root7Q42LowReceipt.md"
+    },
+    {
+      "Id": "7-34-first-69",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            69
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-73",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            73
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-74",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            74
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-76",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            76
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-77",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            77
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-80",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            80
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-81",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            81
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-84",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            84
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-85",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            85
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-86",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            86
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-88",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            88
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-90",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            90
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-92",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            92
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-93",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            93
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-94",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            94
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-96",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            96
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-97",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            97
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-98",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            98
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-100",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            100
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-101",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            101
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-102",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            102
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-104",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            104
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-105",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            105
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-106",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            106
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-108",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            108
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34a.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-5",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            5
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-13",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            13
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-20",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            20
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-25",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            25
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-29",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            29
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-33",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            33
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-38",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            38
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-41",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            41
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-44",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            44
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-49",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            49
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-50",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            50
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-56",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            56
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-57",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            57
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-61",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            61
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-62",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            62
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-64",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            64
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-65",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            65
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-68",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            68
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34b.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-32",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            32
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34c.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-37",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            37
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34c.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-45",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            45
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34c.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-70",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            70
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34c.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-82",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            82
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34c.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-26",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            26
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34d.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "7-34-first-48",
+      "Key": [
+        7,
+        34
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            77192844961,
+            48
+          ]
+        ]
+      },
+      "Proof": "Propagation/Root34.md",
+      "Certificate": "Propagation/Reserved438x12-orbit48root34d.json.gz",
+      "Verifier": "Propagation/Verify34Forest.py",
+      "IndependentReview": "Audit/Root34Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U14-ordinary",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            14
+          ]
+        ]
+      },
+      "Proof": "Pricing/UniformEuler.md",
+      "Certificate": "Pricing/CertificateOrdinaryU28.json",
+      "Verifier": "Pricing/OrdinaryU28.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U16-ordinary",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            16
+          ]
+        ]
+      },
+      "Proof": "Pricing/UniformEuler.md",
+      "Certificate": "Pricing/CertificateOrdinaryU28.json",
+      "Verifier": "Pricing/OrdinaryU28.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U18-ordinary",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            18
+          ]
+        ]
+      },
+      "Proof": "Pricing/UniformEuler.md",
+      "Certificate": "Pricing/CertificateOrdinaryU28.json",
+      "Verifier": "Pricing/OrdinaryU28.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U20-ordinary",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            20
+          ]
+        ]
+      },
+      "Proof": "Pricing/UniformEuler.md",
+      "Certificate": "Pricing/CertificateOrdinaryU28.json",
+      "Verifier": "Pricing/OrdinaryU28.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U22-ordinary",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            22
+          ]
+        ]
+      },
+      "Proof": "Pricing/UniformEuler.md",
+      "Certificate": "Pricing/CertificateOrdinaryU28.json",
+      "Verifier": "Pricing/OrdinaryU28.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U24-ordinary",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            24
+          ]
+        ]
+      },
+      "Proof": "Pricing/UniformEuler.md",
+      "Certificate": "Pricing/CertificateOrdinaryU28.json",
+      "Verifier": "Pricing/OrdinaryU28.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-24",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            24
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-26",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            26
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-28",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            28
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-30",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            30
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-32",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            32
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-34",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            34
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-36",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            36
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-38",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            38
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-40",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            40
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-42",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            42
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-44",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            44
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-46",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            46
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-48",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            48
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-50",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            50
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-52",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            52
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-54",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            54
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-56",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            56
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-58",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            58
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-60",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            60
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-62",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            62
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-64",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            64
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-66",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            66
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-68",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            68
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-70",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            70
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-72",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            72
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-74",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            74
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-76",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            76
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-78",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            78
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-80",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            80
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-82",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            82
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-84",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            84
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-86",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            86
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-88",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            88
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-90",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            90
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-92",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            92
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-94",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            94
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-96",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            96
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-98",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            98
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-100",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            100
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-102",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            102
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-104",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            104
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-106",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            106
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-U12-1109-108",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            12
+          ],
+          [
+            1109,
+            108
+          ]
+        ]
+      },
+      "Proof": "Pricing/U12SHigh.md",
+      "Certificate": "Pricing/CertificateU12SHigh.json",
+      "Verifier": "Pricing/U12SHigh.py",
+      "IndependentReview": "Audit/Root19T28U14U12Receipt.md"
+    },
+    {
+      "Id": "19-276-28-Euler-U",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ]
+        ],
+        "EulerPrime": "244980869729503357305949"
+      },
+      "Proof": "Pricing/T28U.md",
+      "Certificate": "Pricing/CertificateT28U.json",
+      "Verifier": "Pricing/VerifyT28U.py",
+      "IndependentReview": "Audit/Root19T28UExtraReceipt.md"
+    },
+    {
+      "Id": "19-276-28-U26",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1176672733,
+            28
+          ],
+          [
+            "244980869729503357305949",
+            26
+          ]
+        ]
+      },
+      "Proof": "Pricing/T28U.md",
+      "Certificate": "Pricing/CertificateT28U.json",
+      "Verifier": "Pricing/VerifyT28U.py",
+      "IndependentReview": "Audit/Root19T28UExtraReceipt.md"
+    },
+    {
+      "Id": "19-222-first1-g4-jNone-minor",
+      "Key": [
+        19,
+        222
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            7579985624053,
+            1
+          ],
+          [
+            3705121363,
+            4
+          ]
+        ]
+      },
+      "Proof": "Nineteen/First1Minor222.md",
+      "Certificate": "Nineteen/First1Minor222.json.gz",
+      "Verifier": "Nineteen/VerifyFirst1FinishMinor222.py",
+      "IndependentReview": "Audit/Root19First1MinorReceipt.md"
+    },
+    {
+      "Id": "19-222-first1-g46-jNone-minor",
+      "Key": [
+        19,
+        222
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            7579985624053,
+            1
+          ],
+          [
+            3705121363,
+            46
+          ]
+        ]
+      },
+      "Proof": "Nineteen/First1Minor222.md",
+      "Certificate": "Nineteen/First1Minor222.json.gz",
+      "Verifier": "Nineteen/VerifyFirst1FinishMinor222.py",
+      "IndependentReview": "Audit/Root19First1MinorReceipt.md"
+    },
+    {
+      "Id": "19-222-first1-g22-j18-minor",
+      "Key": [
+        19,
+        222
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            7579985624053,
+            1
+          ],
+          [
+            3705121363,
+            22
+          ],
+          [
+            3789992812027,
+            18
+          ]
+        ]
+      },
+      "Proof": "Nineteen/First1Minor222.md",
+      "Certificate": "Nineteen/First1Minor222.json.gz",
+      "Verifier": "Nineteen/VerifyFirst1FinishMinor222.py",
+      "IndependentReview": "Audit/Root19First1MinorReceipt.md"
+    },
+    {
+      "Id": "3-6-256-linear-high",
+      "Key": [
+        3,
+        6
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            1093,
+            256
+          ]
+        ],
+        "EulerExponent": 1,
+        "EulerPlusOneValuation": {
+          "Prime": 1093,
+          "Min": 198,
+          "Max": 255
+        }
+      },
+      "Proof": "Three/NoteLow.md",
+      "Certificate": "Three/Valuation256.py",
+      "Verifier": "Three/Valuation256.py",
+      "IndependentReview": "Audit/RootThreeFinalShort.md"
+    },
+    {
+      "Id": "3-12-1-108-three-units",
+      "Key": [
+        3,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            797161,
+            1
+          ],
+          [
+            398581,
+            108
+          ]
+        ],
+        "OrdinaryInternalTargetSupplyAtMost": 2
+      },
+      "Proof": "Three/KernelBounds.md",
+      "Certificate": "Three/KernelRange.cpp",
+      "Verifier": "Three/KernelTrade12.py",
+      "IndependentReview": "Audit/RootThreeFinalShort.md"
     }
   ]
 }

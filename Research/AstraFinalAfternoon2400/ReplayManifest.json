@@ -343,5 +343,26 @@
     "@Seven/Forest12LowHigh3.json.gz",
     "@Seven/Forest12Low6Fourth.json.gz",
     "@Seven/Forest12LowLastPair.json.gz"
+  ],
+  "root34": [
+    "Propagation/Verify34Forest.py"
+  ],
+  "root34-independent": [
+    "Audit/CheckRoot34.py"
+  ],
+  "root19-U-position": [
+    "Pricing/VerifyT28U.py"
+  ],
+  "root19-U-high-ordinary": [
+    "Pricing/OrdinaryU28.py"
+  ],
+  "root19-U12-1109": [
+    "Pricing/U12SHigh.py"
+  ],
+  "root19-222-minor-first1": [
+    "Nineteen/VerifyFirst1FinishMinor222.py"
+  ],
+  "root19-222-minor-first1-independent": [
+    "Audit/CheckFirst1Minor222.py"
   ]
 }
