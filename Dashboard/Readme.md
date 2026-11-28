@@ -19,3 +19,5 @@ python -m http.server 8000 --bind 127.0.0.1 --directory Build/Dashboard
 - [规范分片清单](../Research/FermatRootValuation/Results.csv)提供全部 3,072 个编号。当前余集中出现的分片标为开放，其余标为闭合。
 - [Build.py](Build.py) 的 `CREDITS` 与 `LEDGER_CREDITS` 保留附有审阅依据的模型批次。合并后按净新增闭片量登记一条记录，重叠验证单列。缺少明确模型归属的闭片只进入主线总数。条件排除在整片闭合前不增加闭片数。
 - 发布件包括静态页面和从账本提取的统计及待证指数。页面使用公开 Pages 地址，提交及报告入口指向 GitHub。
+
+PR #13、#14 新增纯理论条件结果，正式闭片增量为零。看板继续由不变的逐片余集生成，不把理论引理或局部排除计作新增闭片。详见[合并审阅](../Research/JointConservation2400/MergeReview.md)。
