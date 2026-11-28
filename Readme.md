@@ -1,5 +1,7 @@
 # PerfectNumbers
 
+[打开证明进度看板](https://stormwhip.github.io/PerfectNumbers/) · [看板数据与发布说明](Dashboard/Readme.md)
+
 目标定理为：对每个奇完全数 $N$，均有 $N>10^{2400}$。
 
 main 当前状态（PR #11、#12 已合并）为 **`INCOMPLETE_FRONTIER`**。相对冻结基线 3029/3072，新增完整精确键 $(7,438)$、$(31,6)$、$(7,48)$，闭合两个分片；现为 **3031/3072**，仍有 **41 个开放分片、50 个精确键、33 个单指数分片**。全局下界尚未证明。[证明索引](Research/AstraFinalAfternoon2400/Proof.md) · [研究检查点](Research/AstraFinalAfternoon2400/Checkpoint.md) · [机器可读投影](Research/AstraFinalAfternoon2400/OpenFrontier.json) · [验收范围](Research/AstraFinalAfternoon2400/Validation.md)。PR #11 仅合并[撤回记录](Research/KimiFrontier/November28/Retraction.md)，不计新增证明。

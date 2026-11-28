@@ -1,0 +1,53 @@
+name: Proof dashboard
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - 'Dashboard/**'
+      - '.github/workflows/ProofDashboard.yml'
+      - 'Research/**/OpenFrontier.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: proof-dashboard-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout: Dashboard
+      - name: Check scripts and generate public snapshot
+        run: |
+          node --check Dashboard/App.js
+          python3 Dashboard/Build.py --out _site
+      - name: Upload GitHub Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

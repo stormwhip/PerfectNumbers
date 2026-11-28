@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102521">
+  <title>PerfectNumbers · 证明进度</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="./"><span aria-hidden="true">Σ</span> PerfectNumbers</a>
+      <nav aria-label="页面导航">
+        <a href="#progress">进度</a><a href="#models">模型</a><a href="#shards">分片</a>
+        <a class="repo" href="https://github.com/stormwhip/PerfectNumbers">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="hero">
+      <div>
+        <h1>奇完全数证明进度</h1>
+        <p>研究目标 <strong>N &gt; 10<sup>2400</sup></strong></p>
+      </div>
+      <div class="stamp">
+        <div id="project-status" class="pill" role="status">正在读取主线账本</div>
+        <div id="snapshot"></div>
+      </div>
+    </div>
+    <p id="notice" role="status" hidden></p>
+    <div id="dashboard" hidden>
+      <section class="metrics" aria-label="当前统计" id="metrics"></section>
+      <section class="charts" id="progress" aria-label="证明进度图表">
+        <article class="card trend">
+          <div class="card-head">
+            <div><h2>累计闭合分片</h2><p>按主线合并时间展示，时间统一为 UTC+8。</p></div>
+            <label class="compact">截至 <select id="cutoff" aria-label="累计闭合分片截至时间"></select></label>
+          </div>
+          <div id="trend-plot" class="plot">
+            <canvas id="trend-chart" role="img"></canvas>
+            <div class="tooltip" id="trend-tip" hidden></div>
+          </div>
+          <div id="trend-summary" class="chart-caption"></div>
+          <details><summary>查看进度明细</summary><ol id="milestones"></ol></details>
+        </article>
+        <article class="card"><h2>最近批次净增量</h2><p>相邻里程碑闭片数之差</p><div class="bar-list" id="batches"></div></article>
+        <article class="card"><h2>各规范根的覆盖率</h2><p>闭合分片数 ÷ 总分片数</p><div class="bar-list" id="roots"></div></article>
+        <article class="card" id="models">
+          <h2>模型贡献</h2><p>仅统计有明确审阅记录的批次。重复覆盖单列。</p>
+          <div class="bar-list" id="credits"></div>
+          <details><summary>查看归属证据</summary><ul id="credit-evidence"></ul></details>
+        </article>
+        <article class="card"><h2>待证键按根分布</h2><p>同一 (p, e) 跨分片只计一次</p><div class="bar-list" id="keys"></div></article>
+        <article class="card wide"><h2>开放分片的剩余指数数</h2><p>按每片仍需排除的指数个数分组</p><div class="distribution" id="distribution"></div></article>
+      </section>
+      <section class="card shard-card" id="shards">
+        <div class="card-head"><div><h2>分片台账</h2><p>按分片编号、规范根或待证指数查询。</p></div><a id="ledger" class="source-link">主线账本</a></div>
+        <div class="filters">
+          <label>搜索 <input id="query" type="search" placeholder="P31_I00056 或 31:268"></label>
+          <label>规范根 <select id="root"><option value="">全部</option></select></label>
+          <label>状态 <select id="state"><option value="open">开放</option><option value="closed">闭合</option><option value="">全部</option></select></label>
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th scope="col">分片</th><th scope="col">规范根</th><th scope="col">状态</th><th scope="col">待证指数</th></tr></thead>
+          <tbody id="shard-rows"></tbody>
+        </table></div>
+        <div class="paging"><span id="table-count" aria-live="polite"></span><div><button id="prev" type="button">上一页</button><button id="next" type="button">下一页</button></div></div>
+      </section>
+    </div>
+    <footer><span>PerfectNumbers · 研究账本</span><a id="source" href="https://github.com/stormwhip/PerfectNumbers">GitHub 项目</a></footer>
+  </main>
+</body>
+</html>
