@@ -7,7 +7,9 @@
     "--accepted-full",
     "7,438",
     "--accepted-full",
-    "31,6"
+    "31,6",
+    "--accepted-full",
+    "7,48"
   ],
   "inert222": [
     "Nineteen/Inert222.py"
@@ -301,5 +303,17 @@
   ],
   "root19-222-f1g2-independent": [
     "Audit/Check222F1G2.py"
+  ],
+  "full48": [
+    "Propagation/Full48.py"
+  ],
+  "full48-union-independent": [
+    "Audit/CheckFull48Union.py"
+  ],
+  "full48-final-independent": [
+    "Audit/Check48FinalSquare.py"
+  ],
+  "full48-first2-independent-scopes": [
+    "Audit/Check48StrongScopes.py"
   ]
 }

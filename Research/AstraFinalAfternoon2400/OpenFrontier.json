@@ -4,9 +4,13 @@
   "TotalShards": 3072,
   "ClosedShards": 3031,
   "OpenShards": 41,
-  "DistinctKeys": 51,
+  "DistinctKeys": 50,
   "SingletonShards": 33,
   "NewFullKeys": [
+    [
+      7,
+      48
+    ],
     [
       7,
       438
@@ -20,7 +24,7 @@
     "P31_I00002",
     "P7_I00084"
   ],
-  "RegisteredConditionalEntries": 750,
+  "RegisteredConditionalEntries": 703,
   "ByRoot": {
     "19": {
       "Closed": 274,
@@ -58,7 +62,6 @@
         18,
         24,
         34,
-        48,
         456,
         486,
         600,
@@ -253,10 +256,6 @@
       [
         7,
         34
-      ],
-      [
-        7,
-        48
       ]
     ],
     "P7_I00004": [
@@ -560,9 +559,6 @@
     ],
     "7,456": [
       "P7_I00087"
-    ],
-    "7,48": [
-      "P7_I00003"
     ],
     "7,486": [
       "P7_I00092"
