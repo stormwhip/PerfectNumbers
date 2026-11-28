@@ -23,6 +23,9 @@
 | 11 月 27 日 Gemini 增量 | 3,004 | 68 | [账本](../Research/GeminiFrontier/Delta.json) · [审阅](../Research/GeminiFrontier/Review.md) |
 | **11 月 28 日 PR #10 研究分支** | **3,029** | **43** | [逐片余集](../Research/FinalNight2400/OpenFrontier.json) · [逐键回执](../Research/FinalNight2400/Proof.md) |
 
+| 11 月 28 日 PR #12 | 3,031 | 41 | [逐片余集](../Research/AstraFinalAfternoon2400/OpenFrontier.json) |
+| 11 月 28 日 PR #13、#14 理论研究 | 3,031 | 41 | [独立审阅](../Research/JointConservation2400/MergeReview.md)；零新增闭片 |
+
 11 月 26 日晚间前排除 134 个不同的 $(p,e)$ 并新增闭合 106 片，晚间批次分别再增 18 和 16。11 月 27 日夜间批次又排除 13 个不同的 $(p,e)$，各清空一个单指数分片。Gemini 后续增量排除 $(13,508)$，新增闭合 1 片。该冻结基线有 68 个开放分片、78 个不同的 $(p,e)$、60 个单指数片。PR #10 新增 25 个完整精确键，独立投影复算后余 43 片、53 键、35 个单指数片。剩余分片构成 $N>10^{2400}$ 的待证情形。
 
 对与原八根全部互素的情形，已认证的下界为 $\log_{10}N\ge4183.209493$。将根 19 替换为 23 后，相应互素类的下界为 $\log_{10}N\ge3954.197016$。这两项均为指定根集的互素类结果。
