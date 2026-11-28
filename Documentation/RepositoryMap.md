@@ -4,6 +4,8 @@
 
 ## 合并证明与文档归档
 
+- [UnitBalance2400](../Research/UnitBalance2400/Readme.md) 与 [JointConservation2400](../Research/JointConservation2400/ResearchReport.md) 保存 PR #13、#14 纯理论成果及[合并审阅](../Research/JointConservation2400/MergeReview.md)，不改正式覆盖账本。
+
 - [AstraFinalAfternoon2400](../Research/AstraFinalAfternoon2400/Proof.md) 保存 PR #12 的三个完整精确键、活动条件账本、当前逐片余集和独立核验入口；[Kimi 撤回记录](../Research/KimiFrontier/November28/Retraction.md) 保存 PR #11 数学覆盖审计。
 
 - [总证明](Proof2400.md)汇总数学推导和复验入口。[FinalNight2400](../Research/FinalNight2400/Proof.md)、[逐片余集](../Research/FinalNight2400/OpenFrontier.json)及[复验入口](../Research/FinalNight2400/Verify.py)记录 PR #10 历史冻结前沿；[Gemini 增量](../Research/GeminiFrontier/Review.md)保留冻结基线；[夜间证书索引](../Research/Night2400/README.md)保留历史快照。[晚间证明](../Research/FinalSprint/Proof.md)和[冻结账本](../Research/FinalSprint/Delta.json)给出本批的输入。[Session20261126](../Research/Session20261126/Readme.md)、[Midday](../Research/Midday/README.md)、[EveningMerge](../Research/EveningMerge/VerifyFrontier.py)及[NightMerge](../Research/NightMerge/ParallelReplay.py)保存历史批次。
@@ -28,6 +30,8 @@ PerfectNumbers/
 ├── Records/                            # 里程碑、历史实验、验收清单
 ├── References/                         # 原始论文及参考资料
 ├── Research/
+│   ├── UnitBalance2400/               # 第一轮理论：单位守恒、回边与平方余量
+│   ├── JointConservation2400/         # 第二轮理论、联合势、共享来源及独立审阅
 │   ├── AstraFinalAfternoon2400/        # PR #12 当前完整键、活动账本、余集及复验
 │   ├── KimiFrontier/                   # PR #11 撤回审计及历史记录
 │   ├── FinalNight2400/                 # PR #10 证明、条件账本、余集及复验
