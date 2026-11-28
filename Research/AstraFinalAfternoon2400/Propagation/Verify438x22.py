@@ -102,11 +102,12 @@ def threshold(low,high,f):
     return x
 
 
-def price_cut(rows, labels, U):
+def price_cut(rows, labels, U, verify_prime=None):
     X,S,D,c,conflict=exact(rows)
     assert not conflict
     labels=set(labels)-{q for q,h in rows}
-    assert all(pock(y) and D%y==0 and y!=19 for y in labels)
+    verify_prime=pock if verify_prime is None else verify_prime
+    assert all(verify_prime(y) and D%y==0 and y!=19 for y in labels)
     blocks=partition(S,X,tuple(sorted(labels)))
     assert prod(x for x,vec in blocks)==D
     M=max(x for x,vec in blocks)
