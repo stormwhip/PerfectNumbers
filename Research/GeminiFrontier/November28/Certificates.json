@@ -1,0 +1,1438 @@
+{
+  "SchemaVersion": "1.0",
+  "Baseline": "main-2026-11-28-3029-43-53",
+  "Bound": "10^2400",
+  "RootOrder": [
+    19,
+    7,
+    11,
+    31,
+    13,
+    3,
+    5,
+    17
+  ],
+  "CertifiedPrimes": [
+    {
+      "p": "2",
+      "method": "small_prime"
+    },
+    {
+      "p": "3",
+      "method": "small_prime"
+    },
+    {
+      "p": "5",
+      "method": "small_prime"
+    },
+    {
+      "p": "7",
+      "method": "small_prime"
+    },
+    {
+      "p": "11",
+      "method": "small_prime"
+    },
+    {
+      "p": "13",
+      "method": "small_prime"
+    },
+    {
+      "p": "17",
+      "method": "small_prime"
+    },
+    {
+      "p": "19",
+      "method": "small_prime"
+    },
+    {
+      "p": "23",
+      "method": "small_prime"
+    },
+    {
+      "p": "31",
+      "method": "small_prime"
+    },
+    {
+      "p": "37",
+      "method": "small_prime"
+    },
+    {
+      "p": "41",
+      "method": "small_prime"
+    },
+    {
+      "p": "47",
+      "method": "small_prime"
+    },
+    {
+      "p": "53",
+      "method": "small_prime"
+    },
+    {
+      "p": "67",
+      "method": "small_prime"
+    },
+    {
+      "p": "71",
+      "method": "small_prime"
+    },
+    {
+      "p": "73",
+      "method": "small_prime"
+    },
+    {
+      "p": "89",
+      "method": "small_prime"
+    },
+    {
+      "p": "97",
+      "method": "small_prime"
+    },
+    {
+      "p": "103",
+      "method": "pratt_primitive_root",
+      "g": 5,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "17",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "149",
+      "method": "pratt_primitive_root",
+      "g": 2,
+      "p_minus_1_factors": [
+        [
+          "2",
+          2
+        ],
+        [
+          "37",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "157",
+      "method": "pratt_primitive_root",
+      "g": 5,
+      "p_minus_1_factors": [
+        [
+          "2",
+          2
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "13",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "223",
+      "method": "pratt_primitive_root",
+      "g": 3,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "37",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "269",
+      "method": "pratt_primitive_root",
+      "g": 2,
+      "p_minus_1_factors": [
+        [
+          "2",
+          2
+        ],
+        [
+          "67",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "277",
+      "method": "pratt_primitive_root",
+      "g": 5,
+      "p_minus_1_factors": [
+        [
+          "2",
+          2
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "23",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "311",
+      "method": "pratt_primitive_root",
+      "g": 17,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "5",
+          1
+        ],
+        [
+          "31",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "419",
+      "method": "pratt_primitive_root",
+      "g": 2,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "11",
+          1
+        ],
+        [
+          "19",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "463",
+      "method": "pratt_primitive_root",
+      "g": 3,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "7",
+          1
+        ],
+        [
+          "11",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "853",
+      "method": "pratt_primitive_root",
+      "g": 2,
+      "p_minus_1_factors": [
+        [
+          "2",
+          2
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "71",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "1093",
+      "method": "pratt_primitive_root",
+      "g": 5,
+      "p_minus_1_factors": [
+        [
+          "2",
+          2
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "7",
+          1
+        ],
+        [
+          "13",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "1109",
+      "method": "pratt_primitive_root",
+      "g": 2,
+      "p_minus_1_factors": [
+        [
+          "2",
+          2
+        ],
+        [
+          "277",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "3229",
+      "method": "pratt_primitive_root",
+      "g": 6,
+      "p_minus_1_factors": [
+        [
+          "2",
+          2
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "269",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "9613",
+      "method": "pratt_primitive_root",
+      "g": 2,
+      "p_minus_1_factors": [
+        [
+          "2",
+          2
+        ],
+        [
+          "3",
+          3
+        ],
+        [
+          "89",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "14009",
+      "method": "pratt_primitive_root",
+      "g": 3,
+      "p_minus_1_factors": [
+        [
+          "2",
+          3
+        ],
+        [
+          "17",
+          1
+        ],
+        [
+          "103",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "15391",
+      "method": "pratt_primitive_root",
+      "g": 12,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "3",
+          4
+        ],
+        [
+          "5",
+          1
+        ],
+        [
+          "19",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "15913",
+      "method": "pratt_primitive_root",
+      "g": 5,
+      "p_minus_1_factors": [
+        [
+          "2",
+          3
+        ],
+        [
+          "3",
+          2
+        ],
+        [
+          "13",
+          1
+        ],
+        [
+          "17",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "15923",
+      "method": "pratt_primitive_root",
+      "g": 2,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "19",
+          1
+        ],
+        [
+          "419",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "31847",
+      "method": "pratt_primitive_root",
+      "g": 5,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "15923",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "57679",
+      "method": "pratt_primitive_root",
+      "g": 3,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "9613",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "65519",
+      "method": "pratt_primitive_root",
+      "g": 11,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "17",
+          1
+        ],
+        [
+          "41",
+          1
+        ],
+        [
+          "47",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "398581",
+      "method": "pratt_primitive_root",
+      "g": 2,
+      "p_minus_1_factors": [
+        [
+          "2",
+          2
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "5",
+          1
+        ],
+        [
+          "7",
+          1
+        ],
+        [
+          "13",
+          1
+        ],
+        [
+          "73",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "443561",
+      "method": "pratt_primitive_root",
+      "g": 3,
+      "p_minus_1_factors": [
+        [
+          "2",
+          3
+        ],
+        [
+          "5",
+          1
+        ],
+        [
+          "13",
+          1
+        ],
+        [
+          "853",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "572161",
+      "method": "pratt_primitive_root",
+      "g": 11,
+      "p_minus_1_factors": [
+        [
+          "2",
+          8
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "5",
+          1
+        ],
+        [
+          "149",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "576791",
+      "method": "pratt_primitive_root",
+      "g": 13,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "5",
+          1
+        ],
+        [
+          "57679",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "692287",
+      "method": "pratt_primitive_root",
+      "g": 3,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "7",
+          1
+        ],
+        [
+          "53",
+          1
+        ],
+        [
+          "311",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "797161",
+      "method": "pratt_primitive_root",
+      "g": 17,
+      "p_minus_1_factors": [
+        [
+          "2",
+          3
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "5",
+          1
+        ],
+        [
+          "7",
+          1
+        ],
+        [
+          "13",
+          1
+        ],
+        [
+          "73",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "2035349",
+      "method": "pratt_primitive_root",
+      "g": 2,
+      "p_minus_1_factors": [
+        [
+          "2",
+          2
+        ],
+        [
+          "7",
+          1
+        ],
+        [
+          "157",
+          1
+        ],
+        [
+          "463",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "2769149",
+      "method": "pratt_primitive_root",
+      "g": 2,
+      "p_minus_1_factors": [
+        [
+          "2",
+          2
+        ],
+        [
+          "692287",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "91373567",
+      "method": "pratt_primitive_root",
+      "g": 5,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "103",
+          1
+        ],
+        [
+          "443561",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "1176672733",
+      "method": "pratt_primitive_root",
+      "g": 2,
+      "p_minus_1_factors": [
+        [
+          "2",
+          2
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "23",
+          1
+        ],
+        [
+          "277",
+          1
+        ],
+        [
+          "15391",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "1944734959",
+      "method": "pratt_primitive_root",
+      "g": 13,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "3",
+          2
+        ],
+        [
+          "17",
+          1
+        ],
+        [
+          "97",
+          1
+        ],
+        [
+          "65519",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "2767631689",
+      "method": "pratt_primitive_root",
+      "g": 29,
+      "p_minus_1_factors": [
+        [
+          "2",
+          3
+        ],
+        [
+          "3",
+          2
+        ],
+        [
+          "17",
+          1
+        ],
+        [
+          "71",
+          1
+        ],
+        [
+          "31847",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "3705121363",
+      "method": "pratt_primitive_root",
+      "g": 2,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "223",
+          1
+        ],
+        [
+          "2769149",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "3789992812027",
+      "method": "pratt_primitive_root",
+      "g": 2,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "31",
+          1
+        ],
+        [
+          "223",
+          1
+        ],
+        [
+          "91373567",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "4534166740403",
+      "method": "pratt_primitive_root",
+      "g": 2,
+      "p_minus_1_factors": [
+        [
+          "2",
+          1
+        ],
+        [
+          "13",
+          1
+        ],
+        [
+          "19",
+          1
+        ],
+        [
+          "15913",
+          1
+        ],
+        [
+          "576791",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "7579985624053",
+      "method": "pratt_primitive_root",
+      "g": 2,
+      "p_minus_1_factors": [
+        [
+          "2",
+          2
+        ],
+        [
+          "3",
+          1
+        ],
+        [
+          "31",
+          1
+        ],
+        [
+          "223",
+          1
+        ],
+        [
+          "91373567",
+          1
+        ]
+      ]
+    },
+    {
+      "p": "6106505825833677713",
+      "method": "pratt_primitive_root",
+      "g": 3,
+      "p_minus_1_factors": [
+        [
+          "2",
+          4
+        ],
+        [
+          "7",
+          3
+        ],
+        [
+          "572161",
+          1
+        ],
+        [
+          "1944734959",
+          1
+        ]
+      ]
+    }
+  ],
+  "BaselineDomainChecks": [
+    {
+      "Key": [
+        31,
+        268
+      ],
+      "Pivot": "3229",
+      "ExpectedCount": 76,
+      "ExpectedTail": 458
+    },
+    {
+      "Key": [
+        19,
+        222
+      ],
+      "Pivot": "7579985624053",
+      "ExpectedCount": 53,
+      "ExpectedTail": 144
+    },
+    {
+      "Key": [
+        7,
+        48
+      ],
+      "Pivot": "6106505825833677713",
+      "ExpectedCount": 31,
+      "ExpectedTail": 125
+    },
+    {
+      "Key": [
+        3,
+        12
+      ],
+      "Pivot": "797161",
+      "ExpectedCount": 100,
+      "ExpectedTail": 406
+    },
+    {
+      "Key": [
+        19,
+        276
+      ],
+      "Pivot": "1176672733",
+      "ExpectedCount": 70,
+      "ExpectedTail": 188
+    },
+    {
+      "Key": [
+        3,
+        6
+      ],
+      "Pivot": "1093",
+      "ExpectedCount": 182,
+      "ExpectedTail": 789
+    },
+    {
+      "Key": [
+        7,
+        18
+      ],
+      "Pivot": "4534166740403",
+      "ExpectedCount": 44,
+      "ExpectedTail": 189
+    },
+    {
+      "Key": [
+        7,
+        16
+      ],
+      "Pivot": "2767631689",
+      "ExpectedCount": 91,
+      "ExpectedTail": 253
+    }
+  ],
+  "Proofs": [
+    {
+      "ProofID": "H_h85",
+      "Task": "H",
+      "Key": [
+        7,
+        16
+      ],
+      "ShardID": "P7_I00006",
+      "CanonicalBans": [
+        19
+      ],
+      "ExactPrefix": [
+        [
+          7,
+          16
+        ],
+        [
+          "2767631689",
+          85
+        ]
+      ],
+      "Status": "CLOSED",
+      "Method": "single_target_pricing_fixed_euler",
+      "Parameters": {
+        "target": "2767631689",
+        "weight": 2,
+        "max_z": 84,
+        "primitive_root": 29
+      }
+    },
+    {
+      "ProofID": "H_h108",
+      "Task": "H",
+      "Key": [
+        7,
+        16
+      ],
+      "ShardID": "P7_I00006",
+      "CanonicalBans": [
+        19
+      ],
+      "ExactPrefix": [
+        [
+          7,
+          16
+        ],
+        [
+          "2767631689",
+          108
+        ]
+      ],
+      "Status": "CLOSED",
+      "Method": "single_target_pricing_open_euler_ss_and_inner_div",
+      "Parameters": {
+        "target": "2767631689",
+        "weight": 2,
+        "max_z": 107,
+        "primitive_root": 29,
+        "small_coprime_block": "14009"
+      }
+    },
+    {
+      "ProofID": "H_h102",
+      "Task": "H",
+      "Key": [
+        7,
+        16
+      ],
+      "ShardID": "P7_I00006",
+      "CanonicalBans": [
+        19
+      ],
+      "ExactPrefix": [
+        [
+          7,
+          16
+        ],
+        [
+          "2767631689",
+          102
+        ]
+      ],
+      "Status": "CLOSED",
+      "Method": "single_target_pricing_open_euler_ss_and_inner_div",
+      "Parameters": {
+        "target": "2767631689",
+        "weight": 2,
+        "max_z": 101,
+        "primitive_root": 29,
+        "small_coprime_block": "14009"
+      }
+    },
+    {
+      "ProofID": "G_h66",
+      "Task": "G",
+      "Key": [
+        7,
+        18
+      ],
+      "ShardID": "P7_I00007",
+      "CanonicalBans": [
+        19
+      ],
+      "ExactPrefix": [
+        [
+          7,
+          18
+        ],
+        [
+          "4534166740403",
+          66
+        ]
+      ],
+      "Status": "CLOSED",
+      "Method": "single_target_pricing_open_euler_qr_outer",
+      "Parameters": {
+        "target": "4534166740403",
+        "weight": 12,
+        "max_z": 65,
+        "primitive_root": 2,
+        "small_coprime_block": "419"
+      }
+    },
+    {
+      "ProofID": "B_f1_g58",
+      "Task": "B",
+      "Key": [
+        19,
+        222
+      ],
+      "ShardID": "P19_I00046",
+      "CanonicalBans": [],
+      "ExactPrefix": [
+        [
+          19,
+          222
+        ],
+        [
+          "7579985624053",
+          1
+        ],
+        [
+          "3705121363",
+          58
+        ]
+      ],
+      "Status": "CLOSED",
+      "Method": "rational_joint_pricing_fixed_euler",
+      "Parameters": {
+        "targets": [
+          "19",
+          "3705121363"
+        ],
+        "weight_num": 19,
+        "weight_den": 10,
+        "primitive_roots": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "ProofID": "B_f1_g16_j42",
+      "Task": "B",
+      "Key": [
+        19,
+        222
+      ],
+      "ShardID": "P19_I00046",
+      "CanonicalBans": [],
+      "ExactPrefix": [
+        [
+          19,
+          222
+        ],
+        [
+          "7579985624053",
+          1
+        ],
+        [
+          "3705121363",
+          16
+        ],
+        [
+          "3789992812027",
+          42
+        ]
+      ],
+      "Status": "CLOSED",
+      "Method": "rational_joint_pricing_fixed_euler",
+      "Parameters": {
+        "targets": [
+          "19",
+          "3789992812027"
+        ],
+        "weight_num": 19,
+        "weight_den": 10,
+        "primitive_roots": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "ProofID": "B_f1_g16_j40",
+      "Task": "B",
+      "Key": [
+        19,
+        222
+      ],
+      "ShardID": "P19_I00046",
+      "CanonicalBans": [],
+      "ExactPrefix": [
+        [
+          19,
+          222
+        ],
+        [
+          "7579985624053",
+          1
+        ],
+        [
+          "3705121363",
+          16
+        ],
+        [
+          "3789992812027",
+          40
+        ]
+      ],
+      "Status": "CLOSED",
+      "Method": "rational_joint_pricing_fixed_euler",
+      "Parameters": {
+        "targets": [
+          "19",
+          "3789992812027"
+        ],
+        "weight_num": 19,
+        "weight_den": 10,
+        "primitive_roots": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "ProofID": "E_t1_split_1109",
+      "Task": "E",
+      "Key": [
+        19,
+        276
+      ],
+      "ShardID": "P19_I00057",
+      "CanonicalBans": [],
+      "ExactPrefix": [
+        [
+          19,
+          276
+        ],
+        [
+          "1176672733",
+          1
+        ]
+      ],
+      "Status": "PARTIAL_SPLIT",
+      "Method": "split_and_coprime_dual_pricing_fixed_euler",
+      "Parameters": {
+        "split_pivot": "1109",
+        "expected_live_count": 138,
+        "expected_tail": 555,
+        "closed_min_h": 6,
+        "open_children": [
+          2,
+          4
+        ],
+        "target1": "19",
+        "weight1": 2,
+        "target2": "1109",
+        "weight2": 100,
+        "primitive_root_1109": 2
+      }
+    }
+  ],
+  "OpenTasks": [
+    {
+      "Task": "A1",
+      "Key": [
+        31,
+        268
+      ],
+      "ExactPrefix": [
+        [
+          31,
+          268
+        ],
+        [
+          "3229",
+          102
+        ]
+      ],
+      "Status": "OPEN"
+    },
+    {
+      "Task": "B_rem",
+      "Key": [
+        19,
+        222
+      ],
+      "Status": "OPEN",
+      "Note": "Remaining 17 second-level prefixes (with f=1,g=16 losing j=40,42; f=1,g=58 closed)"
+    },
+    {
+      "Task": "C",
+      "Key": [
+        7,
+        48
+      ],
+      "Status": "OPEN",
+      "RemainingFirstValues": [
+        2,
+        4,
+        8,
+        10
+      ]
+    },
+    {
+      "Task": "D",
+      "Key": [
+        3,
+        12
+      ],
+      "Status": "OPEN",
+      "RemainingPrefixes": [
+        "D1: 797161^1,398581^102",
+        "D2: 797161^1,398581^108",
+        "D3: 797161^96"
+      ]
+    },
+    {
+      "Task": "E_rem",
+      "Key": [
+        19,
+        276
+      ],
+      "Status": "OPEN",
+      "RemainingFirstValues": [
+        2,
+        8,
+        16,
+        18,
+        28
+      ],
+      "PartialFirstValue1Open1109": [
+        2,
+        4
+      ]
+    },
+    {
+      "Task": "F",
+      "Key": [
+        3,
+        6
+      ],
+      "Status": "OPEN",
+      "RemainingPrefixes": [
+        "F1a/b/c",
+        "F2",
+        "F3"
+      ]
+    },
+    {
+      "Task": "G_rem",
+      "Key": [
+        7,
+        18
+      ],
+      "Status": "OPEN",
+      "RemainingFirstValues": [
+        2,
+        4,
+        6,
+        8,
+        12,
+        22,
+        28,
+        30,
+        36,
+        40,
+        42,
+        46,
+        58
+      ]
+    },
+    {
+      "Task": "H_rem",
+      "Key": [
+        7,
+        16
+      ],
+      "Status": "OPEN",
+      "RemainingFirstValues": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14,
+        16,
+        18,
+        20,
+        21,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        33,
+        34,
+        40,
+        42,
+        46,
+        48,
+        49,
+        50,
+        52,
+        54,
+        56,
+        58,
+        60,
+        61,
+        66,
+        70,
+        72,
+        78,
+        80,
+        82,
+        88,
+        96,
+        100
+      ]
+    }
+  ]
+}
