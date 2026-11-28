@@ -113,6 +113,11 @@ def accept(path, only=None):
     def visit(row, n):
         if n is None:
             return False
+        if n['type']=='price2_316':
+            assert e==2 and set(n)=={'type'}
+            from Check31Price316 import check
+            assert check(row)
+            return True
         if n['type'] in ('price6','joint6'):
             # Bound only the corresponding pinned exact scope; component primes
             # are inherited from the fully verified mandatory split chain.

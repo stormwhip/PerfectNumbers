@@ -94,7 +94,8 @@
     "@ThirtyOne/Certificate268Union73.json.gz",
     "@ThirtyOne/Certificate2More.json.gz",
     "@ThirtyOne/Certificate2Fiber268.json.gz",
-    "@ThirtyOne/Certificate2Fiber276.json.gz"
+    "@ThirtyOne/Certificate2Fiber276.json.gz",
+    "@ThirtyOne/Certificate2Followup131.json.gz"
   ],
   "forest31-independent": [
     "Audit/Check31Forest.py",
@@ -105,7 +106,8 @@
     "@ThirtyOne/Certificate6More.json.gz",
     "@ThirtyOne/Certificate2Extended.json.gz",
     "@ThirtyOne/Certificate268Union73.json.gz",
-    "@ThirtyOne/Certificate2More.json.gz"
+    "@ThirtyOne/Certificate2More.json.gz",
+    "@ThirtyOne/Certificate2Followup131.json.gz"
   ],
   "all-hensel-lifts": [
     "ElevenThirteen/AllLifts.py"
@@ -315,5 +317,11 @@
   ],
   "full48-first2-independent-scopes": [
     "Audit/Check48StrongScopes.py"
+  ],
+  "root19-three-more222": [
+    "Nineteen/VerifyMore222.py"
+  ],
+  "root19-three-more222-independent": [
+    "Audit/CheckMore222.py"
   ]
 }

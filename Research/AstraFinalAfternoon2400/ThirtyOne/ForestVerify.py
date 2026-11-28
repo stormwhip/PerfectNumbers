@@ -36,6 +36,16 @@ def verify(filename, *, details=False):
             assert e==6 and set(n)=={'type'}
             from PriceLeaf6 import allowed,joint
             return (allowed if kind=='price6' else joint)(row)
+        if kind=='price2_316':
+            assert e==2 and set(n)=={'type'}
+            from PriceTwo316 import check
+            assert check(row)['excluded']
+            return True
+        if kind=='price2_400':
+            assert e==2 and row==((31,2),(331,400)) and set(n)=={'type'}
+            from PricedTwo import check
+            assert not check(400)['residual']
+            return True
         if kind=='forest':
             assert set(n)=={'type','roots','owners','head'}
             s=C.State(list(row));k,o,h=n['roots'],n['owners'],n['head']

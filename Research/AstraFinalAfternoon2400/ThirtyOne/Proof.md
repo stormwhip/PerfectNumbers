@@ -8,7 +8,7 @@
 
 对已证明为素数且强制的 `t|D` 令 `v=v_t(D)>0`，从 `h=v` 开始逐个测试，直到第一次 `(XD/t^v)t^h>B`，此后严格单调，因此覆盖尾项，绝不舍弃等号。测试其余 `h` 的 Euler 兼容性、精确前缀的禁止素数、在 `S` 的流入上界、丰度和 `XD` 大小。非素数的标签不进入证明。此程序在**每个内部裂点**重做，要求数据中的子键集合与重建集合完全相同；`null` 必为开放。根首域为 `(31,268): t=3229,v=1,76 个合法指数，raw tail 458`；`(31,2): t=331,v=1,143 个合法指数，raw tail 952`；`(31,6): t=917087137,v=1,53 个合法指数，raw tail 267`。`σ(31²)=3·331`，`σ(31⁶)=917087137`。冻结 [Compose.py](../../Nov25/Compose/Compose.py) 验证所有森林根和边的关系、唯一所有者与 ECPP 标签；冻结 [PivotCheck.py](../../Session20261126/PivotCheck.py) 提供第二套独立节点递推，每个标成森林的叶都要求两个严格下界均大于 `10^2400`。森林下界只用真素数与精确整除，删除同一计价池的重叠；匿名块作为乘数，多个 sigma 的流入相乘并非假设互素。尾的通用合法性见冻结 [TreeCheck.py](../../Session20261126/TreeCheck.py)；本地 [ForestVerify.py](ForestVerify.py) 不导入发现/封包代码，显式输出已闭和开放首纤维。仅可把子树全部证明的 h 计成完整首纤维。
 
-`Scout.py`、`Seal.py` 是可选的发现与证书封装，不能替代验收；本地因子库、GMP、PARI 和公开网站都不是复验依赖。`ForestVerify.py` 从包读取 ECPP 链，以冻结整数程序重验。
+发现和封包脚本不是验收入口；本地因子库、GMP、PARI 和公开网站都不是复验依赖。`ForestVerify.py` 从包读取 ECPP 链，以冻结整数程序重验。
 
 ## 2. PR #11 失败模式：高权不得只枚举最小余数
 
@@ -35,7 +35,7 @@
 
 ## 4. (31,6) 的完整证明
 
-首 `72` 的两条特殊叶分别是[固定 Euler 单目标](PriceLeaf6.md)与[未固定 Euler 联合 3/2 价](Joint6.md)。后者精确检查所有普通/脱离 Euler 原子的阶配对，包括共同的非三次阶，并完整覆盖 72×16 个 q+1 配比；它不要求分解 454 位合数。其余叶仍经过双整数森林递推。[Join6.py](Join6.py) 固定两个来源包 SHA-256，把 `h=72` 的子树放入 `52/53` 包的唯一空槽，并将子树唯一的未解精确前缀替换为上述联合价叶，素性链按精确标签求并；不把历史部分包计数相加。完成候选 [Certificate6CompleteJoined.json.gz](Certificate6CompleteJoined.json.gz) 有 47 个嵌套裂点、1839 个森林叶、2 个价格叶及 5282 个 ECPP 标签。Windows 隔离 CPython 3.11.9 全包冷重放退出 0，`--require-complete` 返回 `closed=53, open=[]`。SHA-256 `450a80c01c74b098fb858f340c17f4b3be674da4d6cbf8894080e0b5099f3130`；该数据仅关闭 `(31,6)` 所在单键片 `P31_I00002`，不证明 `(31,2)` 或其他 31 指数。
+首 `72` 的两条特殊叶分别是[固定 Euler 单目标](PriceLeaf6.md)与[未固定 Euler 联合 3/2 价](Joint6.md)。后者精确检查所有普通/脱离 Euler 原子的阶配对，包括共同的非三次阶，并完整覆盖 72×16 个 q+1 配比；它不要求分解 454 位合数。其余叶仍经过双整数森林递推。[Join6.py](Join6.py) 固定两个来源包 SHA-256，把 `h=72` 的子树放入 `52/53` 包的唯一空槽，并将子树唯一的未解精确前缀替换为上述联合价叶，素性链按精确标签求并；不把历史部分包计数相加。完成候选 [Certificate6CompleteJoined.json.gz](Certificate6CompleteJoined.json.gz) 有 47 个嵌套裂点、1839 个森林叶、2 个价格叶及 5282 个 ECPP 标签。Windows 隔离 CPython 3.11.9 与 WSL CPython 3.14.4 全包冷重放均退出 0，`--require-complete` 返回 `closed=53, open=[]`；另一独立重建入口也复验同域与相同计数。SHA-256 `450a80c01c74b098fb858f340c17f4b3be674da4d6cbf8894080e0b5099f3130`；该数据仅关闭 `(31,6)` 所在单键片 `P31_I00002`，不证明 `(31,2)` 或其他 31 指数。
 
 ## 5. 复验调用
 
@@ -51,6 +51,8 @@ python -I -S -B -X int_max_str_digits=0 "$d/RoughBounds.py"
 python -I -S -B -X int_max_str_digits=0 "$d/EulerCuts.py"
 python -I -S -B -X int_max_str_digits=0 "$d/AnonymousEuler.py"
 python -I -S -B -X int_max_str_digits=0 "$d/PriceLeaf6.py"
-python -I -S -B -X int_max_str_digits=0 "$d/ForestVerify.py" "$d/Certificate268.json.gz" "$d/Certificate2Extended.json.gz"
+python -I -S -B -X int_max_str_digits=0 "$d/NegativeTests.py"
+python -I -S -B -X int_max_str_digits=0 "$d/TestsJoint6.py"
+python -I -S -B -X int_max_str_digits=0 "$d/ForestVerify.py" "$d/Certificate268Union73.json.gz" "$d/Certificate2More.json.gz"
 python -I -S -B -X int_max_str_digits=0 "$d/ForestVerify.py" --require-complete "$d/Certificate6CompleteJoined.json.gz"
 ```

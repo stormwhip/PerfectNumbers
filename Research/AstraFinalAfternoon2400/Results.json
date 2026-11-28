@@ -15245,6 +15245,298 @@
       "Certificate": "Propagation/CertificateFull48.json",
       "Verifier": "Propagation/Full48.py",
       "IndependentReview": "Audit/Root48FullUnionReview.md"
+    },
+    {
+      "Id": "31-2-12-followup",
+      "Key": [
+        31,
+        2
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            331,
+            12
+          ]
+        ]
+      },
+      "Proof": "ThirtyOne/RootTwoFollowup.md",
+      "Certificate": "ThirtyOne/Certificate2Followup131.json.gz",
+      "Verifier": "ThirtyOne/ForestVerify.py",
+      "IndependentReview": "Audit/Root31AdditionalReceipt.md"
+    },
+    {
+      "Id": "31-2-24-followup",
+      "Key": [
+        31,
+        2
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            331,
+            24
+          ]
+        ]
+      },
+      "Proof": "ThirtyOne/RootTwoFollowup.md",
+      "Certificate": "ThirtyOne/Certificate2Followup131.json.gz",
+      "Verifier": "ThirtyOne/ForestVerify.py",
+      "IndependentReview": "Audit/Root31AdditionalReceipt.md"
+    },
+    {
+      "Id": "31-2-40-followup",
+      "Key": [
+        31,
+        2
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            331,
+            40
+          ]
+        ]
+      },
+      "Proof": "ThirtyOne/RootTwoFollowup.md",
+      "Certificate": "ThirtyOne/Certificate2Followup131.json.gz",
+      "Verifier": "ThirtyOne/ForestVerify.py",
+      "IndependentReview": "Audit/Root31AdditionalReceipt.md"
+    },
+    {
+      "Id": "31-2-48-followup",
+      "Key": [
+        31,
+        2
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            331,
+            48
+          ]
+        ]
+      },
+      "Proof": "ThirtyOne/RootTwoFollowup.md",
+      "Certificate": "ThirtyOne/Certificate2Followup131.json.gz",
+      "Verifier": "ThirtyOne/ForestVerify.py",
+      "IndependentReview": "Audit/Root31AdditionalReceipt.md"
+    },
+    {
+      "Id": "31-2-156-followup",
+      "Key": [
+        31,
+        2
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            331,
+            156
+          ]
+        ]
+      },
+      "Proof": "ThirtyOne/RootTwoFollowup.md",
+      "Certificate": "ThirtyOne/Certificate2Followup131.json.gz",
+      "Verifier": "ThirtyOne/ForestVerify.py",
+      "IndependentReview": "Audit/Root31AdditionalReceipt.md"
+    },
+    {
+      "Id": "31-2-162-followup",
+      "Key": [
+        31,
+        2
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            331,
+            162
+          ]
+        ]
+      },
+      "Proof": "ThirtyOne/RootTwoFollowup.md",
+      "Certificate": "ThirtyOne/Certificate2Followup131.json.gz",
+      "Verifier": "ThirtyOne/ForestVerify.py",
+      "IndependentReview": "Audit/Root31AdditionalReceipt.md"
+    },
+    {
+      "Id": "31-2-196-followup",
+      "Key": [
+        31,
+        2
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            331,
+            196
+          ]
+        ]
+      },
+      "Proof": "ThirtyOne/RootTwoFollowup.md",
+      "Certificate": "ThirtyOne/Certificate2Followup131.json.gz",
+      "Verifier": "ThirtyOne/ForestVerify.py",
+      "IndependentReview": "Audit/Root31AdditionalReceipt.md"
+    },
+    {
+      "Id": "31-2-226-followup",
+      "Key": [
+        31,
+        2
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            331,
+            226
+          ]
+        ]
+      },
+      "Proof": "ThirtyOne/RootTwoFollowup.md",
+      "Certificate": "ThirtyOne/Certificate2Followup131.json.gz",
+      "Verifier": "ThirtyOne/ForestVerify.py",
+      "IndependentReview": "Audit/Root31AdditionalReceipt.md"
+    },
+    {
+      "Id": "31-2-316-followup",
+      "Key": [
+        31,
+        2
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            331,
+            316
+          ]
+        ]
+      },
+      "Proof": "ThirtyOne/RootTwoFollowup.md",
+      "Certificate": "ThirtyOne/Certificate2Followup131.json.gz",
+      "Verifier": "ThirtyOne/ForestVerify.py",
+      "IndependentReview": "Audit/Root31AdditionalReceipt.md"
+    },
+    {
+      "Id": "31-2-382-followup",
+      "Key": [
+        31,
+        2
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            331,
+            382
+          ]
+        ]
+      },
+      "Proof": "ThirtyOne/RootTwoFollowup.md",
+      "Certificate": "ThirtyOne/Certificate2Followup131.json.gz",
+      "Verifier": "ThirtyOne/ForestVerify.py",
+      "IndependentReview": "Audit/Root31AdditionalReceipt.md"
+    },
+    {
+      "Id": "31-2-388-followup",
+      "Key": [
+        31,
+        2
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            331,
+            388
+          ]
+        ]
+      },
+      "Proof": "ThirtyOne/RootTwoFollowup.md",
+      "Certificate": "ThirtyOne/Certificate2Followup131.json.gz",
+      "Verifier": "ThirtyOne/ForestVerify.py",
+      "IndependentReview": "Audit/Root31AdditionalReceipt.md"
+    },
+    {
+      "Id": "19-222-1-40-complete-second",
+      "Key": [
+        19,
+        222
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            7579985624053,
+            1
+          ],
+          [
+            3705121363,
+            40
+          ]
+        ]
+      },
+      "Proof": "Nineteen/More222.md",
+      "Certificate": "Nineteen/More222.json.gz",
+      "Verifier": "Nineteen/VerifyMore222.py",
+      "IndependentReview": "Audit/Root222MoreReceipt.md"
+    },
+    {
+      "Id": "19-222-18-42-complete-second",
+      "Key": [
+        19,
+        222
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            7579985624053,
+            18
+          ],
+          [
+            3705121363,
+            42
+          ]
+        ]
+      },
+      "Proof": "Nineteen/More222.md",
+      "Certificate": "Nineteen/More222.json.gz",
+      "Verifier": "Nineteen/VerifyMore222.py",
+      "IndependentReview": "Audit/Root222MoreReceipt.md"
+    },
+    {
+      "Id": "19-222-18-46-complete-second",
+      "Key": [
+        19,
+        222
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            7579985624053,
+            18
+          ],
+          [
+            3705121363,
+            46
+          ]
+        ]
+      },
+      "Proof": "Nineteen/More222.md",
+      "Certificate": "Nineteen/More222.json.gz",
+      "Verifier": "Nineteen/VerifyMore222.py",
+      "IndependentReview": "Audit/Root222MoreReceipt.md"
     }
   ]
 }
