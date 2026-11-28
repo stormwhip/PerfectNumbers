@@ -1,0 +1,39 @@
+{
+  "SchemaVersion": "1.0",
+  "BaselineCommit": "db71cc42ad2a62e3e362b8874757c1cff0b7772f",
+  "Status": "VERIFIED_CONDITIONAL",
+  "GlobalStatus": "INCOMPLETE_FRONTIER",
+  "Key": [19, 276],
+  "ShardID": "P19_I00057",
+  "ProofReference": "Proof.md",
+  "Verifier": "Verify.py",
+  "ClosedFiber": {
+    "ExactPrefix": [[19, 276], [1176672733, 1]],
+    "SplitPivot": 1109,
+    "LiveChildrenClosed": 138,
+    "StrictTail": 555,
+    "OpenChildren": []
+  },
+  "NewlyClosedRelativeToAcceptedOverlay": {
+    "ExactPrefix": [[19, 276], [1176672733, 1]],
+    "Pivot": 1109,
+    "Excluded": [2, 4],
+    "Count": 2
+  },
+  "PreviouslyAcceptedLocalExclusions": 136,
+  "NewCompleteKeys": 0,
+  "NewClosedShards": 0,
+  "CurrentGlobalProjection": {
+    "TotalShards": 3072,
+    "ClosedShards": 3029,
+    "OpenShards": 43,
+    "DistinctOpenKeys": 53,
+    "SingletonOpenShards": 35
+  },
+  "RemainingWithinKey": {
+    "FirstPivot": 1176672733,
+    "FirstValues": [2, 8, 16, 18, 28]
+  },
+  "ArithmeticChecks": 11952,
+  "NegativeTestsPassed": 5
+}
