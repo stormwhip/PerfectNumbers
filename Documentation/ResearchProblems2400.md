@@ -45,3 +45,9 @@
 历史 $(19,58)$ 的 C10 子域已由[完整键回执](../Research/FinalNight2400/Audit/TenReceipt.md)覆盖，不再列作待证问题。
 
 **11 月 28 日接续域。** 最新接受域见[检查点](../Research/AstraFinalAfternoon2400/Checkpoint.md)。$(19,276)$ 首值 1、18 已由 PR #12 的新证明排除，仍余 2、8、16、28。PR #11 的[撤回候选](../Research/KimiFrontier/November28/Retraction.md)不作为依据。$(19,222)$ 剩余五个第三值及其他最新缺口见[下一步计划](NextPlan2400.md)。
+
+## 问题 6　联合守恒与共享来源
+
+**已知。** PR #13、#14 给出单位群同态、逐行丰度势、合并模数回边与共享乘子三次界，详见[第二轮理论](../Research/JointConservation2400/ResearchReport.md)及[独立审阅](../Research/JointConservation2400/MergeReview.md)。
+
+**求证。** 对每个困难前缀构造覆盖全部可选素幂和尾部的逐行联合势，严格推出尺寸超支或守恒矛盾。根 31 的最后 102 前缀须保留低坐标内部及外部 Euler；根 19 的五前缀须覆盖剩余 19 供给；根三的平方余量需排除整个相容参数域。
