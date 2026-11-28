@@ -4,4 +4,5 @@
 - 第一批新增三个精确条件排除。(19,222) 的两个深窗重建了已占用 Euler 位置及目标赋值恰为一，原验证器及独立计算均通过；(19,276) 的 `1176672733^1,1109^4` 重建了完整有效阶、19 的权 2 亏格、所有 1109 合法供应底数与九个终端三元组，两套计算均通过。末端检验严格大于界；`1109^2` 未排除。见[独立回执及命令](Audit/Root19FirstReceipts.md)。
 - 以断言开启的 CPython 运行；数学发现用的外部因子线索、概率素性和临时程序不作证明输入。
 - 单独运行 `python -I -S -B Research/AstraFinalAfternoon2400/VerifyLedger.py`，只检查注册和投影，不认证数学结论。条件计数只包括经审阅登记的条目，父子域不得作为两个独立进展重复计数。
+- 后续独立核验涵盖[根七精确森林](Audit/SevenForestFirst.md)、[根七线性供给窗口](Audit/Root7x808Receipt.md)、[根十九深窗森林](Audit/Forest222Receipt.md)、[根三十一分支及算术](Audit/Root31AdditionalReceipt.md)、[根十一与十三 212 个首纤维](Audit/Root11and13ForestReceipt.md)，以及[根七第 22 个次级赋值整纤维](Audit/Root7x438x22Receipt.md)。根十一/十三包在扩展 Pocklington 查找表后发现签入前的重放会绕过一个已嵌 ECPP 证书；调整优先认证嵌入证书，再退回 Pocklington，未改证书或数学域。主、独立核最终均通过。
 - 当前没有新增完整精确键或规范闭片；状态保持 `INCOMPLETE_FRONTIER`。未完成全历史冷重放或 72 小时基准验收。
