@@ -127,5 +127,17 @@
   ],
   "root11-price48-independent": [
     "Audit/Check11x48Price.py"
+  ],
+  "first19x276x18": [
+    "Nineteen/VerifyFirst18.py"
+  ],
+  "first19x276x18-independent": [
+    "Audit/CheckFirst19x276x18.py"
+  ],
+  "forest222-stage3": [
+    "Nineteen/VerifyForest222Stage3.py"
+  ],
+  "forest222-stage3-independent": [
+    "Audit/Check222Stage3.py"
   ]
 }
