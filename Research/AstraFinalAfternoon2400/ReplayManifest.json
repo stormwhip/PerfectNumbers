@@ -34,7 +34,16 @@
     "@Seven/Forest12b.json.gz",
     "@Seven/Forest12c.json.gz",
     "@Seven/Forest12d.json.gz",
-    "@Seven/Forest12e.json.gz"
+    "@Seven/Forest12e.json.gz",
+    "@Seven/Forest12f.json.gz",
+    "@Seven/Forest12g.json.gz",
+    "@Seven/Forest12h.json.gz",
+    "@Seven/Forest12i.json.gz",
+    "@Seven/Forest12j.json.gz",
+    "@Seven/Forest12k.json.gz",
+    "@Seven/Forest12l.json.gz",
+    "@Seven/Forest12m.json.gz",
+    "@Seven/Forest12n.json.gz"
   ],
   "forest7-independent": [
     "Audit/CheckSevenForestDomains.py"
@@ -252,5 +261,23 @@
   ],
   "root31-x2-first400-independent": [
     "Audit/Check31Price400.py"
+  ],
+  "q42-wave2-independent": [
+    "Audit/CheckQ42Wave2.py"
+  ],
+  "q42-wave2-masks": [
+    "Seven/VerifyQ42Masks.py",
+    "@Seven/Forest12Mask.json.gz",
+    "@Seven/Forest12Odd.json.gz",
+    "@Seven/Forest12MaskFour.json.gz"
+  ],
+  "q42-wave2-reserve": [
+    "Seven/VerifyQ42Reserve.py"
+  ],
+  "root808-squarefree": [
+    "Root808/VerifySquarefree.py"
+  ],
+  "root808-squarefree-independent": [
+    "Audit/Check808Squarefree.py"
   ]
 }
