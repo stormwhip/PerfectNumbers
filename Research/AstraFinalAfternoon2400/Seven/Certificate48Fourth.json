@@ -1,0 +1,33 @@
+{
+  "CanonicalKey": [
+    7,
+    48
+  ],
+  "AdditionalExactPrefix": [
+    [
+      6106505825833677713,
+      4
+    ]
+  ],
+  "MandatoryAnchor": 5913168485260377611579965807967983090512568398832018674784831,
+  "AnchorDirectLive": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18
+  ],
+  "AnchorStrictRawTail": 37,
+  "AbundanceTerminal": [
+    2
+  ],
+  "ForestPackets": [
+    "Forest48a.json.gz",
+    "Forest48b.json.gz"
+  ],
+  "IndependentReceipt": "../Audit/NextBatchReceipt.md"
+}

@@ -25,8 +25,12 @@ The immutable superset [Certificate268.json.gz](../ThirtyOne/Certificate268.json
 180,184,190,198,202,204,210,214,216,220,228,232,234,238
 ```
 
+The immutable [Certificate2Extended.json.gz](../ThirtyOne/Certificate2Extended.json.gz), SHA-256 `2eecfec2b31852de23f9b31f093fa680a029cc97d5dd1ebd0053332c44a3c1f5`, independently passed (exit 0). Same exact 143/952 initial domain/tail, 114 exact firsts accepted, 29 open; 12 nested splits, 239 strict leaves, 2688 ECPP subjects. Minimum floor 2400 was strictly compared at every leaf. This supersedes the 56-first packet (58 additional firsts, not another 114 to add).
+
 ## `(31,6)`, pivot 917087137
 
 [Certificate6.json.gz](../ThirtyOne/Certificate6.json.gz), SHA-256 `49c8cc39aaaa10d41723a7f78ee73537ca292962f9a1b912f9250d87efbcc1a3`. Exit 0. All 53 initial live exact values recovered, strict tail 267. Independent PASS 57 strict forests, one nested split (prime `30675589854920415267716138411985841559029`, exact children `[1,2,4,6,8,10,12,13,14,16,18,20,21]`, strict tail 43), 1018 ECPP chains. Minimum floor 2400, all comparisons strict. **Accepted 45/53**, leaving exactly `{2,36,52,58,72,78,108,120}`. No transfer from `(31,268)` or other previously certified keys, and no shard projection.
 
 The immutable superset [Certificate6More.json.gz](../ThirtyOne/Certificate6More.json.gz), SHA-256 `bc6344ec0340d571541b0748891601be92be613c609330d4be8986397ec3942f`, also passed the independent same command (exit 0). It adds 2, 58 and 78, for **48/53** accepted, leaving `{36,52,72,108,120}`. Strict raw tail 267; 148 strict leaves, five exact nested splits, and 1660 ECPP records. This supersedes the 45-fiber result; use only the new total or its disjoint increment.
+
+[Certificate6High.json.gz](../ThirtyOne/Certificate6High.json.gz), SHA-256 `2befb24113ee03e72e5a3154aea2c8ffbbcadb3c2a80df9166fdf9731aceb8fe`, passed the independent checker (exit 0) with six strict forests at 108,110,112,114,116,120, 14 ECPP subjects (including 953/980 decimal-digit labels), and minimum floor 2620. Of these six, only 108 and 120 are disjoint from More. The accepted union is now 50/53, with `{36,52,72}` open at this checkpoint.

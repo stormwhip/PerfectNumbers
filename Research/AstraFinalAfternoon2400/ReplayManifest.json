@@ -71,7 +71,8 @@
     "@ThirtyOne/Certificate6.json.gz",
     "@ThirtyOne/Certificate268.json.gz",
     "@ThirtyOne/Certificate2.json.gz",
-    "@ThirtyOne/Certificate6More.json.gz"
+    "@ThirtyOne/Certificate6More.json.gz",
+    "@ThirtyOne/Certificate2Extended.json.gz"
   ],
   "forest31-independent": [
     "Audit/Check31Forest.py",
@@ -79,7 +80,8 @@
     "@ThirtyOne/Certificate6.json.gz",
     "@ThirtyOne/Certificate268.json.gz",
     "@ThirtyOne/Certificate2.json.gz",
-    "@ThirtyOne/Certificate6More.json.gz"
+    "@ThirtyOne/Certificate6More.json.gz",
+    "@ThirtyOne/Certificate2Extended.json.gz"
   ],
   "all-hensel-lifts": [
     "ElevenThirteen/AllLifts.py"
@@ -98,5 +100,32 @@
   ],
   "reserved438first12-independent": [
     "Audit/Check438TwelveReserved.py"
+  ],
+  "full48fourth": [
+    "Seven/Full48Fourth.py"
+  ],
+  "full48fourth-independent": [
+    "Audit/Check48Fourth.py"
+  ],
+  "forest222-stage2": [
+    "Nineteen/VerifyForest222Stage2.py"
+  ],
+  "forest222-stage2-independent": [
+    "Audit/Check222Stage2.py"
+  ],
+  "t28-euler1109": [
+    "Pricing/VerifyT28Euler.py"
+  ],
+  "t28-euler1109-independent": [
+    "Audit/CheckT28Euler.py"
+  ],
+  "nested11and13": [
+    "Audit/CheckNested11and13.py"
+  ],
+  "root11-price48": [
+    "ElevenThirteen/PivotPrice48Depth.py"
+  ],
+  "root11-price48-independent": [
+    "Audit/Check11x48Price.py"
   ]
 }

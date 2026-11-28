@@ -1,6 +1,6 @@
 # Canonical root 7: exact-prefix factor forests
 
-Work against frozen main `495c59f55456a70994ce7848487e0c4e262c1984`. Assume an odd perfect number \(N\le B=10^{2400}\), with \(19\nmid N\). All component exponents below are exact. No result in these packets is a whole key or shard. No Hensel calculation or prime-order price is used. In particular the new forest cuts at `(7,438)` do **not** assume the inherited Euler-prime location or exponent, both of which remain unrestricted in the checker.
+Work against frozen main `495c59f55456a70994ce7848487e0c4e262c1984`. Assume an odd perfect number \(N\le B=10^{2400}\), with \(19\nmid N\). All component exponents below are exact. No result is a whole key or shard. No Hensel calculation or prime-order price is used in the packets covered by the main verifier below. In particular the unrestricted new forest cuts at `(7,438)` do **not** assume the inherited Euler-prime location or exponent; both are unrestricted in that checker. The [separate Euler-reserved packets](Reserved438.md) re-prove the restriction that they need.
 
 ## Covered exact prefixes
 
@@ -9,14 +9,16 @@ Let \(t=572749682520506652634407616247\), \(Q=16148168401\), and \(T=(1+Q+\dots+
 | Sealed packet | Required exact components | Newly excluded exponents |
 |---|---|---|
 | [48a](Forest48a.json.gz) | \(7^{48},6106505825833677713^4\) | \(v_A\in\{8,10,12,14,16,18\}\), \(A=5913168485260377611579965807967983090512568398832018674784831\) |
+| [48b](Forest48b.json.gz) | same | \(v_A\in\{4,6\}\) |
 | [438a](Forest438a.json.gz) | \(7^{438},t^{10}\) | \(v_{67}\in\{130,132,134,136,138,140,142,144,146,150,152,154,156,158\}\) |
 | [438b](Forest438b.json.gz) | \(7^{438},t^{10}\) | \(v_{67}\in\{36,38,42,50,52,54,58,64,66,68,70,72,74,76,78,84,86,88,90,92,94,96,98,100,102,104,106,108,110,112,114,116,118,120,122,126,128\}\) |
 | [438c](Forest438c.json.gz) | \(7^{438},t^{10}\) | \(v_{67}\in\{12,16,22,28,30,34\}\) |
 | [12a](Forest12a.json.gz) | \(7^{12},Q^{12},T^2\) | \(v_{3453283}\in\{10,16,22\}\) |
 | [12a](Forest12a.json.gz) | \(7^{12},Q^{42}\) | \(v_{173}\in\{160,162,164,168,170,174,178,186,188,194\}\) |
 | [12b](Forest12b.json.gz) | \(7^{12},Q^{42}\) | \(v_{173}\in\{64,66,68,70,72,74,76,84,86,88,90,92,94,98,100,102,104,108,110,112,114,116,118,122,128,132,134,140,142,144,146,152,154\}\) |
+| [12c](Forest12c.json.gz) | \(7^{12},Q^{42}\) | \(v_{173}\in\{14,20,28,34,38,44,46,50,52,54,56,60,62\}\) |
 
-The three 438 packets are pairwise disjoint. Together they leave 21 of the frozen 78 live exact 67-exponents on the \(t^{10}\) sibling; the \(t^{12}\) sibling is not touched by these packets. The two disjoint 12 prefixes leave 27 of 30 exact \(3453283\)-exponents and 43 of 86 exact 173-exponents, respectively; 12b is disjoint from 12a and the frozen cuts. At `(7,48)` the fixed first exponent 4 forces \(A\), with exactly nine directly live exponents \(2,4,\ldots,18\) before the first strict raw size tail 37; verify this domain by `child_domain([(7,48),(S48,4)],(19,),A48)` in the checker. Only 2,4,6 remain locally under that split. No whole first-pivot value is credited; 2,8,10 are separate and untouched by this packet.
+The three unrestricted 438 packets are pairwise disjoint. On their own they leave 21 of the frozen 78 live exact 67-exponents on the \(t^{10}\) sibling. The separate [Euler-reserved proof](Reserved438.md) closes those final 21, so the complete first exponent \(v_t=10\) is excluded. The \(t^{12}\) sibling is not touched by this proof. The two disjoint 12 prefixes leave 27 of 30 exact \(3453283\)-exponents and 30 of 86 exact 173-exponents, respectively; 12a, 12b, and 12c are pairwise disjoint and disjoint from the frozen cuts. At `(7,48)` the fixed first exponent 4 forces \(A\), with exactly nine directly live exponents \(2,4,\ldots,18\) before the first strict raw size tail 37; verify this domain by `child_domain([(7,48),(S48,4)],(19,),A48)` in the checker. The forest packets cover all but \(v_A=2\). In that exact square branch, \(3,11,29,41\) are compulsory. Ordinary 11 cannot have exponent 2 because \(\sigma(11^2)=133=7\cdot19\), so \(v_{11}\ge4\). Even with 29 and 41 each charged at exponent 1 (allowing both only relaxes the lower bound), the strict abundancy of \(7^{48}11^4 29\cdot41\cdot3^4\) forces the ordinary 3's exponent to equal 2. Then \(\sigma(3^2)=13\) forces 13, and the strict abundancy of \(7^{48}11^4 29\cdot41\cdot3^2\cdot13\) is already >2. The [integrated fourth-first verifier](Full48Fourth.py) checks both packets, all nine exact branches including this elementary endpoint, both abundancy inequalities as integers, and the strict size tail. Thus the entire first value 4 at `(7,48)` is excluded; separate firsts 2,8,10 remain. It is not a whole key/shard.
 
 ## Integer certificate
 
@@ -31,7 +33,7 @@ The 12a left prefix uses two absences, re-proved inside the verifier. \(3,13\) a
 ## Replay
 
 ~~~powershell
-python -I -S -B -X int_max_str_digits=0 Research/AstraFinalAfternoon2400/Seven/VerifyForest.py Research/AstraFinalAfternoon2400/Seven/Forest438a.json.gz Research/AstraFinalAfternoon2400/Seven/Forest438b.json.gz Research/AstraFinalAfternoon2400/Seven/Forest438c.json.gz Research/AstraFinalAfternoon2400/Seven/Forest12a.json.gz Research/AstraFinalAfternoon2400/Seven/Forest12b.json.gz Research/AstraFinalAfternoon2400/Seven/Forest48a.json.gz
+python -I -S -B -X int_max_str_digits=0 Research/AstraFinalAfternoon2400/Seven/VerifyForest.py Research/AstraFinalAfternoon2400/Seven/Forest438a.json.gz Research/AstraFinalAfternoon2400/Seven/Forest438b.json.gz Research/AstraFinalAfternoon2400/Seven/Forest438c.json.gz Research/AstraFinalAfternoon2400/Seven/Forest12a.json.gz Research/AstraFinalAfternoon2400/Seven/Forest12b.json.gz Research/AstraFinalAfternoon2400/Seven/Forest12c.json.gz Research/AstraFinalAfternoon2400/Seven/Forest48a.json.gz Research/AstraFinalAfternoon2400/Seven/Forest48b.json.gz
 ~~~
 
 The [verifier](VerifyForest.py) requires every ECPP chain to be used and every large label verified as prime; small labels use the frozen deterministic 64-bit primality routine. The factor index, local ECM and PARI are discovery/sealing tools only, with no proof-time dependency. Private explorations with missing leaves are not included. Proof packets and author cold verification:
@@ -39,8 +41,10 @@ The [verifier](VerifyForest.py) requires every ECPP chain to be used and every l
 | Packet | SHA-256 | ECPP | Split / terminals | Minimum \(\lfloor10^6\,\mathrm{LB}/B\rfloor\) |
 |---|---|---:|---:|---:|
 | 48a | `65361a2a06a7aabecfbe2e6d54bea1468554b5a10c61bc3fd40f9c9a9ec4c44e` | 152 | 0 / 6 | 840627870388672 |
+| 48b | `92d1684d24a071b2f9e3636c55760ef1f63b6c91c024e5144846d72fbb897fdf` | 249 | 0 / 2 | 55266246460 |
 | 438a | `ed862b6cc0f6a3a13fd4b7740825d3bed0f41861eb88a88353aae1d12a3f5b6d` | 125 | 1 / 16 | 199604667 |
 | 438b | `84283ffbe0884a019647faa7ddb0746a1623e50a200b5d625ddfbd1e1dc40777` | 515 | 0 / 37 | 3227368 |
 | 438c | `d7ac09f97d59087aa08e9ae5dff07ae158108552d79606b63e159af9a6b429f3` | 583 | 2 / 86 | 1025350 |
 | 12a | `393ed361ee148eb28cd618271ba3adb7ff21833c4704818fbd3eda375bbfe675` | 253 | 0 / 13 | 2475189206 |
 | 12b | `1b235c54fd29601e6ce1945df11d1a6c114602ed84faf00d21909d784158b91e` | 584 | 1 / 39 | 2047195 |
+| 12c | `be38d3fa519ded27b8306fc0634e0a8aceb6d870a1d2fbad17e446bab2f958e1` | 613 | 0 / 13 | 4814183 |
