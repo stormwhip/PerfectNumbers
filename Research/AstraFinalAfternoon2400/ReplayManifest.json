@@ -295,5 +295,11 @@
   "root13-534-polynomial-independent": [
     "ElevenThirteen/Endpoint534.py",
     "--full"
+  ],
+  "root19-222-f1g2": [
+    "Nineteen/VerifyRoot222F1G2.py"
+  ],
+  "root19-222-f1g2-independent": [
+    "Audit/Check222F1G2.py"
   ]
 }

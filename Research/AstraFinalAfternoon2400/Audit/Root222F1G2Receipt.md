@@ -1,0 +1,7 @@
+# Independent acceptance: (19,222), first 1 and second 2
+
+Under canonical root 19, odd perfection and `N≤10^2400`, exact `19^222,7579985624053^1,3705121363^2` is impossible. This is one complete **second** fiber, not closure of first 1 or the key. An earlier independently checked proof already completed first 2; first 18 and other branches under first 1 remain open.
+
+The [author packet](../Nineteen/Root222F1G2.json.gz) and [independent checker](Check222F1G2.py) rebuild the complete third scope at `3789992812027` from fixed geometric sums and compulsory `lcm` mass, including both parity and the strict raw tail 144. The exact frozen uncovered set `{2,4,12,16,18,42}` is reduced independently by each of the three accepted forest overlays, with no overlap, to the unique exponent 16. The actual first exponent one fixes Euler at `7579985624053`; all other forest nodes are ordinary. The last exact prefix is checked without any added forbidden set. Historical and new coverage are distinct steps.
+
+`python -I -S -B -X int_max_str_digits=0` on [VerifyRoot222F1G2](../Nineteen/VerifyRoot222F1G2.py) and [Check222F1G2](Check222F1G2.py) each exited 0, authenticating 178 ECPP subjects and attaining a strict integer lower bound (reported decimal floor 2405). The latter uses a separate integer capacity recurrence and independently rebuilds forced scopes. Replace older registered descendants under `(1,2)` by the parent condition; do not count both. No global projection change.
