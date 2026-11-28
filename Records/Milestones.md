@@ -22,7 +22,6 @@
 | 11 月 27 日夜间 | 3,003 | 69 | [增量账本](../Research/Night2400/Delta.json) · [证书索引](../Research/Night2400/README.md) |
 | 11 月 27 日 Gemini 增量 | 3,004 | 68 | [账本](../Research/GeminiFrontier/Delta.json) · [审阅](../Research/GeminiFrontier/Review.md) |
 | **11 月 28 日 PR #10 研究分支** | **3,029** | **43** | [逐片余集](../Research/FinalNight2400/OpenFrontier.json) · [逐键回执](../Research/FinalNight2400/Proof.md) |
-
 | 11 月 28 日 PR #12 | 3,031 | 41 | [逐片余集](../Research/AstraFinalAfternoon2400/OpenFrontier.json) |
 | 11 月 28 日 PR #13、#14 理论研究 | 3,031 | 41 | [独立审阅](../Research/JointConservation2400/MergeReview.md)；零新增闭片 |
 
