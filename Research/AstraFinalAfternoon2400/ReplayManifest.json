@@ -329,5 +329,19 @@
   ],
   "root19-222-f1g42-independent": [
     "Audit/Check222F1G42.py"
+  ],
+  "root19-f18extra222": [
+    "Nineteen/Verify18Extra222.py"
+  ],
+  "root19-f18extra222-independent": [
+    "Audit/Check18Extra222.py"
+  ],
+  "root7-q42low": [
+    "Seven/VerifyQ42Masks.py",
+    "@Seven/Forest12LowerNo3.json.gz",
+    "@Seven/Forest12Low6SquareSimple.json.gz",
+    "@Seven/Forest12LowHigh3.json.gz",
+    "@Seven/Forest12Low6Fourth.json.gz",
+    "@Seven/Forest12LowLastPair.json.gz"
   ]
 }

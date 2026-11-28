@@ -15561,6 +15561,342 @@
       "Certificate": "Nineteen/Root222F1G42.json",
       "Verifier": "Nineteen/Verify222F1G42.py",
       "IndependentReview": "Audit/Root222F1G42Receipt.md"
+    },
+    {
+      "Id": "19-222-f18-g12-jNone",
+      "Key": [
+        19,
+        222
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            7579985624053,
+            18
+          ],
+          [
+            3705121363,
+            12
+          ]
+        ]
+      },
+      "Proof": "Nineteen/Extra18x222.md",
+      "Certificate": "Nineteen/Extra18x222.json.gz",
+      "Verifier": "Nineteen/Verify18Extra222.py",
+      "IndependentReview": "Audit/Root19Extra18Receipt.md"
+    },
+    {
+      "Id": "19-222-f18-g2-j4",
+      "Key": [
+        19,
+        222
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            7579985624053,
+            18
+          ],
+          [
+            3705121363,
+            2
+          ],
+          [
+            108501737266216818637411,
+            4
+          ]
+        ]
+      },
+      "Proof": "Nineteen/Extra18x222.md",
+      "Certificate": "Nineteen/Extra18x222.json.gz",
+      "Verifier": "Nineteen/Verify18Extra222.py",
+      "IndependentReview": "Audit/Root19Extra18Receipt.md"
+    },
+    {
+      "Id": "19-222-f18-g22-j4",
+      "Key": [
+        19,
+        222
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            7579985624053,
+            18
+          ],
+          [
+            3705121363,
+            22
+          ],
+          [
+            108501737266216818637411,
+            4
+          ]
+        ]
+      },
+      "Proof": "Nineteen/Extra18x222.md",
+      "Certificate": "Nineteen/Extra18x222.json.gz",
+      "Verifier": "Nineteen/Verify18Extra222.py",
+      "IndependentReview": "Audit/Root19Extra18Receipt.md"
+    },
+    {
+      "Id": "7-12-q42-h6-3x0",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            6
+          ]
+        ],
+        "Absent": [
+          3
+        ]
+      },
+      "Proof": "Seven/Q42Low.md",
+      "Certificate": "Seven/Forest12LowerNo3.json.gz",
+      "Verifier": "Seven/VerifyQ42Masks.py",
+      "IndependentReview": "Audit/Root7Q42LowReceipt.md"
+    },
+    {
+      "Id": "7-12-q42-h10-3x0",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            10
+          ]
+        ],
+        "Absent": [
+          3
+        ]
+      },
+      "Proof": "Seven/Q42Low.md",
+      "Certificate": "Seven/Forest12LowerNo3.json.gz",
+      "Verifier": "Seven/VerifyQ42Masks.py",
+      "IndependentReview": "Audit/Root7Q42LowReceipt.md"
+    },
+    {
+      "Id": "7-12-q42-h6-3x2",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            6
+          ],
+          [
+            3,
+            2
+          ]
+        ]
+      },
+      "Proof": "Seven/Q42Low.md",
+      "Certificate": "Seven/Forest12Low6SquareSimple.json.gz",
+      "Verifier": "Seven/VerifyQ42Masks.py",
+      "IndependentReview": "Audit/Root7Q42LowReceipt.md"
+    },
+    {
+      "Id": "7-12-q42-h6-3x4",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            6
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "Proof": "Seven/Q42Low.md",
+      "Certificate": "Seven/Forest12Low6Fourth.json.gz",
+      "Verifier": "Seven/VerifyQ42Masks.py",
+      "IndependentReview": "Audit/Root7Q42LowReceipt.md"
+    },
+    {
+      "Id": "7-12-q42-h2-3x4",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "Proof": "Seven/Q42Low.md",
+      "Certificate": "Seven/Forest12LowLastPair.json.gz",
+      "Verifier": "Seven/VerifyQ42Masks.py",
+      "IndependentReview": "Audit/Root7Q42LowReceipt.md"
+    },
+    {
+      "Id": "7-12-q42-h6-3x6",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            6
+          ],
+          [
+            3,
+            6
+          ]
+        ]
+      },
+      "Proof": "Seven/Q42Low.md",
+      "Certificate": "Seven/Forest12LowLastPair.json.gz",
+      "Verifier": "Seven/VerifyQ42Masks.py",
+      "IndependentReview": "Audit/Root7Q42LowReceipt.md"
+    },
+    {
+      "Id": "7-12-q42-h2-3tail",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            2
+          ]
+        ],
+        "ValuationAtLeast": [
+          [
+            3,
+            1200
+          ]
+        ]
+      },
+      "Proof": "Seven/Q42Low.md",
+      "Certificate": "Seven/Forest12LowHigh3.json.gz",
+      "Verifier": "Seven/VerifyQ42Masks.py",
+      "IndependentReview": "Audit/Root7Q42LowReceipt.md"
+    },
+    {
+      "Id": "7-12-q42-h6-3tail",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            6
+          ]
+        ],
+        "ValuationAtLeast": [
+          [
+            3,
+            450
+          ]
+        ]
+      },
+      "Proof": "Seven/Q42Low.md",
+      "Certificate": "Seven/Forest12LowHigh3.json.gz",
+      "Verifier": "Seven/VerifyQ42Masks.py",
+      "IndependentReview": "Audit/Root7Q42LowReceipt.md"
+    },
+    {
+      "Id": "7-12-q42-h10-3tail",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            10
+          ]
+        ],
+        "ValuationAtLeast": [
+          [
+            3,
+            900
+          ]
+        ]
+      },
+      "Proof": "Seven/Q42Low.md",
+      "Certificate": "Seven/Forest12LowHigh3.json.gz",
+      "Verifier": "Seven/VerifyQ42Masks.py",
+      "IndependentReview": "Audit/Root7Q42LowReceipt.md"
     }
   ]
 }
