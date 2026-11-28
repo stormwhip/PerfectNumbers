@@ -20,12 +20,14 @@ M=T**9
 LOW=2*M-1
 MOD=4*M
 BASE=[(7,438),(T,10)]
-PACKS={'d':[14,20,44,48,56,60,62,82], 'e':[10,18,32,40,46,124], 'f':[4,6,24,80], 'g':[8,26]}
+PACKS={'d':[14,20,44,48,56,60,62,82], 'e':[10,18,32,40,46,124], 'f':[4,6,24,80], 'g':[8,26], 'h':[2]}
 
-def rule():
+def rule(first=10):
     """Exact source domain, without any incoming weighted price / Hensel table."""
+    assert first in (10,12)
     prove_prime(T)
-    X=7**438*T**10; A0=sig(7,438); A=A0//T; D=sig(T,10)
+    X=7**438*T**first; A0=sig(7,438); A=A0//T; D=sig(T,first)
+    m=T**(first-1); low=2*m-1; mod=4*m
     assert val(A0,T)==1 and D%T==1 and gcd(X,A*D)==1 and gcd(A,D)==1
     assert T>5100 and 3**5100>B and (T-1)%4==2
     assert [d for d in range(3,5101,2) if (T-1)%d==0]==[439]
@@ -46,16 +48,16 @@ def rule():
     assert c2==0
     # Thus Euler's q+1 supplies all 9 residual t units. Since q≡1 mod4,
     # q≡LOW mod MOD. q cannot divide A by the complete cofactor interval.
-    inv=pow(LOW,-1,MOD)
-    k=A*inv%MOD or MOD; upper=A//LOW
-    assert upper<k or (upper-k<MOD and A%k!=0)
-    # If q|D, then ord_q(T) divides 11, so (T/q)=1; reciprocity for
+    inv=pow(low,-1,mod)
+    k=A*inv%mod or mod; upper=A//low
+    assert upper<k or (upper-k<mod and A%k!=0)
+    # If q|D, then ord_q(T) divides first+1, odd, so (T/q)=1; reciprocity for
     # q≡1 mod4 and q≡−1 mod T (T≡3 mod4) instead gives (T/q)=−1.
-    assert T%4==3 and X*A*D*LOW**5>B
+    assert T%4==3 and X*A*D*low**5>B
     print('Euler rule: ordinary candidate hits, endpoint, Euler hits, endpoint:',c1,z,c2,q,flush=True)
 
 
-def independent(P,roots,edges,head):
+def independent(P,roots,edges,head,m=M):
     """Second evaluator: division over the whole cofactor progression, no shared rebate code."""
     X=prod(p**h for p,h in P); D=prod(sig(p,h) for p,h in P)
     factors={p for p,h in P}
@@ -66,13 +68,13 @@ def independent(P,roots,edges,head):
     D=strip(D,factors); children={p:[] for p in roots}
     for q,p in edges:children[q]=[]
     for q,p in edges:children[p].append(q)
-    inv=pow(LOW,-1,MOD)
+    low=2*m-1; mod=4*m; inv=pow(low,-1,mod)
     @cache
     def without_q(z):
         # An output factor can use q no more than once since q||N.
-        lim=z//LOW; k=z*inv%MOD or MOD
+        lim=z//low; k=z*inv%mod or mod
         if lim<k:return z
-        if k+MOD>lim and z%k:return z
+        if k+mod>lim and z%k:return z
         return k
     @cache
     def lower(p,v):
@@ -90,7 +92,7 @@ def independent(P,roots,edges,head):
             h+=2
         # Match an unconditional monotone tail, even with no admitted finite cell.
         return min(candidates+[p**h])
-    return X*LOW*without_q(strip(D,roots))*prod(lower(p,val(D,p)) for p in roots)
+    return X*low*without_q(strip(D,roots))*prod(lower(p,val(D,p)) for p in roots)
 
 
 def verify(kind):

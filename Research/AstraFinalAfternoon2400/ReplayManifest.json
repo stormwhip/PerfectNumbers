@@ -1,0 +1,102 @@
+{
+  "ledger": [
+    "VerifyLedger.py"
+  ],
+  "projection": [
+    "Audit/ProjectionAudit.py"
+  ],
+  "inert222": [
+    "Nineteen/Inert222.py"
+  ],
+  "forest222": [
+    "Nineteen/VerifyForest222.py"
+  ],
+  "forest222-independent": [
+    "Audit/CheckForest222Domains.py"
+  ],
+  "price276h4": [
+    "Pricing/Verify276.py"
+  ],
+  "price276h4-independent": [
+    "Audit/Check19x276x1109x4.py"
+  ],
+  "forest7": [
+    "Seven/VerifyForest.py",
+    "@Seven/Forest438a.json.gz",
+    "@Seven/Forest438b.json.gz",
+    "@Seven/Forest438c.json.gz",
+    "@Seven/Forest48a.json.gz",
+    "@Seven/Forest12a.json.gz",
+    "@Seven/Forest12b.json.gz"
+  ],
+  "forest7-independent": [
+    "Audit/CheckSevenForestDomains.py"
+  ],
+  "reserve438": [
+    "Seven/VerifyReserved438.py"
+  ],
+  "reserve438-independent": [
+    "Audit/Check438ReserveDomains.py"
+  ],
+  "joint438x22": [
+    "Propagation/Verify438x22.py"
+  ],
+  "joint438x22-independent": [
+    "Audit/Check438x22.py"
+  ],
+  "euler808": [
+    "Root808/Explore.py"
+  ],
+  "euler808-independent": [
+    "Audit/Check7x808.py"
+  ],
+  "forest11and13": [
+    "ElevenThirteen/ForestPacket.py"
+  ],
+  "forest11and13-independent": [
+    "Audit/Check11and13Forest.py"
+  ],
+  "linear13": [
+    "ElevenThirteen/HighLinear.py"
+  ],
+  "anonymous13": [
+    "Propagation/VerifyAnonymous13.py"
+  ],
+  "linear13-independent": [
+    "Audit/Check13HighLinear.py"
+  ],
+  "forest31": [
+    "ThirtyOne/ForestVerify.py",
+    "@ThirtyOne/Certificate268Broad.json.gz",
+    "@ThirtyOne/Certificate6.json.gz",
+    "@ThirtyOne/Certificate268.json.gz",
+    "@ThirtyOne/Certificate2.json.gz",
+    "@ThirtyOne/Certificate6More.json.gz"
+  ],
+  "forest31-independent": [
+    "Audit/Check31Forest.py",
+    "@ThirtyOne/Certificate268Broad.json.gz",
+    "@ThirtyOne/Certificate6.json.gz",
+    "@ThirtyOne/Certificate268.json.gz",
+    "@ThirtyOne/Certificate2.json.gz",
+    "@ThirtyOne/Certificate6More.json.gz"
+  ],
+  "all-hensel-lifts": [
+    "ElevenThirteen/AllLifts.py"
+  ],
+  "test-propagation": [
+    "Propagation/TestPropagation.py"
+  ],
+  "full438first10": [
+    "Seven/Full438Ten.py"
+  ],
+  "full438first10-independent": [
+    "Audit/Check438TenUnion.py"
+  ],
+  "reserved438first12": [
+    "Propagation/VerifyReserved438x12.py"
+  ],
+  "reserved438first12-independent": [
+    "Audit/Check438TwelveReserved.py"
+  ]
+}
