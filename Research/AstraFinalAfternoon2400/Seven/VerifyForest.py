@@ -20,6 +20,7 @@ L = 3453283
 R173 = 173
 S438 = 572749682520506652634407616247
 S48 = 6106505825833677713
+A48 = 5913168485260377611579965807967983090512568398832018674784831
 
 def sig(p, h):
     return (p**(h+1)-1)//(p-1)
@@ -61,6 +62,9 @@ def known_scope(P,bad):
     if pref==[(7,48)] and q==S48:
         assert tuple(bad)==(19,) and h in (2,4,8,10)
         name='48'
+    elif pref==[(7,48),(S48,4)] and q==A48:
+        assert tuple(bad)==(19,) and h in range(2,19,2)
+        name='48f4'
     elif pref==[(7,438),(S438,10)] and q==67:
         assert tuple(bad)==(19,) and h in range(2,159,2) and h!=148
         name='438'

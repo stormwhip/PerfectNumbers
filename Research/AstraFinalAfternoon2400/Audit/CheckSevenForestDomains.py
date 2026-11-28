@@ -73,6 +73,10 @@ def scope(rows,bans):
                              [(7,12),(3,2),(11,2),(13,2)]):
             assert prod(sig(p,h) for p,h in hypothetical) > 2*prod(p**h for p,h in hypothetical)
         return '12L'
+    if rows[:-1] == [(7,48), (6106505825833677713,4)]:
+        assert bans == {19} and rows[-1][0] == 5913168485260377611579965807967983090512568398832018674784831
+        live,tail = split(rows[:-1],bans,rows[-1][0]); assert set(live) == set(range(2,19,2)) and tail == 37
+        return '48f4'
     assert rows[:-1] == [(7,12),(Q,42)] and rows[-1][0] == 173 and bans == {19}
     return '12R'
 
@@ -135,6 +139,12 @@ if __name__ == '__main__':
                   {('438', h) for h in range(130,159,2) if h != 148})
     replay_basics('Forest438b.json.gz', '84283ffbe0884a019647faa7ddb0746a1623e50a200b5d625ddfbd1e1dc40777',
                   {('438', h) for h in (36,38,42,50,52,54,58,64,66,68,70,72,74,76,78,84,86,88,90,92,94,96,98,100,102,104,106,108,110,112,114,116,118,120,122,126,128)})
+    replay_basics('Forest438c.json.gz', 'd7ac09f97d59087aa08e9ae5dff07ae158108552d79606b63e159af9a6b429f3',
+                  {('438', h) for h in (12,16,22,28,30,34)})
+    replay_basics('Forest48a.json.gz', '65361a2a06a7aabecfbe2e6d54bea1468554b5a10c61bc3fd40f9c9a9ec4c44e',
+                  {('48f4', h) for h in (8,10,12,14,16,18)})
+    replay_basics('Forest12b.json.gz', '1b235c54fd29601e6ce1945df11d1a6c114602ed84faf00d21909d784158b91e',
+                  {('12R', h) for h in (64,66,68,70,72,74,76,84,86,88,90,92,94,98,100,102,104,108,110,112,114,116,118,122,128,132,134,140,142,144,146,152,154)})
     replay_basics('Forest12a.json.gz', '393ed361ee148eb28cd618271ba3adb7ff21833c4704818fbd3eda375bbfe675',
                   {('12L', h) for h in (10,16,22)} |
                   {('12R', h) for h in (160,162,164,168,170,174,178,186,188,194)})

@@ -7795,6 +7795,1396 @@
       "Certificate": "Propagation/Pock22.json",
       "Verifier": "Propagation/Verify438x22.py",
       "IndependentReview": "Audit/Root7x438x22Receipt.md"
+    },
+    {
+      "Id": "7-438-438c-12",
+      "Key": [
+        7,
+        438
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            572749682520506652634407616247,
+            10
+          ],
+          [
+            67,
+            12
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest438c.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-438-438c-16",
+      "Key": [
+        7,
+        438
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            572749682520506652634407616247,
+            10
+          ],
+          [
+            67,
+            16
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest438c.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-438-438c-22",
+      "Key": [
+        7,
+        438
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            572749682520506652634407616247,
+            10
+          ],
+          [
+            67,
+            22
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest438c.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-438-438c-28",
+      "Key": [
+        7,
+        438
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            572749682520506652634407616247,
+            10
+          ],
+          [
+            67,
+            28
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest438c.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-438-438c-30",
+      "Key": [
+        7,
+        438
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            572749682520506652634407616247,
+            10
+          ],
+          [
+            67,
+            30
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest438c.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-438-438c-34",
+      "Key": [
+        7,
+        438
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            572749682520506652634407616247,
+            10
+          ],
+          [
+            67,
+            34
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest438c.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-48-48a-8",
+      "Key": [
+        7,
+        48
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            6106505825833677713,
+            4
+          ],
+          [
+            5913168485260377611579965807967983090512568398832018674784831,
+            8
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest48a.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-48-48a-10",
+      "Key": [
+        7,
+        48
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            6106505825833677713,
+            4
+          ],
+          [
+            5913168485260377611579965807967983090512568398832018674784831,
+            10
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest48a.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-48-48a-12",
+      "Key": [
+        7,
+        48
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            6106505825833677713,
+            4
+          ],
+          [
+            5913168485260377611579965807967983090512568398832018674784831,
+            12
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest48a.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-48-48a-14",
+      "Key": [
+        7,
+        48
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            6106505825833677713,
+            4
+          ],
+          [
+            5913168485260377611579965807967983090512568398832018674784831,
+            14
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest48a.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-48-48a-16",
+      "Key": [
+        7,
+        48
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            6106505825833677713,
+            4
+          ],
+          [
+            5913168485260377611579965807967983090512568398832018674784831,
+            16
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest48a.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-48-48a-18",
+      "Key": [
+        7,
+        48
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            6106505825833677713,
+            4
+          ],
+          [
+            5913168485260377611579965807967983090512568398832018674784831,
+            18
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest48a.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-64",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            64
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-66",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            66
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-68",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            68
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-70",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            70
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-72",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            72
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-74",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            74
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-76",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            76
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-84",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            84
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-86",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            86
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-88",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            88
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-90",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            90
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-92",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            92
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-94",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            94
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-98",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            98
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-100",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            100
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-102",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            102
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-104",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            104
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-108",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            108
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-110",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            110
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-112",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            112
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-114",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            114
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-116",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            116
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-118",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            118
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-122",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            122
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-128",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            128
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-132",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            132
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-134",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            134
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-140",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            140
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-142",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            142
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-144",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            144
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-146",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            146
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-152",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            152
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-12-12b-154",
+      "Key": [
+        7,
+        12
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            16148168401,
+            42
+          ],
+          [
+            173,
+            154
+          ]
+        ]
+      },
+      "Proof": "Seven/Proof.md",
+      "Certificate": "Seven/Forest12b.json.gz",
+      "Verifier": "Seven/VerifyForest.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-438-438d-14",
+      "Key": [
+        7,
+        438
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            572749682520506652634407616247,
+            10
+          ],
+          [
+            67,
+            14
+          ]
+        ]
+      },
+      "Proof": "Seven/Reserved438.md",
+      "Certificate": "Seven/Forest438d.json.gz",
+      "Verifier": "Seven/VerifyReserved438.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-438-438d-20",
+      "Key": [
+        7,
+        438
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            572749682520506652634407616247,
+            10
+          ],
+          [
+            67,
+            20
+          ]
+        ]
+      },
+      "Proof": "Seven/Reserved438.md",
+      "Certificate": "Seven/Forest438d.json.gz",
+      "Verifier": "Seven/VerifyReserved438.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-438-438d-44",
+      "Key": [
+        7,
+        438
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            572749682520506652634407616247,
+            10
+          ],
+          [
+            67,
+            44
+          ]
+        ]
+      },
+      "Proof": "Seven/Reserved438.md",
+      "Certificate": "Seven/Forest438d.json.gz",
+      "Verifier": "Seven/VerifyReserved438.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-438-438d-48",
+      "Key": [
+        7,
+        438
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            572749682520506652634407616247,
+            10
+          ],
+          [
+            67,
+            48
+          ]
+        ]
+      },
+      "Proof": "Seven/Reserved438.md",
+      "Certificate": "Seven/Forest438d.json.gz",
+      "Verifier": "Seven/VerifyReserved438.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-438-438d-56",
+      "Key": [
+        7,
+        438
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            572749682520506652634407616247,
+            10
+          ],
+          [
+            67,
+            56
+          ]
+        ]
+      },
+      "Proof": "Seven/Reserved438.md",
+      "Certificate": "Seven/Forest438d.json.gz",
+      "Verifier": "Seven/VerifyReserved438.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-438-438d-60",
+      "Key": [
+        7,
+        438
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            572749682520506652634407616247,
+            10
+          ],
+          [
+            67,
+            60
+          ]
+        ]
+      },
+      "Proof": "Seven/Reserved438.md",
+      "Certificate": "Seven/Forest438d.json.gz",
+      "Verifier": "Seven/VerifyReserved438.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-438-438d-62",
+      "Key": [
+        7,
+        438
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            572749682520506652634407616247,
+            10
+          ],
+          [
+            67,
+            62
+          ]
+        ]
+      },
+      "Proof": "Seven/Reserved438.md",
+      "Certificate": "Seven/Forest438d.json.gz",
+      "Verifier": "Seven/VerifyReserved438.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "7-438-438d-82",
+      "Key": [
+        7,
+        438
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            572749682520506652634407616247,
+            10
+          ],
+          [
+            67,
+            82
+          ]
+        ]
+      },
+      "Proof": "Seven/Reserved438.md",
+      "Certificate": "Seven/Forest438d.json.gz",
+      "Verifier": "Seven/VerifyReserved438.py",
+      "IndependentReview": "Audit/SevenLaterReceipt.md"
+    },
+    {
+      "Id": "13-612-high-linear",
+      "Key": [
+        13,
+        612
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "EulerPlusOneValuation": {
+          "Prime": 13,
+          "Min": 537,
+          "Max": 612
+        }
+      },
+      "Proof": "ElevenThirteen/HighLinear.md",
+      "Certificate": "ElevenThirteen/HighLinear.py",
+      "Verifier": "ElevenThirteen/HighLinear.py",
+      "IndependentReview": "Audit/Root13HighLinearReceipt.md"
+    },
+    {
+      "Id": "13-612-euler-position-exponent",
+      "Key": [
+        13,
+        612
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "EulerPlusOneValuation": {
+          "Prime": 13,
+          "Min": 303,
+          "Max": 535
+        },
+        "EulerConflictsWith": "q|sigma(13^e) or Euler exponent >=5"
+      },
+      "Proof": "Propagation/Anonymous13.md",
+      "Certificate": "Propagation/VerifyAnonymous13.py",
+      "Verifier": "Propagation/VerifyAnonymous13.py",
+      "IndependentReview": "Audit/Root13HighLinearReceipt.md"
+    },
+    {
+      "Id": "13-612-source-location",
+      "Key": [
+        13,
+        612
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "EulerPlusOneValuation": {
+          "Prime": 13,
+          "Min": 466,
+          "Max": 535
+        },
+        "EmitterOutsideRootSigma": true
+      },
+      "Proof": "Propagation/Anonymous13.md",
+      "Certificate": "Propagation/VerifyAnonymous13.py",
+      "Verifier": "Propagation/VerifyAnonymous13.py",
+      "IndependentReview": "Audit/Root13HighLinearReceipt.md"
+    },
+    {
+      "Id": "13-618-high-linear",
+      "Key": [
+        13,
+        618
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "EulerPlusOneValuation": {
+          "Prime": 13,
+          "Min": 537,
+          "Max": 618
+        }
+      },
+      "Proof": "ElevenThirteen/HighLinear.md",
+      "Certificate": "ElevenThirteen/HighLinear.py",
+      "Verifier": "ElevenThirteen/HighLinear.py",
+      "IndependentReview": "Audit/Root13HighLinearReceipt.md"
+    },
+    {
+      "Id": "13-618-euler-position-exponent",
+      "Key": [
+        13,
+        618
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "EulerPlusOneValuation": {
+          "Prime": 13,
+          "Min": 306,
+          "Max": 535
+        },
+        "EulerConflictsWith": "q|sigma(13^e) or Euler exponent >=5"
+      },
+      "Proof": "Propagation/Anonymous13.md",
+      "Certificate": "Propagation/VerifyAnonymous13.py",
+      "Verifier": "Propagation/VerifyAnonymous13.py",
+      "IndependentReview": "Audit/Root13HighLinearReceipt.md"
+    },
+    {
+      "Id": "13-618-source-location",
+      "Key": [
+        13,
+        618
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "EulerPlusOneValuation": {
+          "Prime": 13,
+          "Min": 460,
+          "Max": 535
+        },
+        "EmitterOutsideRootSigma": true
+      },
+      "Proof": "Propagation/Anonymous13.md",
+      "Certificate": "Propagation/VerifyAnonymous13.py",
+      "Verifier": "Propagation/VerifyAnonymous13.py",
+      "IndependentReview": "Audit/Root13HighLinearReceipt.md"
     }
   ]
 }
