@@ -16,7 +16,7 @@
 |17|297|297|0|0|0|
 |**合计**|**3072**|**3029**|**43**|**53**|**25**|
 
-35 个开放分片为单指数片。当前余集以 [OpenFrontier.json](../Research/FinalNight2400/OpenFrontier.json) 为准；[完整键证明与回执](../Research/FinalNight2400/Proof.md)、[接续任务](NextPlan2400.md)、[验证边界](../Research/FinalNight2400/Validation.md)。合并提交 `bc05f4d`。以下为历史主线基线，保留原回执。
+35 个开放分片为单指数片。当前余集以 [OpenFrontier.json](../Research/FinalNight2400/OpenFrontier.json) 为准；[完整键证明与回执](../Research/FinalNight2400/Proof.md)、[接续任务](NextPlan2400.md)、[验证边界](../Research/FinalNight2400/Validation.md)。合并提交 `bc05f4d`。11 月 28 日 Gemini 补充包经独立局部复验和联合定价补证，接受 (7,16)、(7,18)、(19,222)、(19,276) 下共 143 个局部排除（按提交域计），完整键和规范分片增量均为 0。[证明与审阅](../Research/GeminiFrontier/November28/Review.md) · [条件账本](../Research/GeminiFrontier/November28/Results.json)。以下为历史主线基线，保留原回执。
 
 ## 11 月 27 日主线基线：逐根覆盖
 
