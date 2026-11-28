@@ -15,6 +15,10 @@ This is 38/76 and supersedes the six in [Upper receipt](Root31UpperReceipt.md); 
 
 The immutable superset [Certificate268.json.gz](../ThirtyOne/Certificate268.json.gz), SHA-256 `8c5bf616e336e655e1fa3f5398c048f4a0a0cc30cc059c79fa19a2319246f445`, also independently passed (exit 0). It covers **60/76**, including both earlier packages, in 18 nested splits and 344 strict forests with 2186 ECPP chains (minimum floor 2400, verified strict). The exact first residuals are `{4,10,12,16,24,72,78,82,84,88,90,94,96,102,156,210}`. For combined accounting this is a disjoint increment of 22 over Broad, not 60+38.
 
+[Certificate268Extended.json.gz](../ThirtyOne/Certificate268Extended.json.gz), SHA-256 `7149879dc331c745a4c38c40b81d29ac4283849c9697da534586ac52daa324b4`, independently passed (exit 0). It covers **69/76**, with 91 nested splits, 2785 strict forest leaves, and 7115 ECPP subjects. Minimum decimal floor 2400 remains a strict comparison; no residue disappears through rounding. Its exact outstanding firsts are `{4,24,72,82,102,156,210}`. This supersedes the 60-first package (9 more, not a further 69).
+
+Definitive [Certificate268Union73.json.gz](../ThirtyOne/Certificate268Union73.json.gz), SHA-256 `015161d6cedeaa45fa5a566dc7fc690f13c3f683e934b0ad8b579ea93b663a75`, independently passed both the full domain walk and all arithmetic, each exit **0**. Verified **73/76**, with 206 internal splits, 6891 strict forest leaves, 11795 ECPP subjects and minimum decimal floor 2400 (strict). The only three open branches are null at the first level, `{102,156,210}`. This latest union supersedes all earlier (31,268) forest totals. The [historical 75/76 provisional claim](../../FinalNight2400/Report.md#L53-L55) remains unaccepted and supplies no missing first, and the [Euler masks](Root31EulerReceipt.md) do not close those three firsts. No projection of `(31,268)`.
+
 ## `(31,2)`, pivot 331
 
 [Certificate2.json.gz](../ThirtyOne/Certificate2.json.gz), SHA-256 `808ced76f1ed0b513ad63ad93d78fffff9e285b382910a222abc67db8d547f12`. Independent exit 0: 143 directly live with size tail 952, **56/143** first fibers accepted, 4 nested splits, 96 strict forests and 2029 certified ECPP subjects. Minimum floor 2401. Accepted full-local list:
@@ -26,6 +30,8 @@ The immutable superset [Certificate268.json.gz](../ThirtyOne/Certificate268.json
 ```
 
 The immutable [Certificate2Extended.json.gz](../ThirtyOne/Certificate2Extended.json.gz), SHA-256 `2eecfec2b31852de23f9b31f093fa680a029cc97d5dd1ebd0053332c44a3c1f5`, independently passed (exit 0). Same exact 143/952 initial domain/tail, 114 exact firsts accepted, 29 open; 12 nested splits, 239 strict leaves, 2688 ECPP subjects. Minimum floor 2400 was strictly compared at every leaf. This supersedes the 56-first packet (58 additional firsts, not another 114 to add).
+
+[Certificate2More.json.gz](../ThirtyOne/Certificate2More.json.gz), SHA-256 `e6955d8768ac33b917343eab41e0540bf8b4b73e53935b38f249fbb673cdfc9e`, is structurally identical to the Extended packet at every previously proved first. Independently compared the pinned archive trees and cold-ran exactly the three newly nonnull firsts `{262,310,420}` through `Check31Forest.accept(path, only=[262,310,420])`: exit 0, all 14 new splits, 569 strict leaves, 1430 reached ECPP subjects, minimum floor 2400 (strict). The old 114 arithmetic proofs are retained, not repeated. The exact conditional forest union is now **117/143**, leaving 26, before separately accepted analytic increments.
 
 ## `(31,6)`, pivot 917087137
 

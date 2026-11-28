@@ -79,7 +79,9 @@
     "@ThirtyOne/Certificate268.json.gz",
     "@ThirtyOne/Certificate2.json.gz",
     "@ThirtyOne/Certificate6More.json.gz",
-    "@ThirtyOne/Certificate2Extended.json.gz"
+    "@ThirtyOne/Certificate2Extended.json.gz",
+    "@ThirtyOne/Certificate268Union73.json.gz",
+    "@ThirtyOne/Certificate2More.json.gz"
   ],
   "forest31-independent": [
     "Audit/Check31Forest.py",
@@ -88,7 +90,9 @@
     "@ThirtyOne/Certificate268.json.gz",
     "@ThirtyOne/Certificate2.json.gz",
     "@ThirtyOne/Certificate6More.json.gz",
-    "@ThirtyOne/Certificate2Extended.json.gz"
+    "@ThirtyOne/Certificate2Extended.json.gz",
+    "@ThirtyOne/Certificate268Union73.json.gz",
+    "@ThirtyOne/Certificate2More.json.gz"
   ],
   "all-hensel-lifts": [
     "ElevenThirteen/AllLifts.py"

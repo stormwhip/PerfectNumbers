@@ -94,7 +94,7 @@ def forest(row, descriptor, bans=BANS):
     return factor*v[int(pick_euler)]
 
 
-def accept(path):
+def accept(path, only=None):
     data=json.loads(gzip.decompress(path.read_bytes()))
     ecpp=data['ecpp']; seen=set(); strict=[]; spans=[]
 
@@ -144,9 +144,15 @@ def accept(path):
     else:
         domain,tail={e:prefix},None
     assert set(map(str,domain))==data['cases'].keys()
-    good=[f for f,row in domain.items() if visit(row,data['cases'][str(f)])]
-    assert seen==ecpp.keys()
-    print('Exact remaining firsts:',sorted(domain.keys()-set(good)),flush=True)
+    if only is None:
+        selection=domain
+    else:
+        assert set(only)<=domain.keys()
+        selection={f:domain[f] for f in sorted(set(only))}
+    good=[f for f,row in selection.items() if visit(row,data['cases'][str(f)])]
+    if only is None:
+        assert seen==ecpp.keys()
+    print('Exact remaining firsts' if only is None else 'Untested or remaining firsts:',sorted(domain.keys()-set(good)),flush=True)
     print('PASS independent exact-sigma splitting and parity-capacity forest DP', path.name,
           'initial count/tail', (len(domain),tail), 'strict leaves',len(strict), 'ECPP',len(seen), 'accepted fibers',good)
     print('Nested exact domains:',spans)
