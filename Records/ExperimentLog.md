@@ -4,6 +4,10 @@
 
 This log separates **imported historical claims**, **directly observed experiments**, and **proof-checked results**. Dates use YYYY-MM-DD.
 
+## 2026-11-28 PR #13、#14 理论审阅
+
+两轮纯理论提交已依序合并。独立任意精度整数复算根 19 五前缀的 15 个余数、赋值、单位及 2677 条件下界；核查根 31 两块互素性、模 8、旧零坐标外位尺寸比较及根 31、7 的末端阈值。订正旧摘要关于 102 外部高次 Euler 的过宽结论。未运行历史验证器或搜索实验。无新增完整键、闭片，3031/3072 保持不变。[审阅](../Research/JointConservation2400/MergeReview.md)。
+
 ## 2026-11-28 PR #10 研究分支复核
 
 冻结审阅对象 `882e341b`，基线 `1447d41b`。直接读取基线正反映射（Git blob `de821605b9bb0c124ff8ca4a576f85ced96afaa2` 与 `efad9522397f1b9a79aaf27c4ab90e65d58d1683`）、最终 Results.json、OpenFrontier.json 和 Proof.md，用独立集合差重算所有余集，逐项验证 25 个完整记录唯一、归属一对一、正反映射一致、未删除其他成员；最终 3029 闭、43 开、53 键、35 单键片。最终账本 102 行，其中 25 完整、77 条件；旧 93 行是早期冻结检查点。本次只直接执行账本与映射核验；逐键算术及五项历史回归引用原 PR 的冷重放回执，未重新运行全部算术。 [逐键回执](../Research/FinalNight2400/Proof.md) · [验证边界](../Research/FinalNight2400/Validation.md) · [PR #10](https://github.com/stormwhip/PerfectNumbers/pull/10)。
