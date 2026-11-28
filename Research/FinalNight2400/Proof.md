@@ -72,3 +72,7 @@ python -I -S -B Research/FinalNight2400/Project.py
 ~~~
 
 The projection alone is **not** a proof. Key-specific cold runs listed above include their historical dependencies. The baseline five-command regression passed; the Night2400 run took 3807.369 s. No full-repository historical cold replay or 72-hour global benchmark is claimed. [Validation status, including partial replays](Validation.md) · [Chinese final report](Report.md) · [Research log](ResearchLog.md) · [draft PR](https://github.com/stormwhip/PerfectNumbers/pull/10).
+
+## Subsequent conditional overlay (2026-11-28)
+
+[Independent Gemini review](../GeminiFrontier/November28/Review.md) accepts 143 local exclusions in the submitted domains of (7,16), (7,18), (19,222) and (19,276), after repairing joint order coverage. [Separate machine-readable ledger](../GeminiFrontier/November28/Results.json) and [verifier](../GeminiFrontier/November28/ReviewVerify.py). No complete key is removed; the frozen projection and its 3029/43/53 counts are unchanged.
