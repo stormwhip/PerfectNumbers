@@ -23,7 +23,7 @@ Each applicable absence is proved before use from distinct compelled prime masse
 | [Root222J18Low.json.gz](Root222J18Low.json.gz) | `31c89ddfd47a10015dfba559424fbc7e38a3a313696f86c2249c4d716e6841ba` |
 | [Root222J28.json.gz](Root222J28.json.gz) | `011b3d4230d46ce366bb8de2ba622f3a644f26ebe56ffc24bfa9919de824ec9e` |
 
-[The composition verifier](VerifyFirst222F2.py) rebuilds the exact original scope, matches each complement, and cold-replays the required new proof packs. It does not claim to rerun all frozen historical arithmetic, which was accepted separately. Author cold replay returned exit 0 with the message `COMPLETE (19,222) canonical exact first exponent 2`. This leaves first `f=1,18` at `(19,222)` (51/53 firsts, no exact key or shard change).
+[The composition verifier](VerifyFirst222F2.py) rebuilds the exact original scope, matches each complement, and cold-replays the required new proof packs. It does not rerun frozen arithmetic itself. A separate fresh isolated run of frozen [Firsts.py](../../FinalNight2400/Root222/Firsts.py), [Two.py](../../FinalNight2400/Root222/Two.py) and [Thirds.py](../../FinalNight2400/Root222/Thirds.py) all exited 0: 44 first certificates (604 ECPP chains), 227 strict secondary leaves plus direct firsts 40,46 (558 ECPP), and 515 strict tertiary leaves with 14 newly complete secondary windows (2286 ECPP). The new composition cold replay separately exited 0 with `COMPLETE (19,222) canonical exact first exponent 2`. This leaves first `f=1,18` at `(19,222)` (51/53 firsts, no exact key or shard change).
 
 ```text
 python -I -S -B -X int_max_str_digits=0 Research/AstraFinalAfternoon2400/Nineteen/VerifyFirst222F2.py

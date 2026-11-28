@@ -6334,14 +6334,14 @@
       "Conditions": {
         "EulerPlusOneValuation": {
           "Prime": 13,
-          "Min": 537,
+          "Min": 536,
           "Max": 612
         }
       },
-      "Proof": "ElevenThirteen/HighLinear.md",
-      "Certificate": "ElevenThirteen/HighLinear.py",
-      "Verifier": "ElevenThirteen/HighLinear.py",
-      "IndependentReview": "Audit/Root13HighLinearReceipt.md"
+      "Proof": "ElevenThirteen/ThinGeneral.md",
+      "Certificate": "ElevenThirteen/CertificateThinGeneral.json",
+      "Verifier": "ElevenThirteen/ThinCertified.py",
+      "IndependentReview": "Audit/Root13GeneralWindowReceipt.md"
     },
     {
       "Id": "13-612-euler-position-exponent",
@@ -6393,14 +6393,14 @@
       "Conditions": {
         "EulerPlusOneValuation": {
           "Prime": 13,
-          "Min": 535,
+          "Min": 533,
           "Max": 618
         }
       },
-      "Proof": "ElevenThirteen/Thin618.md",
-      "Certificate": "ElevenThirteen/CertificateThin618.json",
-      "Verifier": "ElevenThirteen/Thin618.py",
-      "IndependentReview": "Audit/Root13ThinReceipt.md"
+      "Proof": "ElevenThirteen/ThinGeneral.md",
+      "Certificate": "ElevenThirteen/CertificateThinGeneral.json",
+      "Verifier": "ElevenThirteen/ThinCertified.py",
+      "IndependentReview": "Audit/Root13GeneralWindowReceipt.md"
     },
     {
       "Id": "13-618-euler-position-exponent",
@@ -16449,6 +16449,26 @@
       "Certificate": "Nineteen/CertificateFirst222F2.json",
       "Verifier": "Nineteen/VerifyFirst222F2.py",
       "IndependentReview": "Audit/Root222First2Receipt.md"
+    },
+    {
+      "Id": "11-16-10-nested-first",
+      "Key": [
+        11,
+        16
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            50544702849929377,
+            10
+          ]
+        ]
+      },
+      "Proof": "ElevenThirteen/Nested.md",
+      "Certificate": "ElevenThirteen/Second-11-16-10.json.gz",
+      "Verifier": "ElevenThirteen/SecondTree.py",
+      "IndependentReview": "Audit/Root11First10.md"
     }
   ]
 }

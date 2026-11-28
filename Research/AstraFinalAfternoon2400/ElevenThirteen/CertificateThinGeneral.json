@@ -1,0 +1,32 @@
+{
+  "CanonicalBans": [
+    19,
+    7,
+    11,
+    31
+  ],
+  "NewExactEulerLinearWindows": [
+    [
+      612,
+      536
+    ],
+    [
+      618,
+      534
+    ],
+    [
+      618,
+      533
+    ]
+  ],
+  "CombinedUpperBounds": {
+    "612": 535,
+    "618": 532
+  },
+  "Profiles": [
+    "612s536",
+    "618s534",
+    "618s533"
+  ],
+  "Verifier": "ThinCertified.py"
+}

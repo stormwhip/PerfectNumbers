@@ -1,0 +1,15 @@
+# Independent review: primitive Euler-source residues at high root-13 windows
+
+For odd perfect `N≤10^2400` under canonical prime 13 (`19,7,11,31∤N`), accept the new windows `(e,s)=(612,536),(618,534),(618,533)`, with exact `v13(N)=e` and `s=v13(q+1)` for the actual unique Euler prime. In union with the already accepted high tails and `(618,535),(618,536)`, the upper bounds on this *linear* input are respectively `s≤535,532`. These are not total nonlinear Euler-sigma supply bounds, complete exact keys, or shards.
+
+The [proof](../ElevenThirteen/ThinGeneral.md) and verified file identities give the complete source of the conditional claim. I reviewed both the upstream shape entry and the new exhaustive bounding. For these high windows the inherited comparisons force `a=1`, q outside A and any ordinary emitter inside A with primitive odd order `d=h+1`, so the mandatory `d|q−1` restricts the Euler multiplier. For every live `(h,c)`, compute the full q-dependent interval and the bounds for both signs of the nonzero fixed residue; both inequalities only tighten as the multiplier increases. This establishes the exact exclusive threshold without assuming that the bound is sharp or the next multiplier is prime. All lower multipliers in the remaining progression go into the finite loop. The small-residue exclusions are only divisibility by a smaller prime (the checker now verifies q>20000); failing Fermat excludes proof-theoretically, passing keeps the case. For each retained q, it can be discarded if composite; if prime, a certified exact order-d generator yields all its primitive residues. The check returns unresolved if none is found or if the interval fails the verified `r<q` threshold. The emitter's required congruence and interval are tested on the entire subgroup. An incomplete scan at a resource cap returns failure, not accepted closure.
+
+The independent lead ran the different full signed-polynomial proof [Endpoint534.py --full](../ElevenThirteen/Endpoint534.py), exit 0, as well as the subgroup path there, exit 0; the alternate monotone function is `F(r)/r^c` (positive leading and negative inverse-power term), with every admissible lower Euler multiplier and positive signed residue covered by exact bisection on the entire integer progression. It does not rely on subgroup failure. The author ran all three sealed standard-library [profiles](../ElevenThirteen/ThinCertified.py), exit 0; the full progression/sieve/primitive generator mathematics was reviewed independently and no discovery or probabilistic-primality source is accepted. Quantities below are full finite domains per two allowed emitter shapes, not coverage of whole root keys:
+
+| Key and window | Full multiplier counts | Fermat pass (all subsequently excluded) |
+|---|---|---|
+| `(13,612),536` | 46,372 / 37,946 | 67 / 36 |
+| `(13,618),534` | 2,909 / 2,380 | 5 / 5 |
+| `(13,618),533` | 95,749 / 78,337 | 137 / 85 |
+
+The active ledger grows the previous quantified range for each key rather than adding overlapping counts. Do not regard these windows as a closure of the still-open anonymous support rectangles at smaller s.

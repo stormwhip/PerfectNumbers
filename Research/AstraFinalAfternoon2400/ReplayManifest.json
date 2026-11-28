@@ -285,5 +285,15 @@
   ],
   "root19-complete222f2-independent": [
     "Audit/Check222F2Union.py"
+  ],
+  "root13-thin-general": [
+    "ElevenThirteen/ThinCertified.py",
+    "618s534",
+    "612s536",
+    "618s533"
+  ],
+  "root13-534-polynomial-independent": [
+    "ElevenThirteen/Endpoint534.py",
+    "--full"
   ]
 }
