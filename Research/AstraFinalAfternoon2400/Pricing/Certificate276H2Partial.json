@@ -1,0 +1,31 @@
+{
+  "baselineCommit": "495c59f55456a70994ce7848487e0c4e262c1984",
+  "bound": {"base": 10, "exponent": 2400},
+  "canonicalKey": [19, 276],
+  "status": "PARTIAL_CONDITIONAL_EXACT_PREFIX",
+  "exactPrefix": [[19, 276], [1176672733, 1], [1109, 2]],
+  "fixedEulerPrime": 1176672733,
+  "remainingDemands": [[19, 275], [1109, 1]],
+  "rareSupplier": {
+    "target": 1109,
+    "onlyFeasibleOrder": 277,
+    "maximumValuationPerSupplier": 1,
+    "strictProductCapK": 68465,
+    "completeBaseLengthRowsBeforeRawTests": 1723,
+    "rowsSurvivingRawTests": 45,
+    "sourceExponentForAllRawSurvivors": 276
+  },
+  "singleTargetInboundPrice": {
+    "excludedRows": 38,
+    "remainingSourceBases": [13, 67, 103, 139, 199, 271, 277]
+  },
+  "jointInboundPrice": {
+    "weightNumerator": 19,
+    "weightDenominator": 10,
+    "excludedSourceBases": [67, 103, 139, 199, 271, 277],
+    "remainingExactPrefix": [[19, 276], [1176672733, 1], [1109, 2], [13, 276]]
+  },
+  "proof": "H2LocalPricing.md",
+  "verifier": "Explore276H2.py",
+  "notes": "Derived output, not verifier input. No exclusion of the entire 1109^2 condition, t^1 fiber, key, or shard. Count does not assert distinctness from other teams' subprefix exclusions."
+}

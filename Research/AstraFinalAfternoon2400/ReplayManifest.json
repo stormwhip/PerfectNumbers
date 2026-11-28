@@ -139,5 +139,12 @@
   ],
   "forest222-stage3-independent": [
     "Audit/Check222Stage3.py"
+  ],
+  "first19x276x1": [
+    "Pricing/Verify276T1.py",
+    "--independent"
+  ],
+  "rare13-complement-independent": [
+    "Audit/CheckRare13.py"
   ]
 }

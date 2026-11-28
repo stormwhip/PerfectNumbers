@@ -30,7 +30,7 @@
       "IndependentReview": "Audit/Root19FirstReceipts.md"
     },
     {
-      "Id": "19-276-1-1109-4-rare",
+      "Id": "19-276-1-complete-first",
       "Key": [
         19,
         276
@@ -41,17 +41,13 @@
           [
             1176672733,
             1
-          ],
-          [
-            1109,
-            4
           ]
         ]
       },
-      "Proof": "Pricing/Proof276.md",
-      "Certificate": "Pricing/Certificate276H4.json",
-      "Verifier": "Pricing/Verify276.py",
-      "IndependentReview": "Audit/Root19FirstReceipts.md"
+      "Proof": "Pricing/Join276T1.md",
+      "Certificate": "Pricing/Certificate276T1.json",
+      "Verifier": "Pricing/Verify276T1.py",
+      "IndependentReview": "Audit/Root19First1Complete.md"
     },
     {
       "Id": "7-12-12-T2-10-forest",
