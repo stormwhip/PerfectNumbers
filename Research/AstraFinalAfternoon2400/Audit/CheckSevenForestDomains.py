@@ -145,6 +145,12 @@ if __name__ == '__main__':
                   {('48f4', h) for h in (8,10,12,14,16,18)})
     replay_basics('Forest12b.json.gz', '1b235c54fd29601e6ce1945df11d1a6c114602ed84faf00d21909d784158b91e',
                   {('12R', h) for h in (64,66,68,70,72,74,76,84,86,88,90,92,94,98,100,102,104,108,110,112,114,116,118,122,128,132,134,140,142,144,146,152,154)})
+    replay_basics('Forest12c.json.gz', 'be38d3fa519ded27b8306fc0634e0a8aceb6d870a1d2fbad17e446bab2f958e1',
+                  {('12R', h) for h in (14,20,28,34,38,44,46,50,52,54,56,60,62)})
+    replay_basics('Forest12d.json.gz', 'f80f410cd157798ba21a9c15236794f9792e406484917f78b334cc5c968e9d0b',
+                  {('12R', h) for h in (26,32,80,120,124,148)} | {('12L', h) for h in (26,46,48,52,58,108,112)})
+    replay_basics('Forest12e.json.gz', 'c9d915fd14c48ea4c35be188799f39d0547fccd92e6fda81d766b81df94d07f2',
+                  {('12R', h) for h in (22,82,96)})
     replay_basics('Forest12a.json.gz', '393ed361ee148eb28cd618271ba3adb7ff21833c4704818fbd3eda375bbfe675',
                   {('12L', h) for h in (10,16,22)} |
                   {('12R', h) for h in (160,162,164,168,170,174,178,186,188,194)})

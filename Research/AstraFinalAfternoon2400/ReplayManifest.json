@@ -31,7 +31,10 @@
     "@Seven/Forest438c.json.gz",
     "@Seven/Forest48a.json.gz",
     "@Seven/Forest12a.json.gz",
-    "@Seven/Forest12b.json.gz"
+    "@Seven/Forest12b.json.gz",
+    "@Seven/Forest12c.json.gz",
+    "@Seven/Forest12d.json.gz",
+    "@Seven/Forest12e.json.gz"
   ],
   "forest7-independent": [
     "Audit/CheckSevenForestDomains.py"
@@ -174,5 +177,20 @@
   ],
   "full31x6-structure-independent": [
     "Audit/Check31CompleteStructure.py"
+  ],
+  "full48eight": [
+    "Seven/Full48Eight.py"
+  ],
+  "full48eight-independent": [
+    "Audit/Check48Eight.py"
+  ],
+  "price48": [
+    "Propagation/Verify48Price.py"
+  ],
+  "price48-independent-domains": [
+    "Audit/Check48PriceDomains.py"
+  ],
+  "11x16f25-independent": [
+    "Audit/Check11x16Seal25.py"
   ]
 }

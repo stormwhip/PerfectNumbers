@@ -104,8 +104,9 @@ def main():
     control_key, control_shards = test_projection(before)
     ledger = json.loads((HERE / 'Results.json').read_bytes())
     assert ledger['BaselineCommit'] == BASE
+    known=invert(before)
     for row in ledger['Entries']:
-        assert tuple(row['Key']) in invert(before)
+        assert tuple(row['Key']) in known
     full = [tuple(row['Key']) for row in ledger['Entries'] if row['Status'] == 'VERIFIED_FULL']
     assert len(full) == len(set(full)) and set(full) == allowed, ('unapproved full-key label or missing full-key record', full, allowed)
     after = subtract(before, allowed)

@@ -48,6 +48,10 @@ def verify_row(row,cert):
             require(set(t)=={'split','cases'} and cert(t['split']),'bad split')
             z=t['split'];ks,tail=children(prefix,z);require(set(t['cases'])==set(map(str,ks)),'omitted live child');splits+=1
             for h in ks:walk([*prefix,(z,h)],t['cases'][str(h)])
+        elif t=={'price':'Seal25'}:
+            from Seal25 import ROWS,certify
+            require(prefix==ROWS,'Seal25 prefix mismatch')
+            certify();n+=1;atoms=2400 if atoms is None else min(atoms,2400)
         else:
             require(set(t)=={'roots','owners','head'},'bad leaf')
             k,o,h=[t[a] for a in ('roots','owners','head')];C.validate_forest(state,k,o,h,cert);n+=1
@@ -65,6 +69,8 @@ def discover(a):
         opts=sorted(opts,reverse=True)
         if not opts:print('no seed',*K,f,flush=True);continue
         def hunt(parts,depth):
+            from Seal25 import ROWS
+            if parts==ROWS:return {'price':'Seal25'}
             leaf=seek(bank,parts,None,a.head,a.steps)
             if 'floor' in leaf:return {k:leaf[k] for k in ('roots','owners','head')}
             if depth<=0:return None
