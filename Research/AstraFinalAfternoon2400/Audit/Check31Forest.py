@@ -113,6 +113,16 @@ def accept(path):
     def visit(row, n):
         if n is None:
             return False
+        if n['type'] in ('price6','joint6'):
+            # Bound only the corresponding pinned exact scope; component primes
+            # are inherited from the fully verified mandatory split chain.
+            assert e==6 and set(n)=={'type'}
+            if n['type']=='price6':
+                from Check31FixedPrice import check
+            else:
+                from Check31Joint6 import check
+            assert check(row)
+            return True
         if n['type']=='forest':
             for z in (*n['roots'],*(z for z,_ in n['owners'])):
                 prime(z)
@@ -136,6 +146,7 @@ def accept(path):
     assert set(map(str,domain))==data['cases'].keys()
     good=[f for f,row in domain.items() if visit(row,data['cases'][str(f)])]
     assert seen==ecpp.keys()
+    print('Exact remaining firsts:',sorted(domain.keys()-set(good)),flush=True)
     print('PASS independent exact-sigma splitting and parity-capacity forest DP', path.name,
           'initial count/tail', (len(domain),tail), 'strict leaves',len(strict), 'ECPP',len(seen), 'accepted fibers',good)
     print('Nested exact domains:',spans)

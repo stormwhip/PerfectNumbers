@@ -1,5 +1,6 @@
 """Replay sealed conditional forest packets; null endpoints are never exclusions."""
 from collections import Counter
+import argparse
 from functools import cache
 from hashlib import sha256
 import gzip,json,sys
@@ -10,7 +11,7 @@ from Replay import B, P, BANNED, key, split, state, valuation, ledger
 from PivotCheck import C, exact_leaf
 
 
-def verify(filename):
+def verify(filename, *, details=False):
     raw=filename.read_bytes();packet=json.loads(gzip.decompress(raw))
     assert set(packet)=={'e','pivot','cases','ecpp'}
     e,t=packet['e'],packet['pivot'];primers=packet['ecpp'];used=set();counts=Counter()
@@ -25,11 +26,16 @@ def verify(filename):
                 q=C.pc.level(*a)
         assert C.pc.prime64(q)
         return True
+    open_rows=[]
     def visit(row,n):
         if n is None:
-            counts['open']+=1;return False
+            counts['open']+=1;open_rows.append(row);return False
         assert state(row)[-1]
         kind=n['type'];counts[kind]+=1
+        if kind in ('price6','joint6'):
+            assert e==6 and set(n)=={'type'}
+            from PriceLeaf6 import allowed,joint
+            return (allowed if kind=='price6' else joint)(row)
         if kind=='forest':
             assert set(n)=={'type','roots','owners','head'}
             s=C.State(list(row));k,o,h=n['roots'],n['owners'],n['head']
@@ -55,12 +61,23 @@ def verify(filename):
     for r in cs:
         f=r[-1][1]
         (good if visit(r,packet['cases'][str(f)]) else bad).append(f)
+        if details:print('first',f,'open' if f in bad else 'excluded',flush=True)
     assert used==set(primers)
-    print(json.dumps(dict(key=[P,e],pivot=t,sha256=sha256(raw).hexdigest(),closed=good,
-                          open=bad,ecpp=len(used),checks=counts)),flush=True)
+    summary=dict(key=[P,e],pivot=t,sha256=sha256(raw).hexdigest(),closed=good,
+                 open=bad,ecpp=len(used),checks=counts)
+    if details:summary['open_prefixes']=open_rows
+    print(json.dumps(summary),flush=True)
     return good,bad
 
 
 if __name__=='__main__':
     assert __debug__;ledger()
-    for a in sys.argv[1:]:verify(Path(a))
+    ap=argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('--require-complete',action='store_true',help='fail if any first remains open')
+    ap.add_argument('--details',action='store_true',help='include the complete residual prefix list')
+    ap.add_argument('paths',nargs='+',type=Path)
+    a=ap.parse_args()
+    for path in a.paths:
+        good,bad=verify(path,details=a.details)
+        if a.require_complete:
+            assert good and not bad,('certificate is not complete',bad)

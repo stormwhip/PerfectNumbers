@@ -139,7 +139,7 @@ def atoms(prefix, targets, wn=2, wd=1):
     cap=B//(x*d)
     banned=(*BANNED, *dict(prefix))
     def prime_maybe(y):
-        return y>=3 and y%2 and y not in banned and all(y==k or y%k for k in SMALL) and (y.bit_length()>128 or pow(2,y-1,y)==1)
+        return y>=3 and y%2 and y not in banned and all(y==k or y%k for k in SMALL) and ((wn==2*wd and y.bit_length()>128) or pow(2,y-1,y)==1)
     loss={}
     def add(y,h,goal):
         if y<3 or not y%2:
@@ -230,14 +230,18 @@ def price(prefix, targets, wn=2, wd=1):
     u,needs,counts=atoms(prefix,targets,wn,wd)
     factor = prod(t**c for t,c in zip(targets,needs))
     price_cap=B**wd*u
+    emitter_cap=3**wn*B**(wn-wd)*price_cap if wn>=wd else 0
     if any(e%2 for p,e in prefix):
         return ([] if x**wd*factor**wn>price_cap else ['fixed-euler']), counts
     h=max(exclusive_components(bs,x),default=1)
+    d_power=d**(wn-wd) if wn>=wd else 0
+    emitter_cap*=h**(wn-wd) if wn>=wd else 0
     windows=[]
+    target_powers=[tuple(t**j for j in range(c+1)) for t,c in zip(targets,needs)]
     for alloc in product(*(range(c+1) for c in needs)):
-        m=prod(t**c for t,c in zip(targets,alloc))
+        m=prod(ps[j] for ps,j in zip(target_powers,alloc))
         q=2*m-1
-        rest=(factor//m)**wn
+        rest=prod(ps[c-j] for ps,c,j in zip(target_powers,needs,alloc))**wn
         if (x*q)**wd*rest>price_cap:
             continue
         # For a 3 mod 4 fixed prime, positive inflow makes the Euler base exterior
@@ -250,7 +254,7 @@ def price(prefix, targets, wn=2, wd=1):
             continue
         # For w >= 1 eliminate Y from 2XD Q^2 Y < 3BH and
         # (2XQ^2)^wd * rest < 3^wd B^wd U * Y^(wn-wd).
-        if wn>=wd and (2*x*q*q)**wn*d**(wn-wd)*rest>3**wn*B**(wn-wd)*price_cap*h**(wn-wd):
+        if wn>=wd and (2*x*q*q)**wn*d_power*rest>emitter_cap:
             continue
         windows.append((alloc,'external'))
     return windows, counts

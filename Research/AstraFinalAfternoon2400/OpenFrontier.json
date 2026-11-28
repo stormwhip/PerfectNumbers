@@ -2,13 +2,25 @@
   "BaselineCommit": "495c59f55456a70994ce7848487e0c4e262c1984",
   "GlobalStatus": "INCOMPLETE_FRONTIER",
   "TotalShards": 3072,
-  "ClosedShards": 3029,
-  "OpenShards": 43,
-  "DistinctKeys": 53,
-  "SingletonShards": 35,
-  "NewFullKeys": [],
-  "NewClosedShards": [],
-  "RegisteredConditionalEntries": 525,
+  "ClosedShards": 3031,
+  "OpenShards": 41,
+  "DistinctKeys": 51,
+  "SingletonShards": 33,
+  "NewFullKeys": [
+    [
+      7,
+      438
+    ],
+    [
+      31,
+      6
+    ]
+  ],
+  "NewClosedShards": [
+    "P31_I00002",
+    "P7_I00084"
+  ],
+  "RegisteredConditionalEntries": 469,
   "ByRoot": {
     "19": {
       "Closed": 274,
@@ -35,8 +47,8 @@
       ]
     },
     "7": {
-      "Closed": 399,
-      "Open": 13,
+      "Closed": 400,
+      "Open": 12,
       "Keys": [
         4,
         6,
@@ -47,7 +59,6 @@
         24,
         34,
         48,
-        438,
         456,
         486,
         600,
@@ -68,11 +79,10 @@
       ]
     },
     "31": {
-      "Closed": 248,
-      "Open": 5,
+      "Closed": 249,
+      "Open": 4,
       "Keys": [
         2,
-        6,
         268,
         456,
         466
@@ -273,12 +283,6 @@
         18
       ]
     ],
-    "P7_I00084": [
-      [
-        7,
-        438
-      ]
-    ],
     "P7_I00087": [
       [
         7,
@@ -347,12 +351,6 @@
       [
         31,
         2
-      ]
-    ],
-    "P31_I00002": [
-      [
-        31,
-        6
       ]
     ],
     "P31_I00055": [
@@ -538,9 +536,6 @@
     "31,466": [
       "P31_I00089"
     ],
-    "31,6": [
-      "P31_I00002"
-    ],
     "7,10": [
       "P7_I00004"
     ],
@@ -562,9 +557,6 @@
     ],
     "7,4": [
       "P7_I00002"
-    ],
-    "7,438": [
-      "P7_I00084"
     ],
     "7,456": [
       "P7_I00087"

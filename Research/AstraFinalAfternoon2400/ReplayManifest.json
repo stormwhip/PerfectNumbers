@@ -3,7 +3,11 @@
     "VerifyLedger.py"
   ],
   "projection": [
-    "Audit/ProjectionAudit.py"
+    "Audit/ProjectionAudit.py",
+    "--accepted-full",
+    "7,438",
+    "--accepted-full",
+    "31,6"
   ],
   "inert222": [
     "Nineteen/Inert222.py"
@@ -146,5 +150,29 @@
   ],
   "rare13-complement-independent": [
     "Audit/CheckRare13.py"
+  ],
+  "full438": [
+    "Seven/Full438.py"
+  ],
+  "full438-partition-independent": [
+    "Audit/CheckFull438Partition.py"
+  ],
+  "full438-last-domain-independent": [
+    "Audit/Check438TwelveLast.py"
+  ],
+  "full438-mixed-domains-independent": [
+    "Audit/Check438TwelveMixed.py"
+  ],
+  "full31x6": [
+    "ThirtyOne/ForestVerify.py",
+    "--require-complete",
+    "@ThirtyOne/Certificate6CompleteJoined.json.gz"
+  ],
+  "full31x6-independent": [
+    "Audit/Check31Forest.py",
+    "@ThirtyOne/Certificate6CompleteJoined.json.gz"
+  ],
+  "full31x6-structure-independent": [
+    "Audit/Check31CompleteStructure.py"
   ]
 }

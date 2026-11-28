@@ -8,18 +8,22 @@ R=H.parents[1]
 sys.path[:0]=[str(H),str(R/'RootFiveNext')]
 from Propagation import part, sigma, val, outside_progression
 from PrimeCheck import level, prime64
-from Verify438x22 import p,r,t,B,T,replay_euler,exact
+from Verify438x22 import p,r,t,B,T,replay_euler,exact,price_cut
+from Propagation import odd_price,screened_prime
 
 LOW=2*T-1
 MOD=4*T
 ACCEPTED_CORE=(12,14,16,18,20,24)
 
 
-def replay(path, expected):
+def replay(path, expected, exact_prefixes=False):
     pack=json.loads(gzip.decompress(path.read_bytes()))
     assert set(pack)=={'records','ecpp'}
     docs=pack['records']; ecpp=pack['ecpp']; seen=set(); mins=[]; stats=[0,0]
-    assert [tuple(doc['P'][-1]) for doc in docs]==[(r,h) for h in expected]
+    if exact_prefixes:
+        assert [[tuple(x) for x in doc['P']] for doc in docs]==expected
+    else:
+        assert [tuple(doc['P'][2]) for doc in docs]==[(r,h) for h in expected]
 
     @cache
     def prime(x):
@@ -97,19 +101,70 @@ def replay(path, expected):
         assert min(a,b)>B
         mins.append(min(a,b)*10**6//B)
 
-    # The shipped release has one forest per h and no splits.
-    for doc in docs:
-        P=list(map(tuple,doc['P'])); assert len(P)==3 and P[:2]==[(p,438),(t,12)]
+    def may(z): return z not in (p,r,t,19) and screened_prime(z)
+
+    @cache
+    def U(h):
+        assert gcd(3*p,r*((r-1)//2))==1
+        return odd_price(p,438,2,1,B,5100,may)[0]*odd_price(r,h,4,1,B,5100,may)[0]
+
+    splits=prices=0
+    def walk(P,tree):
+        nonlocal splits,prices
         X,S,D,c,bad=exact(P)
         assert not bad and all(q%MOD!=LOW and h%2==0 and prime(q) for q,h in P)
-        forest(P,D,doc['tree'])
-        print(P[-1][1],'strict minimum millionths',mins[-1],flush=True)
+        if tree['type']=='reserve':return forest(P,D,tree)
+        if tree['type']=='credits':
+            assert set(tree)=={'type','labels'}
+            z=tree['labels']; assert len(z)==len(set(z)) and not ({q for q,h in P}&set(z))
+            assert all(q<LOW and q!=19 and D%q==0 and prime(q) for q in z)
+            statistics=price_cut(P,z,U(P[2][1]),prime); prices+=1
+            print('price leaf',P[2:],statistics,flush=True)
+            return
+        assert set(tree)=={'type','anchor','cases'} and tree['type']=='split'
+        q=tree['anchor']; cases=tree['cases']; splits+=1
+        assert prime(q) and q%MOD!=LOW and q!=19 and all(q!=x for x,h in P) and D%q==0
+        v=val(D,q); k=v+v%2; keys=[]
+        # Multiply LOW into the parent tail only if q_Euler is known
+        # coprime to the entire paid parent D. Do the same in each child.
+        extra=LOW if outside_progression(D,LOW,MOD,LOW,B//X) else 1
+        while X*(D//q**v)*q**k*extra<=B:
+            F=P+[(q,k)]; X1,S1,D1,c1,invalid=exact(F)
+            if not invalid and (not outside_progression(D1,LOW,MOD,LOW,B//X1) or X1*D1*LOW<=B):
+                keys.append(str(k));walk(F,cases[str(k)])
+            k+=2
+        assert set(keys)==set(cases)
+
+    for doc in docs:
+        P=list(map(tuple,doc['P'])); assert (exact_prefixes or len(P)==3) and P[:2]==[(p,438),(t,12)]
+        i=len(mins);walk(P,doc['tree'])
+        print(P[2:],'strict minimum millionths across unpriced leaves',min(mins[i:],default=None),flush=True)
     assert seen==set(ecpp)
-    print('PASS t^12 secondary fibers',list(expected),'forests, vertices',stats,'ECPP',len(seen),'min scaled bound',min(mins),flush=True)
+    print('PASS t^12 secondary fibers',list(expected),'forests, vertices',stats,'splits',splits,'prices',prices,'ECPP',len(seen),'min scaled bound',min(mins,default=None),flush=True)
+    return {tuple(sorted(map(tuple,doc['P']))) for doc in docs}
+
+
+def verify_h2_cuts(tags=('sub2','price2','high2')):
+    """Authenticate the exact leaves and return their canonical sorted prefixes.
+
+    Callers must select their own non-overlapping subset and verify each
+    delegated leaf is actually reached by their exhaustive exact tree.
+    """
+    assert __debug__
+    replay_euler()
+    base=[(p,438),(t,12),(r,2)]; a=752487193; c=50047294070406095227
+    cases={'sub2':[base+[(a,28)],base+[(a,22),(c,2)]],
+           'price2':[base+[(a,22),(c,k)] for k in (8,10,12)],
+           'high2':[base+[(a,k)] for k in (46,52)]}
+    assert len(tags)==len(set(tags)) and set(tags)<=cases.keys()
+    return set().union(*(replay(H/f'Reserved438x12-{tag}.json.gz',cases[tag],True) for tag in tags))
 
 if __name__=='__main__':
     assert __debug__
-    replay_euler()
-    args=tuple(map(int,sys.argv[1:])) or ACCEPTED_CORE
-    assert len(args)==len(set(args)) and all(2<=h<=26 and h%2==0 and h!=22 for h in args)
-    replay(H/('Reserved438x12-'+'-'.join(map(str,args))+'.json.gz'),args)
+    if sys.argv[1:] in (['sub2'],['price2'],['high2']):
+        verify_h2_cuts(tuple(sys.argv[1:]))
+    else:
+        replay_euler()
+        args=tuple(map(int,sys.argv[1:])) or ACCEPTED_CORE
+        assert len(args)==len(set(args)) and all(2<=h<=26 and h%2==0 and h!=22 for h in args)
+        replay(H/('Reserved438x12-'+'-'.join(map(str,args))+'.json.gz'),args)
