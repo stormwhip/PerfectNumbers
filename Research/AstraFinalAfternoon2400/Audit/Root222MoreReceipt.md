@@ -1,0 +1,7 @@
+# Independent conditional acceptance: three more second windows under (19,222)
+
+Accept canonical exact `19^222,7579985624053^f,3705121363^g` for `(f,g)={(1,40),(18,42),(18,46)}` as impossible for odd perfect `N≤10^2400`. These are complete **second** windows only. No closure of either first, key or shard follows. Do not count them in the complete first exponent two receipt (disjoint firsts).
+
+Audited pinned [More222.json.gz](../Nineteen/More222.json.gz) SHA-256 `75e22e331489a04cf1ddd17f52c471bfddad3b684bb64f3d7493a071eaf224dd`. Independently regenerated each exact first and second domain using finite sums, lcm budgets and strict tails. Checked original frozen TwoForests and ThirdForests blobs at `495c59f55456a70994ce7848487e0c4e262c1984`: each candidate was live and unrefined, not historically closed. On `(1,40)`, `3789992812027` is mandatory, and Euler is locked by true first exponent 1; all 21 even child exponents 2…42 survive bare checks through first strict raw tail 86, with no omitted compatible child. The two first-18 records are direct unrestricted-Euler forests, not assuming a support mask.
+
+Scoped [applicant replay](../Nineteen/VerifyMore222.py) exited 0. A separate Python check used the independent [lcm-domain algorithm](Check31Domains.py) and [parity-capacity forest recurrence](Check31Forest.py), authenticated 203 ECPP certificate subjects at actual tree use, and verified all 23 terminal integer inequalities strictly above `B`, without stored floors. Exit 0; all three exact scopes only.

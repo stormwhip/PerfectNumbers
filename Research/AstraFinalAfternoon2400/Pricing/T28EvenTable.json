@@ -1,0 +1,25 @@
+{
+  "baselineCommit": "495c59f55456a70994ce7848487e0c4e262c1984",
+  "canonicalKey": [19,276],
+  "bound": {"base":10,"exponent":2400},
+  "firstPivot":1176672733,
+  "secondPivot":1109,
+  "status":"PARTIAL_CONDITIONAL_EXACT_CHILDREN",
+  "allOddPlacementRowsExcluded":[
+    {"firstExponent":2,"count":69,"rawTail":549},
+    {"firstExponent":8,"count":64,"rawTail":514},
+    {"firstExponent":16,"count":58,"rawTail":466},
+    {"firstExponent":18,"count":57,"rawTail":454},
+    {"firstExponent":28,"count":50,"rawTail":394}
+  ],
+  "ordinaryExactChildren":[
+    {"firstExponent":2,"rawLive":137,"closedStart":184,"closedStopInclusive":274,"closedCount":46,"remaining":91},
+    {"firstExponent":8,"rawLive":128,"closedStart":172,"closedStopInclusive":256,"closedCount":43,"remaining":85},
+    {"firstExponent":16,"rawLive":116,"closedStart":156,"closedStopInclusive":232,"closedCount":39,"remaining":77},
+    {"firstExponent":18,"rawLive":113,"closedStart":152,"closedStopInclusive":226,"closedCount":38,"remaining":75},
+    {"firstExponent":28,"rawLive":98,"closedStart":132,"closedStopInclusive":196,"closedCount":33,"remaining":65}
+  ],
+  "coverage":"Each range has step 2; odd-placement windows are an independently proved complete Euler-position case. Rows may overlap other independently proved first-pivot closures and are not additive to them.",
+  "verifiers":["VerifyT28Euler.py","VerifyT28Ordinary.py"],
+  "proofs":["T28Euler.md","T28Ordinary.md"]
+}

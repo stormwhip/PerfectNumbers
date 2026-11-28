@@ -1,0 +1,18 @@
+{
+  "BaselineCommit": "495c59f55456a70994ce7848487e0c4e262c1984",
+  "Key": [
+    13,
+    618
+  ],
+  "PreviouslyExcludedLinearRange": [
+    537,
+    618
+  ],
+  "NewlyExcludedLinearRange": [
+    535,
+    536
+  ],
+  "AbsoluteLinearUpperBound": 534,
+  "FermatCandidates535": 97,
+  "IndependentVerifier": "../Audit/CheckThin618.py"
+}

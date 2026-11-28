@@ -1,0 +1,51 @@
+{
+  "BaselineCommit": "495c59f55456a70994ce7848487e0c4e262c1984",
+  "CanonicalKey": [
+    7,
+    438
+  ],
+  "CanonicalBans": [
+    19
+  ],
+  "BoundPower10": 2400,
+  "FirstPivot": 572749682520506652634407616247,
+  "FirstDirectBaselineDomain": [
+    2,
+    4,
+    6,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    28
+  ],
+  "FirstStrictRawTail": 57,
+  "NewlyCompletedFirstFibers": [
+    10,
+    12
+  ],
+  "Second10": {
+    "Pivot": 67,
+    "Live": 150,
+    "Frozen": 72,
+    "New": 78,
+    "StrictRawTail": 601
+  },
+  "Second12": {
+    "Pivot": 27431,
+    "Live": 55,
+    "Frozen": 42,
+    "New": 13,
+    "StrictRawTail": 221
+  },
+  "Remaining": [],
+  "CanonicalAffectedShards": [
+    "P7_I00084"
+  ],
+  "PrimaryVerifier": "Full438.py",
+  "IndependentReview": "../Audit/Root7Complete438.md"
+}

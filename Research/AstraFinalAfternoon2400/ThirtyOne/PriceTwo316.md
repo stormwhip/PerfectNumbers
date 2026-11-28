@@ -1,0 +1,13 @@
+# Two exact fixed-Euler leaves inside (31,2), first 331 exponent 316
+
+The analytics cover **only** exact prefixes `31²,331^316,1510189^f,3²,13²,61¹` for `f=52,58`; `61` is the actual Euler base. The corresponding ancestors and valuations are ordinary sealed forest split obligations, not implied by this page. The remaining two target demands for `(t,u)=(331,1510189)` are `(315,f−1)`.
+
+Recompute factorizations `330=2·3·5·11` and `1510188=4·3·317·397`. Ordinary odd geometric length L ≤8000, so `u>8000` gives no order-one valuation or LTE length increment at u. At t, let `k=v_t(L)`; pay the entire LTE length contribution with independent reserve `t^k−1≥k(t−1)`, since `3^(t−1)≥t²`. Every allowed order at u is coprime to t, as checked on the prime-derived divisor list; hence `lcm(o_t,o_u)t^k|L` when both base-order contributions are active (give inactive targets unit order). If a base is order one at t its entire flow is the length contribution. If it is not coprime to either target, it is the corresponding fixed prime, disallowed for a new atom.
+
+The base-order budget is weight 2 for both targets, counting once the reserve 2 if cubic at either target (joint CRT if both are cubic), and reserve `o−3` separately for each noncubic incoming order (minimum o≥5). A direct exact comparison for **every** pair including inactive axes shows that the sum is ≤`lcm(o_t,o_u)−1`; together with the independent length reserve it is ≤`L−1`. This test is important: the same naive allocation could fail for other target pairs whose full odd order lists overlap differently.
+
+On either marginal order, positive loss requires `y^(o−3)<s^(2z)`; since `o−3≥2`, it requires `y<s^z`. A joint cubic loss similarly requires `y<331^i·1510189^j`. Thus least representatives are complete **at these weights**, with both CRT axes and all roots at every capped depth. [PriceTwo316.py](PriceTwo316.py) builds every such root class using complete primitive prime-field generation/lifting (large target) and full base-field digit lifts (small target). It keeps eligible prime bases, and no Euler-square atoms (Euler is fixed). It drops only known forbidden/fixed bases, even or definite composite values, and forced-size conflicts `X·lcm(D,y^reserve)>10^2400` (a source may overlap D). Distinct bases each contribute at most the corresponding maximum deficit, and separate class contributions are safe with the proved exponent reservation. It verifies `X (331^315·1510189^(f−1))² > B U` by exact integers for each leaf. The complete outputs are 10 and 6 cubic loss labels respectively, with zero marginal loss labels in either leaf.
+
+```powershell
+python -I -S -B -X int_max_str_digits=0 Research/AstraFinalAfternoon2400/ThirtyOne/PriceTwo316.py
+```

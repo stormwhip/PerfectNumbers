@@ -1,0 +1,15 @@
+{
+  "CanonicalKey": [7, 438],
+  "CanonicalBans": [19],
+  "BoundPower10": 2400,
+  "AdditionalExactPrefix": [[572749682520506652634407616247, 10]],
+  "ForcedPivot": 67,
+  "CompleteDirectLiveEvenExponentInterval": [2, 300],
+  "FirstStrictRawExponentTail": 601,
+  "VerifiedFrozenChildren": 72,
+  "VerifiedNewChildren": 78,
+  "RemainingChildren": [],
+  "NewPackets": ["Forest438a.json.gz", "Forest438b.json.gz", "Forest438c.json.gz", "Forest438d.json.gz", "Forest438e.json.gz", "Forest438f.json.gz", "Forest438g.json.gz", "Forest438h.json.gz"],
+  "Verifier": "Full438Ten.py",
+  "IndependentReview": "../Audit/Root438FibersReceipt.md"
+}

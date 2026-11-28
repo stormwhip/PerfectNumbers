@@ -1,0 +1,28 @@
+{
+  "frozen": "495c59f55456a70994ce7848487e0c4e262c1984",
+  "status": "CONDITIONAL_TWO_EXACT_PREFIXES",
+  "B_power10": 2400,
+  "order_cap": 5031,
+  "obstruction_prime": 339512567,
+  "q_minus_one": 339512566,
+  "root_sigma_mod_t_times_r": 0,
+  "t_sigma_mod_u": 0,
+  "cases": [
+    {
+      "prefix": [[19,222],[7579985624053,2],[3705121363,16],[2032322226061,1]],
+      "frozen_deep_pivot_exponents": [1,2,4,18,28],
+      "remaining_deep_pivot_exponents": [2,4,18,28],
+      "individual_odd_sigma_mod_q2": [78740388389845427,58551730610296978,25980030686883250,1016161113031],
+      "odd_sigma_product_mod_q2": 82673641497297589,
+      "incoming_valuation": 1
+    },
+    {
+      "prefix": [[19,222],[7579985624053,2],[3705121363,22],[2032322226061,1]],
+      "frozen_deep_pivot_exponents": [1,2,4,18,28],
+      "remaining_deep_pivot_exponents": [2,4,18,28],
+      "individual_odd_sigma_mod_q2": [78740388389845427,58551730610296978,66826877666340209,1016161113031],
+      "odd_sigma_product_mod_q2": 10636944002175515,
+      "incoming_valuation": 1
+    }
+  ]
+}

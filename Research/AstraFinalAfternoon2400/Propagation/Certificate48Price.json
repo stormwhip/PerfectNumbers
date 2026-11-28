@@ -1,0 +1,33 @@
+{
+  "CanonicalKey": [
+    7,
+    48
+  ],
+  "CanonicalBans": [
+    19
+  ],
+  "FirstPivot": 6106505825833677713,
+  "Groups": [
+    {
+      "First": 2,
+      "Pivot": 518019223567,
+      "Live": 48,
+      "RawTail": 195,
+      "ExcludedEvenRange": [
+        76,
+        96
+      ]
+    },
+    {
+      "First": 10,
+      "Pivot": 531983,
+      "Live": 85,
+      "RawTail": 344,
+      "ExcludedEvenRange": [
+        104,
+        170
+      ]
+    }
+  ],
+  "Verifier": "Verify48Price.py"
+}

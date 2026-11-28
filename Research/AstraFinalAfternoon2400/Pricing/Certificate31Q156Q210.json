@@ -1,0 +1,24 @@
+{
+  "Key": [
+    31,
+    268
+  ],
+  "FirstPivot": 3229,
+  "FirstExponentsExcluded": [
+    156,
+    210
+  ],
+  "PoweredCommonWeight": [
+    19,
+    10
+  ],
+  "PoweredDeficitTableSizes": [
+    6,
+    0,
+    0
+  ],
+  "First156InternalWindows": 28381,
+  "AfterCombinedForestProofRemaining": [
+    102
+  ]
+}

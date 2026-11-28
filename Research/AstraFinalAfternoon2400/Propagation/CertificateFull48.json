@@ -1,0 +1,43 @@
+{
+  "BaselineCommit": "495c59f55456a70994ce7848487e0c4e262c1984",
+  "CanonicalKey": [
+    7,
+    48
+  ],
+  "CanonicalBans": [
+    19
+  ],
+  "FirstPivot": 6106505825833677713,
+  "FirstRawStrictTail": 125,
+  "DirectFirstCount": 31,
+  "InheritedFirstCount": 27,
+  "CompleteNewFirsts": [
+    2,
+    4,
+    8,
+    10
+  ],
+  "First2": {
+    "Pivot": 518019223567,
+    "Live": 48,
+    "RawTail": 195
+  },
+  "First10": {
+    "Pivot": 531983,
+    "Live": 85,
+    "RawTail": 344
+  },
+  "AffectedShard": "P7_I00003",
+  "ShardRemainder": [
+    [
+      7,
+      6
+    ],
+    [
+      7,
+      34
+    ]
+  ],
+  "NewlyEmptyShards": [],
+  "Verifier": "Full48.py"
+}

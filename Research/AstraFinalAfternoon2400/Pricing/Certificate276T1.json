@@ -1,0 +1,26 @@
+{
+  "CanonicalKey": [
+    19,
+    276
+  ],
+  "AdditionalExactPrefix": [
+    [
+      1176672733,
+      1
+    ]
+  ],
+  "FixedEulerPrime": 1176672733,
+  "SecondPivot": 1109,
+  "DirectLiveEvenRange": [
+    2,
+    276
+  ],
+  "FirstStrictRawTail": 555,
+  "FrozenCovered": 136,
+  "NewExactChildren": [
+    2,
+    4
+  ],
+  "Left": [],
+  "Verifier": "Verify276T1.py"
+}

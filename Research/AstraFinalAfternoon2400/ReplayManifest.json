@@ -1,0 +1,389 @@
+{
+  "ledger": [
+    "VerifyLedger.py"
+  ],
+  "projection": [
+    "Audit/ProjectionAudit.py",
+    "--accepted-full",
+    "7,438",
+    "--accepted-full",
+    "31,6",
+    "--accepted-full",
+    "7,48"
+  ],
+  "inert222": [
+    "Nineteen/Inert222.py"
+  ],
+  "forest222": [
+    "Nineteen/VerifyForest222.py"
+  ],
+  "forest222-independent": [
+    "Audit/CheckForest222Domains.py"
+  ],
+  "price276h4": [
+    "Pricing/Verify276.py"
+  ],
+  "price276h4-independent": [
+    "Audit/Check19x276x1109x4.py"
+  ],
+  "forest7": [
+    "Seven/VerifyForest.py",
+    "@Seven/Forest438a.json.gz",
+    "@Seven/Forest438b.json.gz",
+    "@Seven/Forest438c.json.gz",
+    "@Seven/Forest48a.json.gz",
+    "@Seven/Forest12a.json.gz",
+    "@Seven/Forest12b.json.gz",
+    "@Seven/Forest12c.json.gz",
+    "@Seven/Forest12d.json.gz",
+    "@Seven/Forest12e.json.gz",
+    "@Seven/Forest12f.json.gz",
+    "@Seven/Forest12g.json.gz",
+    "@Seven/Forest12h.json.gz",
+    "@Seven/Forest12i.json.gz",
+    "@Seven/Forest12j.json.gz",
+    "@Seven/Forest12k.json.gz",
+    "@Seven/Forest12l.json.gz",
+    "@Seven/Forest12m.json.gz",
+    "@Seven/Forest12n.json.gz"
+  ],
+  "forest7-independent": [
+    "Audit/CheckSevenForestDomains.py"
+  ],
+  "reserve438": [
+    "Seven/VerifyReserved438.py"
+  ],
+  "reserve438-independent": [
+    "Audit/Check438ReserveDomains.py"
+  ],
+  "joint438x22": [
+    "Propagation/Verify438x22.py"
+  ],
+  "joint438x22-independent": [
+    "Audit/Check438x22.py"
+  ],
+  "euler808": [
+    "Root808/Explore.py"
+  ],
+  "euler808-independent": [
+    "Audit/Check7x808.py"
+  ],
+  "forest11and13": [
+    "ElevenThirteen/ForestPacket.py"
+  ],
+  "forest11and13-independent": [
+    "Audit/Check11and13Forest.py"
+  ],
+  "linear13": [
+    "ElevenThirteen/HighLinear.py"
+  ],
+  "anonymous13": [
+    "Propagation/VerifyAnonymous13.py"
+  ],
+  "linear13-independent": [
+    "Audit/Check13HighLinear.py"
+  ],
+  "forest31": [
+    "ThirtyOne/ForestVerify.py",
+    "@ThirtyOne/Certificate268Broad.json.gz",
+    "@ThirtyOne/Certificate6.json.gz",
+    "@ThirtyOne/Certificate268.json.gz",
+    "@ThirtyOne/Certificate2.json.gz",
+    "@ThirtyOne/Certificate6More.json.gz",
+    "@ThirtyOne/Certificate2Extended.json.gz",
+    "@ThirtyOne/Certificate268Union73.json.gz",
+    "@ThirtyOne/Certificate2More.json.gz",
+    "@ThirtyOne/Certificate2Fiber268.json.gz",
+    "@ThirtyOne/Certificate2Fiber276.json.gz",
+    "@ThirtyOne/Certificate2Followup131.json.gz"
+  ],
+  "forest31-independent": [
+    "Audit/Check31Forest.py",
+    "@ThirtyOne/Certificate268Broad.json.gz",
+    "@ThirtyOne/Certificate6.json.gz",
+    "@ThirtyOne/Certificate268.json.gz",
+    "@ThirtyOne/Certificate2.json.gz",
+    "@ThirtyOne/Certificate6More.json.gz",
+    "@ThirtyOne/Certificate2Extended.json.gz",
+    "@ThirtyOne/Certificate268Union73.json.gz",
+    "@ThirtyOne/Certificate2More.json.gz",
+    "@ThirtyOne/Certificate2Followup131.json.gz"
+  ],
+  "all-hensel-lifts": [
+    "ElevenThirteen/AllLifts.py"
+  ],
+  "test-propagation": [
+    "Propagation/TestPropagation.py"
+  ],
+  "full438first10": [
+    "Seven/Full438Ten.py"
+  ],
+  "full438first10-independent": [
+    "Audit/Check438TenUnion.py"
+  ],
+  "reserved438first12": [
+    "Propagation/VerifyReserved438x12.py"
+  ],
+  "reserved438first12-independent": [
+    "Audit/Check438TwelveReserved.py"
+  ],
+  "full48fourth": [
+    "Seven/Full48Fourth.py"
+  ],
+  "full48fourth-independent": [
+    "Audit/Check48Fourth.py"
+  ],
+  "forest222-stage2": [
+    "Nineteen/VerifyForest222Stage2.py"
+  ],
+  "forest222-stage2-independent": [
+    "Audit/Check222Stage2.py"
+  ],
+  "t28-euler1109": [
+    "Pricing/VerifyT28Euler.py"
+  ],
+  "t28-euler1109-independent": [
+    "Audit/CheckT28Euler.py"
+  ],
+  "nested11and13": [
+    "Audit/CheckNested11and13.py"
+  ],
+  "root11-price48": [
+    "ElevenThirteen/PivotPrice48Depth.py"
+  ],
+  "root11-price48-independent": [
+    "Audit/Check11x48Price.py"
+  ],
+  "first19x276x18": [
+    "Nineteen/VerifyFirst18.py"
+  ],
+  "first19x276x18-independent": [
+    "Audit/CheckFirst19x276x18.py"
+  ],
+  "forest222-stage3": [
+    "Nineteen/VerifyForest222Stage3.py"
+  ],
+  "forest222-stage3-independent": [
+    "Audit/Check222Stage3.py"
+  ],
+  "first19x276x1": [
+    "Pricing/Verify276T1.py",
+    "--independent"
+  ],
+  "rare13-complement-independent": [
+    "Audit/CheckRare13.py"
+  ],
+  "full438": [
+    "Seven/Full438.py"
+  ],
+  "full438-partition-independent": [
+    "Audit/CheckFull438Partition.py"
+  ],
+  "full438-last-domain-independent": [
+    "Audit/Check438TwelveLast.py"
+  ],
+  "full438-mixed-domains-independent": [
+    "Audit/Check438TwelveMixed.py"
+  ],
+  "full31x6": [
+    "ThirtyOne/ForestVerify.py",
+    "--require-complete",
+    "@ThirtyOne/Certificate6CompleteJoined.json.gz"
+  ],
+  "full31x6-independent": [
+    "Audit/Check31Forest.py",
+    "@ThirtyOne/Certificate6CompleteJoined.json.gz"
+  ],
+  "full31x6-structure-independent": [
+    "Audit/Check31CompleteStructure.py"
+  ],
+  "full48eight": [
+    "Seven/Full48Eight.py"
+  ],
+  "full48eight-independent": [
+    "Audit/Check48Eight.py"
+  ],
+  "price48": [
+    "Propagation/Verify48Price.py"
+  ],
+  "price48-independent-domains": [
+    "Audit/Check48PriceDomains.py"
+  ],
+  "11x16f25-independent": [
+    "Audit/Check11x16Seal25.py"
+  ],
+  "root-three-150-independent": [
+    "Three/Audit150.py"
+  ],
+  "root-three-156-independent": [
+    "Three/Audit156.py"
+  ],
+  "root13-thin": [
+    "ElevenThirteen/Thin618.py"
+  ],
+  "root13-thin-independent": [
+    "Audit/CheckThin618.py"
+  ],
+  "forest222-j2": [
+    "Nineteen/VerifyPlain222J2.py"
+  ],
+  "forest222-j4": [
+    "Nineteen/VerifyMask222J4.py"
+  ],
+  "forest222-final-pair-independent": [
+    "Audit/Check222LastTwos.py"
+  ],
+  "root19-1109-even-union-independent": [
+    "Audit/Check19Even1109.py"
+  ],
+  "root19-first16-Q1": [
+    "Nineteen/VerifyFirst16Q1.py"
+  ],
+  "root19-first16-Q1-independent": [
+    "Audit/CheckFirst16Q1.py"
+  ],
+  "root19-even-forest": [
+    "Nineteen/VerifyEven276.py"
+  ],
+  "root31-q156": [
+    "Pricing/Verify31Q210.py",
+    "--pivot",
+    "156"
+  ],
+  "root31-q210": [
+    "Pricing/Verify31Q210.py",
+    "--pivot",
+    "210"
+  ],
+  "root31-two-joint-independent": [
+    "Audit/Check31LastPrices.py",
+    "210",
+    "156"
+  ],
+  "root31-x2-first400": [
+    "ThirtyOne/Certificate2First400.py"
+  ],
+  "root31-x2-first400-independent": [
+    "Audit/Check31Price400.py"
+  ],
+  "q42-wave2-independent": [
+    "Audit/CheckQ42Wave2.py"
+  ],
+  "q42-wave2-masks": [
+    "Seven/VerifyQ42Masks.py",
+    "@Seven/Forest12Mask.json.gz",
+    "@Seven/Forest12Odd.json.gz",
+    "@Seven/Forest12MaskFour.json.gz"
+  ],
+  "q42-wave2-reserve": [
+    "Seven/VerifyQ42Reserve.py"
+  ],
+  "root808-squarefree": [
+    "Root808/VerifySquarefree.py"
+  ],
+  "root808-squarefree-independent": [
+    "Audit/Check808Squarefree.py"
+  ],
+  "root19-complete222f2": [
+    "Nineteen/VerifyFirst222F2.py"
+  ],
+  "root19-complete222f2-independent": [
+    "Audit/Check222F2Union.py"
+  ],
+  "root13-thin-general": [
+    "ElevenThirteen/ThinCertified.py",
+    "618s534",
+    "612s536",
+    "618s533"
+  ],
+  "root13-534-polynomial-independent": [
+    "ElevenThirteen/Endpoint534.py",
+    "--full"
+  ],
+  "root19-222-f1g2": [
+    "Nineteen/VerifyRoot222F1G2.py"
+  ],
+  "root19-222-f1g2-independent": [
+    "Audit/Check222F1G2.py"
+  ],
+  "full48": [
+    "Propagation/Full48.py"
+  ],
+  "full48-union-independent": [
+    "Audit/CheckFull48Union.py"
+  ],
+  "full48-final-independent": [
+    "Audit/Check48FinalSquare.py"
+  ],
+  "full48-first2-independent-scopes": [
+    "Audit/Check48StrongScopes.py"
+  ],
+  "root19-three-more222": [
+    "Nineteen/VerifyMore222.py"
+  ],
+  "root19-three-more222-independent": [
+    "Audit/CheckMore222.py"
+  ],
+  "root19-222-f1g42": [
+    "Nineteen/Verify222F1G42.py"
+  ],
+  "root19-222-f1g42-independent": [
+    "Audit/Check222F1G42.py"
+  ],
+  "root19-f18extra222": [
+    "Nineteen/Verify18Extra222.py"
+  ],
+  "root19-f18extra222-independent": [
+    "Audit/Check18Extra222.py"
+  ],
+  "root7-q42low": [
+    "Seven/VerifyQ42Masks.py",
+    "@Seven/Forest12LowerNo3.json.gz",
+    "@Seven/Forest12Low6SquareSimple.json.gz",
+    "@Seven/Forest12LowHigh3.json.gz",
+    "@Seven/Forest12Low6Fourth.json.gz",
+    "@Seven/Forest12LowLastPair.json.gz"
+  ],
+  "root34": [
+    "Propagation/Verify34Forest.py"
+  ],
+  "root34-independent": [
+    "Audit/CheckRoot34.py"
+  ],
+  "root19-U-position": [
+    "Pricing/VerifyT28U.py"
+  ],
+  "root19-U-high-ordinary": [
+    "Pricing/OrdinaryU28.py"
+  ],
+  "root19-U12-1109": [
+    "Pricing/U12SHigh.py"
+  ],
+  "root19-222-minor-first1": [
+    "Nineteen/VerifyFirst1FinishMinor222.py"
+  ],
+  "root19-222-minor-first1-independent": [
+    "Audit/CheckFirst1Minor222.py"
+  ],
+  "root34-masks": [
+    "Propagation/Verify34Masks.py"
+  ],
+  "root34-late-independent": [
+    "Audit/CheckRoot34Late.py"
+  ],
+  "root19-last222": [
+    "Nineteen/VerifyLast18And1222.py"
+  ],
+  "root19-last222-independent": [
+    "Audit/CheckLast18And1222.py"
+  ],
+  "root19-finish116": [
+    "Nineteen/Verify222Finish116.py"
+  ],
+  "root19-finish1816": [
+    "Nineteen/Verify222Finish1816.py"
+  ],
+  "root19-finish16-both-independent": [
+    "Audit/Check222Finish16.py"
+  ]
+}
