@@ -5,6 +5,6 @@
 - 以断言开启的 CPython 运行；数学发现用的外部因子线索、概率素性和临时程序不作证明输入。
 - 单独运行 `python -I -S -B Research/AstraFinalAfternoon2400/VerifyLedger.py`，只检查注册和投影，不认证数学结论。条件计数只包括经审阅登记的条目，父子域不得作为两个独立进展重复计数。
 - 后续独立核验涵盖[根七精确森林](Audit/SevenForestFirst.md)、[根七线性供给窗口](Audit/Root7x808Receipt.md)、[根十九深窗森林](Audit/Forest222Receipt.md)、[根三十一分支及算术](Audit/Root31AdditionalReceipt.md)、[根十一与十三 212 个首纤维](Audit/Root11and13ForestReceipt.md)，以及[根七第 22 个次级赋值整纤维](Audit/Root7x438x22Receipt.md)。根十一/十三包在扩展 Pocklington 查找表后发现签入前的重放会绕过一个已嵌 ECPP 证书；调整优先认证嵌入证书，再退回 Pocklington，未改证书或数学域。主、独立核最终均通过。
-- 已有 [两个完整键](Proof.md)：`(7,438)` 和 `(31,6)`，分别清空 `P7_I00084`、`P31_I00002`。[根七回执](Audit/Root7Complete438.md)包含历史相关证明的分阶段冷验，[根31回执](Audit/Root31CompleteReview.md)包含完整的两套带算术重放。见[投影回执](Audit/ProjectionAccepted.md)：3031/3072 闭、41 开、51 键、33 单键片，状态仍为 `INCOMPLETE_FRONTIER`。
+- 已有 [三个完整键](Proof.md)：`(7,438)` 和 `(31,6)` 清空 `P7_I00084`、`P31_I00002`；`(7,48)` 从共享 `P7_I00003` 移除一项，余 `(7,6),(7,34)`，不关闭此片。[根七438回执](Audit/Root7Complete438.md)包含历史相关证明的分阶段冷验，[根31回执](Audit/Root31CompleteReview.md)包含完整的两套带算术重放，[根七48回执](Audit/Root48FullUnionReview.md)包含 31/31 的整链冷跑及独立域审阅。最终投影：3031/3072 闭、41 开、50 键、33 单键片，状态仍为 `INCOMPLETE_FRONTIER`。
 - 在独立 LF 检出 `d49c78a8` 上重跑 8 条入口，全部退出 0：账本、独立投影、根七整域、根七最终委托位置、根31整树结构、`(11,16)` 首值 25、根13符号端点及根19最后两条深森林。这个洁净检出测试只覆盖所列入口，不能替代前述算术验收或证明全历史依赖。
 - 尚未完成全历史端到端冷重放或 72 小时基准验收。
