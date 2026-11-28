@@ -1,0 +1,44 @@
+{
+  "CanonicalKey": [
+    19,
+    222
+  ],
+  "FirstPivot": 7579985624053,
+  "CompleteFirst": 2,
+  "EarlierFirstRawTail": 144,
+  "SecondPivot": 3705121363,
+  "SecondStrictRawTail": 189,
+  "HistoricalSecondComplement": [
+    2,
+    16,
+    22,
+    46
+  ],
+  "HistoricalThirdComplement": {
+    "2": [
+      2,
+      4,
+      18,
+      28
+    ],
+    "16": [
+      1,
+      2,
+      4,
+      18,
+      28
+    ],
+    "22": [
+      1,
+      2,
+      4,
+      18,
+      28
+    ]
+  },
+  "RemainingFirstExponents": [
+    1,
+    18
+  ],
+  "Verifier": "VerifyFirst222F2.py"
+}

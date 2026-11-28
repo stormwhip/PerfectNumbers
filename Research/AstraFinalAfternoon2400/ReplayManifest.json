@@ -279,5 +279,11 @@
   ],
   "root808-squarefree-independent": [
     "Audit/Check808Squarefree.py"
+  ],
+  "root19-complete222f2": [
+    "Nineteen/VerifyFirst222F2.py"
+  ],
+  "root19-complete222f2-independent": [
+    "Audit/Check222F2Union.py"
   ]
 }
