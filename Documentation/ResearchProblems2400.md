@@ -43,3 +43,5 @@
 联合模型的验收条件：未激活森林节点的丰度必须进入同一素数池；森林与 LP 的余块需求须按 $v_u(N)=\sum_vv_u(\sigma(v^{h_v}))$ 共同分配，未知余因子与 Euler 来源共享时须单独处理。[实验与明确缺口](../Research/P3I00193Review/Progress.md)。
 
 历史 $(19,58)$ 的 C10 子域已由[完整键回执](../Research/FinalNight2400/Audit/TenReceipt.md)覆盖，不再列作待证问题。
+
+**11 月 28 日接续域。** [条件补证](../Research/GeminiFrontier/November28/Review.md)已经覆盖十九阶 9 的联合供给及高阶指数预算，且排除了 (19,276) 的首枢轴 1 下 1109 的全部合法指数 h>=6。后续须排除 h=2、4，并继续其余首枢轴及 B、G、H 剩余域；探索性 A、F 诊断仍未验收。
