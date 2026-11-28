@@ -6,6 +6,8 @@
 
 **命题 1（当前已证明范围）。** 与八根均互素的情形满足 $\log_{10}N\ge4183.209493$，见[独立证书](../Research/Session20261122/Python/TerminalCertificate.py)。含根类共 3,072 个规范分片，main 已有 **3,031 个闭合，41 个开放**；开放分片含 **50 个不同的 $(p,e)$**。根 5 与根 17 的规范类均已闭合。见[逐片余集](../Research/AstraFinalAfternoon2400/OpenFrontier.json)及[逐根分布](CurrentStatus2400.md)。
 
+**11 月 28 日理论增量（PR #13、#14）。** 设 $q^\alpha\parallel N$ 为 Euler 成分。新增任意有限单位特征的联合守恒及逐行丰度势证书、多目标合并模数回边界、外部 Euler 的三行输出三次界、圆分块奇偶与平方余量方程。对规范键 $(31,456),(31,466)$ 有 $v_{31}(q+1)\le401$，对 $(7,738)$ 有 $v_7(q+1)\le709$。$(31,268)$ 的零坐标格满足 $q<10^{430}$，其最后首纤维仍未排尽。$(19,222)$ 的五前缀表经独立整数复核，后四行排除 2677 供给两份 19。以上均为条件定理或局部排除；不增加完整键和分片。[第一轮理论](../Research/UnitBalance2400/Readme.md) · [第二轮理论](../Research/JointConservation2400/ResearchReport.md) · [独立审阅及适用边界](../Research/JointConservation2400/MergeReview.md)。
+
 **11 月 28 日下午增量命题（PR #12）。** 在规范根先序缺失假设下，完整排除 $(7,438),(31,6),(7,48)$。以冻结主线 `495c59f` 的逐片余集减去三键，恰清空两个单键片，第三键从共享片移除；余 41 片、50 键。三键的完整算术、分支覆盖和独立审阅见[证明索引](../Research/AstraFinalAfternoon2400/Proof.md)、[验收范围](../Research/AstraFinalAfternoon2400/Validation.md)、[复验入口](../Research/AstraFinalAfternoon2400/Verify.py)。独立合并审阅重建分片代表和双向映射，未重新执行全部算术。PR #11 的[撤回候选](../Research/KimiFrontier/November28/Retraction.md)不计入该结论。全历史端到端和 72 小时验收待完成。
 
 **11 月 28 日上午增量命题（PR #10，历史）。** 以主线 `1447d41b` 的冻结余集为 $A_s$，令 $E$ 为 [25 个完整精确键](../Research/FinalNight2400/Proof.md) 的集合。对每个 $(p,e)\in E$，在规范根 $p$、$p^e\parallel N$ 及 $N\le B$ 下，逐键证明给出矛盾。故更新余集为 $A_s\setminus E$。本次独立复算正反映射确认恰有 25 个原单键片被清空，其他 43 片的成员不变。完整键与条件证明分开登记；最终账本含 25 个完整记录与 77 个条件记录。逐键完整依赖的算术回放以原 PR 回执为证据，本次后续审阅独立复核集合差，未重新执行全部算术。见[证明索引](../Research/FinalNight2400/Proof.md)、[复验入口](../Research/FinalNight2400/Verify.py)及[验证边界](../Research/FinalNight2400/Validation.md)。
