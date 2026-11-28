@@ -15537,6 +15537,30 @@
       "Certificate": "Nineteen/More222.json.gz",
       "Verifier": "Nineteen/VerifyMore222.py",
       "IndependentReview": "Audit/Root222MoreReceipt.md"
+    },
+    {
+      "Id": "19-222-first1-second42-empty",
+      "Key": [
+        19,
+        222
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            7579985624053,
+            1
+          ],
+          [
+            3705121363,
+            42
+          ]
+        ]
+      },
+      "Proof": "Nineteen/Root222F1G42.md",
+      "Certificate": "Nineteen/Root222F1G42.json",
+      "Verifier": "Nineteen/Verify222F1G42.py",
+      "IndependentReview": "Audit/Root222F1G42Receipt.md"
     }
   ]
 }

@@ -323,5 +323,11 @@
   ],
   "root19-three-more222-independent": [
     "Audit/CheckMore222.py"
+  ],
+  "root19-222-f1g42": [
+    "Nineteen/Verify222F1G42.py"
+  ],
+  "root19-222-f1g42-independent": [
+    "Audit/Check222F1G42.py"
   ]
 }
