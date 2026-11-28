@@ -4,6 +4,10 @@
 
 This log separates **imported historical claims**, **directly observed experiments**, and **proof-checked results**. Dates use YYYY-MM-DD.
 
+## 2026-11-28 PR #10 研究分支复核
+
+冻结审阅对象 `882e341b`，基线 `1447d41b`。直接读取基线正反映射（Git blob `de821605b9bb0c124ff8ca4a576f85ced96afaa2` 与 `efad9522397f1b9a79aaf27c4ab90e65d58d1683`）、最终 Results.json、OpenFrontier.json 和 Proof.md，用独立集合差重算所有余集，逐项验证 25 个完整记录唯一、归属一对一、正反映射一致、未删除其他成员；最终 3029 闭、43 开、53 键、35 单键片。最终账本 102 行，其中 25 完整、77 条件；旧 93 行是早期冻结检查点。本次只直接执行账本与映射核验；逐键算术及五项历史回归引用原 PR 的冷重放回执，未重新运行全部算术。 [逐键回执](../Research/FinalNight2400/Proof.md) · [验证边界](../Research/FinalNight2400/Validation.md) · [PR #10](https://github.com/stormwhip/PerfectNumbers/pull/10)。
+
 ## 2026-11-27 Gemini 增量审阅
 
 冻结主线 `2d39840d`；原始三件提交逐字节保存。复跑 16 个素性证书及五个算术入口；数学审阅补齐 $(19,618)$ 的 26 个高偶枢轴赋值的高次 Euler 域，重新枚举 91 个活赋值。$(13,508)$ 与历史 45/46 的已验收证书求并，新增完整键 1、闭片 1；现行 3,004 闭、68 开、78 键。接受 $(7,438)$ 与 $(19,618)$ 两组条件证书，另两组候选不计覆盖。 [审阅与复验](../Research/GeminiFrontier/Review.md) · [账本](../Research/GeminiFrontier/Delta.json)。
