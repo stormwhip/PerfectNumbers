@@ -81,7 +81,9 @@
     "@ThirtyOne/Certificate6More.json.gz",
     "@ThirtyOne/Certificate2Extended.json.gz",
     "@ThirtyOne/Certificate268Union73.json.gz",
-    "@ThirtyOne/Certificate2More.json.gz"
+    "@ThirtyOne/Certificate2More.json.gz",
+    "@ThirtyOne/Certificate2Fiber268.json.gz",
+    "@ThirtyOne/Certificate2Fiber276.json.gz"
   ],
   "forest31-independent": [
     "Audit/Check31Forest.py",
@@ -229,5 +231,26 @@
   ],
   "root19-even-forest": [
     "Nineteen/VerifyEven276.py"
+  ],
+  "root31-q156": [
+    "Pricing/Verify31Q210.py",
+    "--pivot",
+    "156"
+  ],
+  "root31-q210": [
+    "Pricing/Verify31Q210.py",
+    "--pivot",
+    "210"
+  ],
+  "root31-two-joint-independent": [
+    "Audit/Check31LastPrices.py",
+    "210",
+    "156"
+  ],
+  "root31-x2-first400": [
+    "ThirtyOne/Certificate2First400.py"
+  ],
+  "root31-x2-first400-independent": [
+    "Audit/Check31Price400.py"
   ]
 }

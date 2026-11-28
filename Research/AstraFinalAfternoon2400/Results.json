@@ -16029,6 +16029,114 @@
       "Certificate": "Pricing/T28EvenTable.json",
       "Verifier": "Pricing/VerifyT28Ordinary.py",
       "IndependentReview": "Audit/Root19Even1109Receipt.md"
+    },
+    {
+      "Id": "31-268-156-joint-euler",
+      "Key": [
+        31,
+        268
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            3229,
+            156
+          ]
+        ]
+      },
+      "Proof": "Pricing/UniformEuler.md",
+      "Certificate": "Pricing/Certificate31Q156Q210.json",
+      "Verifier": "Pricing/Verify31Q210.py",
+      "VerifierArguments": [
+        "--pivot",
+        "156"
+      ],
+      "IndependentReview": "Audit/Root31Q156Q210Receipt.md"
+    },
+    {
+      "Id": "31-268-210-joint-euler",
+      "Key": [
+        31,
+        268
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            3229,
+            210
+          ]
+        ]
+      },
+      "Proof": "Pricing/UniformEuler.md",
+      "Certificate": "Pricing/Certificate31Q156Q210.json",
+      "Verifier": "Pricing/Verify31Q210.py",
+      "VerifierArguments": [
+        "--pivot",
+        "210"
+      ],
+      "IndependentReview": "Audit/Root31Q156Q210Receipt.md"
+    },
+    {
+      "Id": "31-2-268-first",
+      "Key": [
+        31,
+        2
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            331,
+            268
+          ]
+        ]
+      },
+      "Proof": "Audit/Root31AdditionalReceipt.md",
+      "Certificate": "ThirtyOne/Certificate2Fiber268.json.gz",
+      "Verifier": "ThirtyOne/ForestVerify.py",
+      "IndependentReview": "Audit/Root31AdditionalReceipt.md"
+    },
+    {
+      "Id": "31-2-276-first",
+      "Key": [
+        31,
+        2
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            331,
+            276
+          ]
+        ]
+      },
+      "Proof": "Audit/Root31AdditionalReceipt.md",
+      "Certificate": "ThirtyOne/Certificate2Fiber276.json.gz",
+      "Verifier": "ThirtyOne/ForestVerify.py",
+      "IndependentReview": "Audit/Root31AdditionalReceipt.md"
+    },
+    {
+      "Id": "31-2-400-first",
+      "Key": [
+        31,
+        2
+      ],
+      "Status": "VERIFIED_CONDITIONAL",
+      "Conditions": {
+        "Exact": [
+          [
+            331,
+            400
+          ]
+        ]
+      },
+      "Proof": "ThirtyOne/PriceTwo400.md",
+      "Certificate": "ThirtyOne/Certificate2First400.py",
+      "Verifier": "ThirtyOne/Certificate2First400.py",
+      "IndependentReview": "Audit/Root31Price400Receipt.md"
     }
   ]
 }
