@@ -18,6 +18,10 @@
 
 35 个开放分片为单指数片。当前余集以 [OpenFrontier.json](../Research/FinalNight2400/OpenFrontier.json) 为准；[完整键证明与回执](../Research/FinalNight2400/Proof.md)、[接续任务](NextPlan2400.md)、[验证边界](../Research/FinalNight2400/Validation.md)。合并提交 `bc05f4d`。11 月 28 日 Gemini 补充包经独立局部复验和联合定价补证，接受 (7,16)、(7,18)、(19,222)、(19,276) 下共 143 个局部排除（按提交域计），完整键和规范分片增量均为 0。[证明与审阅](../Research/GeminiFrontier/November28/Review.md) · [条件账本](../Research/GeminiFrontier/November28/Results.json)。以下为历史主线基线，保留原回执。
 
+### 11 月 28 日：PR #11 候选撤回（审阅）
+
+[PR #11](https://github.com/stormwhip/PerfectNumbers/pull/11) 在 `755ed2e9` 撤回 $(19,276)$ 首枢轴 $1176672733$ 赋值 1 的候选证明，包括 $1109$ 赋值 2、4 的候选排除。设目标素数为 $p$，乘法阶为 $o$，权重为 $w$。正亏格 $b^{o-1}<p^{wz}$ 在 $w\le o-1$ 时推出 $b<p^z$，从而最小正 Hensel 剩余枚举完整；在 $p=19,o=3,w=6$ 时仅推出 $b<19^{3z}$。例如 $b=83\equiv7\pmod{19}$，$83^2+83+1=19\cdot367$ 且 $83^2<19^6$，故该尺寸条件容许非最小提升。此例仅反驳枚举覆盖推论，不声称属于完整原始分支。两套原验证器复用同一不完整表，不能认证全域覆盖。此次候选贡献为零；既有 Gemini 局部排除及主线账本保持不变。PR 保持开放以容纳正在审阅的后续研究；此处只记录撤回与覆盖条件，不接受任何新增证书。全局状态仍为 `INCOMPLETE_FRONTIER`（3029/3072、43 开放分片、53 开放键）。
+
 ## 11 月 27 日主线基线：逐根覆盖
 
 | 规范根 | 总片数 | 已闭合 | 仍开放 | 待证实际指数 | 夜间+本批新增闭片 | 夜间+本批净排指数 |
