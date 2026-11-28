@@ -4,9 +4,11 @@
 
 记 $B=10^{2400}$，$\sigma(n)=\sum_{d\mid n}d$，$I(n)=\sigma(n)/n$，$v_p(n)$ 为 $p$-赋值，$\operatorname{odd}(n)=n/2^{v_2(n)}$。以下取 $N$ 为满足 $\sigma(N)=2N$ 且 $N\le B$ 的假想奇数。由 Euler 结构，$N=q^aM^2$，其中 $q$ 为素数、$q\nmid M$ 且 $q\equiv a\equiv1\pmod4$。
 
-**命题 1（当前已证明范围）。** 与八根均互素的情形满足 $\log_{10}N\ge4183.209493$，见[独立证书](../Research/Session20261122/Python/TerminalCertificate.py)。含根类共 3,072 个规范分片，PR #10 研究分支已有 **3,029 个闭合，43 个开放**；开放分片含 **53 个不同的 $(p,e)$**。根 5 与根 17 的规范类均已闭合。见[逐片余集](../Research/FinalNight2400/OpenFrontier.json)及[逐根分布](CurrentStatus2400.md)。
+**命题 1（当前已证明范围）。** 与八根均互素的情形满足 $\log_{10}N\ge4183.209493$，见[独立证书](../Research/Session20261122/Python/TerminalCertificate.py)。含根类共 3,072 个规范分片，main 已有 **3,031 个闭合，41 个开放**；开放分片含 **50 个不同的 $(p,e)$**。根 5 与根 17 的规范类均已闭合。见[逐片余集](../Research/AstraFinalAfternoon2400/OpenFrontier.json)及[逐根分布](CurrentStatus2400.md)。
 
-**11 月 28 日增量命题（PR #10）。** 以主线 `1447d41b` 的冻结余集为 $A_s$，令 $E$ 为 [25 个完整精确键](../Research/FinalNight2400/Proof.md) 的集合。对每个 $(p,e)\in E$，在规范根 $p$、$p^e\parallel N$ 及 $N\le B$ 下，逐键证明给出矛盾。故更新余集为 $A_s\setminus E$。本次独立复算正反映射确认恰有 25 个原单键片被清空，其他 43 片的成员不变。完整键与条件证明分开登记；最终账本含 25 个完整记录与 77 个条件记录。逐键完整依赖的算术回放以原 PR 回执为证据，本次后续审阅独立复核集合差，未重新执行全部算术。见[证明索引](../Research/FinalNight2400/Proof.md)、[复验入口](../Research/FinalNight2400/Verify.py)及[验证边界](../Research/FinalNight2400/Validation.md)。
+**11 月 28 日下午增量命题（PR #12）。** 在规范根先序缺失假设下，完整排除 $(7,438),(31,6),(7,48)$。以冻结主线 `495c59f` 的逐片余集减去三键，恰清空两个单键片，第三键从共享片移除；余 41 片、50 键。三键的完整算术、分支覆盖和独立审阅见[证明索引](../Research/AstraFinalAfternoon2400/Proof.md)、[验收范围](../Research/AstraFinalAfternoon2400/Validation.md)、[复验入口](../Research/AstraFinalAfternoon2400/Verify.py)。独立合并审阅重建分片代表和双向映射，未重新执行全部算术。PR #11 的[撤回候选](../Research/KimiFrontier/November28/Retraction.md)不计入该结论。全历史端到端和 72 小时验收待完成。
+
+**11 月 28 日上午增量命题（PR #10，历史）。** 以主线 `1447d41b` 的冻结余集为 $A_s$，令 $E$ 为 [25 个完整精确键](../Research/FinalNight2400/Proof.md) 的集合。对每个 $(p,e)\in E$，在规范根 $p$、$p^e\parallel N$ 及 $N\le B$ 下，逐键证明给出矛盾。故更新余集为 $A_s\setminus E$。本次独立复算正反映射确认恰有 25 个原单键片被清空，其他 43 片的成员不变。完整键与条件证明分开登记；最终账本含 25 个完整记录与 77 个条件记录。逐键完整依赖的算术回放以原 PR 回执为证据，本次后续审阅独立复核集合差，未重新执行全部算术。见[证明索引](../Research/FinalNight2400/Proof.md)、[复验入口](../Research/FinalNight2400/Verify.py)及[验证边界](../Research/FinalNight2400/Validation.md)。
 
 **11 月 27 日 Gemini 增量。** 规范根 13 的指数 508 完整排除：历史证书覆盖强迫素数 4073 的 45 个合法赋值，新有理单目标定价及外部 Euler 来源裂分排除唯一剩余赋值 108。新增闭合 P13_I00096。另接受 $(7,438)$ 的枢轴赋值 18、22，及 $(19,618)$ 的 56 个活赋值；后者补充高次 Euler 的独立尺寸界。该历史阶段后续补齐 $(19,58)$ 的混合阶 CRT 定价，接受 Euler 首枢轴赋值 1 下的第二枢轴赋值 10；当时其余 $T^2,T^6$ 共 10 条路径开放；该键已在 PR #10 完整排除。两个其他联合定价候选不登记。详细数学推导、原件、独立审阅与复验见[Gemini 增量](../Research/GeminiFrontier/Review.md)。
 
