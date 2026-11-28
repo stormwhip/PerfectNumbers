@@ -217,5 +217,17 @@
   ],
   "forest222-final-pair-independent": [
     "Audit/Check222LastTwos.py"
+  ],
+  "root19-1109-even-union-independent": [
+    "Audit/Check19Even1109.py"
+  ],
+  "root19-first16-Q1": [
+    "Nineteen/VerifyFirst16Q1.py"
+  ],
+  "root19-first16-Q1-independent": [
+    "Audit/CheckFirst16Q1.py"
+  ],
+  "root19-even-forest": [
+    "Nineteen/VerifyEven276.py"
   ]
 }
